@@ -10,7 +10,7 @@ const Ativista: NextPage = () => {
         <div>
             <Head>
                 <title>Ativista - Sintrop</title>
-                <meta name='description' content='Ativista'/>
+                <meta name='description' content='O papel do ativista dentro da Sintrop'/>
                 <link rel='icon' type='image/png' href='/favicon.png'/>
             </Head>
             <div className='flex flex-col items-center w-[100vw]'>
