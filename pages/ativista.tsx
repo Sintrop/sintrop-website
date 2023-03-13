@@ -1,37 +1,43 @@
-import type { NextPage } from "next"
+import type { NextPage } from "next";
 import Head from "next/head";
 import Image from "next/image";
-import { Card4 } from "../components/Card4";
 import { Header } from "../components/Header";
 import Link from "next/link";
 import { Footer } from "../components/Footer";
 
-const Produtor: NextPage = () => {
+const Ativista: NextPage = () => {
     return(
         <div>
             <Head>
-                <title>Produtor - Sintrop</title>
-                <meta name='description' content='Papel do produtor na comunidade'/>
+                <title>Ativista - Sintrop</title>
+                <meta name='description' content='Ativista'/>
                 <link rel='icon' type='image/png' href='/favicon.png'/>
             </Head>
             <div className='flex flex-col items-center w-[100vw]'>
-                <div className='flex flex-col w-[100%] items-center p-2 bg-[url("../assets/bg-4.png")] bg-cover lg:py-20 lg:p-10 lg:h-[700px]'>
-                    <Header/>
-                    <div className='flex flex-col items-center w-[100%] lg:items-start lg:w-[1000px]'>
-                        <h1 className='text-3xl text-center mt-5 text-white font-bold lg:text-left lg:w-[500px]'>
-                        Oportunidade para Produtores Rurais Regenerativos
-                        </h1>
+                <div className='flex flex-col w-[100%] items-center bg-[url("../assets/bg-7.png")] bg-cover lg:h-[700px]'>
+                    <div className='w-[100%] h-[100%] bg-[rgba(0,0,0,0.4)] flex flex-col items-center p-2 lg:py-20 lg:p-10'>
+                        <Header/>
+                        <div className='flex flex-col items-center w-[100%] lg:items-start lg:w-[1000px]'>
+                            <h1 className='text-3xl text-center mt-5 text-white font-bold lg:text-left lg:w-[500px]'>
+                                Oportunidade para Ativistas Ambientais Agroecológicos
+                            </h1>
 
-                        <p className='mt-5 text-xl text-white text-center lg:text-left lg:w-[700px]'>
-                        Certificação descentralizada de
-                            <span className='font-bold text-white'> Agricultura Regenerativa</span>.
-                        </p>
+                            <p className='mt-5 text-xl text-white text-center lg:text-left lg:w-[700px]'>
+                                Certificação descentralizada de
+                                <span className='font-bold text-white'> Agricultura Regenerativa</span>.
+                            </p>
 
-                        <button className='mt-5 bg-[#68A021] w-72 h-16 rounded mb-16'>
-                            <p className='font-bold text-white text-xl'>Download Whitepaper</p>
-                        </button>
+                            <button className='mt-5 bg-[#68A021] w-72 h-16 rounded mb-10'>
+                                <p className='font-bold text-white text-xl'>Download Whitepaper</p>
+                            </button>
+                        </div>
                     </div>
                 </div>
+
+                <h3 className='font-bold text-center text-[#0A4303] text-2xl mt-10'>
+                    Faça parte da rede de avaliadores do sistema
+                </h3>
+                <p>Escrever texto, Escrever texto, Escrever texto, Escrever texto, Escrever texto, Escrever texto, Escrever texto, Escrever texto, Escrever texto, Escrever texto, Escrever texto.</p>
 
                 <section className='flex justify-center w-[100vw] py-12 items-center bg-white gap-40'>
                     <div className='hidden items-center justify-center w-[350px] h-[370px] lg:flex'>
@@ -57,7 +63,7 @@ const Produtor: NextPage = () => {
                         <h3 className='font-bold text-center text-[#0A4303] text-2xl'>
                             Mais transparência
                         </h3>
-                        <p>Exiba seu nível de sustentabilidade para seus clientes</p>
+                        <p>Faça a verificação das informações</p>
                     </div>
 
                     <div>
@@ -69,40 +75,18 @@ const Produtor: NextPage = () => {
                     </div>
                 </section>
 
-                <section className="flex flex-col w-[100%] items-center py-10 justify-center bg-white lg:flex-row lg:gap-10">
-                    <div>
-                        <Image
-                            alt='Índice de sustentabilidade'
-                            src={require('../assets/indice.png')}
-                            quality={100}
-                            className='w-[150px] h-[450px]'
-                        />
-                    </div>
+                <section className='flex flex-col w-[100%] h-[500px] items-center justify-center bg-[url("../assets/bg-8.png")] bg-cover'>
+                    <div className='flex items-center justify-center flex-col w-[100%] h-[100%] bg-[rgba(0,0,0,0.3)]'>
+                        <h2 className='font-bold text-center text-white text-3xl lg:w-[800px]'>
+                            Ajude a construir nossa rede de Produtores Regenerativos!
+                        </h2>
 
-                    <div className='flex flex-col items-center justify-center lg:w-[600px]'>
-                        <h3 className='font-bold text-center text-[#0A4303] text-2xl'>
-                            Mensuração de sustentabilidade em escala
-                        </h3>
-                        <p>Consultoria gratuita para melhorar a sustentabilidade da sua produção.</p>
-
-                        <div className='flex flex-wrap gap-10 mt-10'>
-                            <Card4
-                                title='Carbono'
-                                img='co2'
-                            />
-                            <Card4
-                                title='Água'
-                                img='agua'
-                            />
-                            <Card4
-                                title='Biodiversidade'
-                                img='bio'
-                            />
-                            <Card4
-                                title='Solo'
-                                img='solo'
-                            />
-                        </div>
+                        <Link 
+                            href='/produtor'
+                            className='mt-10 bg-[#68A021] w-72 h-16 rounded flex items-center justify-center'
+                        >
+                            <p className='font-bold text-white text-xl'>Saber Mais</p>
+                        </Link>
                     </div>
                 </section>
 
@@ -110,36 +94,13 @@ const Produtor: NextPage = () => {
                     <h3 className='font-bold text-center text-[#0A4303] text-2xl'>
                         Distribuição do token
                     </h3>
-                    <p>De acordo com sua nota de sustentabilidade: Quanto mais sustentável, mais créditos.</p>
+                    <p>Distribuição de tokens de acordo com a quantidade de inspeções realizadas.</p>
                     <Image
                         alt='Planilha de distribuição de token dos produtores'
-                        src={require('../assets/planilha-1.png')}
+                        src={require('../assets/planilha-2.png')}
                         quality={100}
                         className='lg:w-[1000px] h-[300px] object-contain' 
                     />
-                </section>
-
-                <section className='flex flex-col justify-center w-[100%] items-center bg-[#DAECC4]'>
-                    <div className='flex flex-col items-center gap-20 lg:flex-row '>
-                        <div className='flex flex-col gap-2 h-[450px] lg:w-[400px] pt-24'>
-                            <h2 className='font-bold text-2xl text-[#68a021]'>Inscreva-se para participar do primeiro teste do sistema</h2>
-                            <p className='text-justify'>Escrever texto, Escrever texto, Escrever texto, Escrever texto, Escrever texto, Escrever texto, Escrever texto, Escrever texto, Escrever texto, Escrever texto, Escrever texto, Escrever texto, Escrever texto, Escrever texto, Escrever texto.</p>
-                            <Link 
-                                target='_blank'
-                                href='https://google.com.br' 
-                                className='mt-5 bg-[#68A021] w-56 h-16 rounded flex items-center justify-center'
-                            >
-                                <p className='font-bold text-white text-xl text-center'>Me inscrever</p>
-                            </Link>
-                        </div>
-
-                        <Image 
-                            src={require('../assets/globo.png')}
-                            quality={100}
-                            alt='Globo tecnológico'
-                            className='w-[335px] h-[350px] object-cover'
-                        />
-                    </div>
                 </section>
 
                 <section className='flex flex-col bg-[#f1f1f1] gap-20 w-[100%] py-10 justify-center lg:flex-row'>
@@ -182,4 +143,4 @@ const Produtor: NextPage = () => {
     )
 }
 
-export default Produtor;
+export default Ativista;
