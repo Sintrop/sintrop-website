@@ -60,7 +60,7 @@ const Investidor: NextPage = () => {
                                 quality={100}
                                 className='w-[600px] h-[300px] object-cover'
                             />
-                            <p className='font-bold text-[#0a4303]'>1986</p>
+                            <p className='font-bold text-[#68A021]'>1986</p>
                         </div>
                     ) : (
                         <div className="flex flex-col">
@@ -70,17 +70,17 @@ const Investidor: NextPage = () => {
                                 quality={100}
                                 className='w-[600px] h-[300px] object-cover'
                             />
-                            <p className='font-bold text-[#0a4303]'>2020</p>
+                            <p className='font-bold text-[#68A021]'>2020</p>
                         </div>
                     )}
 
                     <p
-                        className='lg:w-[800px] text-justify my-10'
+                        className='lg:w-[800px] text-justify my-10 mx-2'
                     >Estamos destruindo o nosso planeta. A agricultura degenerativa desmata nossas florestas, acaba com a água, destrói os solos e extingue a biodiversidade. Estamos no caminho do suicídio da nossa sociedade e colapso socioambiental. Não há vida na terra sem a natureza e nós precisamos viver em harmonia e mudar o paradigma da cultura extrativista, onde colhemos hoje em detrimento do futuro.</p>
                 </section>
 
-                <section className='flex justify-center w-[100vw] py-10 items-center bg-[#f8f8f8] gap-40'>
-                    <div className='hidden items-center justify-center w-[350px] h-[370px] lg:flex'>
+                <section className='flex flex-col justify-center w-[100vw] py-10 items-center bg-[#f8f8f8] lg:gap-40 lg:flex-row'>
+                    <div className='items-center justify-center w-[350px] h-[370px] flex'>
                         <Image 
                             src={require('../assets/grafico-1.png')}
                             quality={100}
@@ -96,7 +96,7 @@ const Investidor: NextPage = () => {
                 </section>
 
                 <section className='flex flex-col items-center w-[100%] bg-white py-10'>
-                    <h3 className='font-bold text-center text-[#0A4303] text-2xl'>
+                    <h3 className='font-bold text-center text-[#68a021] text-2xl'>
                         A solução
                     </h3>
                     <p className='text-center mb-10'>Token Crédito de Carbono Regenerativo</p>
@@ -105,7 +105,7 @@ const Investidor: NextPage = () => {
                         src={require('../assets/solucao-1.png')}
                         quality={100}
                         alt='Token exemplificativo'
-                        className='h-[400px] object-cover'
+                        className='object-contain lg:h-[400px] lg:object-cover'
                     />
                 </section>
 
@@ -119,8 +119,8 @@ const Investidor: NextPage = () => {
 
                 <section className='flex flex-col bg-[#f1f1f1] gap-20 w-[100%] py-10 justify-center lg:flex-row'>
                     <div className='flex flex-col lg:w-[400px]'>
-                        <h3 className='font-bold text-2xl'>Tenho interesse em investir</h3>
-                        <p className='text-xl'>
+                        <h3 className='font-bold text-2xl text-center'>Tenho interesse em investir</h3>
+                        <p className='text-xl text-center mx-2'>
                             Escolha o melhor meio de comunicação e entre em contato conosco, vamos conversar.
                         </p>
                     </div>

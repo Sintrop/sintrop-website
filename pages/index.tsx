@@ -2,7 +2,6 @@ import type { NextPage } from 'next';
 import Head from 'next/head';
 import Image from 'next/image';
 import Link from 'next/link';
-import LogoS from '../assets/logo-s.png';
 import ImgComunidade from '../assets/comunidade-pessoas.png';
 import { Card1 } from '../components/Card1';
 import { Card2 } from '../components/Card2';

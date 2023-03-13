@@ -33,18 +33,18 @@ const Pesquisador: NextPage = () => {
                     </div>
                 </div>
 
-                <h3 className='font-bold text-center text-[#0A4303] text-2xl mt-10'>
+                <h3 className='font-bold text-center text-[#68A021] text-2xl mt-10'>
                     Faça parte da rede de pesquisadores do sistema
                 </h3>
-                <p>Escrever texto, Escrever texto, Escrever texto, Escrever texto, Escrever texto, Escrever texto, Escrever texto, Escrever texto, Escrever texto, Escrever texto, Escrever texto.</p>
+                <p className='text-center mx-2'>Escrever texto, Escrever texto, Escrever texto, Escrever texto, Escrever texto, Escrever texto, Escrever texto, Escrever texto, Escrever texto, Escrever texto, Escrever texto.</p>
 
-                <section className='flex justify-center w-[100vw] py-12 items-center bg-white gap-40'>
-                    <div className='hidden items-center justify-center w-[350px] h-[370px] lg:flex'>
+                <section className='flex flex-col justify-center w-[100vw] py-12 items-center bg-white lg:gap-40 lg:flex-row'>
+                    <div className='items-center justify-center w-[350px] h-[370px] flex'>
                         <Image 
                             src={require('../assets/token.png')}
                             quality={100}
                             alt='Logo da sintrop'
-                            className='w-[650px] h-[650px] object-cover'
+                            className='w-[650px] h-[650px] ml-[-20px] lg:ml-0 object-cover'
                         />
                     </div>
                     
@@ -58,10 +58,10 @@ const Pesquisador: NextPage = () => {
                 </section>
 
                 <section className="flex flex-col w-[100%] items-center py-10 justify-center bg-white">
-                    <h3 className='font-bold text-center text-[#0A4303] text-2xl'>
+                    <h3 className='font-bold text-center text-[#68A021] text-2xl'>
                         Distribuição do token
                     </h3>
-                    <p>Distribuição de tokens de acordo com a quantidade de inspeções realizadas.</p>
+                    <p className='text-center mx-2'>Distribuição de tokens de acordo com a quantidade de inspeções realizadas.</p>
                     <Image
                         alt='Planilha de distribuição de token dos pesquisadores'
                         src={require('../assets/planilha-3.png')}
@@ -72,8 +72,8 @@ const Pesquisador: NextPage = () => {
 
                 <section className='flex flex-col bg-[#f1f1f1] gap-20 w-[100%] py-10 justify-center lg:flex-row'>
                     <div className='flex flex-col lg:w-[400px]'>
-                        <h3 className='font-bold text-2xl'>Junte-se com a gente</h3>
-                        <p className='text-xl'>
+                        <h3 className='font-bold text-2xl text-center'>Junte-se com a gente</h3>
+                        <p className='text-xl text-center mx-2'>
                             Inscreva-se para participar do primeiro teste de operação do sistema.
                         </p>
                     </div>

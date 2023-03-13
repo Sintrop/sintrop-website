@@ -33,13 +33,13 @@ const Produtor: NextPage = () => {
                     </div>
                 </div>
 
-                <section className='flex justify-center w-[100vw] py-12 items-center bg-white gap-40'>
-                    <div className='hidden items-center justify-center w-[350px] h-[370px] lg:flex'>
+                <section className='flex flex-col justify-center w-[100vw] py-12 items-center bg-white lg:gap-40 lg:flex-row'>
+                    <div className='flex items-center justify-center w-[350px] h-[370px] '>
                         <Image 
                             src={require('../assets/token.png')}
                             quality={100}
                             alt='Logo da sintrop'
-                            className='w-[650px] h-[650px] object-cover'
+                            className='w-[650px] h-[650px] ml-[-20px] lg:ml-0 object-cover'
                         />
                     </div>
                     
@@ -53,11 +53,11 @@ const Produtor: NextPage = () => {
                 </section>
 
                 <section className='flex flex-col items-center justify-center w-[100%] py-10 bg-[#f8f8f8] lg:flex-row'>
-                    <div className='flex flex-col items-start'>
-                        <h3 className='font-bold text-center text-[#0A4303] text-2xl'>
+                    <div className='flex flex-col'>
+                        <h3 className='font-bold text-center text-[#0A4303] text-2xl mx-2'>
                             Mais transparência
                         </h3>
-                        <p>Exiba seu nível de sustentabilidade para seus clientes</p>
+                        <p className='mx-2 text-center'>Exiba seu nível de sustentabilidade para seus clientes</p>
                     </div>
 
                     <div>
@@ -80,12 +80,12 @@ const Produtor: NextPage = () => {
                     </div>
 
                     <div className='flex flex-col items-center justify-center lg:w-[600px]'>
-                        <h3 className='font-bold text-center text-[#0A4303] text-2xl'>
+                        <h3 className='font-bold text-center text-[#0A4303] text-2xl mx-2'>
                             Mensuração de sustentabilidade em escala
                         </h3>
-                        <p>Consultoria gratuita para melhorar a sustentabilidade da sua produção.</p>
+                        <p className='mx-2 text-center'>Consultoria gratuita para melhorar a sustentabilidade da sua produção.</p>
 
-                        <div className='flex flex-wrap gap-10 mt-10'>
+                        <div className='flex items-center justify-center flex-wrap gap-10 mt-10'>
                             <Card4
                                 title='Carbono'
                                 img='co2'
@@ -110,7 +110,7 @@ const Produtor: NextPage = () => {
                     <h3 className='font-bold text-center text-[#0A4303] text-2xl'>
                         Distribuição do token
                     </h3>
-                    <p>De acordo com sua nota de sustentabilidade: Quanto mais sustentável, mais créditos.</p>
+                    <p className='text-center mx-2'>De acordo com sua nota de sustentabilidade: Quanto mais sustentável, mais créditos.</p>
                     <Image
                         alt='Planilha de distribuição de token dos produtores'
                         src={require('../assets/planilha-1.png')}
@@ -144,8 +144,8 @@ const Produtor: NextPage = () => {
 
                 <section className='flex flex-col bg-[#f1f1f1] gap-20 w-[100%] py-10 justify-center lg:flex-row'>
                     <div className='flex flex-col lg:w-[400px]'>
-                        <h3 className='font-bold text-2xl'>Junte-se com a gente</h3>
-                        <p className='text-xl'>
+                        <h3 className='font-bold text-2xl text-center'>Junte-se com a gente</h3>
+                        <p className='text-xl text-center mx-2'>
                             Inscreva-se para participar do primeiro teste de operação do sistema.
                         </p>
                     </div>
