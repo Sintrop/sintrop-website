@@ -13,11 +13,16 @@ export function Footer(){
                         className='w-[50px] h-[50px] object-cover'
                     />
                 </a>
-                <Image
-                    src={require('../assets/ICON-WHATS.png')} 
-                    alt='Logo sintrop'
-                    className='w-[50px] h-[50px] object-cover'
-                />
+                <Link
+                    href='https://api.whatsapp.com/send/?phone=%2B5548988133635&text&type=phone_number&app_absent=0'
+                    target='_blank'
+                >
+                    <Image
+                        src={require('../assets/ICON-WHATS.png')} 
+                        alt='Logo sintrop'
+                        className='w-[50px] h-[50px] object-cover'
+                    />
+                </Link>
                 <a href='https://www.instagram.com/sintrop.sustentabilidade/' target='_blank'>
                     <Image
                         src={require('../assets/ICON-INSTAGRAM.png')} 
