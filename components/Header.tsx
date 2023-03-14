@@ -10,12 +10,16 @@ export function Header(){
     return(
         <header className='flex flex-col w-[100%] justify-between lg:mb-36 lg:flex-row lg:w-[1000px]'>
             <div className='flex items-center justify-between'>
-                <Image 
-                    src={Logo}
-                    quality={100}
-                    alt='Logo da sintrop'
-                    className='w-[150px] h-[60px] lg:w-[257px] lg:h-[98px]'
-                />
+                <Link
+                    href='/'
+                >
+                    <Image 
+                        src={Logo}
+                        quality={100}
+                        alt='Logo da sintrop'
+                        className='w-[150px] h-[60px] lg:w-[257px] lg:h-[98px]'
+                    />
+                </Link>
 
                 <button
                     onClick={() => setModalMenu(true)}
@@ -30,13 +34,6 @@ export function Header(){
             </div>
 
             <nav className='hidden items-center gap-10 flex-wrap justify-center lg:flex'>
-                <Link 
-                    href='/'
-                    className='font-bold text-white text-xl hover:text-green-400'
-                >
-                    Home
-                </Link>
-
                 <Link 
                     href='/sobre'
                     className='font-bold text-white text-xl hover:text-green-400'

@@ -1,6 +1,8 @@
 import type { NextPage } from "next";
 import Head from "next/head";
 import Image from "next/image";
+import Link from "next/link";
+import { BtnWhats } from "../components/BtnWhats";
 import { Footer } from "../components/Footer";
 import { Header } from "../components/Header";
 
@@ -26,9 +28,14 @@ const Pesquisador: NextPage = () => {
                                 <span className='font-bold text-white'> Agricultura Regenerativa</span>.
                             </p>
 
-                            <button className='mt-5 bg-[#68A021] w-72 h-16 rounded mb-10'>
-                                <p className='font-bold text-white text-xl'>Download Whitepaper</p>
-                            </button>
+                            <Link
+                                href={`https://sintrop.com/whitepaper.pdf`}
+                                target='_blank'
+                            >
+                                <button className='mt-5 bg-[#68A021] w-72 h-16 rounded mb-10'>
+                                    <p className='font-bold text-white text-xl'>Download Whitepaper</p>
+                                </button>
+                            </Link>
                         </div>
                     </div>
                 </div>
@@ -70,34 +77,6 @@ const Pesquisador: NextPage = () => {
                     />
                 </section>
 
-                <section className='flex flex-col bg-[#f1f1f1] gap-20 w-[100%] py-10 justify-center lg:flex-row'>
-                    <div className='flex flex-col lg:w-[400px]'>
-                        <h3 className='font-bold text-2xl text-center'>Junte-se com a gente</h3>
-                        <p className='text-xl text-center mx-2'>
-                            Inscreva-se para participar do primeiro teste de operação do sistema.
-                        </p>
-                    </div>
-                    <div className='flex flex-col gap-5 p-5 bg-white rounded-lg lg:w-[400px]'>
-                        <h2 className='text-black text-2xl font-bold'>Registrar</h2>
-                        <input
-                            placeholder='Seu nome'
-                            className='w-[100%] h-10 bg-white p-2 rounded-lg border-2'
-                        />
-                        <input
-                            placeholder='Email'
-                            className='w-[100%] h-10 bg-white p-2 rounded-lg border-2'
-                        />
-                        <input
-                            placeholder='DDD + Telefone'
-                            className='w-[100%] h-10 bg-white p-2 rounded-lg border-2'
-                        />
-
-                        <button className='w-[100%] h-10 rounded-lg text-white font-bold bg-[#68A021] flex items-center justify-center'>
-                            Registrar
-                        </button>
-                    </div>
-                </section>
-
                 <Footer/>
 
                 <section className='flex items-center justify-center h-[80px] w-[100vw] bg-black'>
@@ -106,6 +85,8 @@ const Pesquisador: NextPage = () => {
                     </p>
                 </section>
             </div>
+
+            <BtnWhats/>
         </div>
     )
 }

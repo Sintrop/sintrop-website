@@ -5,6 +5,7 @@ import { Header } from "../components/Header";
 import emailjs from '@emailjs/browser';
 import { FormEvent } from "react";
 import { Footer } from '../components/Footer';
+import { BtnWhats } from '../components/BtnWhats';
 
 const Contato: NextPage= () => {
     const [loading, setLoading]= useState(false);
@@ -52,7 +53,7 @@ const Contato: NextPage= () => {
                 <link rel='icon' type='image/png' href='/favicon.png'/>
             </Head>
             <div className='flex flex-col items-center w-[100vw]'>
-                <div className='flex flex-col w-[100%] items-center bg-[url("../assets/bg-10.png")] bg-cover lg:h-[700px]'>
+                <div className='flex flex-col w-[100%] items-center bg-[url("../assets/bg-12.png")] bg-cover lg:h-[700px]'>
                     <div className='w-[100%] h-[100%] bg-[rgba(0,0,0,0.4)] flex flex-col items-center p-2 lg:py-20 lg:p-10'>
                         <Header/>
                         <div className='flex flex-col items-center w-[100%] lg:items-start lg:w-[1000px]'>
@@ -127,6 +128,8 @@ const Contato: NextPage= () => {
                     © We must change now! We must save the planet and avoid climate disasters. Join us on this fight!
                 </p>
             </section>
+
+            <BtnWhats/>
         </div>
     )
 }

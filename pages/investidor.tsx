@@ -4,6 +4,8 @@ import { Header } from "../components/Header";
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import { Footer } from "../components/Footer";
+import Link from "next/link";
+import { BtnWhats } from "../components/BtnWhats";
 
 const Investidor: NextPage = () => {
     const [chooseMap, setChooseMap] = useState(true);
@@ -15,7 +17,7 @@ const Investidor: NextPage = () => {
         if(!chooseMap){
             setTimeout(() => {setChooseMap(true)}, 2000)
         }
-    }, [chooseMap])
+    }, [chooseMap]);
 
 
     return(
@@ -39,9 +41,14 @@ const Investidor: NextPage = () => {
                                 <span className='font-bold text-white'> Regeneração do Planeta</span>.
                             </p>
 
-                            <button className='mt-5 bg-[#68A021] w-72 h-16 rounded mb-10'>
-                                <p className='font-bold text-white text-xl'>Download Whitepaper</p>
-                            </button>
+                            <Link
+                                href={`https://sintrop.com/whitepaper.pdf`}
+                                target='_blank'
+                            >
+                                <button className='mt-5 bg-[#68A021] w-72 h-16 rounded mb-10'>
+                                    <p className='font-bold text-white text-xl'>Download Whitepaper</p>
+                                </button>
+                            </Link>
                         </div>
                     </div>
                 </div>
@@ -56,17 +63,17 @@ const Investidor: NextPage = () => {
                         <div className="flex flex-col">
                             <Image
                                 alt='Imagem mapa 1986'
-                                src={require('../assets/map-1.png')}
+                                src={require('../assets/1984.png')}
                                 quality={100}
                                 className='w-[600px] h-[300px] object-cover'
                             />
-                            <p className='font-bold text-[#68A021]'>1986</p>
+                            <p className='font-bold text-[#68A021]'>1984</p>
                         </div>
                     ) : (
                         <div className="flex flex-col">
                             <Image
                                 alt='Imagem mapa 1986'
-                                src={require('../assets/map-2.png')}
+                                src={require('../assets/2020.png')}
                                 quality={100}
                                 className='w-[600px] h-[300px] object-cover'
                             />
@@ -117,38 +124,6 @@ const Investidor: NextPage = () => {
                     </div>
                 </section>
 
-                <section className='flex flex-col bg-[#f1f1f1] gap-20 w-[100%] py-10 justify-center lg:flex-row'>
-                    <div className='flex flex-col lg:w-[400px]'>
-                        <h3 className='font-bold text-2xl text-center'>Tenho interesse em investir</h3>
-                        <p className='text-xl text-center mx-2'>
-                            Escolha o melhor meio de comunicação e entre em contato conosco, vamos conversar.
-                        </p>
-                    </div>
-                    <div className='flex flex-col gap-5 p-5 bg-white rounded-lg lg:w-[400px]'>
-                        <h2 className='text-black text-2xl font-bold'>Contato</h2>
-                        <input
-                            placeholder='Seu nome'
-                            className='w-[100%] h-10 bg-white p-2 rounded-lg border-2'
-                        />
-                        <input
-                            placeholder='Email'
-                            className='w-[100%] h-10 bg-white p-2 rounded-lg border-2'
-                        />
-                        <input
-                            placeholder='DDD + Telefone'
-                            className='w-[100%] h-10 bg-white p-2 rounded-lg border-2'
-                        />
-                        <input
-                            placeholder='Mensagem'
-                            className='w-[100%] h-24 bg-white p-2 rounded-lg border-2'
-                        />
-
-                        <button className='w-[100%] h-10 rounded-lg text-white font-bold bg-[#68A021] flex items-center justify-center'>
-                            Enviar
-                        </button>
-                    </div>
-                </section>
-
                 <Footer/>
 
                 <section className='flex items-center justify-center h-[80px] w-[100vw] bg-black'>
@@ -157,6 +132,8 @@ const Investidor: NextPage = () => {
                     </p>
                 </section>
             </div>
+
+            <BtnWhats/>
         </div>
     )
 }

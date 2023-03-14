@@ -8,6 +8,7 @@ import { Card2 } from '../components/Card2';
 import { Card3 } from '../components/Card3';
 import { Header } from '../components/Header';
 import { Footer } from '../components/Footer';
+import { BtnWhats } from '../components/BtnWhats';
 
 const Home: NextPage = () => {
     return (
@@ -30,9 +31,14 @@ const Home: NextPage = () => {
                             <span className='font-bold text-white'> Agricultura Regenerativa</span>.
                         </p>
 
-                        <button className='mt-5 bg-[#68A021] w-72 h-16 rounded mb-10'>
-                            <p className='font-bold text-white text-xl'>Download Whitepaper</p>
-                        </button>
+                        <Link
+                            href={`https://sintrop.com/whitepaper.pdf`}
+                            target='_blank'
+                        >
+                            <button className='mt-5 bg-[#68A021] w-72 h-16 rounded mb-10'>
+                                <p className='font-bold text-white text-xl'>Download Whitepaper</p>
+                            </button>
+                        </Link>
                     </div>
                 </div>
 
@@ -126,9 +132,14 @@ const Home: NextPage = () => {
                             Ou a agricultura vai salvar a Terra, ou a destruir. De qual lado você vai estar?
                         </h2>
 
-                        <button className='mt-5 bg-[#68A021] w-72 h-16 rounded'>
-                            <p className='font-bold text-white text-xl'>Download Whitepaper</p>
-                        </button>
+                        <Link
+                            href={`https://sintrop.com/whitepaper.pdf`}
+                            target='_blank'
+                        >
+                            <button className='mt-5 bg-[#68A021] w-72 h-16 rounded mb-10'>
+                                <p className='font-bold text-white text-xl'>Download Whitepaper</p>
+                            </button>
+                        </Link>
                     </div>
                 </section>
 
@@ -164,7 +175,7 @@ const Home: NextPage = () => {
                         </p>
                     </div>
 
-                    <div className='flex flex-wrap gap-12 justify-center lg:w-[1200px] mt-20'>
+                    <div className='flex flex-wrap gap-12 justify-center lg:w-[1200px] my-20'>
                         <Card3
                             title='Produtor'
                             description="Produtores de alimentos que estejam regenerando o local através do seu trabalho."
@@ -191,38 +202,6 @@ const Home: NextPage = () => {
                     </div>
                 </section>
 
-                <section id='contato' className='flex flex-col bg-[#f1f1f1] gap-20 w-[100%] mt-14 py-10 justify-center lg:flex-row'>
-                    <div className='flex flex-col lg:w-[400px]'>
-                        <h3 className='font-bold text-2xl'>Contate-nos</h3>
-                        <p className='text-xl'>
-                            Em caso de dúvidas, escolha o melhor meio de comunicação e entre em contato conosco
-                        </p>
-                    </div>
-                    <div className='flex flex-col gap-5 p-5 bg-white rounded-lg lg:w-[400px]'>
-                        <h2 className='text-black text-2xl font-bold'>Contato</h2>
-                        <input
-                            placeholder='Seu nome'
-                            className='w-[100%] h-10 bg-white p-2 rounded-lg border-2'
-                        />
-                        <input
-                            placeholder='Email'
-                            className='w-[100%] h-10 bg-white p-2 rounded-lg border-2'
-                        />
-                        <input
-                            placeholder='DDD + Telefone'
-                            className='w-[100%] h-10 bg-white p-2 rounded-lg border-2'
-                        />
-                        <input
-                            placeholder='Mensagem'
-                            className='w-[100%] h-24 bg-white p-2 rounded-lg border-2'
-                        />
-
-                        <button className='w-[100%] h-10 rounded-lg text-white font-bold bg-[#68A021] flex items-center justify-center'>
-                            Enviar
-                        </button>
-                    </div>
-                </section>
-
                 <Footer/>
 
                 <section className='flex items-center justify-center h-[80px] w-[100vw] bg-black'>
@@ -231,6 +210,8 @@ const Home: NextPage = () => {
                     </p>
                 </section>
             </div>
+
+            <BtnWhats/>
         </div>
     )
 }
