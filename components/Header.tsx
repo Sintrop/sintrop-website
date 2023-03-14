@@ -38,7 +38,7 @@ export function Header(){
                 </Link>
 
                 <Link 
-                    href='/#sobre'
+                    href='/sobre'
                     className='font-bold text-white text-xl hover:text-green-400'
                 >
                     Sobre
@@ -60,7 +60,7 @@ export function Header(){
                 </Link>
 
                 <Link 
-                    href='/#contato'
+                    href='/contato'
                     className='font-bold text-white text-xl hover:text-green-400'
                 >
                     Contato
