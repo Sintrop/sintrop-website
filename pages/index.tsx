@@ -22,11 +22,11 @@ const Home: NextPage = () => {
                     <Header/>
                     <div className='flex flex-col items-center w-[100%] lg:items-start lg:w-[1000px]'>
                         <h1 className='text-3xl text-center mt-5 text-white font-bold lg:text-left lg:w-[500px]'>
-                            Regeneração do planeta através da agricultura Regenerativa
+                            Nossa missão é incentivar a regeneração do planeta!
                         </h1>
 
                         <p className='mt-5 text-xl text-white text-center lg:text-left lg:w-[700px]'>
-                            Sistema descentralizado de certificação agroecológica com mecanilgo de incentivo de sustentabilidade através do token Crédito de 
+                            Sistema descentralizado de certificação de 
                             <span className='font-bold text-white'> Agricultura Regenerativa</span>.
                         </p>
 
@@ -47,8 +47,8 @@ const Home: NextPage = () => {
                     </div>
                     
                     <div className='flex flex-col px-5 gap-3 lg:w-[450px]'>
-                        <h2 className='font-bold text-2xl text-[#68a021]'>Quem somos?</h2>
-                        <p className='text-justify'>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy.</p>
+                        <h2 className='font-bold text-2xl text-[#68a021]'>Token Crédito de Carbono Regenerativo</h2>
+                        <p className='text-justify'>Token com modelo de distribuição algorítmico programado para ser distribuído ao longo das próximas décadas para produtores regenerativos e comunidade pelos serviços ambientais ecossistêmicos prestados a sociedade.</p>
                         <button className='mt-5 bg-[#68A021] w-56 h-16 rounded'>
                             <p className='font-bold text-white text-xl'>Saber Mais</p>
                         </button>
@@ -70,7 +70,7 @@ const Home: NextPage = () => {
 
                     <div className='flex flex-col items-center lg:flex-row mt-5'>
                         <Card1
-                            title='Agricultura Sintrópica Regenerativa'
+                            title='Agricultura Regenerativa'
                         />
                         <Card1
                             cardCenter
@@ -101,8 +101,8 @@ const Home: NextPage = () => {
                         />
                     
                         <Card2
-                            title='SAC TOKEN'
-                            description='Token Crédito de Agricultura Sustentável para recompensar produtores sustentáveis e comunidade.'
+                            title='rCC TOKEN'
+                            description='Token Crédito de Carbono Regenerativo para recompensar produtores sustentáveis e comunidade pelos serviços ambientais.'
                             img='sac-token'
                         />
 
@@ -160,32 +160,32 @@ const Home: NextPage = () => {
                         </h3>
 
                         <p className='text-center text-[#2b2b2b] text-xl lg:w-[800px]'>
-                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries.
+                            Nosso projeto é descentralizado e guiado por comunidade. Estamos criando a lógica de funcionamento do Sistema para publicá-la na rede Ethereum e convidar produtores, ativistas, pesquisadores e toda comunidade para participar do Sistema de forma totalmente descentralizada.
                         </p>
                     </div>
 
                     <div className='flex flex-wrap gap-12 justify-center lg:w-[1200px] mt-20'>
                         <Card3
                             title='Produtor'
-                            description="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer"
+                            description="Produtores de alimentos que estejam regenerando o local através do seu trabalho."
                             img='produtor'
                         />
 
                         <Card3
                             title='Ativista'
-                            description="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer"
+                            description="Inspetores do nível de regeneração dos produtores. Responsáveis pela avaliação no local."
                             img='ativista'
                         />
 
                         <Card3
                             title='Pesquisador'
-                            description="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer"
+                            description="Pesquisadores agrocológicos para ensinar a comundiade como regenerar o planeta e contribuir no desenvolvimento do ISA"
                             img='transparent'
                         />
 
                         <Card3
                             title='Investidor'
-                            description="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer"
+                            description="Pessoas e empresas que poderão comprar tokens dos produtores para usar na plataforma para compensar seu impacto negativo do passado"
                             img='isa'
                         />
                     </div>
