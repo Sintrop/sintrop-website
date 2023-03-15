@@ -50,8 +50,8 @@ const Produtor: NextPage = () => {
                     </div>
                     
                     <div className='flex flex-col px-5 gap-3 lg:w-[500px]'>
-                        <h2 className='font-bold text-xl text-[#68a021]'>Ganhe o token Crédito de Carbono Regenerativo pelo serviço ambiental prestado para a sociedade.</h2>
-                        <p className='text-justify'>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many infancy.</p>
+                        <h2 className='font-bold text-xl text-[#68a021]'>Token Crédito de Carbono Regenerativo</h2>
+                        <p className='text-justify'>Seja recompensado com o token rCC pelo serviço ambiental de regeneração de ecossistemas prestados para a humanidade. </p>
                         <button className='mt-5 bg-[#68A021] w-56 h-14 rounded'>
                             <p className='font-bold text-white text-lg'>Saber Mais</p>
                         </button>
@@ -61,9 +61,10 @@ const Produtor: NextPage = () => {
                 <section className='flex flex-col items-center justify-center w-[100%] py-10 bg-[#f8f8f8] lg:flex-row'>
                     <div className='flex flex-col'>
                         <h3 className='font-bold text-center text-[#0A4303] text-xl mx-2'>
-                            Mais transparência
+                            Mais transparência: Certificado de agricultura regenerativa
                         </h3>
-                        <p className='mx-2 text-center'>Exiba seu nível de sustentabilidade para seus clientes</p>
+                        <p className='mx-2 text-center'>Exiba seu nível de sustentabilidade para seus clientes. 
+                        Resultado das inspeções público para provar o nível de regeneração de seu trabalho.</p>
                     </div>
 
                     <div>
@@ -90,7 +91,7 @@ const Produtor: NextPage = () => {
                         <h3 className='font-bold text-center text-[#0A4303] text-xl mx-2'>
                             Mensuração de sustentabilidade em escala
                         </h3>
-                        <p className='mx-2 text-center'>Consultoria gratuita para melhorar a sustentabilidade da sua produção.</p>
+                        <p className='mx-2 text-center'>Evolua o nível de regeneração da sua produção e receba consultoria gratuita para melhorar a sustentabilidade da sua produção.</p>
 
                         <div className='flex items-center justify-center flex-wrap gap-10 mt-10'>
                             <Card4
@@ -130,7 +131,7 @@ const Produtor: NextPage = () => {
                     <div className='flex flex-col items-center gap-20 lg:flex-row '>
                         <div className='flex flex-col gap-2 h-[450px] lg:w-[400px] pt-24'>
                             <h2 className='font-bold text-xl text-[#68a021]'>Inscreva-se para participar do primeiro teste do sistema</h2>
-                            <p className='text-justify'>Escrever texto, Escrever texto, Escrever texto, Escrever texto, Escrever texto, Escrever texto, Escrever texto, Escrever texto, Escrever texto, Escrever texto, Escrever texto, Escrever texto, Escrever texto, Escrever texto, Escrever texto.</p>
+                            <p className='text-justify'>Estamos buscando os primeiros produtores rurais regenerativos para participar do teste de operação. Se você é um produtor que trabalha com agrofloresta, agricultura sintrópica ou qualquer outra forma de regeneração da natureza entre em contato conosco!</p>
                             <Link 
                                 target='_blank'
                                 href='https://google.com.br' 

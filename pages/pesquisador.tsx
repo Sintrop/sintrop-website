@@ -43,7 +43,7 @@ const Pesquisador: NextPage = () => {
                 <h3 className='font-bold text-center text-[#68A021] text-xl mt-10'>
                     Faça parte da rede de pesquisadores do sistema
                 </h3>
-                <p className='text-center mx-2'>Escrever texto, Escrever texto, Escrever texto, Escrever texto, Escrever texto, Escrever texto, Escrever texto, Escrever texto, Escrever texto, Escrever texto, Escrever texto.</p>
+                <p className='text-center mx-2'>Buscamos pesquisadores agroecológicos para desenvolver o método de avaliação e auxiliar no processo de educação e ensino dos produtores rurais.</p>
 
                 <section className='flex flex-col justify-center w-[100vw] py-12 items-center bg-white lg:gap-40 lg:flex-row'>
                     <div className='items-center justify-center w-[350px] h-[370px] flex'>
@@ -56,8 +56,8 @@ const Pesquisador: NextPage = () => {
                     </div>
                     
                     <div className='flex flex-col px-5 gap-3 lg:w-[500px]'>
-                        <h2 className='font-bold text-xl text-[#68a021]'>Seja recompensado com o Token Crédito de Carbono Regenerativo pelo serviços de pesquisa e ensino sobre agroecologia.</h2>
-                        <p className='text-justify'>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many infancy.</p>
+                        <h2 className='font-bold text-xl text-[#68a021]'>Token Crédito de Carbono Regenerativo</h2>
+                        <p className='text-justify'>Seja recompensado com o token rCC  pelo serviços de pesquisa e ensino sobre agroecologia. Contribua com o ecossistema publicando suas pesquisas e descobertas que auxiliem na regeneração do planeta.</p>
                         <button className='mt-5 bg-[#68A021] w-56 h-14 rounded'>
                             <p className='font-bold text-white text-lg'>Saber Mais</p>
                         </button>

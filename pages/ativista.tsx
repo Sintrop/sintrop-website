@@ -43,7 +43,7 @@ const Ativista: NextPage = () => {
                 <h3 className='font-bold text-center text-[#68A021] text-xl mt-10'>
                     Faça parte da rede de avaliadores do sistema
                 </h3>
-                <p className='mx-2 text-center'>Escrever texto, Escrever texto, Escrever texto, Escrever texto, Escrever texto, Escrever texto, Escrever texto, Escrever texto, Escrever texto, Escrever texto, Escrever texto.</p>
+                <p className='mx-2 text-center'>Faça parte da rede de ativistas do Sistema e realize inspeções presenciais para mensurar o nível de regeneração dos produtores rurais</p>
 
                 <section className='flex flex-col justify-center w-[100vw] py-12 items-center bg-white lg:gap-40 lg:flex-row'>
                     <div className='items-center justify-center w-[350px] h-[370px] flex'>
@@ -56,8 +56,8 @@ const Ativista: NextPage = () => {
                     </div>
                     
                     <div className='flex flex-col px-5 gap-3 lg:w-[500px]'>
-                        <h2 className='font-bold text-xl text-[#68a021]'>Ganhe o token Crédito de Carbono Regenerativo pelo serviço ambiental prestado para a sociedade.</h2>
-                        <p className='text-justify'>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many infancy.</p>
+                        <h2 className='font-bold text-xl text-[#68a021]'>Token Crédito de Carbono Regenerativo</h2>
+                        <p className='text-justify'>Seja recompensado com o token rCC pelo serviço de inspeção e ativismo ambiental prestado ao Sistema. Realize inspeções periodicamente.</p>
                         <button className='mt-5 bg-[#68A021] w-56 h-16 rounded'>
                             <p className='font-bold text-white text-lg'>Saber Mais</p>
                         </button>
