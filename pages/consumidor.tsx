@@ -63,7 +63,7 @@ const Consumidor: NextPage = () => {
                         src={require('../assets/globo.png')}
                         quality={100}
                         alt='Globo tecnológico'
-                        className='w-[335px] h-[350px] object-cover'
+                        className='w-[335px] h-[350px] object-contain'
                     />
                     <div className="flex flex-col gap-5 lg:w-[400px]">
                         <h3 className="font-bold text-xl text-center mx-2">Vitrine de produtores regenerativos para você escolher</h3>

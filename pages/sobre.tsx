@@ -16,7 +16,7 @@ const Sobre: NextPage = () => {
             </Head>
             <div className='flex flex-col items-center w-[100vw]'>
                 <div className='flex flex-col w-[100%] items-center bg-[url("../assets/bg-11.png")] bg-cover lg:h-[600px]'>
-                    <div className='w-[100%] h-[100%] bg-[rgba(0,0,0,0.1)] flex flex-col items-center p-2 lg:py-20 lg:p-10'>
+                    <div className='w-[100%] h-[100%] bg-[rgba(0,0,0,0.3)] flex flex-col items-center p-2 lg:py-20 lg:p-10'>
                         <Header/>
                         <div className='flex flex-col items-center w-[100%] lg:items-start lg:w-[1000px]'>
                             <h1 className='text-2xl text-center mt-5 text-white font-bold lg:text-left lg:w-[500px]'>

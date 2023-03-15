@@ -54,8 +54,8 @@ const Investidor: NextPage = () => {
                 </div>
 
                 <section className='flex flex-col items-center w-[100%] bg-white py-10'>
-                    <h3 className='font-bold text-center text-[#0A4303] text-xl'>
-                        O problema
+                    <h3 className='font-bold text-center text-2xl'>
+                        O enorme <span className="text-red-600">Problema</span>
                     </h3>
                     <p className='text-center mb-10'></p>
                 
@@ -121,6 +121,29 @@ const Investidor: NextPage = () => {
                         <h2 className='font-bold text-center text-white text-3xl lg:w-[800px]'>
                             JUNTOS PODEMOS MUDAR O MUNDO!
                         </h2>
+                    </div>
+                </section>
+
+                <section className='flex flex-col justify-center py-10 lg:py-0 w-[100%] items-center bg-[#DAECC4]'>
+                    <div className='flex flex-col items-center justify-center lg:gap-20 lg:flex-row '>
+                        <div className='flex flex-col gap-2 justify-center lg:h-[450px] lg:w-[400px]'>
+                            <h2 className='font-bold text-xl text-[#68a021] mx-2'>Seja um dos primeiros a investir na regeneração do planeta</h2>
+                            <p className='text-justify mx-2'>Estamos buscando os primeiros investidores que acreditam na regeneração do mundo, e que com seu investimento podemos acelerar essa regeneração!</p>
+                            <Link 
+                                target='_blank'
+                                href='https://docs.google.com/forms/d/e/1FAIpQLSfRP4MzGk86ikasBaLMGhsCvbZp67jlVW9ftIoHP0fVXoyRcw/viewform?usp=sf_link' 
+                                className='mt-5 bg-[#68A021] w-56 h-14 rounded flex items-center justify-center mx-2'
+                            >
+                                <p className='font-bold text-white text-lg text-center'>Quero Investir</p>
+                            </Link>
+                        </div>
+
+                        <Image 
+                            src={require('../assets/globo.png')}
+                            quality={100}
+                            alt='Globo tecnológico'
+                            className='w-[360px] h-[350px] object-contain'
+                        />
                     </div>
                 </section>
 

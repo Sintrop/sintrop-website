@@ -52,7 +52,7 @@ export function ModalComunity({close, mobile}: Props){
                 >
                     <Image
                         alt='Icone do produtor'
-                        src={require('../assets/isa.png')}
+                        src={require('../assets/investidor.png')}
                         className='w-8'
                     />
                     <p className="font-bold text-green-600">Investidor</p>
@@ -64,7 +64,7 @@ export function ModalComunity({close, mobile}: Props){
                 >
                     <Image
                         alt='Icone do produtor'
-                        src={require('../assets/transparent.png')}
+                        src={require('../assets/consumidor.png')}
                         className='w-8'
                     />
                     <p className="font-bold text-green-600">Consumidor</p>

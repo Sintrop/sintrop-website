@@ -45,7 +45,7 @@ const Produtor: NextPage = () => {
                             src={require('../assets/token.png')}
                             quality={100}
                             alt='Logo da sintrop'
-                            className='w-[650px] h-[650px] ml-[-20px] lg:ml-0 object-cover'
+                            className='w-[650px] h-[650px] object-contain'
                         />
                     </div>
                     
@@ -123,19 +123,26 @@ const Produtor: NextPage = () => {
                         alt='Planilha de distribuição de token dos produtores'
                         src={require('../assets/planilha-1.png')}
                         quality={100}
-                        className='lg:w-[1000px] h-[300px] object-contain' 
+                        className='hidden lg:flex lg:w-[1000px] h-[300px] object-contain' 
+                    />
+
+                    <Image
+                        alt='Planilha de distribuição de token dos produtores'
+                        src={require('../assets/tabela-mobile-produtor.png')}
+                        quality={100}
+                        className='lg:hidden object-contain' 
                     />
                 </section>
 
-                <section className='flex flex-col justify-center w-[100%] items-center bg-[#DAECC4]'>
-                    <div className='flex flex-col items-center gap-20 lg:flex-row '>
-                        <div className='flex flex-col gap-2 h-[450px] lg:w-[400px] pt-24'>
-                            <h2 className='font-bold text-xl text-[#68a021]'>Inscreva-se para participar do primeiro teste do sistema</h2>
-                            <p className='text-justify'>Estamos buscando os primeiros produtores rurais regenerativos para participar do teste de operação. Se você é um produtor que trabalha com agrofloresta, agricultura sintrópica ou qualquer outra forma de regeneração da natureza entre em contato conosco!</p>
+                <section className='flex flex-col justify-center py-10 lg:py-0 w-[100%] items-center bg-[#DAECC4]'>
+                    <div className='flex flex-col items-center justify-center lg:gap-20 lg:flex-row '>
+                        <div className='flex flex-col gap-2 justify-center lg:h-[450px] lg:w-[400px]'>
+                            <h2 className='font-bold text-xl text-[#68a021] mx-2'>Inscreva-se para participar do primeiro teste do sistema</h2>
+                            <p className='text-justify mx-2'>Estamos buscando os primeiros produtores rurais regenerativos para participar do teste de operação. Se você é um produtor que trabalha com agrofloresta, agricultura sintrópica ou qualquer outra forma de regeneração da natureza entre em contato conosco!</p>
                             <Link 
                                 target='_blank'
-                                href='https://google.com.br' 
-                                className='mt-5 bg-[#68A021] w-56 h-14 rounded flex items-center justify-center'
+                                href='https://docs.google.com/forms/d/e/1FAIpQLSeh0OgWqr_UuZBy4UUvgWG521zLeMVqx6wQu77mrJdhXDBAPQ/viewform?usp=sf_link' 
+                                className='mt-5 bg-[#68A021] w-56 h-14 rounded flex items-center justify-center mx-2'
                             >
                                 <p className='font-bold text-white text-lg text-center'>Me inscrever</p>
                             </Link>
@@ -145,7 +152,7 @@ const Produtor: NextPage = () => {
                             src={require('../assets/globo.png')}
                             quality={100}
                             alt='Globo tecnológico'
-                            className='w-[335px] h-[350px] object-cover'
+                            className='w-[360px] h-[350px] object-contain'
                         />
                     </div>
                 </section>

@@ -1,6 +1,3 @@
-import Image from "next/image";
-import Img1 from '../assets/img-1.png';
-
 interface Props{
     title: string;
     cardCenter?: boolean;

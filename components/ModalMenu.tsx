@@ -12,7 +12,7 @@ export function ModalMenu({close}: Props){
     return(
         <div 
             onClick={close}
-            className="flex fixed top-0 left-0 w-[100vw] h-[100vh] items-center justify-center bg-[rgba(0,0,0,0.9)]"
+            className="flex fixed top-0 left-0 w-[100vw] h-[100vh] items-center justify-center bg-[rgba(0,0,0,0.9)] z-10"
         >
             <div className="flex flex-col items-center gap-5">
                 <Link 

@@ -30,7 +30,7 @@ export function Header(){
                         src={require('../assets/icon-menu.png')}
                         quality={100}
                         alt='Icon Menu'
-                        className='w-[50px] h-[50px] lg:hidden'
+                        className='w-[40px] h-[40px] lg:hidden'
                     />
                 </button>
             </div>

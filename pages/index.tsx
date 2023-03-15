@@ -65,44 +65,6 @@ const Home: NextPage = () => {
                             title='Melhor distribuição de renda'
                         />
                     </div>
-
-                    <div className='flex flex-wrap gap-10 justify-center mt-16 lg:w-[1000px]'>
-                        <Card2
-                            title='ISA'
-                            description='Índice de Sustentabilidade na Agricultura para medir o impacto dos produtores em uma escala.'
-                            img='isa'
-                        />
-
-                        <Card2
-                            title='TRANSPARÊNCIA'
-                            description='Todos dados são armazenados na rede Ethereum e aberto a todos.'
-                            img='transparent'
-                        />
-
-                        <Card2
-                            title='COMUNIDADE'
-                            description='Desenvolvido e operado por comunidade.'
-                            img='comunidade'
-                        />
-                    
-                        <Card2
-                            title='rCC TOKEN'
-                            description='Token Crédito de Carbono Regenerativo para recompensar produtores sustentáveis e comunidade pelos serviços ambientais.'
-                            img='sac-token'
-                        />
-
-                        <Card2
-                            title='OPEN SOURCE'
-                            description='Nosso projeto de certificação é colaborativo e de código aberto'
-                            img='open-source'
-                        />
-
-                        <Card2
-                            title='DESCENTRALIZADO'
-                            description='Sistema de inspeção descentralizado para auditar os produtores de alimentos.'
-                            img='cpu'
-                        />
-                    </div>
                 </section>
 
                 <section className='flex flex-col justify-center w-[100vw] py-10 items-center bg-green-100 lg:gap-40 lg:flex-row'>
@@ -111,7 +73,7 @@ const Home: NextPage = () => {
                             src={require('../assets/token.png')}
                             quality={100}
                             alt='Logo da sintrop'
-                            className='lg:w-[650px] lg:h-[650px] lg:object-cover'
+                            className='lg:w-[650px] lg:h-[650px] object-contain'
                         />
                     </div>
                     
@@ -123,6 +85,45 @@ const Home: NextPage = () => {
                         </button>
                     </div>
                 </section>
+
+                <section className='flex flex-wrap gap-10 justify-center py-10 lg:w-[1000px]'>
+                    <Card2
+                        title='ISA'
+                        description='Índice de Sustentabilidade na Agricultura para medir o impacto dos produtores em uma escala.'
+                        img='isa'
+                    />
+
+                    <Card2
+                        title='TRANSPARÊNCIA'
+                        description='Todos dados são armazenados na rede Ethereum e aberto a todos.'
+                        img='transparent'
+                    />
+
+                    <Card2
+                        title='COMUNIDADE'
+                        description='Desenvolvido e operado por comunidade.'
+                        img='comunidade'
+                    />
+                    
+                    <Card2
+                        title='rCC TOKEN'
+                        description='Token Crédito de Carbono Regenerativo para recompensar produtores sustentáveis e comunidade pelos serviços ambientais.'
+                        img='sac-token'
+                    />
+
+                    <Card2
+                        title='OPEN SOURCE'
+                        description='Nosso projeto de certificação é colaborativo e de código aberto'
+                        img='open-source'
+                    />
+
+                    <Card2
+                        title='DESCENTRALIZADO'
+                        description='Sistema de inspeção descentralizado para auditar os produtores de alimentos.'
+                        img='cpu'
+                    />
+                </section>
+
 
                 <section className='flex flex-col w-[100%] h-[500px] items-center justify-center bg-[url("../assets/bg-3.png")] bg-cover'>
                     <div className='flex items-center justify-center flex-col w-[100%] h-[100%] bg-[rgba(0,0,0,0.4)]'>
@@ -173,7 +174,7 @@ const Home: NextPage = () => {
                         </p>
                     </div>
 
-                    <div className='flex flex-wrap gap-12 justify-center lg:w-[100%] my-20'>
+                    <div className='flex flex-wrap gap-14 justify-center lg:w-[100%] my-20'>
                         <Card3
                             title='Produtor'
                             description="Produtores de alimentos que estejam regenerando o local através do seu trabalho."
@@ -195,13 +196,13 @@ const Home: NextPage = () => {
                         <Card3
                             title='Investidor'
                             description="Pessoas e empresas que poderão comprar tokens dos produtores para usar na plataforma para compensar seu impacto negativo do passado"
-                            img='isa'
+                            img='investidor'
                         />
 
                         <Card3
                             title='Consumidor'
                             description="Pessoas e empresas que poderão comprar tokens dos produtores para usar na plataforma para compensar seu impacto negativo do passado"
-                            img='isa'
+                            img='consumidor'
                         />
                     </div>
                 </section>
