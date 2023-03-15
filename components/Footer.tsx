@@ -37,7 +37,7 @@ export function Footer(){
                 className='w-[257px] h-[98px] object-cover mt-10'
             />
             <p className='text-white text-lg text-center lg:w-[800px] mt-[-40px]'>
-                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries.
+                
             </p> 
             <nav className='hidden items-center gap-10 flex-wrap justify-center lg:flex'>
                 <Link 

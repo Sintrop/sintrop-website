@@ -3,6 +3,7 @@ import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
 import { BtnWhats } from "../components/BtnWhats";
+import { Card5 } from "../components/Card5";
 import { Footer } from "../components/Footer";
 import { Header } from "../components/Header";
 
@@ -15,7 +16,7 @@ const Pesquisador: NextPage = () => {
                 <link rel='icon' type='image/png' href='/favicon.png'/>
             </Head>
             <div className='flex flex-col items-center w-[100vw]'>
-                <div className='flex flex-col w-[100%] items-center bg-[url("../assets/bg-9.png")] bg-cover lg:h-[500px]'>
+                <div className='flex flex-col w-[100%] items-center bg-[url("../assets/bg-9.png")] bg-cover lg:h-[600px]'>
                     <div className='w-[100%] h-[100%] bg-[rgba(0,0,0,0.4)] flex flex-col items-center p-2 lg:py-20 lg:p-10'>
                         <Header/>
                         <div className='flex flex-col items-center w-[100%] lg:items-start lg:w-[1000px]'>
@@ -40,10 +41,14 @@ const Pesquisador: NextPage = () => {
                     </div>
                 </div>
 
-                <h3 className='font-bold text-center text-[#68A021] text-xl mt-10'>
-                    Faça parte da rede de pesquisadores do sistema
-                </h3>
-                <p className='text-center mx-2'>Buscamos pesquisadores agroecológicos para desenvolver o método de avaliação e auxiliar no processo de educação e ensino dos produtores rurais.</p>
+                <section className='flex flex-col w-[100%] h-[200px] items-center justify-center bg-[url("../assets/bg-green.png")] bg-cover'>
+                    <div className='flex items-center justify-center flex-col w-[100%] h-[100%] bg-[rgba(0,0,0,0.3)]'>
+                        <h2 className='font-bold text-center text-white text-xl lg:w-[800px]'>
+                            Faça parte da rede de pesquisadores do sistema!
+                        </h2>
+                        <p className='mx-2 text-center text-white'>Buscamos pesquisadores agroecológicos para desenvolver o método de avaliação e auxiliar no processo de educação e ensino dos produtores rurais.</p>
+                    </div>
+                </section>
 
                 <section className='flex flex-col justify-center w-[100vw] py-12 items-center bg-white lg:gap-40 lg:flex-row'>
                     <div className='items-center justify-center w-[350px] h-[370px] flex'>
@@ -64,6 +69,23 @@ const Pesquisador: NextPage = () => {
                     </div>
                 </section>
 
+                <section className="flex items-center flex-wrap gap-5 justify-center w-[100%]">
+                    <Card5
+                        title="1"
+                        text="Pesquise sobre práticas  e manejos de agricultura regenerativa."
+                    />
+
+                    <Card5
+                        title="2"
+                        text="Publique suas pesquisas para o mundo."
+                    />
+
+                    <Card5
+                        title="3"
+                        text="Receba o Token Crédito de carbono Regenerativo."
+                    />
+                </section>
+
                 <section className="flex flex-col w-[100%] items-center py-10 justify-center bg-white">
                     <h3 className='font-bold text-center text-[#68A021] text-xl'>
                         Distribuição do token
@@ -81,7 +103,7 @@ const Pesquisador: NextPage = () => {
 
                 <section className='flex items-center justify-center h-[80px] w-[100vw] bg-black'>
                     <p className='text-white text-center'>
-                        © We must change now! We must save the planet and avoid climate disasters. Join us on this fight!
+                        We must change now! We must save the planet and avoid climate disasters. Join us on this fight!
                     </p>
                 </section>
             </div>

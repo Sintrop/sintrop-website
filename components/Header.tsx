@@ -3,12 +3,14 @@ import Image from "next/image";
 import Link from "next/link";
 import Logo from '../assets/logo-branco.png';
 import { ModalMenu } from "./ModalMenu";
+import { ModalComunity } from "./ModalComunity";
 
 export function Header(){
     const [modalMenu, setModalMenu]= useState(false);
+    const [modalComunity, setModalComunity]= useState(false);
 
     return(
-        <header className='flex flex-col w-[100%] justify-between lg:mb-10 lg:flex-row lg:w-[1000px]'>
+        <header className='flex flex-col w-[100%] justify-between lg:mb-20 lg:flex-row lg:w-[1000px]'>
             <div className='flex items-center justify-between'>
                 <Link
                     href='/'
@@ -41,12 +43,20 @@ export function Header(){
                     Sobre
                 </Link>
 
-                <Link 
-                    href='/#comunidade'
-                    className='font-bold text-white text-xl hover:text-green-400'
-                >
-                    Comunidade
-                </Link>
+                <div>
+                    <button 
+                        onClick={() => setModalComunity(!modalComunity)}
+                        className='font-bold text-white text-xl hover:text-green-400'
+                    >
+                        Comunidade
+                    </button>
+
+                    {modalComunity && (
+                        <ModalComunity
+                            close={() => setModalComunity(false)}
+                        />
+                    )}
+                </div>
 
                 <Link 
                     href='https://v3-sintrop.netlify.app'

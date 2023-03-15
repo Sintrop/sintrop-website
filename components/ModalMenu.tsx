@@ -1,10 +1,14 @@
+import { useState } from "react";
 import Link from "next/link";
+import { ModalComunity } from "./ModalComunity";
 
 interface Props{
     close: () => void;
 }
 
 export function ModalMenu({close}: Props){
+    const [modalComunity, setModalComunity]= useState(false);
+
     return(
         <div 
             onClick={close}

@@ -16,7 +16,7 @@ const Produtor: NextPage = () => {
                 <link rel='icon' type='image/png' href='/favicon.png'/>
             </Head>
             <div className='flex flex-col items-center w-[100vw]'>
-                <div className='flex flex-col w-[100%] items-center p-2 bg-[url("../assets/bg-4.png")] bg-cover lg:py-20 lg:p-10 lg:h-[500px]'>
+                <div className='flex flex-col w-[100%] items-center p-2 bg-[url("../assets/bg-4.png")] bg-cover lg:py-20 lg:p-10 lg:h-[600px]'>
                     <Header/>
                     <div className='flex flex-col items-center w-[100%] lg:items-start lg:w-[1000px]'>
                         <h1 className='text-2xl text-center mt-5 text-white font-bold lg:text-left lg:w-[500px]'>
@@ -59,7 +59,7 @@ const Produtor: NextPage = () => {
                 </section>
 
                 <section className='flex flex-col items-center justify-center w-[100%] py-10 bg-[#f8f8f8] lg:flex-row'>
-                    <div className='flex flex-col'>
+                    <div className='flex flex-col lg:w-[500px]'>
                         <h3 className='font-bold text-center text-[#0A4303] text-xl mx-2'>
                             Mais transparência: Certificado de agricultura regenerativa
                         </h3>
@@ -154,7 +154,7 @@ const Produtor: NextPage = () => {
 
                 <section className='flex items-center justify-center h-[80px] w-[100vw] bg-black'>
                     <p className='text-white text-center'>
-                        © We must change now! We must save the planet and avoid climate disasters. Join us on this fight!
+                        We must change now! We must save the planet and avoid climate disasters. Join us on this fight!
                     </p>
                 </section>
             </div>

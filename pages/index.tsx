@@ -19,7 +19,7 @@ const Home: NextPage = () => {
                 <link rel='icon' type='image/png' href='/favicon.png'/>
             </Head>
             <div className='flex flex-col items-center w-[100vw]'>
-                <div className='flex flex-col w-[100%] items-center p-2 bg-[url("../assets/bg-1.png")] bg-cover lg:py-20 lg:p-10 lg:h-[500px]'>
+                <div className='flex flex-col w-[100%] items-center p-2 bg-[url("../assets/bg-1.png")] bg-cover lg:py-20 lg:p-10 lg:h-[600px]'>
                     <Header/>
                     <div className='flex flex-col items-center w-[100%] lg:items-start lg:w-[1000px]'>
                         <h1 className='text-2xl text-center mt-5 text-white font-bold lg:text-left lg:w-[500px]'>
@@ -210,7 +210,7 @@ const Home: NextPage = () => {
 
                 <section className='flex items-center justify-center h-[80px] w-[100vw] bg-black'>
                     <p className='text-white text-center'>
-                        © We must change now! We must save the planet and avoid climate disasters. Join us on this fight!
+                        We must change now! We must save the planet and avoid climate disasters. Join us on this fight!
                     </p>
                 </section>
             </div>
