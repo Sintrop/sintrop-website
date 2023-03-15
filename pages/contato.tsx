@@ -53,15 +53,15 @@ const Contato: NextPage= () => {
                 <link rel='icon' type='image/png' href='/favicon.png'/>
             </Head>
             <div className='flex flex-col items-center w-[100vw]'>
-                <div className='flex flex-col w-[100%] items-center bg-[url("../assets/bg-12.png")] bg-cover lg:h-[700px]'>
+                <div className='flex flex-col w-[100%] items-center bg-[url("../assets/bg-12.png")] bg-cover lg:h-[500px]'>
                     <div className='w-[100%] h-[100%] bg-[rgba(0,0,0,0.4)] flex flex-col items-center p-2 lg:py-20 lg:p-10'>
                         <Header/>
                         <div className='flex flex-col items-center w-[100%] lg:items-start lg:w-[1000px]'>
-                            <h1 className='text-3xl text-center mt-5 text-white font-bold lg:text-left lg:w-[500px]'>
+                            <h1 className='text-2xl text-center mt-5 text-white font-bold lg:text-left lg:w-[500px]'>
                                 Entre em contato conosco
                             </h1>
 
-                            <p className='mt-5 text-xl text-white text-center lg:text-left lg:w-[700px]'>
+                            <p className='mt-5 text-lg text-white text-center lg:text-left lg:w-[700px]'>
                                 Ficou alguma dúvida? Estaremos prontos para te esclarecer tudo, e juntos
                                 <span className='font-bold text-white'> Mudar o mundo!</span>
                             </p>
@@ -72,8 +72,8 @@ const Contato: NextPage= () => {
 
             <section id='contato' className='flex flex-col bg-white gap-20 w-[100%] py-10 justify-center lg:flex-row'>
                 <div className='flex flex-col lg:w-[400px]'>
-                        <h3 className='font-bold text-2xl'>Contate-nos</h3>
-                        <p className='text-xl'>
+                        <h3 className='font-bold text-xl mx-2'>Contate-nos</h3>
+                        <p className='text-lg mx-2'>
                             Em caso de dúvidas, investimentos ou queira participar do primeiro teste da plataforma, envie-nos sua mensagem.
                         </p>
                 </div>
@@ -81,7 +81,7 @@ const Contato: NextPage= () => {
                     onSubmit={handleSendEmail}
                     className='flex flex-col gap-5 p-5 bg-white rounded-lg lg:w-[400px]'
                 >
-                    <h2 className='text-black text-2xl font-bold'>Contato</h2>
+                    <h2 className='text-black text-xl font-bold'>Contato</h2>
                     <input
                         value={name}
                         onChange={(e) => setName(e.target.value)}

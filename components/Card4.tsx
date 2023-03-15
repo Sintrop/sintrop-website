@@ -15,7 +15,7 @@ export function Card4({title, img}: Props){
                 className='w-[60px] h-[60px] object-contain'
             />
 
-            <h1 className='font-bold text-[#0A4303] text-2xl'>
+            <h1 className='font-bold text-[#0A4303] text-xl'>
                 {title}
             </h1>
         </div>

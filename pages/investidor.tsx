@@ -28,15 +28,15 @@ const Investidor: NextPage = () => {
                 <link rel='icon' type='image/png' href='/favicon.png'/>
             </Head>
             <div className='flex flex-col items-center w-[100vw]'>
-                <div className='flex flex-col w-[100%] items-center bg-[url("../assets/bg-5.png")] bg-cover lg:h-[700px]'>
+                <div className='flex flex-col w-[100%] items-center bg-[url("../assets/bg-5.png")] bg-cover lg:h-[500px]'>
                     <div className='w-[100%] h-[100%] bg-[rgba(0,0,0,0.4)] flex flex-col items-center p-2 lg:py-20 lg:p-10'>
                         <Header/>
                         <div className='flex flex-col items-center w-[100%] lg:items-start lg:w-[1000px]'>
-                            <h1 className='text-3xl text-center mt-5 text-white font-bold lg:text-left lg:w-[500px]'>
+                            <h1 className='text-2xl text-center mt-5 text-white font-bold lg:text-left lg:w-[500px]'>
                                 Oportunidade para Investidores
                             </h1>
 
-                            <p className='mt-5 text-xl text-white text-center lg:text-left lg:w-[700px]'>
+                            <p className='mt-5 text-lg text-white text-center lg:text-left lg:w-[700px]'>
                                 Invista na
                                 <span className='font-bold text-white'> Regeneração do Planeta</span>.
                             </p>
@@ -45,8 +45,8 @@ const Investidor: NextPage = () => {
                                 href={`https://sintrop.com/whitepaper.pdf`}
                                 target='_blank'
                             >
-                                <button className='mt-5 bg-[#68A021] w-72 h-16 rounded mb-10'>
-                                    <p className='font-bold text-white text-xl'>Download Whitepaper</p>
+                                <button className='mt-5 bg-[#68A021] w-72 h-14 rounded mb-10'>
+                                    <p className='font-bold text-white text-lg'>Download Whitepaper</p>
                                 </button>
                             </Link>
                         </div>
@@ -54,7 +54,7 @@ const Investidor: NextPage = () => {
                 </div>
 
                 <section className='flex flex-col items-center w-[100%] bg-white py-10'>
-                    <h3 className='font-bold text-center text-[#0A4303] text-2xl'>
+                    <h3 className='font-bold text-center text-[#0A4303] text-xl'>
                         O problema
                     </h3>
                     <p className='text-center mb-10'>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Corporis nesciunt facilis soluta ab sapiente. Ut cupiditate sed repudiandae.</p>
@@ -97,13 +97,13 @@ const Investidor: NextPage = () => {
                     </div>
                     
                     <div className='flex flex-col px-5 gap-3 lg:w-[500px]'>
-                        <h2 className='font-bold text-2xl text-[#68a021]'>O caminho</h2>
+                        <h2 className='font-bold text-xl text-[#68a021]'>O caminho</h2>
                         <p className='text-justify'>A taxa de degeneração atualmente é muito maior que a de regeneração. Esse é o caminho do colapso. Precisamos urgente como sociedade mudar nosso sistema de produção e tornar a agricultura regenerativa. Quando atingirmos o ponto de inflexão o planeta se regenerará e o resultado será a reversão do aquecimento global, aumento da biodiversidade, segurança alimentar e restauração da água.</p>
                     </div>
                 </section>
 
                 <section className='flex flex-col items-center w-[100%] bg-white py-10'>
-                    <h3 className='font-bold text-center text-[#68a021] text-2xl'>
+                    <h3 className='font-bold text-center text-[#68a021] text-xl'>
                         A solução
                     </h3>
                     <p className='text-center mb-10'>Token Crédito de Carbono Regenerativo</p>

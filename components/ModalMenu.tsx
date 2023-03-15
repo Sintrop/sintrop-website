@@ -14,15 +14,15 @@ export function ModalMenu({close}: Props){
                 <Link 
                     href='/'
                     onClick={close}
-                    className='font-bold h-12 text-white text-xl hover:text-green-400'
+                    className='font-bold h-12 text-white text-lg hover:text-green-400'
                 >
                     Home
                 </Link>
 
                 <Link 
-                    href='/#sobre'
+                    href='/sobre'
                     onClick={close}
-                    className='font-bold h-12 text-white text-xl hover:text-green-400'
+                    className='font-bold h-12 text-white text-lg hover:text-green-400'
                 >
                     Sobre
                 </Link>
@@ -30,7 +30,7 @@ export function ModalMenu({close}: Props){
                 <Link 
                     href='/#comunidade'
                     onClick={close}
-                    className='font-bold h-12 text-white text-xl hover:text-green-400'
+                    className='font-bold h-12 text-white text-lg hover:text-green-400'
                 >
                     Comunidade
                 </Link>
@@ -39,15 +39,15 @@ export function ModalMenu({close}: Props){
                     href='https://v3-sintrop.netlify.app'
                     target='_blank'
                     onClick={close}
-                    className='font-bold h-12 text-white text-xl hover:text-green-400'
+                    className='font-bold h-12 text-white text-lg hover:text-green-400'
                 >
                     App
                 </Link>
 
                 <Link 
-                    href='/#contato'
+                    href='/contato'
                     onClick={close}
-                    className='font-bold h-12 text-white text-xl hover:text-green-400'
+                    className='font-bold h-12 text-white text-lg hover:text-green-400'
                 >
                     Contato
                 </Link> 

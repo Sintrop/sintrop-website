@@ -19,14 +19,14 @@ const Home: NextPage = () => {
                 <link rel='icon' type='image/png' href='/favicon.png'/>
             </Head>
             <div className='flex flex-col items-center w-[100vw]'>
-                <div className='flex flex-col w-[100%] items-center p-2 bg-[url("../assets/bg-1.png")] bg-cover lg:py-20 lg:p-10 lg:h-[700px]'>
+                <div className='flex flex-col w-[100%] items-center p-2 bg-[url("../assets/bg-1.png")] bg-cover lg:py-20 lg:p-10 lg:h-[500px]'>
                     <Header/>
                     <div className='flex flex-col items-center w-[100%] lg:items-start lg:w-[1000px]'>
-                        <h1 className='text-3xl text-center mt-5 text-white font-bold lg:text-left lg:w-[500px]'>
+                        <h1 className='text-2xl text-center mt-5 text-white font-bold lg:text-left lg:w-[500px]'>
                             Nossa missão é incentivar a regeneração do planeta!
                         </h1>
 
-                        <p className='mt-5 text-xl text-white text-center lg:text-left lg:w-[700px]'>
+                        <p className='mt-5 text-lg text-white text-center lg:text-left lg:w-[700px]'>
                             Sistema descentralizado de certificação de 
                             <span className='font-bold text-white'> Agricultura Regenerativa</span>.
                         </p>
@@ -35,34 +35,13 @@ const Home: NextPage = () => {
                             href={`https://sintrop.com/whitepaper.pdf`}
                             target='_blank'
                         >
-                            <button className='mt-5 bg-[#68A021] w-72 h-16 rounded mb-10'>
-                                <p className='font-bold text-white text-xl'>Download Whitepaper</p>
+                            <button className='mt-5 bg-[#68A021] w-72 h-14 rounded mb-10'>
+                                <p className='font-bold text-white text-lg'>Download Whitepaper</p>
                             </button>
                         </Link>
                     </div>
                 </div>
-
-                <section id='sobre' className='flex justify-center w-[100vw] py-12 items-center bg-[#f3ffe1] gap-40'>
-                    <div className='hidden items-center justify-center w-[350px] h-[370px] lg:flex'>
-                        <Image 
-                            src={require('../assets/token.png')}
-                            quality={100}
-                            alt='Logo da sintrop'
-                            className='w-[650px] h-[650px] object-cover'
-                        />
-                    </div>
-                    
-                    <div className='flex flex-col px-5 gap-3 lg:w-[450px]'>
-                        <h2 className='font-bold text-2xl text-[#68a021]'>Token Crédito de Carbono Regenerativo</h2>
-                        <p className='text-justify'>Token com modelo de distribuição algorítmico programado para ser distribuído ao longo das próximas décadas para produtores regenerativos e comunidade pelos serviços ambientais ecossistêmicos prestados a sociedade.</p>
-                        <button className='mt-5 bg-[#68A021] w-56 h-16 rounded'>
-                            <p className='font-bold text-white text-xl'>Saber Mais</p>
-                        </button>
-                    </div>
-                </section>
-
-
-                <section className='flex flex-col items-center justify-center mt-5 mb-5 pb-16'>
+                <section className='flex flex-col items-center bg-white w-[100%] justify-center mt-5 pb-16'>
                     <Image 
                         src={require('../assets/arvore-2.png')}
                         quality={100}
@@ -70,7 +49,7 @@ const Home: NextPage = () => {
                         className='w-[250px] h-[188px]'
                     />
 
-                    <h2 className='font-bold px-5 text-center text-[#0A4303] text-2xl'>
+                    <h2 className='font-bold px-5 text-center text-[#0A4303] text-xl'>
                         Blockchain + Agroecologia para lutar pela:
                     </h2>
 
@@ -126,9 +105,28 @@ const Home: NextPage = () => {
                     </div>
                 </section>
 
+                <section className='flex flex-col justify-center w-[100vw] py-10 items-center bg-green-100 lg:gap-40 lg:flex-row'>
+                    <div className='flex items-center justify-center w-[350px] h-[370px]'>
+                        <Image 
+                            src={require('../assets/token.png')}
+                            quality={100}
+                            alt='Logo da sintrop'
+                            className='lg:w-[650px] lg:h-[650px] lg:object-cover'
+                        />
+                    </div>
+                    
+                    <div className='flex flex-col px-5 gap-3 lg:w-[450px]'>
+                        <h2 className='font-bold text-lg text-[#68a021]'>Token Crédito de Carbono Regenerativo</h2>
+                        <p className='text-justify'>Token com modelo de distribuição algorítmico programado para ser distribuído ao longo das próximas décadas para produtores regenerativos e comunidade pelos serviços ambientais ecossistêmicos prestados a sociedade.</p>
+                        <button className='mt-5 bg-[#68A021] w-56 h-14 rounded'>
+                            <p className='font-bold text-white text-lg'>Saber Mais</p>
+                        </button>
+                    </div>
+                </section>
+
                 <section className='flex flex-col w-[100%] h-[500px] items-center justify-center bg-[url("../assets/bg-3.png")] bg-cover'>
-                    <div className='flex items-center justify-center flex-col w-[100%] h-[100%] bg-[rgba(0,0,0,0.3)]'>
-                        <h2 className='font-bold text-center text-white text-3xl lg:w-[800px]'>
+                    <div className='flex items-center justify-center flex-col w-[100%] h-[100%] bg-[rgba(0,0,0,0.4)]'>
+                        <h2 className='font-bold text-center text-white text-2xl mx-2 lg:w-[800px]'>
                             Ou a agricultura vai salvar a Terra, ou a destruir. De qual lado você vai estar?
                         </h2>
 
@@ -136,8 +134,8 @@ const Home: NextPage = () => {
                             href={`https://sintrop.com/whitepaper.pdf`}
                             target='_blank'
                         >
-                            <button className='mt-5 bg-[#68A021] w-72 h-16 rounded mb-10'>
-                                <p className='font-bold text-white text-xl'>Download Whitepaper</p>
+                            <button className='mt-5 bg-[#68A021] w-72 h-14 rounded mb-10'>
+                                <p className='font-bold text-white text-lg'>Download Whitepaper</p>
                             </button>
                         </Link>
                     </div>
@@ -146,14 +144,14 @@ const Home: NextPage = () => {
                 <section className='flex flex-col justify-center w-[100vw] items-center bg-white'>
                     <div className='flex flex-col items-center gap-20 lg:flex-row '>
                         <div className='flex flex-col gap-2 h-[450px] lg:w-[400px] pt-24'>
-                            <h2 className='font-bold text-2xl text-[#68a021]'>Desenvolvido e operado por comunidade</h2>
-                            <p className='text-justify'>Nossa comunidade é feita de desenvolvedores, pesquisadores, conselheiros, ativistas ambientais e produtores rurais.</p>
+                            <h2 className='font-bold text-xl text-[#68a021] mx-2'>Desenvolvido e operado por comunidade</h2>
+                            <p className='text-justify mx-2'>Nossa comunidade é feita de desenvolvedores, pesquisadores, conselheiros, ativistas ambientais e produtores rurais.</p>
                             <Link 
                                 target='_blank'
                                 href='https://discord.com/invite/s5MfeqcPm8' 
-                                className='mt-5 bg-[#68A021] w-56 h-16 rounded flex items-center justify-center'
+                                className='mt-5 bg-[#68A021] w-64 h-14 rounded flex items-center justify-center mx-2'
                             >
-                                <p className='font-bold text-white text-xl text-center'>Junte-se ao nosso discord</p>
+                                <p className='font-bold text-white text-lg text-center'>Junte-se ao nosso discord</p>
                             </Link>
                         </div>
 
@@ -161,21 +159,21 @@ const Home: NextPage = () => {
                             src={ImgComunidade}
                             quality={100}
                             alt='Pessoas se comunicando'
-                            className='hidden w-[440px] h-[350px] object-cover lg:flex'
+                            className='hidden w-[440px] h-[350px] object-cover lg:flex '
                         />
                     </div>
 
                     <div id='comunidade'>
-                        <h3 className='font-bold text-center text-[#0A4303] text-2xl'>
+                        <h3 className='font-bold text-center text-[#0A4303] text-xl'>
                             A comunidade
                         </h3>
 
-                        <p className='text-center text-[#2b2b2b] text-xl lg:w-[800px]'>
+                        <p className='text-center text-[#2b2b2b] text-lg lg:w-[800px] mx-2'>
                             Nosso projeto é descentralizado e guiado por comunidade. Estamos criando a lógica de funcionamento do Sistema para publicá-la na rede Ethereum e convidar produtores, ativistas, pesquisadores e toda comunidade para participar do Sistema de forma totalmente descentralizada.
                         </p>
                     </div>
 
-                    <div className='flex flex-wrap gap-12 justify-center lg:w-[1200px] my-20'>
+                    <div className='flex flex-wrap gap-12 justify-center lg:w-[100%] my-20'>
                         <Card3
                             title='Produtor'
                             description="Produtores de alimentos que estejam regenerando o local através do seu trabalho."
@@ -196,6 +194,12 @@ const Home: NextPage = () => {
 
                         <Card3
                             title='Investidor'
+                            description="Pessoas e empresas que poderão comprar tokens dos produtores para usar na plataforma para compensar seu impacto negativo do passado"
+                            img='isa'
+                        />
+
+                        <Card3
+                            title='Consumidor'
                             description="Pessoas e empresas que poderão comprar tokens dos produtores para usar na plataforma para compensar seu impacto negativo do passado"
                             img='isa'
                         />

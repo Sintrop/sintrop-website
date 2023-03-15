@@ -8,7 +8,7 @@ export function Header(){
     const [modalMenu, setModalMenu]= useState(false);
 
     return(
-        <header className='flex flex-col w-[100%] justify-between lg:mb-36 lg:flex-row lg:w-[1000px]'>
+        <header className='flex flex-col w-[100%] justify-between lg:mb-10 lg:flex-row lg:w-[1000px]'>
             <div className='flex items-center justify-between'>
                 <Link
                     href='/'
