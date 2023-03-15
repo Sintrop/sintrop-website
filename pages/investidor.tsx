@@ -57,7 +57,7 @@ const Investidor: NextPage = () => {
                     <h3 className='font-bold text-center text-[#0A4303] text-xl'>
                         O problema
                     </h3>
-                    <p className='text-center mb-10'>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Corporis nesciunt facilis soluta ab sapiente. Ut cupiditate sed repudiandae.</p>
+                    <p className='text-center mb-10'></p>
                 
                     {chooseMap ? (
                         <div className="flex flex-col">
