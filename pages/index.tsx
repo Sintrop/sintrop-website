@@ -15,15 +15,15 @@ const Home: NextPage = () => {
     return (
         <div>
             <Head>
-                <title>Sintrop - Agricultura Regenerativa</title>
-                <meta name='description' content='Bem vindo ao site da regeneração do mundo'/>
+                <title>Sintrop - Tecnologia e Sustentabilidade</title>
+                <meta name='description' content='Nossa missão é regenerar o planeta através da tecnologia. Conheça nosso Sistema e o Token Crédito de Carbono Regenerativo.'/>
                 <meta name="keywords" content="Agricultura, Regeneração, Sustentabilidade, Produtores regenerativos, comunidade"/>
                 <meta name="robots" content="index,follow"/>
                 <meta name="googlebot" content="index,follow"/>
                 <meta property="og:type" content="website"/>
                 <meta property="og:url" content="https://sintrop.com"/>
-                <meta property="og:title" content="Sintrop - Agricultura Regenerativa"/>
-                <meta property="og:description" content="Bem vindo ao site da regeneração do mundo"/>
+                <meta property="og:title" content="Sintrop - Tecnologia e Sustentabilidade"/>
+                <meta property="og:description" content="Nossa missão é regenerar o planeta através da tecnologia. Conheça nosso Sistema e o Token Crédito de Carbono Regenerativo."/>
                 <meta property="og:locale" content="pt_BR"/>
                 <link rel="canonical" href="https://sintrop.com"/>
                 <link rel='icon' type='image/png' href='/favicon.png'/>
