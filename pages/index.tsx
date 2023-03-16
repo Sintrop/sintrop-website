@@ -54,6 +54,7 @@ const Home: NextPage = () => {
                         </div>
                     </div>
                 </div>
+                
                 <section className='flex flex-col items-center bg-white w-[100%] justify-center mt-5 pb-16'>
                     <Image 
                         src={require('../assets/arvore-2.png')}
