@@ -16,29 +16,39 @@ const Home: NextPage = () => {
             <Head>
                 <title>Sintrop - Agricultura Regenerativa</title>
                 <meta name='description' content='Bem vindo ao site da regeneração do mundo'/>
+                <meta name="keywords" content="Agricultura, Regeneração, Sustentabilidade, Produtores regenerativos, comunidade"/>
+                <meta name="robots" content="index,follow"/>
+                <meta name="googlebot" content="index,follow"/>
+                <meta property="og:type" content="website"/>
+                <meta property="og:url" content="https://sintrop.com"/>
+                <meta property="og:title" content="Sintrop - Agricultura Regenerativa"/>
+                <meta property="og:description" content="Bem vindo ao site da regeneração do mundo"/>
+                <meta property="og:locale" content="pt_BR"/>
+                <link rel="canonical" href="https://sintrop.com"/>
                 <link rel='icon' type='image/png' href='/favicon.png'/>
             </Head>
             <div className='flex flex-col items-center w-[100vw]'>
-                <div className='flex flex-col w-[100%] items-center p-2 bg-[url("../assets/bg-1.png")] bg-cover lg:py-20 lg:p-10 lg:h-[600px]'>
-                    <Header/>
-                    <div className='flex flex-col items-center w-[100%] lg:items-start lg:w-[1000px]'>
-                        <h1 className='text-2xl text-center mt-5 text-white font-bold lg:text-left lg:w-[500px]'>
-                            Nossa missão é incentivar a regeneração do planeta!
-                        </h1>
+                <div className='flex flex-col w-[100%] h-[500px] items-center bg-[url("../assets/bg-11.png")] bg-cover bg-center lg:h-[600px]'>
+                    <div className='w-[100%] h-[100%] bg-[rgba(0,0,0,0.5)] flex flex-col items-center p-2 lg:py-20 lg:p-10'>
+                        <Header/>
+                        <div className='flex flex-col mt-32 items-center w-[100%] lg:items-start lg:w-[1000px] lg:mt-0'>
+                            <h2 className='text-2xl text-center mt-5 text-white font-bold lg:text-left lg:w-[500px]'>
+                                Nossa missão é incentivar a regeneração do planeta!
+                            </h2>
 
-                        <p className='mt-5 text-lg text-white text-center lg:text-left lg:w-[700px]'>
-                            Sistema descentralizado de certificação de 
-                            <span className='font-bold text-white'> Agricultura Regenerativa</span>.
-                        </p>
+                            <h3 className='mt-5 text-lg text-white text-center lg:text-left lg:w-[700px]'>
+                                Sistema descentralizado de certificação de 
+                                <span className='font-bold text-white'> Agricultura Regenerativa</span>.
+                            </h3>
 
-                        <Link
-                            href={`https://sintrop.com/whitepaper.pdf`}
-                            target='_blank'
-                        >
-                            <button className='mt-5 bg-[#68A021] w-72 h-14 rounded mb-10'>
+                            <Link
+                                href={`https://website-react-qdux.vercel.app/whitepaper.pdf`}
+                                target='_blank'
+                                className='mt-5 bg-[#68A021] w-72 h-14 rounded mb-10 flex items-center justify-center'
+                            >
                                 <p className='font-bold text-white text-lg'>Download Whitepaper</p>
-                            </button>
-                        </Link>
+                            </Link>
+                        </div>
                     </div>
                 </div>
                 <section className='flex flex-col items-center bg-white w-[100%] justify-center mt-5 pb-16'>
@@ -68,7 +78,7 @@ const Home: NextPage = () => {
                 </section>
 
                 <section className='flex flex-col justify-center w-[100vw] py-10 items-center bg-green-100 lg:gap-40 lg:flex-row'>
-                    <div className='flex items-center justify-center w-[350px] h-[370px]'>
+                    <div className='flex items-center justify-center lg:w-[350px] h-[370px]'>
                         <Image 
                             src={require('../assets/token.png')}
                             quality={100}
@@ -80,9 +90,6 @@ const Home: NextPage = () => {
                     <div className='flex flex-col px-5 gap-3 lg:w-[450px]'>
                         <h2 className='font-bold text-lg text-[#68a021]'>Token Crédito de Carbono Regenerativo</h2>
                         <p className='text-justify'>Token com modelo de distribuição algorítmico programado para ser distribuído ao longo das próximas décadas para produtores regenerativos e comunidade pelos serviços ambientais ecossistêmicos prestados a sociedade.</p>
-                        <button className='mt-5 bg-[#68A021] w-56 h-14 rounded'>
-                            <p className='font-bold text-white text-lg'>Saber Mais</p>
-                        </button>
                     </div>
                 </section>
 
@@ -132,12 +139,11 @@ const Home: NextPage = () => {
                         </h2>
 
                         <Link
-                            href={`https://sintrop.com/whitepaper.pdf`}
+                            href={`https://website-react-qdux.vercel.app/whitepaper.pdf`}
                             target='_blank'
+                            className='mt-5 bg-[#68A021] w-72 h-14 rounded mb-10 flex items-center justify-center'
                         >
-                            <button className='mt-5 bg-[#68A021] w-72 h-14 rounded mb-10'>
-                                <p className='font-bold text-white text-lg'>Download Whitepaper</p>
-                            </button>
+                            <p className='font-bold text-white text-lg'>Download Whitepaper</p>
                         </Link>
                     </div>
                 </section>

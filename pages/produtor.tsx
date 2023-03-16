@@ -13,12 +13,23 @@ const Produtor: NextPage = () => {
             <Head>
                 <title>Produtor - Sintrop</title>
                 <meta name='description' content='Papel do produtor na comunidade'/>
+                <meta name="keywords" content="Agricultura, Regeneração, Sustentabilidade, Produtores regenerativos, comunidade"/>
+                <meta name="robots" content="index,follow"/>
+                <meta name="googlebot" content="index,follow"/>
+                <meta property="og:type" content="website"/>
+                <meta property="og:url" content="https://sintrop.com/produtor"/>
+                <meta property="og:title" content="Produtor - Sintrop"/>
+                <meta property="og:description" content="O papel do produtor dentro da Sintrop"/>
+                <meta property="og:locale" content="pt_BR"/>
+                <meta property="og:image"content="a definir"/>
+                <link rel="canonical" href="https://sintrop.com"/>
                 <link rel='icon' type='image/png' href='/favicon.png'/>
             </Head>
             <div className='flex flex-col items-center w-[100vw]'>
-                <div className='flex flex-col w-[100%] items-center p-2 bg-[url("../assets/bg-4.png")] bg-cover lg:py-20 lg:p-10 lg:h-[600px]'>
+                <div className='flex flex-col w-[100%] h-[500px] items-center bg-[url("../assets/bg-11.png")] bg-cover bg-center lg:h-[600px]'>
+                    <div className='w-[100%] h-[100%] bg-[rgba(0,0,0,0.5)] flex flex-col items-center p-2 lg:py-20 lg:p-10'>
                     <Header/>
-                    <div className='flex flex-col items-center w-[100%] lg:items-start lg:w-[1000px]'>
+                    <div className='flex flex-col mt-32 items-center w-[100%] lg:items-start lg:w-[1000px] lg:mt-0'>
                         <h1 className='text-2xl text-center mt-5 text-white font-bold lg:text-left lg:w-[500px]'>
                         Oportunidade para Produtores Rurais Regenerativos
                         </h1>
@@ -29,7 +40,7 @@ const Produtor: NextPage = () => {
                         </p>
 
                         <Link
-                            href={`https://sintrop.com/whitepaper.pdf`}
+                            href={`https://website-react-qdux.vercel.app/whitepaper.pdf`}
                             target='_blank'
                         >
                             <button className='mt-5 bg-[#68A021] w-72 h-14 rounded mb-10'>
@@ -37,10 +48,11 @@ const Produtor: NextPage = () => {
                             </button>
                         </Link>
                     </div>
+                    </div>
                 </div>
 
                 <section className='flex flex-col justify-center w-[100vw] py-12 items-center bg-white lg:gap-40 lg:flex-row'>
-                    <div className='flex items-center justify-center w-[350px] h-[370px] '>
+                    <div className='flex items-center justify-center lg:w-[350px] h-[370px] '>
                         <Image 
                             src={require('../assets/token.png')}
                             quality={100}
@@ -52,9 +64,6 @@ const Produtor: NextPage = () => {
                     <div className='flex flex-col px-5 gap-3 lg:w-[500px]'>
                         <h2 className='font-bold text-xl text-[#68a021]'>Token Crédito de Carbono Regenerativo</h2>
                         <p className='text-justify'>Seja recompensado com o token rCC pelo serviço ambiental de regeneração de ecossistemas prestados para a humanidade. </p>
-                        <button className='mt-5 bg-[#68A021] w-56 h-14 rounded'>
-                            <p className='font-bold text-white text-lg'>Saber Mais</p>
-                        </button>
                     </div>
                 </section>
 
@@ -83,7 +92,7 @@ const Produtor: NextPage = () => {
                             alt='Índice de sustentabilidade'
                             src={require('../assets/indice.png')}
                             quality={100}
-                            className='w-[150px] h-[450px]'
+                            className='w-[180px] h-[450px]'
                         />
                     </div>
 

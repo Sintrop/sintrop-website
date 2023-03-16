@@ -25,13 +25,23 @@ const Investidor: NextPage = () => {
             <Head>
                 <title>Investidor - Sintrop</title>
                 <meta name='description' content='Invista no futuro do mundo'/>
+                <meta name="keywords" content="Agricultura, Regeneração, Sustentabilidade, Produtores regenerativos, comunidade"/>
+                <meta name="robots" content="index,follow"/>
+                <meta name="googlebot" content="index,follow"/>
+                <meta property="og:type" content="website"/>
+                <meta property="og:url" content="https://sintrop.com/investidor"/>
+                <meta property="og:title" content="Investidor - Sintrop"/>
+                <meta property="og:description" content="O papel do Investidor dentro da Sintrop"/>
+                <meta property="og:locale" content="pt_BR"/>
+                <meta property="og:image"content="a definir"/>
+                <link rel="canonical" href="https://sintrop.com"/>
                 <link rel='icon' type='image/png' href='/favicon.png'/>
             </Head>
             <div className='flex flex-col items-center w-[100vw]'>
-                <div className='flex flex-col w-[100%] items-center bg-[url("../assets/bg-5.png")] bg-cover lg:h-[600px]'>
-                    <div className='w-[100%] h-[100%] bg-[rgba(0,0,0,0.4)] flex flex-col items-center p-2 lg:py-20 lg:p-10'>
+                <div className='flex flex-col w-[100%] h-[500px] items-center bg-[url("../assets/bg-11.png")] bg-cover bg-center lg:h-[600px]'>
+                    <div className='w-[100%] h-[100%] bg-[rgba(0,0,0,0.5)] flex flex-col items-center p-2 lg:py-20 lg:p-10'>
                         <Header/>
-                        <div className='flex flex-col items-center w-[100%] lg:items-start lg:w-[1000px]'>
+                        <div className='flex flex-col mt-32 items-center w-[100%] lg:items-start lg:w-[1000px] lg:mt-0'>
                             <h1 className='text-2xl text-center mt-5 text-white font-bold lg:text-left lg:w-[500px]'>
                                 Oportunidade para Investidores
                             </h1>
@@ -42,7 +52,7 @@ const Investidor: NextPage = () => {
                             </p>
 
                             <Link
-                                href={`https://sintrop.com/whitepaper.pdf`}
+                            href={`https://website-react-qdux.vercel.app/whitepaper.pdf`}
                                 target='_blank'
                             >
                                 <button className='mt-5 bg-[#68A021] w-72 h-14 rounded mb-10'>
@@ -87,7 +97,7 @@ const Investidor: NextPage = () => {
                 </section>
 
                 <section className='flex flex-col justify-center w-[100vw] py-10 items-center bg-[#f8f8f8] lg:gap-40 lg:flex-row'>
-                    <div className='items-center justify-center w-[350px] h-[370px] flex'>
+                    <div className='items-center justify-center lg:w-[350px] h-[370px] flex'>
                         <Image 
                             src={require('../assets/grafico-1.png')}
                             quality={100}
