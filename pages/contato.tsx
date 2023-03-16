@@ -6,6 +6,7 @@ import emailjs from '@emailjs/browser';
 import { FormEvent } from "react";
 import { Footer } from '../components/Footer';
 import { BtnWhats } from '../components/BtnWhats';
+import Script from 'next/script';
 
 const Contato: NextPage= () => {
     const [loading, setLoading]= useState(false);
@@ -61,8 +62,10 @@ const Contato: NextPage= () => {
                 <meta property="og:image"content="a definir"/>
                 <link rel="canonical" href="https://sintrop.com"/>
                 <link rel='icon' type='image/png' href='/favicon.png'/>
+                <Script strategy="afterInteractive" dangerouslySetInnerHTML={{ __html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id=%27+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-WZK3VDF');`}}></Script>
             </Head>
             <div className='flex flex-col items-center w-[100vw]'>
+            <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WZK3VDF" height="0" width="0" style={{display:'none',visibility:'hidden'}}></iframe></noscript>
                 <div className='flex flex-col w-[100%] h-[500px] items-center bg-[url("../assets/bg-11.png")] bg-cover bg-center lg:h-[600px]'>
                     <div className='w-[100%] h-[100%] bg-[rgba(0,0,0,0.5)] flex flex-col items-center p-2 lg:py-20 lg:p-10'>
                         <Header/>
@@ -124,7 +127,7 @@ const Contato: NextPage= () => {
                     
                     <button 
                         type='submit'
-                        className='w-[100%] h-10 rounded-lg text-white font-bold bg-[#68A021] flex items-center justify-center'
+                        className='w-[100%] h-10 rounded-lg text-white font-bold bg-green-700 flex items-center justify-center'
                     >
                         {loading? 'Enviando... Aguarde' : 'Enviar'}
                     </button>

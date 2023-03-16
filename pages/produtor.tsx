@@ -6,6 +6,7 @@ import { Header } from "../components/Header";
 import Link from "next/link";
 import { Footer } from "../components/Footer";
 import { BtnWhats } from "../components/BtnWhats";
+import Script from "next/script";
 
 const Produtor: NextPage = () => {
     return(
@@ -24,8 +25,10 @@ const Produtor: NextPage = () => {
                 <meta property="og:image"content="a definir"/>
                 <link rel="canonical" href="https://sintrop.com"/>
                 <link rel='icon' type='image/png' href='/favicon.png'/>
+                <Script strategy="afterInteractive" dangerouslySetInnerHTML={{ __html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id=%27+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-WZK3VDF');`}}></Script>
             </Head>
             <div className='flex flex-col items-center w-[100vw]'>
+            <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WZK3VDF" height="0" width="0" style={{display:'none',visibility:'hidden'}}></iframe></noscript>
                 <div className='flex flex-col w-[100%] h-[500px] items-center bg-[url("../assets/bg-11.png")] bg-cover bg-center lg:h-[600px]'>
                     <div className='w-[100%] h-[100%] bg-[rgba(0,0,0,0.5)] flex flex-col items-center p-2 lg:py-20 lg:p-10'>
                     <Header/>
@@ -43,7 +46,7 @@ const Produtor: NextPage = () => {
                             href={`https://website-react-qdux.vercel.app/whitepaper.pdf`}
                             target='_blank'
                         >
-                            <button className='mt-5 bg-[#68A021] w-72 h-14 rounded mb-10'>
+                            <button className='mt-5 bg-green-700 w-72 h-14 rounded mb-10'>
                                 <p className='font-bold text-white text-lg'>Download Whitepaper</p>
                             </button>
                         </Link>
@@ -57,19 +60,19 @@ const Produtor: NextPage = () => {
                             src={require('../assets/token.png')}
                             quality={100}
                             alt='Logo da sintrop'
-                            className='w-[650px] h-[650px] object-contain'
+                            className='lg:w-[650px] lg:h-[650px] object-contain'
                         />
                     </div>
                     
                     <div className='flex flex-col px-5 gap-3 lg:w-[500px]'>
-                        <h2 className='font-bold text-xl text-[#68a021]'>Token Crédito de Carbono Regenerativo</h2>
+                        <h2 className='font-bold text-xl text-green-700'>Token Crédito de Carbono Regenerativo</h2>
                         <p className='text-justify'>Seja recompensado com o token rCC pelo serviço ambiental de regeneração de ecossistemas prestados para a humanidade. </p>
-                    </div>
+                    </div> 
                 </section>
 
                 <section className='flex flex-col items-center justify-center w-[100%] py-10 bg-[#f8f8f8] lg:flex-row'>
                     <div className='flex flex-col lg:w-[500px]'>
-                        <h3 className='font-bold text-center text-[#0A4303] text-xl mx-2'>
+                        <h3 className='font-bold text-center text-green-700 text-xl mx-2'>
                             Mais transparência: Certificado de agricultura regenerativa
                         </h3>
                         <p className='mx-2 text-center'>Exiba seu nível de sustentabilidade para seus clientes. 
@@ -97,7 +100,7 @@ const Produtor: NextPage = () => {
                     </div>
 
                     <div className='flex flex-col items-center justify-center lg:w-[600px]'>
-                        <h3 className='font-bold text-center text-[#0A4303] text-xl mx-2'>
+                        <h3 className='font-bold text-center text-green-700 text-xl mx-2'>
                             Mensuração de sustentabilidade em escala
                         </h3>
                         <p className='mx-2 text-center'>Evolua o nível de regeneração da sua produção e receba consultoria gratuita para melhorar a sustentabilidade da sua produção.</p>
@@ -124,7 +127,7 @@ const Produtor: NextPage = () => {
                 </section>
 
                 <section className="flex flex-col w-[100%] items-center py-10 justify-center bg-white">
-                    <h3 className='font-bold text-center text-[#0A4303] text-xl'>
+                    <h3 className='font-bold text-center text-green-700 text-xl'>
                         Distribuição do token
                     </h3>
                     <p className='text-center mx-2'>De acordo com sua nota de sustentabilidade: Quanto mais sustentável, mais créditos.</p>
@@ -146,12 +149,12 @@ const Produtor: NextPage = () => {
                 <section className='flex flex-col justify-center py-10 lg:py-0 w-[100%] items-center bg-[#DAECC4]'>
                     <div className='flex flex-col items-center justify-center lg:gap-20 lg:flex-row '>
                         <div className='flex flex-col gap-2 justify-center lg:h-[450px] lg:w-[400px]'>
-                            <h2 className='font-bold text-xl text-[#68a021] mx-2'>Inscreva-se para participar do primeiro teste do sistema</h2>
+                            <h2 className='font-bold text-xl text-green-700 mx-2'>Inscreva-se para participar do primeiro teste do sistema</h2>
                             <p className='text-justify mx-2'>Estamos buscando os primeiros produtores rurais regenerativos para participar do teste de operação. Se você é um produtor que trabalha com agrofloresta, agricultura sintrópica ou qualquer outra forma de regeneração da natureza entre em contato conosco!</p>
                             <Link 
                                 target='_blank'
                                 href='https://docs.google.com/forms/d/e/1FAIpQLSeh0OgWqr_UuZBy4UUvgWG521zLeMVqx6wQu77mrJdhXDBAPQ/viewform?usp=sf_link' 
-                                className='mt-5 bg-[#68A021] w-56 h-14 rounded flex items-center justify-center mx-2'
+                                className='mt-5 bg-green-700 w-56 h-14 rounded flex items-center justify-center mx-2'
                             >
                                 <p className='font-bold text-white text-lg text-center'>Me inscrever</p>
                             </Link>

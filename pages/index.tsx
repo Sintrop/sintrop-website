@@ -1,5 +1,6 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
+import Script from 'next/script';
 import Image from 'next/image';
 import Link from 'next/link';
 import ImgComunidade from '../assets/comunidade-pessoas.png';
@@ -26,8 +27,10 @@ const Home: NextPage = () => {
                 <meta property="og:locale" content="pt_BR"/>
                 <link rel="canonical" href="https://sintrop.com"/>
                 <link rel='icon' type='image/png' href='/favicon.png'/>
+                <Script strategy="afterInteractive" dangerouslySetInnerHTML={{ __html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id=%27+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-WZK3VDF');`}}></Script>
             </Head>
             <div className='flex flex-col items-center w-[100vw]'>
+            <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WZK3VDF" height="0" width="0" style={{display:'none',visibility:'hidden'}}></iframe></noscript>
                 <div className='flex flex-col w-[100%] h-[500px] items-center bg-[url("../assets/bg-11.png")] bg-cover bg-center lg:h-[600px]'>
                     <div className='w-[100%] h-[100%] bg-[rgba(0,0,0,0.5)] flex flex-col items-center p-2 lg:py-20 lg:p-10'>
                         <Header/>
@@ -44,7 +47,7 @@ const Home: NextPage = () => {
                             <Link
                                 href={`https://website-react-qdux.vercel.app/whitepaper.pdf`}
                                 target='_blank'
-                                className='mt-5 bg-[#68A021] w-72 h-14 rounded mb-10 flex items-center justify-center'
+                                className='mt-5 bg-green-700 w-72 h-14 rounded mb-10 flex items-center justify-center'
                             >
                                 <p className='font-bold text-white text-lg'>Download Whitepaper</p>
                             </Link>
@@ -59,7 +62,7 @@ const Home: NextPage = () => {
                         className='w-[250px] h-[188px]'
                     />
 
-                    <h2 className='font-bold px-5 text-center text-[#0A4303] text-xl'>
+                    <h2 className='font-bold px-5 text-center text-green-700 text-xl'>
                         Blockchain + Agroecologia para lutar pela:
                     </h2>
 
@@ -88,7 +91,7 @@ const Home: NextPage = () => {
                     </div>
                     
                     <div className='flex flex-col px-5 gap-3 lg:w-[450px]'>
-                        <h2 className='font-bold text-lg text-[#68a021]'>Token Crédito de Carbono Regenerativo</h2>
+                        <h2 className='font-bold text-lg text-green-700'>Token Crédito de Carbono Regenerativo</h2>
                         <p className='text-justify'>Token com modelo de distribuição algorítmico programado para ser distribuído ao longo das próximas décadas para produtores regenerativos e comunidade pelos serviços ambientais ecossistêmicos prestados a sociedade.</p>
                     </div>
                 </section>
@@ -141,7 +144,7 @@ const Home: NextPage = () => {
                         <Link
                             href={`https://website-react-qdux.vercel.app/whitepaper.pdf`}
                             target='_blank'
-                            className='mt-5 bg-[#68A021] w-72 h-14 rounded mb-10 flex items-center justify-center'
+                            className='mt-5 bg-green-700 w-72 h-14 rounded mb-10 flex items-center justify-center'
                         >
                             <p className='font-bold text-white text-lg'>Download Whitepaper</p>
                         </Link>
@@ -151,12 +154,12 @@ const Home: NextPage = () => {
                 <section className='flex flex-col justify-center w-[100vw] items-center bg-white'>
                     <div className='flex flex-col items-center gap-20 lg:flex-row '>
                         <div className='flex flex-col gap-2 h-[450px] lg:w-[400px] pt-24'>
-                            <h2 className='font-bold text-xl text-[#68a021] mx-2'>Desenvolvido e operado por comunidade</h2>
+                            <h2 className='font-bold text-xl text-green-700 mx-2'>Desenvolvido e operado por comunidade</h2>
                             <p className='text-justify mx-2'>Nossa comunidade é feita de desenvolvedores, pesquisadores, conselheiros, ativistas ambientais e produtores rurais.</p>
                             <Link 
                                 target='_blank'
                                 href='https://discord.com/invite/s5MfeqcPm8' 
-                                className='mt-5 bg-[#68A021] w-64 h-14 rounded flex items-center justify-center mx-2'
+                                className='mt-5 bg-green-700 w-64 h-14 rounded flex items-center justify-center mx-2'
                             >
                                 <p className='font-bold text-white text-lg text-center'>Junte-se ao nosso discord</p>
                             </Link>
@@ -171,11 +174,11 @@ const Home: NextPage = () => {
                     </div>
 
                     <div id='comunidade'>
-                        <h3 className='font-bold text-center text-[#0A4303] text-xl'>
+                        <h3 className='font-bold text-center text-green-700 text-xl'>
                             A comunidade
                         </h3>
 
-                        <p className='text-center text-[#2b2b2b] text-lg lg:w-[800px] mx-2'>
+                        <p className='text-center text-black text-lg lg:w-[800px] mx-2'>
                             Nosso projeto é descentralizado e guiado por comunidade. Estamos criando a lógica de funcionamento do Sistema para publicá-la na rede Ethereum e convidar produtores, ativistas, pesquisadores e toda comunidade para participar do Sistema de forma totalmente descentralizada.
                         </p>
                     </div>

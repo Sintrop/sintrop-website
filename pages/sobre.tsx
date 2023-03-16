@@ -5,6 +5,7 @@ import { Header } from "../components/Header";
 import { Footer } from "../components/Footer";
 import Link from "next/link";
 import { BtnWhats } from "../components/BtnWhats";
+import Script from "next/script";
 
 const Sobre: NextPage = () => {
     return(
@@ -23,8 +24,10 @@ const Sobre: NextPage = () => {
                 <meta property="og:image"content="a definir"/>
                 <link rel="canonical" href="https://sintrop.com"/>
                 <link rel='icon' type='image/png' href='/favicon.png'/>
+                <Script strategy="afterInteractive" dangerouslySetInnerHTML={{ __html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id=%27+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-WZK3VDF');`}}></Script>
             </Head>
             <div className='flex flex-col items-center w-[100vw]'>
+            <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WZK3VDF" height="0" width="0" style={{display:'none',visibility:'hidden'}}></iframe></noscript>
                 <div className='flex flex-col w-[100%] h-[500px] items-center bg-[url("../assets/bg-11.png")] bg-cover bg-center lg:h-[600px]'>
                     <div className='w-[100%] h-[100%] bg-[rgba(0,0,0,0.5)] flex flex-col items-center p-2 lg:py-20 lg:p-10'>
                         <Header/>
@@ -42,7 +45,7 @@ const Sobre: NextPage = () => {
                                 href={`https://website-react-qdux.vercel.app/whitepaper.pdf`}
                                 target='_blank'
                             >
-                                <button className='mt-5 bg-[#68A021] w-72 h-14 rounded mb-10'>
+                                <button className='mt-5 bg-green-700 w-72 h-14 rounded mb-10'>
                                     <p className='font-bold text-white text-xl'>Download Whitepaper</p>
                                 </button>
                             </Link>
@@ -52,7 +55,7 @@ const Sobre: NextPage = () => {
 
                 <section className="flex flex-col lg:flex-row py-10 items-center justify-center lg:gap-20">
                     <div className="flex flex-col gap-5 lg:w-[700px]">
-                        <h3 className="font-bold text-xl mx-2">NOSSA <span className="text-[#68a021]">VISÃO</span></h3>
+                        <h3 className="font-bold text-xl mx-2">NOSSA <span className="text-green-700">VISÃO</span></h3>
                         <h3 className="font-bold text-xl mx-2 text-gray-600">Precisamos mudar <span className="text-gray-700">AGORA</span></h3>
                     
                         <p className="mx-2">A agricultura industrial tem sido uma das principais causas do aquecimento global e contribui significativamente negativamente para a vida do nosso planeta. Devemos mudar agora para evitar sérios problemas ambientais. Para produzir os alimentos do mundo não precisamos matar lentamente a terra usando muitos produtos químicos, destruindo e erodindo os solos, matando toda a biodiversidade local e usando muitos recursos naturais.</p>
@@ -66,9 +69,9 @@ const Sobre: NextPage = () => {
                     />
                 </section>
 
-                <section className='flex flex-col w-[100%] lg:h-[500px] items-center justify-center bg-[url("../assets/bg-13.png")] bg-cover'>
-                    <div className='flex items-center justify-center py-10 flex-col w-[100%] h-[100%] bg-[rgba(0,0,0,0.3)]'>
-                        <h3 className="font-bold text-white text-xl mx-2">NOSSOS <span className="text-[#68a021]">VALORES</span></h3>
+                <section className='flex flex-col w-[100%] lg:h-[500px] items-center justify-center bg-[url("../assets/bg-9.png")] bg-cover'>
+                    <div className='flex items-center justify-center py-10 flex-col w-[100%] h-[100%] bg-[rgba(0,0,0,0.5)]'>
+                        <h3 className="font-bold text-white text-xl mx-2">NOSSOS <span className="text-green-700">VALORES</span></h3>
 
                         <div className="flex flex-col items-center gap-5 mt-10 lg:flex-row">
                             <div className="flex flex-col items-center">
@@ -112,14 +115,14 @@ const Sobre: NextPage = () => {
 
                 <section className="flex flex-col bg-white w-[100%] lg:flex-row py-10 items-center justify-center lg:gap-20">
                     <div className="flex flex-col items-center gap-5 lg:w-[800px]">
-                        <h3 className="font-bold text-xl mx-2">NOSSA <span className="text-[#68a021]">MISSÃO</span></h3>
+                        <h3 className="font-bold text-xl mx-2">NOSSA <span className="text-green-700">MISSÃO</span></h3>
                     
                         <p className="mx-2 text-center">Nossa luta é para defender e regenerar a natureza. Precisamos urgentemente regenerar mais área do que degradamos, esse é o caminho para resolver os maiores problemas da humanidade como o aquecimento global, escassez hídrica, extinção da biodiversidade e insegurança alimentar.</p>
                     </div>
                 </section>
 
                 <section className="flex flex-col bg-white w-[100%] py-10 items-center justify-center">
-                    <h3 className="font-bold text-xl mx-2">NOSSA <span className="text-[#68a021]">HISTÓRIA</span></h3>
+                    <h3 className="font-bold text-xl mx-2">NOSSA <span className="text-green-700">HISTÓRIA</span></h3>
                     <Image
                         alt='Imagem da linha do tempo da sintrop'
                         src={require('../assets/nossa-hist.png')}

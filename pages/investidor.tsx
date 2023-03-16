@@ -6,6 +6,7 @@ import Image from "next/image";
 import { Footer } from "../components/Footer";
 import Link from "next/link";
 import { BtnWhats } from "../components/BtnWhats";
+import Script from "next/script";
 
 const Investidor: NextPage = () => {
     const [chooseMap, setChooseMap] = useState(true);
@@ -36,8 +37,10 @@ const Investidor: NextPage = () => {
                 <meta property="og:image"content="a definir"/>
                 <link rel="canonical" href="https://sintrop.com"/>
                 <link rel='icon' type='image/png' href='/favicon.png'/>
+                <Script strategy="afterInteractive" dangerouslySetInnerHTML={{ __html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id=%27+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-WZK3VDF');`}}></Script>
             </Head>
             <div className='flex flex-col items-center w-[100vw]'>
+            <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WZK3VDF" height="0" width="0" style={{display:'none',visibility:'hidden'}}></iframe></noscript>
                 <div className='flex flex-col w-[100%] h-[500px] items-center bg-[url("../assets/bg-11.png")] bg-cover bg-center lg:h-[600px]'>
                     <div className='w-[100%] h-[100%] bg-[rgba(0,0,0,0.5)] flex flex-col items-center p-2 lg:py-20 lg:p-10'>
                         <Header/>
@@ -55,7 +58,7 @@ const Investidor: NextPage = () => {
                             href={`https://website-react-qdux.vercel.app/whitepaper.pdf`}
                                 target='_blank'
                             >
-                                <button className='mt-5 bg-[#68A021] w-72 h-14 rounded mb-10'>
+                                <button className='mt-5 bg-green-700 w-72 h-14 rounded mb-10'>
                                     <p className='font-bold text-white text-lg'>Download Whitepaper</p>
                                 </button>
                             </Link>
@@ -75,9 +78,9 @@ const Investidor: NextPage = () => {
                                 alt='Imagem mapa 1986'
                                 src={require('../assets/1984.png')}
                                 quality={100}
-                                className='w-[600px] h-[300px] object-cover'
+                                className='w-[600px] h-[500px] object-cover'
                             />
-                            <p className='font-bold text-[#68A021]'>1984</p>
+                            <p className='font-bold text-green-700'>1984</p>
                         </div>
                     ) : (
                         <div className="flex flex-col">
@@ -85,9 +88,9 @@ const Investidor: NextPage = () => {
                                 alt='Imagem mapa 1986'
                                 src={require('../assets/2020.png')}
                                 quality={100}
-                                className='w-[600px] h-[300px] object-cover'
+                                className='w-[600px] h-[500px] object-cover'
                             />
-                            <p className='font-bold text-[#68A021]'>2020</p>
+                            <p className='font-bold text-green-700'>2020</p>
                         </div>
                     )}
 
@@ -107,13 +110,13 @@ const Investidor: NextPage = () => {
                     </div>
                     
                     <div className='flex flex-col px-5 gap-3 lg:w-[500px]'>
-                        <h2 className='font-bold text-xl text-[#68a021]'>O caminho</h2>
+                        <h2 className='font-bold text-xl text-green-700'>O caminho</h2>
                         <p className='text-justify'>A taxa de degeneração atualmente é muito maior que a de regeneração. Esse é o caminho do colapso. Precisamos urgente como sociedade mudar nosso sistema de produção e tornar a agricultura regenerativa. Quando atingirmos o ponto de inflexão o planeta se regenerará e o resultado será a reversão do aquecimento global, aumento da biodiversidade, segurança alimentar e restauração da água.</p>
                     </div>
                 </section>
 
                 <section className='flex flex-col items-center w-[100%] bg-white py-10'>
-                    <h3 className='font-bold text-center text-[#68a021] text-xl'>
+                    <h3 className='font-bold text-center text-green-700 text-xl'>
                         A solução
                     </h3>
                     <p className='text-center mb-10'>Token Crédito de Carbono Regenerativo</p>
@@ -126,7 +129,21 @@ const Investidor: NextPage = () => {
                     />
                 </section>
 
-                <section className='flex flex-col w-[100%] h-[500px] items-center justify-center bg-[url("../assets/bg-6.png")] bg-cover'>
+                <section className='flex flex-col items-center w-[100%] bg-green-100 py-10'>
+                    <h3 className='font-bold text-center text-green-700 text-xl mx-2'>
+                        Comprovantes de ajuda na regeneração
+                    </h3>
+                    <p className='text-center mx-2 mb-10 lg:w-[1000px]'>Veja seu histórico de ajuda, e o quanto você impactou o mundo!</p>
+
+                    <Image 
+                        src={require('../assets/recibo-investidor.png')}
+                        quality={100}
+                        alt='Token exemplificativo'
+                        className='object-contain lg:h-[700px] '
+                    />
+                </section>
+
+                <section className='flex flex-col w-[100%] h-[500px] items-center justify-center bg-[url("../assets/bg-13.png")] bg-cover'>
                     <div className='flex items-center justify-center flex-col w-[100%] h-[100%] bg-[rgba(0,0,0,0.4)]'>
                         <h2 className='font-bold text-center text-white text-3xl lg:w-[800px]'>
                             JUNTOS PODEMOS MUDAR O MUNDO!
@@ -134,15 +151,15 @@ const Investidor: NextPage = () => {
                     </div>
                 </section>
 
-                <section className='flex flex-col justify-center py-10 lg:py-0 w-[100%] items-center bg-[#DAECC4]'>
+                <section className='flex flex-col justify-center py-10 lg:py-0 w-[100%] items-center bg-white'>
                     <div className='flex flex-col items-center justify-center lg:gap-20 lg:flex-row '>
                         <div className='flex flex-col gap-2 justify-center lg:h-[450px] lg:w-[400px]'>
-                            <h2 className='font-bold text-xl text-[#68a021] mx-2'>Seja um dos primeiros a investir na regeneração do planeta</h2>
+                            <h2 className='font-bold text-xl text-green-700 mx-2'>Seja um dos primeiros a investir na regeneração do planeta</h2>
                             <p className='text-justify mx-2'>Estamos buscando os primeiros investidores que acreditam na regeneração do mundo, e que com seu investimento podemos acelerar essa regeneração!</p>
                             <Link 
                                 target='_blank'
                                 href='https://docs.google.com/forms/d/e/1FAIpQLSfRP4MzGk86ikasBaLMGhsCvbZp67jlVW9ftIoHP0fVXoyRcw/viewform?usp=sf_link' 
-                                className='mt-5 bg-[#68A021] w-56 h-14 rounded flex items-center justify-center mx-2'
+                                className='mt-5 bg-green-700 w-56 h-14 rounded flex items-center justify-center mx-2'
                             >
                                 <p className='font-bold text-white text-lg text-center'>Quero Investir</p>
                             </Link>

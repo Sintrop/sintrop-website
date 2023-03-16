@@ -47,6 +47,9 @@ export function Header(){
                     <button 
                         onClick={() => setModalComunity(!modalComunity)}
                         className='font-bold text-white text-xl hover:text-green-400'
+                        onMouseEnter={() => {
+                            setModalComunity(true)
+                        }}
                     >
                         Comunidade
                     </button>

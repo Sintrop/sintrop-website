@@ -5,6 +5,7 @@ import { Header } from "../components/Header";
 import { Footer } from "../components/Footer";
 import Link from "next/link";
 import { BtnWhats } from "../components/BtnWhats";
+import Script from "next/script";
 
 const Consumidor: NextPage = () => {
     return(
@@ -23,8 +24,10 @@ const Consumidor: NextPage = () => {
                 <meta property="og:image"content="a definir"/>
                 <link rel="canonical" href="https://sintrop.com"/>
                 <link rel='icon' type='image/png' href='/favicon.png'/>
+                <Script strategy="afterInteractive" dangerouslySetInnerHTML={{ __html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id=%27+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-WZK3VDF');`}}></Script>
             </Head>
             <div className='flex flex-col items-center w-[100vw]'>
+            <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WZK3VDF" height="0" width="0" style={{display:'none',visibility:'hidden'}}></iframe></noscript>
                 <div className='flex flex-col w-[100%] h-[500px] items-center bg-[url("../assets/bg-11.png")] bg-cover bg-center lg:h-[600px]'>
                     <div className='w-[100%] h-[100%] bg-[rgba(0,0,0,0.5)] flex flex-col items-center p-2 lg:py-20 lg:p-10'>
                         <Header/>
@@ -42,7 +45,7 @@ const Consumidor: NextPage = () => {
                                 href={`https://website-react-qdux.vercel.app/whitepaper.pdf`}
                                 target='_blank'
                             >
-                                <button className='mt-5 bg-[#68A021] w-72 h-14 rounded mb-10'>
+                                <button className='mt-5 bg-green-700 w-72 h-14 rounded mb-10'>
                                     <p className='font-bold text-white text-lg'>Download Whitepaper</p>
                                 </button>
                             </Link>
@@ -52,7 +55,7 @@ const Consumidor: NextPage = () => {
 
                 <section className='flex flex-col items-center justify-center w-[100%] py-10 bg-white lg:flex-row'>
                     <div className='flex flex-col lg:w-[500px]'>
-                        <h3 className='font-bold text-center text-[#0A4303] text-xl'>
+                        <h3 className='font-bold text-center text-green-700 text-xl'>
                             Mais transparência
                         </h3>
                         <p className="mx-2 text-center">Selo com informações e nível de regeneração dos produtores</p>
@@ -83,7 +86,7 @@ const Consumidor: NextPage = () => {
                         <Link 
                             target='_blank'
                             href='https://v3-sintrop.netlify.app/' 
-                            className='mt-5 mx-2 bg-[#68A021] w-64 h-14 rounded flex items-center justify-center'
+                            className='mt-5 mx-2 bg-green-700 w-64 h-14 rounded flex items-center justify-center'
                         >
                             <p className='font-bold text-white text-lg text-center'>Veja os produtores</p>
                         </Link>

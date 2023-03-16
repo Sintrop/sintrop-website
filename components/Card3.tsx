@@ -20,7 +20,7 @@ export function Card3({title, description, img}: Props){
                     />
                 </div>
 
-                <h1 className='font-bold text-[#0A4303] text-xl mt-5'>
+                <h1 className='font-bold text-green-700 text-xl mt-5'>
                     {title}
                 </h1>
                 
@@ -29,7 +29,7 @@ export function Card3({title, description, img}: Props){
 
             <Link 
                 href={title.toLowerCase()} 
-                className='mt-5 bg-[#68A021] w-48 h-14 rounded flex items-center justify-center'
+                className='mt-5 bg-green-700 w-48 h-14 rounded flex items-center justify-center'
             >
                 <p className='font-bold text-white text-lg'>Saber Mais</p>
             </Link>

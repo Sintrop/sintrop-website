@@ -11,7 +11,7 @@ export function Card5({title, text}: Props){
             <Image
                 alt='Ícone de checagem'
                 src={require('../assets/check.png')}
-                className='h-[75px]'
+                className='h-[75px] w-[75px]'
             />
 
             <div className="flex flex-col ml-3 h-[100%] justify-center">
