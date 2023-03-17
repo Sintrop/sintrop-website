@@ -196,7 +196,7 @@ const Investidor: NextPage = (_props: InferGetStaticPropsType<typeof getStaticPr
 
                 <section className='flex items-center justify-center h-[80px] w-[100vw] bg-black'>
                     <p className='text-white text-center'>
-                        We must change now! We must save the planet and avoid climate disasters. Join us on this fight!
+                        {t('We must change now! We must save the planet and avoid climate disasters. Join us on this fight')}!
                     </p>
                 </section>
             </div>

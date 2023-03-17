@@ -147,7 +147,7 @@ const Contato: NextPage= (_props: InferGetStaticPropsType<typeof getStaticProps>
                         type='submit'
                         className='w-[100%] h-10 rounded-lg text-white font-bold bg-green-700 flex items-center justify-center'
                     >
-                        {loading? `${t('Enviando... Aguarde')}` : `${t('Send')}`}
+                        {loading? `${t('Enviando... Aguarde')}` : `${t('Enviar')}`}
                     </button>
                 </form>
             </section>
@@ -156,7 +156,7 @@ const Contato: NextPage= (_props: InferGetStaticPropsType<typeof getStaticProps>
 
             <section className='flex items-center justify-center h-[80px] w-[100vw] bg-black'>
                 <p className='text-white text-center'>
-                    We must change now! We must save the planet and avoid climate disasters. Join us on this fight!
+                    {t('We must change now! We must save the planet and avoid climate disasters. Join us on this fight')}!
                 </p>
             </section>
 
