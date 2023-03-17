@@ -1,18 +1,37 @@
 import type { NextPage } from "next"
 import Head from "next/head";
 import Image from "next/image";
+import Script from "next/script";
+import Link from "next/link";
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+import type { GetStaticProps, InferGetStaticPropsType } from 'next'
+import { useTranslation,  } from 'next-i18next';
 import { Card4 } from "../components/Card4";
 import { Header } from "../components/Header";
-import Link from "next/link";
 import { Footer } from "../components/Footer";
 import { BtnWhats } from "../components/BtnWhats";
-import Script from "next/script";
 
-const Produtor: NextPage = () => {
+interface StaticProps{
+    locale: string;
+}
+
+export async function getStaticProps({locale}: StaticProps) {
+    return {
+        props: {
+            ...(await serverSideTranslations(locale, [
+            'common',
+            ])),
+        },
+    }
+}
+
+const Produtor: NextPage = (_props: InferGetStaticPropsType<typeof getStaticProps>) => {
+    const {t} = useTranslation('common');
+
     return(
         <div>
             <Head>
-                <title>Produtor - Sintrop</title>
+                <title>{t("Produtor")} - Sintrop</title>
                 <meta name='description' content='Papel do produtor na comunidade'/>
                 <meta name="keywords" content="Agricultura, Regeneração, Sustentabilidade, Produtores regenerativos, comunidade"/>
                 <meta name="robots" content="index,follow"/>
@@ -21,7 +40,7 @@ const Produtor: NextPage = () => {
                 <meta property="og:url" content="https://sintrop.com/produtor"/>
                 <meta property="og:title" content="Produtor - Sintrop"/>
                 <meta property="og:description" content="O papel do produtor dentro da Sintrop"/>
-                <meta property="og:locale" content="pt_BR"/>
+                <meta property="og:locale" content={_props._nextI18Next?.initialLocale}/>
                 <meta property="og:image"content="a definir"/>
                 <link rel="canonical" href="https://sintrop.com"/>
                 <link rel='icon' type='image/png' href='/favicon.png'/>
@@ -34,12 +53,12 @@ const Produtor: NextPage = () => {
                     <Header/>
                     <div className='flex flex-col mt-32 items-center w-[100%] lg:items-start lg:w-[1000px] lg:mt-0'>
                         <h1 className='text-2xl text-center mt-5 text-white font-bold lg:text-left lg:w-[500px]'>
-                        Oportunidade para Produtores Rurais Regenerativos
+                            {t('Oportunidade para Produtores Rurais Regenerativos')}
                         </h1>
 
                         <p className='mt-5 text-lg text-white text-center lg:text-left lg:w-[700px]'>
-                        Certificação descentralizada de
-                            <span className='font-bold text-white'> Agricultura Regenerativa</span>.
+                        {t('Certificação descentralizada de')}
+                            <span className='font-bold text-white'> {t('Agricultura Regenerativa')}</span>.
                         </p>
 
                         <Link
@@ -47,7 +66,7 @@ const Produtor: NextPage = () => {
                             target='_blank'
                         >
                             <button className='mt-5 bg-green-700 w-72 h-14 rounded mb-10'>
-                                <p className='font-bold text-white text-lg'>Download Whitepaper</p>
+                                <p className='font-bold text-white text-lg'>{t('Baixar')} Whitepaper</p>
                             </button>
                         </Link>
                     </div>
@@ -65,18 +84,17 @@ const Produtor: NextPage = () => {
                     </div>
                     
                     <div className='flex flex-col px-5 gap-3 lg:w-[500px]'>
-                        <h2 className='font-bold text-xl text-green-700'>Token Crédito de Carbono Regenerativo</h2>
-                        <p className='text-justify'>Seja recompensado com o token rCC pelo serviço ambiental de regeneração de ecossistemas prestados para a humanidade. </p>
+                        <h2 className='font-bold text-xl text-green-700'>{t('Token Crédito de Carbono Regenerativo')}</h2>
+                        <p className='text-justify'>{t('Seja recompensado com o token rCC pelo serviço ambiental de regeneração de ecossistemas prestados para a humanidade')}.</p>
                     </div> 
                 </section>
 
                 <section className='flex flex-col items-center justify-center w-[100%] py-10 bg-[#f8f8f8] lg:flex-row'>
                     <div className='flex flex-col lg:w-[500px]'>
                         <h3 className='font-bold text-center text-green-700 text-xl mx-2'>
-                            Mais transparência: Certificado de agricultura regenerativa
+                            {t('Mais transparência: Certificado de agricultura regenerativa')}
                         </h3>
-                        <p className='mx-2 text-center'>Exiba seu nível de sustentabilidade para seus clientes. 
-                        Resultado das inspeções público para provar o nível de regeneração de seu trabalho.</p>
+                        <p className='mx-2 text-center'>{t('Exiba seu nível de sustentabilidade para seus clientes. Resultado das inspeções público para provar o nível de regeneração de seu trabalho')}.</p>
                     </div>
 
                     <div>
@@ -101,25 +119,25 @@ const Produtor: NextPage = () => {
 
                     <div className='flex flex-col items-center justify-center lg:w-[600px]'>
                         <h3 className='font-bold text-center text-green-700 text-xl mx-2'>
-                            Mensuração de sustentabilidade em escala
+                            {t('Mensuração de sustentabilidade em escala')}
                         </h3>
-                        <p className='mx-2 text-center'>Evolua o nível de regeneração da sua produção e receba consultoria gratuita para melhorar a sustentabilidade da sua produção.</p>
+                        <p className='mx-2 text-center'>{t('Evolua o nível de regeneração da sua produção e receba consultoria gratuita para melhorar a sustentabilidade da sua produção')}.</p>
 
                         <div className='flex items-center justify-center flex-wrap gap-10 mt-10'>
                             <Card4
-                                title='Carbono'
+                                title={t('Carbono')}
                                 img='co2'
                             />
                             <Card4
-                                title='Água'
+                                title={t('Água')}
                                 img='agua'
                             />
                             <Card4
-                                title='Biodiversidade'
+                                title={t('Biodiversidade')}
                                 img='bio'
                             />
                             <Card4
-                                title='Solo'
+                                title={t('Solo')}
                                 img='solo'
                             />
                         </div>
@@ -128,9 +146,9 @@ const Produtor: NextPage = () => {
 
                 <section className="flex flex-col w-[100%] items-center py-10 justify-center bg-white">
                     <h3 className='font-bold text-center text-green-700 text-xl'>
-                        Distribuição do token
+                        {t('Distribuição do token')}
                     </h3>
-                    <p className='text-center mx-2'>De acordo com sua nota de sustentabilidade: Quanto mais sustentável, mais créditos.</p>
+                    <p className='text-center mx-2'>{t('De acordo com sua nota de sustentabilidade: Quanto mais sustentável, mais créditos')}.</p>
                     <Image
                         alt='Planilha de distribuição de token dos produtores'
                         src={require('../assets/planilha-1.png')}
@@ -149,14 +167,14 @@ const Produtor: NextPage = () => {
                 <section className='flex flex-col justify-center py-10 lg:py-0 w-[100%] items-center bg-[#DAECC4]'>
                     <div className='flex flex-col items-center justify-center lg:gap-20 lg:flex-row '>
                         <div className='flex flex-col gap-2 justify-center lg:h-[450px] lg:w-[400px]'>
-                            <h2 className='font-bold text-xl text-green-700 mx-2'>Inscreva-se para participar do primeiro teste do sistema</h2>
-                            <p className='text-justify mx-2'>Estamos buscando os primeiros produtores rurais regenerativos para participar do teste de operação. Se você é um produtor que trabalha com agrofloresta, agricultura sintrópica ou qualquer outra forma de regeneração da natureza entre em contato conosco!</p>
+                            <h2 className='font-bold text-xl text-green-700 mx-2'>{t('Inscreva-se para participar do primeiro teste do sistema')}</h2>
+                            <p className='text-justify mx-2'>{t('Estamos buscando os primeiros produtores rurais regenerativos para participar do teste de operação. Se você é um produtor que trabalha com agrofloresta, agricultura sintrópica ou qualquer outra forma de regeneração da natureza entre em contato conosco')}!</p>
                             <Link 
                                 target='_blank'
                                 href='https://docs.google.com/forms/d/e/1FAIpQLSeh0OgWqr_UuZBy4UUvgWG521zLeMVqx6wQu77mrJdhXDBAPQ/viewform?usp=sf_link' 
                                 className='mt-5 bg-green-700 w-56 h-14 rounded flex items-center justify-center mx-2'
                             >
-                                <p className='font-bold text-white text-lg text-center'>Me inscrever</p>
+                                <p className='font-bold text-white text-lg text-center'>{t('Me inscrever')}</p>
                             </Link>
                         </div>
 

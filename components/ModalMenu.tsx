@@ -1,6 +1,6 @@
 import { useState } from "react";
 import Link from "next/link";
-import { ModalComunity } from "./ModalComunity";
+import { useTranslation } from "react-i18next";
 
 interface Props{
     close: () => void;
@@ -8,6 +8,7 @@ interface Props{
 
 export function ModalMenu({close}: Props){
     const [modalComunity, setModalComunity]= useState(false);
+    const {t}= useTranslation();
 
     return(
         <div 
@@ -20,7 +21,7 @@ export function ModalMenu({close}: Props){
                     onClick={close}
                     className='font-bold h-12 text-white text-lg hover:text-green-400'
                 >
-                    Home
+                    {t('Página Inicial')}
                 </Link>
 
                 <Link 
@@ -28,7 +29,7 @@ export function ModalMenu({close}: Props){
                     onClick={close}
                     className='font-bold h-12 text-white text-lg hover:text-green-400'
                 >
-                    Sobre
+                    {t('Sobre')}
                 </Link>
 
                 <Link 
@@ -36,7 +37,7 @@ export function ModalMenu({close}: Props){
                     onClick={close}
                     className='font-bold h-12 text-white text-lg hover:text-green-400'
                 >
-                    Comunidade
+                    {t('Comunidade')}
                 </Link>
 
                 <Link 
@@ -53,7 +54,7 @@ export function ModalMenu({close}: Props){
                     onClick={close}
                     className='font-bold h-12 text-white text-lg hover:text-green-400'
                 >
-                    Contato
+                    {t('Contato')}
                 </Link> 
             </div>
         </div>

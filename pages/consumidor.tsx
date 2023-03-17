@@ -1,17 +1,36 @@
 import type { NextPage } from "next";
 import Head from "next/head";
+import Script from "next/script";
 import Image from "next/image";
+import Link from "next/link";
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+import type { GetStaticProps, InferGetStaticPropsType } from 'next'
+import { useTranslation,  } from 'next-i18next';
 import { Header } from "../components/Header";
 import { Footer } from "../components/Footer";
-import Link from "next/link";
 import { BtnWhats } from "../components/BtnWhats";
-import Script from "next/script";
 
-const Consumidor: NextPage = () => {
+interface StaticProps{
+    locale: string;
+}
+
+export async function getStaticProps({locale}: StaticProps) {
+    return {
+        props: {
+            ...(await serverSideTranslations(locale, [
+            'common',
+            ])),
+        },
+    }
+}
+
+const Consumidor: NextPage = (_props: InferGetStaticPropsType<typeof getStaticProps>) => {
+    const {t} = useTranslation('common');
+
     return(
         <div>
             <Head>
-                <title>Consumidor - Sintrop</title>
+                <title>{t('Consumidor')} - Sintrop</title>
                 <meta name='description' content='O verdadeiro impactado da história'/>
                 <meta name="keywords" content="Agricultura, Regeneração, Sustentabilidade, Produtores regenerativos, comunidade"/>
                 <meta name="robots" content="index,follow"/>
@@ -20,7 +39,7 @@ const Consumidor: NextPage = () => {
                 <meta property="og:url" content="https://sintrop.com/consumidor"/>
                 <meta property="og:title" content="Consumidor da Sintrop"/>
                 <meta property="og:description" content="O verdadeiro impactado pelo sistema"/>
-                <meta property="og:locale" content="pt_BR"/>
+                <meta property="og:locale" content={_props._nextI18Next?.initialLocale}/>
                 <meta property="og:image"content="a definir"/>
                 <link rel="canonical" href="https://sintrop.com"/>
                 <link rel='icon' type='image/png' href='/favicon.png'/>
@@ -33,12 +52,12 @@ const Consumidor: NextPage = () => {
                         <Header/>
                         <div className='flex flex-col mt-16 items-center w-[100%] lg:items-start lg:w-[1000px] lg:mt-0'>
                             <h1 className='text-2xl text-center mt-5 text-white font-bold lg:text-left lg:w-[500px]'>
-                                Para todos os consumidores de alimentos
+                                {t('Para todos os consumidores de alimentos')}
                             </h1>
 
                             <p className='mt-5 text-lg text-white text-center lg:text-left lg:w-[700px]'>
-                                A sua escolha de qual alimento coloca na mesa pode impactar positivamente ou negativamente nosso planeta. Escolha com sabedoria, escolha
-                                <span className='font-bold text-white'> Produtores Regenerativos</span>.
+                                {t('A sua escolha de qual alimento coloca na mesa pode impactar positivamente ou negativamente nosso planeta. Escolha com sabedoria, escolha')}
+                                <span className='font-bold text-white'> {t('Produtores Regenerativos')}</span>.
                             </p>
 
                             <Link
@@ -46,7 +65,7 @@ const Consumidor: NextPage = () => {
                                 target='_blank'
                             >
                                 <button className='mt-5 bg-green-700 w-72 h-14 rounded mb-10'>
-                                    <p className='font-bold text-white text-lg'>Download Whitepaper</p>
+                                    <p className='font-bold text-white text-lg'>{t('Baixar')} Whitepaper</p>
                                 </button>
                             </Link>
                         </div>
@@ -56,9 +75,9 @@ const Consumidor: NextPage = () => {
                 <section className='flex flex-col items-center justify-center w-[100%] py-10 bg-white lg:flex-row'>
                     <div className='flex flex-col lg:w-[500px]'>
                         <h3 className='font-bold text-center text-green-700 text-xl'>
-                            Mais transparência
+                            {t('Mais transparência')}
                         </h3>
-                        <p className="mx-2 text-center">Selo com informações e nível de regeneração dos produtores</p>
+                        <p className="mx-2 text-center">{t('Selo com informações e nível de regeneração dos produtores')}</p>
                     </div>
 
                     <div>
@@ -79,16 +98,16 @@ const Consumidor: NextPage = () => {
                         className='w-[335px] h-[350px] object-contain'
                     />
                     <div className="flex flex-col items-center gap-5 lg:items-start lg:w-[400px]">
-                        <h3 className="font-bold text-xl text-center mx-2">Vitrine de produtores regenerativos para você escolher</h3>
+                        <h3 className="font-bold text-xl text-center mx-2">{t('Vitrine de produtores regenerativos para você escolher')}</h3>
                     
-                        <p className="mx-2 text-center">Veja os produtores regenerativos do sistema</p>
+                        <p className="mx-2 text-center">{t('Veja os produtores regenerativos do sistema')}</p>
 
                         <Link 
                             target='_blank'
                             href='https://v3-sintrop.netlify.app/' 
                             className='mt-5 mx-2 bg-green-700 w-64 h-14 rounded flex items-center justify-center'
                         >
-                            <p className='font-bold text-white text-lg text-center'>Veja os produtores</p>
+                            <p className='font-bold text-white text-lg text-center'>{t('Veja os produtores')}</p>
                         </Link>
                     </div>
                 </section>

@@ -1,8 +1,11 @@
 import Image from "next/image";
 import Link from "next/link";
 import Logo from '../assets/logo-branco.png';
+import { useTranslation } from 'next-i18next';
 
 export function Footer(){
+    const {t} = useTranslation();
+
     return(
         <footer className='flex flex-col gap-10 px-5 w-[100vw] items-center bg-[#68a021] py-10'>
             <div className='flex items-center gap-3'>
@@ -44,14 +47,14 @@ export function Footer(){
                     href='/'
                     className='font-bold text-white text-lg hover:text-green-300'
                 >
-                    Home
+                    {t('Página Inicial')}
                 </Link>
 
                 <Link 
                     href='/sobre'
                     className='font-bold text-white text-lg'
                 >
-                    Sobre
+                    {t('Sobre')}
                 </Link>
 
                 <Link 
@@ -65,7 +68,7 @@ export function Footer(){
                     href='/contato'
                     className='font-bold text-white text-lg'
                 >
-                    Contato
+                    {t('Contato')}
                 </Link> 
             </nav>
         </footer>
