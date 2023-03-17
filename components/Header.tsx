@@ -4,10 +4,12 @@ import Link from "next/link";
 import Logo from '../assets/logo-branco.png';
 import { ModalMenu } from "./ModalMenu";
 import { ModalComunity } from "./ModalComunity";
+import { useTranslation } from 'next-i18next';
 
 export function Header(){
     const [modalMenu, setModalMenu]= useState(false);
     const [modalComunity, setModalComunity]= useState(false);
+    const {t} = useTranslation();
 
     return(
         <header className='flex flex-col w-[100%] justify-between lg:mb-20 lg:flex-row lg:w-[1000px]'>
@@ -18,7 +20,7 @@ export function Header(){
                     <Image 
                         src={Logo}
                         quality={100}
-                        alt='Logo da sintrop'
+                        alt={t('Logo da sintrop')}
                         className='w-[150px] h-[60px] lg:w-[257px] lg:h-[98px]'
                     />
                 </Link>
@@ -40,7 +42,7 @@ export function Header(){
                     href='/sobre'
                     className='font-bold text-white text-xl hover:text-green-400'
                 >
-                    Sobre
+                    {t('Sobre')}
                 </Link>
 
                 <div>
@@ -51,7 +53,7 @@ export function Header(){
                             setModalComunity(true)
                         }}
                     >
-                        Comunidade
+                        {t('Comunidade')}
                     </button>
 
                     {modalComunity && (
@@ -73,7 +75,7 @@ export function Header(){
                     href='/contato'
                     className='font-bold text-white text-xl hover:text-green-400'
                 >
-                    Contato
+                    {t('Contato')}
                 </Link> 
             </nav>
 

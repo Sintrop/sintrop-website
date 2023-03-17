@@ -1,14 +1,32 @@
 import {useState} from 'react';
 import type { NextPage } from "next";
 import Head from "next/head";
-import { Header } from "../components/Header";
-import emailjs from '@emailjs/browser';
+import Script from 'next/script';
 import { FormEvent } from "react";
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+import type { GetStaticProps, InferGetStaticPropsType } from 'next'
+import { useTranslation,  } from 'next-i18next';
+import emailjs from '@emailjs/browser';
 import { Footer } from '../components/Footer';
 import { BtnWhats } from '../components/BtnWhats';
-import Script from 'next/script';
+import { Header } from "../components/Header";
 
-const Contato: NextPage= () => {
+interface StaticProps{
+    locale: string;
+}
+
+export async function getStaticProps({locale}: StaticProps) {
+    return {
+        props: {
+            ...(await serverSideTranslations(locale, [
+            'common',
+            ])),
+        },
+    }
+}
+
+const Contato: NextPage= (_props: InferGetStaticPropsType<typeof getStaticProps>) => {
+    const {t} = useTranslation('common');
     const [loading, setLoading]= useState(false);
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
@@ -49,7 +67,7 @@ const Contato: NextPage= () => {
     return(
         <div>
             <Head>
-                <title>Contato - Sintrop</title>
+                <title>{t('Contato')} - Sintrop</title>
                 <meta name='description' content='Entre em contato conosco e tire todas suas dúvidas!'/>
                 <meta name="keywords" content="Agricultura, Regeneração, Sustentabilidade, Produtores regenerativos, comunidade"/>
                 <meta name="robots" content="index,follow"/>
@@ -58,7 +76,7 @@ const Contato: NextPage= () => {
                 <meta property="og:url" content="https://sintrop.com/contato"/>
                 <meta property="og:title" content="Contato - Sintrop"/>
                 <meta property="og:description" content="Entre em contato com a Sintrop"/>
-                <meta property="og:locale" content="pt_BR"/>
+                <meta property="og:locale" content={_props._nextI18Next?.initialLocale}/>
                 <meta property="og:image"content="a definir"/>
                 <link rel="canonical" href="https://sintrop.com"/>
                 <link rel='icon' type='image/png' href='/favicon.png'/>
@@ -71,12 +89,12 @@ const Contato: NextPage= () => {
                         <Header/>
                         <div className='flex flex-col mt-32 items-center w-[100%] lg:items-start lg:w-[1000px] lg:mt-0'>
                             <h1 className='text-2xl text-center mt-5 text-white font-bold lg:text-left lg:w-[500px]'>
-                                Entre em contato conosco
+                                {t('Entre em contato conosco')}
                             </h1>
 
                             <p className='mt-5 text-lg text-white text-center lg:text-left lg:w-[700px]'>
-                                Ficou alguma dúvida? Estaremos prontos para te esclarecer tudo, e juntos
-                                <span className='font-bold text-white'> Mudar o mundo!</span>
+                                {t('Ficou alguma dúvida? Estaremos prontos para te esclarecer tudo, e juntos')}
+                                <span className='font-bold text-white'> {t('Mudar o mundo')}!</span>
                             </p>
                         </div>
                     </div>
@@ -85,20 +103,20 @@ const Contato: NextPage= () => {
 
             <section id='contato' className='flex flex-col bg-white lg:gap-20 w-[100%] py-10 justify-center lg:flex-row'>
                 <div className='flex flex-col lg:w-[400px]'>
-                        <h3 className='font-bold text-xl mx-2'>Contate-nos</h3>
+                        <h3 className='font-bold text-xl mx-2'>{t('Contate-nos')}</h3>
                         <p className='text-lg mx-2'>
-                            Em caso de dúvidas, investimentos ou queira participar do primeiro teste da plataforma, envie-nos sua mensagem.
+                            {t('Em caso de dúvidas, investimentos ou queira participar do primeiro teste da plataforma, envie-nos sua mensagem')}.
                         </p>
                 </div>
                 <form 
                     onSubmit={handleSendEmail}
                     className='flex flex-col gap-5 p-5 bg-white rounded-lg lg:w-[400px]'
                 >
-                    <h2 className='text-black text-xl font-bold'>Contato</h2>
+                    <h2 className='text-black text-xl font-bold'>{t('Contato')}</h2>
                     <input
                         value={name}
                         onChange={(e) => setName(e.target.value)}
-                        placeholder='Seu nome'
+                        placeholder={`${t('Seu nome')}`}
                         className='w-[100%] h-10 bg-white p-2 rounded-lg border-2'
                         required
                     />
@@ -112,14 +130,14 @@ const Contato: NextPage= () => {
                     <input
                         value={tel}
                         onChange={(e) => setTel(e.target.value)}
-                        placeholder='DDD + Telefone'
+                        placeholder={`DDD + ${t('telefone')}`}
                         className='w-[100%] h-10 bg-white p-2 rounded-lg border-2'
                         required
                     />
                     <input
                         value={message}
                         onChange={(e) => setMessage(e.target.value)}
-                        placeholder='Mensagem'
+                        placeholder={`${t('Mensagem')}`}
                         className='w-[100%] h-24 bg-white p-2 rounded-lg border-2'
                         required
                     />
@@ -129,7 +147,7 @@ const Contato: NextPage= () => {
                         type='submit'
                         className='w-[100%] h-10 rounded-lg text-white font-bold bg-green-700 flex items-center justify-center'
                     >
-                        {loading? 'Enviando... Aguarde' : 'Enviar'}
+                        {loading? `${t('Enviando... Aguarde')}` : `${t('Enviar')}`}
                     </button>
                 </form>
             </section>
@@ -138,7 +156,7 @@ const Contato: NextPage= () => {
 
             <section className='flex items-center justify-center h-[80px] w-[100vw] bg-black'>
                 <p className='text-white text-center'>
-                    We must change now! We must save the planet and avoid climate disasters. Join us on this fight!
+                    {t('We must change now! We must save the planet and avoid climate disasters. Join us on this fight')}!
                 </p>
             </section>
 

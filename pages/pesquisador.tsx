@@ -3,16 +3,35 @@ import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
 import Script from "next/script";
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+import type { GetStaticProps, InferGetStaticPropsType } from 'next'
+import { useTranslation,  } from 'next-i18next';
 import { BtnWhats } from "../components/BtnWhats";
 import { Card5 } from "../components/Card5";
 import { Footer } from "../components/Footer";
 import { Header } from "../components/Header";
 
-const Pesquisador: NextPage = () => {
+interface StaticProps{
+    locale: string;
+}
+
+export async function getStaticProps({locale}: StaticProps) {
+    return {
+        props: {
+            ...(await serverSideTranslations(locale, [
+            'common',
+            ])),
+        },
+    }
+}
+
+const Pesquisador: NextPage = (_props: InferGetStaticPropsType<typeof getStaticProps>) => {
+    const {t} = useTranslation('common');
+
     return(
         <div>
             <Head>
-                <title>Investidor - Sintrop</title>
+                <title>{t('Pesquisador')} - Sintrop</title>
                 <meta name='description' content='Invista no futuro do mundo'/>
                 <meta name="keywords" content="Agricultura, Regeneração, Sustentabilidade, Produtores regenerativos, comunidade"/>
                 <meta name="robots" content="index,follow"/>
@@ -21,7 +40,7 @@ const Pesquisador: NextPage = () => {
                 <meta property="og:url" content="https://sintrop.com/pesquisador"/>
                 <meta property="og:title" content="Pesquisador - Sintrop"/>
                 <meta property="og:description" content="O papel do pesquisador dentro da Sintrop"/>
-                <meta property="og:locale" content="pt_BR"/>
+                <meta property="og:locale" content={_props._nextI18Next?.initialLocale}/>
                 <meta property="og:image"content="a definir"/>
                 <link rel="canonical" href="https://sintrop.com"/>
                 <link rel='icon' type='image/png' href='/favicon.png'/>
@@ -34,12 +53,12 @@ const Pesquisador: NextPage = () => {
                         <Header/>
                         <div className='flex flex-col mt-32 items-center w-[100%] lg:items-start lg:w-[1000px] lg:mt-0'>
                             <h1 className='text-2xl text-center mt-5 text-white font-bold lg:text-left lg:w-[500px]'>
-                                Oportunidade para Pesquisadores Agroecológicos
+                                {t('Oportunidade para Pesquisadores Agroecológicos')}
                             </h1>
 
                             <p className='mt-5 text-lg text-white text-center lg:text-left lg:w-[700px]'>
-                                Certificação descentralizada de 
-                                <span className='font-bold text-white'> Agricultura Regenerativa</span>.
+                                {t('Certificação descentralizada de')}
+                                <span className='font-bold text-white'> {t('Agricultura Regenerativa')}</span>.
                             </p>
 
                             <Link
@@ -47,7 +66,7 @@ const Pesquisador: NextPage = () => {
                                 target='_blank'
                             >
                                 <button className='mt-5 bg-green-700 w-72 h-14 rounded mb-10'>
-                                    <p className='font-bold text-white text-lg'>Download Whitepaper</p>
+                                    <p className='font-bold text-white text-lg'>{t('Baixar')} Whitepaper</p>
                                 </button>
                             </Link>
                         </div>
@@ -57,9 +76,9 @@ const Pesquisador: NextPage = () => {
                 <section className='flex flex-col w-[100%] h-[200px] items-center justify-center bg-[url("../assets/bg-green.png")] bg-cover'>
                     <div className='flex items-center justify-center flex-col w-[100%] h-[100%] bg-[rgba(0,0,0,0.3)] px-2'>
                         <h2 className='font-bold text-center text-white text-xl lg:w-[800px]'>
-                            Faça parte da rede de pesquisadores do sistema!
+                            {t('Faça parte da rede de pesquisadores do sistema')}!
                         </h2>
-                        <p className='mx-2 text-center text-white'>Buscamos pesquisadores agroecológicos para desenvolver o método de avaliação e auxiliar no processo de educação e ensino dos produtores rurais.</p>
+                        <p className='mx-2 text-center text-white'>{t('Buscamos pesquisadores agroecológicos para desenvolver o método de avaliação e auxiliar no processo de educação e ensino dos produtores rurais')}.</p>
                     </div>
                 </section>
 
@@ -74,33 +93,33 @@ const Pesquisador: NextPage = () => {
                     </div>
                     
                     <div className='flex flex-col px-5 gap-3 lg:w-[500px]'>
-                        <h2 className='font-bold text-xl text-green-700'>Token Crédito de Carbono Regenerativo</h2>
-                        <p className='text-justify'>Seja recompensado com o token rCC  pelo serviços de pesquisa e ensino sobre agroecologia. Contribua com o ecossistema publicando suas pesquisas e descobertas que auxiliem na regeneração do planeta.</p>
+                        <h2 className='font-bold text-xl text-green-700'>{t('Token Crédito de Carbono Regenerativo')}</h2>
+                        <p className='text-justify'>{t('Seja recompensado com o token rCC  pelo serviços de pesquisa e ensino sobre agroecologia. Contribua com o ecossistema publicando suas pesquisas e descobertas que auxiliem na regeneração do planeta')}.</p>
                     </div>
                 </section>
 
                 <section className="flex items-center flex-wrap gap-5 justify-center w-[100%]">
                     <Card5
                         title="1"
-                        text="Pesquise sobre práticas  e manejos de agricultura regenerativa."
+                        text={t("Pesquise sobre práticas  e manejos de agricultura regenerativa")}
                     />
 
                     <Card5
                         title="2"
-                        text="Publique suas pesquisas para o mundo."
+                        text={t("Publique suas pesquisas para o mundo")}
                     />
 
                     <Card5
                         title="3"
-                        text="Receba o Token Crédito de carbono Regenerativo."
+                        text={t("Receba o Token Crédito de carbono Regenerativo")}
                     />
                 </section>
 
                 <section className="flex flex-col w-[100%] items-center py-10 justify-center bg-white">
                     <h3 className='font-bold text-center text-green-700 text-xl'>
-                        Distribuição do token
+                        {t('Distribuição do token')}
                     </h3>
-                    <p className='text-center mx-2'>Distribuição de tokens de acordo com a quantidade de inspeções realizadas.</p>
+                    <p className='text-center mx-2'>{t('Distribuição de tokens de acordo com a quantidade de pesquisas realizadas')}.</p>
                     <Image
                         alt='Planilha de distribuição de token dos pesquisadores'
                         src={require('../assets/planilha-3.png')}
@@ -119,14 +138,14 @@ const Pesquisador: NextPage = () => {
                 <section className='flex flex-col justify-center py-10 lg:py-0 w-[100%] items-center bg-[#DAECC4]'>
                     <div className='flex flex-col items-center justify-center lg:gap-20 lg:flex-row '>
                         <div className='flex flex-col gap-2 justify-center lg:h-[450px] lg:w-[400px]'>
-                            <h2 className='font-bold text-xl text-green-700 mx-2'>Inscreva-se para participar do primeiro teste do sistema</h2>
-                            <p className='text-justify mx-2'>Buscamos pesquisadores agroecológicos para desenvolver o método de avaliação e auxiliar no processo de educação e ensino dos produtores rurais!</p>
+                            <h2 className='font-bold text-xl text-green-700 mx-2'>{t('Inscreva-se para participar do primeiro teste do sistema')}</h2>
+                            <p className='text-justify mx-2'>{t('Buscamos pesquisadores agroecológicos para desenvolver o método de avaliação e auxiliar no processo de educação e ensino dos produtores rurais')}!</p>
                             <Link 
                                 target='_blank'
                                 href='https://docs.google.com/forms/d/e/1FAIpQLSeh0OgWqr_UuZBy4UUvgWG521zLeMVqx6wQu77mrJdhXDBAPQ/viewform?usp=sf_link' 
                                 className='mt-5 bg-green-700 w-56 h-14 rounded flex items-center justify-center mx-2'
                             >
-                                <p className='font-bold text-white text-lg text-center'>Me inscrever</p>
+                                <p className='font-bold text-white text-lg text-center'>{t('Me inscrever')}</p>
                             </Link>
                         </div>
 
@@ -143,7 +162,7 @@ const Pesquisador: NextPage = () => {
 
                 <section className='flex items-center justify-center h-[80px] w-[100vw] bg-black'>
                     <p className='text-white text-center'>
-                        We must change now! We must save the planet and avoid climate disasters. Join us on this fight!
+                        {t('We must change now! We must save the planet and avoid climate disasters. Join us on this fight')}!
                     </p>
                 </section>
             </div>
