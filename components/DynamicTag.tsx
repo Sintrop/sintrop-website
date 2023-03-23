@@ -1,18 +1,11 @@
+import { BodyPostProps } from "../src/interfaces/Posts";
+
 interface Props{
-    data: ContentProps;
+    data: BodyPostProps;
+    onDelete: (content: string) => void;
 }
 
-interface ContentProps{
-    tag: string;
-    content: string;
-    imgSrc?: string;
-    imgAlt?: string;
-    imgStyle?: string;
-}
-
-const DynamicTag = ({data}: Props) => {
-    const Tag = data.tag;
-
+const DynamicTag = ({data, onDelete}: Props) => {
     if(data.tag === 'img'){
         return(
             <img
@@ -23,17 +16,12 @@ const DynamicTag = ({data}: Props) => {
         )
     }
 
-    if(data.tag === 'H1'){
-        return(
-            <h1 className="font-bold text-2xl mb-5">
-                {data.content}
-            </h1>
-        )
-    }
-
     if(data.tag === 'H2'){
         return(
-            <h2 className="font-bold text-xl mb-5">
+            <h2 
+                className="font-bold text-xl my-5"
+                onDoubleClick={() => onDelete(data.content)}
+            >
                 {data.content}
             </h2>
         )
@@ -41,7 +29,10 @@ const DynamicTag = ({data}: Props) => {
 
     if(data.tag === 'H3'){
         return(
-            <h3 className="font-bold text-lg mb-5">
+            <h3 
+                className="font-bold text-lg my-5"
+                onDoubleClick={() => onDelete(data.content)}
+            >
                 {data.content}
             </h3>
         )
@@ -49,7 +40,10 @@ const DynamicTag = ({data}: Props) => {
 
     if(data.tag === 'H4'){
         return(
-            <h4 className="font-bold text-md mb-5">
+            <h4 
+                className="font-bold text-md my-5"
+                onDoubleClick={() => onDelete(data.content)}
+            >
                 {data.content}
             </h4>
         )
@@ -57,14 +51,22 @@ const DynamicTag = ({data}: Props) => {
 
     if(data.tag === 'a'){
         return(
-            <a href={data.content} target="_blank" className="text-md decoration-1 underline text-blue-700">
+            <a 
+                href={data.content} 
+                target="_blank" 
+                className="text-md decoration-1 underline text-blue-700"
+                onDoubleClick={() => onDelete(data.content)}
+            >
                 {data.content}
             </a>
         )
     }
 
     return (
-        <p className='text-justify mb-2'>
+        <p 
+            className='text-justify mb-2'
+            onDoubleClick={() => onDelete(data.content)}
+        >
             {data.content}
         </p>
     )
