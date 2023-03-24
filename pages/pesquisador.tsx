@@ -93,8 +93,8 @@ const Pesquisador: NextPage = (_props: InferGetStaticPropsType<typeof getStaticP
                     </div>
                     
                     <div className='flex flex-col px-5 gap-3 lg:w-[500px]'>
-                        <h2 className='font-bold text-xl text-green-700'>{t('Token Crédito de Carbono Regenerativo')}</h2>
-                        <p className='text-justify'>{t('Seja recompensado com o token rCC  pelo serviços de pesquisa e ensino sobre agroecologia. Contribua com o ecossistema publicando suas pesquisas e descobertas que auxiliem na regeneração do planeta')}.</p>
+                        <h2 className='font-bold text-xl text-green-700'>{t('Token Crédito de Agricultura Regenerativa')}</h2>
+                        <p className='text-justify'>{t('Seja recompensado com o token da Sintrop pelo serviços de pesquisa e ensino sobre agroecologia. Contribua com o ecossistema publicando suas pesquisas e descobertas que auxiliem na regeneração do planeta')}.</p>
                     </div>
                 </section>
 
@@ -111,7 +111,7 @@ const Pesquisador: NextPage = (_props: InferGetStaticPropsType<typeof getStaticP
 
                     <Card5
                         title="3"
-                        text={t("Receba o Token Crédito de carbono Regenerativo")}
+                        text={t("Receba o Token Crédito de Agricultura Regenerativa")}
                     />
                 </section>
 

@@ -111,7 +111,7 @@ const Home: NextPage = (_props: InferGetStaticPropsType<typeof getStaticProps>) 
                     </div>
                     
                     <div className='flex flex-col px-5 gap-3 lg:w-[450px]'>
-                        <h2 className='font-bold text-lg text-green-700'>{t('Token Crédito de Carbono Regenerativo')}</h2>
+                        <h2 className='font-bold text-lg text-green-700'>{t('Token Crédito de Agricultura Regenerativa')}</h2>
                         <p className='text-justify'>{t('Token com modelo de distribuição algorítmico programado para ser distribuído ao longo das próximas décadas para produtores regenerativos e comunidade pelos serviços ambientais ecossistêmicos prestados a sociedade')}.</p>
                     </div>
                 </section>

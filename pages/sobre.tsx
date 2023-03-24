@@ -57,7 +57,7 @@ const Sobre: NextPage = (_props: InferGetStaticPropsType<typeof getStaticProps>)
 
                             <p className='mt-5 text-lg text-white text-center lg:text-left lg:w-[700px]'>
                                 {t('Conheça nossa história e como pretendemos')}  
-                                <span className='font-bold text-white'> {t('Mudar o mundo')}!</span>.
+                                <span className='font-bold text-white'> {t('Mudar o mundo')}!</span>
                             </p>
 
                             <Link
@@ -77,9 +77,9 @@ const Sobre: NextPage = (_props: InferGetStaticPropsType<typeof getStaticProps>)
                         <h3 className="font-bold text-xl mx-2">{t('NOSSA')} <span className="text-green-700">{t('VISÃO')}</span></h3>
                         <h3 className="font-bold text-xl mx-2 text-gray-600">{t('Precisamos mudar')} <span className="text-gray-700">{t('AGORA')}</span></h3>
                     
-                        <p className="mx-2">{t('A agricultura industrial tem sido uma das principais causas do aquecimento global e contribui significativamente negativamente para a vida do nosso planeta. Devemos mudar agora para evitar sérios problemas ambientais. Para produzir os alimentos do mundo não precisamos matar lentamente a terra usando muitos produtos químicos, destruindo e erodindo os solos, matando toda a biodiversidade local e usando muitos recursos naturais')}.</p>
+                        <p className="mx-2">{t('A agricultura industrial tem sido uma das principais causas do aquecimento global e contribui muito negativamente para a vida do nosso planeta. Devemos mudar agora para evitar sérios problemas ambientais. Para produzir os alimentos do mundo não precisamos matar lentamente a terra usando muitos produtos químicos, destruindo e erodindo os solos, matando toda a biodiversidade local e usando muitos recursos naturais')}.</p>
 
-                        <p className="mx-2">{t('Nossa visão dos sonhos é um mundo onde 100% dos alimentos sejam produzidos sem prejudicar o planeta. Com soluções internas sustentáveis ou técnicas regenertaivas que tornam o mundo um lugar melhor a cada safra, capture muito CO2 atmosférico e utilize os recursos naturais de forma cíclica')}.</p>
+                        <p className="mx-2">{t('Nossa visão dos sonhos é um mundo onde 100% dos alimentos sejam produzidos sem prejudicar o planeta. Com soluções técnicas regenerativas que tornam o mundo um lugar melhor a cada safra, capturando muito CO2 atmosférico e utilizando os recursos naturais de forma cíclica')}.</p>
                     </div>
                     <Image
                         alt='Imagem de uma planta conectada ao chão por meio da tecnologia'

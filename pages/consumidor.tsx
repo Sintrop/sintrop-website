@@ -77,7 +77,7 @@ const Consumidor: NextPage = (_props: InferGetStaticPropsType<typeof getStaticPr
                         <h3 className='font-bold text-center text-green-700 text-xl'>
                             {t('Mais transparência')}
                         </h3>
-                        <p className="mx-2 text-center">{t('Selo com informações e nível de regeneração dos produtores')}</p>
+                        <p className="mx-2 text-center">{t('Selo com informações e nível de regeneração dos produtores. Escolher comprar dos produtores da nossa rede significa fazer parte da regeneração do planeta, e não da destruição.')}</p>
                     </div>
 
                     <div>

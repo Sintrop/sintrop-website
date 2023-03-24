@@ -92,8 +92,8 @@ const Ativista: NextPage = (_props: InferGetStaticPropsType<typeof getStaticProp
                     </div>
                     
                     <div className='flex flex-col px-5 gap-3 lg:w-[500px]'>
-                        <h2 className='font-bold text-xl text-green-700'>{t('Token Crédito de Carbono Regenerativo')}</h2>
-                        <p className='text-justify'>{t('Seja recompensado com o token rCC pelo serviço de inspeção e ativismo ambiental prestado ao Sistema. Realize inspeções periodicamente')}.</p>
+                        <h2 className='font-bold text-xl text-green-700'>{t('Token Crédito de Agricultura Regenerativa')}</h2>
+                        <p className='text-justify'>{t('Seja recompensado com o token da Sintrop pelo serviço de inspeção e ativismo ambiental prestado ao Sistema. Realize inspeções periodicamente e contribua na luta para regenerar o planeta')}.</p>
                     </div>
                 </section>
 
@@ -102,7 +102,7 @@ const Ativista: NextPage = (_props: InferGetStaticPropsType<typeof getStaticProp
                         <h3 className='font-bold text-center text-green-700 text-xl'>
                             {t('Mais transparência')}
                         </h3>
-                        <p className="mx-2 text-center">{t('Faça a verificação das informações')}</p>
+                        <p className="mx-2 text-center">{t('Faça a verificação das informações do nível de regeneração dos produtores do Sistema. Todos os dados são púlicos e transparentes para o público')}</p>
                     </div>
 
                     <div>
@@ -134,7 +134,7 @@ const Ativista: NextPage = (_props: InferGetStaticPropsType<typeof getStaticProp
                     <h3 className='font-bold text-center text-green-700 text-xl'>
                         {t('Distribuição do token')}
                     </h3>
-                    <p className='text-center mx-2'>{t('Distribuição de tokens de acordo com a quantidade de inspeções realizadas')}.</p>
+                    <p className='text-center mx-2'>{t('Distribuição de tokens de acordo com a quantidade de inspeções realizadas. Quanto mais inspeções, mais tokens')}.</p>
                     <Image
                         alt='Planilha de distribuição de token dos produtores'
                         src={require('../assets/planilha-2.png')}
@@ -153,7 +153,7 @@ const Ativista: NextPage = (_props: InferGetStaticPropsType<typeof getStaticProp
                     <div className='flex flex-col items-center justify-center lg:gap-20 lg:flex-row '>
                         <div className='flex flex-col gap-2 justify-center lg:h-[450px] lg:w-[400px]'>
                             <h2 className='font-bold text-xl text-green-700 mx-2'>{t('Inscreva-se para participar do primeiro teste do sistema')}</h2>
-                            <p className='text-justify mx-2'>{t('Estamos buscando os primeiros ativistas para que façam parte da rede de ativistas do Sistema e realize inspeções presenciais para mensurar o nível de regeneração dos produtores rurais')}!</p>
+                            <p className='text-justify mx-2'>{t('Estamos buscando os primeiros ativistas para fazer parte da rede de ativistas do Sistema e realize inspeções presenciais para mensurar o nível de regeneração dos produtores rurais')}!</p>
                             <Link 
                                 target='_blank'
                                 href='https://docs.google.com/forms/d/e/1FAIpQLSeh0OgWqr_UuZBy4UUvgWG521zLeMVqx6wQu77mrJdhXDBAPQ/viewform?usp=sf_link' 

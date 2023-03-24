@@ -137,7 +137,7 @@ const Investidor: NextPage = (_props: InferGetStaticPropsType<typeof getStaticPr
                     <h3 className='font-bold text-center text-green-700 text-xl'>
                         {t('A solução')}
                     </h3>
-                    <p className='text-center mb-10'>{t('Token Crédito de Carbono Regenerativo')}</p>
+                    <p className='text-center mb-10'>{t('Token Crédito de Agricultura Regenerativa. Atrelamos o impacto ambiental da nossa rede de produtores a 4 indicadores fundamentais para a prosperidade da vida neste planeta.')}</p>
 
                     <Image 
                         src={require('../assets/solucao-1.png')}
