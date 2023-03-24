@@ -10,6 +10,7 @@ import { useTranslation,  } from 'next-i18next';
 import { Footer } from "../components/Footer";
 import { Header } from "../components/Header";
 import { BtnWhats } from "../components/BtnWhats";
+import { useRouter } from "next/router";
 
 interface StaticProps{
     locale: string;
@@ -26,6 +27,7 @@ export async function getStaticProps({locale}: StaticProps) {
 }
 
 const Investidor: NextPage = (_props: InferGetStaticPropsType<typeof getStaticProps>) => {
+    const router = useRouter();
     const {t} = useTranslation('common');
     const [chooseMap, setChooseMap] = useState(true);
 
@@ -73,7 +75,8 @@ const Investidor: NextPage = (_props: InferGetStaticPropsType<typeof getStaticPr
                             </p>
 
                             <Link
-                            href={`https://website-react-qdux.vercel.app/whitepaper.pdf`}
+                                href={router.locale === 'pt-BR' ? 
+                                'https://sintrop.com/assets/whitepaper.pdf' : 'https://sintrop.com/assets/whitepaper-v1.4-EN.pdf'}
                                 target='_blank'
                             >
                                 <button className='mt-5 bg-green-700 w-72 h-14 rounded mb-10'>

@@ -55,6 +55,14 @@ export function ModalMenu({close}: Props){
                     className='font-bold h-12 text-white text-lg hover:text-green-400'
                 >
                     {t('Contato')}
+                </Link>
+
+                <Link 
+                    href='/blog'
+                    onClick={close}
+                    className='font-bold h-12 text-white text-lg hover:text-green-400'
+                >
+                    {t('Blog')}
                 </Link> 
             </div>
         </div>

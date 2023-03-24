@@ -7,6 +7,7 @@ export interface PostsProps{
     bodyPost: string;
     language: string;
     createdAt: string;
+    keywords: string
 }
 
 export interface BodyPostProps{
@@ -15,4 +16,5 @@ export interface BodyPostProps{
     imgSrc?: string;
     imgAlt?: string;
     imgStyle?: string;
+    href?: string;
 }

@@ -52,7 +52,7 @@ const DynamicTag = ({data, onDelete}: Props) => {
     if(data.tag === 'a'){
         return(
             <a 
-                href={data.content} 
+                href={data.href} 
                 target="_blank" 
                 className="text-md decoration-1 underline text-blue-700"
                 onDoubleClick={() => onDelete(data.content)}

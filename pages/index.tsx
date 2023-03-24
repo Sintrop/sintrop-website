@@ -13,6 +13,7 @@ import { Card3 } from '../components/Card3';
 import { Header } from '../components/Header';
 import { Footer } from '../components/Footer';
 import { BtnWhats } from '../components/BtnWhats';
+import { useRouter } from 'next/router';
 
 interface StaticProps{
     locale: string;
@@ -29,6 +30,7 @@ export async function getStaticProps({locale}: StaticProps) {
 }
 
 const Home: NextPage = (_props: InferGetStaticPropsType<typeof getStaticProps>) => {
+    const router = useRouter();
     const {t} = useTranslation('common');
     
     return (
@@ -64,7 +66,8 @@ const Home: NextPage = (_props: InferGetStaticPropsType<typeof getStaticProps>) 
                             </h3>
 
                             <Link
-                                href={`https://website-react-qdux.vercel.app/whitepaper.pdf`}
+                                href={router.locale === 'pt-BR' ? 
+                                'https://sintrop.com/assets/whitepaper.pdf' : 'https://sintrop.com/assets/whitepaper-v1.4-EN.pdf'}
                                 target='_blank'
                                 className='mt-5 bg-green-700 w-72 h-14 rounded mb-10 flex items-center justify-center'
                             >
