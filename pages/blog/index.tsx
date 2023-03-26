@@ -6,8 +6,6 @@ import { CardPost } from '../../components/CardPost';
 import { PostsProps } from '../../src/interfaces/Posts';
 import { ContextProps } from '../../src/interfaces/ContextServerSide';
 import { Header } from '../../components/Header';
-import LogoCinza from '../../assets/logo.png';
-import Image from 'next/image';
 import { useRouter } from 'next/router';
 
 interface ServerSideProps{
@@ -44,12 +42,6 @@ const Blog = ({posts}: ServerSideProps) => {
                 </div>
 
                 <div className='flex flex-col justify-center items-center w-full mt-5'>
-                    <Image 
-                        src={LogoCinza}
-                        quality={100}
-                        alt={'Logo da sintrop'}
-                        className='w-[150px] h-[60px] lg:w-[257px] lg:h-[98px]'
-                    />
                     <h2 className='text-green-700 font-bold text-3xl'>Blog</h2>
                 </div>
             </div>
@@ -80,9 +72,8 @@ export const getServerSideProps = async (context: ContextProps) => {
         }
     }catch(err){
         return {
-            redirect:{
-                destination: `/${context.locale}`,
-                permanent: false
+            props:{
+                posts: []
             }
         }
     }

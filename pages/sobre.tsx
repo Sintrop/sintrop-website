@@ -64,7 +64,7 @@ const Sobre: NextPage = (_props: InferGetStaticPropsType<typeof getStaticProps>)
 
                             <Link
                                 href={router.locale === 'pt-BR' ? 
-                                'https://sintrop.com/assets/whitepaper.pdf' : 'https://sintrop.com/assets/whitepaper-v1.4-EN.pdf'}
+                                'https://sintrop.com/assets/qr-code/whitepaper.pdf' : 'https://sintrop.com/assets/whitepaper-v1.4-EN.pdf'}
                                 target='_blank'
                             >
                                 <button className='mt-5 bg-green-700 w-72 h-14 rounded mb-10'>

@@ -2,7 +2,7 @@ import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import LogoBranco from '../assets/logo-branco.png';
-import LogoCinza from '../assets/logo.png';
+import { useRouter } from "next/router";
 import { ModalMenu } from "./ModalMenu";
 import { ModalComunity } from "./ModalComunity";
 import { useTranslation } from 'next-i18next';
@@ -12,14 +12,15 @@ interface Props{
 }
 
 export function Header({blog}: Props){
+    const router = useRouter();
     const [modalMenu, setModalMenu]= useState(false);
     const [modalComunity, setModalComunity]= useState(false);
     const {t} = useTranslation();
 
     return(
-        <header className={`flex flex-col w-[100%] justify-between lg:w-[1000px] ${!blog ? 'lg:mb-20 lg:flex-row' : 'lg:flex-col items-center gap-2'}`}>
-            {!blog && (
-                <div className='flex items-center justify-between'>
+        <header className={`flex flex-col w-[100%] justify-between lg:w-[1000px] ${!blog ? 'lg:mb-20 lg:flex-row' : 'lg:flex-row items-center gap-2'}`}>
+            
+                <div className='flex w-full lg:w-auto px-2 items-center justify-between'>
                     <Link
                         href='/'
                     >
@@ -27,7 +28,7 @@ export function Header({blog}: Props){
                             src={LogoBranco}
                             quality={100}
                             alt={t('Logo da sintrop')}
-                            className='w-[150px] h-[60px] lg:w-[257px] lg:h-[98px]'
+                            className={`w-[150px] h-[60px] ${blog ? 'lg:w-[180px] lg:h-[70px]' : 'lg:w-[257px] lg:h-[98px]'}`}
                         />
                     </Link>
 
@@ -42,7 +43,7 @@ export function Header({blog}: Props){
                         />
                     </button>
                 </div>
-            )}
+            
 
             <nav className='hidden items-center gap-10 flex-wrap justify-center lg:flex'>
                 <Link 
