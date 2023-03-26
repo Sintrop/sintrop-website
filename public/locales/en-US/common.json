@@ -12,7 +12,7 @@
     "Fechar": "Close",
     "Página Inicial": "Home",
     "Nossa missão é incentivar a regeneração do planeta": "Our mission is to regenerate the planet",
-    "Sistema descentralizado de certificação de": "Decentralized certification system",
+    "Sistema descentralizado de certificação de": "Decentralized certification system for",
     "Agricultura Regenerativa": "Regenerative Agriculture",
     "Baixar": "Download",
     "Agroecologia para lutar pela": "Agroecology to fight for",
@@ -23,7 +23,7 @@
     "Índice de Sustentabilidade na Agricultura para medir o impacto dos produtores em uma escala": "Agriculture Sustainability Index to measure the impact of producers on a scale",
     "Todos dados são armazenados na rede Ethereum e aberto a todos": "All data is stored on the Ethereum network and open to all",
     "Desenvolvido e operado por comunidade": "Developed and operated by the community",
-    "Token Crédito de Carbono Regenerativo para recompensar produtores sustentáveis e comunidade pelos serviços ambientais": "Regenerative Carbon Credit Token to reward sustainable producers and community for environmental services",
+    "Token Crédito de Agricultura Regenerativa para recompensar produtores sustentáveis e comunidade pelos serviços ambientais": "Regenerative Agriculture Credit Token to reward sustainable producers and community for environmental services",
     "Nosso projeto de certificação é colaborativo e de código aberto": "Our certification project is collaborative and open source",
     "Sistema de inspeção descentralizado para auditar os produtores de alimentos": "Decentralized inspection system to audit food producers",
     "Ou a agricultura vai salvar a Terra, ou a destruir. De qual lado você vai estar?": "Either agriculture will save the Earth, or destroy it. Which side will you be on?",
@@ -120,5 +120,6 @@
     "MISSÃO": "MISSION",
     "Nossa luta é para defender e regenerar a natureza. Precisamos urgentemente regenerar mais área do que degradamos, esse é o caminho para resolver os maiores problemas da humanidade como o aquecimento global, escassez hídrica, extinção da biodiversidade e insegurança alimentar": "Our struggle is to defend and regenerate nature. We urgently need to regenerate more area than we degrade, this is the way to solve humanity's biggest problems such as global warming, water scarcity, extinction of biodiversity and food insecurity",
     "HISTÓRIA": "HISTORY",
-    "We must change now! We must save the planet and avoid climate disasters. Join us on this fight": "We must change now! We must save the planet and avoid climate disasters. Join us on this fight"
+    "We must change now! We must save the planet and avoid climate disasters. Join us on this fight": "We must change now! We must save the planet and avoid climate disasters. Join us on this fight",
+    "Nossa comunidade é feita de desenvolvedores, pesquisadores, conselheiros, ativistas ambientais e produtores rurais.": "Our community is made up of developers, researchers, advisors, environmental activists and rural producers."
 }

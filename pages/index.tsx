@@ -136,8 +136,8 @@ const Home: NextPage = (_props: InferGetStaticPropsType<typeof getStaticProps>) 
                     />
                     
                     <Card2
-                        title='rCC TOKEN'
-                        description={t('Token Crédito de Carbono Regenerativo para recompensar produtores sustentáveis e comunidade pelos serviços ambientais')}
+                        title='TOKEN'
+                        description={t('Token Crédito de Agricultura Regenerativa para recompensar produtores sustentáveis e comunidade pelos serviços ambientais')}
                         img='sac-token'
                     />
 
