@@ -34,15 +34,15 @@ const Consumidor: NextPage = (_props: InferGetStaticPropsType<typeof getStaticPr
             <Script id="googleTagManager" src="https://www.googletagmanager.com/gtm.js?id=%27+i+dl" strategy="afterInteractive" dangerouslySetInnerHTML={{ __html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id=%27+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-WZK3VDF');`}}/>
             <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WZK3VDF" height="0" width="0" style={{display:'none',visibility:'hidden'}}></iframe></noscript>
             <Head>
-                <title>{t('Consumidor')} - Sintrop</title>
-                <meta name='description' content='O verdadeiro impactado da história'/>
+                <title>{t('Consumidor')}Solução para consumidores de alimentos - Sintrop</title>
+                <meta name='description' content='Solução de transparência sobre origem, processo de produção e nível de sustentabilidade de produtores rurais. Escolha a Regeneração!'/>
                 <meta name="keywords" content="Agricultura, Regeneração, Sustentabilidade, Produtores regenerativos, comunidade"/>
                 <meta name="robots" content="index,follow"/>
                 <meta name="googlebot" content="index,follow"/>
                 <meta property="og:type" content="website"/>
                 <meta property="og:url" content="https://sintrop.com/consumidor"/>
                 <meta property="og:title" content="Consumidor da Sintrop"/>
-                <meta property="og:description" content="O verdadeiro impactado pelo sistema"/>
+                <meta property="og:description" content="Solução de transparência sobre origem, processo de produção e nível de sustentabilidade de produtores rurais. Escolha a Regeneração!"/>
                 <meta property="og:locale" content={_props._nextI18Next?.initialLocale}/>
                 <meta property="og:image"content="a definir"/>
                 <link rel="canonical" href="https://sintrop.com"/>
@@ -80,7 +80,7 @@ const Consumidor: NextPage = (_props: InferGetStaticPropsType<typeof getStaticPr
                         <h3 className='font-bold text-center text-green-700 text-xl'>
                             {t('Mais transparência')}
                         </h3>
-                        <p className="mx-2 text-center">{t('Selo com informações e nível de regeneração dos produtores')}</p>
+                        <p className="mx-2 text-center">{t('Selo com informações e nível de regeneração dos produtores. Escolher comprar dos produtores da nossa rede significa fazer parte da regeneração do planeta, e não da destruição.')}</p>
                     </div>
 
                     <div>

@@ -35,15 +35,15 @@ const Pesquisador: NextPage = (_props: InferGetStaticPropsType<typeof getStaticP
             <Script id="googleTagManager" src="https://www.googletagmanager.com/gtm.js?id=%27+i+dl" strategy="afterInteractive" dangerouslySetInnerHTML={{ __html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id=%27+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-WZK3VDF');`}}/>
             <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WZK3VDF" height="0" width="0" style={{display:'none',visibility:'hidden'}}></iframe></noscript>
             <Head>
-                <title>{t('Pesquisador')} - Sintrop</title>
-                <meta name='description' content='Invista no futuro do mundo'/>
+                <title>{t('Pesquisador')}Oportunidade para Pesquisadores Agroecológicos - Sintrop</title>
+                <meta name='description' content='Ajude nos a construir um futuro regenerativo e seja recompensado com o token da Sintrop pelo serviço de ensino sobre regeneração!'/>
                 <meta name="keywords" content="Agricultura, Regeneração, Sustentabilidade, Produtores regenerativos, comunidade"/>
                 <meta name="robots" content="index,follow"/>
                 <meta name="googlebot" content="index,follow"/>
                 <meta property="og:type" content="website"/>
                 <meta property="og:url" content="https://sintrop.com/pesquisador"/>
-                <meta property="og:title" content="Pesquisador - Sintrop"/>
-                <meta property="og:description" content="O papel do pesquisador dentro da Sintrop"/>
+                <meta property="og:title" content="Oportunidade para Pesquisadores Agroecológicos - Sintrop"/>
+                <meta property="og:description" content="Ajude nos a construir um futuro regenerativo e seja recompensado com o token da Sintrop pelo serviço de ensino sobre regeneração!"/>
                 <meta property="og:locale" content={_props._nextI18Next?.initialLocale}/>
                 <meta property="og:image"content="a definir"/>
                 <link rel="canonical" href="https://sintrop.com"/>
@@ -96,8 +96,8 @@ const Pesquisador: NextPage = (_props: InferGetStaticPropsType<typeof getStaticP
                     </div>
                     
                     <div className='flex flex-col px-5 gap-3 lg:w-[500px]'>
-                        <h2 className='font-bold text-xl text-green-700'>{t('Token Crédito de Carbono Regenerativo')}</h2>
-                        <p className='text-justify'>{t('Seja recompensado com o token rCC  pelo serviços de pesquisa e ensino sobre agroecologia. Contribua com o ecossistema publicando suas pesquisas e descobertas que auxiliem na regeneração do planeta')}.</p>
+                        <h2 className='font-bold text-xl text-green-700'>{t('Token Crédito de Agricultura Regenerativa')}</h2>
+                        <p className='text-justify'>{t('Seja recompensado com o token da Sintrop  pelo serviços de pesquisa e ensino sobre agroecologia. Contribua com o ecossistema publicando suas pesquisas e descobertas que auxiliem na regeneração do planeta')}.</p>
                     </div>
                 </section>
 
@@ -114,7 +114,7 @@ const Pesquisador: NextPage = (_props: InferGetStaticPropsType<typeof getStaticP
 
                     <Card5
                         title="3"
-                        text={t("Receba o Token Crédito de carbono Regenerativo")}
+                        text={t("Receba o Token Crédito de Agricultura Regenerativa")}
                     />
                 </section>
 
