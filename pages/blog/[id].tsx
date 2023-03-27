@@ -23,6 +23,8 @@ const DetailPost = ({post}: ServerSideProps) => {
 
     return(
         <div>
+            <Script id="googleTagManager" src="https://www.googletagmanager.com/gtm.js?id=%27+i+dl" strategy="afterInteractive" dangerouslySetInnerHTML={{ __html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id=%27+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-WZK3VDF');`}}/>
+            <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WZK3VDF" height="0" width="0" style={{display:'none',visibility:'hidden'}}></iframe></noscript>
             <Head>
                 <title>{post.title}</title>
                 <meta name='description' content={post.description}/>
@@ -36,11 +38,9 @@ const DetailPost = ({post}: ServerSideProps) => {
                 <meta property="og:locale" content={router.locale}/> 
                 <link rel="canonical" href="https://sintrop.com"/>
                 <link rel='icon' type='image/png' href='/favicon.png'/>
-                <Script strategy="afterInteractive" dangerouslySetInnerHTML={{ __html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id=%27+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-WZK3VDF');`}}></Script>
             </Head>
             <div className='flex flex-col items-center'>
                 <div>
-                    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WZK3VDF" height="0" width="0" style={{display:'none',visibility:'hidden'}}></iframe></noscript>
                     <div className='flex flex-col justify-center w-[100vw] mb-5 items-center h-[110px] bg-green-700'>
                         <Header
                             blog
@@ -56,6 +56,7 @@ const DetailPost = ({post}: ServerSideProps) => {
                     {bodyPost.map(item => {
                         return(
                             <DynamicTag 
+                                key={item.content}
                                 data={item}
                                 onDelete={() => {}}
                             />

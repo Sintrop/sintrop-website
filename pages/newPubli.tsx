@@ -242,6 +242,7 @@ const NewPubli: NextPage = () => {
                 {corpo.map(item => {
                     return(
                         <DynamicTag
+                            key={item.content}
                             data={item}
                             onDelete={(content) => deleteTag(content)}
                         />
