@@ -5,7 +5,7 @@ import {useEffect} from 'react'
 const Page404: NextPage = () => {
     const router = useRouter()
     useEffect(() => {
-        router.push('/')
+        router.push('/');
     },[])
     return(
         <div></div>
