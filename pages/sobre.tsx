@@ -34,15 +34,15 @@ const Sobre: NextPage = (_props: InferGetStaticPropsType<typeof getStaticProps>)
             <Script id="googleTagManager" src="https://www.googletagmanager.com/gtm.js?id=%27+i+dl" strategy="afterInteractive" dangerouslySetInnerHTML={{ __html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id=%27+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-WZK3VDF');`}}/>
             <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WZK3VDF" height="0" width="0" style={{display:'none',visibility:'hidden'}}></iframe></noscript>
             <Head>
-                <title>{t('Sobre a')} Sintrop</title>
-                <meta name='description' content='Venha conhecer nosso propósito'/>
+                <title>{t('Sobre a')} Sintrop - Sobre nós</title>
+                <meta name='description' content='Conheça mais sobre o nosso projeto e como pretendemos regenerar o mundo!'/>
                 <meta name="keywords" content="Agricultura, Regeneração, Sustentabilidade, Produtores regenerativos, comunidade"/>
                 <meta name="robots" content="index,follow"/>
                 <meta name="googlebot" content="index,follow"/>
                 <meta property="og:type" content="website"/>
                 <meta property="og:url" content="https://sintrop.com/sobre"/>
                 <meta property="og:title" content="Sobre a Sintrop"/>
-                <meta property="og:description" content="Venha conhecer nosso propósito"/>
+                <meta property="og:description" content="Conheça mais sobre o nosso projeto e como pretendemos regenerar o mundo!"/>
                 <meta property="og:locale" content={_props._nextI18Next?.initialLocale}/>
                 <meta property="og:image"content="a definir"/>
                 <link rel="canonical" href="https://sintrop.com"/>
@@ -80,9 +80,9 @@ const Sobre: NextPage = (_props: InferGetStaticPropsType<typeof getStaticProps>)
                         <h3 className="font-bold text-xl mx-2">{t('NOSSA')} <span className="text-green-700">{t('VISÃO')}</span></h3>
                         <h3 className="font-bold text-xl mx-2 text-gray-600">{t('Precisamos mudar')} <span className="text-gray-700">{t('AGORA')}</span></h3>
                     
-                        <p className="mx-2">{t('A agricultura industrial tem sido uma das principais causas do aquecimento global e contribui significativamente negativamente para a vida do nosso planeta. Devemos mudar agora para evitar sérios problemas ambientais. Para produzir os alimentos do mundo não precisamos matar lentamente a terra usando muitos produtos químicos, destruindo e erodindo os solos, matando toda a biodiversidade local e usando muitos recursos naturais')}.</p>
+                        <p className="mx-2">{t('A agricultura industrial tem sido uma das principais causas do aquecimento global e contribui muito negativamente para a vida do nosso planeta. Devemos mudar agora para evitar sérios problemas ambientais. Para produzir os alimentos do mundo não precisamos matar lentamente a terra usando muitos produtos químicos, destruindo e erodindo os solos, matando toda a biodiversidade local e usando muitos recursos naturais')}.</p>
 
-                        <p className="mx-2">{t('Nossa visão dos sonhos é um mundo onde 100% dos alimentos sejam produzidos sem prejudicar o planeta. Com soluções internas sustentáveis ou técnicas regenertaivas que tornam o mundo um lugar melhor a cada safra, capture muito CO2 atmosférico e utilize os recursos naturais de forma cíclica')}.</p>
+                        <p className="mx-2">{t('Nossa visão dos sonhos é um mundo onde 100% dos alimentos sejam produzidos sem prejudicar o planeta. Com soluções técnicas regenerativas que tornam o mundo um lugar melhor a cada safra, capturando muito CO2 atmosférico e utilizando os recursos naturais de forma cíclica')}.</p>
                     </div>
                     <Image
                         alt='Imagem de uma planta conectada ao chão por meio da tecnologia'

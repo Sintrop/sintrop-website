@@ -35,15 +35,15 @@ const Produtor: NextPage = (_props: InferGetStaticPropsType<typeof getStaticProp
             <Script id="googleTagManager" src="https://www.googletagmanager.com/gtm.js?id=%27+i+dl" strategy="afterInteractive" dangerouslySetInnerHTML={{ __html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id=%27+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-WZK3VDF');`}}/>
             <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WZK3VDF" height="0" width="0" style={{display:'none',visibility:'hidden'}}></iframe></noscript>
             <Head>
-                <title>{t("Produtor")} - Sintrop</title>
-                <meta name='description' content='Papel do produtor na comunidade'/>
+                <title>{t("Produtor")}Oportunidade para Produtores Regenerativos - Sintrop</title>
+                <meta name='description' content='Seja recompensado com o token Crédito de Agricultura Regenerativa pelo serviço ambiental ecossistêmico prestado para a sociedade pela sua produção rural!'/>
                 <meta name="keywords" content="Agricultura, Regeneração, Sustentabilidade, Produtores regenerativos, comunidade"/>
                 <meta name="robots" content="index,follow"/>
                 <meta name="googlebot" content="index,follow"/>
                 <meta property="og:type" content="website"/>
                 <meta property="og:url" content="https://sintrop.com/produtor"/>
                 <meta property="og:title" content="Produtor - Sintrop"/>
-                <meta property="og:description" content="O papel do produtor dentro da Sintrop"/>
+                <meta property="og:description" content="Seja recompensado com o token Crédito de Agricultura Regenerativa pelo serviço ambiental ecossistêmico prestado para a sociedade pela sua produção rural!"/>
                 <meta property="og:locale" content={_props._nextI18Next?.initialLocale}/>
                 <meta property="og:image"content="a definir"/>
                 <link rel="canonical" href="https://sintrop.com"/>
@@ -96,17 +96,17 @@ const Produtor: NextPage = (_props: InferGetStaticPropsType<typeof getStaticProp
                     </div>
                     
                     <div className='flex flex-col px-5 gap-3 lg:w-[500px]'>
-                        <h2 className='font-bold text-xl text-green-700'>{t('Token Crédito de Carbono Regenerativo')}</h2>
-                        <p className='text-justify'>{t('Seja recompensado com o token rCC pelo serviço ambiental de regeneração de ecossistemas prestados para a humanidade')}.</p>
+                        <h2 className='font-bold text-xl text-green-700'>{t('Token Crédito de Agricultura Regenerativa')}</h2>
+                        <p className='text-justify'>{t('Seja recompensado com o token da Sintrop pelo serviço ambiental de regeneração de ecossistemas prestados para a humanidade. Identificamos um problema MUITO grande que o mercado regulado de carbono é um sistema que centraliza renda e não é acessível para o pequeno produtor. Nascemos para oferecer uma solução alternativa, não burocrática e gratuita para que produtores que estejam regenerando o planeta sejam devidamente recompensados')}.</p>
                     </div> 
                 </section>
 
                 <section className='flex flex-col items-center justify-center w-[100%] py-10 bg-[#f8f8f8] lg:flex-row'>
                     <div className='flex flex-col lg:w-[500px]'>
                         <h3 className='font-bold text-center text-green-700 text-xl mx-2'>
-                            {t('Mais transparência: Certificado de agricultura regenerativa')}
+                            {t('Mais transparência: Dados públicos e selo transparente')}
                         </h3>
-                        <p className='mx-2 text-center'>{t('Exiba seu nível de sustentabilidade para seus clientes. Resultado das inspeções público para provar o nível de regeneração de seu trabalho')}.</p>
+                        <p className='mx-2 text-center'>{t('Exiba seu nível de sustentabilidade para seus clientes. O resultado das inspeções recebidas é público para provar o nível de regeneração de seu trabalho e fornecer informações relevantes para que os consumidores escolham com consciência')}.</p>
                     </div>
 
                     <div>
@@ -160,7 +160,7 @@ const Produtor: NextPage = (_props: InferGetStaticPropsType<typeof getStaticProp
                     <h3 className='font-bold text-center text-green-700 text-xl'>
                         {t('Distribuição do token')}
                     </h3>
-                    <p className='text-center mx-2'>{t('De acordo com sua nota de sustentabilidade: Quanto mais sustentável, mais créditos')}.</p>
+                    <p className='text-center mx-2'>{t('De acordo com sua nota de sustentabilidade: Quanto mais sustentável, mais créditos. Distribuição algorítimica programada para as próximas decadas')}.</p>
                     <Image
                         alt='Planilha de distribuição de token dos produtores'
                         src={require('../assets/planilha-1.png')}

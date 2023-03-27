@@ -46,15 +46,15 @@ const Investidor: NextPage = (_props: InferGetStaticPropsType<typeof getStaticPr
             <Script id="googleTagManager" src="https://www.googletagmanager.com/gtm.js?id=%27+i+dl" strategy="afterInteractive" dangerouslySetInnerHTML={{ __html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id=%27+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-WZK3VDF');`}}/>
             <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WZK3VDF" height="0" width="0" style={{display:'none',visibility:'hidden'}}></iframe></noscript>
             <Head>
-                <title>{t('Investidor')} - Sintrop</title>
-                <meta name='description' content='Invista no futuro do mundo'/>
+                <title>{t('Investidor')}Oportunidade para Investidores - Token Crédito de Agricultura Regenerativa</title>
+                <meta name='description' content='Estamos com a primeira rodada de venda dos tokens abertas para investidores que queiram lutar pela regeneração do planta. Invista na Regeneração!'/>
                 <meta name="keywords" content="Agricultura, Regeneração, Sustentabilidade, Produtores regenerativos, comunidade"/>
                 <meta name="robots" content="index,follow"/>
                 <meta name="googlebot" content="index,follow"/>
                 <meta property="og:type" content="website"/>
                 <meta property="og:url" content="https://sintrop.com/investidor"/>
                 <meta property="og:title" content="Investidor - Sintrop"/>
-                <meta property="og:description" content="O papel do Investidor dentro da Sintrop"/>
+                <meta property="og:description" content="Estamos com a primeira rodada de venda dos tokens abertas para investidores que queiram lutar pela regeneração do planta. Invista na Regeneração!"/>
                 <meta property="og:locale" content={_props._nextI18Next?.initialLocale}/>
                 <meta property="og:image"content="a definir"/>
                 <link rel="canonical" href="https://sintrop.com"/>
@@ -140,7 +140,7 @@ const Investidor: NextPage = (_props: InferGetStaticPropsType<typeof getStaticPr
                     <h3 className='font-bold text-center text-green-700 text-xl'>
                         {t('A solução')}
                     </h3>
-                    <p className='text-center mb-10'>{t('Token Crédito de Carbono Regenerativo')}</p>
+                    <p className='text-center mb-10'>{t('Token Crédito de Agricultura Regenerativa. Atrelamos o impacto ambiental da nossa rede de produtores a 4 indicadores fundamentais para a prosperidade da vida neste planeta.')}</p>
 
                     <Image 
                         src={require('../assets/solucao-1.png')}
