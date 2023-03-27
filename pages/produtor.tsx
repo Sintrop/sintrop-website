@@ -10,6 +10,7 @@ import { Card4 } from "../components/Card4";
 import { Header } from "../components/Header";
 import { Footer } from "../components/Footer";
 import { BtnWhats } from "../components/BtnWhats";
+import { useRouter } from "next/router";
 
 interface StaticProps{
     locale: string;
@@ -26,6 +27,7 @@ export async function getStaticProps({locale}: StaticProps) {
 }
 
 const Produtor: NextPage = (_props: InferGetStaticPropsType<typeof getStaticProps>) => {
+    const router = useRouter();
     const {t} = useTranslation('common');
 
     return(
@@ -62,7 +64,8 @@ const Produtor: NextPage = (_props: InferGetStaticPropsType<typeof getStaticProp
                         </p>
 
                         <Link
-                            href={`https://website-react-qdux.vercel.app/whitepaper.pdf`}
+                            href={router.locale === 'pt-BR' ? 
+                            'https://sintrop.com/assets/qr-code/whitepaper.pdf' : 'https://sintrop.com/assets/whitepaper-v1.4-EN.pdf'}
                             target='_blank'
                         >
                             <button className='mt-5 bg-green-700 w-72 h-14 rounded mb-10'>
@@ -72,6 +75,15 @@ const Produtor: NextPage = (_props: InferGetStaticPropsType<typeof getStaticProp
                     </div>
                     </div>
                 </div>
+
+                <section className='flex flex-col w-[100%] h-[200px] items-center justify-center bg-[url("../assets/bg-green.png")] bg-cover'>
+                    <div className='flex items-center justify-center flex-col w-[100%] h-[100%] bg-[rgba(0,0,0,0.3)]'>
+                        <h2 className='font-bold text-center text-white text-xl lg:w-[800px]'>
+                            {t('Faça parte da rede de produtores do sistema')}!
+                        </h2>
+                        <p className='mx-2 text-center text-white'>{t('Faça parte da rede de produtores do sistema')}</p>
+                    </div>
+                </section>
 
                 <section className='flex flex-col justify-center w-[100vw] py-12 items-center bg-white lg:gap-40 lg:flex-row'>
                     <div className='flex items-center justify-center lg:w-[350px] h-[370px] '>
