@@ -47,14 +47,14 @@ const Investidor: NextPage = (_props: InferGetStaticPropsType<typeof getStaticPr
             <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WZK3VDF" height="0" width="0" style={{display:'none',visibility:'hidden'}}></iframe></noscript>
             <Head>
                 <title>{t('Investidor')}Oportunidade para Investidores - Token Crédito de Agricultura Regenerativa</title>
-                <meta name='description' content='Estamos com a primeira rodada de venda dos tokens abertas para investidores que queiram lutar pela regeneração do planta. Invista na Regeneração!'/>
+                <meta name='description' content='Estamos com a primeira rodada de venda dos tokens abertas para investidores que queiram lutar pela regeneração do planeta. Invista na Regeneração!'/>
                 <meta name="keywords" content="Agricultura, Regeneração, Sustentabilidade, Produtores regenerativos, comunidade"/>
                 <meta name="robots" content="index,follow"/>
                 <meta name="googlebot" content="index,follow"/>
                 <meta property="og:type" content="website"/>
                 <meta property="og:url" content="https://sintrop.com/investidor"/>
                 <meta property="og:title" content="Investidor - Sintrop"/>
-                <meta property="og:description" content="Estamos com a primeira rodada de venda dos tokens abertas para investidores que queiram lutar pela regeneração do planta. Invista na Regeneração!"/>
+                <meta property="og:description" content="Estamos com a primeira rodada de venda dos tokens abertas para investidores que queiram lutar pela regeneração do planeta. Invista na Regeneração!"/>
                 <meta property="og:locale" content={_props._nextI18Next?.initialLocale}/>
                 <meta property="og:image"content="a definir"/>
                 <link rel="canonical" href="https://sintrop.com"/>

@@ -81,7 +81,7 @@ const Produtor: NextPage = (_props: InferGetStaticPropsType<typeof getStaticProp
                         <h2 className='font-bold text-center text-white text-xl lg:w-[800px]'>
                             {t('Faça parte da rede de produtores do sistema')}!
                         </h2>
-                        <p className='mx-2 text-center text-white'>{t('Faça parte da rede de produtores do sistema')}</p>
+                        <p className='mx-2 text-center text-white'>{t('Junte-se a nossa comunidade de produtores na missão de regenerar o planeta')}</p>
                     </div>
                 </section>
 
