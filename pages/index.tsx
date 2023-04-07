@@ -39,14 +39,14 @@ const Home: NextPage = (_props: InferGetStaticPropsType<typeof getStaticProps>) 
             <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WZK3VDF" height="0" width="0" style={{display:'none',visibility:'hidden'}}></iframe></noscript>
             <Head>
                 <title>{t('Sintrop - Tecnologia e Sustentabilidade')}</title>
-                <meta name='description' content='Nossa missão é regenerar o planeta através da tecnologia. Conheça nosso Sistema e o Token Crédito de Agricultura Regenerativa.'/>
+                <meta name='description' content='Nossa missão é regenerar o planeta através da tecnologia. Conheça nosso Sistema e o Token Crédito de Carbono Regenerativo.'/>
                 <meta name="keywords" content="Agricultura, Regeneração, Sustentabilidade, Produtores regenerativos, comunidade"/>
                 <meta name="robots" content="index,follow"/>
                 <meta name="googlebot" content="index,follow"/>
                 <meta property="og:type" content="website"/>
                 <meta property="og:url" content="https://sintrop.com"/>
                 <meta property="og:title" content="Sintrop - Tecnologia e Sustentabilidade"/>
-                <meta property="og:description" content="Nossa missão é regenerar o planeta através da tecnologia. Conheça nosso Sistema e o Token Crédito de Agricultura Regenerativa."/>
+                <meta property="og:description" content="Nossa missão é regenerar o planeta através da tecnologia. Conheça nosso Sistema e o Token Crédito de Carbono Regenerativo."/>
                 <meta property="og:locale" content={_props._nextI18Next?.initialLocale}/>
                 <link rel="canonical" href="https://sintrop.com"/>
                 <link rel='icon' type='image/png' href='/favicon.png'/>
@@ -114,7 +114,7 @@ const Home: NextPage = (_props: InferGetStaticPropsType<typeof getStaticProps>) 
                     </div>
                     
                     <div className='flex flex-col px-5 gap-3 lg:w-[450px]'>
-                        <h2 className='font-bold text-lg text-green-700'>{t('Token Crédito de Agricultura Regenerativa')}</h2>
+                        <h2 className='font-bold text-lg text-green-700'>{t('Token Crédito de Carbono Regenerativo')}</h2>
                         <p className='text-justify'>{t('Token com modelo de distribuição algorítmico programado para ser distribuído ao longo das próximas décadas para produtores regenerativos e comunidade pelos serviços ambientais ecossistêmicos prestados a sociedade')}.</p>
                     </div>
                 </section>
@@ -139,8 +139,8 @@ const Home: NextPage = (_props: InferGetStaticPropsType<typeof getStaticProps>) 
                     />
                     
                     <Card2
-                        title='TOKEN'
-                        description={t('Token Crédito de Agricultura Regenerativa para recompensar produtores sustentáveis e comunidade pelos serviços ambientais')}
+                        title='rCC TOKEN'
+                        description={t('Token Crédito de Carbono Regenerativo para recompensar produtores sustentáveis e comunidade pelos serviços ambientais')}
                         img='sac-token'
                     />
 
@@ -165,7 +165,7 @@ const Home: NextPage = (_props: InferGetStaticPropsType<typeof getStaticProps>) 
                         </h2>
 
                         <Link
-                            href={`https://sintrop.com/assets/qr-code/whitepaper.pdf`}
+                            href={`https://website-react-qdux.vercel.app/whitepaper.pdf`}
                             target='_blank'
                             className='mt-5 bg-green-700 w-72 h-14 rounded mb-10 flex items-center justify-center'
                         >
