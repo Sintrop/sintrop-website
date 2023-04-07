@@ -8,6 +8,7 @@ import { BodyPostProps } from "../../src/interfaces/Posts";
 import { ContextProps } from "../../src/interfaces/ContextServerSide";
 import { useRouter } from "next/router";
 import { Header } from "../../components/Header";
+import {format} from "date-fns";
 
 interface ServerSideProps{
     post: PostsProps
@@ -46,6 +47,11 @@ const DetailPost = ({post}: ServerSideProps) => {
                             blog
                         />
                     </div>
+                </div>
+                <div className='lg:w-[900px] mb-6 mx-2'>
+                    <h1 className="font-bold text-4xl">{post.title}</h1>
+                    <p className="mt-1 text-lg">{post.description}</p>
+                    <p className='text-sm'>{format(new Date(post.createdAt), 'dd/MM/yyyy - kk:mm')}</p>
                 </div>
                 <img
                     src={post.bannerUrl}
