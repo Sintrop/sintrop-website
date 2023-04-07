@@ -165,7 +165,8 @@ const Home: NextPage = (_props: InferGetStaticPropsType<typeof getStaticProps>) 
                         </h2>
 
                         <Link
-                            href={`https://website-react-qdux.vercel.app/whitepaper.pdf`}
+                            href={router.locale === 'pt-BR' ? 
+                            'https://sintrop.com/assets/qr-code/whitepaper.pdf' : 'https://sintrop.com/assets/whitepaper-v1.4-EN.pdf'}
                             target='_blank'
                             className='mt-5 bg-green-700 w-72 h-14 rounded mb-10 flex items-center justify-center'
                         >

@@ -114,13 +114,14 @@ const NewPubli: NextPage = () => {
         try{
             setLoading(true);
             api.post('/post', {
-                title,
+                title: title,
                 description,
                 bannerUrl: imgBannerUrl,
                 bannerAlt: imgBannerAlt,
                 bodyPost: JSON.stringify(corpo),
                 language,
-                keywords
+                keywords,
+                url: title.replaceAll(' ', '-').toLowerCase()
             })
             toast.success('Post feito com sucesso!')
         }catch(err){

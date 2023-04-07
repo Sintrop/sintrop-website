@@ -1,6 +1,7 @@
 import { PostsProps } from "../src/interfaces/Posts";
 import Link from "next/link";
 import {format} from 'date-fns';
+import { useEffect } from "react";
 
 interface Props{
     data: PostsProps;
@@ -9,7 +10,7 @@ interface Props{
 export function CardPost({data}: Props){
     return(
         <Link 
-            href={`/blog/${data.title}`}
+            href={`/blog/${data.url}`}
             className="flex flex-col rounded-md cursor-pointer mb-5 border-2 lg:w-[370px] lg:h-[400px]"
         >
             <img
