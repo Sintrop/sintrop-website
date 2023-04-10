@@ -57,7 +57,7 @@ const Home: NextPage = (_props: InferGetStaticPropsType<typeof getStaticProps>) 
                         <Header/>
                         <div className='flex flex-col mt-32 items-center w-[100%] lg:items-start lg:w-[1000px] lg:mt-0'>
                             <h2 className='text-2xl text-center mt-5 text-white font-bold lg:text-left lg:w-[500px]'>
-                                {t('Nossa missão é incentivar a regeneração do planeta')}!
+                                {t('Nossa missão é regenerar o planeta')}!
                             </h2>
 
                             <h3 className='mt-5 text-lg text-white text-center lg:text-left lg:w-[700px]'>
@@ -139,8 +139,8 @@ const Home: NextPage = (_props: InferGetStaticPropsType<typeof getStaticProps>) 
                     />
                     
                     <Card2
-                        title='rCC TOKEN'
-                        description={t('Token Crédito de Carbono Regenerativo para recompensar produtores sustentáveis e comunidade pelos serviços ambientais')}
+                        title='TOKEN'
+                        description={t('Token Crédito de Agricultura Regenerativa para recompensar produtores sustentáveis e comunidade pelos serviços ambientais')}
                         img='sac-token'
                     />
 
