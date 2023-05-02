@@ -50,7 +50,7 @@ const Pesquisador: NextPage = (_props: InferGetStaticPropsType<typeof getStaticP
                 <link rel='icon' type='image/png' href='/favicon.png'/>
             </Head>
             <div className='flex flex-col items-center w-[100vw] bg-[#062C01]'>
-                <div className='flex flex-col w-[100%] h-[500px] items-center bg-[url("../assets/new-bg.png")] bg-cover bg-center lg:h-[500px]'>
+                <div className='flex flex-col w-[100%] h-[500px] items-center bg-[url("../assets/new-bg.png")] bg-cover bg-center lg:h-[600px]'>
                     <div className='w-[100%] h-[100%] bg-[rgba(0,0,0,0.5)] flex flex-col items-center p-2'>
                         <Header/>
                         <div className='flex flex-col mt-32 items-center w-[100%] lg:items-start lg:w-[1000px] lg:mt-0'>
@@ -76,7 +76,7 @@ const Pesquisador: NextPage = (_props: InferGetStaticPropsType<typeof getStaticP
                     </div>
                 </div>
 
-                <section className='flex flex-col w-[100%] h-[200px] items-center justify-center bg-[url("../assets/bg-green.png")] bg-cover'>
+                <section className='flex flex-col w-[100%] lg:w-[1000px] border-2 rounded-lg mt-[-100px] h-[200px] items-center justify-center bg-[url("../assets/bg-green.png")] bg-cover'>
                     <div className='flex items-center justify-center flex-col w-[100%] h-[100%] bg-[rgba(0,0,0,0.3)] px-2'>
                         <h2 className='font-bold text-center text-white text-xl lg:w-[800px]'>
                             {t('Faça parte da rede de pesquisadores do sistema')}!
@@ -118,6 +118,7 @@ const Pesquisador: NextPage = (_props: InferGetStaticPropsType<typeof getStaticP
                     />
                 </section>
 
+                <div className='flex w-[100%] justify-center bg-[url("../assets/bg-destaque.png")] mt-10'>
                 <section className="flex flex-col w-[100%] items-center py-10 justify-center">
                     <h3 className='font-bold text-center text-white text-xl'>
                         {t('Distribuição do token')}
@@ -137,6 +138,7 @@ const Pesquisador: NextPage = (_props: InferGetStaticPropsType<typeof getStaticP
                         className='lg:hidden lg:w-[1000px] h-[300px] object-contain' 
                     />
                 </section>
+                </div>
 
                 <section className='flex flex-col justify-center py-10 lg:py-0 w-[100%] items-center'>
                     <div className='flex flex-col items-center justify-center lg:gap-20 lg:flex-row '>

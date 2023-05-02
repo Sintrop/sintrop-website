@@ -49,8 +49,8 @@ const Ativista: NextPage = (_props: InferGetStaticPropsType<typeof getStaticProp
                 <link rel='icon' type='image/png' href='/favicon.png'/>
             </Head>
             <div className='flex flex-col items-center w-[100vw] bg-[#062C01]'>
-                <div className='flex flex-col w-[100%] h-[500px] items-center bg-[url("../assets/new-bg.png")] bg-cover bg-center lg:h-[500px]'>
-                    <div className='w-[100%] h-[100%] bg-[rgba(0,0,0,0.5)] flex flex-col items-center p-2'>
+                <div className='flex flex-col w-[100%] h-[500px] items-center bg-[url("../assets/new-bg.png")] bg-cover bg-center lg:h-[600px]'>
+                    <div className='w-[100%] h-[100%] bg-[rgba(0,0,0,0.6)] flex flex-col items-center p-2'>
                         <Header/>
                         <div className='flex flex-col mt-32 items-center w-[100%] lg:items-start lg:w-[1000px] lg:mt-0'>
                             <h1 className='text-2xl text-center mt-5 text-white font-bold lg:text-left lg:w-[500px]'>
@@ -75,7 +75,7 @@ const Ativista: NextPage = (_props: InferGetStaticPropsType<typeof getStaticProp
                     </div>
                 </div>
 
-                <section className='flex flex-col w-[100%] h-[200px] items-center justify-center bg-[url("../assets/bg-green.png")] bg-cover'>
+                <section className='flex flex-col w-[100%] lg:w-[1000px] border-2 rounded-lg mt-[-100px] h-[200px] items-center justify-center bg-[url("../assets/bg-green.png")] bg-cover'>
                     <div className='flex items-center justify-center flex-col w-[100%] h-[100%] bg-[rgba(0,0,0,0.3)]'>
                         <h2 className='font-bold text-center text-white text-xl lg:w-[800px]'>
                             {t('Faça parte da rede de avaliadores do sistema')}!
@@ -93,30 +93,33 @@ const Ativista: NextPage = (_props: InferGetStaticPropsType<typeof getStaticProp
                             className='lg:w-[650px] lg:h-[650px] object-contain'
                         />
                     </div>
-                    
+                        
                     <div className='flex flex-col px-5 gap-3 lg:w-[500px]'>
                         <h2 className='font-bold text-xl text-white'>{t('Token Crédito de Agricultura Regenerativa')}</h2>
                         <p className='text-justify mt-2 mx-2 text-white'>{t('Seja recompensado com o token da Sintrop pelo serviço de inspeção e ativismo ambiental prestado ao Sistema. Realize inspeções periodicamente e contribua na luta para regenerar o planeta')}.</p>
                     </div>
                 </section>
 
-                <section className='flex flex-col items-center justify-center lg:w-[1000px] w-[100%] py-10 lg:flex-row'>
-                    <div className='flex flex-col lg:w-[500px]'>
-                        <h3 className='font-bold text-center text-white text-xl'>
-                            {t('Mais transparência')}
-                        </h3>
-                        <p className="mt-2 mx-2 text-white text-center">{t('Faça a verificação das informações do nível de regeneração dos produtores do Sistema. Todos os dados são púlicos e transparentes para o público')}</p>
-                    </div>
+                <div className='flex w-[100%] justify-center bg-[url("../assets/bg-destaque.png")]'>
+                    <section className='flex flex-col items-center justify-center lg:w-[1000px] w-[100%] py-10 lg:flex-row'>
+                        <div className='flex flex-col lg:w-[500px]'>
+                            <h3 className='font-bold text-center text-white text-xl'>
+                                {t('Mais transparência')}
+                            </h3>
+                            <p className="mt-2 mx-2 text-white text-center">{t('Faça a verificação das informações do nível de regeneração dos produtores do Sistema. Todos os dados são púlicos e transparentes para o público')}</p>
+                        </div>
 
-                    <div>
-                        <Image
-                            alt='Embalagem biodegradável com o selo de sustentabilidade'
-                            src={require('../assets/embalagem.png')}
-                            quality={100}
-                            className='lg:w-[600px] object-contain'
-                        />
-                    </div>
-                </section>
+                        <div>
+                            <Image
+                                alt='Embalagem biodegradável com o selo de sustentabilidade'
+                                src={require('../assets/embalagem.png')}
+                                quality={100}
+                                className='lg:w-[600px] object-contain'
+                            />
+                        </div>
+                    </section>
+                </div>
+
 
                 <section className='flex flex-col w-[100%] h-[500px] items-center justify-center bg-[url("../assets/bg-8.png")] bg-cover'>
                     <div className='flex items-center justify-center flex-col w-[100%] h-[100%] bg-[rgba(0,0,0,0.3)]'>

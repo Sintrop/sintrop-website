@@ -149,7 +149,7 @@ const Sobre: NextPage = (_props: InferGetStaticPropsType<typeof getStaticProps>)
                         alt='Imagem da linha do tempo da sintrop'
                         src={require('../assets/nossa-hist.png')}
                         quality={100}
-                        className='lg:mt-[-40px]'
+                        className='lg:w-[400px] object-contain'
                     />
                 </section>
 

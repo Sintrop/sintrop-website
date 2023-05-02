@@ -20,7 +20,7 @@ export function Header({blog}: Props){
     return(
         <header className={`flex flex-col w-[100%] justify-between lg:w-[1000px] ${!blog ? 'lg:mb-20 lg:flex-row' : 'lg:flex-row items-center gap-2'}`}>
             
-                <div className='flex w-full lg:w-auto px-2 items-center justify-between'>
+                <div className='flex w-full lg:w-auto px-2 lg:px-0 items-center justify-between lg:mt-2'>
                     <Link
                         href='/'
                     >
@@ -28,7 +28,7 @@ export function Header({blog}: Props){
                             src={LogoBranco}
                             quality={100}
                             alt={t('Logo da sintrop')}
-                            className={`w-[150px] h-[60px] ${blog ? 'lg:w-[180px] lg:h-[70px]' : 'lg:w-[257px] lg:h-[98px]'}`}
+                            className={`w-[150px] h-[60px] ${blog ? 'lg:w-[180px] lg:h-[70px]' : 'lg:w-[160px]'} object-cover`}
                         />
                     </Link>
 

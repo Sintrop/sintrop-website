@@ -274,6 +274,7 @@ const Home: NextPage = (_props: InferGetStaticPropsType<typeof getStaticProps>) 
                     )}
                 </section>
 
+                <div className='flex w-[100%] justify-center bg-[url("../assets/bg-destaque.png")]'>
                 <section className='flex flex-col justify-center lg:w-[1000px] py-10 items-center'>
                     <h3 className='font-bold text-center text-3xl text-white'>
                         {t('A solução')}
@@ -294,6 +295,7 @@ const Home: NextPage = (_props: InferGetStaticPropsType<typeof getStaticProps>) 
                         </div>
                     </div>
                 </section>
+                </div>
 
                 <section className='flex flex-col justify-center bg-[#0a4303] lg:w-[1000px] my-20 py-5 items-center rounded-md border-2 mx-2'>
                     <p className='font-bold text-lg text-white px-2 text-center'>{t('Blockchain + Agroecologia para lutar pela:')}</p>
@@ -377,7 +379,7 @@ const Home: NextPage = (_props: InferGetStaticPropsType<typeof getStaticProps>) 
                     </div>
                 </section>
 
-                <section className='flex flex-col w-[100%] h-[200px] items-center justify-center bg-[url("../assets/bg-green.png")] bg-cover'>
+                <section className='flex flex-col lg:w-[1000px] border-2 rounded-lg mt-[-100px] h-[200px] items-center justify-center bg-[url("../assets/bg-green.png")] bg-cover'>
                     <div className='flex items-center justify-center flex-col w-[100%] h-[100%] bg-[rgba(0,0,0,0.4)]'>
                         <h2 className='font-bold text-center text-white text-xl lg:w-[800px]'>
                             {t('Nossa missão é regenerar o planeta')}!

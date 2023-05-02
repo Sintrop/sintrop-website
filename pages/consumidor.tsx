@@ -49,8 +49,8 @@ const Consumidor: NextPage = (_props: InferGetStaticPropsType<typeof getStaticPr
                 <link rel='icon' type='image/png' href='/favicon.png'/>
             </Head>
             <div className='flex flex-col items-center w-[100vw] bg-[#062C01]'>
-                <div className='flex flex-col w-[100%] h-[500px] items-center bg-[url("../assets/bg-11.png")] bg-cover bg-center lg:h-[500px]'>
-                    <div className='w-[100%] h-[100%] bg-[rgba(0,0,0,0.5)] flex flex-col items-center p-2'>
+                <div className='flex flex-col w-[100%] h-[500px] items-center bg-[url("../assets/new-bg.png")] bg-cover bg-center lg:h-[500px]'>
+                    <div className='w-[100%] h-[100%] bg-[rgba(0,0,0,0.6)] flex flex-col items-center p-2'>
                         <Header/>
                         <div className='flex flex-col mt-16 items-center w-[100%] lg:items-start lg:w-[1000px] lg:mt-0'>
                             <h1 className='text-2xl text-center mt-5 text-white font-bold lg:text-left lg:w-[500px]'>
