@@ -83,9 +83,9 @@ const Contato: NextPage= (_props: InferGetStaticPropsType<typeof getStaticProps>
                 <link rel="canonical" href="https://sintrop.com"/>
                 <link rel='icon' type='image/png' href='/favicon.png'/>
             </Head>
-            <div className='flex flex-col items-center w-[100vw]'>
-                <div className='flex flex-col w-[100%] h-[500px] items-center bg-[url("../assets/bg-11.png")] bg-cover bg-center lg:h-[600px]'>
-                    <div className='w-[100%] h-[100%] bg-[rgba(0,0,0,0.5)] flex flex-col items-center p-2 lg:py-20 lg:p-10'>
+            <div className='flex flex-col items-center w-[100vw] bg-[#062C01]'>
+                <div className='flex flex-col w-[100%] h-[500px] items-center bg-[url("../assets/new-bg.png")] bg-cover bg-center lg:h-[500px]'>
+                    <div className='w-[100%] h-[100%] bg-[rgba(0,0,0,0.5)] flex flex-col items-center p-2'>
                         <Header/>
                         <div className='flex flex-col mt-32 items-center w-[100%] lg:items-start lg:w-[1000px] lg:mt-0'>
                             <h1 className='text-2xl text-center mt-5 text-white font-bold lg:text-left lg:w-[500px]'>
@@ -101,16 +101,16 @@ const Contato: NextPage= (_props: InferGetStaticPropsType<typeof getStaticProps>
                 </div>
             </div>
 
-            <section id='contato' className='flex flex-col bg-white lg:gap-20 w-[100%] py-10 justify-center lg:flex-row'>
+            <section id='contato' className='flex flex-col lg:gap-20 w-[100%] py-10 justify-center lg:flex-row bg-[#062C01]'>
                 <div className='flex flex-col lg:w-[400px]'>
-                        <h3 className='font-bold text-xl mx-2'>{t('Contate-nos')}</h3>
-                        <p className='text-lg mx-2'>
+                        <h3 className='font-bold text-xl mx-2 text-white'>{t('Contate-nos')}</h3>
+                        <p className='text-lg mx-2 text-white mt-2'>
                             {t('Em caso de dúvidas, investimentos ou queira participar do primeiro teste da plataforma, envie-nos sua mensagem')}.
                         </p>
                 </div>
                 <form 
                     onSubmit={handleSendEmail}
-                    className='flex flex-col gap-5 p-5 bg-white rounded-lg lg:w-[400px]'
+                    className='flex flex-col gap-5 p-5 rounded-lg lg:w-[400px] bg-white'
                 >
                     <h2 className='text-black text-xl font-bold'>{t('Contato')}</h2>
                     <input

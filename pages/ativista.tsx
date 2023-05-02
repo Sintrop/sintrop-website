@@ -48,9 +48,9 @@ const Ativista: NextPage = (_props: InferGetStaticPropsType<typeof getStaticProp
                 <link rel="canonical" href="https://sintrop.com"/>
                 <link rel='icon' type='image/png' href='/favicon.png'/>
             </Head>
-            <div className='flex flex-col items-center w-[100vw]'>
-                <div className='flex flex-col w-[100%] h-[500px] items-center bg-[url("../assets/bg-11.png")] bg-cover bg-center lg:h-[600px]'>
-                    <div className='w-[100%] h-[100%] bg-[rgba(0,0,0,0.5)] flex flex-col items-center p-2 lg:py-20 lg:p-10'>
+            <div className='flex flex-col items-center w-[100vw] bg-[#062C01]'>
+                <div className='flex flex-col w-[100%] h-[500px] items-center bg-[url("../assets/new-bg.png")] bg-cover bg-center lg:h-[500px]'>
+                    <div className='w-[100%] h-[100%] bg-[rgba(0,0,0,0.5)] flex flex-col items-center p-2'>
                         <Header/>
                         <div className='flex flex-col mt-32 items-center w-[100%] lg:items-start lg:w-[1000px] lg:mt-0'>
                             <h1 className='text-2xl text-center mt-5 text-white font-bold lg:text-left lg:w-[500px]'>
@@ -67,7 +67,7 @@ const Ativista: NextPage = (_props: InferGetStaticPropsType<typeof getStaticProp
                                 'https://sintrop.com/assets/qr-code/whitepaper.pdf' : 'https://sintrop.com/assets/whitepaper-v1.4-EN.pdf'}
                                 target='_blank'
                             >
-                                <button className='mt-5 bg-green-700 w-72 h-14 rounded mb-10'>
+                                <button className='mt-5 bg-blue-600 w-72 h-14 rounded mb-10'>
                                     <p className='font-bold text-white text-lg'>{t('Baixar')} Whitepaper</p>
                                 </button>
                             </Link>
@@ -84,7 +84,7 @@ const Ativista: NextPage = (_props: InferGetStaticPropsType<typeof getStaticProp
                     </div>
                 </section>
 
-                <section className='flex flex-col justify-center w-[100vw] py-12 items-center bg-white lg:gap-40 lg:flex-row'>
+                <section className='flex flex-col justify-center lg:w-[1000px] w-[100vw] py-12 items-center lg:gap-40 lg:flex-row'>
                     <div className='items-center justify-center lg:w-[350px] h-[370px] flex'>
                         <Image 
                             src={require('../assets/token.png')}
@@ -95,17 +95,17 @@ const Ativista: NextPage = (_props: InferGetStaticPropsType<typeof getStaticProp
                     </div>
                     
                     <div className='flex flex-col px-5 gap-3 lg:w-[500px]'>
-                        <h2 className='font-bold text-xl text-green-700'>{t('Token Crédito de Agricultura Regenerativa')}</h2>
-                        <p className='text-justify'>{t('Seja recompensado com o token da Sintrop pelo serviço de inspeção e ativismo ambiental prestado ao Sistema. Realize inspeções periodicamente e contribua na luta para regenerar o planeta')}.</p>
+                        <h2 className='font-bold text-xl text-white'>{t('Token Crédito de Agricultura Regenerativa')}</h2>
+                        <p className='text-justify mt-2 mx-2 text-white'>{t('Seja recompensado com o token da Sintrop pelo serviço de inspeção e ativismo ambiental prestado ao Sistema. Realize inspeções periodicamente e contribua na luta para regenerar o planeta')}.</p>
                     </div>
                 </section>
 
-                <section className='flex flex-col items-center justify-center w-[100%] py-10 bg-[#f8f8f8] lg:flex-row'>
+                <section className='flex flex-col items-center justify-center lg:w-[1000px] w-[100%] py-10 lg:flex-row'>
                     <div className='flex flex-col lg:w-[500px]'>
-                        <h3 className='font-bold text-center text-green-700 text-xl'>
+                        <h3 className='font-bold text-center text-white text-xl'>
                             {t('Mais transparência')}
                         </h3>
-                        <p className="mx-2 text-center">{t('Faça a verificação das informações do nível de regeneração dos produtores do Sistema. Todos os dados são púlicos e transparentes para o público')}</p>
+                        <p className="mt-2 mx-2 text-white text-center">{t('Faça a verificação das informações do nível de regeneração dos produtores do Sistema. Todos os dados são púlicos e transparentes para o público')}</p>
                     </div>
 
                     <div>
@@ -113,7 +113,7 @@ const Ativista: NextPage = (_props: InferGetStaticPropsType<typeof getStaticProp
                             alt='Embalagem biodegradável com o selo de sustentabilidade'
                             src={require('../assets/embalagem.png')}
                             quality={100}
-                            className='lg:w-[400px] object-contain'
+                            className='lg:w-[600px] object-contain'
                         />
                     </div>
                 </section>
@@ -126,18 +126,18 @@ const Ativista: NextPage = (_props: InferGetStaticPropsType<typeof getStaticProp
 
                         <Link 
                             href='/produtor'
-                            className='mt-10 bg-green-700 w-72 h-14 rounded flex items-center justify-center'
+                            className='mt-10 bg-blue-600 w-72 h-14 rounded flex items-center justify-center'
                         >
                             <p className='font-bold text-white text-lg'>{t('Saber Mais')}</p>
                         </Link>
                     </div>
                 </section>
 
-                <section className="flex flex-col w-[100%] items-center py-10 justify-center bg-white">
-                    <h3 className='font-bold text-center text-green-700 text-xl'>
+                <section className="flex flex-col w-[100%] items-center py-10 justify-center lg:w-[1000px]">
+                    <h3 className='font-bold text-center text-white text-xl'>
                         {t('Distribuição do token')}
                     </h3>
-                    <p className='text-center mx-2'>{t('Distribuição de tokens de acordo com a quantidade de inspeções realizadas. Quanto mais inspeções, mais tokens')}.</p>
+                    <p className='text-center mx-2 mt-2 text-white'>{t('Distribuição de tokens de acordo com a quantidade de inspeções realizadas. Quanto mais inspeções, mais tokens')}.</p>
                     <Image
                         alt='Planilha de distribuição de token dos produtores'
                         src={require('../assets/planilha-2.png')}
@@ -152,25 +152,25 @@ const Ativista: NextPage = (_props: InferGetStaticPropsType<typeof getStaticProp
                     />
                 </section>
 
-                <section className='flex flex-col justify-center py-10 lg:py-0 w-[100%] items-center bg-green-100'>
+                <section className='flex flex-col justify-center py-10 lg:py-0 w-[100%] items-center lg:w-[1000px]'>
                     <div className='flex flex-col items-center justify-center lg:gap-20 lg:flex-row '>
                         <div className='flex flex-col gap-2 justify-center lg:h-[450px] lg:w-[400px]'>
-                            <h2 className='font-bold text-xl text-green-700 mx-2'>{t('Inscreva-se para participar do primeiro teste do sistema')}</h2>
-                            <p className='text-justify mx-2'>{t('Estamos buscando os primeiros ativistas para fazer parte da rede de ativistas do Sistema e realizar inspeções presenciais para mensurar o nível de regeneração dos produtores rurais')}!</p>
+                            <h2 className='font-bold text-xl text-white mx-2'>{t('Inscreva-se para participar do primeiro teste do sistema')}</h2>
+                            <p className='text-justify mx-2 mt-2 text-white'>{t('Estamos buscando os primeiros ativistas para fazer parte da rede de ativistas do Sistema e realizar inspeções presenciais para mensurar o nível de regeneração dos produtores rurais')}!</p>
                             <Link 
                                 target='_blank'
                                 href='https://docs.google.com/forms/d/e/1FAIpQLSeh0OgWqr_UuZBy4UUvgWG521zLeMVqx6wQu77mrJdhXDBAPQ/viewform?usp=sf_link' 
-                                className='mt-5 bg-green-700 w-56 h-14 rounded flex items-center justify-center mx-2'
+                                className='mt-5 bg-blue-600 w-56 h-14 rounded flex items-center justify-center mx-2'
                             >
                                 <p className='font-bold text-white text-lg text-center'>{t('Me inscrever')}</p>
                             </Link>
                         </div>
 
                         <Image 
-                            src={require('../assets/globo.png')}
+                            src={require('../assets/comunidade.png')}
                             quality={100}
                             alt='Globo tecnológico'
-                            className='w-[360px] h-[350px] object-contain'
+                            className='w-[360px] h-[350px] object-contain hidden lg:flex'
                         />
                     </div>
                 </section>

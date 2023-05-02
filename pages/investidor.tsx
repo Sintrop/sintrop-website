@@ -60,9 +60,9 @@ const Investidor: NextPage = (_props: InferGetStaticPropsType<typeof getStaticPr
                 <link rel="canonical" href="https://sintrop.com"/>
                 <link rel='icon' type='image/png' href='/favicon.png'/>
             </Head>
-            <div className='flex flex-col items-center w-[100vw]'>
-                <div className='flex flex-col w-[100%] h-[500px] items-center bg-[url("../assets/bg-11.png")] bg-cover bg-center lg:h-[600px]'>
-                    <div className='w-[100%] h-[100%] bg-[rgba(0,0,0,0.5)] flex flex-col items-center p-2 lg:py-20 lg:p-10'>
+            <div className='flex flex-col items-center w-[100vw] bg-[#062C01]'>
+                <div className='flex flex-col w-[100%] h-[500px] items-center bg-[url("../assets/new-bg.png")] bg-cover bg-center lg:h-[500px]'>
+                    <div className='w-[100%] h-[100%] bg-[rgba(0,0,0,0.5)] flex flex-col items-center p-2'>
                         <Header/>
                         <div className='flex flex-col mt-32 items-center w-[100%] lg:items-start lg:w-[1000px] lg:mt-0'>
                             <h1 className='text-2xl text-center mt-5 text-white font-bold lg:text-left lg:w-[500px]'>
@@ -79,7 +79,7 @@ const Investidor: NextPage = (_props: InferGetStaticPropsType<typeof getStaticPr
                                 'https://sintrop.com/assets/qr-code/whitepaper.pdf' : 'https://sintrop.com/assets/whitepaper-v1.4-EN.pdf'}
                                 target='_blank'
                             >
-                                <button className='mt-5 bg-green-700 w-72 h-14 rounded mb-10'>
+                                <button className='mt-5 bg-blue-600 w-72 h-14 rounded mb-10'>
                                     <p className='font-bold text-white text-lg'>{t('Baixar')} Whitepaper</p>
                                 </button>
                             </Link>
@@ -87,11 +87,11 @@ const Investidor: NextPage = (_props: InferGetStaticPropsType<typeof getStaticPr
                     </div>
                 </div>
 
-                <section className='flex flex-col items-center w-[100%] bg-white py-10'>
-                    <h3 className='font-bold text-center text-2xl'>
-                        {t('O enorme')} <span className="text-red-600">{t('Problema')}</span>
+                <section className='flex flex-col items-center w-[100%] py-10'>
+                    <h3 className='font-bold text-center text-2xl text-white'>
+                        {t('O Problema')}
                     </h3>
-                    <p className='text-center mb-10'></p>
+                    <p className='text-center mb-10 mt-2 text-white'></p>
                 
                     {chooseMap ? (
                         <div className="flex flex-col">
@@ -101,7 +101,7 @@ const Investidor: NextPage = (_props: InferGetStaticPropsType<typeof getStaticPr
                                 quality={100}
                                 className='w-[600px] h-[500px] object-cover'
                             />
-                            <p className='font-bold text-green-700'>1984</p>
+                            <p className='font-bold text-white'>1984</p>
                         </div>
                     ) : (
                         <div className="flex flex-col">
@@ -111,36 +111,20 @@ const Investidor: NextPage = (_props: InferGetStaticPropsType<typeof getStaticPr
                                 quality={100}
                                 className='w-[600px] h-[500px] object-cover'
                             />
-                            <p className='font-bold text-green-700'>2020</p>
+                            <p className='font-bold text-white'>2020</p>
                         </div>
                     )}
 
                     <p
-                        className='lg:w-[800px] text-justify my-10 mx-2'
+                        className='lg:w-[1000px] text-justify my-10 mx-2 text-white'
                     >{t('Estamos destruindo o nosso planeta. A agricultura degenerativa desmata nossas florestas, acaba com a água, destrói os solos e extingue a biodiversidade. Estamos no caminho do suicídio da nossa sociedade e colapso socioambiental. Não há vida na terra sem a natureza e nós precisamos viver em harmonia e mudar o paradigma da cultura extrativista, onde colhemos hoje em detrimento do futuro')}.</p>
                 </section>
 
-                <section className='flex flex-col justify-center w-[100vw] py-10 items-center bg-[#f8f8f8] lg:gap-40 lg:flex-row'>
-                    <div className='items-center justify-center lg:w-[350px] h-[370px] flex'>
-                        <Image 
-                            src={require('../assets/grafico-1.png')}
-                            quality={100}
-                            alt='Gráfico demonstrando o caminho'
-                            className='object-cover'
-                        />
-                    </div>
-                    
-                    <div className='flex flex-col px-5 gap-3 lg:w-[500px]'>
-                        <h2 className='font-bold text-xl text-green-700'>{t('O caminho')}</h2>
-                        <p className='text-justify'>{t('A taxa de degeneração atualmente é muito maior que a de regeneração. Esse é o caminho do colapso. Precisamos urgente como sociedade mudar nosso sistema de produção e tornar a agricultura regenerativa. Quando atingirmos o ponto de inflexão o planeta se regenerará e o resultado será a reversão do aquecimento global, aumento da biodiversidade, segurança alimentar e restauração da água')}.</p>
-                    </div>
-                </section>
-
-                <section className='flex flex-col items-center w-[100%] bg-white py-10'>
-                    <h3 className='font-bold text-center text-green-700 text-xl'>
+                <section className='flex flex-col items-center w-[100%] lg:w-[1000px] py-10'>
+                    <h3 className='font-bold text-center text-white text-xl'>
                         {t('A solução')}
                     </h3>
-                    <p className='text-center mb-10'>{t('Token Crédito de Agricultura Regenerativa. Atrelamos o impacto ambiental da nossa rede de produtores a 4 indicadores fundamentais para a prosperidade da vida neste planeta.')}</p>
+                    <p className='text-center mb-10 mt-2 text-white'>{t('Token Crédito de Agricultura Regenerativa. Atrelamos o impacto ambiental da nossa rede de produtores a 4 indicadores fundamentais para a prosperidade da vida neste planeta.')}</p>
 
                     <Image 
                         src={require('../assets/solucao-1.png')}
@@ -150,18 +134,55 @@ const Investidor: NextPage = (_props: InferGetStaticPropsType<typeof getStaticPr
                     />
                 </section>
 
-                <section className='flex flex-col items-center w-[100%] bg-green-100 py-10'>
-                    <h3 className='font-bold text-center text-green-700 text-xl mx-2'>
+                <section className='flex flex-col items-center w-[100%] py-10'>
+                    <h3 className='font-bold text-center text-white text-xl mx-2'>
                         {t('Comprovantes de ajuda na regeneração')}
                     </h3>
-                    <p className='text-center mx-2 mb-10 lg:w-[1000px]'>{t('Veja seu histórico de ajuda, e o quanto você impactou o mundo')}!</p>
+                    <p className='text-center mx-2 mb-10 lg:w-[1000px] mt-2 text-white'>{t('Veja seu histórico de ajuda, e o quanto você impactou o mundo')}!</p>
+                    
+                    <div className='flex flex-col lg:flex-row items-center gap-5'>
+                        <div>
+                            <p className='font-bold text-white'>{t('Certificado')}</p>
+                            <Image 
+                                src={require('../assets/selo.png')}
+                                quality={100}
+                                alt='Token exemplificativo'
+                                className='object-contain lg:w-[500px] '
+                            />
+                        </div>
 
-                    <Image 
-                        src={require('../assets/recibo-investidor.png')}
-                        quality={100}
-                        alt='Token exemplificativo'
-                        className='object-contain lg:h-[700px] '
-                    />
+                        <div>
+                            <p className='font-bold text-white'>{t('Recibo de contribuição')}</p>
+                            <Image 
+                                src={require('../assets/recibo.png')}
+                                quality={100}
+                                alt='Token exemplificativo'
+                                className='object-contain lg:w-[300px] '
+                            />
+                        </div>
+                    </div>
+                </section>
+
+                <section className='flex flex-col justify-center py-10 lg:py-0 w-[100%] lg:w-[1000px] items-center'>
+                    <div className='flex flex-col items-center justify-center lg:gap-20 lg:flex-row '>
+                        <div className='flex flex-col gap-2 justify-center lg:h-[450px] lg:w-[400px]'>
+                            <h2 className='font-bold text-xl text-white mx-2'>{t('Queremos acelerar nosso desenvolvimento, por isso estamos com a primeira rodada privada de venda dos tokens aberta.')}</h2>
+                            <Link 
+                                target='_blank'
+                                href='https://docs.google.com/forms/d/e/1FAIpQLSfRP4MzGk86ikasBaLMGhsCvbZp67jlVW9ftIoHP0fVXoyRcw/viewform?usp=sf_link' 
+                                className='mt-5 bg-blue-600 w-56 h-14 rounded flex items-center justify-center mx-2'
+                            >
+                                <p className='font-bold text-white text-lg text-center'>{t('Quero Investir')}</p>
+                            </Link>
+                        </div>
+
+                        <Image 
+                            src={require('../assets/comunidade.png')}
+                            quality={100}
+                            alt='Globo tecnológico'
+                            className='w-[360px] h-[350px] object-contain hidden lg:flex'
+                        />
+                    </div>
                 </section>
 
                 <section className='flex flex-col w-[100%] h-[500px] items-center justify-center bg-[url("../assets/bg-13.png")] bg-cover'>
@@ -169,29 +190,6 @@ const Investidor: NextPage = (_props: InferGetStaticPropsType<typeof getStaticPr
                         <h2 className='font-bold text-center text-white text-3xl lg:w-[800px]'>
                             {t('JUNTOS PODEMOS MUDAR O MUNDO')}!
                         </h2>
-                    </div>
-                </section>
-
-                <section className='flex flex-col justify-center py-10 lg:py-0 w-[100%] items-center bg-white'>
-                    <div className='flex flex-col items-center justify-center lg:gap-20 lg:flex-row '>
-                        <div className='flex flex-col gap-2 justify-center lg:h-[450px] lg:w-[400px]'>
-                            <h2 className='font-bold text-xl text-green-700 mx-2'>{t('Seja um dos primeiros a investir na regeneração do planeta')}</h2>
-                            <p className='text-justify mx-2'>{t('Estamos buscando os primeiros investidores que acreditam na regeneração do mundo, e que com seu investimento podemos acelerar essa regeneração')}!</p>
-                            <Link 
-                                target='_blank'
-                                href='https://docs.google.com/forms/d/e/1FAIpQLSfRP4MzGk86ikasBaLMGhsCvbZp67jlVW9ftIoHP0fVXoyRcw/viewform?usp=sf_link' 
-                                className='mt-5 bg-green-700 w-56 h-14 rounded flex items-center justify-center mx-2'
-                            >
-                                <p className='font-bold text-white text-lg text-center'>{t('Quero Investir')}</p>
-                            </Link>
-                        </div>
-
-                        <Image 
-                            src={require('../assets/globo.png')}
-                            quality={100}
-                            alt='Globo tecnológico'
-                            className='w-[360px] h-[350px] object-contain'
-                        />
                     </div>
                 </section>
 

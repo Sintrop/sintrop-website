@@ -63,8 +63,8 @@ const Home: NextPage = (_props: InferGetStaticPropsType<typeof getStaticProps>) 
                 <link rel='icon' type='image/png' href='/favicon.png'/>
             </Head>
             <div className='flex flex-col items-center w-[100vw] bg-[#062C01]'>
-                <div className='flex flex-col w-[100%] h-[600px] items-center bg-[url("../assets/new-bg.png")] bg-cover bg-center lg:h-[700px]'>
-                    <div className='w-[100%] h-[100%] bg-[rgba(0,0,0,0.5)] flex flex-col items-center p-2 lg:py-20 lg:p-10'>
+                <div className='flex flex-col w-[100%] h-[600px] items-center bg-[url("../assets/new-bg.png")] bg-cover bg-center lg:h-[600px]'>
+                    <div className='w-[100%] h-[100%] bg-[rgba(0,0,0,0.5)] flex flex-col items-center p-2'>
                         <Header/>
                         <div className='flex flex-col mt-32 items-center w-[100%] lg:items-start lg:w-[1000px] lg:mt-0'>
                             <h2 className='text-2xl text-center mt-5 text-white font-bold lg:text-left lg:w-[500px]'>
@@ -117,7 +117,7 @@ const Home: NextPage = (_props: InferGetStaticPropsType<typeof getStaticProps>) 
                                 />
                                 <div className='flex flex-col'>
                                     <p className='text-white'>CIRCULATING MARKET CAP</p>
-                                    <p className='text-white'>R$ 10.000.000,00</p>
+                                    <p className='text-white'>R$ 0,00</p>
                                 </div>
                             </div>
                         </div>
@@ -130,7 +130,7 @@ const Home: NextPage = (_props: InferGetStaticPropsType<typeof getStaticProps>) 
                                         <Image
                                             src={require('../assets/co2.png')}
                                             alt='Token da sintrop'
-                                            className='w-[30px] h-[30px] object-contain'
+                                            className='w-[40px] h-[40px] object-contain'
                                         />
                                     </div>
                                     <p className='text-white font-bold text-3xl flex items-end gap-2'>0 <p className='text-white font-bold text-lg'>ton</p></p>
@@ -236,14 +236,14 @@ const Home: NextPage = (_props: InferGetStaticPropsType<typeof getStaticProps>) 
                     </div>
 
                     <div className='flex flex-col lg:flex-row items-center w-full justify-between lg:px-20 mt-5'>
-                        <p className='text-[#ABE056] font-bold'>PRODUTORES: 1254</p>
-                        <p className='text-[#ABE056] font-bold'>ATIVISTAS: 1254</p>
-                        <p className='text-[#ABE056] font-bold'>PESQUISADORES: 1254</p>
+                        <p className='text-[#ABE056] font-bold'>PRODUTORES: 0</p>
+                        <p className='text-[#ABE056] font-bold'>ATIVISTAS: 0</p>
+                        <p className='text-[#ABE056] font-bold'>PESQUISADORES: 0</p>
                     </div>
                 </section>
                 {/* NETWORK IMPACT */}
                 
-                <section className='flex flex-col items-center w-[100%] py-10'>
+                <section className='flex flex-col items-center w-[100%] py-14'>
                     <h3 className='font-bold text-center text-3xl text-white'>
                         {t('O problema')}
                     </h3>
@@ -300,13 +300,13 @@ const Home: NextPage = (_props: InferGetStaticPropsType<typeof getStaticProps>) 
                 
                     <div className='flex flex-col lg:flex-row items-center gap-2 justify-between w-full px-5 mt-5'>
                         <div className='flex flex-col gap-2'>
-                            <p className='text-white font-bold text-xl'>- Agrofloresta</p>
-                            <p className='text-white font-bold text-xl'>- Agricultura regenerativa</p>
-                            <p className='text-white font-bold text-xl'>- Melhor distribuição de renda</p>
-                            <p className='text-white font-bold text-xl'>- Agricultura familiar</p>
-                            <p className='text-white font-bold text-xl'>- Segurança alimentar</p>
-                            <p className='text-white font-bold text-xl'>- Reversão do aquecimento global</p>
-                            <p className='text-white font-bold text-xl'>- Manutenção da água</p>
+                            <p className='text-white font-bold lg:text-xl'>- Agrofloresta</p>
+                            <p className='text-white font-bold lg:text-xl'>- Agricultura regenerativa</p>
+                            <p className='text-white font-bold lg:text-xl'>- Melhor distribuição de renda</p>
+                            <p className='text-white font-bold lg:text-xl'>- Agricultura familiar</p>
+                            <p className='text-white font-bold lg:text-xl'>- Segurança alimentar</p>
+                            <p className='text-white font-bold lg:text-xl'>- Reversão do aquecimento global</p>
+                            <p className='text-white font-bold lg:text-xl'>- Manutenção da água</p>
                         </div>
                         <Image
                             src={require('../assets/imagens-floresta.png')}
@@ -322,7 +322,7 @@ const Home: NextPage = (_props: InferGetStaticPropsType<typeof getStaticProps>) 
                     />
                 </section>
 
-                <section className='flex flex-wrap gap-10 justify-center py-10 lg:w-[1000px]'>
+                <section className='flex flex-wrap gap-10 justify-center mt-10 mb-24 lg:w-[1000px]'>
                     <Card2
                         title='ISA'
                         description={t('Índice de Sustentabilidade na Agricultura para medir o impacto dos produtores em uma escala')}
