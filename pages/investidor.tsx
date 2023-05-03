@@ -64,14 +64,14 @@ const Investidor: NextPage = (_props: InferGetStaticPropsType<typeof getStaticPr
                 <div className='flex flex-col w-[100%] h-[500px] items-center bg-[url("../assets/new-bg.png")] bg-cover bg-center lg:h-[600px]'>
                     <div className='w-[100%] h-[100%] bg-[rgba(0,0,0,0.6)] flex flex-col items-center p-2'>
                         <Header/>
-                        <div className='flex flex-col mt-32 items-center w-[100%] lg:items-start lg:w-[1000px] lg:mt-0'>
-                            <h1 className='text-2xl text-center mt-5 text-white font-bold lg:text-left lg:w-[500px]'>
+                        <div className='flex flex-col mt-32 items-center w-[100%] lg:items-start lg:w-[1000px] lg:mt-16'>
+                            <h1 className='text-6xl text-center mt-5 text-white font-bold lg:text-left lg:w-[600px]'>
                                 {t('Oportunidade para Investidores')}
                             </h1>
 
                             <p className='mt-5 text-lg text-white text-center lg:text-left lg:w-[700px]'>
-                                {t('Invista na')}
-                                <span className='font-bold text-white'> {t('Regeneração do Planeta')}</span>.
+                                {t('Queremos acelerar nosso desenvolvimento, por isso estamos com a primeira rodada privada de venda dos tokens aberta. Você tem a oportunidade de ser uma das primeiras pessoas a investir no token ')}
+                                <span className='font-bold text-white'> {t('Crédito de Regeneração')}</span>.
                             </p>
 
                             <Link
@@ -87,27 +87,15 @@ const Investidor: NextPage = (_props: InferGetStaticPropsType<typeof getStaticPr
                     </div>
                 </div>
 
-                <section className='flex flex-col w-[100%] lg:w-[1000px] border-2 rounded-lg mt-[-100px] h-[200px] items-center justify-center bg-[url("../assets/bg-green.png")] bg-cover'>
-                    <div className='flex items-center justify-center flex-col w-[100%] h-[100%] bg-[rgba(0,0,0,0.3)] lg:flex-row'>
-                        <h2 className='font-bold text-center text-white text-xl lg:w-[400px]'>
-                            {t('Queremos acelerar nosso desenvolvimento, por isso estamos com a primeira rodada privada de venda dos tokens aberta')}
-                        </h2>
-                        <Link 
-                            target='_blank'
-                            href='https://docs.google.com/forms/d/e/1FAIpQLSfRP4MzGk86ikasBaLMGhsCvbZp67jlVW9ftIoHP0fVXoyRcw/viewform?usp=sf_link' 
-                            className='ml-5 bg-blue-600 w-56 h-14 rounded flex items-center justify-center mx-2'
-                        >
-                            <p className='font-bold text-white text-lg text-center'>{t('Quero Investir')}</p>
-                        </Link>
-                    </div>
-                </section>
-
                 <section className='flex flex-col items-center w-[100%] py-10'>
                     <h3 className='font-bold text-center text-2xl text-white'>
                         {t('O Problema')}
                     </h3>
-                    <p className='text-center mb-10 mt-2 text-white'></p>
                 
+                    <p
+                        className='lg:w-[1000px] text-justify my-10 mx-2 text-white'
+                    >{t('Estamos destruindo o nosso planeta. A agricultura degenerativa desmata nossas florestas, acaba com a água, destrói os solos e extingue a biodiversidade. Estamos no caminho do suicídio da nossa sociedade e colapso socioambiental. Não há vida na terra sem a natureza e nós precisamos viver em harmonia e mudar o paradigma da cultura extrativista, onde colhemos hoje em detrimento do futuro')}.</p>
+                    
                     {chooseMap ? (
                         <div className="flex flex-col">
                             <Image
@@ -130,27 +118,31 @@ const Investidor: NextPage = (_props: InferGetStaticPropsType<typeof getStaticPr
                         </div>
                     )}
 
-                    <p
-                        className='lg:w-[1000px] text-justify my-10 mx-2 text-white'
-                    >{t('Estamos destruindo o nosso planeta. A agricultura degenerativa desmata nossas florestas, acaba com a água, destrói os solos e extingue a biodiversidade. Estamos no caminho do suicídio da nossa sociedade e colapso socioambiental. Não há vida na terra sem a natureza e nós precisamos viver em harmonia e mudar o paradigma da cultura extrativista, onde colhemos hoje em detrimento do futuro')}.</p>
                 </section>
 
-                <section className='flex flex-col items-center w-[100%] lg:w-[1000px] py-10'>
-                    <h3 className='font-bold text-center text-white text-xl'>
+                <section className='flex flex-col justify-center lg:w-[1000px] py-10 items-center'>
+                    <h3 className='font-bold text-center text-2xl text-white'>
                         {t('A solução')}
                     </h3>
-                    <p className='text-center mb-10 mt-2 text-white'>{t('Token Crédito de Agricultura Regenerativa. Atrelamos o impacto ambiental da nossa rede de produtores a 4 indicadores fundamentais para a prosperidade da vida neste planeta.')}</p>
-
-                    <Image 
-                        src={require('../assets/solucao-1.png')}
-                        quality={100}
-                        alt='Token exemplificativo'
-                        className='object-contain lg:h-[400px] lg:object-cover'
-                    />
+                    <div className='flex flex-col lg:flex-row items-center mt-5 gap-5'>
+                        <div className='flex items-center justify-center py-5'>
+                            <Image 
+                                src={require('../assets/token-solução.png')}
+                                quality={100}
+                                alt='Logo da sintrop'
+                                className='w-[90%] lg:w-[400px] object-contain'
+                            />
+                        </div>
+                        
+                        <div className='flex flex-col px-5 gap-3 lg:w-[450px]'>
+                            <h2 className='font-bold text-lg text-white'>{t('Token Crédito de Carbono Regenerativo')}</h2>
+                            <p className='text-justify text-white'>{t('Token com modelo de distribuição algorítmico programado para ser distribuído ao longo das próximas décadas para produtores regenerativos e comunidade pelos serviços ambientais ecossistêmicos prestados a sociedade')}.</p>
+                        </div>
+                    </div>
                 </section>
                 
                 <div className='flex w-[100%] justify-center bg-[url("../assets/bg-destaque.png")]'>
-                <section className='flex flex-col items-center w-[100%] py-10'>
+                <section className='flex flex-col items-center w-[100%] pt-10 pb-32'>
                     <h3 className='font-bold text-center text-white text-xl'>
                         {t('Comprovantes de ajuda na regeneração')}
                     </h3>
@@ -180,7 +172,7 @@ const Investidor: NextPage = (_props: InferGetStaticPropsType<typeof getStaticPr
                 </section>
                 </div>
 
-                <section className='flex flex-col justify-center py-10 lg:py-0 w-[100%] lg:w-[1000px] items-center'>
+                {/* <section className='flex flex-col justify-center py-10 lg:py-0 w-[100%] lg:w-[1000px] items-center'>
                     <div className='flex flex-col items-center justify-center lg:gap-20 lg:flex-row '>
                         <div className='flex flex-col gap-2 justify-center lg:h-[450px] lg:w-[400px]'>
                             <h2 className='font-bold text-xl text-white mx-2'>{t('Queremos acelerar nosso desenvolvimento, por isso estamos com a primeira rodada privada de venda dos tokens aberta.')}</h2>
@@ -200,9 +192,24 @@ const Investidor: NextPage = (_props: InferGetStaticPropsType<typeof getStaticPr
                             className='w-[360px] h-[350px] object-contain hidden lg:flex'
                         />
                     </div>
+                </section> */}
+
+                <section className='flex flex-col w-[100%] lg:w-[1000px] mt-[-100px] border-2 rounded-lg  h-[200px] items-center justify-center bg-[url("../assets/bg-green.png")] bg-cover z-50'>
+                    <div className='flex items-center justify-center flex-col w-[100%] h-[100%] bg-[rgba(0,0,0,0.3)] lg:flex-row'>
+                        <h2 className='font-bold text-center text-white text-xl lg:w-[400px]'>
+                            {t('Queremos acelerar nosso desenvolvimento, por isso estamos com a primeira rodada privada de venda dos tokens aberta')}
+                        </h2>
+                        <Link 
+                            target='_blank'
+                            href='https://docs.google.com/forms/d/e/1FAIpQLSfRP4MzGk86ikasBaLMGhsCvbZp67jlVW9ftIoHP0fVXoyRcw/viewform?usp=sf_link' 
+                            className='ml-5 bg-blue-600 w-56 h-14 rounded flex items-center justify-center mx-2'
+                        >
+                            <p className='font-bold text-white text-lg text-center'>{t('Quero Investir')}</p>
+                        </Link>
+                    </div>
                 </section>
 
-                <section className='flex flex-col w-[100%] h-[500px] items-center justify-center bg-[url("../assets/bg-13.png")] bg-cover'>
+                <section className='flex flex-col w-[100%] mt-[-100px] h-[500px] items-center justify-center bg-[url("../assets/bg-13.png")] bg-cover z-40'>
                     <div className='flex items-center justify-center flex-col w-[100%] h-[100%] bg-[rgba(0,0,0,0.4)]'>
                         <h2 className='font-bold text-center text-white text-3xl lg:w-[800px]'>
                             {t('JUNTOS PODEMOS MUDAR O MUNDO')}!

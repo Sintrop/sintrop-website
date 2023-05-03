@@ -67,11 +67,11 @@ const Home: NextPage = (_props: InferGetStaticPropsType<typeof getStaticProps>) 
                     <div className='w-[100%] h-[100%] bg-[rgba(0,0,0,0.5)] flex flex-col items-center p-2'>
                         <Header/>
                         <div className='flex flex-col mt-32 items-center w-[100%] lg:items-start lg:w-[1000px] lg:mt-0'>
-                            <h2 className='text-2xl text-center mt-5 text-white font-bold lg:text-left lg:w-[500px]'>
+                            <h2 className='text-6xl text-center mt-5 text-white font-bold lg:text-left lg:w-[700px]'>
                                 {t('Regeneração do planeta através da agricultura Regenerativa')}!
                             </h2>
 
-                            <h3 className='mt-5 text-lg text-white text-center lg:text-left lg:w-[400px]'>
+                            <h3 className='mt-5 text-lg text-white text-center lg:text-left lg:w-[600px]'>
                                 {t('Sistema descentralizado de certificação de regeneração com mecanismo de incentivo de sustentabilidade através do token Crédito de ')}
                                 <span className='font-bold text-white'> {t('Agricultura Regenerativa')}</span>.
                             </h3>
@@ -80,7 +80,7 @@ const Home: NextPage = (_props: InferGetStaticPropsType<typeof getStaticProps>) 
                                 href={router.locale === 'pt-BR' ? 
                                 'https://sintrop.com/assets/qr-code/whitepaper.pdf' : 'https://sintrop.com/assets/whitepaper-v1.4-EN.pdf'}
                                 target='_blank'
-                                className='mt-5 bg-blue-600 w-72 h-14 rounded mb-10 flex items-center justify-center'
+                                className='mt-2 bg-blue-600 w-72 h-14 rounded mb-10 flex items-center justify-center'
                             >
                                 <p className='font-bold text-white text-lg'>{t('Baixar')} Whitepaper</p>
                             </Link>

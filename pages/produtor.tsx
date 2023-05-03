@@ -54,7 +54,7 @@ const Produtor: NextPage = (_props: InferGetStaticPropsType<typeof getStaticProp
                     <div className='w-[100%] h-[100%] bg-[rgba(0,0,0,0.6)] flex flex-col items-center p-2'>
                     <Header/>
                     <div className='flex flex-col mt-32 items-center w-[100%] lg:items-start lg:w-[1000px] lg:mt-0'>
-                        <h1 className='text-2xl text-center mt-5 text-white font-bold lg:text-left lg:w-[500px]'>
+                        <h1 className='text-6xl text-center mt-5 text-white font-bold lg:text-left lg:w-[600px]'>
                             {t('Oportunidade para Produtores Rurais Regenerativos')}
                         </h1>
 
@@ -75,15 +75,6 @@ const Produtor: NextPage = (_props: InferGetStaticPropsType<typeof getStaticProp
                     </div>
                     </div>
                 </div>
-
-                <section className='flex flex-col w-[100%] lg:w-[1000px] border-2 rounded-lg mt-[-100px] h-[200px] items-center justify-center bg-[url("../assets/bg-green.png")] bg-cover'>
-                    <div className='flex items-center justify-center flex-col w-[100%] h-[100%] bg-[rgba(0,0,0,0.3)]'>
-                        <h2 className='font-bold text-center text-white text-xl lg:w-[800px]'>
-                            {t('Faça parte da rede de produtores do sistema')}!
-                        </h2>
-                        <p className='mx-2 text-center text-white'>{t('Junte-se a nossa comunidade de produtores na missão de regenerar o planeta')}</p>
-                    </div>
-                </section>
 
                 <section className='flex flex-col justify-center lg:w-[1000px] py-12 items-center lg:gap-36 lg:flex-row'>
                     <div className='flex items-center justify-center lg:w-[350px] h-[370px] '>
@@ -180,11 +171,11 @@ const Produtor: NextPage = (_props: InferGetStaticPropsType<typeof getStaticProp
                 </section>
                 </div>
 
-                <section className='flex flex-col justify-center py-10 lg:py-0 w-[100%] items-center'>
-                    <div className='flex flex-col items-center justify-center lg:gap-20 lg:flex-row '>
+                <section className='flex flex-col justify-center pt-10 lg:pt-0 w-[100%] lg:w-[1000px] items-center pb-20'>
+                    <div className='flex flex-col items-center justify-center lg:gap-20 lg:flex-row'>
                         <div className='flex flex-col gap-2 justify-center lg:h-[450px] lg:w-[400px]'>
                             <h2 className='font-bold text-xl text-white mx-2'>{t('Inscreva-se para participar do primeiro teste do sistema')}</h2>
-                            <p className='text-justify mx-2 mt-2 text-white'>{t('Estamos buscando os primeiros produtores rurais regenerativos para participar do teste de operação. Se você é um produtor que trabalha com agrofloresta, agricultura sintrópica ou qualquer outra forma de regeneração da natureza entre em contato conosco')}!</p>
+                            <p className='text-justify mx-2 lg:mx-0 mt-2 text-white'>{t('Estamos buscando os primeiros produtores rurais regenerativos para participar do teste de operação. Se você é um produtor que trabalha com agrofloresta, agricultura sintrópica ou qualquer outra forma de regeneração da natureza entre em contato conosco')}!</p>
                             <Link 
                                 target='_blank'
                                 href='https://docs.google.com/forms/d/e/1FAIpQLSeh0OgWqr_UuZBy4UUvgWG521zLeMVqx6wQu77mrJdhXDBAPQ/viewform?usp=sf_link' 
@@ -200,6 +191,23 @@ const Produtor: NextPage = (_props: InferGetStaticPropsType<typeof getStaticProp
                             alt='Globo tecnológico'
                             className='w-[360px] h-[350px] object-contain hidden lg:flex'
                         />
+                    </div>
+                </section>
+
+                <section className='flex flex-col w-[100%] lg:w-[1000px] border-2 rounded-lg mt-[-100px] h-[200px] items-center justify-center bg-[url("../assets/bg-green.png")] bg-cover z-50'>
+                    <div className='flex items-center justify-center flex-col w-[100%] h-[100%] bg-[rgba(0,0,0,0.3)]'>
+                        <h2 className='font-bold text-center text-white text-xl lg:w-[800px]'>
+                            {t('Faça parte da rede de produtores do sistema')}!
+                        </h2>
+                        <p className='mx-2 text-center text-white'>{t('Junte-se a nossa comunidade de produtores na missão de regenerar o planeta')}</p>
+                    </div>
+                </section>
+
+                <section className='flex flex-col w-[100%] h-[500px] mt-[-100px] items-center justify-center bg-[url("../assets/bg-13.png")] bg-cover z-40'>
+                    <div className='flex items-center justify-center flex-col w-[100%] h-[100%] bg-[rgba(0,0,0,0.4)]'>
+                        <h2 className='font-bold text-center text-white text-3xl lg:w-[800px]'>
+                            {t('JUNTOS PODEMOS MUDAR O MUNDO')}!
+                        </h2>
                     </div>
                 </section>
 

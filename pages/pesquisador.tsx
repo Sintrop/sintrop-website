@@ -54,7 +54,7 @@ const Pesquisador: NextPage = (_props: InferGetStaticPropsType<typeof getStaticP
                     <div className='w-[100%] h-[100%] bg-[rgba(0,0,0,0.5)] flex flex-col items-center p-2'>
                         <Header/>
                         <div className='flex flex-col mt-32 items-center w-[100%] lg:items-start lg:w-[1000px] lg:mt-0'>
-                            <h1 className='text-2xl text-center mt-5 text-white font-bold lg:text-left lg:w-[500px]'>
+                            <h1 className='text-6xl text-center mt-5 text-white font-bold lg:text-left lg:w-[600px]'>
                                 {t('Oportunidade para Pesquisadores Agroecológicos')}
                             </h1>
 
@@ -75,15 +75,6 @@ const Pesquisador: NextPage = (_props: InferGetStaticPropsType<typeof getStaticP
                         </div>
                     </div>
                 </div>
-
-                <section className='flex flex-col w-[100%] lg:w-[1000px] border-2 rounded-lg mt-[-100px] h-[200px] items-center justify-center bg-[url("../assets/bg-green.png")] bg-cover'>
-                    <div className='flex items-center justify-center flex-col w-[100%] h-[100%] bg-[rgba(0,0,0,0.3)] px-2'>
-                        <h2 className='font-bold text-center text-white text-xl lg:w-[800px]'>
-                            {t('Faça parte da rede de pesquisadores do sistema')}!
-                        </h2>
-                        <p className='mx-2 text-center text-white'>{t('Buscamos pesquisadores agroecológicos para desenvolver o método de avaliação e auxiliar no processo de educação e ensino dos produtores rurais')}.</p>
-                    </div>
-                </section>
 
                 <section className='flex flex-col justify-center w-[100vw] py-12 items-center lg:gap-40 lg:flex-row'>
                     <div className='items-center justify-center lg:w-[350px] h-[370px] flex'>
@@ -140,7 +131,7 @@ const Pesquisador: NextPage = (_props: InferGetStaticPropsType<typeof getStaticP
                 </section>
                 </div>
 
-                <section className='flex flex-col justify-center py-10 lg:py-0 w-[100%] items-center'>
+                <section className='flex flex-col justify-center pt-10 lg:pt-0 w-[100%] items-center pb-16'>
                     <div className='flex flex-col items-center justify-center lg:gap-20 lg:flex-row '>
                         <div className='flex flex-col gap-2 justify-center lg:h-[450px] lg:w-[400px]'>
                             <h2 className='font-bold text-xl text-white mx-2'>{t('Inscreva-se para participar do primeiro teste do sistema')}</h2>
@@ -160,6 +151,23 @@ const Pesquisador: NextPage = (_props: InferGetStaticPropsType<typeof getStaticP
                             alt='Globo tecnológico'
                             className='w-[360px] h-[350px] object-contain hidden lg:flex'
                         />
+                    </div>
+                </section>
+
+                <section className='flex flex-col w-[100%] lg:w-[1000px] mt-[-100px] border-2 rounded-lg  h-[200px] items-center justify-center bg-[url("../assets/bg-green.png")] bg-cover z-50'>
+                    <div className='flex items-center justify-center flex-col w-[100%] h-[100%] bg-[rgba(0,0,0,0.3)] px-2'>
+                        <h2 className='font-bold text-center text-white text-xl lg:w-[800px]'>
+                            {t('Faça parte da rede de pesquisadores do sistema')}!
+                        </h2>
+                        <p className='mx-2 text-center text-white'>{t('Buscamos pesquisadores agroecológicos para desenvolver o método de avaliação e auxiliar no processo de educação e ensino dos produtores rurais')}.</p>
+                    </div>
+                </section>
+
+                <section className='flex flex-col w-[100%] mt-[-100px] h-[500px] items-center justify-center bg-[url("../assets/bg-13.png")] bg-cover z-40'>
+                    <div className='flex items-center justify-center flex-col w-[100%] h-[100%] bg-[rgba(0,0,0,0.4)]'>
+                        <h2 className='font-bold text-center text-white text-3xl lg:w-[800px]'>
+                            {t('JUNTOS PODEMOS MUDAR O MUNDO')}!
+                        </h2>
                     </div>
                 </section>
 
