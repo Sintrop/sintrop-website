@@ -65,11 +65,11 @@ const Investidor: NextPage = (_props: InferGetStaticPropsType<typeof getStaticPr
                     <div className='w-[100%] h-[100%] bg-[rgba(0,0,0,0.6)] flex flex-col items-center p-2'>
                         <Header/>
                         <div className='flex flex-col mt-32 items-center w-[100%] lg:items-start lg:w-[1000px] lg:mt-16'>
-                            <h1 className='text-6xl text-center mt-5 text-white font-bold lg:text-left lg:w-[600px]'>
+                            <h1 className='text-2xl text-center mt-5 text-white font-bold lg:text-left lg:w-[500px]'>
                                 {t('Oportunidade para Investidores')}
                             </h1>
 
-                            <p className='mt-5 text-lg text-white text-center lg:text-left lg:w-[700px]'>
+                            <p className='mt-5 text-lg text-white text-center lg:text-left lg:w-[500px]'>
                                 {t('Queremos acelerar nosso desenvolvimento, por isso estamos com a primeira rodada privada de venda dos tokens aberta. Você tem a oportunidade de ser uma das primeiras pessoas a investir no token ')}
                                 <span className='font-bold text-white'> {t('Crédito de Regeneração')}</span>.
                             </p>
@@ -119,7 +119,8 @@ const Investidor: NextPage = (_props: InferGetStaticPropsType<typeof getStaticPr
                     )}
 
                 </section>
-
+                
+                <div className='flex w-[100%] justify-center bg-[url("../assets/bg-destaque.png")]'>
                 <section className='flex flex-col justify-center lg:w-[1000px] py-10 items-center'>
                     <h3 className='font-bold text-center text-2xl text-white'>
                         {t('A solução')}
@@ -140,8 +141,8 @@ const Investidor: NextPage = (_props: InferGetStaticPropsType<typeof getStaticPr
                         </div>
                     </div>
                 </section>
+                </div>
                 
-                <div className='flex w-[100%] justify-center bg-[url("../assets/bg-destaque.png")]'>
                 <section className='flex flex-col items-center w-[100%] pt-10 pb-32'>
                     <h3 className='font-bold text-center text-white text-xl'>
                         {t('Comprovantes de ajuda na regeneração')}
@@ -170,7 +171,7 @@ const Investidor: NextPage = (_props: InferGetStaticPropsType<typeof getStaticPr
                         </div>
                     </div>
                 </section>
-                </div>
+                
 
                 {/* <section className='flex flex-col justify-center py-10 lg:py-0 w-[100%] lg:w-[1000px] items-center'>
                     <div className='flex flex-col items-center justify-center lg:gap-20 lg:flex-row '>

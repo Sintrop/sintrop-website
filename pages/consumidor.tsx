@@ -53,11 +53,11 @@ const Consumidor: NextPage = (_props: InferGetStaticPropsType<typeof getStaticPr
                     <div className='w-[100%] h-[100%] bg-[rgba(0,0,0,0.6)] flex flex-col items-center p-2'>
                         <Header/>
                         <div className='flex flex-col mt-16 items-center w-[100%] lg:items-start lg:w-[1000px] lg:mt-0'>
-                            <h1 className='text-6xl text-center mt-5 text-white font-bold lg:text-left lg:w-[600px]'>
+                            <h1 className='text-2xl text-center mt-5 text-white font-bold lg:text-left lg:w-[500px]'>
                                 {t('Para todos os consumidores de alimentos')}
                             </h1>
 
-                            <p className='mt-5 text-lg text-white text-center lg:text-left lg:w-[700px]'>
+                            <p className='mt-5 text-lg text-white text-center lg:text-left lg:w-[600px]'>
                                 {t('A sua escolha de qual alimento coloca na mesa pode impactar positivamente ou negativamente nosso planeta. Escolha com sabedoria, escolha')}
                                 <span className='font-bold text-white'> {t('Produtores Regenerativos')}</span>.
                             </p>

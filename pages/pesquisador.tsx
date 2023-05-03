@@ -54,11 +54,11 @@ const Pesquisador: NextPage = (_props: InferGetStaticPropsType<typeof getStaticP
                     <div className='w-[100%] h-[100%] bg-[rgba(0,0,0,0.5)] flex flex-col items-center p-2'>
                         <Header/>
                         <div className='flex flex-col mt-32 items-center w-[100%] lg:items-start lg:w-[1000px] lg:mt-0'>
-                            <h1 className='text-6xl text-center mt-5 text-white font-bold lg:text-left lg:w-[600px]'>
+                            <h1 className='text-2xl text-center mt-5 text-white font-bold lg:text-left lg:w-[500px]'>
                                 {t('Oportunidade para Pesquisadores Agroecológicos')}
                             </h1>
 
-                            <p className='mt-5 text-lg text-white text-center lg:text-left lg:w-[700px]'>
+                            <p className='mt-5 text-lg text-white text-center lg:text-left lg:w-[500px]'>
                                 {t('Certificação descentralizada de')}
                                 <span className='font-bold text-white'> {t('Agricultura Regenerativa')}</span>.
                             </p>
@@ -136,13 +136,6 @@ const Pesquisador: NextPage = (_props: InferGetStaticPropsType<typeof getStaticP
                         <div className='flex flex-col gap-2 justify-center lg:h-[450px] lg:w-[400px]'>
                             <h2 className='font-bold text-xl text-white mx-2'>{t('Inscreva-se para participar do primeiro teste do sistema')}</h2>
                             <p className='text-justify mx-2 mt-2 text-white'>{t('Buscamos pesquisadores agroecológicos para desenvolver o método de avaliação e auxiliar no processo de educação e ensino dos produtores rurais')}!</p>
-                            <Link 
-                                target='_blank'
-                                href='https://docs.google.com/forms/d/e/1FAIpQLSeh0OgWqr_UuZBy4UUvgWG521zLeMVqx6wQu77mrJdhXDBAPQ/viewform?usp=sf_link' 
-                                className='mt-5 bg-blue-600 w-56 h-14 rounded flex items-center justify-center mx-2'
-                            >
-                                <p className='font-bold text-white text-lg text-center'>{t('Me inscrever')}</p>
-                            </Link>
                         </div>
 
                         <Image 
@@ -160,6 +153,13 @@ const Pesquisador: NextPage = (_props: InferGetStaticPropsType<typeof getStaticP
                             {t('Faça parte da rede de pesquisadores do sistema')}!
                         </h2>
                         <p className='mx-2 text-center text-white'>{t('Buscamos pesquisadores agroecológicos para desenvolver o método de avaliação e auxiliar no processo de educação e ensino dos produtores rurais')}.</p>
+                        <Link 
+                                target='_blank'
+                                href='https://docs.google.com/forms/d/e/1FAIpQLSeh0OgWqr_UuZBy4UUvgWG521zLeMVqx6wQu77mrJdhXDBAPQ/viewform?usp=sf_link' 
+                                className='mt-5 bg-blue-600 w-56 h-14 rounded flex items-center justify-center mx-2'
+                        >
+                                <p className='font-bold text-white text-lg text-center'>{t('Me inscrever')}</p>
+                        </Link>
                     </div>
                 </section>
 

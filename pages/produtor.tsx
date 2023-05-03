@@ -54,11 +54,11 @@ const Produtor: NextPage = (_props: InferGetStaticPropsType<typeof getStaticProp
                     <div className='w-[100%] h-[100%] bg-[rgba(0,0,0,0.6)] flex flex-col items-center p-2'>
                     <Header/>
                     <div className='flex flex-col mt-32 items-center w-[100%] lg:items-start lg:w-[1000px] lg:mt-0'>
-                        <h1 className='text-6xl text-center mt-5 text-white font-bold lg:text-left lg:w-[600px]'>
+                        <h1 className='text-2xl text-center mt-5 text-white font-bold lg:text-left lg:w-[500px]'>
                             {t('Oportunidade para Produtores Rurais Regenerativos')}
                         </h1>
 
-                        <p className='mt-5 text-lg text-white text-center lg:text-left lg:w-[700px]'>
+                        <p className='mt-5 text-lg text-white text-center lg:text-left lg:w-[500px]'>
                         {t('Certificação descentralizada de')}
                             <span className='font-bold text-white'> {t('Agricultura Regenerativa')}</span>.
                         </p>
@@ -176,13 +176,6 @@ const Produtor: NextPage = (_props: InferGetStaticPropsType<typeof getStaticProp
                         <div className='flex flex-col gap-2 justify-center lg:h-[450px] lg:w-[400px]'>
                             <h2 className='font-bold text-xl text-white mx-2'>{t('Inscreva-se para participar do primeiro teste do sistema')}</h2>
                             <p className='text-justify mx-2 lg:mx-0 mt-2 text-white'>{t('Estamos buscando os primeiros produtores rurais regenerativos para participar do teste de operação. Se você é um produtor que trabalha com agrofloresta, agricultura sintrópica ou qualquer outra forma de regeneração da natureza entre em contato conosco')}!</p>
-                            <Link 
-                                target='_blank'
-                                href='https://docs.google.com/forms/d/e/1FAIpQLSeh0OgWqr_UuZBy4UUvgWG521zLeMVqx6wQu77mrJdhXDBAPQ/viewform?usp=sf_link' 
-                                className='mt-5 bg-blue-600 w-56 h-14 rounded flex items-center justify-center mx-2'
-                            >
-                                <p className='font-bold text-white text-lg text-center'>{t('Me inscrever')}</p>
-                            </Link>
                         </div>
 
                         <Image 
@@ -200,6 +193,13 @@ const Produtor: NextPage = (_props: InferGetStaticPropsType<typeof getStaticProp
                             {t('Faça parte da rede de produtores do sistema')}!
                         </h2>
                         <p className='mx-2 text-center text-white'>{t('Junte-se a nossa comunidade de produtores na missão de regenerar o planeta')}</p>
+                        <Link 
+                                target='_blank'
+                                href='https://docs.google.com/forms/d/e/1FAIpQLSeh0OgWqr_UuZBy4UUvgWG521zLeMVqx6wQu77mrJdhXDBAPQ/viewform?usp=sf_link' 
+                                className='mt-5 bg-blue-600 w-56 h-14 rounded flex items-center justify-center mx-2'
+                            >
+                                <p className='font-bold text-white text-lg text-center'>{t('Me inscrever')}</p>
+                        </Link>
                     </div>
                 </section>
 

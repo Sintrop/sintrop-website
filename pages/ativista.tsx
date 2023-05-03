@@ -53,11 +53,11 @@ const Ativista: NextPage = (_props: InferGetStaticPropsType<typeof getStaticProp
                     <div className='w-[100%] h-[100%] bg-[rgba(0,0,0,0.6)] flex flex-col items-center p-2'>
                         <Header/>
                         <div className='flex flex-col mt-32 items-center w-[100%] lg:items-start lg:w-[1000px] lg:mt-0'>
-                            <h1 className='text-6xl text-center mt-5 text-white font-bold lg:text-left lg:w-[600px]'>
+                            <h1 className='text-2xl text-center mt-5 text-white font-bold lg:text-left lg:w-[500px]'>
                                 {t('Oportunidade para Ativistas Ambientais Agroecológicos')}
                             </h1>
 
-                            <p className='mt-5 text-lg text-white text-center lg:text-left lg:w-[700px]'>
+                            <p className='mt-5 text-lg text-white text-center lg:text-left lg:w-[600px]'>
                                 {t('Certificação descentralizada de')}
                                 <span className='font-bold text-white'> {t('Agricultura Regenerativa')}</span>.
                             </p>
@@ -111,16 +111,6 @@ const Ativista: NextPage = (_props: InferGetStaticPropsType<typeof getStaticProp
                     </section>
                 </div>
 
-
-                <section className='flex flex-col w-[100%] lg:w-[1000px] border-2 rounded-lg mt-14 h-[200px] items-center justify-center bg-[url("../assets/bg-green.png")] bg-cover'>
-                    <div className='flex items-center justify-center flex-col w-[100%] h-[100%] bg-[rgba(0,0,0,0.3)]'>
-                        <h2 className='font-bold text-center text-white text-xl lg:w-[800px]'>
-                            {t('Faça parte da rede de avaliadores do sistema')}!
-                        </h2>
-                        <p className='mx-2 text-center text-white'>{t('Faça parte da rede de Ativistas da Sintrop, inspecione o nível de regeneração dos produtores e seja recompensado pelo serviço prestado para a sociedade!')}</p>
-                    </div>
-                </section>
-
                 <section className="flex flex-col w-[100%] items-center py-10 justify-center lg:w-[1000px]">
                     <h3 className='font-bold text-center text-white text-xl'>
                         {t('Distribuição do token')}
@@ -145,13 +135,6 @@ const Ativista: NextPage = (_props: InferGetStaticPropsType<typeof getStaticProp
                         <div className='flex flex-col gap-2 justify-center lg:h-[450px] lg:w-[400px]'>
                             <h2 className='font-bold text-xl text-white mx-2'>{t('Inscreva-se para participar do primeiro teste do sistema')}</h2>
                             <p className='text-justify mx-2 mt-2 text-white'>{t('Estamos buscando os primeiros ativistas para fazer parte da rede de ativistas do Sistema e realizar inspeções presenciais para mensurar o nível de regeneração dos produtores rurais')}!</p>
-                            <Link 
-                                target='_blank'
-                                href='https://docs.google.com/forms/d/e/1FAIpQLSeh0OgWqr_UuZBy4UUvgWG521zLeMVqx6wQu77mrJdhXDBAPQ/viewform?usp=sf_link' 
-                                className='mt-5 bg-blue-600 w-56 h-14 rounded flex items-center justify-center mx-2'
-                            >
-                                <p className='font-bold text-white text-lg text-center'>{t('Me inscrever')}</p>
-                            </Link>
                         </div>
 
                         <Image 
@@ -169,6 +152,13 @@ const Ativista: NextPage = (_props: InferGetStaticPropsType<typeof getStaticProp
                             {t('Faça parte da rede de avaliadores do sistema')}!
                         </h2>
                         <p className='mx-2 text-center text-white'>{t('Faça parte da rede de Ativistas da Sintrop, inspecione o nível de regeneração dos produtores e seja recompensado pelo serviço prestado para a sociedade!')}</p>
+                        <Link 
+                                target='_blank'
+                                href='https://docs.google.com/forms/d/e/1FAIpQLSeh0OgWqr_UuZBy4UUvgWG521zLeMVqx6wQu77mrJdhXDBAPQ/viewform?usp=sf_link' 
+                                className='mt-5 bg-blue-600 w-56 h-14 rounded flex items-center justify-center mx-2'
+                            >
+                                <p className='font-bold text-white text-lg text-center'>{t('Me inscrever')}</p>
+                        </Link>
                     </div>
                 </section>
 

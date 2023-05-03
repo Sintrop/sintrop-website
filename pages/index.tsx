@@ -67,11 +67,11 @@ const Home: NextPage = (_props: InferGetStaticPropsType<typeof getStaticProps>) 
                     <div className='w-[100%] h-[100%] bg-[rgba(0,0,0,0.5)] flex flex-col items-center p-2'>
                         <Header/>
                         <div className='flex flex-col mt-32 items-center w-[100%] lg:items-start lg:w-[1000px] lg:mt-0'>
-                            <h2 className='text-6xl text-center mt-5 text-white font-bold lg:text-left lg:w-[700px]'>
+                            <h2 className='text-2xl text-center mt-5 text-white font-bold lg:text-left lg:w-[500px]'>
                                 {t('Regeneração do planeta através da agricultura Regenerativa')}!
                             </h2>
 
-                            <h3 className='mt-5 text-lg text-white text-center lg:text-left lg:w-[600px]'>
+                            <h3 className='mt-5 text-lg text-white text-center lg:text-left lg:w-[500px]'>
                                 {t('Sistema descentralizado de certificação de regeneração com mecanismo de incentivo de sustentabilidade através do token Crédito de ')}
                                 <span className='font-bold text-white'> {t('Agricultura Regenerativa')}</span>.
                             </h3>

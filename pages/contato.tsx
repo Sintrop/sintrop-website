@@ -88,11 +88,11 @@ const Contato: NextPage= (_props: InferGetStaticPropsType<typeof getStaticProps>
                     <div className='w-[100%] h-[100%] bg-[rgba(0,0,0,0.5)] flex flex-col items-center p-2'>
                         <Header/>
                         <div className='flex flex-col mt-32 items-center w-[100%] lg:items-start lg:w-[1000px] lg:mt-0'>
-                            <h1 className='text-6xl text-center mt-5 text-white font-bold lg:text-left lg:w-[600px]'>
+                            <h1 className='text-2xl text-center mt-5 text-white font-bold lg:text-left lg:w-[500px]'>
                                 {t('Entre em contato conosco')}
                             </h1>
 
-                            <p className='mt-5 text-lg text-white text-center lg:text-left lg:w-[700px]'>
+                            <p className='mt-5 text-lg text-white text-center lg:text-left lg:w-[600px]'>
                                 {t('Ficou alguma dúvida? Estaremos prontos para te esclarecer tudo, e juntos')}
                                 <span className='font-bold text-white'> {t('Mudar o mundo')}!</span>
                             </p>
