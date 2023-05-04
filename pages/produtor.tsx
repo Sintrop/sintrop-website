@@ -82,7 +82,7 @@ const Produtor: NextPage = (_props: InferGetStaticPropsType<typeof getStaticProp
                             src={require('../assets/token.png')}
                             quality={100}
                             alt='Logo da sintrop'
-                            className='lg:w-[650px] lg:h-[650px] object-contain'
+                            className='lg:w-[300px] lg:h-[300px] object-contain w-[280px]'
                         />
                     </div>
                     
@@ -92,16 +92,16 @@ const Produtor: NextPage = (_props: InferGetStaticPropsType<typeof getStaticProp
                     </div> 
                 </section>
 
-                <div className='flex w-[100vw] justify-center bg-[url("../assets/bg-destaque.png")]'>
+                <div className='flex w-[100vw] justify-center bg-right lg:bg-center bg-[url("../assets/bg-destaque.png")]'>
                 <section className='flex flex-col items-center lg:w-[1000px] justify-center w-[100%] py-10 lg:flex-row'>
                     <div className='flex flex-col lg:w-[500px]'>
-                        <h3 className='font-bold text-center text-white text-xl mx-2'>
+                        <h3 className='font-bold text-center text-white text-xl mx-4'>
                             {t('Mais transparência: Dados públicos e selo transparente')}
                         </h3>
-                        <p className='mt-2 mx-2 text-center text-white'>{t('Exiba seu nível de sustentabilidade para seus clientes. O resultado das inspeções recebidas é público para provar o nível de regeneração de seu trabalho e fornecer informações relevantes para que os consumidores escolham com consciência')}.</p>
+                        <p className='mt-2 mx-4 text-center text-white'>{t('Exiba seu nível de sustentabilidade para seus clientes. O resultado das inspeções recebidas é público para provar o nível de regeneração de seu trabalho e fornecer informações relevantes para que os consumidores escolham com consciência')}.</p>
                     </div>
 
-                    <div>
+                    <div className="mx-4">
                         <Image
                             alt='Embalagem biodegradável com o selo de sustentabilidade'
                             src={require('../assets/embalagem.png')}
@@ -118,7 +118,7 @@ const Produtor: NextPage = (_props: InferGetStaticPropsType<typeof getStaticProp
                             alt='Índice de sustentabilidade'
                             src={require('../assets/indice.png')}
                             quality={100}
-                            className='w-[180px] h-[450px]'
+                            className='w-[220px] h-[300px]'
                         />
                     </div>
 
@@ -149,7 +149,7 @@ const Produtor: NextPage = (_props: InferGetStaticPropsType<typeof getStaticProp
                     </div>
                 </section>
 
-                <div className='flex w-[100vw] justify-center bg-[url("../assets/bg-destaque.png")]'>
+                <div className='flex w-[100vw] justify-center bg-right lg:bg-center bg-[url("../assets/bg-destaque.png")]'>
                 <section className="flex flex-col w-[100%] lg:w-[1000px] items-center py-10 justify-center">
                     <h3 className='font-bold text-center text-white text-xl'>
                         {t('Distribuição do token')}
@@ -171,11 +171,11 @@ const Produtor: NextPage = (_props: InferGetStaticPropsType<typeof getStaticProp
                 </section>
                 </div>
 
-                <section className='flex flex-col justify-center pt-10 lg:pt-0 w-[100%] lg:w-[1000px] items-center pb-20'>
+                <section className='flex flex-col justify-center pt-10 lg:pt-0 w-[100%] lg:w-[1000px] items-center pb-32 lg:pb-20'>
                     <div className='flex flex-col items-center justify-center lg:gap-20 lg:flex-row'>
                         <div className='flex flex-col gap-2 justify-center lg:h-[450px] lg:w-[400px]'>
-                            <h2 className='font-bold text-xl text-white mx-2'>{t('Inscreva-se para participar do primeiro teste do sistema')}</h2>
-                            <p className='text-justify mx-2 lg:mx-0 mt-2 text-white'>{t('Estamos buscando os primeiros produtores rurais regenerativos para participar do teste de operação. Se você é um produtor que trabalha com agrofloresta, agricultura sintrópica ou qualquer outra forma de regeneração da natureza entre em contato conosco')}!</p>
+                            <h2 className='font-bold text-xl text-white mx-4 lg:mx-0'>{t('Inscreva-se para participar do primeiro teste do sistema')}</h2>
+                            <p className='text-justify mx-4 lg:mx-0 mt-2 text-white'>{t('Estamos buscando os primeiros produtores rurais regenerativos para participar do teste de operação. Se você é um produtor que trabalha com agrofloresta, agricultura sintrópica ou qualquer outra forma de regeneração da natureza entre em contato conosco')}!</p>
                         </div>
 
                         <Image 
@@ -187,7 +187,7 @@ const Produtor: NextPage = (_props: InferGetStaticPropsType<typeof getStaticProp
                     </div>
                 </section>
 
-                <section className='flex flex-col w-[100%] lg:w-[1000px] border-2 rounded-lg mt-[-100px] h-[200px] items-center justify-center bg-[url("../assets/bg-green.png")] bg-cover z-50'>
+                <section className='flex flex-col lg:w-[1000px] border-2 rounded-lg mt-[-100px] lg:h-[200px] h-[230px] items-center justify-center bg-[url("../assets/bg-green.png")] bg-cover z-50 mx-4'>
                     <div className='flex items-center justify-center flex-col w-[100%] h-[100%] bg-[rgba(0,0,0,0.3)]'>
                         <h2 className='font-bold text-center text-white text-xl lg:w-[800px]'>
                             {t('Faça parte da rede de produtores do sistema')}!

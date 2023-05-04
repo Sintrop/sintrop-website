@@ -63,7 +63,7 @@ const Home: NextPage = (_props: InferGetStaticPropsType<typeof getStaticProps>) 
                 <link rel='icon' type='image/png' href='/favicon.png'/>
             </Head>
             <div className='flex flex-col items-center w-[100vw] bg-[#062C01]'>
-                <div className='flex flex-col w-[100%] h-[600px] items-center bg-[url("../assets/new-bg.jpg")] bg-cover bg-center lg:h-[500px]'>
+                <div className='flex flex-col w-[100%] h-[600px] items-center bg-[url("../assets/bg-home.png")] bg-cover bg-center lg:h-[500px]'>
                     <div className='w-[100%] h-[100%] bg-[rgba(0,0,0,0.5)] flex flex-col items-center p-2'>
                         <Header/>
                         <div className='flex flex-col mt-32 items-center w-[100%] lg:items-start lg:w-[1000px] lg:mt-0'>
@@ -89,8 +89,8 @@ const Home: NextPage = (_props: InferGetStaticPropsType<typeof getStaticProps>) 
                 </div>
 
                 {/* NETWORK IMPACT */}
-                <section className="flex flex-col items-center py-5 rounded-lg border-2 bg-[#0A4303] w-full lg:w-[1000px] lg:mt-[-50px] px-2">
-                    <p className="text-white mb-5">Network Impact</p>
+                <section className="flex flex-col items-center py-5 rounded-lg border-2 bg-[#0A4303] lg:w-[1000px] mt-[-50px] px-2 mx-2">
+                    <p className="text-white mb-5 font-bold">NETWORK IMPACT</p>
 
                     <div className="flex items-center gap-2 flex-wrap justify-center">
 
@@ -133,7 +133,7 @@ const Home: NextPage = (_props: InferGetStaticPropsType<typeof getStaticProps>) 
                                             className='w-[40px] h-[40px] object-contain'
                                         />
                                     </div>
-                                    <p className='text-white font-bold text-3xl flex items-end gap-2'>0 <p className='text-white font-bold text-lg'>ton</p></p>
+                                    <p className='text-white font-bold text-3xl flex items-end gap-2 mt-5'>0 <p className='text-white font-bold text-lg'>ton</p></p>
                                 </div>
 
                                 <div className="flex items-center justify-end gap-2 w-[50%]">
@@ -145,7 +145,7 @@ const Home: NextPage = (_props: InferGetStaticPropsType<typeof getStaticProps>) 
                                             className='w-[30px] h-[30px] object-contain'
                                         />
                                     </div>
-                                    <p className='text-white font-bold text-3xl flex items-end gap-2'>0 <p className='text-white font-bold text-lg'>m²</p></p>
+                                    <p className='text-white font-bold text-3xl flex items-end gap-2 mt-5'>0 <p className='text-white font-bold text-lg'>m²</p></p>
                                 </div>
                             </div>
 
@@ -161,7 +161,7 @@ const Home: NextPage = (_props: InferGetStaticPropsType<typeof getStaticProps>) 
                                             className='w-[30px] h-[30px] object-contain'
                                         />
                                     </div>
-                                    <p className='text-white font-bold text-3xl flex items-end gap-2 ml-[-85px] mt-3'>0 <p className='text-white font-bold text-lg'>uni</p></p>
+                                    <p className='text-white font-bold text-3xl flex items-end gap-2 ml-[-70px] mt-5'>0 <p className='text-white font-bold text-lg'>uni</p></p>
                                 </div>
 
                                 <div className="flex items-center justify-end gap-2 w-[50%]">
@@ -173,7 +173,7 @@ const Home: NextPage = (_props: InferGetStaticPropsType<typeof getStaticProps>) 
                                             className='w-[30px] h-[30px] object-contain'
                                         />
                                     </div>
-                                    <p className='text-white font-bold text-3xl flex items-end gap-2'>0 <p className='text-white font-bold text-lg'>m³</p></p>
+                                    <p className='text-white font-bold text-3xl flex items-end gap-2 mt-5'>0 <p className='text-white font-bold text-lg'>m³</p></p>
                                 </div>
                             </div>
                         </div>
@@ -248,7 +248,7 @@ const Home: NextPage = (_props: InferGetStaticPropsType<typeof getStaticProps>) 
                         {t('O problema')}
                     </h3>
                     <p
-                        className='lg:w-[1000px] text-justify my-10 mx-2 text-white'
+                        className='lg:w-[1000px] text-justify my-10 mx-4 text-white'
                     >{t('O ser humano vem degradando a Natureza desde que dominou a agricultura, porém nas últimas décadas vimos uma intensificação alarmante dessa degradação. Veja nas imagens abaixo a comparação do território da América do Sul entre os anos de 1985 e 2020.')}.</p>
                 
                     {chooseMap ? (
@@ -274,7 +274,7 @@ const Home: NextPage = (_props: InferGetStaticPropsType<typeof getStaticProps>) 
                     )}
                 </section>
 
-                <div className='flex w-[100%] justify-center bg-[url("../assets/bg-destaque.png")]'>
+                <div className='flex w-[100%] justify-center bg-right lg:bg-center bg-[url("../assets/bg-destaque.png")]'>
                 <section className='flex flex-col justify-center lg:w-[1000px] py-10 items-center'>
                     <h3 className='font-bold text-center text-3xl text-white'>
                         {t('A solução')}
@@ -297,7 +297,7 @@ const Home: NextPage = (_props: InferGetStaticPropsType<typeof getStaticProps>) 
                 </section>
                 </div>
 
-                <section className='flex flex-col justify-center bg-[#0a4303] lg:w-[1000px] my-20 py-5 items-center rounded-md border-2 mx-2'>
+                <section className='flex flex-col justify-center bg-[#0a4303] lg:w-[1000px] my-20 py-5 items-center rounded-md border-2 mx-4 lg:mx-0'>
                     <p className='font-bold text-lg text-white px-2 text-center'>{t('Blockchain + Agroecologia para lutar pela:')}</p>
                 
                     <div className='flex flex-col lg:flex-row items-center gap-2 justify-between w-full px-5 mt-5'>
@@ -365,7 +365,7 @@ const Home: NextPage = (_props: InferGetStaticPropsType<typeof getStaticProps>) 
 
                 <section className='flex flex-col w-[100%] h-[500px] items-center justify-center bg-[url("../assets/bg-3.png")] bg-cover'>
                     <div className='flex items-center justify-center flex-col w-[100%] h-[100%] bg-[rgba(0,0,0,0.7)]'>
-                        <h2 className='font-bold text-center text-white text-2xl mx-2 lg:w-[800px]'>
+                        <h2 className='font-bold text-center text-white text-2xl mx-4 lg:w-[800px]'>
                             {t('Ou a agricultura vai salvar a Terra, ou a destruir. De qual lado você vai estar?')}
                         </h2>
 
@@ -379,7 +379,7 @@ const Home: NextPage = (_props: InferGetStaticPropsType<typeof getStaticProps>) 
                     </div>
                 </section>
 
-                <section className='flex flex-col lg:w-[1000px] border-2 rounded-lg mt-[-100px] h-[200px] items-center justify-center bg-[url("../assets/bg-green.png")] bg-cover'>
+                <section className='flex flex-col lg:w-[1000px] border-2 rounded-lg mt-[-100px] h-[200px] items-center justify-center bg-[url("../assets/bg-green.png")] bg-cover mx-4'>
                     <div className='flex items-center justify-center flex-col w-[100%] h-[100%] bg-[rgba(0,0,0,0.4)]'>
                         <h2 className='font-bold text-center text-white text-xl lg:w-[800px]'>
                             {t('Nossa missão é regenerar o planeta')}!
@@ -395,7 +395,7 @@ const Home: NextPage = (_props: InferGetStaticPropsType<typeof getStaticProps>) 
                             {t('A comunidade')}
                         </h3>
 
-                        <p className='text-center text-white text-lg lg:w-[800px] mx-2 mt-5'>
+                        <p className='text-center text-white text-lg lg:w-[800px] mx-4 mt-5'>
                             {t('Nosso projeto é descentralizado e guiado por comunidade. Estamos criando a lógica de funcionamento do Sistema para publicá-la na rede Ethereum e convidar produtores, ativistas, pesquisadores e toda comunidade para participar do Sistema de forma totalmente descentralizada')}
                         </p>
                     </div>
@@ -434,12 +434,12 @@ const Home: NextPage = (_props: InferGetStaticPropsType<typeof getStaticProps>) 
 
                     <div className='flex flex-col items-center lg:flex-row gap-5'>
                         <div className='flex flex-col gap-2 lg:w-[400px]'>
-                            <h2 className='font-bold text-xl text-white mx-2'>{t('Desenvolvido e operado por comunidade')}</h2>
-                            <p className='text-justify mx-2 text-white'>{t('Nossa comunidade é feita de desenvolvedores, pesquisadores, conselheiros, ativistas ambientais e produtores rurais')}.</p>
+                            <h2 className='font-bold text-xl text-white mx-4'>{t('Desenvolvido e operado por comunidade')}</h2>
+                            <p className='text-justify mx-4 text-white'>{t('Nossa comunidade é feita de desenvolvedores, pesquisadores, conselheiros, ativistas ambientais e produtores rurais')}.</p>
                             <Link 
                                 target='_blank'
                                 href='https://discord.com/invite/s5MfeqcPm8' 
-                                className='mt-5 bg-blue-600 w-64 h-14 rounded flex items-center justify-center mx-2'
+                                className='mt-5 bg-blue-600 w-64 h-14 rounded flex items-center justify-center mx-4'
                             >
                                 <p className='font-bold text-white text-lg text-center'>{t('Junte-se ao nosso discord')}</p>
                             </Link>

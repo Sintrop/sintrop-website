@@ -103,14 +103,14 @@ const Contato: NextPage= (_props: InferGetStaticPropsType<typeof getStaticProps>
 
             <section id='contato' className='flex flex-col lg:gap-20 w-[100%] py-10 justify-center lg:flex-row bg-[#062C01]'>
                 <div className='flex flex-col lg:w-[400px]'>
-                        <h3 className='font-bold text-xl mx-2 text-white'>{t('Contate-nos')}</h3>
-                        <p className='text-lg mx-2 text-white mt-2'>
+                        <h3 className='font-bold text-xl mx-4 text-white'>{t('Contate-nos')}</h3>
+                        <p className='text-lg mx-4 text-white mt-2'>
                             {t('Em caso de dúvidas, investimentos ou queira participar do primeiro teste da plataforma, envie-nos sua mensagem')}.
                         </p>
                 </div>
                 <form 
                     onSubmit={handleSendEmail}
-                    className='flex flex-col gap-5 p-5 rounded-lg lg:w-[400px] bg-white'
+                    className='flex flex-col gap-5 p-5 rounded-lg lg:w-[400px] bg-white mx-4 mt-2'
                 >
                     <h2 className='text-black text-xl font-bold'>{t('Contato')}</h2>
                     <input

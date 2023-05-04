@@ -7,7 +7,7 @@ interface Props{
 
 export function Card5({title, text}: Props){
     return(
-        <div className="flex w-[350px] py-3 border-2">
+        <div className="flex w-[350px] py-3 border-2 mx-4">
             <Image
                 alt='Ícone de checagem'
                 src={require('../assets/check.png')}

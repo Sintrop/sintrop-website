@@ -131,11 +131,11 @@ const Pesquisador: NextPage = (_props: InferGetStaticPropsType<typeof getStaticP
                 </section>
                 </div>
 
-                <section className='flex flex-col justify-center pt-10 lg:pt-0 w-[100%] items-center pb-16'>
+                <section className='flex flex-col justify-center pt-10 lg:pt-0 w-[100%] items-center pb-32 lg:pb-16'>
                     <div className='flex flex-col items-center justify-center lg:gap-20 lg:flex-row '>
                         <div className='flex flex-col gap-2 justify-center lg:h-[450px] lg:w-[400px]'>
-                            <h2 className='font-bold text-xl text-white mx-2'>{t('Inscreva-se para participar do primeiro teste do sistema')}</h2>
-                            <p className='text-justify mx-2 mt-2 text-white'>{t('Buscamos pesquisadores agroecológicos para desenvolver o método de avaliação e auxiliar no processo de educação e ensino dos produtores rurais')}!</p>
+                            <h2 className='font-bold text-xl text-white mx-4'>{t('Inscreva-se para participar do primeiro teste do sistema')}</h2>
+                            <p className='text-justify mx-4 mt-2 text-white'>{t('Buscamos pesquisadores agroecológicos para desenvolver o método de avaliação e auxiliar no processo de educação e ensino dos produtores rurais')}!</p>
                         </div>
 
                         <Image 
@@ -147,7 +147,7 @@ const Pesquisador: NextPage = (_props: InferGetStaticPropsType<typeof getStaticP
                     </div>
                 </section>
 
-                <section className='flex flex-col w-[100%] lg:w-[1000px] mt-[-100px] border-2 rounded-lg  h-[200px] items-center justify-center bg-[url("../assets/bg-green.png")] bg-cover z-50'>
+                <section className='flex flex-col lg:w-[1000px] mt-[-100px] border-2 rounded-lg h-[270px] lg:h-[200px] items-center justify-center bg-[url("../assets/bg-green.png")] bg-cover z-50 mx-4'>
                     <div className='flex items-center justify-center flex-col w-[100%] h-[100%] bg-[rgba(0,0,0,0.3)] px-2'>
                         <h2 className='font-bold text-center text-white text-xl lg:w-[800px]'>
                             {t('Faça parte da rede de pesquisadores do sistema')}!

@@ -28,7 +28,7 @@ export function Header({blog}: Props){
                             src={LogoBranco}
                             quality={100}
                             alt={t('Logo da sintrop')}
-                            className={`w-[150px] h-[60px] ${blog ? 'lg:w-[180px] lg:h-[70px]' : 'lg:w-[160px]'} object-cover`}
+                            className={`w-[160px] h-[60px] ${blog ? 'lg:w-[180px] lg:h-[70px]' : 'lg:w-[160px]'} object-cover`}
                         />
                     </Link>
 

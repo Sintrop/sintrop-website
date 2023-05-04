@@ -64,7 +64,7 @@ const Investidor: NextPage = (_props: InferGetStaticPropsType<typeof getStaticPr
                 <div className='flex flex-col w-[100%] h-[500px] items-center bg-[url("../assets/new-bg.jpg")] bg-cover bg-center lg:h-[500px]'>
                     <div className='w-[100%] h-[100%] bg-[rgba(0,0,0,0.5)] flex flex-col items-center p-2'>
                         <Header/>
-                        <div className='flex flex-col mt-32 items-center w-[100%] lg:items-start lg:w-[1000px] lg:mt-16'>
+                        <div className='flex flex-col mt-10 items-center w-[100%] lg:items-start lg:w-[1000px] lg:mt-0'>
                             <h1 className='text-2xl text-center mt-5 text-white font-bold lg:text-left lg:w-[500px]'>
                                 {t('Oportunidade para Investidores')}
                             </h1>
@@ -93,7 +93,7 @@ const Investidor: NextPage = (_props: InferGetStaticPropsType<typeof getStaticPr
                     </h3>
                 
                     <p
-                        className='lg:w-[1000px] text-justify my-10 mx-2 text-white'
+                        className='lg:w-[1000px] text-justify my-10 mx-4 text-white'
                     >{t('Estamos destruindo o nosso planeta. A agricultura degenerativa desmata nossas florestas, acaba com a água, destrói os solos e extingue a biodiversidade. Estamos no caminho do suicídio da nossa sociedade e colapso socioambiental. Não há vida na terra sem a natureza e nós precisamos viver em harmonia e mudar o paradigma da cultura extrativista, onde colhemos hoje em detrimento do futuro')}.</p>
                     
                     {chooseMap ? (
@@ -120,7 +120,7 @@ const Investidor: NextPage = (_props: InferGetStaticPropsType<typeof getStaticPr
 
                 </section>
                 
-                <div className='flex w-[100%] justify-center bg-[url("../assets/bg-destaque.png")]'>
+                <div className='flex w-[100%] justify-center bg-right lg:bg-right bg-[url("../assets/bg-destaque.png")]'>
                 <section className='flex flex-col justify-center lg:w-[1000px] py-10 items-center'>
                     <h3 className='font-bold text-center text-2xl text-white'>
                         {t('A solução')}
@@ -147,9 +147,9 @@ const Investidor: NextPage = (_props: InferGetStaticPropsType<typeof getStaticPr
                     <h3 className='font-bold text-center text-white text-xl'>
                         {t('Comprovantes de ajuda na regeneração')}
                     </h3>
-                    <p className='text-center mb-10 lg:w-[1000px] mt-2 text-white'>{t('Veja seu histórico de ajuda, e o quanto você impactou o mundo')}!</p>
+                    <p className='text-center mx-4 mb-10 lg:w-[1000px] mt-2 text-white'>{t('Veja seu histórico de ajuda, e o quanto você impactou o mundo')}!</p>
                     
-                    <div className='flex flex-col lg:flex-row items-center gap-5'>
+                    <div className='flex flex-col lg:flex-row items-center gap-5 mx-4'>
                         <div>
                             <p className='font-bold text-white'>{t('Certificado')}</p>
                             <Image 
@@ -195,8 +195,8 @@ const Investidor: NextPage = (_props: InferGetStaticPropsType<typeof getStaticPr
                     </div>
                 </section> */}
 
-                <section className='flex flex-col w-[100%] lg:w-[1000px] mt-[-100px] border-2 rounded-lg  h-[200px] items-center justify-center bg-[url("../assets/bg-green.png")] bg-cover z-50'>
-                    <div className='flex items-center justify-center flex-col w-[100%] h-[100%] bg-[rgba(0,0,0,0.3)] lg:flex-row'>
+                <section className='flex flex-col lg:w-[1000px] mt-[-100px] border-2 rounded-lg lg:h-[200px] h-[250px]  items-center justify-center bg-[url("../assets/bg-green.png")] bg-cover z-50 mx-4'>
+                    <div className='flex items-center justify-center flex-col w-[100%] h-[100%] bg-[rgba(0,0,0,0.3)] lg:flex-row gap-4'>
                         <h2 className='font-bold text-center text-white text-xl lg:w-[400px]'>
                             {t('Queremos acelerar nosso desenvolvimento, por isso estamos com a primeira rodada privada de venda dos tokens aberta')}
                         </h2>

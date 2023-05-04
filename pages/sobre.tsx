@@ -77,12 +77,12 @@ const Sobre: NextPage = (_props: InferGetStaticPropsType<typeof getStaticProps>)
 
                 <section className="flex flex-col lg:flex-row py-10 items-center justify-center lg:gap-20 lg:w-[1000px]">
                     <div className="flex flex-col gap-5 lg:w-[700px]">
-                        <h3 className="font-bold text-xl mx-2 text-white">{t('NOSSA')} <span className="text-green-700">{t('VISÃO')}</span></h3>
-                        <h3 className="font-bold text-xl mx-2 text-white">{t('Precisamos mudar')} <span className="text-white">{t('AGORA')}</span></h3>
+                        <h3 className="font-bold text-xl mx-4 text-white">{t('NOSSA')} <span className="text-green-700">{t('VISÃO')}</span></h3>
+                        <h3 className="font-bold text-xl mx-4 text-white">{t('Precisamos mudar')} <span className="text-white">{t('AGORA')}</span></h3>
                     
-                        <p className="mx-2 text-white">{t('A agricultura industrial tem sido uma das principais causas do aquecimento global e contribui muito negativamente para a vida do nosso planeta. Devemos mudar agora para evitar sérios problemas ambientais. Para produzir os alimentos do mundo não precisamos matar lentamente a terra usando muitos produtos químicos, destruindo e erodindo os solos, matando toda a biodiversidade local e usando muitos recursos naturais')}.</p>
+                        <p className="mx-4 text-white">{t('A agricultura industrial tem sido uma das principais causas do aquecimento global e contribui muito negativamente para a vida do nosso planeta. Devemos mudar agora para evitar sérios problemas ambientais. Para produzir os alimentos do mundo não precisamos matar lentamente a terra usando muitos produtos químicos, destruindo e erodindo os solos, matando toda a biodiversidade local e usando muitos recursos naturais')}.</p>
 
-                        <p className="mx-2 text-white">{t('Nossa visão dos sonhos é um mundo onde 100% dos alimentos sejam produzidos sem prejudicar o planeta. Com soluções técnicas regenerativas que tornam o mundo um lugar melhor a cada safra, capturando muito CO2 atmosférico e utilizando os recursos naturais de forma cíclica')}.</p>
+                        <p className="mx-4 text-white">{t('Nossa visão dos sonhos é um mundo onde 100% dos alimentos sejam produzidos sem prejudicar o planeta. Com soluções técnicas regenerativas que tornam o mundo um lugar melhor a cada safra, capturando muito CO2 atmosférico e utilizando os recursos naturais de forma cíclica')}.</p>
                     </div>
                     <Image
                         alt='Imagem de uma planta conectada ao chão por meio da tecnologia'
@@ -137,14 +137,14 @@ const Sobre: NextPage = (_props: InferGetStaticPropsType<typeof getStaticProps>)
 
                 <section className="flex flex-col w-[100%] lg:flex-row py-10 items-center justify-center lg:gap-20">
                     <div className="flex flex-col items-center gap-5 lg:w-[1000px]">
-                        <h3 className="font-bold text-xl mx-2 text-white">{t('NOSSA')} <span className="text-green-700">{t('MISSÃO')}</span></h3>
+                        <h3 className="font-bold text-xl mx-4 text-white">{t('NOSSA')} <span className="text-green-700">{t('MISSÃO')}</span></h3>
                     
-                        <p className="mx-2 text-center text-white">{t('Nossa luta é para defender e regenerar a natureza. Precisamos urgentemente regenerar mais área do que degradamos, esse é o caminho para resolver os maiores problemas da humanidade como o aquecimento global, escassez hídrica, extinção da biodiversidade e insegurança alimentar')}.</p>
+                        <p className="mx-4 text-center text-white">{t('Nossa luta é para defender e regenerar a natureza. Precisamos urgentemente regenerar mais área do que degradamos, esse é o caminho para resolver os maiores problemas da humanidade como o aquecimento global, escassez hídrica, extinção da biodiversidade e insegurança alimentar')}.</p>
                     </div>
                 </section>
 
-                <section className="flex flex-col w-[100%] py-10 items-center justify-center">
-                    <h3 className="font-bold text-xl mx-2">{t('NOSSA')} <span className="text-green-700">{t('HISTÓRIA')}</span></h3>
+                <section className="flex flex-col lg:w-[1000px] py-10 items-center justify-center mx-4">
+                    <h3 className="font-bold text-xl">{t('NOSSA')} <span className="text-green-700">{t('HISTÓRIA')}</span></h3>
                     <Image
                         alt='Imagem da linha do tempo da sintrop'
                         src={require('../assets/nossa-hist.png')}

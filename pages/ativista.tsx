@@ -75,25 +75,25 @@ const Ativista: NextPage = (_props: InferGetStaticPropsType<typeof getStaticProp
                     </div>
                 </div>
 
-                <section className='flex flex-col justify-center lg:w-[1000px] w-[100vw] py-12 items-center lg:gap-40 lg:flex-row'>
+                <section className='flex flex-col justify-center lg:w-[1000px] w-[100vw] py-6 items-center lg:gap-40 lg:flex-row'>
                     <div className='items-center justify-center lg:w-[350px] h-[370px] flex'>
                         <Image 
                             src={require('../assets/token.png')}
                             quality={100}
                             alt='Logo da sintrop'
-                            className='lg:w-[650px] lg:h-[650px] object-contain'
+                            className='lg:w-[300px] w-[280px] object-contain'
                         />
                     </div>
                         
-                    <div className='flex flex-col px-5 gap-3 lg:w-[500px]'>
+                    <div className='flex flex-col px-4 gap-3 lg:w-[500px]'>
                         <h2 className='font-bold text-xl text-white'>{t('Token Crédito de Agricultura Regenerativa')}</h2>
-                        <p className='text-justify mt-2 mx-2 text-white'>{t('Seja recompensado com o token da Sintrop pelo serviço de inspeção e ativismo ambiental prestado ao Sistema. Realize inspeções periodicamente e contribua na luta para regenerar o planeta')}.</p>
+                        <p className='text-justify mt-2 text-white'>{t('Seja recompensado com o token da Sintrop pelo serviço de inspeção e ativismo ambiental prestado ao Sistema. Realize inspeções periodicamente e contribua na luta para regenerar o planeta')}.</p>
                     </div>
                 </section>
 
-                <div className='flex w-[100%] justify-center bg-[url("../assets/bg-destaque.png")]'>
-                    <section className='flex flex-col items-center justify-center lg:w-[1000px] w-[100%] py-10 lg:flex-row'>
-                        <div className='flex flex-col lg:w-[500px]'>
+                <div className='flex w-[100%] justify-center bg-right lg:bg-center bg-[url("../assets/bg-destaque.png")]'>
+                    <section className='flex flex-col items-center justify-center lg:w-[1000px] w-[100%] py-10'>
+                        <div className='flex flex-col lg:w-[1000px]'>
                             <h3 className='font-bold text-center text-white text-xl'>
                                 {t('Mais transparência')}
                             </h3>
@@ -111,11 +111,11 @@ const Ativista: NextPage = (_props: InferGetStaticPropsType<typeof getStaticProp
                     </section>
                 </div>
 
-                <section className="flex flex-col w-[100%] items-center py-10 justify-center lg:w-[1000px]">
+                <section className="flex flex-col w-[100%] items-center pt-10 justify-center lg:w-[1000px]">
                     <h3 className='font-bold text-center text-white text-xl'>
                         {t('Distribuição do token')}
                     </h3>
-                    <p className='text-center mx-2 mt-2 text-white'>{t('Distribuição de tokens de acordo com a quantidade de inspeções realizadas. Quanto mais inspeções, mais tokens')}.</p>
+                    <p className='text-center mx-4 mt-2 text-white'>{t('Distribuição de tokens de acordo com a quantidade de inspeções realizadas. Quanto mais inspeções, mais tokens')}.</p>
                     <Image
                         alt='Planilha de distribuição de token dos produtores'
                         src={require('../assets/planilha-2.png')}
@@ -130,11 +130,11 @@ const Ativista: NextPage = (_props: InferGetStaticPropsType<typeof getStaticProp
                     />
                 </section>
 
-                <section className='flex flex-col justify-center pt-10 lg:pt-0 w-[100%] items-center lg:w-[1000px] pb-20'>
+                <section className='flex flex-col justify-center lg:pt-0 w-[100%] items-center lg:w-[1000px] pb-32 lg:pb-24'>
                     <div className='flex flex-col items-center justify-center lg:gap-20 lg:flex-row'>
-                        <div className='flex flex-col gap-2 justify-center lg:h-[450px] lg:w-[400px]'>
-                            <h2 className='font-bold text-xl text-white mx-2'>{t('Inscreva-se para participar do primeiro teste do sistema')}</h2>
-                            <p className='text-justify mx-2 mt-2 text-white'>{t('Estamos buscando os primeiros ativistas para fazer parte da rede de ativistas do Sistema e realizar inspeções presenciais para mensurar o nível de regeneração dos produtores rurais')}!</p>
+                        <div className='flex flex-col gap-2 justify-center lg:w-[500px]'>
+                            <h2 className='font-bold text-xl text-white mx-4'>{t('Inscreva-se para participar do primeiro teste do sistema')}</h2>
+                            <p className='text-justify mx-4 mt-2 text-white'>{t('Estamos buscando os primeiros ativistas para fazer parte da rede de ativistas do Sistema e realizar inspeções presenciais para mensurar o nível de regeneração dos produtores rurais')}!</p>
                         </div>
 
                         <Image 
@@ -146,9 +146,9 @@ const Ativista: NextPage = (_props: InferGetStaticPropsType<typeof getStaticProp
                     </div>
                 </section>
 
-                <section className='flex flex-col w-[100%] lg:w-[1000px] mt-[-100px] border-2 rounded-lg  h-[200px] items-center justify-center bg-[url("../assets/bg-green.png")] bg-cover z-50'>
+                <section className='flex flex-col lg:w-[1000px] mt-[-100px] border-2 rounded-lg  h-[270px] lg:h-[200px] items-center justify-center bg-[url("../assets/bg-green.png")] bg-cover z-50 mx-2'>
                     <div className='flex items-center justify-center flex-col w-[100%] h-[100%] bg-[rgba(0,0,0,0.3)]'>
-                        <h2 className='font-bold text-center text-white text-xl lg:w-[800px]'>
+                        <h2 className='font-bold text-center text-white text-xl lg:w-[1000px]'>
                             {t('Faça parte da rede de avaliadores do sistema')}!
                         </h2>
                         <p className='mx-2 text-center text-white'>{t('Faça parte da rede de Ativistas da Sintrop, inspecione o nível de regeneração dos produtores e seja recompensado pelo serviço prestado para a sociedade!')}</p>
