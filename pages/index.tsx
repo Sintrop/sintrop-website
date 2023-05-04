@@ -43,12 +43,15 @@ const Home: NextPage = (_props: InferGetStaticPropsType<typeof getStaticProps>) 
             setTimeout(() => {setChooseMap(true)}, 2000)
         }
     }, [chooseMap]);
-    
+
     return (
-        <div>
-            <Script id="googleTagManager" src="https://www.googletagmanager.com/gtm.js?id=%27+i+dl" strategy="afterInteractive" dangerouslySetInnerHTML={{ __html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id=%27+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-WZK3VDF');`}}/>
-            <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WZK3VDF" height="0" width="0" style={{display:'none',visibility:'hidden'}}></iframe></noscript>
+        <>
             <Head>
+                <Script
+                    id="google-tag-manager" strategy="afterInteractive"
+                >
+                    {"(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id=%27+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-WZK3VDF');"}
+                </Script>
                 <title>{t('Sintrop - Tecnologia e Sustentabilidade')}</title>
                 <meta name='description' content='Nossa missão é regenerar o planeta através da tecnologia. Conheça nosso Sistema e o Token Crédito de Carbono Regenerativo.'/>
                 <meta name="keywords" content="Agricultura, Regeneração, Sustentabilidade, Produtores regenerativos, comunidade"/>
@@ -62,8 +65,10 @@ const Home: NextPage = (_props: InferGetStaticPropsType<typeof getStaticProps>) 
                 <link rel="canonical" href="https://sintrop.com"/>
                 <link rel='icon' type='image/png' href='/favicon.png'/>
             </Head>
+
+
             <div className='flex flex-col items-center w-[100vw] bg-[#062C01]'>
-                <div className='flex flex-col w-[100%] h-[600px] items-center bg-[url("../assets/bg-home.png")] bg-cover bg-center lg:h-[500px]'>
+                <div className='flex flex-col w-[100%] h-[600px] items-center bg-[url("../assets/new-bg.jpg")] bg-cover bg-center lg:h-[600px]'>
                     <div className='w-[100%] h-[100%] bg-[rgba(0,0,0,0.5)] flex flex-col items-center p-2'>
                         <Header/>
                         <div className='flex flex-col mt-32 items-center w-[100%] lg:items-start lg:w-[1000px] lg:mt-0'>
@@ -77,12 +82,12 @@ const Home: NextPage = (_props: InferGetStaticPropsType<typeof getStaticProps>) 
                             </h3>
 
                             <Link
-                                href={router.locale === 'pt-BR' ? 
+                                href={router.locale === 'pt-BR' ?
                                 'https://sintrop.com/assets/qr-code/whitepaper.pdf' : 'https://sintrop.com/assets/whitepaper-v1.4-EN.pdf'}
                                 target='_blank'
-                                className='mt-2 bg-blue-600 w-72 h-14 rounded mb-10 flex items-center justify-center'
+                                className='mt-8 bg-blue-600 w-72 h-14 rounded mb-10 flex items-center justify-center font-bold text-white text-lg'
                             >
-                                <p className='font-bold text-white text-lg'>{t('Baixar')} Whitepaper</p>
+                                {t('Baixar')} Whitepaper
                             </Link>
                         </div>
                     </div>
@@ -133,7 +138,7 @@ const Home: NextPage = (_props: InferGetStaticPropsType<typeof getStaticProps>) 
                                             className='w-[40px] h-[40px] object-contain'
                                         />
                                     </div>
-                                    <p className='text-white font-bold text-3xl flex items-end gap-2 mt-5'>0 <p className='text-white font-bold text-lg'>ton</p></p>
+                                    <p className='text-white font-bold text-3xl flex items-end gap-2 mt-5'>0 <span className='font-bold text-base'>ton</span></p>
                                 </div>
 
                                 <div className="flex items-center justify-end gap-2 w-[50%]">
@@ -145,7 +150,7 @@ const Home: NextPage = (_props: InferGetStaticPropsType<typeof getStaticProps>) 
                                             className='w-[30px] h-[30px] object-contain'
                                         />
                                     </div>
-                                    <p className='text-white font-bold text-3xl flex items-end gap-2 mt-5'>0 <p className='text-white font-bold text-lg'>m²</p></p>
+                                    <p className='text-white font-bold text-3xl flex items-end gap-2 mt-5'>0 <span className='font-bold text-base'>m²</span></p>
                                 </div>
                             </div>
 
@@ -161,7 +166,7 @@ const Home: NextPage = (_props: InferGetStaticPropsType<typeof getStaticProps>) 
                                             className='w-[30px] h-[30px] object-contain'
                                         />
                                     </div>
-                                    <p className='text-white font-bold text-3xl flex items-end gap-2 ml-[-70px] mt-5'>0 <p className='text-white font-bold text-lg'>uni</p></p>
+                                    <p className='text-white font-bold text-3xl flex items-end gap-2 ml-[-70px] mt-5'>0 <span className='font-bold text-base'>uni</span></p>
                                 </div>
 
                                 <div className="flex items-center justify-end gap-2 w-[50%]">
@@ -173,7 +178,7 @@ const Home: NextPage = (_props: InferGetStaticPropsType<typeof getStaticProps>) 
                                             className='w-[30px] h-[30px] object-contain'
                                         />
                                     </div>
-                                    <p className='text-white font-bold text-3xl flex items-end gap-2 mt-5'>0 <p className='text-white font-bold text-lg'>m³</p></p>
+                                    <p className='text-white font-bold text-3xl flex items-end gap-2 mt-5'>0 <span className='font-bold text-base'>m³</span></p>
                                 </div>
                             </div>
                         </div>
@@ -196,7 +201,7 @@ const Home: NextPage = (_props: InferGetStaticPropsType<typeof getStaticProps>) 
                                         className='w-[25px] h-[25px] object-contain'
                                     />
                                 </div>
-                                <p className='text-white font-bold text-2xl flex items-end gap-2'>0 <p className='text-white font-bold text-base'>ton</p></p>
+                                <p className='text-white font-bold text-2xl flex items-end gap-2'>0 <span className='font-bold text-base'>ton</span></p>
                             </div>
 
                             <div className="flex items-center gap-2">
@@ -207,7 +212,7 @@ const Home: NextPage = (_props: InferGetStaticPropsType<typeof getStaticProps>) 
                                         className='w-[25px] h-[25px] object-contain'
                                     />
                                 </div>
-                                <p className='text-white font-bold text-2xl flex items-end gap-2'>0 <p className='text-white font-bold text-base'>m²</p></p>
+                                <p className='text-white font-bold text-2xl flex items-end gap-2'>0 <span className='font-bold text-base'>m²</span></p>
                             </div>
 
                             <div className="flex items-center gap-2">
@@ -218,7 +223,7 @@ const Home: NextPage = (_props: InferGetStaticPropsType<typeof getStaticProps>) 
                                         className='w-[25px] h-[25px] object-contain'
                                     />
                                 </div>
-                                <p className='text-white font-bold text-2xl flex items-end gap-2'>0 <p className='text-white font-bold text-base'>m³</p></p>
+                                <p className='text-white font-bold text-2xl flex items-end gap-2'>0 <span className='font-bold text-base'>m³</span></p>
                             </div>
 
                             <div className="flex items-center gap-2">
@@ -229,7 +234,7 @@ const Home: NextPage = (_props: InferGetStaticPropsType<typeof getStaticProps>) 
                                         className='w-[25px] h-[25px] object-contain'
                                     />
                                 </div>
-                                <p className='text-white font-bold text-2xl flex items-end gap-2'>0 <p className='text-white font-bold text-base'>uni</p></p>
+                                <p className='text-white font-bold text-2xl flex items-end gap-2'>0 <span className='font-bold text-base'>uni</span></p>
                             </div>
                         </div>
 
@@ -242,7 +247,7 @@ const Home: NextPage = (_props: InferGetStaticPropsType<typeof getStaticProps>) 
                     </div>
                 </section>
                 {/* NETWORK IMPACT */}
-                
+
                 <section className='flex flex-col items-center w-[100%] py-14'>
                     <h3 className='font-bold text-center text-3xl text-white'>
                         {t('O problema')}
@@ -250,7 +255,7 @@ const Home: NextPage = (_props: InferGetStaticPropsType<typeof getStaticProps>) 
                     <p
                         className='lg:w-[1000px] text-justify my-10 mx-4 text-white'
                     >{t('O ser humano vem degradando a Natureza desde que dominou a agricultura, porém nas últimas décadas vimos uma intensificação alarmante dessa degradação. Veja nas imagens abaixo a comparação do território da América do Sul entre os anos de 1985 e 2020.')}.</p>
-                
+
                     {chooseMap ? (
                         <div className="flex flex-col">
                             <Image
@@ -274,32 +279,32 @@ const Home: NextPage = (_props: InferGetStaticPropsType<typeof getStaticProps>) 
                     )}
                 </section>
 
-                <div className='flex w-[100%] justify-center bg-right lg:bg-center bg-[url("../assets/bg-destaque.png")]'>
-                <section className='flex flex-col justify-center lg:w-[1000px] py-10 items-center'>
+                <section className='flex w-[100%] justify-center bg-right lg:bg-center bg-[url("../assets/bg-destaque.png")]'>
+                <div className='flex flex-col justify-center lg:w-[1000px] py-10 items-center'>
                     <h3 className='font-bold text-center text-3xl text-white'>
                         {t('A solução')}
                     </h3>
                     <div className='flex flex-col lg:flex-row items-center mt-5 gap-5'>
                         <div className='flex items-center justify-center py-5'>
-                            <Image 
+                            <Image
                                 src={require('../assets/token-solução.png')}
                                 quality={100}
                                 alt='Logo da sintrop'
                                 className='w-[90%] lg:w-[400px] object-contain'
                             />
                         </div>
-                        
+
                         <div className='flex flex-col px-5 gap-3 lg:w-[450px]'>
                             <h2 className='font-bold text-lg text-white'>{t('Token Crédito de Carbono Regenerativo')}</h2>
                             <p className='text-justify text-white'>{t('Token com modelo de distribuição algorítmico programado para ser distribuído ao longo das próximas décadas para produtores regenerativos e comunidade pelos serviços ambientais ecossistêmicos prestados a sociedade')}.</p>
                         </div>
                     </div>
-                </section>
                 </div>
+                </section>
 
                 <section className='flex flex-col justify-center bg-[#0a4303] lg:w-[1000px] my-20 py-5 items-center rounded-md border-2 mx-4 lg:mx-0'>
-                    <p className='font-bold text-lg text-white px-2 text-center'>{t('Blockchain + Agroecologia para lutar pela:')}</p>
-                
+                    <p className='font-bold text-lg text-white px-2 text-center'>{t('Blockchain + Agroecologia para lutar pela')}:</p>
+
                     <div className='flex flex-col lg:flex-row items-center gap-2 justify-between w-full px-5 mt-5'>
                         <div className='flex flex-col gap-2'>
                             <p className='text-white font-bold lg:text-xl'>- Agrofloresta</p>
@@ -342,7 +347,7 @@ const Home: NextPage = (_props: InferGetStaticPropsType<typeof getStaticProps>) 
                         description={t('Desenvolvido e operado por comunidade')}
                         img='puzzle'
                     />
-                    
+
                     <Card2
                         title='rCC TOKEN'
                         description={t('Token Crédito de Carbono Regenerativo para recompensar produtores sustentáveis e comunidade pelos serviços ambientais')}
@@ -368,14 +373,6 @@ const Home: NextPage = (_props: InferGetStaticPropsType<typeof getStaticProps>) 
                         <h2 className='font-bold text-center text-white text-2xl mx-4 lg:w-[800px]'>
                             {t('Ou a agricultura vai salvar a Terra, ou a destruir. De qual lado você vai estar?')}
                         </h2>
-
-                        <Link
-                            href={`https://website-react-qdux.vercel.app/whitepaper.pdf`}
-                            target='_blank'
-                            className='mt-5 bg-blue-600 w-72 h-14 rounded mb-10 flex items-center justify-center'
-                        >
-                            <p className='font-bold text-white text-lg'>{t('Baixar')} Whitepaper</p>
-                        </Link>
                     </div>
                 </section>
 
@@ -436,16 +433,16 @@ const Home: NextPage = (_props: InferGetStaticPropsType<typeof getStaticProps>) 
                         <div className='flex flex-col gap-2 lg:w-[400px]'>
                             <h2 className='font-bold text-xl text-white mx-4'>{t('Desenvolvido e operado por comunidade')}</h2>
                             <p className='text-justify mx-4 text-white'>{t('Nossa comunidade é feita de desenvolvedores, pesquisadores, conselheiros, ativistas ambientais e produtores rurais')}.</p>
-                            <Link 
+                            <Link
                                 target='_blank'
-                                href='https://discord.com/invite/s5MfeqcPm8' 
-                                className='mt-5 bg-blue-600 w-64 h-14 rounded flex items-center justify-center mx-4'
+                                href='https://discord.com/invite/s5MfeqcPm8'
+                                className='mt-5 bg-blue-600 w-64 h-14 rounded flex items-center justify-center mx-4 font-bold text-white text-lg text-center'
                             >
-                                <p className='font-bold text-white text-lg text-center'>{t('Junte-se ao nosso discord')}</p>
+                               {t('Junte-se ao nosso discord')}
                             </Link>
                         </div>
 
-                        <Image 
+                        <Image
                             src={require('../assets/comunidade.png')}
                             quality={100}
                             alt='Pessoas se comunicando'
@@ -464,7 +461,7 @@ const Home: NextPage = (_props: InferGetStaticPropsType<typeof getStaticProps>) 
             </div>
 
             <BtnWhats/>
-        </div>
+        </>
     )
 }
 

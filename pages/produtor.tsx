@@ -31,10 +31,13 @@ const Produtor: NextPage = (_props: InferGetStaticPropsType<typeof getStaticProp
     const {t} = useTranslation('common');
 
     return(
-        <div>
-            <Script id="googleTagManager" src="https://www.googletagmanager.com/gtm.js?id=%27+i+dl" strategy="afterInteractive" dangerouslySetInnerHTML={{ __html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id=%27+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-WZK3VDF');`}}/>
-            <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WZK3VDF" height="0" width="0" style={{display:'none',visibility:'hidden'}}></iframe></noscript>
+        <>
             <Head>
+                <Script
+                    id="google-tag-manager" strategy="afterInteractive"
+                >
+                    {"(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id=%27+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-WZK3VDF');"}
+                </Script>
                 <title>{t("Produtor")}Oportunidade para Produtores Regenerativos - Sintrop</title>
                 <meta name='description' content='Seja recompensado com o token Crédito de Agricultura Regenerativa pelo serviço ambiental ecossistêmico prestado para a sociedade pela sua produção rural!'/>
                 <meta name="keywords" content="Agricultura, Regeneração, Sustentabilidade, Produtores regenerativos, comunidade"/>
@@ -59,7 +62,7 @@ const Produtor: NextPage = (_props: InferGetStaticPropsType<typeof getStaticProp
                         </h1>
 
                         <p className='mt-5 text-lg text-white text-center lg:text-left lg:w-[500px]'>
-                        {t('Certificação descentralizada de')}
+                            {t('Certificação descentralizada de')}
                             <span className='font-bold text-white'> {t('Agricultura Regenerativa')}</span>.
                         </p>
 
@@ -112,23 +115,23 @@ const Produtor: NextPage = (_props: InferGetStaticPropsType<typeof getStaticProp
                 </section>
                 </div>
 
-                <section className="flex flex-col w-[100%] items-center py-10 justify-center lg:flex-row lg:gap-10">
-                    <div>
-                        <Image
-                            alt='Índice de sustentabilidade'
-                            src={require('../assets/indice.png')}
-                            quality={100}
-                            className='w-[220px] h-[300px]'
-                        />
-                    </div>
+                <section className="flex flex-col w-[100%] items-center py-10 justify-center lg:w-[1000px]">
+                    <h3 className='font-bold text-center text-white text-xl mx-2'>
+                        {t('Mensuração de sustentabilidade em escala')}
+                    </h3>
+                    <p className='mt-2 mx-2 text-center text-white'>{t('Evolua o nível de regeneração da sua produção e receba consultoria gratuita para melhorar a sustentabilidade da sua produção')}.</p>
 
-                    <div className='flex flex-col items-center justify-center lg:w-[600px]'>
-                        <h3 className='font-bold text-center text-white text-xl mx-2'>
-                            {t('Mensuração de sustentabilidade em escala')}
-                        </h3>
-                        <p className='mt-2 mx-2 text-center text-white'>{t('Evolua o nível de regeneração da sua produção e receba consultoria gratuita para melhorar a sustentabilidade da sua produção')}.</p>
+                    <div className='flex flex-col lg:flex-row items-center justify-center'>
+                        <div className="mt-5 lg:mt-0">
+                            <Image
+                                alt='Índice de sustentabilidade'
+                                src={require('../assets/indice.png')}
+                                quality={100}
+                                className='w-[220px] h-[300px]'
+                            />
+                        </div>
 
-                        <div className='flex items-center justify-center flex-wrap gap-10 mt-10'>
+                        <div className='flex flex-col lg:flex-row items-center justify-center lg:w-[600px] flex-wrap gap-5 mt-5'>
                             <Card4
                                 title={t('Carbono')}
                                 img='co2'
@@ -150,24 +153,26 @@ const Produtor: NextPage = (_props: InferGetStaticPropsType<typeof getStaticProp
                 </section>
 
                 <div className='flex w-[100vw] justify-center bg-right lg:bg-center bg-[url("../assets/bg-destaque.png")]'>
-                <section className="flex flex-col w-[100%] lg:w-[1000px] items-center py-10 justify-center">
+                <section className="flex flex-col w-[100%] lg:w-[1000px] items-center py-10 justify-center px-4">
                     <h3 className='font-bold text-center text-white text-xl'>
                         {t('Distribuição do token')}
                     </h3>
-                    <p className='text-center mx-2 mt-2 text-white'>{t('De acordo com sua nota de sustentabilidade: Quanto mais sustentável, mais créditos. Distribuição algorítimica programada para as próximas decadas')}.</p>
+                    <p className='text-center mt-2 text-white mb-4'>{t('De acordo com sua nota de sustentabilidade: Quanto mais sustentável, mais créditos. Distribuição algorítimica programada para as próximas decadas')}.</p>
                     <Image
                         alt='Planilha de distribuição de token dos produtores'
                         src={require('../assets/planilha-1.png')}
                         quality={100}
-                        className='hidden lg:flex lg:w-[1000px] h-[300px] object-contain' 
+                        className='hidden lg:flex lg:w-[1000px] object-contain' 
                     />
 
                     <Image
                         alt='Planilha de distribuição de token dos produtores'
                         src={require('../assets/tabela-mobile-produtor.png')}
                         quality={100}
-                        className='lg:hidden object-contain' 
+                        className='lg:hidden object-contain mx-4 flex' 
                     />
+
+                    <p className="font-bold text-white">ERA= 6 MESES | EPOCA= 6 ANOS</p>
                 </section>
                 </div>
 
@@ -221,7 +226,7 @@ const Produtor: NextPage = (_props: InferGetStaticPropsType<typeof getStaticProp
             </div>
 
             <BtnWhats/>
-        </div>
+        </>
     )
 }
 

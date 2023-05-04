@@ -42,10 +42,13 @@ const Investidor: NextPage = (_props: InferGetStaticPropsType<typeof getStaticPr
 
 
     return(
-        <div>
-            <Script id="googleTagManager" src="https://www.googletagmanager.com/gtm.js?id=%27+i+dl" strategy="afterInteractive" dangerouslySetInnerHTML={{ __html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id=%27+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-WZK3VDF');`}}/>
-            <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WZK3VDF" height="0" width="0" style={{display:'none',visibility:'hidden'}}></iframe></noscript>
+        <>
             <Head>
+                <Script
+                    id="google-tag-manager" strategy="afterInteractive"
+                >
+                    {"(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id=%27+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-WZK3VDF');"}
+                </Script>
                 <title>{t('Investidor')}Oportunidade para Investidores - Token Crédito de Agricultura Regenerativa</title>
                 <meta name='description' content='Estamos com a primeira rodada de venda dos tokens abertas para investidores que queiram lutar pela regeneração do planeta. Invista na Regeneração!'/>
                 <meta name="keywords" content="Agricultura, Regeneração, Sustentabilidade, Produtores regenerativos, comunidade"/>
@@ -120,8 +123,8 @@ const Investidor: NextPage = (_props: InferGetStaticPropsType<typeof getStaticPr
 
                 </section>
                 
-                <div className='flex w-[100%] justify-center bg-right lg:bg-right bg-[url("../assets/bg-destaque.png")]'>
-                <section className='flex flex-col justify-center lg:w-[1000px] py-10 items-center'>
+                <section className='flex w-[100%] justify-center bg-right lg:bg-right bg-[url("../assets/bg-destaque.png")]'>
+                <div className='flex flex-col justify-center lg:w-[1000px] py-10 items-center'>
                     <h3 className='font-bold text-center text-2xl text-white'>
                         {t('A solução')}
                     </h3>
@@ -140,8 +143,8 @@ const Investidor: NextPage = (_props: InferGetStaticPropsType<typeof getStaticPr
                             <p className='text-justify text-white'>{t('Token com modelo de distribuição algorítmico programado para ser distribuído ao longo das próximas décadas para produtores regenerativos e comunidade pelos serviços ambientais ecossistêmicos prestados a sociedade')}.</p>
                         </div>
                     </div>
-                </section>
                 </div>
+                </section>
                 
                 <section className='flex flex-col items-center w-[100%] pt-10 pb-32'>
                     <h3 className='font-bold text-center text-white text-xl'>
@@ -201,9 +204,12 @@ const Investidor: NextPage = (_props: InferGetStaticPropsType<typeof getStaticPr
                             {t('Queremos acelerar nosso desenvolvimento, por isso estamos com a primeira rodada privada de venda dos tokens aberta')}
                         </h2>
                         <Link 
-                            target='_blank'
-                            href='https://docs.google.com/forms/d/e/1FAIpQLSfRP4MzGk86ikasBaLMGhsCvbZp67jlVW9ftIoHP0fVXoyRcw/viewform?usp=sf_link' 
+                            target='_blank' 
                             className='ml-5 bg-blue-600 w-56 h-14 rounded flex items-center justify-center mx-2'
+                            href={router.locale === 'pt-BR' ? 
+                                'https://docs.google.com/forms/d/e/1FAIpQLSfRP4MzGk86ikasBaLMGhsCvbZp67jlVW9ftIoHP0fVXoyRcw/viewform?usp=sf_link' : 
+                                'https://docs.google.com/forms/d/e/1FAIpQLSf5Yc2df4j5J6qoCzRMp0EN8T3ACcWhaT-9BKnMBOvXxIcL7g/viewform?usp=sf_link'
+                            }
                         >
                             <p className='font-bold text-white text-lg text-center'>{t('Quero Investir')}</p>
                         </Link>
@@ -228,7 +234,7 @@ const Investidor: NextPage = (_props: InferGetStaticPropsType<typeof getStaticPr
             </div>
 
             <BtnWhats/>
-        </div>
+        </>
     )
 }
 

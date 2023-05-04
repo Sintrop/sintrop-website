@@ -30,10 +30,13 @@ const Ativista: NextPage = (_props: InferGetStaticPropsType<typeof getStaticProp
     const {t} = useTranslation('common');
 
     return(
-        <div>
-            <Script id="googleTagManager" src="https://www.googletagmanager.com/gtm.js?id=%27+i+dl" strategy="afterInteractive" dangerouslySetInnerHTML={{ __html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id=%27+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-WZK3VDF');`}}/>
-            <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WZK3VDF" height="0" width="0" style={{display:'none',visibility:'hidden'}}></iframe></noscript>
+        <>
             <Head>
+                <Script
+                    id="google-tag-manager" strategy="afterInteractive"
+                >
+                    {"(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id=%27+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-WZK3VDF');"}
+                </Script>
                 <title>{t('Ativista')} - Sintrop</title>
                 <meta name='description' content='Faça parte da rede de Ativistas da Sintrop, inspecione o nível de regeneração de produtores e seja recompensado com tokens!'/>
                 <meta name="keywords" content="Agricultura, Regeneração, Sustentabilidade, Produtores regenerativos, comunidade"/>
@@ -48,6 +51,8 @@ const Ativista: NextPage = (_props: InferGetStaticPropsType<typeof getStaticProp
                 <link rel="canonical" href="https://sintrop.com"/>
                 <link rel='icon' type='image/png' href='/favicon.png'/>
             </Head>
+
+                    
             <div className='flex flex-col items-center w-[100vw] bg-[#062C01]'>
                 <div className='flex flex-col w-[100%] h-[500px] items-center bg-[url("../assets/new-bg.jpg")] bg-cover bg-center lg:h-[500px]'>
                     <div className='w-[100%] h-[100%] bg-[rgba(0,0,0,0.5)] flex flex-col items-center p-2'>
@@ -91,8 +96,8 @@ const Ativista: NextPage = (_props: InferGetStaticPropsType<typeof getStaticProp
                     </div>
                 </section>
 
-                <div className='flex w-[100%] justify-center bg-right lg:bg-center bg-[url("../assets/bg-destaque.png")]'>
-                    <section className='flex flex-col items-center justify-center lg:w-[1000px] w-[100%] py-10'>
+                <section className='flex w-[100%] justify-center bg-right lg:bg-center bg-[url("../assets/bg-destaque.png")]'>
+                    <div className='flex flex-col items-center justify-center lg:w-[1000px] w-[100%] py-10'>
                         <div className='flex flex-col lg:w-[1000px]'>
                             <h3 className='font-bold text-center text-white text-xl'>
                                 {t('Mais transparência')}
@@ -108,19 +113,19 @@ const Ativista: NextPage = (_props: InferGetStaticPropsType<typeof getStaticProp
                                 className='lg:w-[600px] object-contain'
                             />
                         </div>
-                    </section>
-                </div>
+                    </div>
+                </section>
 
-                <section className="flex flex-col w-[100%] items-center pt-10 justify-center lg:w-[1000px]">
+                <section className="flex flex-col items-center pt-10 justify-center lg:w-[1000px mx-4 mb-10 lg:mb-0">
                     <h3 className='font-bold text-center text-white text-xl'>
                         {t('Distribuição do token')}
                     </h3>
-                    <p className='text-center mx-4 mt-2 text-white'>{t('Distribuição de tokens de acordo com a quantidade de inspeções realizadas. Quanto mais inspeções, mais tokens')}.</p>
+                    <p className='text-center mt-2 text-white mb-4'>{t('Distribuição de tokens de acordo com a quantidade de inspeções realizadas. Quanto mais inspeções, mais tokens')}.</p>
                     <Image
                         alt='Planilha de distribuição de token dos produtores'
                         src={require('../assets/planilha-2.png')}
                         quality={100}
-                        className='hidden lg:flex lg:w-[1000px] h-[300px] object-contain' 
+                        className='hidden lg:flex lg:w-[1000px] object-contain' 
                     />
                     <Image
                         alt='Planilha de distribuição de token dos produtores'
@@ -128,6 +133,7 @@ const Ativista: NextPage = (_props: InferGetStaticPropsType<typeof getStaticProp
                         quality={100}
                         className='lg:hidden object-contain' 
                     />
+                    <p className="font-bold text-white">ERA= 6 MESES | EPOCA= 6 ANOS</p>
                 </section>
 
                 <section className='flex flex-col justify-center lg:pt-0 w-[100%] items-center lg:w-[1000px] pb-32 lg:pb-24'>
@@ -180,7 +186,7 @@ const Ativista: NextPage = (_props: InferGetStaticPropsType<typeof getStaticProp
             </div>
 
             <BtnWhats/>
-        </div>
+        </>
     )
 }
 

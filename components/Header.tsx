@@ -93,11 +93,16 @@ export function Header({blog}: Props){
                     {t('Blog')}
                 </Link> 
 
-                <button
+                <Link
                     className="bg-blue-600 px-5 py-2 font-bold text-white rounded-md"
+                    href={router.locale === 'pt-BR' ? 
+                        'https://docs.google.com/forms/d/e/1FAIpQLSfRP4MzGk86ikasBaLMGhsCvbZp67jlVW9ftIoHP0fVXoyRcw/viewform?usp=sf_link' : 
+                        'https://docs.google.com/forms/d/e/1FAIpQLSf5Yc2df4j5J6qoCzRMp0EN8T3ACcWhaT-9BKnMBOvXxIcL7g/viewform?usp=sf_link'
+                    }
+                    target="_blank"
                 >
                     Pré venda
-                </button>
+                </Link>
             </nav>
 
             {modalMenu && (

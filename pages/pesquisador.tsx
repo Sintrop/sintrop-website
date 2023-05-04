@@ -31,10 +31,13 @@ const Pesquisador: NextPage = (_props: InferGetStaticPropsType<typeof getStaticP
     const {t} = useTranslation('common');
 
     return(
-        <div>
-            <Script id="googleTagManager" src="https://www.googletagmanager.com/gtm.js?id=%27+i+dl" strategy="afterInteractive" dangerouslySetInnerHTML={{ __html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id=%27+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-WZK3VDF');`}}/>
-            <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WZK3VDF" height="0" width="0" style={{display:'none',visibility:'hidden'}}></iframe></noscript>
+        <>
             <Head>
+                <Script
+                    id="google-tag-manager" strategy="afterInteractive"
+                >
+                    {"(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id=%27+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-WZK3VDF');"}
+                </Script>
                 <title>{t('Pesquisador')}Oportunidade para Pesquisadores Agroecológicos - Sintrop</title>
                 <meta name='description' content='Ajude nos a construir um futuro regenerativo e seja recompensado com o token da Sintrop pelo serviço de ensino sobre regeneração!'/>
                 <meta name="keywords" content="Agricultura, Regeneração, Sustentabilidade, Produtores regenerativos, comunidade"/>
@@ -109,27 +112,29 @@ const Pesquisador: NextPage = (_props: InferGetStaticPropsType<typeof getStaticP
                     />
                 </section>
 
-                <div className='flex w-[100%] justify-center bg-[url("../assets/bg-destaque.png")] mt-10'>
-                <section className="flex flex-col w-[100%] items-center py-10 justify-center">
+                <section className='flex w-[100%] justify-center bg-right lg:bg-center bg-[url("../assets/bg-destaque.png")] mt-10'>
+                <div className="flex flex-col lg:w-[1000px] items-center py-10 justify-center mx-4">
                     <h3 className='font-bold text-center text-white text-xl'>
                         {t('Distribuição do token')}
                     </h3>
-                    <p className='text-center mx-2 mt-2 text-white'>{t('Distribuição de tokens de acordo com a quantidade de pesquisas realizadas')}.</p>
+                    <p className='text-center mt-2 text-white mb-4'>{t('Distribuição de tokens de acordo com a quantidade de pesquisas realizadas')}.</p>
                     <Image
                         alt='Planilha de distribuição de token dos pesquisadores'
                         src={require('../assets/planilha-3.png')}
                         quality={100}
-                        className='hidden lg:flex lg:w-[1000px] h-[300px] object-contain' 
+                        className='hidden lg:flex lg:w-[1000px] object-contain' 
                     />
 
                     <Image
                         alt='Planilha de distribuição de token dos pesquisadores'
                         src={require('../assets/tabela-mobile-pesquisador.png')}
                         quality={100}
-                        className='lg:hidden lg:w-[1000px] h-[300px] object-contain' 
+                        className='lg:hidden lg:w-[1000px] object-contain' 
                     />
-                </section>
+
+                    <p className="font-bold text-white">ERA= 6 MESES | EPOCA= 6 ANOS</p>
                 </div>
+                </section>
 
                 <section className='flex flex-col justify-center pt-10 lg:pt-0 w-[100%] items-center pb-32 lg:pb-16'>
                     <div className='flex flex-col items-center justify-center lg:gap-20 lg:flex-row '>
@@ -181,7 +186,7 @@ const Pesquisador: NextPage = (_props: InferGetStaticPropsType<typeof getStaticP
             </div>
 
             <BtnWhats/>
-        </div>
+        </>
     )
 }
 
