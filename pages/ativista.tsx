@@ -63,8 +63,8 @@ const Ativista: NextPage = (_props: InferGetStaticPropsType<typeof getStaticProp
                             </h1>
 
                             <p className='mt-5 text-lg text-white text-center lg:text-left lg:w-[600px]'>
-                                {t('Certificação descentralizada de')}
-                                <span className='font-bold text-white'> {t('Agricultura Regenerativa')}</span>.
+                                {t('Faça parte da nossa rede de ativistas, visite e inspecione produtores rurais e ganhe o token')}
+                                <span className='font-bold text-white'> {t('Crédito de Regeneração')}</span>.
                             </p>
 
                             <Link
@@ -91,8 +91,8 @@ const Ativista: NextPage = (_props: InferGetStaticPropsType<typeof getStaticProp
                     </div>
                         
                     <div className='flex flex-col px-4 gap-3 lg:w-[500px]'>
-                        <h2 className='font-bold text-xl text-white'>{t('Token Crédito de Agricultura Regenerativa')}</h2>
-                        <p className='text-justify mt-2 text-white'>{t('Seja recompensado com o token da Sintrop pelo serviço de inspeção e ativismo ambiental prestado ao Sistema. Realize inspeções periodicamente e contribua na luta para regenerar o planeta')}.</p>
+                        <h2 className='font-bold text-xl text-white'>{t('Crédito de Regeneração')}</h2>
+                        <p className='text-justify mt-2 text-white'>{t('Seja recompensado com o token Crédito de Regeneração pelo serviço de inspeção e ativismo ambiental prestado ao Sistema. Realize inspeções periodicamente e contribua na luta para regenerar o planeta')}.</p>
                     </div>
                 </section>
 
@@ -139,8 +139,8 @@ const Ativista: NextPage = (_props: InferGetStaticPropsType<typeof getStaticProp
                 <section className='flex flex-col justify-center lg:pt-0 w-[100%] items-center lg:w-[1000px] pb-32 lg:pb-24'>
                     <div className='flex flex-col items-center justify-center lg:gap-20 lg:flex-row'>
                         <div className='flex flex-col gap-2 justify-center lg:w-[500px]'>
-                            <h2 className='font-bold text-xl text-white mx-4'>{t('Inscreva-se para participar do primeiro teste do sistema')}</h2>
-                            <p className='text-justify mx-4 mt-2 text-white'>{t('Estamos buscando os primeiros ativistas para fazer parte da rede de ativistas do Sistema e realizar inspeções presenciais para mensurar o nível de regeneração dos produtores rurais')}!</p>
+                            <h2 className='font-bold text-xl text-white mx-4'>{t('Sistema descentralizado e sem intermediários')}</h2>
+                            <p className='text-justify mx-4 mt-2 text-white'>{t('Usamos a tecnologia da Blockchain, que permite que o Sistema opere de forma descentralizada, com lógica de funcionamento através de algoritmos imutáveis e pagamento das recompensas sem intermediários.')}</p>
                         </div>
 
                         <Image 
@@ -157,7 +157,7 @@ const Ativista: NextPage = (_props: InferGetStaticPropsType<typeof getStaticProp
                         <h2 className='font-bold text-center text-white text-xl lg:w-[1000px]'>
                             {t('Faça parte da rede de avaliadores do sistema')}!
                         </h2>
-                        <p className='mx-2 text-center text-white'>{t('Faça parte da rede de Ativistas da Sintrop, inspecione o nível de regeneração dos produtores e seja recompensado pelo serviço prestado para a sociedade!')}</p>
+                        <p className='mx-2 text-center text-white'>{t('Inspecione o nível de regeneração dos produtores e seja recompensado pelo serviço prestado. Inscreva-se no botão abaixo e junte-se a nós nessa luta.')}</p>
                         <Link 
                                 target='_blank'
                                 href='https://docs.google.com/forms/d/e/1FAIpQLSeh0OgWqr_UuZBy4UUvgWG521zLeMVqx6wQu77mrJdhXDBAPQ/viewform?usp=sf_link' 

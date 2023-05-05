@@ -62,8 +62,8 @@ const Pesquisador: NextPage = (_props: InferGetStaticPropsType<typeof getStaticP
                             </h1>
 
                             <p className='mt-5 text-lg text-white text-center lg:text-left lg:w-[500px]'>
-                                {t('Certificação descentralizada de')}
-                                <span className='font-bold text-white'> {t('Agricultura Regenerativa')}</span>.
+                                {t('Desenvolva o método de avaliação, publique suas pesquisas e seja recompensado com o token')}
+                                <span className='font-bold text-white'> {t('Crédito de Regeneração')}</span>.
                             </p>
 
                             <Link
@@ -90,8 +90,8 @@ const Pesquisador: NextPage = (_props: InferGetStaticPropsType<typeof getStaticP
                     </div>
                     
                     <div className='flex flex-col px-5 gap-3 lg:w-[500px]'>
-                        <h2 className='font-bold text-xl text-white'>{t('Token Crédito de Agricultura Regenerativa')}</h2>
-                        <p className='text-justify mt-2 text-white'>{t('Seja recompensado com o token da Sintrop  pelo serviços de pesquisa e ensino sobre agroecologia. Contribua com o ecossistema publicando suas pesquisas e descobertas que auxiliem na regeneração do planeta')}.</p>
+                        <h2 className='font-bold text-xl text-white'>{t('Token Crédito de Regeneração')}</h2>
+                        <p className='text-justify mt-2 text-white'>{t('Seja recompensado com o Crédito de Regeneração pelos serviços de pesquisa e ensino sobre agroecologia. Contribua com o ecossistema publicando suas pesquisas e descobertas que auxiliem na regeneração do Planeta')}.</p>
                     </div>
                 </section>
 
@@ -139,8 +139,8 @@ const Pesquisador: NextPage = (_props: InferGetStaticPropsType<typeof getStaticP
                 <section className='flex flex-col justify-center pt-10 lg:pt-0 w-[100%] items-center pb-32 lg:pb-16'>
                     <div className='flex flex-col items-center justify-center lg:gap-20 lg:flex-row '>
                         <div className='flex flex-col gap-2 justify-center lg:h-[450px] lg:w-[400px]'>
-                            <h2 className='font-bold text-xl text-white mx-4'>{t('Inscreva-se para participar do primeiro teste do sistema')}</h2>
-                            <p className='text-justify mx-4 mt-2 text-white'>{t('Buscamos pesquisadores agroecológicos para desenvolver o método de avaliação e auxiliar no processo de educação e ensino dos produtores rurais')}!</p>
+                            <h2 className='font-bold text-xl text-white mx-4'>{t('Sistema descentralizado e sem intermediários')}</h2>
+                            <p className='text-justify mx-4 mt-2 text-white'>{t('Usamos a tecnologia da Blockchain, que permite que o Sistema opere de forma descentralizada, com lógica de funcionamento através de algoritmos imutáveis e pagamento das recompensas sem intermediários')}!</p>
                         </div>
 
                         <Image 
