@@ -33,7 +33,7 @@ const Pesquisador: NextPage = (_props: InferGetStaticPropsType<typeof getStaticP
     return(
         <>
             <Head>
-                <title>{t('Pesquisador')}Oportunidade para Pesquisadores Agroecológicos - Sintrop</title>
+                <title>{t('Pesquisadores')} - Sintrop</title>
                 <meta name='description' content='Ajude nos a construir um futuro regenerativo e seja recompensado com o token da Sintrop pelo serviço de ensino sobre regeneração!'/>
                 <meta name="keywords" content="Agricultura, Regeneração, Sustentabilidade, Produtores regenerativos, comunidade"/>
                 <meta name="robots" content="index,follow"/>
@@ -135,7 +135,7 @@ const Pesquisador: NextPage = (_props: InferGetStaticPropsType<typeof getStaticP
                     <div className='flex flex-col items-center justify-center lg:gap-20 lg:flex-row '>
                         <div className='flex flex-col gap-2 justify-center lg:h-[450px] lg:w-[400px]'>
                             <h2 className='font-bold text-xl text-white mx-4'>{t('Sistema descentralizado e sem intermediários')}</h2>
-                            <p className='text-justify mx-4 mt-2 text-white'>{t('Usamos a tecnologia da Blockchain, que permite que o Sistema opere de forma descentralizada, com lógica de funcionamento através de algoritmos imutáveis e pagamento das recompensas sem intermediários')}!</p>
+                            <p className='text-justify mx-4 mt-2 text-white'>{t('Usamos a tecnologia da Blockchain, que permite que o Sistema opere de forma descentralizada, com lógica de funcionamento através de algoritmos imutáveis e pagamento das recompensas sem intermediários.')}</p>
                         </div>
 
                         <Image 
