@@ -49,7 +49,7 @@ const Investidor: NextPage = (_props: InferGetStaticPropsType<typeof getStaticPr
                 >
                     {"(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id=%27+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-WZK3VDF');"}
                 </Script>
-                <title>{t('Investidor')}Oportunidade para Investidores - Token Crédito de Agricultura Regenerativa</title>
+                <title>{t('Investidor')}Oportunidade para Investidores - Token Crédito de Regeneração</title>
                 <meta name='description' content='Estamos com a primeira rodada de venda dos tokens abertas para investidores que queiram lutar pela regeneração do planeta. Invista na Regeneração!'/>
                 <meta name="keywords" content="Agricultura, Regeneração, Sustentabilidade, Produtores regenerativos, comunidade"/>
                 <meta name="robots" content="index,follow"/>
@@ -73,7 +73,7 @@ const Investidor: NextPage = (_props: InferGetStaticPropsType<typeof getStaticPr
                             </h1>
 
                             <p className='mt-5 text-lg text-white text-center lg:text-left lg:w-[500px]'>
-                                {t('Queremos acelerar nosso desenvolvimento, por isso estamos com a primeira rodada privada de venda dos tokens aberta. Você tem a oportunidade de ser uma das primeiras pessoas a investir no token ')}
+                                {t('Queremos acelerar nosso desenvolvimento, por isso estamos com a primeira rodada privada de venda dos tokens aberta. Você tem a oportunidade de ser uma das primeiras pessoas a investir no token')}
                                 <span className='font-bold text-white'> {t('Crédito de Regeneração')}</span>.
                             </p>
 
@@ -107,7 +107,7 @@ const Investidor: NextPage = (_props: InferGetStaticPropsType<typeof getStaticPr
                                 quality={100}
                                 className='w-[600px] h-[500px] object-cover'
                             />
-                            <p className='font-bold text-white'>1984</p>
+                            <p className='font-bold text-white'>1985</p>
                         </div>
                     ) : (
                         <div className="flex flex-col">
@@ -139,7 +139,7 @@ const Investidor: NextPage = (_props: InferGetStaticPropsType<typeof getStaticPr
                         </div>
                         
                         <div className='flex flex-col px-5 gap-3 lg:w-[450px]'>
-                            <h2 className='font-bold text-lg text-white'>{t('Token Crédito de Carbono Regenerativo')}</h2>
+                            <h2 className='font-bold text-lg text-white'>{t('Token Crédito de Regeneração')}</h2>
                             <p className='text-justify text-white'>{t('Token com modelo de distribuição algorítmico programado para ser distribuído ao longo das próximas décadas para produtores regenerativos e comunidade pelos serviços ambientais ecossistêmicos prestados a sociedade')}.</p>
                         </div>
                     </div>

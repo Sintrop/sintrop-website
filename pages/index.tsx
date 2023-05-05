@@ -73,12 +73,12 @@ const Home: NextPage = (_props: InferGetStaticPropsType<typeof getStaticProps>) 
                         <Header/>
                         <div className='flex flex-col mt-32 items-center w-[100%] lg:items-start lg:w-[1000px] lg:mt-0'>
                             <h2 className='text-2xl text-center mt-5 text-white font-bold lg:text-left lg:w-[500px]'>
-                                {t('Regeneração do planeta através da agricultura Regenerativa')}!
+                                {t('Bem-vindo(a) ao futuro da Regeneração do Planeta')}!
                             </h2>
 
                             <h3 className='mt-5 text-lg text-white text-center lg:text-left lg:w-[500px]'>
-                                {t('Sistema descentralizado de certificação de regeneração com mecanismo de incentivo de sustentabilidade através do token Crédito de ')}
-                                <span className='font-bold text-white'> {t('Agricultura Regenerativa')}</span>.
+                                {t('Sistema descentralizado de certificação de agricultura regenerativa com mecanismo de incentivo de sustentabilidade através do token ')}
+                                <span className='font-bold text-white'> {t('Crédito de Regeneração')}</span>.
                             </h3>
 
                             <Link
@@ -95,7 +95,7 @@ const Home: NextPage = (_props: InferGetStaticPropsType<typeof getStaticProps>) 
 
                 {/* NETWORK IMPACT */}
                 <section className="flex flex-col items-center py-5 rounded-lg border-2 bg-[#0A4303] lg:w-[1000px] mt-[-50px] px-2 mx-2">
-                    <p className="text-white mb-5 font-bold">NETWORK IMPACT</p>
+                    <p className="text-white mb-5 font-bold">{t('IMPACTO DA NOSSA REDE')}</p>
 
                     <div className="flex items-center gap-2 flex-wrap justify-center">
 
@@ -107,7 +107,7 @@ const Home: NextPage = (_props: InferGetStaticPropsType<typeof getStaticProps>) 
                                     className='w-[50px] h-[50px] object-contain'
                                 />
                                 <div className='flex flex-col'>
-                                    <p className='text-white'>REGENERATION CREDIT PRICE</p>
+                                    <p className='text-white'>{t("VALOR DO CRÉDITO DE REGENERAÇÃO")}</p>
                                     <p className='text-white'>R$ 0,025</p>
                                 </div>
                             </div>
@@ -143,7 +143,7 @@ const Home: NextPage = (_props: InferGetStaticPropsType<typeof getStaticProps>) 
 
                                 <div className="flex items-center justify-end gap-2 w-[50%]">
                                     <div className='flex flex-col'>
-                                        <p className='text-white font-bold'>Solo</p>
+                                        <p className='text-white font-bold'>{t("Solo")}</p>
                                         <Image
                                             src={require('../assets/solo.png')}
                                             alt='Token da sintrop'
@@ -159,7 +159,7 @@ const Home: NextPage = (_props: InferGetStaticPropsType<typeof getStaticProps>) 
                             <div className="flex items-center justify-between gap-2 py-5 border-b-2 lg:border-0">
                                 <div className="flex items-center gap-2 w-[50%]">
                                     <div className='flex flex-col'>
-                                        <p className='text-white font-bold'>Biodiversidade</p>
+                                        <p className='text-white font-bold'>{t("Biodiversidade")}</p>
                                         <Image
                                             src={require('../assets/bio.png')}
                                             alt='Token da sintrop'
@@ -171,7 +171,7 @@ const Home: NextPage = (_props: InferGetStaticPropsType<typeof getStaticProps>) 
 
                                 <div className="flex items-center justify-end gap-2 w-[50%]">
                                     <div className='flex flex-col'>
-                                        <p className='text-white font-bold'>Água</p>
+                                        <p className='text-white font-bold'>{t("Água")}</p>
                                         <Image
                                             src={require('../assets/agua.png')}
                                             alt='Token da sintrop'
@@ -190,7 +190,7 @@ const Home: NextPage = (_props: InferGetStaticPropsType<typeof getStaticProps>) 
                                     alt='Token da sintrop'
                                     className='w-[50px] h-[50px] object-contain'
                                 />
-                                <p className='text-white'>TOKEN IMPACT</p>
+                                <p className='text-white'>{t("IMPACTO POR TOKEN")}</p>
                             </div>
 
                             <div className="flex items-center gap-2">
@@ -241,9 +241,9 @@ const Home: NextPage = (_props: InferGetStaticPropsType<typeof getStaticProps>) 
                     </div>
 
                     <div className='flex flex-col lg:flex-row items-center w-full justify-between lg:px-20 mt-5'>
-                        <p className='text-[#ABE056] font-bold'>PRODUTORES: 0</p>
-                        <p className='text-[#ABE056] font-bold'>ATIVISTAS: 0</p>
-                        <p className='text-[#ABE056] font-bold'>PESQUISADORES: 0</p>
+                        <p className='text-[#ABE056] font-bold'>{t("PRODUTORES: 0")}</p>
+                        <p className='text-[#ABE056] font-bold'>{t("ATIVISTAS: 0")}</p>
+                        <p className='text-[#ABE056] font-bold'>{t("PESQUISADORES: 0")}</p>
                     </div>
                 </section>
                 {/* NETWORK IMPACT */}
@@ -264,7 +264,7 @@ const Home: NextPage = (_props: InferGetStaticPropsType<typeof getStaticProps>) 
                                 quality={100}
                                 className='w-[600px] h-[500px] object-cover'
                             />
-                            <p className='font-bold text-green-700'>1984</p>
+                            <p className='font-bold text-green-700'>1985</p>
                         </div>
                     ) : (
                         <div className="flex flex-col">
@@ -295,7 +295,7 @@ const Home: NextPage = (_props: InferGetStaticPropsType<typeof getStaticProps>) 
                         </div>
 
                         <div className='flex flex-col px-5 gap-3 lg:w-[450px]'>
-                            <h2 className='font-bold text-lg text-white'>{t('Token Crédito de Carbono Regenerativo')}</h2>
+                            <h2 className='font-bold text-lg text-white'>{t('Token Crédito de Regeneração')}</h2>
                             <p className='text-justify text-white'>{t('Token com modelo de distribuição algorítmico programado para ser distribuído ao longo das próximas décadas para produtores regenerativos e comunidade pelos serviços ambientais ecossistêmicos prestados a sociedade')}.</p>
                         </div>
                     </div>
@@ -307,13 +307,13 @@ const Home: NextPage = (_props: InferGetStaticPropsType<typeof getStaticProps>) 
 
                     <div className='flex flex-col lg:flex-row items-center gap-2 justify-between w-full px-5 mt-5'>
                         <div className='flex flex-col gap-2'>
-                            <p className='text-white font-bold lg:text-xl'>- Agrofloresta</p>
-                            <p className='text-white font-bold lg:text-xl'>- Agricultura regenerativa</p>
-                            <p className='text-white font-bold lg:text-xl'>- Melhor distribuição de renda</p>
-                            <p className='text-white font-bold lg:text-xl'>- Agricultura familiar</p>
-                            <p className='text-white font-bold lg:text-xl'>- Segurança alimentar</p>
-                            <p className='text-white font-bold lg:text-xl'>- Reversão do aquecimento global</p>
-                            <p className='text-white font-bold lg:text-xl'>- Manutenção da água</p>
+                            <p className='text-white font-bold lg:text-xl'>{t("- Agrofloresta")}</p>
+                            <p className='text-white font-bold lg:text-xl'>{t("- Agricultura regenerativa")}</p>
+                            <p className='text-white font-bold lg:text-xl'>{t("- Melhor distribuição de renda")}</p>
+                            <p className='text-white font-bold lg:text-xl'>{t("- Agricultura familiar")}</p>
+                            <p className='text-white font-bold lg:text-xl'>{t("- Segurança alimentar")}</p>
+                            <p className='text-white font-bold lg:text-xl'>{t("- Reversão do aquecimento global")}</p>
+                            <p className='text-white font-bold lg:text-xl'>{t("- Manutenção da água")}</p>
                         </div>
                         <Image
                             src={require('../assets/imagens-floresta.png')}
@@ -349,8 +349,8 @@ const Home: NextPage = (_props: InferGetStaticPropsType<typeof getStaticProps>) 
                     />
 
                     <Card2
-                        title='rCC TOKEN'
-                        description={t('Token Crédito de Carbono Regenerativo para recompensar produtores sustentáveis e comunidade pelos serviços ambientais')}
+                        title={t('CRÉDITO DE REGENERAÇÃO')}
+                        description={t('Token Crédito de Regeneração para recompensar produtores sustentáveis e comunidade pelos serviços ambientais')}
                         img='sac-token'
                     />
 
@@ -381,7 +381,7 @@ const Home: NextPage = (_props: InferGetStaticPropsType<typeof getStaticProps>) 
                         <h2 className='font-bold text-center text-white text-xl lg:w-[800px]'>
                             {t('Nossa missão é regenerar o planeta')}!
                         </h2>
-                        <p className='mx-2 text-center text-white'>{t('Junte-se a nós agora mesmo')}</p>
+                        <p className='mx-2 text-center text-white'>{t('Junte-se ao nosso exército de pessoas do bem na luta para regenerar nossos ecossistemas. Veja como fazer parte da nossa comunidade abaixo')}</p>
                     </div>
                 </section>
 
@@ -400,7 +400,7 @@ const Home: NextPage = (_props: InferGetStaticPropsType<typeof getStaticProps>) 
                     <div className='flex flex-wrap gap-14 justify-center lg:w-[1000px] my-20'>
                         <Card3
                             title={t('Produtor')}
-                            description={t("Produtores de alimentos que estejam regenerando o local através do seu trabalho")}
+                            description={t("Produtores rurais que estejam regenerando o local através do seu trabalho")}
                             img='produtor'
                         />
 
@@ -431,8 +431,8 @@ const Home: NextPage = (_props: InferGetStaticPropsType<typeof getStaticProps>) 
 
                     <div className='flex flex-col items-center lg:flex-row gap-5'>
                         <div className='flex flex-col gap-2 lg:w-[400px]'>
-                            <h2 className='font-bold text-xl text-white mx-4'>{t('Desenvolvido e operado por comunidade')}</h2>
-                            <p className='text-justify mx-4 text-white'>{t('Nossa comunidade é feita de desenvolvedores, pesquisadores, conselheiros, ativistas ambientais e produtores rurais')}.</p>
+                            <h2 className='font-bold text-xl text-white mx-4'>{t('Operado de forma totalmente descentralizada')}</h2>
+                            <p className='text-justify mx-4 text-white'>{t('Utilizamos a tecnologia da Blockchain para que nossa comunidade trabalhe sem intermediários ou entidade central regulando')}.</p>
                             <Link
                                 target='_blank'
                                 href='https://discord.com/invite/s5MfeqcPm8'

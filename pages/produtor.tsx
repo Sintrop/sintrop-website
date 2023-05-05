@@ -62,8 +62,8 @@ const Produtor: NextPage = (_props: InferGetStaticPropsType<typeof getStaticProp
                         </h1>
 
                         <p className='mt-5 text-lg text-white text-center lg:text-left lg:w-[500px]'>
-                            {t('Certificação descentralizada de')}
-                            <span className='font-bold text-white'> {t('Agricultura Regenerativa')}</span>.
+                            {t('Faça parte da nossa rede de produtores, seja certificado gratuitamente e ganhe o token')}
+                            <span className='font-bold text-white'> {t('Crédito de Regeneração')}</span>.
                         </p>
 
                         <Link
@@ -90,8 +90,8 @@ const Produtor: NextPage = (_props: InferGetStaticPropsType<typeof getStaticProp
                     </div>
                     
                     <div className='flex flex-col px-5 gap-3 lg:w-[500px]'>
-                        <h2 className='font-bold text-xl text-white'>{t('Ganhe o token Crédito de Carbono Regenerativo pelo serviço ambiental prestado para a sociedade.')}</h2>
-                        <p className='text-justify text-white'>{t('Seja recompensado com o token da Sintrop pelo serviço ambiental de regeneração de ecossistemas prestados para a humanidade. Identificamos um problema MUITO grande que o mercado regulado de carbono é um sistema que centraliza renda e não é acessível para o pequeno produtor. Nascemos para oferecer uma solução alternativa, não burocrática e gratuita para que produtores que estejam regenerando o planeta sejam devidamente recompensados')}.</p>
+                        <h2 className='font-bold text-xl text-white'>{t('Crédito de Regeneração')}</h2>
+                        <p className='text-justify text-white'>{t('Seja recompensado pelo serviço ambiental de regeneração de ecossistemas prestados para a humanidade. Identificamos um problema MUITO grande que o mercado regulado de carbono é um sistema que centraliza renda e não é acessível para o pequeno produtor. Nascemos para oferecer uma solução alternativa, não burocrática e gratuita para que produtores que estejam regenerando o Planeta sejam devidamente recompensados')}.</p>
                     </div> 
                 </section>
 
@@ -99,9 +99,9 @@ const Produtor: NextPage = (_props: InferGetStaticPropsType<typeof getStaticProp
                 <section className='flex flex-col items-center lg:w-[1000px] justify-center w-[100%] py-10 lg:flex-row'>
                     <div className='flex flex-col lg:w-[500px]'>
                         <h3 className='font-bold text-center text-white text-xl mx-4'>
-                            {t('Mais transparência: Dados públicos e selo transparente')}
+                            {t('Dados públicos e selo transparente')}
                         </h3>
-                        <p className='mt-2 mx-4 text-center text-white'>{t('Exiba seu nível de sustentabilidade para seus clientes. O resultado das inspeções recebidas é público para provar o nível de regeneração de seu trabalho e fornecer informações relevantes para que os consumidores escolham com consciência')}.</p>
+                        <p className='mt-2 mx-4 text-center text-white'>{t('Prove o nível de regeneração do seu trabalho e forneça informações relevantes para que os consumidores escolham com consciência. O resultado das inspeções recebidas é transparente e os dados são públicos e armazenados de forma descentralizada.')}</p>
                     </div>
 
                     <div className="mx-4">
@@ -179,8 +179,8 @@ const Produtor: NextPage = (_props: InferGetStaticPropsType<typeof getStaticProp
                 <section className='flex flex-col justify-center pt-10 lg:pt-0 w-[100%] lg:w-[1000px] items-center pb-32 lg:pb-20'>
                     <div className='flex flex-col items-center justify-center lg:gap-20 lg:flex-row'>
                         <div className='flex flex-col gap-2 justify-center lg:h-[450px] lg:w-[400px]'>
-                            <h2 className='font-bold text-xl text-white mx-4 lg:mx-0'>{t('Inscreva-se para participar do primeiro teste do sistema')}</h2>
-                            <p className='text-justify mx-4 lg:mx-0 mt-2 text-white'>{t('Estamos buscando os primeiros produtores rurais regenerativos para participar do teste de operação. Se você é um produtor que trabalha com agrofloresta, agricultura sintrópica ou qualquer outra forma de regeneração da natureza entre em contato conosco')}!</p>
+                            <h2 className='font-bold text-xl text-white mx-4 lg:mx-0'>{t('Sistema descentralizado e sem intermediários')}</h2>
+                            <p className='text-justify mx-4 lg:mx-0 mt-2 text-white'>{t('Usamos a tecnologia da Blockchain, que permite que o Sistema opere de forma descentralizada, com lógica de funcionamento através de algoritmos imutáveis e pagamento das recompensas sem intermediários.')}</p>
                         </div>
 
                         <Image 
@@ -195,9 +195,9 @@ const Produtor: NextPage = (_props: InferGetStaticPropsType<typeof getStaticProp
                 <section className='flex flex-col lg:w-[1000px] border-2 rounded-lg mt-[-100px] lg:h-[200px] h-[230px] items-center justify-center bg-[url("../assets/bg-green.png")] bg-cover z-50 mx-4'>
                     <div className='flex items-center justify-center flex-col w-[100%] h-[100%] bg-[rgba(0,0,0,0.3)]'>
                         <h2 className='font-bold text-center text-white text-xl lg:w-[800px]'>
-                            {t('Faça parte da rede de produtores do sistema')}!
+                            {t('Faça parte da rede e participe do primeiro teste de operação')}
                         </h2>
-                        <p className='mx-2 text-center text-white'>{t('Junte-se a nossa comunidade de produtores na missão de regenerar o planeta')}</p>
+                        <p className='mx-2 text-center text-white'>{t('Se você é um produtor que trabalha com agrofloresta, agricultura sintrópica ou qualquer outra forma de regeneração da natureza, inscreva-se no botão abaixo!')}</p>
                         <Link 
                                 target='_blank'
                                 href='https://docs.google.com/forms/d/e/1FAIpQLSeh0OgWqr_UuZBy4UUvgWG521zLeMVqx6wQu77mrJdhXDBAPQ/viewform?usp=sf_link' 
