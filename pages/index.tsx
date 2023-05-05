@@ -46,12 +46,12 @@ const Home: NextPage = (_props: InferGetStaticPropsType<typeof getStaticProps>) 
 
     return (
         <>  
+            {/* <Script
+                id="google-tag-manager" strategy="afterInteractive"
+            >
+                {"(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id=%27+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-WZK3VDF');"}
+            </Script> */}
             <Head>
-                <Script
-                    id="google-tag-manager" strategy="afterInteractive"
-                >
-                    {"(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id=%27+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-WZK3VDF');"}
-                </Script>
                 <title>{t('Sintrop - Tecnologia e Sustentabilidade')}</title>
                 <meta name='description' content='Nossa missão é regenerar o planeta através da tecnologia. Conheça nosso Sistema e o Token Crédito de Carbono Regenerativo.'/>
                 <meta name="keywords" content="Agricultura, Regeneração, Sustentabilidade, Produtores regenerativos, comunidade"/>
@@ -241,9 +241,9 @@ const Home: NextPage = (_props: InferGetStaticPropsType<typeof getStaticProps>) 
                     </div>
 
                     <div className='flex flex-col lg:flex-row items-center w-full justify-between lg:px-20 mt-5'>
-                        <p className='text-[#ABE056] font-bold'>{t("PRODUTORES: 0")}</p>
-                        <p className='text-[#ABE056] font-bold'>{t("ATIVISTAS: 0")}</p>
-                        <p className='text-[#ABE056] font-bold'>{t("PESQUISADORES: 0")}</p>
+                        <p className='text-[#ABE056] font-bold'>{t("PRODUTORES")}: 0</p>
+                        <p className='text-[#ABE056] font-bold'>{t("ATIVISTAS")}: 0</p>
+                        <p className='text-[#ABE056] font-bold'>{t("PESQUISADORES")}: 0</p>
                     </div>
                 </section>
                 {/* NETWORK IMPACT */}

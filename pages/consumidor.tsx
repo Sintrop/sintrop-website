@@ -32,11 +32,6 @@ const Consumidor: NextPage = (_props: InferGetStaticPropsType<typeof getStaticPr
     return(
         <>
             <Head>
-                <Script
-                    id="google-tag-manager" strategy="afterInteractive"
-                >
-                    {"(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id=%27+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-WZK3VDF');"}
-                </Script>
                 <title>{t('Consumidor')}Solução para consumidores de alimentos - Sintrop</title>
                 <meta name='description' content='Solução de transparência sobre origem, processo de produção e nível de sustentabilidade de produtores rurais. Escolha a Regeneração!'/>
                 <meta name="keywords" content="Agricultura, Regeneração, Sustentabilidade, Produtores regenerativos, comunidade"/>
