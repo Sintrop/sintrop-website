@@ -44,7 +44,7 @@ const Investidor: NextPage = (_props: InferGetStaticPropsType<typeof getStaticPr
     return(
         <>
             <Head>
-                <title>{t('Investidor')}Oportunidade para Investidores - Token Crédito de Regeneração</title>
+                <title>{t('Investidores')} - Oportunidade</title>
                 <meta name='description' content='Estamos com a primeira rodada de venda dos tokens abertas para investidores que queiram lutar pela regeneração do planeta. Invista na Regeneração!'/>
                 <meta name="keywords" content="Agricultura, Regeneração, Sustentabilidade, Produtores regenerativos, comunidade"/>
                 <meta name="robots" content="index,follow"/>
@@ -151,7 +151,7 @@ const Investidor: NextPage = (_props: InferGetStaticPropsType<typeof getStaticPr
                         <div>
                             <p className='font-bold text-white'>{t('Certificado')}</p>
                             <Image 
-                                src={require('../assets/selo.png')}
+                                src={require('../assets/selo-investidor.png')}
                                 quality={100}
                                 alt='Token exemplificativo'
                                 className='object-contain lg:w-[500px] '

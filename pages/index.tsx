@@ -73,7 +73,7 @@ const Home: NextPage = (_props: InferGetStaticPropsType<typeof getStaticProps>) 
                         <Header/>
                         <div className='flex flex-col mt-32 items-center w-[100%] lg:items-start lg:w-[1000px] lg:mt-0'>
                             <h2 className='text-2xl text-center mt-5 text-white font-bold lg:text-left lg:w-[500px]'>
-                                {t('Nossa missão é regenerar o planeta')}!
+                                {t('Bem-vindo(a) ao futuro da regeneração do Planeta')}!
                             </h2>
 
                             <h3 className='mt-5 text-lg text-white text-center lg:text-left lg:w-[500px]'>
@@ -254,7 +254,7 @@ const Home: NextPage = (_props: InferGetStaticPropsType<typeof getStaticProps>) 
                     </h3>
                     <p
                         className='lg:w-[1000px] text-justify my-10 mx-4 text-white'
-                    >{t('O ser humano vem degradando a Natureza desde que dominou a agricultura, porém nas últimas décadas vimos uma intensificação alarmante dessa degradação. Veja nas imagens abaixo a comparação do território da América do Sul entre os anos de 1985 e 2020.')}.</p>
+                    >{t('O ser humano vem degradando a Natureza desde que dominou a agricultura, porém nas últimas décadas vimos uma intensificação alarmante dessa degradação. Veja nas imagens abaixo a comparação do território da América do Sul entre os anos de 1985 e 2020')}:</p>
 
                     {chooseMap ? (
                         <div className="flex flex-col">
