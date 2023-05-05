@@ -64,6 +64,12 @@ export function ModalMenu({close}: Props){
                 >
                     {t('Blog')}
                 </Link> 
+
+                <button
+                    className="bg-blue-600 px-5 py-2 font-bold text-white rounded-md"
+                >
+                    Pré venda
+                </button>
             </div>
         </div>
     )

@@ -30,9 +30,7 @@ const Sobre: NextPage = (_props: InferGetStaticPropsType<typeof getStaticProps>)
     const {t} = useTranslation('common');
 
     return(
-        <div>
-            <Script id="googleTagManager" src="https://www.googletagmanager.com/gtm.js?id=%27+i+dl" strategy="afterInteractive" dangerouslySetInnerHTML={{ __html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id=%27+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-WZK3VDF');`}}/>
-            <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WZK3VDF" height="0" width="0" style={{display:'none',visibility:'hidden'}}></iframe></noscript>
+        <>
             <Head>
                 <title>{t('Sobre a')} Sintrop - Sobre nós</title>
                 <meta name='description' content='Conheça mais sobre o nosso projeto e como pretendemos regenerar o mundo!'/>
@@ -48,9 +46,9 @@ const Sobre: NextPage = (_props: InferGetStaticPropsType<typeof getStaticProps>)
                 <link rel="canonical" href="https://sintrop.com"/>
                 <link rel='icon' type='image/png' href='/favicon.png'/>
             </Head>
-            <div className='flex flex-col items-center w-[100vw]'>
-                <div className='flex flex-col w-[100%] h-[500px] items-center bg-[url("../assets/bg-11.png")] bg-cover bg-center lg:h-[600px]'>
-                    <div className='w-[100%] h-[100%] bg-[rgba(0,0,0,0.5)] flex flex-col items-center p-2 lg:py-20 lg:p-10'>
+            <div className='flex flex-col items-center w-[100vw] bg-[#062C01]'>
+                <div className='flex flex-col w-[100%] h-[500px] items-center bg-[url("../assets/new-bg.jpg")] bg-cover bg-center lg:h-[500px]'>
+                    <div className='w-[100%] h-[100%] bg-[rgba(0,0,0,0.5)] flex flex-col items-center p-2'>
                         <Header/>
                         <div className='flex flex-col mt-32 items-center w-[100%] lg:items-start lg:w-[1000px] lg:mt-0'>
                             <h1 className='text-2xl text-center mt-5 text-white font-bold lg:text-left lg:w-[500px]'>
@@ -67,7 +65,7 @@ const Sobre: NextPage = (_props: InferGetStaticPropsType<typeof getStaticProps>)
                                 'https://sintrop.com/assets/qr-code/whitepaper.pdf' : 'https://sintrop.com/assets/whitepaper-v1.4-EN.pdf'}
                                 target='_blank'
                             >
-                                <button className='mt-5 bg-green-700 w-72 h-14 rounded mb-10'>
+                                <button className='mt-5 bg-blue-600 w-72 h-14 rounded mb-10'>
                                     <p className='font-bold text-white text-xl'>{t('Baixar')} Whitepaper</p>
                                 </button>
                             </Link>
@@ -75,14 +73,14 @@ const Sobre: NextPage = (_props: InferGetStaticPropsType<typeof getStaticProps>)
                     </div>
                 </div>
 
-                <section className="flex flex-col lg:flex-row py-10 items-center justify-center lg:gap-20">
+                <section className="flex flex-col lg:flex-row py-10 items-center justify-center lg:gap-20 lg:w-[1000px]">
                     <div className="flex flex-col gap-5 lg:w-[700px]">
-                        <h3 className="font-bold text-xl mx-2">{t('NOSSA')} <span className="text-green-700">{t('VISÃO')}</span></h3>
-                        <h3 className="font-bold text-xl mx-2 text-gray-600">{t('Precisamos mudar')} <span className="text-gray-700">{t('AGORA')}</span></h3>
+                        <h3 className="font-bold text-xl mx-4 text-white">{t('NOSSA')} <span className="text-green-700">{t('VISÃO')}</span></h3>
+                        <h3 className="font-bold text-xl mx-4 text-white">{t('Precisamos mudar')} <span className="text-white">{t('AGORA')}</span></h3>
                     
-                        <p className="mx-2">{t('A agricultura industrial tem sido uma das principais causas do aquecimento global e contribui muito negativamente para a vida do nosso planeta. Devemos mudar agora para evitar sérios problemas ambientais. Para produzir os alimentos do mundo não precisamos matar lentamente a terra usando muitos produtos químicos, destruindo e erodindo os solos, matando toda a biodiversidade local e usando muitos recursos naturais')}.</p>
+                        <p className="mx-4 text-white">{t('A agricultura industrial tem sido uma das principais causas do aquecimento global e contribui muito negativamente para a vida do nosso planeta. Devemos mudar agora para evitar sérios problemas ambientais. Para produzir os alimentos do mundo não precisamos matar lentamente a terra usando muitos produtos químicos, destruindo e erodindo os solos, matando toda a biodiversidade local e usando muitos recursos naturais')}.</p>
 
-                        <p className="mx-2">{t('Nossa visão dos sonhos é um mundo onde 100% dos alimentos sejam produzidos sem prejudicar o planeta. Com soluções técnicas regenerativas que tornam o mundo um lugar melhor a cada safra, capturando muito CO2 atmosférico e utilizando os recursos naturais de forma cíclica')}.</p>
+                        <p className="mx-4 text-white">{t('Nossa visão dos sonhos é um mundo onde 100% dos alimentos sejam produzidos sem prejudicar o planeta. Com soluções técnicas regenerativas que tornam o mundo um lugar melhor a cada safra, capturando muito CO2 atmosférico e utilizando os recursos naturais de forma cíclica')}.</p>
                     </div>
                     <Image
                         alt='Imagem de uma planta conectada ao chão por meio da tecnologia'
@@ -92,7 +90,7 @@ const Sobre: NextPage = (_props: InferGetStaticPropsType<typeof getStaticProps>)
                 </section>
 
                 <section className='flex flex-col w-[100%] lg:h-[500px] items-center justify-center bg-[url("../assets/bg-9.png")] bg-cover'>
-                    <div className='flex items-center justify-center py-10 flex-col w-[100%] h-[100%] bg-[rgba(0,0,0,0.5)]'>
+                    <div className='flex items-center justify-center py-10 flex-col w-[100%] h-[100%] bg-[rgba(0,0,0,0.7)]'>
                         <h3 className="font-bold text-white text-xl mx-2">{t('NOSSOS')} <span className="text-green-700">{t('VALORES')}</span></h3>
 
                         <div className="flex flex-col items-center gap-5 mt-10 lg:flex-row">
@@ -135,21 +133,21 @@ const Sobre: NextPage = (_props: InferGetStaticPropsType<typeof getStaticProps>)
                     </div>
                 </section>
 
-                <section className="flex flex-col bg-white w-[100%] lg:flex-row py-10 items-center justify-center lg:gap-20">
-                    <div className="flex flex-col items-center gap-5 lg:w-[800px]">
-                        <h3 className="font-bold text-xl mx-2">{t('NOSSA')} <span className="text-green-700">{t('MISSÃO')}</span></h3>
+                <section className="flex flex-col w-[100%] lg:flex-row py-10 items-center justify-center lg:gap-20">
+                    <div className="flex flex-col items-center gap-5 lg:w-[1000px]">
+                        <h3 className="font-bold text-xl mx-4 text-white">{t('NOSSA')} <span className="text-green-700">{t('MISSÃO')}</span></h3>
                     
-                        <p className="mx-2 text-center">{t('Nossa luta é para defender e regenerar a natureza. Precisamos urgentemente regenerar mais área do que degradamos, esse é o caminho para resolver os maiores problemas da humanidade como o aquecimento global, escassez hídrica, extinção da biodiversidade e insegurança alimentar')}.</p>
+                        <p className="mx-4 text-center text-white">{t('Nossa luta é para defender e regenerar a natureza. Precisamos urgentemente regenerar mais área do que degradamos, esse é o caminho para resolver os maiores problemas da humanidade como o aquecimento global, escassez hídrica, extinção da biodiversidade e insegurança alimentar')}.</p>
                     </div>
                 </section>
 
-                <section className="flex flex-col bg-white w-[100%] py-10 items-center justify-center">
-                    <h3 className="font-bold text-xl mx-2">{t('NOSSA')} <span className="text-green-700">{t('HISTÓRIA')}</span></h3>
+                <section className="flex flex-col lg:w-[1000px] py-10 items-center justify-center mx-4">
+                    <h3 className="font-bold text-xl">{t('NOSSA')} <span className="text-green-700">{t('HISTÓRIA')}</span></h3>
                     <Image
                         alt='Imagem da linha do tempo da sintrop'
                         src={require('../assets/nossa-hist.png')}
                         quality={100}
-                        className='lg:mt-[-40px]'
+                        className='lg:w-[400px] object-contain'
                     />
                 </section>
 
@@ -163,7 +161,7 @@ const Sobre: NextPage = (_props: InferGetStaticPropsType<typeof getStaticProps>)
             </div>
 
             <BtnWhats/>
-        </div>
+        </>
     )
 }
 

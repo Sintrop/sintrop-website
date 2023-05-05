@@ -19,10 +19,10 @@ export function Card2({title, description, img}: Props){
                 className='w-[90px] h-[90px]'
             />
 
-            <h1 className='font-bold text-green-700 text-lg'>
+            <h1 className='font-bold text-white text-lg'>
                 {title}
             </h1>
-            <p className="text-justify">{description}</p>
+            <p className="text-justify text-white">{description}</p>
         </div>
     )
 }
