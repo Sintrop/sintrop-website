@@ -116,7 +116,7 @@ const Ativista: NextPage = (_props: InferGetStaticPropsType<typeof getStaticProp
                     </div>
                 </section>
 
-                <section className="flex flex-col items-center pt-10 justify-center lg:w-[1000px mx-4 mb-10 lg:mb-0">
+                <section className="flex flex-col items-center pt-10 justify-center lg:w-[1000px] mx-4 mb-10 lg:mb-0">
                     <h3 className='font-bold text-center text-white text-xl'>
                         {t('Distribuição do token')}
                     </h3>

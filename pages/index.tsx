@@ -45,7 +45,7 @@ const Home: NextPage = (_props: InferGetStaticPropsType<typeof getStaticProps>) 
     }, [chooseMap]);
 
     return (
-        <>
+        <>  
             <Head>
                 <Script
                     id="google-tag-manager" strategy="afterInteractive"
