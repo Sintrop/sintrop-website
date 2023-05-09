@@ -152,10 +152,10 @@
     "Sistema descentralizado de certificação de agricultura regenerativa com mecanismo de incentivo de sustentabilidade através do token": "Sistema descentralizado de certificação de agricultura regenerativa com mecanismo de incentivo de sustentabilidade através do token",
     "Crédito de Regeneração": "Crédito de Regeneração",
     "IMPACTO DA NOSSA REDE": "IMPACTO DA NOSSA REDE",
-    "PRODUTORES: 0": "PRODUTORES: 0",
-    "ATIVISTAS: 0": "ATIVISTAS: 0",
-    "PESQUISADORES: 0": "PESQUISADORES: 0",
-    "O ser humano vem degradando a Natureza desde que dominou a agricultura, porém nas últimas décadas vimos uma intensificação alarmante dessa degradação. Veja nas imagens abaixo a comparação do território da América do Sul entre os anos de 1985 e 2020.": "O ser humano vem degradando a Natureza desde que dominou a agricultura, porém nas últimas décadas vimos uma intensificação alarmante dessa degradação. Veja nas imagens abaixo a comparação do território da América do Sul entre os anos de 1985 e 2020.",
+    "PRODUTORES": "PRODUTORES",
+    "ATIVISTAS": "ATIVISTAS",
+    "PESQUISADORES": "PESQUISADORES",
+    "O ser humano vem degradando a Natureza desde que dominou a agricultura, porém nas últimas décadas vimos uma intensificação alarmante dessa degradação. Veja nas imagens abaixo a comparação do território da América do Sul entre os anos de 1985 e 2020": "O ser humano vem degradando a Natureza desde que dominou a agricultura, porém nas últimas décadas vimos uma intensificação alarmante dessa degradação. Veja nas imagens abaixo a comparação do território da América do Sul entre os anos de 1985 e 2020",
     "Token Crédito de Regeneração": "Token Crédito de Regeneração",
     "Token Crédito de Regeneração para recompensar produtores sustentáveis e comunidade pelos serviços ambientais": "Token Crédito de Regeneração para recompensar produtores sustentáveis e comunidade pelos serviços ambientais",
     "Produtores rurais que estejam regenerando o local através do seu trabalho": "Produtores rurais que estejam regenerando o local através do seu trabalho",
@@ -171,7 +171,7 @@
     "- Segurança alimentar": "- Segurança alimentar",
     "- Reversão do aquecimento global": "- Reversão do aquecimento global",
     "- Manutenção da água": "- Manutenção da água",
-    "Bem-vindo(a) ao futuro da Regeneração do Planeta": "Bem-vindo(a) ao futuro da Regeneração do Planeta",
+    "Bem-vindo(a) ao futuro da regeneração do Planeta": "Bem-vindo(a) ao futuro da regeneração do Planeta",
     "Faça parte da nossa rede de produtores, seja certificado gratuitamente e ganhe o token": "Faça parte da nossa rede de produtores, seja certificado gratuitamente e ganhe o token",
     "Seja recompensado pelo serviço ambiental de regeneração de ecossistemas prestados para a humanidade. Identificamos um problema MUITO grande que o mercado regulado de carbono é um sistema que centraliza renda e não é acessível para o pequeno produtor. Nascemos para oferecer uma solução alternativa, não burocrática e gratuita para que produtores que estejam regenerando o Planeta sejam devidamente recompensados": "Seja recompensado pelo serviço ambiental de regeneração de ecossistemas prestados para a humanidade. Identificamos um problema MUITO grande que o mercado regulado de carbono é um sistema que centraliza renda e não é acessível para o pequeno produtor. Nascemos para oferecer uma solução alternativa, não burocrática e gratuita para que produtores que estejam regenerando o Planeta sejam devidamente recompensados",
     "Prove o nível de regeneração do seu trabalho e forneça informações relevantes para que os consumidores escolham com consciência. O resultado das inspeções recebidas é transparente e os dados são públicos e armazenados de forma descentralizada.": "Prove o nível de regeneração do seu trabalho e forneça informações relevantes para que os consumidores escolham com consciência. O resultado das inspeções recebidas é transparente e os dados são públicos e armazenados de forma descentralizada.",
@@ -186,8 +186,10 @@
     "Seja recompensado com o Crédito de Regeneração pelos serviços de pesquisa e ensino sobre agroecologia. Contribua com o ecossistema publicando suas pesquisas e descobertas que auxiliem na regeneração do Planeta": "Seja recompensado com o Crédito de Regeneração pelos serviços de pesquisa e ensino sobre agroecologia. Contribua com o ecossistema publicando suas pesquisas e descobertas que auxiliem na regeneração do Planeta",
     "Queremos acelerar nosso desenvolvimento, por isso estamos com a primeira rodada privada de venda dos tokens aberta. Você tem a oportunidade de ser uma das primeiras pessoas a investir no token": "Queremos acelerar nosso desenvolvimento, por isso estamos com a primeira rodada privada de venda dos tokens aberta. Você tem a oportunidade de ser uma das primeiras pessoas a investir no token",
     "Queremos acelerar nosso desenvolvimento, por isso estamos com a primeira rodada privada de venda dos tokens aberta": "Queremos acelerar nosso desenvolvimento, por isso estamos com a primeira rodada privada de venda dos tokens aberta",
-    "": "",
-    "": "",
-    "": ""
+    "O problema": "O problema",
+    "Produtores": "Produtores",
+    "Pesquisadores": "Pesquisadores", 
+    "Investidores": "Investidores",    
+    "Ativistas": "Ativistas"
     
 }

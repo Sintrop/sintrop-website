@@ -32,7 +32,7 @@ const Ativista: NextPage = (_props: InferGetStaticPropsType<typeof getStaticProp
     return(
         <>
             <Head>
-                <title>{t('Ativista')} - Sintrop</title>
+                <title>{t('Ativistas')} - Sintrop</title>
                 <meta name='description' content='Faça parte da rede de Ativistas da Sintrop, inspecione o nível de regeneração de produtores e seja recompensado com tokens!'/>
                 <meta name="keywords" content="Agricultura, Regeneração, Sustentabilidade, Produtores regenerativos, comunidade"/>
                 <meta name="robots" content="index,follow"/>

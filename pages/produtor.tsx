@@ -33,7 +33,7 @@ const Produtor: NextPage = (_props: InferGetStaticPropsType<typeof getStaticProp
     return(
         <>
             <Head>
-                <title>{t("Produtor")}Oportunidade para Produtores Regenerativos - Sintrop</title>
+                <title>{t("Produtores Sintrop")}</title>
                 <meta name='description' content='Seja recompensado com o token Crédito de Agricultura Regenerativa pelo serviço ambiental ecossistêmico prestado para a sociedade pela sua produção rural!'/>
                 <meta name="keywords" content="Agricultura, Regeneração, Sustentabilidade, Produtores regenerativos, comunidade"/>
                 <meta name="robots" content="index,follow"/>
