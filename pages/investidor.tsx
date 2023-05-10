@@ -45,14 +45,14 @@ const Investidor: NextPage = (_props: InferGetStaticPropsType<typeof getStaticPr
         <>
             <Head>
                 <title>{t('Investidores')} - Oportunidade</title>
-                <meta name='description' content='Estamos com a primeira rodada de venda dos tokens abertas para investidores que queiram lutar pela regeneração do planeta. Invista na Regeneração!'/>
+                <meta name='description' content={`${t('Estamos com a primeira rodada de venda dos tokens abertas para investidores que queiram lutar pela regeneração do planeta. Invista na Regeneração!')}`}/>
                 <meta name="keywords" content="Agricultura, Regeneração, Sustentabilidade, Produtores regenerativos, comunidade"/>
                 <meta name="robots" content="index,follow"/>
                 <meta name="googlebot" content="index,follow"/>
                 <meta property="og:type" content="website"/>
                 <meta property="og:url" content="https://sintrop.com/investidor"/>
                 <meta property="og:title" content="Investidor - Sintrop"/>
-                <meta property="og:description" content="Estamos com a primeira rodada de venda dos tokens abertas para investidores que queiram lutar pela regeneração do planeta. Invista na Regeneração!"/>
+                <meta property="og:description" content={`${t('Estamos com a primeira rodada de venda dos tokens abertas para investidores que queiram lutar pela regeneração do planeta. Invista na Regeneração!')}`}/>
                 <meta property="og:locale" content={_props._nextI18Next?.initialLocale}/>
                 <meta property="og:image"content="a definir"/>
                 <link rel="canonical" href="https://sintrop.com"/>
@@ -74,7 +74,7 @@ const Investidor: NextPage = (_props: InferGetStaticPropsType<typeof getStaticPr
 
                             <Link
                                 href={router.locale === 'pt-BR' ? 
-                                'https://sintrop.com/assets/qr-code/whitepaper.pdf' : 'https://sintrop.com/assets/whitepaper-v1.4-EN.pdf'}
+                                'https://sintrop.com/assets/qr-code/whitepaper.pdf' : 'https://sintrop.com/assets/whitepaper-en.pdf'}
                                 target='_blank'
                             >
                                 <button className='mt-5 bg-blue-600 w-72 h-14 rounded mb-10'>
@@ -135,17 +135,17 @@ const Investidor: NextPage = (_props: InferGetStaticPropsType<typeof getStaticPr
                         
                         <div className='flex flex-col px-5 gap-3 lg:w-[450px]'>
                             <h2 className='font-bold text-lg text-white'>{t('Token Crédito de Regeneração')}</h2>
-                            <p className='text-justify text-white'>{t('Token com modelo de distribuição algorítmico programado para ser distribuído ao longo das próximas décadas para produtores regenerativos e comunidade pelos serviços ambientais ecossistêmicos prestados a sociedade')}.</p>
+                            <p className='text-justify text-white'>{t('Token com modelo de distribuição algorítmico programado para ser distribuído ao longo das próximas décadas para produtores regenerativos e comunidade pelos serviços ambientais ecossistêmicos prestados a sociedade. Dvidiremos o impacto da rede pela quantidade de créditos emitidos para atrelar de forma dinâmica cada token a um impacto de CO2, solo, água e biodiversidade')}.</p>
                         </div>
                     </div>
                 </div>
                 </section>
                 
-                <section className='flex flex-col items-center w-[100%] pt-10 pb-32'>
+                <section className='flex flex-col items-center w-[100%] py-10'>
                     <h3 className='font-bold text-center text-white text-xl'>
                         {t('Comprovantes de ajuda na regeneração')}
                     </h3>
-                    <p className='text-center mx-4 mb-10 lg:w-[1000px] mt-2 text-white'>{t('Veja seu histórico de ajuda, e o quanto você impactou o mundo')}!</p>
+                    <p className='text-center mx-4 mb-10 lg:w-[1000px] mt-2 text-white'>{t('Pessoas e empresas poderão adquirir os Créditos de Regeneração diretametamente dos produtores e usar na plataforma para compensar seu impacto e financiar diretamenta agroflorestas e a manutenção dos nossos ecossistemas')}!</p>
                     
                     <div className='flex flex-col lg:flex-row items-center gap-5 mx-4'>
                         <div>
@@ -169,29 +169,23 @@ const Investidor: NextPage = (_props: InferGetStaticPropsType<typeof getStaticPr
                         </div>
                     </div>
                 </section>
-                
 
-                {/* <section className='flex flex-col justify-center py-10 lg:py-0 w-[100%] lg:w-[1000px] items-center'>
-                    <div className='flex flex-col items-center justify-center lg:gap-20 lg:flex-row '>
-                        <div className='flex flex-col gap-2 justify-center lg:h-[450px] lg:w-[400px]'>
-                            <h2 className='font-bold text-xl text-white mx-2'>{t('Queremos acelerar nosso desenvolvimento, por isso estamos com a primeira rodada privada de venda dos tokens aberta.')}</h2>
-                            <Link 
-                                target='_blank'
-                                href='https://docs.google.com/forms/d/e/1FAIpQLSfRP4MzGk86ikasBaLMGhsCvbZp67jlVW9ftIoHP0fVXoyRcw/viewform?usp=sf_link' 
-                                className='mt-5 bg-blue-600 w-56 h-14 rounded flex items-center justify-center mx-2'
-                            >
-                                <p className='font-bold text-white text-lg text-center'>{t('Quero Investir')}</p>
-                            </Link>
+                <section className='flex w-[100%] justify-center bg-right lg:bg-right bg-[url("../assets/bg-destaque.png")] pb-32'>
+                        <div className='flex flex-col lg:flex-row items-center mt-5 gap-5'>
+                            <div className='flex flex-col px-5 gap-3 lg:w-[450px]'>
+                                <h2 className='font-bold text-lg text-white'>{t('Business model')}</h2>
+                                <p className='text-justify text-white'>{t("As vendas privadas 1 e 2 têm como objetivo o financiamento do desenvolvimento do projeto, enquanto a oferta pública (ICO) será realizada após o lançamento do Sistema na mainnet. Todos os tokens destinados à comunidade serão distribuídos por meio de smart contracts ao longo dos próximos 40 anos")}.</p>
+                            </div>
+                            <div className='flex items-center justify-center py-5'>
+                                <Image 
+                                    src={require('../assets/grafico-sales.png')}
+                                    quality={100}
+                                    alt='Logo da sintrop'
+                                    className='w-[90%] lg:w-[400px] object-contain'
+                                />
+                            </div>
                         </div>
-
-                        <Image 
-                            src={require('../assets/comunidade.png')}
-                            quality={100}
-                            alt='Globo tecnológico'
-                            className='w-[360px] h-[350px] object-contain hidden lg:flex'
-                        />
-                    </div>
-                </section> */}
+                </section>
 
                 <section className='flex flex-col lg:w-[1000px] mt-[-100px] border-2 rounded-lg lg:h-[200px] h-[250px]  items-center justify-center bg-[url("../assets/bg-green.png")] bg-cover z-50 mx-4'>
                     <div className='flex items-center justify-center flex-col w-[100%] h-[100%] bg-[rgba(0,0,0,0.3)] lg:flex-row gap-4'>

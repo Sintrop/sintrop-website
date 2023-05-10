@@ -32,15 +32,15 @@ const Consumidor: NextPage = (_props: InferGetStaticPropsType<typeof getStaticPr
     return(
         <>
             <Head>
-                <title>{t('Consumidor')}Solução para consumidores de alimentos - Sintrop</title>
-                <meta name='description' content='Solução de transparência sobre origem, processo de produção e nível de sustentabilidade de produtores rurais. Escolha a Regeneração!'/>
+                <title>{t('Consumidor')} Solução para consumidores de alimentos - Sintrop</title>
+                <meta name='description' content={`${t('Solução de transparência sobre origem, processo de produção e nível de sustentabilidade de produtores rurais. Escolha a Regeneração')}!`}/>
                 <meta name="keywords" content="Agricultura, Regeneração, Sustentabilidade, Produtores regenerativos, comunidade"/>
                 <meta name="robots" content="index,follow"/>
                 <meta name="googlebot" content="index,follow"/>
                 <meta property="og:type" content="website"/>
                 <meta property="og:url" content="https://sintrop.com/consumidor"/>
                 <meta property="og:title" content="Consumidor da Sintrop"/>
-                <meta property="og:description" content="Solução de transparência sobre origem, processo de produção e nível de sustentabilidade de produtores rurais. Escolha a Regeneração!"/>
+                <meta property="og:description" content={`${t('Solução de transparência sobre origem, processo de produção e nível de sustentabilidade de produtores rurais. Escolha a Regeneração')}!`}/>
                 <meta property="og:locale" content={_props._nextI18Next?.initialLocale}/>
                 <meta property="og:image"content="a definir"/>
                 <link rel="canonical" href="https://sintrop.com"/>
@@ -62,7 +62,7 @@ const Consumidor: NextPage = (_props: InferGetStaticPropsType<typeof getStaticPr
 
                             <Link
                                 href={router.locale === 'pt-BR' ? 
-                                'https://sintrop.com/assets/qr-code/whitepaper.pdf' : 'https://sintrop.com/assets/whitepaper-v1.4-EN.pdf'}
+                                'https://sintrop.com/assets/qr-code/whitepaper.pdf' : 'https://sintrop.com/assets/whitepaper-en.pdf'}
                                 target='_blank'
                             >
                                 <button className='mt-5 bg-blue-600 w-72 h-14 rounded mb-10'>

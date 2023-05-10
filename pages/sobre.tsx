@@ -33,14 +33,14 @@ const Sobre: NextPage = (_props: InferGetStaticPropsType<typeof getStaticProps>)
         <>
             <Head>
                 <title>{t('Sobre a')} Sintrop - Sobre nós</title>
-                <meta name='description' content='Conheça mais sobre o nosso projeto e como pretendemos regenerar o mundo!'/>
+                <meta name='description' content={`${t('Conheça mais sobre o nosso projeto e como pretendemos regenerar o mundo')}!`}/>
                 <meta name="keywords" content="Agricultura, Regeneração, Sustentabilidade, Produtores regenerativos, comunidade"/>
                 <meta name="robots" content="index,follow"/>
                 <meta name="googlebot" content="index,follow"/>
                 <meta property="og:type" content="website"/>
                 <meta property="og:url" content="https://sintrop.com/sobre"/>
                 <meta property="og:title" content="Sobre a Sintrop"/>
-                <meta property="og:description" content="Conheça mais sobre o nosso projeto e como pretendemos regenerar o mundo!"/>
+                <meta property="og:description" content={`${t('Conheça mais sobre o nosso projeto e como pretendemos regenerar o mundo')}!`}/>
                 <meta property="og:locale" content={_props._nextI18Next?.initialLocale}/>
                 <meta property="og:image"content="a definir"/>
                 <link rel="canonical" href="https://sintrop.com"/>

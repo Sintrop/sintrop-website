@@ -68,14 +68,14 @@ const Contato: NextPage= (_props: InferGetStaticPropsType<typeof getStaticProps>
         <>
             <Head>
                 <title>{t('Contato')} - Sintrop</title>
-                <meta name='description' content='Entre em contato conosco e tire todas suas dúvidas!'/>
+                <meta name='description' content={`${t('Entre em contato conosco e tire todas suas dúvidas')}!`}/>
                 <meta name="keywords" content="Agricultura, Regeneração, Sustentabilidade, Produtores regenerativos, comunidade"/>
                 <meta name="robots" content="index,follow"/>
                 <meta name="googlebot" content="index,follow"/>
                 <meta property="og:type" content="website"/>
                 <meta property="og:url" content="https://sintrop.com/contato"/>
                 <meta property="og:title" content="Contato - Sintrop"/>
-                <meta property="og:description" content="Entre em contato com a Sintrop"/>
+                <meta property="og:description" content={`${t('Entre em contato conosco e tire todas suas dúvidas')}!`}/>
                 <meta property="og:locale" content={_props._nextI18Next?.initialLocale}/>
                 <meta property="og:image"content="a definir"/>
                 <link rel="canonical" href="https://sintrop.com"/>

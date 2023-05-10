@@ -1,12 +1,14 @@
 import { useState } from "react";
 import Link from "next/link";
 import { useTranslation } from "react-i18next";
+import { useRouter } from "next/router";
 
 interface Props{
     close: () => void;
 }
 
 export function ModalMenu({close}: Props){
+    const router = useRouter();
     const [modalComunity, setModalComunity]= useState(false);
     const {t}= useTranslation();
 
@@ -65,11 +67,16 @@ export function ModalMenu({close}: Props){
                     {t('Blog')}
                 </Link> 
 
-                <button
+                <Link
                     className="bg-blue-600 px-5 py-2 font-bold text-white rounded-md"
+                    href={router.locale === 'pt-BR' ? 
+                        'https://docs.google.com/forms/d/e/1FAIpQLSfRP4MzGk86ikasBaLMGhsCvbZp67jlVW9ftIoHP0fVXoyRcw/viewform?usp=sf_link' : 
+                        'https://docs.google.com/forms/d/e/1FAIpQLSf5Yc2df4j5J6qoCzRMp0EN8T3ACcWhaT-9BKnMBOvXxIcL7g/viewform?usp=sf_link'
+                    }
+                    target="_blank"
                 >
                     Pré venda
-                </button>
+                </Link>
             </div>
         </div>
     )

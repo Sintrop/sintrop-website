@@ -34,14 +34,14 @@ const Produtor: NextPage = (_props: InferGetStaticPropsType<typeof getStaticProp
         <>
             <Head>
                 <title>{t("Produtores Sintrop")}</title>
-                <meta name='description' content='Seja recompensado com o token Crédito de Agricultura Regenerativa pelo serviço ambiental ecossistêmico prestado para a sociedade pela sua produção rural!'/>
+                <meta name='description' content={`${t('Seja recompensado com o token Crédito de Agricultura Regenerativa pelo serviço ambiental ecossistêmico prestado para a sociedade pela sua produção rural')}!`}/>
                 <meta name="keywords" content="Agricultura, Regeneração, Sustentabilidade, Produtores regenerativos, comunidade"/>
                 <meta name="robots" content="index,follow"/>
                 <meta name="googlebot" content="index,follow"/>
                 <meta property="og:type" content="website"/>
                 <meta property="og:url" content="https://sintrop.com/produtor"/>
                 <meta property="og:title" content="Produtor - Sintrop"/>
-                <meta property="og:description" content="Seja recompensado com o token Crédito de Agricultura Regenerativa pelo serviço ambiental ecossistêmico prestado para a sociedade pela sua produção rural!"/>
+                <meta property="og:description" content={`${t('Seja recompensado com o token Crédito de Agricultura Regenerativa pelo serviço ambiental ecossistêmico prestado para a sociedade pela sua produção rural')}!`}/>
                 <meta property="og:locale" content={_props._nextI18Next?.initialLocale}/>
                 <meta property="og:image"content="a definir"/>
                 <link rel="canonical" href="https://sintrop.com"/>
@@ -63,7 +63,7 @@ const Produtor: NextPage = (_props: InferGetStaticPropsType<typeof getStaticProp
 
                         <Link
                             href={router.locale === 'pt-BR' ? 
-                            'https://sintrop.com/assets/qr-code/whitepaper.pdf' : 'https://sintrop.com/assets/whitepaper-v1.4-EN.pdf'}
+                            'https://sintrop.com/assets/qr-code/whitepaper.pdf' : 'https://sintrop.com/assets/whitepaper-en.pdf'}
                             target='_blank'
                         >
                             <button className='mt-5 bg-blue-600 w-72 h-14 rounded mb-10'>
@@ -187,9 +187,9 @@ const Produtor: NextPage = (_props: InferGetStaticPropsType<typeof getStaticProp
                     </div>
                 </section>
 
-                <section className='flex flex-col lg:w-[1000px] border-2 rounded-lg mt-[-100px] lg:h-[200px] h-[230px] items-center justify-center bg-[url("../assets/bg-green.png")] bg-cover z-50 mx-4'>
+                <section className='flex flex-col lg:w-[1000px] border-2 rounded-lg mt-[-100px] lg:h-[200px] h-[300px] items-center justify-center bg-[url("../assets/bg-green.png")] bg-cover z-50 mx-4'>
                     <div className='flex items-center justify-center flex-col w-[100%] h-[100%] bg-[rgba(0,0,0,0.3)]'>
-                        <h2 className='font-bold text-center text-white text-xl lg:w-[800px]'>
+                        <h2 className='font-bold text-center text-white text-xl mx-2 lg:w-[800px]'>
                             {t('Faça parte da rede e participe do primeiro teste de operação')}
                         </h2>
                         <p className='mx-2 text-center text-white'>{t('Se você é um produtor que trabalha com agrofloresta, agricultura sintrópica ou qualquer outra forma de regeneração da natureza, inscreva-se no botão abaixo!')}</p>

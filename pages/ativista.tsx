@@ -33,14 +33,14 @@ const Ativista: NextPage = (_props: InferGetStaticPropsType<typeof getStaticProp
         <>
             <Head>
                 <title>{t('Ativistas')} - Sintrop</title>
-                <meta name='description' content='Faça parte da rede de Ativistas da Sintrop, inspecione o nível de regeneração de produtores e seja recompensado com tokens!'/>
+                <meta name='description' content={`${t('Faça parte da nossa rede de ativistas, visite e inspecione produtores rurais e ganhe o token')}!`}/>
                 <meta name="keywords" content="Agricultura, Regeneração, Sustentabilidade, Produtores regenerativos, comunidade"/>
                 <meta name="robots" content="index,follow"/>
                 <meta name="googlebot" content="index,follow"/>
                 <meta property="og:type" content="website"/>
                 <meta property="og:url" content="https://sintrop.com/ativista"/>
                 <meta property="og:title" content="Ativista - Sintrop"/>
-                <meta property="og:description" content="Faça parte da rede de Ativistas da Sintrop, inspecione o nível de regeneração de produtores e seja recompensado com tokens!"/>
+                <meta property="og:description" content={`${t('Faça parte da nossa rede de ativistas, visite e inspecione produtores rurais e ganhe o token')}!`}/>
                 <meta property="og:locale" content={_props._nextI18Next?.initialLocale}/>
                 <meta property="og:image"content="a definir"/>
                 <link rel="canonical" href="https://sintrop.com"/>
@@ -64,7 +64,7 @@ const Ativista: NextPage = (_props: InferGetStaticPropsType<typeof getStaticProp
 
                             <Link
                                 href={router.locale === 'pt-BR' ? 
-                                'https://sintrop.com/assets/qr-code/whitepaper.pdf' : 'https://sintrop.com/assets/whitepaper-v1.4-EN.pdf'}
+                                'https://sintrop.com/assets/qr-code/whitepaper.pdf' : 'https://sintrop.com/assets/whitepaper-en.pdf'}
                                 target='_blank'
                             >
                                 <button className='mt-5 bg-blue-600 w-72 h-14 rounded mb-10'>

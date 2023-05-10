@@ -53,14 +53,14 @@ const Home: NextPage = (_props: InferGetStaticPropsType<typeof getStaticProps>) 
             </Script> */}
             <Head>
                 <title>{t('Sintrop - Tecnologia e Sustentabilidade')}</title>
-                <meta name='description' content='Nossa missão é regenerar o planeta através da tecnologia. Conheça nosso Sistema e o Token Crédito de Carbono Regenerativo.'/>
+                <meta name='description' content={`${t('Nossa missão é regenerar o planeta através da tecnologia. Conheça nosso Sistema e o Token Crédito de Carbono Regenerativo.')}`}/>
                 <meta name="keywords" content="Agricultura, Regeneração, Sustentabilidade, Produtores regenerativos, comunidade"/>
                 <meta name="robots" content="index,follow"/>
                 <meta name="googlebot" content="index,follow"/>
                 <meta property="og:type" content="website"/>
                 <meta property="og:url" content="https://sintrop.com"/>
                 <meta property="og:title" content="Sintrop - Tecnologia e Sustentabilidade"/>
-                <meta property="og:description" content="Nossa missão é regenerar o planeta através da tecnologia. Conheça nosso Sistema e o Token Crédito de Carbono Regenerativo."/>
+                <meta property="og:description" content={`${t('Nossa missão é regenerar o planeta através da tecnologia. Conheça nosso Sistema e o Token Crédito de Carbono Regenerativo.')}`}/>
                 <meta property="og:locale" content={_props._nextI18Next?.initialLocale}/>
                 <link rel="canonical" href="https://sintrop.com"/>
                 <link rel='icon' type='image/png' href='/favicon.png'/>
@@ -83,7 +83,7 @@ const Home: NextPage = (_props: InferGetStaticPropsType<typeof getStaticProps>) 
 
                             <Link
                                 href={router.locale === 'pt-BR' ?
-                                'https://sintrop.com/assets/qr-code/whitepaper.pdf' : 'https://sintrop.com/assets/whitepaper-v1.4-EN.pdf'}
+                                'https://sintrop.com/assets/qr-code/whitepaper.pdf' : 'https://sintrop.com/assets/whitepaper-en.pdf'}
                                 target='_blank'
                                 className='mt-8 bg-blue-600 w-72 h-14 rounded mb-10 flex items-center justify-center font-bold text-white text-lg'
                             >
