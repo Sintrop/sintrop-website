@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { useTranslation } from "react-i18next";
 
 interface Props{
     title: string;
@@ -8,6 +9,7 @@ interface Props{
 }
 
 export function Card3({title, description, img}: Props){
+    const {t} = useTranslation();
     return(
         <div className='flex flex-col gap-2 w-[250px] h-[400px] bg-[#0a4303] items-center justify-between rounded-lg p-5 drop-shadow-lg border-2'
         >
@@ -31,7 +33,7 @@ export function Card3({title, description, img}: Props){
                 href={title.toLowerCase()} 
                 className='mt-5 bg-blue-600 w-48 h-14 rounded flex items-center justify-center'
             >
-                <p className='font-bold text-white text-lg'>Saber Mais</p>
+                <p className='font-bold text-white text-lg'>{t('Saber Mais')}</p>
             </Link>
         </div>
     )

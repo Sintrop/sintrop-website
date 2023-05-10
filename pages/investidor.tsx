@@ -45,14 +45,14 @@ const Investidor: NextPage = (_props: InferGetStaticPropsType<typeof getStaticPr
         <>
             <Head>
                 <title>{t('Investidores')} - Oportunidade</title>
-                <meta name='description' content='Estamos com a primeira rodada de venda dos tokens abertas para investidores que queiram lutar pela regeneração do planeta. Invista na Regeneração!'/>
+                <meta name='description' content={`${t('Estamos com a primeira rodada de venda dos tokens abertas para investidores que queiram lutar pela regeneração do planeta. Invista na Regeneração!')}`}/>
                 <meta name="keywords" content="Agricultura, Regeneração, Sustentabilidade, Produtores regenerativos, comunidade"/>
                 <meta name="robots" content="index,follow"/>
                 <meta name="googlebot" content="index,follow"/>
                 <meta property="og:type" content="website"/>
                 <meta property="og:url" content="https://sintrop.com/investidor"/>
                 <meta property="og:title" content="Investidor - Sintrop"/>
-                <meta property="og:description" content="Estamos com a primeira rodada de venda dos tokens abertas para investidores que queiram lutar pela regeneração do planeta. Invista na Regeneração!"/>
+                <meta property="og:description" content={`${t('Estamos com a primeira rodada de venda dos tokens abertas para investidores que queiram lutar pela regeneração do planeta. Invista na Regeneração!')}`}/>
                 <meta property="og:locale" content={_props._nextI18Next?.initialLocale}/>
                 <meta property="og:image"content="a definir"/>
                 <link rel="canonical" href="https://sintrop.com"/>
@@ -141,7 +141,7 @@ const Investidor: NextPage = (_props: InferGetStaticPropsType<typeof getStaticPr
                 </div>
                 </section>
                 
-                <section className='flex flex-col items-center w-[100%] pt-10 pb-32'>
+                <section className='flex flex-col items-center w-[100%] py-10'>
                     <h3 className='font-bold text-center text-white text-xl'>
                         {t('Comprovantes de ajuda na regeneração')}
                     </h3>
@@ -169,29 +169,23 @@ const Investidor: NextPage = (_props: InferGetStaticPropsType<typeof getStaticPr
                         </div>
                     </div>
                 </section>
-                
 
-                {/* <section className='flex flex-col justify-center py-10 lg:py-0 w-[100%] lg:w-[1000px] items-center'>
-                    <div className='flex flex-col items-center justify-center lg:gap-20 lg:flex-row '>
-                        <div className='flex flex-col gap-2 justify-center lg:h-[450px] lg:w-[400px]'>
-                            <h2 className='font-bold text-xl text-white mx-2'>{t('Queremos acelerar nosso desenvolvimento, por isso estamos com a primeira rodada privada de venda dos tokens aberta.')}</h2>
-                            <Link 
-                                target='_blank'
-                                href='https://docs.google.com/forms/d/e/1FAIpQLSfRP4MzGk86ikasBaLMGhsCvbZp67jlVW9ftIoHP0fVXoyRcw/viewform?usp=sf_link' 
-                                className='mt-5 bg-blue-600 w-56 h-14 rounded flex items-center justify-center mx-2'
-                            >
-                                <p className='font-bold text-white text-lg text-center'>{t('Quero Investir')}</p>
-                            </Link>
+                <section className='flex w-[100%] justify-center bg-right lg:bg-right bg-[url("../assets/bg-destaque.png")] pb-32'>
+                        <div className='flex flex-col lg:flex-row items-center mt-5 gap-5'>
+                            <div className='flex flex-col px-5 gap-3 lg:w-[450px]'>
+                                <h2 className='font-bold text-lg text-white'>{t('Lorem Ipsum')}</h2>
+                                <p className='text-justify text-white'>{t("Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries.")}.</p>
+                            </div>
+                            <div className='flex items-center justify-center py-5'>
+                                <Image 
+                                    src={require('../assets/grafico-sales.png')}
+                                    quality={100}
+                                    alt='Logo da sintrop'
+                                    className='w-[90%] lg:w-[400px] object-contain'
+                                />
+                            </div>
                         </div>
-
-                        <Image 
-                            src={require('../assets/comunidade.png')}
-                            quality={100}
-                            alt='Globo tecnológico'
-                            className='w-[360px] h-[350px] object-contain hidden lg:flex'
-                        />
-                    </div>
-                </section> */}
+                </section>
 
                 <section className='flex flex-col lg:w-[1000px] mt-[-100px] border-2 rounded-lg lg:h-[200px] h-[250px]  items-center justify-center bg-[url("../assets/bg-green.png")] bg-cover z-50 mx-4'>
                     <div className='flex items-center justify-center flex-col w-[100%] h-[100%] bg-[rgba(0,0,0,0.3)] lg:flex-row gap-4'>

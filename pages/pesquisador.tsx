@@ -34,14 +34,14 @@ const Pesquisador: NextPage = (_props: InferGetStaticPropsType<typeof getStaticP
         <>
             <Head>
                 <title>{t('Pesquisadores')} - Sintrop</title>
-                <meta name='description' content='Ajude nos a construir um futuro regenerativo e seja recompensado com o token da Sintrop pelo serviço de ensino sobre regeneração!'/>
+                <meta name='description' content={`${t('Ajude nos a construir um futuro regenerativo e seja recompensado com o token da Sintrop pelo serviço de ensino sobre regeneração!')}`}/>
                 <meta name="keywords" content="Agricultura, Regeneração, Sustentabilidade, Produtores regenerativos, comunidade"/>
                 <meta name="robots" content="index,follow"/>
                 <meta name="googlebot" content="index,follow"/>
                 <meta property="og:type" content="website"/>
                 <meta property="og:url" content="https://sintrop.com/pesquisador"/>
                 <meta property="og:title" content="Oportunidade para Pesquisadores Agroecológicos - Sintrop"/>
-                <meta property="og:description" content="Ajude nos a construir um futuro regenerativo e seja recompensado com o token da Sintrop pelo serviço de ensino sobre regeneração!"/>
+                <meta property="og:description" content={`${t('Ajude nos a construir um futuro regenerativo e seja recompensado com o token da Sintrop pelo serviço de ensino sobre regeneração!')}`}/>
                 <meta property="og:locale" content={_props._nextI18Next?.initialLocale}/>
                 <meta property="og:image"content="a definir"/>
                 <link rel="canonical" href="https://sintrop.com"/>
