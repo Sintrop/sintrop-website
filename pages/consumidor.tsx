@@ -62,7 +62,7 @@ const Consumidor: NextPage = (_props: InferGetStaticPropsType<typeof getStaticPr
 
                             <Link
                                 href={router.locale === 'pt-BR' ? 
-                                'https://sintrop.com/assets/qr-code/whitepaper.pdf' : 'https://sintrop.com/assets/whitepaper-v1.4-EN.pdf'}
+                                'https://sintrop.com/assets/qr-code/whitepaper.pdf' : 'https://sintrop.com/assets/whitepaper-en.pdf'}
                                 target='_blank'
                             >
                                 <button className='mt-5 bg-blue-600 w-72 h-14 rounded mb-10'>

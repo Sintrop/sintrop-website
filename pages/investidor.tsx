@@ -74,7 +74,7 @@ const Investidor: NextPage = (_props: InferGetStaticPropsType<typeof getStaticPr
 
                             <Link
                                 href={router.locale === 'pt-BR' ? 
-                                'https://sintrop.com/assets/qr-code/whitepaper.pdf' : 'https://sintrop.com/assets/whitepaper-v1.4-EN.pdf'}
+                                'https://sintrop.com/assets/qr-code/whitepaper.pdf' : 'https://sintrop.com/assets/whitepaper-en.pdf'}
                                 target='_blank'
                             >
                                 <button className='mt-5 bg-blue-600 w-72 h-14 rounded mb-10'>
@@ -135,7 +135,7 @@ const Investidor: NextPage = (_props: InferGetStaticPropsType<typeof getStaticPr
                         
                         <div className='flex flex-col px-5 gap-3 lg:w-[450px]'>
                             <h2 className='font-bold text-lg text-white'>{t('Token Crédito de Regeneração')}</h2>
-                            <p className='text-justify text-white'>{t('Token com modelo de distribuição algorítmico programado para ser distribuído ao longo das próximas décadas para produtores regenerativos e comunidade pelos serviços ambientais ecossistêmicos prestados a sociedade')}.</p>
+                            <p className='text-justify text-white'>{t('Token com modelo de distribuição algorítmico programado para ser distribuído ao longo das próximas décadas para produtores regenerativos e comunidade pelos serviços ambientais ecossistêmicos prestados a sociedade. Dvidiremos o impacto da rede pela quantidade de créditos emitidos para atrelar de forma dinâmica cada token a um impacto de CO2, solo, água e biodiversidade')}.</p>
                         </div>
                     </div>
                 </div>
@@ -145,7 +145,7 @@ const Investidor: NextPage = (_props: InferGetStaticPropsType<typeof getStaticPr
                     <h3 className='font-bold text-center text-white text-xl'>
                         {t('Comprovantes de ajuda na regeneração')}
                     </h3>
-                    <p className='text-center mx-4 mb-10 lg:w-[1000px] mt-2 text-white'>{t('Veja seu histórico de ajuda, e o quanto você impactou o mundo')}!</p>
+                    <p className='text-center mx-4 mb-10 lg:w-[1000px] mt-2 text-white'>{t('Pessoas e empresas poderão adquirir os Créditos de Regeneração diretametamente dos produtores e usar na plataforma para compensar seu impacto e financiar diretamenta agroflorestas e a manutenção dos nossos ecossistemas')}!</p>
                     
                     <div className='flex flex-col lg:flex-row items-center gap-5 mx-4'>
                         <div>
@@ -173,8 +173,8 @@ const Investidor: NextPage = (_props: InferGetStaticPropsType<typeof getStaticPr
                 <section className='flex w-[100%] justify-center bg-right lg:bg-right bg-[url("../assets/bg-destaque.png")] pb-32'>
                         <div className='flex flex-col lg:flex-row items-center mt-5 gap-5'>
                             <div className='flex flex-col px-5 gap-3 lg:w-[450px]'>
-                                <h2 className='font-bold text-lg text-white'>{t('Lorem Ipsum')}</h2>
-                                <p className='text-justify text-white'>{t("Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries.")}.</p>
+                                <h2 className='font-bold text-lg text-white'>{t('Business model')}</h2>
+                                <p className='text-justify text-white'>{t("As vendas privadas 1 e 2 têm como objetivo o financiamento do desenvolvimento do projeto, enquanto a oferta pública (ICO) será realizada após o lançamento do Sistema na mainnet. Todos os tokens destinados à comunidade serão distribuídos por meio de smart contracts ao longo dos próximos 40 anos")}.</p>
                             </div>
                             <div className='flex items-center justify-center py-5'>
                                 <Image 
