@@ -43,7 +43,7 @@ export function ModalMenu({close}: Props){
                 </Link>
 
                 <Link 
-                    href='https://v3-sintrop.netlify.app'
+                    href='https://v4-sintrop.netlify.app'
                     target='_blank'
                     onClick={close}
                     className='font-bold h-12 text-white text-lg hover:text-green-400'

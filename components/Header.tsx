@@ -72,7 +72,7 @@ export function Header({blog}: Props){
                 </div>
 
                 <Link 
-                    href='https://v3-sintrop.netlify.app'
+                    href='https://v4-sintrop.netlify.app'
                     target='_blank'
                     className={`font-bold text-xl hover:text-green-400 text-white`}
                 >
