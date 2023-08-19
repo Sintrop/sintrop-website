@@ -26,7 +26,7 @@ export function ModalComunity({close, mobile}: Props){
                 </Link>
 
                 <Link 
-                    href='/ativista'
+                    href='/inspetor'
                     className="flex w-[100%] h-10 items-center hover:bg-gray-300 hover:cursor-pointer rounded-lg px-2 gap-2"
                 >
                     <Image
@@ -34,7 +34,7 @@ export function ModalComunity({close, mobile}: Props){
                         src={require('../assets/ativista.png')}
                         className='w-8'
                     />
-                    <p className="font-bold text-green-600">{t('Ativista')}</p>
+                    <p className="font-bold text-green-600">{t('Inspetor')}</p>
                 </Link>
 
                 <Link 
@@ -59,18 +59,6 @@ export function ModalComunity({close, mobile}: Props){
                         className='w-8'
                     />
                     <p className="font-bold text-green-600">{t('Investidor')}</p>
-                </Link>
-
-                <Link 
-                    href='/consumidor'
-                    className="flex w-[100%] h-10 items-center hover:bg-gray-300 hover:cursor-pointer rounded-lg px-2 gap-2"
-                >
-                    <Image
-                        alt='Icone do produtor'
-                        src={require('../assets/consumidor.png')}
-                        className='w-8'
-                    />
-                    <p className="font-bold text-green-600">{t('Consumidor')}</p>
                 </Link>
 
                 <button 
