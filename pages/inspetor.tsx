@@ -10,8 +10,10 @@ import { Header } from "../components/Header";
 import { Footer } from "../components/Footer";
 import { BtnWhats } from "../components/BtnWhats";
 import { useRouter } from "next/router";
-import {useState} from 'react';
+import {useState, useEffect} from 'react';
 import { ModalRegister } from "../components/ModalRegister";
+import { usersCountProps } from "./index";
+import { api } from "../src/services/api";
 
 interface StaticProps{
     locale: string;
@@ -31,6 +33,16 @@ const Inspetor: NextPage = (_props: InferGetStaticPropsType<typeof getStaticProp
     const router = useRouter();
     const {t} = useTranslation('common');
     const [modalRegister, setModalRegister] = useState(false);
+    const [countUsers, setCountUsers] = useState({} as usersCountProps);
+
+    useEffect(() => {
+        getCountUsers();
+    },[]);
+
+    async function getCountUsers(){
+        const response = await api.get('/users_count');
+        setCountUsers(response.data);
+    }
 
     return(
         <main className="flex flex-col items-center w-full">
@@ -93,8 +105,9 @@ const Inspetor: NextPage = (_props: InferGetStaticPropsType<typeof getStaticProp
                 </div>
                 <div className='flex flex-col lg:w-[50%] gap-3'>
                     <h4 className="font-bold text-green-900 text-2xl">{t('Trabalhe no centro de inspeções')}</h4>
-                    <p className='text-black'>{t('Aceite as inspeções que deseja realizar e vá até o local coletar os dados.')}</p>
+                    <p className='text-black'>{t('Aceite as inspeções que deseja realizar e vá até o local coletar os dados')}.</p>
                     <button
+                        onClick={() => setModalRegister(true)}
                         className='w-32 h-12 border-2 rounded-xl bg-[#3E9EF5] text-white text-sm font-bold flex items-center justify-center'
                     >
                         {t('Cadastre-se')}
@@ -106,7 +119,7 @@ const Inspetor: NextPage = (_props: InferGetStaticPropsType<typeof getStaticProp
                 <div className='flex items-center px-2 flex-col justify-center gap-5 lg:justify-between lg:w-[1000px] lg:flex-row'>
                     <div className="flex flex-col px-2 gap-3 lg:w-[40%]">
                         <h4 className="font-bold text-white text-2xl">{t('GANHE O CRÉDITO DE REGENERAÇÃO')}</h4>
-                        <p className="text-white">{t('Criptomoeda lastreada no impacto de restauração de ecossistemas da rede de produtores. Distribuição de 30.000.000 unidades a cada 6 meses de acordo com resultado obtido no processo descentralizado de inspeções')}</p>
+                        <p className="text-white">{t('Criptomoeda lastreada no impacto de restauração de ecossistemas da rede de produtores. Distribuição de 7.200.000 unidades a cada 6 meses de acordo com resultado obtido no processo descentralizado de inspeções')}.</p>
                     </div>
 
                     <div className='flex flex-col '>
@@ -160,7 +173,7 @@ const Inspetor: NextPage = (_props: InferGetStaticPropsType<typeof getStaticProp
                         <p className="text-white text-center">{t('Nosso sistema está sendo desenvolvido e atualmente em fase de testes. Buscamos os primeiros 100 inspetores')}</p>
                         <div className='flex flex-col items-center gap-8 p-4 border-2 rounded-lg lg:mt-10'>
                             <h4 className="font-bold text-white text-3xl">{t('Vagas disponíveis')}</h4>
-                            <p className="text-white text-center text-3xl font-bold">95</p>
+                            <p className="text-white text-center text-3xl font-bold">{100 - (Number(countUsers.inspectorsCount) - 27)}</p>
                             <button
                                 onClick={() => setModalRegister(true)}
                                 className='w-48 h-12 border-2 rounded-xl bg-[#3E9EF5] text-white text-sm font-bold flex items-center justify-center'

@@ -1,4 +1,4 @@
-import {useState} from 'react';
+import {useState, useEffect} from 'react';
 import type { NextPage } from "next"
 import Head from "next/head";
 import Image from "next/image";
@@ -13,6 +13,8 @@ import { Footer } from "../components/Footer";
 import { BtnWhats } from "../components/BtnWhats";
 import { useRouter } from "next/router";
 import { ModalRegister } from '../components/ModalRegister';
+import { api } from '../src/services/api';
+import { usersCountProps } from './index';
 
 interface StaticProps{
     locale: string;
@@ -32,6 +34,16 @@ const Produtor: NextPage = (_props: InferGetStaticPropsType<typeof getStaticProp
     const router = useRouter();
     const {t} = useTranslation('common');
     const [modalRegister, setModalRegister] = useState(false);
+    const [countUsers, setCountUsers] = useState({} as usersCountProps);
+
+    useEffect(() => {
+        getCountUsers();
+    },[]);
+
+    async function getCountUsers(){
+        const response = await api.get('/users_count');
+        setCountUsers(response.data);
+    }
 
     return(
         <main className="flex flex-col items-center w-full">
@@ -167,7 +179,7 @@ const Produtor: NextPage = (_props: InferGetStaticPropsType<typeof getStaticProp
                         <p className="text-white text-center">{t('Nosso sistema está sendo desenvolvido e atualmente em fase de testes. Buscamos os primeiros 1000 produtores')}</p>
                         <div className='flex flex-col items-center gap-8 p-4 border-2 rounded-lg lg:mt-10'>
                             <h4 className="font-bold text-white text-3xl">{t('Vagas disponíveis')}</h4>
-                            <p className="text-white text-center text-3xl font-bold">995</p>
+                            <p className="text-white text-center text-3xl font-bold">{1000 - (Number(countUsers?.producersCount) - 30)}</p>
                             <button
                                 onClick={() => setModalRegister(true)}
                                 className='w-48 h-12 border-2 rounded-xl bg-[#3E9EF5] text-white text-sm font-bold flex items-center justify-center'

@@ -105,19 +105,21 @@ const Investidor: NextPage = (_props: InferGetStaticPropsType<typeof getStaticPr
             </div>
 
             <section className='flex flex-col px-2 lg:w-[1000px] py-10'>
-                <div className='w-full flex flex-col bg-card-statics bg-center rounded-lg overflow-hidden'>
-                    <div className='w-full flex flex-col p-3 bg-white/50'>
-                        <p className='font-bold text-green-900 text-xl text-center'>{t('CRÉDITO DE REGENERAÇÃO')}</p>
+                <div className='w-full flex items-center '>
+                    <Image
+                        src={require('../public/assets/token-2.png')}
+                        alt='Imagem do token mais impacto'
+                        className="lg:w-[60%] object-contain"
+                    />
+                    
 
-                        <div className='flex flex-col items-center justify-between mt-5 lg:flex-row'>
-                            <Image
-                                src={require('../public/assets/token-2.png')}
-                                alt='Imagem do token mais impacto'
-                                className="lg:w-[60%] object-contain"
-                            />
-                            <p className="text-lg text-green-900 font-bold">{t('Criptomoeda lastreada no impacto de restauração de ecossistemas de produtores rurais regenerativos e projetos de reflorestamento')}</p>
+                    <div className='flex flex-col w-full lg:w-[350px] h-[250px] bg-credit-investor bg-center bg-no-repeat rounded-lg overflow-hidden border-4 border-green-500'>
+                        <div className='flex flex-col w-full h-full items-center justify-center bg-green-900/80 px-2 gap-2'>
+                            <p className='font-bold text-white text-xl text-center'>{t('CRÉDITO DE REGENERAÇÃO')}</p>
+                            <p className="text-lg text-white text-center">{t('Criptomoeda lastreada no impacto de restauração de ecossistemas de produtores rurais regenerativos e projetos de reflorestamento')}</p>
                         </div>
                     </div>
+                    
                 </div>
             </section>
 
@@ -196,18 +198,19 @@ const Investidor: NextPage = (_props: InferGetStaticPropsType<typeof getStaticPr
                 </div>
             </section>
 
-            <section className='flex items-center justify-center gap-5 lg:w-[1000px] py-10 px-2'>            
+            <section className='flex flex-col items-center justify-center gap-5 lg:w-[1000px] py-10 px-2'>            
                 <Image
                     src={require('../public/assets/offer.png')}
                     alt='Gráfico impacto do token por co2'
                     className="w-full object-contain"
                 />
+                {/* <p className="font-bold text-white text-2xl mt-[-75px]">{t('Cotas disponíveis')}: {quotesAvaliables}</p> */}
             </section>
 
             <section className='flex flex-col px-2 items-center justify-center gap-5 lg:w-[1000px] pt-10 pb-20 lg:flex-row'>
                 <div className='flex flex-col lg:w-[50%] gap-3'>
-                    <h4 className="font-bold text-green-900 text-2xl">{t('Cenário que atigirmos a meta 2')}</h4>
-                    <p className='text-black lg:w-[80%]'>{t('Resumir o cenário Resumir o cenário Resumir o cenário Resumir o cenário Resumir o cenário Resumir o cenário Resumir o cenário Resumir o cenário Resumir o cenário Resumir o cenário Resumir o cenário')}</p>
+                    <h4 className="font-bold text-green-900 text-2xl">{t('Cenário que atingirmos a meta 2')}</h4>
+                    <p className='text-black lg:w-[80%]'>{t('No cenário que atingimos a meta 2, o impacto estimado por token é de 48kg de CO2')}.</p>
                 </div>
                 <div className='flex flex-col items-center lg:w-[50%]'>
                     <Image
@@ -222,7 +225,7 @@ const Investidor: NextPage = (_props: InferGetStaticPropsType<typeof getStaticPr
                 <div className='flex flex-col items-center justify-center gap-5 lg:w-[1000px] lg:flex-row'>
                     <div className="flex flex-col lg:w-[40%] gap-3">
                         <div className="flex items-center gap-2">
-                            <h4 className="font-bold text-white text-3xl">Cotas disponíveis:</h4>
+                            <h4 className="font-bold text-white text-3xl">{t('Cotas disponíveis')}:</h4>
                             <div className="flex p-3 rounded-lg bg-yellow-500">
                                 <p className="text-white text-2xl font-bold">{quotesAvaliables}</p>
                             </div>
@@ -247,25 +250,25 @@ const Investidor: NextPage = (_props: InferGetStaticPropsType<typeof getStaticPr
                                     <div className="flex items-center justify-center rounded-full w-[70px] h-[70px] border-2 border-yellow-500">
                                         <p className="text-white text-4xl font-bold">{days}</p>
                                     </div>
-                                    <p className="text-white ">Dias</p>
+                                    <p className="text-white ">{t('Dias')}</p>
                                 </div>
                                 <div className="flex flex-col items-center gap-1">
                                     <div className="flex items-center justify-center rounded-full w-[70px] h-[70px] border-2 border-yellow-500">
                                         <p className="text-white text-4xl font-bold">{hours}</p>
                                     </div>
-                                    <p className="text-white ">Horas</p>
+                                    <p className="text-white ">{t('Horas')}</p>
                                 </div>
                                 <div className="flex flex-col items-center gap-1">
                                     <div className="flex items-center justify-center rounded-full w-[70px] h-[70px] border-2 border-yellow-500">
                                         <p className="text-white text-4xl font-bold">{minutes}</p>
                                     </div>
-                                    <p className="text-white ">Minutos</p>
+                                    <p className="text-white ">{t('Minutos')}</p>
                                 </div>
                                 <div className="flex flex-col items-center gap-1">
                                     <div className="flex items-center justify-center rounded-full w-[70px] h-[70px] border-2 border-yellow-500">
                                         <p className="text-white text-4xl font-bold">{seconds}</p>
                                     </div>
-                                    <p className="text-white ">Segundos</p>
+                                    <p className="text-white ">{t('Segundos')}</p>
                                 </div>
                             </div>
                         </div>

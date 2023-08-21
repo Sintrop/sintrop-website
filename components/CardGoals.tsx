@@ -48,7 +48,7 @@ export function CardGoals({title, years, area, average, total, distribution, imp
                 <p className="text-white font-bold text-sm lg:text-normal">{impactToken}</p>
             </div>
             <div className="flex items-center justify-between w-full mt-3">
-                <p className="text-gray-300 w-[30ch] text-sm lg:text-normal">{t('Preço da tonelade de CO²')}</p>
+                <p className="text-gray-300 w-[30ch] text-sm lg:text-normal">{t('Preço da tonelada de CO²')}</p>
                 <p className="text-white font-bold text-sm lg:text-normal">{co2Pricing}</p>
             </div>
             <div className="flex items-center justify-between w-full mt-3">

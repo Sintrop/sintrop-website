@@ -12,7 +12,9 @@ import { Footer } from "../components/Footer";
 import { Header } from "../components/Header";
 import { useRouter } from "next/router";
 import { ModalRegister } from "../components/ModalRegister";
-import {useState} from 'react';
+import {useState, useEffect} from 'react';
+import { api } from "../src/services/api";
+import { usersCountProps } from "./index";
 
 interface StaticProps{
     locale: string;
@@ -32,6 +34,16 @@ const Pesquisador: NextPage = (_props: InferGetStaticPropsType<typeof getStaticP
     const router = useRouter();
     const {t} = useTranslation('common');
     const [modalRegister, setModalRegister] = useState(false);
+    const [countUsers, setCountUsers] = useState({} as usersCountProps);
+
+    useEffect(() => {
+        getCountUsers();
+    },[]);
+
+    async function getCountUsers(){
+        const response = await api.get('/users_count');
+        setCountUsers(response.data);
+    }
 
     return(
         <main className="flex flex-col items-center w-full">
@@ -92,6 +104,7 @@ const Pesquisador: NextPage = (_props: InferGetStaticPropsType<typeof getStaticP
                     <h4 className="font-bold text-green-900 text-2xl">{t('Trabalhe no centro de pesquisa')}</h4>
                     <p className='text-black'>{t('Publique suas pesquisas, revise as inspeções ocorridas, crie novos métodos de avaliação ou proponha melhorias nos métodos existentes')}</p>
                     <button
+                        onClick={() => setModalRegister(true)}
                         className='w-32 h-12 border-2 rounded-xl bg-[#3E9EF5] text-white text-sm font-bold flex items-center justify-center'
                     >
                         {t('Cadastre-se')}
@@ -103,7 +116,7 @@ const Pesquisador: NextPage = (_props: InferGetStaticPropsType<typeof getStaticP
                 <div className='flex items-center px-2 flex-col justify-center gap-5 lg:justify-between lg:w-[1000px] lg:flex-row'>
                     <div className="flex flex-col px-2 gap-3 lg:w-[40%]">
                         <h4 className="font-bold text-white text-2xl">{t('GANHE O CRÉDITO DE REGENERAÇÃO')}</h4>
-                        <p className="text-white">{t('Criptomoeda lastreada no impacto de restauração de ecossistemas da rede de produtores. Distribuição de 30.000.000 unidades a cada 6 meses de acordo com resultado obtido no processo descentralizado de inspeções')}</p>
+                        <p className="text-white">{t('Criptomoeda lastreada no impacto de restauração de ecossistemas da rede de produtores. Distribuição de 1.200.000 unidades a cada 6 meses de acordo com resultado obtido no processo descentralizado de inspeções')}.</p>
                     </div>
 
                     <div className='flex flex-col '>
@@ -151,7 +164,7 @@ const Pesquisador: NextPage = (_props: InferGetStaticPropsType<typeof getStaticP
                         <p className="text-white text-center">{t('Nosso sistema está sendo desenvolvido e atualmente em fase de testes. Buscamos os primeiros 10 pesquisadores')}</p>
                         <div className='flex flex-col items-center gap-8 p-4 border-2 rounded-lg lg:mt-10'>
                             <h4 className="font-bold text-white text-3xl">{t('Vagas disponíveis')}</h4>
-                            <p className="text-white text-center text-3xl font-bold">9</p>
+                            <p className="text-white text-center text-3xl font-bold">{9 - Number(countUsers.researchersCount)}</p>
                             <button
                                 onClick={() => setModalRegister(true)}
                                 className='w-48 h-12 border-2 rounded-xl bg-[#3E9EF5] text-white text-sm font-bold flex items-center justify-center'

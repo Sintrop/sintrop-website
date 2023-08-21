@@ -81,11 +81,11 @@ const Contato: NextPage= (_props: InferGetStaticPropsType<typeof getStaticProps>
                 <link rel="canonical" href="https://sintrop.com"/>
                 <link rel='icon' type='image/png' href='/favicon.png'/>
             </Head>
-            <div className='flex flex-col items-center w-[100vw] bg-[#062C01]'>
-                <div className='flex flex-col w-[100%] h-[500px] items-center bg-[url("../assets/new-bg.jpg")] bg-cover bg-center lg:h-[500px]'>
-                    <div className='w-[100%] h-[100%] bg-[rgba(0,0,0,0.5)] flex flex-col items-center '>
+            <div className='flex flex-col items-center w-full bg-[#062C01]'>
+                <div className='flex flex-col w-full h-[500px] items-center bg-[url("../assets/new-bg.jpg")] bg-cover bg-center lg:h-[500px]'>
+                    <div className='w-full h-[100%] bg-[rgba(0,0,0,0.5)] flex flex-col items-center '>
                         <Header/>
-                        <div className='flex flex-col mt-48 items-center w-[100%] lg:items-start lg:w-[1000px] '>
+                        <div className='flex flex-col mt-44 items-center w-[100%] lg:items-start lg:w-[1000px] '>
                             <h1 className='text-2xl text-center mt-5 text-white font-bold lg:text-left lg:w-[500px]'>
                                 {t('Entre em contato conosco')}
                             </h1>

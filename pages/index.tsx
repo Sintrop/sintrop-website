@@ -20,12 +20,19 @@ import { CardUsers } from '../components/CardUsers';
 import { useCountdown } from '../src/hooks/useCountdown';
 import { api } from '../src/services/api';
 import { ImpactProps } from '../src/interfaces/impact';
+import {CgDanger} from 'react-icons/cg';
+import { ContextProps } from '../src/interfaces/ContextServerSide';
+import { PostsProps } from '../src/interfaces/Posts';
 
 interface StaticProps{
     locale: string;
 }
 
-interface usersCountProps{
+interface ServerSideProps{
+    inspections: PostsProps[]
+}
+
+export interface usersCountProps{
     developersCount: number;
     inspectorsCount: number;
     producersCount: number;
@@ -49,10 +56,12 @@ const Home: NextPage = (_props: InferGetStaticPropsType<typeof getStaticProps>) 
     const [days, hours, minutes, seconds] = useCountdown('2023-11-30 23:59:59');
     const [networkImpact, setNetworkImpact] = useState({} as ImpactProps);
     const [countUsers, setCountUsers] = useState({} as usersCountProps);
+    const [inspections, setInspections] = useState([]);
 
     useEffect(() => {
         getImpact();
         getCountUsers();
+        getInspections();
     }, []);
 
     async function getImpact() {
@@ -65,6 +74,11 @@ const Home: NextPage = (_props: InferGetStaticPropsType<typeof getStaticProps>) 
     async function getCountUsers(){
         const response = await api.get('/users_count');
         setCountUsers(response.data);
+    }
+
+    async function getInspections(){
+        const response = await api.get('/inspections/finished-inspections');
+        setInspections(response.data.inspections);
     }
 
     return (
@@ -162,8 +176,12 @@ const Home: NextPage = (_props: InferGetStaticPropsType<typeof getStaticProps>) 
                 </div>
             </section>
 
-            <section className='flex flex-col px-2 items-center w-full py-10 bg-green-900 '>
-                <div className='flex gap-5 justify-center flex-wrap lg:w-[1000px] '>
+            <section className='flex flex-col px-2 items-center w-full pb-10 pt-5 bg-green-900 '>
+                <div className='flex items-center gap-2 px-4 py-2 rounded-lg bg-red-600'>
+                    <CgDanger size={25} color='white'/>
+                    <p className='font-bold text-white'>{t('Dados da nossa rede de testes')}</p>
+                </div>
+                <div className='flex gap-5 justify-center flex-wrap lg:w-[1000px] mt-5'>
                     <CardImpact
                         title='IMPACTO TOTAL DA REDE'
                         impact={networkImpact}
@@ -185,7 +203,7 @@ const Home: NextPage = (_props: InferGetStaticPropsType<typeof getStaticProps>) 
                             <div className='flex flex-col justify-between w-[250px]'>
                                 <div className='flex items-center justify-between mt-5'>
                                     <p className='text-white text-lg'>{t('Inspeções realizadas')}</p>
-                                    <p className='text-white text-lg font-bold'>0</p>
+                                    <p className='text-white text-lg font-bold'>{inspections.length}</p>
                                 </div>
                                 <div className='flex items-center justify-between mt-1'>
                                     <p className='text-white text-lg'>{t('Produtores')}</p>

@@ -21,6 +21,8 @@ module.exports = {
         "vitrine-produtor": "url('../public/assets/bg-2-green.png')",
         "credito-regeneracao": "url('../public/assets/bg-green-florest.png')",
         "lines": "url('../public/assets/bg-lines.png')",
+        "credit-investor": "url('../public/assets/bg-credit-investor.png')",
+        "arvore-2": "url('../public/assets/arvore-2.png')",
       }
     },
   },
