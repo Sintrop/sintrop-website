@@ -11,8 +11,8 @@ export function ModalComunity({close, mobile}: Props){
     const {t} = useTranslation();
 
     return(
-        
-            <div className={`w-40 h-62 gap-1 bg-white flex flex-col rounded-lg ml-[-20px] mt-3 ${mobile ? 'fixed' : 'absolute'}`}>
+        <div onClick={close} className="flex w-screen h-screen top-0 left-0 absolute">
+            <div className={`w-40 h-62 gap-1 bg-white flex flex-col rounded-lg ml-[-20px] top-12 right-[46%] mt-3 ${mobile ? 'fixed' : 'absolute'}`}>
                 <Link 
                     href='/produtor'
                     className="flex w-[100%] h-10 items-center hover:bg-gray-300 hover:cursor-pointer rounded-lg px-2 gap-2"
@@ -26,7 +26,7 @@ export function ModalComunity({close, mobile}: Props){
                 </Link>
 
                 <Link 
-                    href='/ativista'
+                    href='/inspetor'
                     className="flex w-[100%] h-10 items-center hover:bg-gray-300 hover:cursor-pointer rounded-lg px-2 gap-2"
                 >
                     <Image
@@ -34,7 +34,7 @@ export function ModalComunity({close, mobile}: Props){
                         src={require('../assets/ativista.png')}
                         className='w-8'
                     />
-                    <p className="font-bold text-green-600">{t('Ativista')}</p>
+                    <p className="font-bold text-green-600">{t('Inspetor')}</p>
                 </Link>
 
                 <Link 
@@ -61,18 +61,6 @@ export function ModalComunity({close, mobile}: Props){
                     <p className="font-bold text-green-600">{t('Investidor')}</p>
                 </Link>
 
-                <Link 
-                    href='/consumidor'
-                    className="flex w-[100%] h-10 items-center hover:bg-gray-300 hover:cursor-pointer rounded-lg px-2 gap-2"
-                >
-                    <Image
-                        alt='Icone do produtor'
-                        src={require('../assets/consumidor.png')}
-                        className='w-8'
-                    />
-                    <p className="font-bold text-green-600">{t('Consumidor')}</p>
-                </Link>
-
                 <button 
                     onClick={close}
                     className="flex w-[100%] h-10 items-center justify-center hover:bg-gray-300 hover:cursor-pointer rounded-lg px-2 gap-2"
@@ -80,6 +68,6 @@ export function ModalComunity({close, mobile}: Props){
                     <p className="font-bold text-gray-600">{t('Fechar')}</p>
                 </button>
             </div>
-        
+        </div>
     )
 }

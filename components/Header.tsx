@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import LogoBranco from '../assets/logo-branco.png';
@@ -15,12 +15,23 @@ export function Header({blog}: Props){
     const router = useRouter();
     const [modalMenu, setModalMenu]= useState(false);
     const [modalComunity, setModalComunity]= useState(false);
+    const [headerTop, setHeaderTop]= useState(false);
     const {t} = useTranslation();
 
+    useEffect(() => {
+        window.addEventListener('scroll', () => {
+            if(window.scrollY > 10){
+                setHeaderTop(true);
+            }else{
+                setHeaderTop(false);
+            }
+        })
+    },[]);
+
     return(
-        <header className={`flex flex-col w-[100%] justify-between lg:w-[1000px] ${!blog ? 'lg:mb-20 lg:flex-row' : 'lg:flex-row items-center gap-2'}`}>
-            
-                <div className='flex w-full lg:w-auto px-2 lg:px-0 items-center justify-between lg:mt-2'>
+        <header className={`flex flex-col w-full items-center justify-center py-2 lg:fixed bg-[#155A07] ${!blog ? 'lg:mb-16 lg:flex-row' : 'lg:flex-row items-center gap-2'} ${!headerTop && 'lg:mt-7'} duration-300`}>
+            <div className='flex items-center justify-between lg:w-[1000px]'>
+            <div className='flex w-screen lg:w-auto px-2 lg:px-0 items-center justify-between lg:mt-2'>
                     <Link
                         href='/'
                     >
@@ -42,17 +53,10 @@ export function Header({blog}: Props){
                             className='w-[40px] h-[40px] lg:hidden'
                         />
                     </button>
-                </div>
+            </div>
             
 
             <nav className='hidden items-center gap-10 flex-wrap justify-center lg:flex'>
-                <Link 
-                    href='/sobre'
-                    className={`font-bold text-xl hover:text-green-400 text-white`}
-                >
-                    {t('Sobre')}
-                </Link>
-
                 <div>
                     <button 
                         onClick={() => setModalComunity(!modalComunity)}
@@ -72,14 +76,6 @@ export function Header({blog}: Props){
                 </div>
 
                 <Link 
-                    href='https://v4-sintrop.netlify.app'
-                    target='_blank'
-                    className={`font-bold text-xl hover:text-green-400 text-white`}
-                >
-                    App
-                </Link>
-
-                <Link 
                     href='/contato'
                     className={`font-bold text-xl hover:text-green-400 text-white`}
                 >
@@ -93,17 +89,22 @@ export function Header({blog}: Props){
                     {t('Blog')}
                 </Link> 
 
+                <Link 
+                    href='/sobre'
+                    className={`font-bold text-xl hover:text-green-400 text-white`}
+                >
+                    {t('Sobre')}
+                </Link>
+
                 <Link
-                    className="bg-blue-600 px-5 py-2 font-bold text-white rounded-md"
-                    href={router.locale === 'pt-BR' ? 
-                        'https://docs.google.com/forms/d/e/1FAIpQLSfRP4MzGk86ikasBaLMGhsCvbZp67jlVW9ftIoHP0fVXoyRcw/viewform?usp=sf_link' : 
-                        'https://docs.google.com/forms/d/e/1FAIpQLSf5Yc2df4j5J6qoCzRMp0EN8T3ACcWhaT-9BKnMBOvXxIcL7g/viewform?usp=sf_link'
-                    }
+                    className='w-28 h-9 border-2 rounded-xl bg-[#3E9EF5] text-white text-sm font-bold flex items-center justify-center'
+                    href='https://v4-sintrop.netlify.app'
                     target="_blank"
                 >
-                    Pré venda
+                    App V4
                 </Link>
             </nav>
+            </div>
 
             {modalMenu && (
                 <ModalMenu

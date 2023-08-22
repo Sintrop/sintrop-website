@@ -11,6 +11,10 @@ import { Card5 } from "../components/Card5";
 import { Footer } from "../components/Footer";
 import { Header } from "../components/Header";
 import { useRouter } from "next/router";
+import { ModalRegister } from "../components/ModalRegister";
+import {useState, useEffect} from 'react';
+import { api } from "../src/services/api";
+import { usersCountProps } from "./index";
 
 interface StaticProps{
     locale: string;
@@ -29,9 +33,20 @@ export async function getStaticProps({locale}: StaticProps) {
 const Pesquisador: NextPage = (_props: InferGetStaticPropsType<typeof getStaticProps>) => {
     const router = useRouter();
     const {t} = useTranslation('common');
+    const [modalRegister, setModalRegister] = useState(false);
+    const [countUsers, setCountUsers] = useState({} as usersCountProps);
+
+    useEffect(() => {
+        getCountUsers();
+    },[]);
+
+    async function getCountUsers(){
+        const response = await api.get('/users_count');
+        setCountUsers(response.data);
+    }
 
     return(
-        <>
+        <main className="flex flex-col items-center w-full">
             <Head>
                 <title>{t('Pesquisadores')} - Sintrop</title>
                 <meta name='description' content={`${t('Ajude nos a construir um futuro regenerativo e seja recompensado com o token da Sintrop pelo serviço de ensino sobre regeneração!')}`}/>
@@ -47,141 +62,134 @@ const Pesquisador: NextPage = (_props: InferGetStaticPropsType<typeof getStaticP
                 <link rel="canonical" href="https://sintrop.com"/>
                 <link rel='icon' type='image/png' href='/favicon.png'/>
             </Head>
-            <div className='flex flex-col items-center w-[100vw] bg-[#062C01]'>
-                <div className='flex flex-col w-[100%] h-[500px] items-center bg-[url("../assets/new-bg.jpg")] bg-cover bg-center lg:h-[500px]'>
-                    <div className='w-[100%] h-[100%] bg-[rgba(0,0,0,0.5)] flex flex-col items-center p-2'>
-                        <Header/>
-                        <div className='flex flex-col mt-32 items-center w-[100%] lg:items-start lg:w-[1000px] lg:mt-0'>
-                            <h1 className='text-2xl text-center mt-5 text-white font-bold lg:text-left lg:w-[500px]'>
-                                {t('Oportunidade para Pesquisadores Agroecológicos')}
-                            </h1>
+            
+            <div className='flex flex-col items-center w-full bg-pesquisador bg-left lg:bg-center lg:h-[550px] pb-5'>
+                <Header/>
 
-                            <p className='mt-5 text-lg text-white text-center lg:text-left lg:w-[500px]'>
-                                {t('Desenvolva o método de avaliação, publique suas pesquisas e seja recompensado com o token')}
-                                <span className='font-bold text-white'> {t('Crédito de Regeneração')}</span>.
-                            </p>
+                <section className='flex flex-col lg:w-[1000px] lg:mt-44'>
+                    <h1 className='font-bold text-white text-2xl text-center mt-10 lg:mt-0 lg:text-start lg:text-3xl lg:max-w-[28ch]'>
+                        {t('Oportunidade para instituições de pesquisa e pesquisadores agroecológicos')}
+                    </h1>
 
-                            <Link
-                                href={router.locale === 'pt-BR' ? 
-                                'https://sintrop.com/assets/qr-code/whitepaper.pdf' : 'https://sintrop.com/assets/whitepaper-en.pdf'}
-                                target='_blank'
-                            >
-                                <button className='mt-5 bg-blue-600 w-72 h-14 rounded mb-10'>
-                                    <p className='font-bold text-white text-lg'>{t('Baixar')} Whitepaper</p>
-                                </button>
-                            </Link>
-                        </div>
-                    </div>
-                </div>
+                    <h2 className='text-white max-w-[45ch] text-center lg:text-start mt-5 lg:mt-10'>
+                        {t('Seja recompensado com o token Crédito de Regeneração pelo serviço de pesquisa')}
+                    </h2>
 
-                <section className='flex flex-col justify-center w-[100vw] py-12 items-center lg:gap-40 lg:flex-row'>
-                    <div className='items-center justify-center lg:w-[350px] h-[370px] flex'>
-                        <Image 
-                            src={require('../assets/token.png')}
-                            quality={100}
-                            alt='Logo da sintrop'
-                            className='lg:w-[650px] lg:h-[650px] object-contain'
-                        />
-                    </div>
-                    
-                    <div className='flex flex-col px-5 gap-3 lg:w-[500px]'>
-                        <h2 className='font-bold text-xl text-white'>{t('Token Crédito de Regeneração')}</h2>
-                        <p className='text-justify mt-2 text-white'>{t('Seja recompensado com o Crédito de Regeneração pelos serviços de pesquisa e ensino sobre agroecologia. Contribua com o ecossistema publicando suas pesquisas e descobertas que auxiliem na regeneração do Planeta')}.</p>
-                    </div>
-                </section>
-
-                <section className="flex items-center flex-wrap gap-5 justify-center w-[100%]">
-                    <Card5
-                        title="1"
-                        text={t("Pesquise sobre práticas  e manejos de agricultura regenerativa")}
-                    />
-
-                    <Card5
-                        title="2"
-                        text={t("Publique suas pesquisas para o mundo")}
-                    />
-
-                    <Card5
-                        title="3"
-                        text={t("Receba o Token Crédito de Agricultura Regenerativa")}
-                    />
-                </section>
-
-                <section className='flex w-[100%] justify-center bg-right lg:bg-center bg-[url("../assets/bg-destaque.png")] mt-10'>
-                <div className="flex flex-col lg:w-[1000px] items-center py-10 justify-center mx-4">
-                    <h3 className='font-bold text-center text-white text-xl'>
-                        {t('Distribuição do token')}
-                    </h3>
-                    <p className='text-center mt-2 text-white mb-4'>{t('Distribuição de tokens de acordo com a quantidade de pesquisas realizadas')}.</p>
-                    <Image
-                        alt='Planilha de distribuição de token dos pesquisadores'
-                        src={require('../assets/planilha-3.png')}
-                        quality={100}
-                        className='hidden lg:flex lg:w-[1000px] object-contain' 
-                    />
-
-                    <Image
-                        alt='Planilha de distribuição de token dos pesquisadores'
-                        src={require('../assets/tabela-mobile-pesquisador.png')}
-                        quality={100}
-                        className='lg:hidden lg:w-[1000px] object-contain' 
-                    />
-
-                    <p className="font-bold text-white">ERA= 6 MESES | EPOCA= 6 ANOS</p>
-                </div>
-                </section>
-
-                <section className='flex flex-col justify-center pt-10 lg:pt-0 w-[100%] items-center pb-32 lg:pb-16'>
-                    <div className='flex flex-col items-center justify-center lg:gap-20 lg:flex-row '>
-                        <div className='flex flex-col gap-2 justify-center lg:h-[450px] lg:w-[400px]'>
-                            <h2 className='font-bold text-xl text-white mx-4'>{t('Sistema descentralizado e sem intermediários')}</h2>
-                            <p className='text-justify mx-4 mt-2 text-white'>{t('Usamos a tecnologia da Blockchain, que permite que o Sistema opere de forma descentralizada, com lógica de funcionamento através de algoritmos imutáveis e pagamento das recompensas sem intermediários.')}</p>
-                        </div>
-
-                        <Image 
-                            src={require('../assets/comunidade.png')}
-                            quality={100}
-                            alt='Globo tecnológico'
-                            className='w-[360px] h-[350px] object-contain hidden lg:flex'
-                        />
-                    </div>
-                </section>
-
-                <section className='flex flex-col lg:w-[1000px] mt-[-100px] border-2 rounded-lg h-[270px] lg:h-[200px] items-center justify-center bg-[url("../assets/bg-green.png")] bg-cover z-50 mx-4'>
-                    <div className='flex items-center justify-center flex-col w-[100%] h-[100%] bg-[rgba(0,0,0,0.3)] px-2'>
-                        <h2 className='font-bold text-center text-white text-xl lg:w-[800px]'>
-                            {t('Faça parte da rede de pesquisadores do sistema')}!
-                        </h2>
-                        <p className='mx-2 text-center text-white'>{t('Buscamos pesquisadores agroecológicos para desenvolver o método de avaliação e auxiliar no processo de educação e ensino dos produtores rurais')}.</p>
-                        <Link 
-                                target='_blank'
-                                href='https://docs.google.com/forms/d/e/1FAIpQLSeh0OgWqr_UuZBy4UUvgWG521zLeMVqx6wQu77mrJdhXDBAPQ/viewform?usp=sf_link' 
-                                className='mt-5 bg-blue-600 w-56 h-14 rounded flex items-center justify-center mx-2'
+                    <div className='mt-10 flex flex-col items-center gap-5 lg:flex-row'>
+                        <Link
+                            href={router.locale === 'pt-BR' ? 
+                            'https://sintrop.com/assets/qr-code/whitepaper.pdf' : 'https://sintrop.com/assets/whitepaper-v1.4-EN.pdf'}
+                            target='_blank'
+                            className='w-52 h-14 border-2 rounded-xl text-white text-sm font-bold flex items-center justify-center'
                         >
-                                <p className='font-bold text-white text-lg text-center'>{t('Me inscrever')}</p>
+                            {t('BAIXAR WHITEPAPER')}
+                        </Link>
+                        <Link
+                            href='https://calendly.com/andre-sintrop/agendar'
+                            target='_blank'
+                            className='w-52 h-14 border-2 rounded-xl bg-[#3E9EF5] text-white text-sm font-bold flex items-center justify-center'
+                        >
+                            {t('AGENDAR DEMONSTRAÇÃO')}
                         </Link>
                     </div>
                 </section>
-
-                <section className='flex flex-col w-[100%] mt-[-100px] h-[500px] items-center justify-center bg-[url("../assets/bg-13.png")] bg-cover z-40'>
-                    <div className='flex items-center justify-center flex-col w-[100%] h-[100%] bg-[rgba(0,0,0,0.4)]'>
-                        <h2 className='font-bold text-center text-white text-3xl lg:w-[800px]'>
-                            {t('JUNTOS PODEMOS MUDAR O MUNDO')}!
-                        </h2>
-                    </div>
-                </section>
-
-                <Footer/>
-
-                <section className='flex items-center justify-center h-[80px] w-[100vw] bg-black'>
-                    <p className='text-white text-center'>
-                        {t('We must change now! We must save the planet and avoid climate disasters. Join us on this fight')}!
-                    </p>
-                </section>
             </div>
 
+            <section className='flex items-center px-2 flex-col justify-center gap-5 lg:w-[1000px] py-10 lg:flex-row'>
+                <div className='flex flex-col items-center lg:w-[50%]'>
+                    <Image
+                        src={require('../public/assets/centro-pesquisa.png')}
+                        alt='Gráfico impacto do token por co2'
+                        className="lg:w-[80%] object-contain"
+                    />
+                </div>
+                <div className='flex flex-col lg:w-[50%] gap-3'>
+                    <h4 className="font-bold text-green-900 text-2xl">{t('Trabalhe no centro de pesquisa')}</h4>
+                    <p className='text-black'>{t('Publique suas pesquisas, revise as inspeções ocorridas, crie novos métodos de avaliação ou proponha melhorias nos métodos existentes')}</p>
+                    <button
+                        onClick={() => setModalRegister(true)}
+                        className='w-32 h-12 border-2 rounded-xl bg-[#3E9EF5] text-white text-sm font-bold flex items-center justify-center'
+                    >
+                        {t('Cadastre-se')}
+                    </button>
+                </div>
+            </section>
+
+            <section className='flex flex-col items-center w-full py-10 bg-credito-regeneracao bg-center'>
+                <div className='flex items-center px-2 flex-col justify-center gap-5 lg:justify-between lg:w-[1000px] lg:flex-row'>
+                    <div className="flex flex-col px-2 gap-3 lg:w-[40%]">
+                        <h4 className="font-bold text-white text-2xl">{t('GANHE O CRÉDITO DE REGENERAÇÃO')}</h4>
+                        <p className="text-white">{t('Criptomoeda lastreada no impacto de restauração de ecossistemas da rede de produtores. Distribuição de 1.200.000 unidades a cada 6 meses de acordo com resultado obtido no processo descentralizado de inspeções')}.</p>
+                    </div>
+
+                    <div className='flex flex-col '>
+                        <div className='flex flex-col py-2 px-10 items-center bg-credito-token-white bg-no-repeat bg-contain w-[320px] h-[488px]'>
+                            <h4 className="text-white text-xs font-bold">{t('RECOMPENSA TOTAL DE TOKENS')}</h4>
+                            <p className="text-white text-2xl font-bold">30.000.000</p>
+
+                            <div className="flex justify-between w-full mt-5">
+                                <p className="text-black font-bold text-lg">{t('Período')}</p>
+                                <p className="text-black font-bold text-lg">{t('Época')} 1</p>
+                            </div>
+
+                            <p className="text-black font-bold text-xl text-center mt-4">{t('Recompensa por era')}</p>
+                            <p className="text-black text-xl text-center">1.200.000</p>
+
+                            <p className="text-black font-bold text-xl text-center mt-4">{t('Recompensa total do período')}</p>
+                            <p className="text-black text-xl text-center">14.400.000</p>
+
+                            <p className="text-black font-bold text-xl text-center mt-4">% {t('do total de tokens')}</p>
+                            <p className="text-black text-xl text-center">48,00 %</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section className='flex flex-col items-center justify-center w-full h-[400px] bg-lines bg-center'>
+                <h4 className="font-bold text-black italic text-3xl text-center">
+                    {t('CONTRIBUA PARA ')}
+                    <span className="text-[#529D17]">
+                        {t('REGENERAÇÃO DO PLANETA')}!
+                    </span>
+                </h4>
+            </section>
+
+            <section className='flex flex-col items-center w-full py-10 bg-[#0a4303]'>
+                <div className='flex items-center px-2 justify-center gap-5 lg:w-[1000px] lg:py-10'>
+                    <Image
+                        src={require('../public/assets/arvore-1.png')}
+                        alt='Imagem de uma árvore na floresta'
+                        className="hidden lg:w-[40%] h-[500px] object-cover mt-[-150px] lg:flex"
+                        quality={100}
+                    />
+
+                    <div className="flex flex-col lg:w-[50%] gap-3 lg:px-14">
+                        <p className="text-white text-center">{t('Nosso sistema está sendo desenvolvido e atualmente em fase de testes. Buscamos os primeiros 10 pesquisadores')}</p>
+                        <div className='flex flex-col items-center gap-8 p-4 border-2 rounded-lg lg:mt-10'>
+                            <h4 className="font-bold text-white text-3xl">{t('Vagas disponíveis')}</h4>
+                            <p className="text-white text-center text-3xl font-bold">{9 - Number(countUsers.researchersCount)}</p>
+                            <button
+                                onClick={() => setModalRegister(true)}
+                                className='w-48 h-12 border-2 rounded-xl bg-[#3E9EF5] text-white text-sm font-bold flex items-center justify-center'
+                            >
+                                {t('Cadastre-se')}
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            {modalRegister && (
+                <ModalRegister
+                    close={() => setModalRegister(false)}
+                    user='pesquisador'
+                />
+            )}
+
+            <Footer/>
+
             <BtnWhats/>
-        </>
+        </main>
     )
 }
 

@@ -43,15 +43,6 @@ export function ModalMenu({close}: Props){
                 </Link>
 
                 <Link 
-                    href='https://v4-sintrop.netlify.app'
-                    target='_blank'
-                    onClick={close}
-                    className='font-bold h-12 text-white text-lg hover:text-green-400'
-                >
-                    App
-                </Link>
-
-                <Link 
                     href='/contato'
                     onClick={close}
                     className='font-bold h-12 text-white text-lg hover:text-green-400'
@@ -68,14 +59,11 @@ export function ModalMenu({close}: Props){
                 </Link> 
 
                 <Link
-                    className="bg-blue-600 px-5 py-2 font-bold text-white rounded-md"
-                    href={router.locale === 'pt-BR' ? 
-                        'https://docs.google.com/forms/d/e/1FAIpQLSfRP4MzGk86ikasBaLMGhsCvbZp67jlVW9ftIoHP0fVXoyRcw/viewform?usp=sf_link' : 
-                        'https://docs.google.com/forms/d/e/1FAIpQLSf5Yc2df4j5J6qoCzRMp0EN8T3ACcWhaT-9BKnMBOvXxIcL7g/viewform?usp=sf_link'
-                    }
+                    className='w-52 h-14 border-2 rounded-xl bg-[#3E9EF5] text-white font-bold flex items-center justify-center'
+                    href='https://v4-sintrop.netlify.app'
                     target="_blank"
                 >
-                    Pré venda
+                    {t('Acessar Plataforma')}
                 </Link>
             </div>
         </div>
