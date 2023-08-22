@@ -72,7 +72,7 @@ const Inspetor: NextPage = (_props: InferGetStaticPropsType<typeof getStaticProp
                     </h1>
 
                     <h2 className='text-white max-w-[45ch] mt-5 text-center lg:text-start lg:mt-10'>
-                        {t('Sistema descentralizado de certificação de agricultura regenerativa com mecanismo de incentivo de sustentabilidade através do token ')}
+                        {t('Sistema descentralizado de regeneração da Natureza com mecanismo de incentivo de sustentabilidade através do token ')}
                     </h2>
                     <p className='font-bold text-white text-center lg:text-start'>
                         {t('Crédito de Regeneração')}

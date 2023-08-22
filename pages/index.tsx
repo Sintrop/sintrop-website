@@ -110,7 +110,7 @@ const Home: NextPage = (_props: InferGetStaticPropsType<typeof getStaticProps>) 
                     </h1>
 
                     <h2 className='text-white text-center max-w-[45ch] mt-5 lg:text-start lg:mt-10'>
-                        {t('O Crédito de Regeneração é uma inovadora criptomoeda de recompensa por serviços ambientais e uma nova forma de investir em carbono')}
+                        {t('O Crédito de Regeneração é uma inovadora criptomoeda de recompensa por serviços ambientais e uma nova forma de investir em carbono e na regeneração de ecossistemas')}
                     </h2>
 
                     <div className='mt-10 flex flex-col items-center gap-5 lg:flex-row'>
