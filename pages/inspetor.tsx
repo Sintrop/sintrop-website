@@ -48,14 +48,14 @@ const Inspetor: NextPage = (_props: InferGetStaticPropsType<typeof getStaticProp
         <main className="flex flex-col items-center w-full">
             <Head>
                 <title>{t('Inspetores')} - Sintrop</title>
-                <meta name='description' content={`${t('Faça parte da nossa rede de ativistas, visite e inspecione produtores rurais e ganhe o token')}!`}/>
+                <meta name='description' content={`${t('Faça parte da nossa rede de inspetores, visite e inspecione produtores rurais e ganhe o token Crédito de Regeneração')}!`}/>
                 <meta name="keywords" content="Agricultura, Regeneração, Sustentabilidade, Produtores regenerativos, comunidade"/>
                 <meta name="robots" content="index,follow"/>
                 <meta name="googlebot" content="index,follow"/>
                 <meta property="og:type" content="website"/>
                 <meta property="og:url" content="https://sintrop.com/ativista"/>
-                <meta property="og:title" content="Ativista - Sintrop"/>
-                <meta property="og:description" content={`${t('Faça parte da nossa rede de ativistas, visite e inspecione produtores rurais e ganhe o token')}!`}/>
+                <meta property="og:title" content="Inspetores - Sintrop"/>
+                <meta property="og:description" content={`${t('Faça parte da nossa rede de inspetores, visite e inspecione produtores rurais e ganhe o token Crédito de Regeneração')}!`}/>
                 <meta property="og:locale" content={_props._nextI18Next?.initialLocale}/>
                 <meta property="og:image"content="a definir"/>
                 <link rel="canonical" href="https://sintrop.com"/>
@@ -72,7 +72,7 @@ const Inspetor: NextPage = (_props: InferGetStaticPropsType<typeof getStaticProp
                     </h1>
 
                     <h2 className='text-white max-w-[45ch] mt-5 text-center lg:text-start lg:mt-10'>
-                        {t('Sistema descentralizado de certificação de agricultura regenerativa com mecanismo de incentivo de sustentabilidade através do token ')}
+                        {t('Sistema descentralizado de regeneração da Natureza com mecanismo de incentivo de sustentabilidade através do token ')}
                     </h2>
                     <p className='font-bold text-white text-center lg:text-start'>
                         {t('Crédito de Regeneração')}

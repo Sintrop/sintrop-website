@@ -85,14 +85,14 @@ const Home: NextPage = (_props: InferGetStaticPropsType<typeof getStaticProps>) 
         <main className="flex flex-col items-center w-full scrollbar-thin scrollbar-thumb-green-900 scrollbar-thumb-rounded-md">  
             <Head>
                 <title>{t('Sintrop - Tecnologia e Sustentabilidade')}</title>
-                <meta name='description' content={`${t('Nossa missão é regenerar o planeta através da tecnologia. Conheça nosso Sistema e o Token Crédito de Carbono Regenerativo.')}`}/>
+                <meta name='description' content={`${t('Nossa missão é regenerar o planeta através da tecnologia. Conheça nosso Sistema e o Token Crédito de Regeneração.')}`}/>
                 <meta name="keywords" content="Agricultura, Regeneração, Sustentabilidade, Produtores regenerativos, comunidade"/>
                 <meta name="robots" content="index,follow"/>
                 <meta name="googlebot" content="index,follow"/>
                 <meta property="og:type" content="website"/>
                 <meta property="og:url" content="https://sintrop.com"/>
                 <meta property="og:title" content="Sintrop - Tecnologia e Sustentabilidade"/>
-                <meta property="og:description" content={`${t('Nossa missão é regenerar o planeta através da tecnologia. Conheça nosso Sistema e o Token Crédito de Carbono Regenerativo.')}`}/>
+                <meta property="og:description" content={`${t('Nossa missão é regenerar o planeta através da tecnologia. Conheça nosso Sistema e o Token Crédito de Regeneração.')}`}/>
                 <meta property="og:locale" content={_props._nextI18Next?.initialLocale}/>
                 <link rel="canonical" href="https://sintrop.com"/>
                 <link rel='icon' type='image/png' href='/favicon.png'/>
@@ -110,7 +110,7 @@ const Home: NextPage = (_props: InferGetStaticPropsType<typeof getStaticProps>) 
                     </h1>
 
                     <h2 className='text-white text-center max-w-[45ch] mt-5 lg:text-start lg:mt-10'>
-                        {t('O Crédito de Regeneração é uma inovadora criptomoeda de recompensa por serviços ambientais e uma nova forma de investir em carbono e regeneração de ecossistemas')}
+                        {t('O Crédito de Regeneração é uma inovadora criptomoeda de recompensa por serviços ambientais e uma nova forma de investir em carbono e na regeneração de ecossistemas')}
                     </h2>
 
                     <div className='mt-10 flex flex-col items-center gap-5 lg:flex-row'>
