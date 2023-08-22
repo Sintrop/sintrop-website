@@ -18,7 +18,7 @@ export function CardGoals({title, years, area, average, total, distribution, imp
     const {t} = useTranslation();
 
     return(
-        <div className="flex flex-col p-3 rounded-lg border-2 border-yellow-500 w-full lg:w-[400px]">
+        <div className="flex flex-col p-3 rounded-lg border-2 border-yellow-500 w-[300px] lg:w-[400px]">
             <div className="flex justify-center w-full">
                 <h5 className="font-bold text-2xl text-yellow-500 text-center bg-green-800 px-7 py-1 rounded-2xl">{t(`${title}`)}</h5>
             </div>

@@ -71,14 +71,14 @@ const Pesquisador: NextPage = (_props: InferGetStaticPropsType<typeof getStaticP
                         {t('Oportunidade para instituições de pesquisa e pesquisadores agroecológicos')}
                     </h1>
 
-                    <h2 className='text-white max-w-[45ch] text-center lg:text-start mt-5 lg:mt-10'>
+                    <h2 className='text-white max-w-[45ch] text-center px-4 lg:px-0 lg:text-start mt-5 lg:mt-10'>
                         {t('Seja recompensado com o token Crédito de Regeneração pelo serviço de pesquisa')}
                     </h2>
 
                     <div className='mt-10 flex flex-col items-center gap-5 lg:flex-row'>
                         <Link
                             href={router.locale === 'pt-BR' ? 
-                            'https://sintrop.com/assets/qr-code/whitepaper.pdf' : 'https://sintrop.com/assets/whitepaper-v1.4-EN.pdf'}
+                            'https://sintrop.com/assets/qr-code/whitepaper.pdf' : 'https://sintrop.com/assets/qr-code/whitepaper-EN.pdf'}
                             target='_blank'
                             className='w-52 h-14 border-2 rounded-xl text-white text-sm font-bold flex items-center justify-center'
                         >
@@ -95,7 +95,7 @@ const Pesquisador: NextPage = (_props: InferGetStaticPropsType<typeof getStaticP
                 </section>
             </div>
 
-            <section className='flex items-center px-2 flex-col justify-center gap-5 lg:w-[1000px] py-10 lg:flex-row'>
+            <section className='flex items-center px-4 flex-col justify-center gap-5 lg:w-[1000px] py-10 lg:flex-row'>
                 <div className='flex flex-col items-center lg:w-[50%]'>
                     <Image
                         src={require('../public/assets/centro-pesquisa.png')}
@@ -116,15 +116,15 @@ const Pesquisador: NextPage = (_props: InferGetStaticPropsType<typeof getStaticP
             </section>
 
             <section className='flex flex-col items-center w-full py-10 bg-credito-regeneracao bg-center'>
-                <div className='flex items-center px-2 flex-col justify-center gap-5 lg:justify-between lg:w-[1000px] lg:flex-row'>
+                <div className='flex items-center px-4 flex-col justify-center gap-5 lg:justify-between lg:w-[1000px] lg:flex-row'>
                     <div className="flex flex-col px-2 gap-3 lg:w-[40%]">
                         <h4 className="font-bold text-white text-2xl">{t('GANHE O CRÉDITO DE REGENERAÇÃO')}</h4>
                         <p className="text-white">{t('Criptomoeda lastreada no impacto de restauração de ecossistemas da rede de produtores. Distribuição de 1.200.000 unidades a cada 6 meses de acordo com resultado obtido no processo descentralizado de inspeções')}.</p>
                     </div>
 
                     <div className='flex flex-col '>
-                        <div className='flex flex-col py-2 px-10 items-center bg-credito-token-white bg-no-repeat bg-contain w-[320px] h-[488px]'>
-                            <h4 className="text-white text-xs font-bold">{t('RECOMPENSA TOTAL DE TOKENS')}</h4>
+                        <div className='flex flex-col py-2 px-10 items-center bg-credito-token-white bg-no-repeat bg-contain w-[300px] h-[488px]'>
+                            <h4 className="text-white text-xs">{t('RECOMPENSA TOTAL DE TOKENS')}</h4>
                             <p className="text-white text-2xl font-bold">30.000.000</p>
 
                             <div className="flex justify-between w-full mt-5">
@@ -132,13 +132,13 @@ const Pesquisador: NextPage = (_props: InferGetStaticPropsType<typeof getStaticP
                                 <p className="text-black font-bold text-lg">{t('Época')} 1</p>
                             </div>
 
-                            <p className="text-black font-bold text-xl text-center mt-4">{t('Recompensa por era')}</p>
+                            <p className="text-black font-bold text-xl text-center mt-3">{t('Recompensa por era')}</p>
                             <p className="text-black text-xl text-center">1.200.000</p>
 
-                            <p className="text-black font-bold text-xl text-center mt-4">{t('Recompensa total do período')}</p>
+                            <p className="text-black font-bold text-xl text-center mt-3">{t('Recompensa total do período')}</p>
                             <p className="text-black text-xl text-center">14.400.000</p>
 
-                            <p className="text-black font-bold text-xl text-center mt-4">% {t('do total de tokens')}</p>
+                            <p className="text-black font-bold text-xl text-center mt-3">% {t('do total de tokens')}</p>
                             <p className="text-black text-xl text-center">48,00 %</p>
                         </div>
                     </div>
@@ -155,7 +155,7 @@ const Pesquisador: NextPage = (_props: InferGetStaticPropsType<typeof getStaticP
             </section>
 
             <section className='flex flex-col items-center w-full py-10 bg-[#0a4303]'>
-                <div className='flex items-center px-2 justify-center gap-5 lg:w-[1000px] lg:py-10'>
+                <div className='flex items-center px-4 justify-center gap-5 lg:w-[1000px] lg:py-10'>
                     <Image
                         src={require('../public/assets/arvore-1.png')}
                         alt='Imagem de uma árvore na floresta'
