@@ -49,14 +49,14 @@ const Produtor: NextPage = (_props: InferGetStaticPropsType<typeof getStaticProp
         <main className="flex flex-col items-center w-full">
             <Head>
                 <title>{t("Produtores Sintrop")}</title>
-                <meta name='description' content={`${t('Seja recompensado com o token Crédito de Agricultura Regenerativa pelo serviço ambiental ecossistêmico prestado para a sociedade pela sua produção rural')}!`}/>
+                <meta name='description' content={`${t('Seja recompensado com o token Crédito de Regeneração pelo serviço ambiental de regeneração de ecossistemas prestados pra a sociedade')}!`}/>
                 <meta name="keywords" content="Agricultura, Regeneração, Sustentabilidade, Produtores regenerativos, comunidade"/>
                 <meta name="robots" content="index,follow"/>
                 <meta name="googlebot" content="index,follow"/>
                 <meta property="og:type" content="website"/>
                 <meta property="og:url" content="https://sintrop.com/produtor"/>
                 <meta property="og:title" content="Produtor - Sintrop"/>
-                <meta property="og:description" content={`${t('Seja recompensado com o token Crédito de Agricultura Regenerativa pelo serviço ambiental ecossistêmico prestado para a sociedade pela sua produção rural')}!`}/>
+                <meta property="og:description" content={`${t('Seja recompensado com o token Crédito de Regeneração pelo serviço ambiental de regeneração de ecossistemas prestados pra a sociedade')}!`}/>
                 <meta property="og:locale" content={_props._nextI18Next?.initialLocale}/>
                 <meta property="og:image"content="a definir"/>
                 <link rel="canonical" href="https://sintrop.com"/>

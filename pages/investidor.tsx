@@ -58,14 +58,14 @@ const Investidor: NextPage = (_props: InferGetStaticPropsType<typeof getStaticPr
         <main className="flex flex-col items-center w-full">
             <Head>
                 <title>{t('Investidores')} - Oportunidade</title>
-                <meta name='description' content={`${t('Estamos com a primeira rodada de venda dos tokens abertas para investidores que queiram lutar pela regeneração do planeta. Invista na Regeneração!')}`}/>
+                <meta name='description' content={`${t('Estamos com a primeira rodada de venda dos tokens abertas para investidores que queiram lutar pela regeneração do planeta. Invista no Crédito Regeneração!')}`}/>
                 <meta name="keywords" content="Agricultura, Regeneração, Sustentabilidade, Produtores regenerativos, comunidade"/>
                 <meta name="robots" content="index,follow"/>
                 <meta name="googlebot" content="index,follow"/>
                 <meta property="og:type" content="website"/>
                 <meta property="og:url" content="https://sintrop.com/investidor"/>
                 <meta property="og:title" content="Investidor - Sintrop"/>
-                <meta property="og:description" content={`${t('Estamos com a primeira rodada de venda dos tokens abertas para investidores que queiram lutar pela regeneração do planeta. Invista na Regeneração!')}`}/>
+                <meta property="og:description" content={`${t('Estamos com a primeira rodada de venda dos tokens abertas para investidores que queiram lutar pela regeneração do planeta. Invista no Crédito Regeneração!')}`}/>
                 <meta property="og:locale" content={_props._nextI18Next?.initialLocale}/>
                 <meta property="og:image"content="a definir"/>
                 <link rel="canonical" href="https://sintrop.com"/>
