@@ -88,13 +88,16 @@ const Investidor: NextPage = (_props: InferGetStaticPropsType<typeof getStaticPr
                     </h2>
 
                     <div className='mt-10 flex flex-col items-center gap-5 lg:flex-row'>
-                        <button
-                            className='w-52 h-14 border-2 rounded-xl text-white text-sm font-bold'
+                        <Link
+                            href={router.locale === 'pt-BR' ? 
+                            'https://sintrop.com/assets/qr-code/whitepaper.pdf' : 'https://sintrop.com/assets/whitepaper-v1.4-EN.pdf'}
+                            target='_blank'
+                            className='w-52 h-14 border-2 rounded-xl text-white text-sm font-bold flex items-center justify-center'
                         >
                             {t('BAIXAR WHITEPAPER')}
-                        </button>
+                        </Link>
                         <Link
-                            href='https://v4-sintrop.netlify.app'
+                            href='https://sintrop.com/presentation-investors.pdf'
                             target='_blank'
                             className='w-52 h-14 border-2 rounded-xl bg-[#3E9EF5] text-white text-sm font-bold flex items-center justify-center'
                         >
