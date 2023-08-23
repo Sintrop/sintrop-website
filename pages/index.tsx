@@ -6,7 +6,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import type { GetStaticProps, InferGetStaticPropsType } from 'next'
-import { useTranslation,  } from 'next-i18next';
+import { useTranslation } from 'next-i18next';
 import ImgComunidade from '../assets/comunidade-pessoas.png';
 import { Card1 } from '../components/Card1';
 import { Card2 } from '../components/Card2';
@@ -116,7 +116,7 @@ const Home: NextPage = (_props: InferGetStaticPropsType<typeof getStaticProps>) 
                     <div className='mt-10 flex flex-col items-center gap-5 lg:flex-row'>
                         <Link
                             href={router.locale === 'pt-BR' ? 
-                            'https://sintrop.com/assets/qr-code/whitepaper.pdf' : 'https://sintrop.com/assets/whitepaper-v1.4-EN.pdf'}
+                            'https://sintrop.com/assets/qr-code/whitepaper.pdf' : 'https://sintrop.com/assets/qr-code/whitepaper-EN.pdf'}
                             target='_blank'
                             className='w-52 h-14 border-2 rounded-xl text-white text-sm font-bold flex items-center justify-center'
                         >

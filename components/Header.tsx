@@ -5,7 +5,9 @@ import LogoBranco from '../assets/logo-branco.png';
 import { useRouter } from "next/router";
 import { ModalMenu } from "./ModalMenu";
 import { ModalComunity } from "./ModalComunity";
-import { useTranslation } from 'next-i18next';
+import { useTranslation, i18n } from 'next-i18next';
+import {FaAngleDown} from 'react-icons/fa';
+import { ModalLanguage } from "./ModalLanguage";
 
 interface Props{
     blog?: boolean
@@ -16,6 +18,8 @@ export function Header({blog}: Props){
     const [modalMenu, setModalMenu]= useState(false);
     const [modalComunity, setModalComunity]= useState(false);
     const [headerTop, setHeaderTop]= useState(false);
+    const [language, setLanguage] = useState('');
+    const [modalLanguage, setModalLanguage] = useState(false);
     const {t} = useTranslation();
 
     useEffect(() => {
@@ -25,8 +29,12 @@ export function Header({blog}: Props){
             }else{
                 setHeaderTop(false);
             }
-        })
+        });
     },[]);
+
+    useEffect(() => {
+        setLanguage(String(i18n?.language))
+    },[i18n?.language])
 
     return(
         <header className={`flex flex-col w-full items-center justify-center py-2 lg:fixed bg-[#155A07] ${!blog ? 'lg:mb-16 lg:flex-row' : 'lg:flex-row items-center gap-2'} ${!headerTop && 'lg:mt-7'} duration-300`}>
@@ -96,6 +104,27 @@ export function Header({blog}: Props){
                     {t('Sobre')}
                 </Link>
 
+                {/* <button
+                    onClick={() => setModalLanguage(true)}
+                    className="flex items-center gap-1 px-3 py-2 rounded-full bg-[#072D02]"
+                >
+                    {language === 'pt-BR' && (
+                        <Image 
+                            alt='Icone bandeira brasil'
+                            src={require('../public/assets/icon-br.png')}
+                            className="w-[30px] object-contain rounded-md"
+                        />
+                    )}
+                    {language === 'en-US' && (
+                        <Image 
+                            alt='Icone bandeira brasil'
+                            src={require('../public/assets/icon-brit.png')}
+                            className="w-[30px] object-contain rounded-md"
+                        />
+                    )}
+                    <FaAngleDown size={20} color='white'/>
+                </button> */}
+
                 <Link
                     className='w-28 h-9 border-2 rounded-xl bg-[#3E9EF5] text-white text-sm font-bold flex items-center justify-center'
                     href='https://v4-sintrop.netlify.app'
@@ -109,6 +138,12 @@ export function Header({blog}: Props){
             {modalMenu && (
                 <ModalMenu
                     close={() => setModalMenu(false)}
+                />
+            )}
+
+            {modalLanguage && (
+                <ModalLanguage
+                    close={() => setModalLanguage(false)}
                 />
             )}
         </header>

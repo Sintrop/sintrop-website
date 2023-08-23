@@ -83,14 +83,14 @@ const Investidor: NextPage = (_props: InferGetStaticPropsType<typeof getStaticPr
                         </span>
                     </h1>
 
-                    <h2 className='text-white max-w-[45ch] mt-5 text-center lg:text-start lg:mt-10'>
+                    <h2 className='text-white max-w-[45ch] mt-5 text-center px-4 lg:px-0 lg:text-start lg:mt-10'>
                         {t('Primeira rodada de captação e venda do Crédito de Regeneração aberta para investimento')}
                     </h2>
 
                     <div className='mt-10 flex flex-col items-center gap-5 lg:flex-row'>
                         <Link
                             href={router.locale === 'pt-BR' ? 
-                            'https://sintrop.com/assets/qr-code/whitepaper.pdf' : 'https://sintrop.com/assets/whitepaper-v1.4-EN.pdf'}
+                            'https://sintrop.com/assets/qr-code/whitepaper.pdf' : 'https://sintrop.com/assets/qr-code/whitepaper-EN.pdf'}
                             target='_blank'
                             className='w-52 h-14 border-2 rounded-xl text-white text-sm font-bold flex items-center justify-center'
                         >
@@ -107,8 +107,8 @@ const Investidor: NextPage = (_props: InferGetStaticPropsType<typeof getStaticPr
                 </section>
             </div>
 
-            <section className='flex flex-col px-2 lg:w-[1000px] py-10'>
-                <div className='w-full flex items-center '>
+            <section className='flex flex-col px-4 lg:w-[1000px] py-10'>
+                <div className='w-full flex flex-col items-center lg:flex-row'>
                     <Image
                         src={require('../public/assets/token-2.png')}
                         alt='Imagem do token mais impacto'
@@ -126,9 +126,9 @@ const Investidor: NextPage = (_props: InferGetStaticPropsType<typeof getStaticPr
                 </div>
             </section>
 
-            <section className='flex flex-col px-2 items-center justify-center gap-5 lg:w-[1000px] py-10 lg:flex-row'>
+            <section className='flex flex-col px-4 items-center justify-center gap-5 lg:w-[1000px] py-10 lg:flex-row'>
                 <div className='flex flex-col lg:w-[50%]'>
-                    <p className='text-black w-60'>{t('Potencial de valorização da relação kg de CO2, m2 de solo, m3 de água e unidades de vida por token com o crescimento da comunidade')}</p>
+                    <p className='text-black lg:w-60'>{t('Potencial de valorização da relação kg de CO2, m2 de solo, m3 de água e unidades de vida por token com o crescimento da comunidade')}</p>
                 </div>
                 <div className='flex flex-col items-center lg:w-[50%]'>
                     <Image
@@ -224,7 +224,7 @@ const Investidor: NextPage = (_props: InferGetStaticPropsType<typeof getStaticPr
                 </div>
             </section>
 
-            <section className='flex flex-col px-2 items-center w-full py-10 bg-[#0a4303]'>
+            <section className='flex flex-col px-4 items-center w-full py-10 bg-[#0a4303]'>
                 <div className='flex flex-col items-center justify-center gap-5 lg:w-[1000px] lg:flex-row'>
                     <div className="flex flex-col lg:w-[40%] gap-3">
                         <div className="flex items-center gap-2">
@@ -248,28 +248,28 @@ const Investidor: NextPage = (_props: InferGetStaticPropsType<typeof getStaticPr
                             <h4 className="font-bold text-white text-2xl text-center">{t('DATA DE ENCERRAMENTO')}</h4>
                             <p className="text-white text-center text-xl font-bold mt-3">30.11.2023</p>
                             
-                            <div className="flex items-center justify-center gap-1 lg:gap-5 mt-14">
+                            <div className="flex items-center justify-center gap-4 lg:gap-5 mt-14">
                                 <div className="flex flex-col items-center gap-1">
-                                    <div className="flex items-center justify-center rounded-full w-[70px] h-[70px] border-2 border-yellow-500">
-                                        <p className="text-white text-4xl font-bold">{days}</p>
+                                    <div className="flex items-center justify-center rounded-full w-[55px] h-[55px] lg:w-[70px] lg:h-[70px] border-2 border-yellow-500">
+                                        <p className="text-white text-2xl lg:text-4xl font-bold">{days}</p>
                                     </div>
                                     <p className="text-white ">{t('Dias')}</p>
                                 </div>
                                 <div className="flex flex-col items-center gap-1">
-                                    <div className="flex items-center justify-center rounded-full w-[70px] h-[70px] border-2 border-yellow-500">
-                                        <p className="text-white text-4xl font-bold">{hours}</p>
+                                    <div className="flex items-center justify-center rounded-full w-[55px] h-[55px] lg:w-[70px] lg:h-[70px] border-2 border-yellow-500">
+                                        <p className="text-white font-bold text-2xl lg:text-4xl">{hours}</p>
                                     </div>
                                     <p className="text-white ">{t('Horas')}</p>
                                 </div>
                                 <div className="flex flex-col items-center gap-1">
-                                    <div className="flex items-center justify-center rounded-full w-[70px] h-[70px] border-2 border-yellow-500">
-                                        <p className="text-white text-4xl font-bold">{minutes}</p>
+                                    <div className="flex items-center justify-center rounded-full w-[55px] h-[55px] lg:w-[70px] lg:h-[70px] border-2 border-yellow-500">
+                                        <p className="text-white font-bold text-2xl lg:text-4xl">{minutes}</p>
                                     </div>
                                     <p className="text-white ">{t('Minutos')}</p>
                                 </div>
                                 <div className="flex flex-col items-center gap-1">
-                                    <div className="flex items-center justify-center rounded-full w-[70px] h-[70px] border-2 border-yellow-500">
-                                        <p className="text-white text-4xl font-bold">{seconds}</p>
+                                    <div className="flex items-center justify-center rounded-full w-[55px] h-[55px] lg:w-[70px] lg:h-[70px] border-2 border-yellow-500">
+                                        <p className="text-white font-bold text-2xl lg:text-4xl">{seconds}</p>
                                     </div>
                                     <p className="text-white ">{t('Segundos')}</p>
                                 </div>
