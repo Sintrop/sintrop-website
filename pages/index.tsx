@@ -137,7 +137,7 @@ const Home: NextPage = (_props: InferGetStaticPropsType<typeof getStaticProps>) 
                 <div className='flex flex-col'>
                 <h3 className='font-bold text-center text-green-900 text-2xl lg:text-start'>{t('Token Crédito de Regeneração')}</h3>
                 <div className='flex items-center justify-center gap-5 flex-wrap mt-3'>
-                    <div className='flex flex-col justify-center p-3 border-2 border-green-900 rounded-lg w-full lg:w-[270px] h-[320px]'>
+                    <div className='flex flex-col justify-center p-3 border-2 border-green-900 rounded-lg w-[270px] lg:w-[270px] h-[320px]'>
                         <Image
                             src={require('../assets/token.png')}
                             alt='Imagem do token de regeneração'
@@ -154,7 +154,7 @@ const Home: NextPage = (_props: InferGetStaticPropsType<typeof getStaticProps>) 
                         <p className='text-green-900 font-bold'>56</p>
                     </div>
 
-                    <div className='flex flex-col p-3 justify-center border-2 border-green-900 bg-green-900 rounded-lg w-full lg:w-[270px] h-[320px]'>
+                    <div className='flex flex-col p-3 justify-center border-2 border-green-900 bg-green-900 rounded-lg w-[270px] lg:w-[270px] h-[320px]'>
                         <p className='text-white font-bold'>{t('MERCADO')}</p>
 
                         <p className='text-white mt-6'>{t('VALOR DE MERCADO')}</p>
@@ -164,7 +164,7 @@ const Home: NextPage = (_props: InferGetStaticPropsType<typeof getStaticProps>) 
                         <p className='text-white font-bold'>R$0,00</p>
                     </div>
 
-                    <div className='flex flex-col justify-center p-3 border-2 border-green-900 rounded-lg w-full lg:w-[270px] h-[320px]'>
+                    <div className='flex flex-col justify-center p-3 border-2 border-green-900 rounded-lg w-[270px] lg:w-[270px] h-[320px]'>
                         <p className='text-green-900 font-bold'>{t('OUTRAS INFORMAÇÕES')}</p>
 
                         <p className='text-green-900 mt-6'>{t('TOKEN CONTRACT (WITH 18 DECIMALS)')}</p>
@@ -275,7 +275,7 @@ const Home: NextPage = (_props: InferGetStaticPropsType<typeof getStaticProps>) 
             </section>
 
             <section className='flex flex-col lg:w-[1000px] py-10'>
-                <div className='flex flex-col px-2 lg:flex-row items-center justify-center'>
+                <div className='flex flex-col px-4 lg:px-0 lg:flex-row items-center justify-center'>
                     <div className='lg:w-[50%] flex flex-col items-center lg:items-start'>
                         <p className='font-bold text-green-900 text-2xl'>{t('A COMUNIDADE')}</p>
                         <p className=' text-green-900 mt-2'>{t("Rede de produtores, inspetores, ativistas ambientais, pesquisadores e desenvolvedores conectados pela tecnologia da blockchain e por contratos inteligentes imutáveis. Os produtores são propriedades rurais ou áreas de reflorestamento que desejam vender o impacto ambiental de regeneração de ecossistemas que prestam para a sociedade. Os pesquisadores são responsáveis por criar e aprimorar os métodos de avaliação. Os inspetores são as pessoas que irão coletar os dados e informações do produtor")}</p>

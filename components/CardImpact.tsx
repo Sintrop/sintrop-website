@@ -24,7 +24,7 @@ export function CardImpact({title, type, impact}: Props){
     const soil = Number(impact?.solo) / (totalSac / 10 ** 18);
 
     return(
-        <div className={`flex flex-col border-2 rounded-lg overflow-hidden w-full lg:w-[350px] ${type === 'impactToken' ? 'bg-arvore-2' : 'bg-card-impact'} bg-center`}>
+        <div className={`flex flex-col border-2 rounded-lg overflow-hidden w-[97%] lg:w-[350px] ${type === 'impactToken' ? 'bg-arvore-2' : 'bg-card-impact'} bg-center`}>
             <div className="flex items-center justify-center h-10 bg-lime-600 border-b-2 px-3">
                 <p className="font-bold text-white text-center">{t(`${title}`)}</p>
             </div>
