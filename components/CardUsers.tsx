@@ -13,7 +13,7 @@ export function CardUsers({title, bgColor, description, typeUser}: Props){
     const {t} = useTranslation();
 
     return(
-        <div className={`flex flex-col justify-between border-2 p-3 rounded-2xl overflow-hidden h-[400px] w-[300px] ${bgColor === 'transparent' ? 'border-yellow-400' : 'border-green-900 bg-[#34812B]'}`}>
+        <div className={`flex flex-col justify-between border-2 p-3 rounded-2xl overflow-hidden h-[400px] w-[95%] lg:w-[300px] ${bgColor === 'transparent' ? 'border-yellow-400' : 'border-green-900 bg-[#34812B]'}`}>
             <div>
                 <Image
                     src={require(`../public/assets/${typeUser}.png`)}
