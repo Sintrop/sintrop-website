@@ -11,10 +11,16 @@ function generateSiteMap({posts}: GenerateProps) {
     return `<?xml version="1.0" encoding="UTF-8"?>
         <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
             <url>
+                <loc>https://sintrop.com/produtor</loc>
+            </url>
+            <url>
                 <loc>https://sintrop.com/pt-BR/produtor</loc>
             </url>
             <url>
                 <loc>https://sintrop.com/en-US/produtor</loc>
+            </url>
+            <url>
+                <loc>https://sintrop.com/ativista</loc>
             </url>
             <url>
                 <loc>https://sintrop.com/pt-BR/ativista</loc>
@@ -23,10 +29,25 @@ function generateSiteMap({posts}: GenerateProps) {
                 <loc>https://sintrop.com/en-US/ativista</loc>
             </url>
             <url>
+                <loc>https://sintrop.com/inspetor</loc>
+            </url>
+            <url>
+                <loc>https://sintrop.com/pt-BR/inspetor</loc>
+            </url>
+            <url>
+                <loc>https://sintrop.com/en-US/inspetor</loc>
+            </url>
+            <url>
+                <loc>https://sintrop.com/pesquisador</loc>
+            </url>
+            <url>
                 <loc>https://sintrop.com/pt-BR/pesquisador</loc>
             </url>
             <url>
                 <loc>https://sintrop.com/en-US/pesquisador</loc>
+            </url>
+            <url>
+                <loc>https://sintrop.com/investidor</loc>
             </url>
             <url>
                 <loc>https://sintrop.com/pt-BR/investidor</loc>
@@ -35,10 +56,16 @@ function generateSiteMap({posts}: GenerateProps) {
                 <loc>https://sintrop.com/en-US/investidor</loc>
             </url>
             <url>
+                <loc>https://sintrop.com/consumidor</loc>
+            </url>
+            <url>
                 <loc>https://sintrop.com/pt-BR/consumidor</loc>
             </url>
             <url>
                 <loc>https://sintrop.com/en-US/consumidor</loc>
+            </url>
+            <url>
+                <loc>https://sintrop.com/contato</loc>
             </url>
             <url>
                 <loc>https://sintrop.com/pt-BR/contato</loc>
@@ -47,10 +74,16 @@ function generateSiteMap({posts}: GenerateProps) {
                 <loc>https://sintrop.com/en-US/contato</loc>
             </url>
             <url>
+                <loc>https://sintrop.com/blog</loc>
+            </url>
+            <url>
                 <loc>https://sintrop.com/pt-BR/blog</loc>
             </url>
             <url>
                 <loc>https://sintrop.com/en-US/blog</loc>
+            </url>
+            <url>
+                <loc>https://sintrop.com/sobre</loc>
             </url>
             <url>
                 <loc>https://sintrop.com/pt-BR/sobre</loc>
@@ -62,6 +95,12 @@ function generateSiteMap({posts}: GenerateProps) {
             ${posts && posts.map(({language, url}) => (
                 `<url>
                     <loc>${`https://sintrop.com/${language}/blog/${url}`}</loc>
+                </url>`
+            )).join('')}
+
+            ${posts && posts.map(({language, url}) => (
+                `<url>
+                    <loc>${`https://sintrop.com/blog/${url}`}</loc>
                 </url>`
             )).join('')}
         </urlset>

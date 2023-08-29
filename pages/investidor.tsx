@@ -201,12 +201,21 @@ const Investidor: NextPage = (_props: InferGetStaticPropsType<typeof getStaticPr
                 </div>
             </section>
 
-            <section className='flex flex-col items-center justify-center gap-5 lg:w-[1000px] py-10 px-2'>            
-                <Image
-                    src={require('../public/assets/offer.png')}
-                    alt='Gráfico impacto do token por co2'
-                    className="w-full object-contain"
-                />
+            <section className='flex flex-col items-center justify-center gap-5 lg:w-[1000px] py-10 px-2'>  
+                {router.locale === 'pt-BR' && (
+                    <Image
+                        src={require('../public/assets/offer.png')}
+                        alt='Gráfico impacto do token por co2'
+                        className="w-full object-contain"
+                    />
+                )}   
+                {router.locale === 'en-US' && (
+                    <Image
+                        src={require('../public/assets/offer-en.png')}
+                        alt='Gráfico impacto do token por co2'
+                        className="w-full object-contain"
+                    />
+                )}        
                 {/* <p className="font-bold text-white text-2xl mt-[-75px]">{t('Cotas disponíveis')}: {quotesAvaliables}</p> */}
             </section>
 
