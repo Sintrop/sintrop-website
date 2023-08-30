@@ -37,7 +37,7 @@ export function Header({blog}: Props){
     },[i18n?.language])
 
     return(
-        <header className={`flex flex-col w-full items-center justify-center py-2 lg:fixed bg-[#155A07] ${!blog ? 'lg:mb-16 lg:flex-row' : 'lg:flex-row items-center gap-2'} ${!headerTop && 'lg:mt-7'} duration-300`}>
+        <header className={`flex flex-col w-full items-center justify-center py-2 lg:fixed bg-[#155A07] ${!blog ? 'lg:mb-16 lg:flex-row' : 'lg:flex-row items-center gap-2'} ${!headerTop && 'lg:mt-7'} duration-300 z-10`}>
             <div className='flex items-center justify-between lg:w-[1000px]'>
             <div className='flex w-screen lg:w-auto px-2 lg:px-0 items-center justify-between lg:mt-2'>
                     <Link
@@ -47,7 +47,7 @@ export function Header({blog}: Props){
                             src={LogoBranco}
                             quality={100}
                             alt={t('Logo da sintrop')}
-                            className={`w-[160px] h-[60px] ${blog ? 'lg:w-[180px] lg:h-[70px]' : 'lg:w-[160px]'} object-cover`}
+                            className={`w-[160px] h-[60px] ${blog ? 'lg:w-[160px] lg:h-[60px]' : 'lg:w-[160px]'} object-cover`}
                         />
                     </Link>
 

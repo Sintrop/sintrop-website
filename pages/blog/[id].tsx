@@ -9,6 +9,7 @@ import { ContextProps } from "../../src/interfaces/ContextServerSide";
 import { useRouter } from "next/router";
 import { Header } from "../../components/Header";
 import {format} from "date-fns";
+import Tiptap from "../../components/TipTap";
 
 interface ServerSideProps{
     post: PostsProps
@@ -17,13 +18,21 @@ interface ServerSideProps{
 const DetailPost = ({post}: ServerSideProps) => {
     const router = useRouter();
     const [bodyPost, setBodyPost] = useState<BodyPostProps[]>([]);
+    const [contentPost, setContentPost] = useState('');
+    const [newVersion, setNewVersion] = useState(false);
 
     useEffect(() => {
-        setBodyPost(JSON.parse(post.bodyPost));
+        if(typeof(JSON.parse(post.bodyPost)) === 'string'){
+            setNewVersion(true);
+            setContentPost(JSON.parse(post.bodyPost))
+        }else{
+            setNewVersion(false);
+            setBodyPost(JSON.parse(post.bodyPost))
+        }
     },[]);
 
     return(
-        <div>
+        <main className="flex flex-col items-center w-full scrollbar-thin scrollbar-thumb-green-900 scrollbar-thumb-rounded-md">  
             <Head>
                 <title>{post.title}</title>
                 <meta name='description' content={post.description}/>
@@ -39,36 +48,46 @@ const DetailPost = ({post}: ServerSideProps) => {
                 <link rel='icon' type='image/png' href='/favicon.png'/>
             </Head>
             <div className='flex flex-col items-center'>
-                <div>
-                    <div className='flex flex-col justify-center w-[100vw] mb-5 items-center h-[110px] bg-green-700'>
-                        <Header
-                            blog
-                        />
+                <Header blog/>
+                
+                <div className='lg:w-[1000px] mb-6 mx-2 lg:mt-40 flex flex-col items-start w-full px-2 lg:px-0'>
+                    <h1 className="font-bold text-xl lg:text-4xl text-[#062C01]">{post.title}</h1>
+                    <div className='flex items-center gap-5'>
+                        <p className='text-sm'>Por: André Rav</p>
+                        <p className='text-sm'>{format(new Date(post.createdAt), 'dd/MM/yyyy - kk:mm')}</p>
                     </div>
-                </div>
-                <div className='lg:w-[900px] mb-6 mx-2'>
-                    <h1 className="font-bold text-4xl">{post.title}</h1>
-                    <p className="mt-1 text-lg">{post.description}</p>
-                    <p className='text-sm'>{format(new Date(post.createdAt), 'dd/MM/yyyy - kk:mm')}</p>
                 </div>
                 <img
                     src={post.bannerUrl}
                     alt={post.bannerAlt}
-                    className='object-cover lg:w-[900px] lg:h-[400px]'
+                    className='object-cover lg:w-[1000px] lg:h-[400px]'
                 />
-                <div className='flex flex-col lg:w-[900px] px-2'>
-                    {bodyPost.map(item => {
-                        return(
-                            <DynamicTag 
-                                key={item.content}
-                                data={item}
-                                onDelete={() => {}}
-                            />
-                        )
-                    })}
+                <p className="mt-1 lg:text-lg px-2 max-w-[1000px]">{post.description}</p>
+                <div className='flex flex-col lg:w-[1000px] px-2'>
+                    {newVersion ? (
+                        <div className='flex w-full flex-col'>
+                        <Tiptap
+                            attContent={() => {}}
+                            viewMode
+                            content={contentPost}
+                        />
+                        </div>
+                    ) : (
+                        <>
+                        {bodyPost.map(item => {
+                            return(
+                                <DynamicTag 
+                                    key={item.content}
+                                    data={item}
+                                    onDelete={() => {}}
+                                />
+                            )
+                        })}
+                        </>
+                    )}
                 </div>
             </div>
-        </div>
+        </main>
     )
 }
 
@@ -77,7 +96,6 @@ export default DetailPost;
 export const getServerSideProps = async(context: ContextProps) => {
     try{
         const response = await api.get(`/post/${context.query.id}`);
-        console.log(response.data)
 
         return{
             props:{
