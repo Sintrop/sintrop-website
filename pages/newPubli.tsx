@@ -120,7 +120,7 @@ const NewPubli: NextPage = () => {
         }
     }
 
-    async function uploadImageIpfs(data){
+    async function uploadImageIpfs(data: Uint8Array){
         const token = 'Basic ' + Base64.encode('2F2FHYWhdz3ynk8PeorZrtf0FSG:9cf6a1ddc8510764d564c0f7b9a08cf2')
         const response = await axios.post('https://ipfs.infura.io:5001/api/v0/add?pin=false',{
             data: {
@@ -182,15 +182,17 @@ const NewPubli: NextPage = () => {
                         type='file'
                         accept="image/*"
                         onChange={async(e) => {
-                            const file = e?.target?.files[0];
-                            const reader = new window.FileReader();
-                            reader.readAsArrayBuffer(file);
-                            reader.onload = async () => {
-                                const arrayBuffer = reader.result
-                                const file = new Uint8Array(arrayBuffer);
-                                const hashImage = await uploadImageIpfs(file);
-                                setImgBannerUrl(`https://ipfs.io/ipfs/${hashImage}`)
-                            };
+                            if(e.target.files){
+                                const file = e?.target?.files[0];
+                                const reader = new window.FileReader();
+                                reader.readAsArrayBuffer(file);
+                                reader.onload = async () => {
+                                    const arrayBuffer = reader.result
+                                    const file = new Uint8Array(arrayBuffer as Uint8Array);
+                                    const hashImage = await uploadImageIpfs(file);
+                                    setImgBannerUrl(`https://ipfs.io/ipfs/${hashImage}`)
+                                };
+                            }
                         }}
                     />
                 </div>
