@@ -10,6 +10,9 @@ import { useRouter } from "next/router";
 import { Header } from "../../components/Header";
 import {format} from "date-fns";
 import Tiptap from "../../components/TipTap";
+import { Footer } from "../../components/Footer";
+import { useTranslation } from "next-i18next";
+import { CardPost } from "../../components/CardPost";
 
 interface ServerSideProps{
     post: PostsProps
@@ -17,9 +20,11 @@ interface ServerSideProps{
 
 const DetailPost = ({post}: ServerSideProps) => {
     const router = useRouter();
+    const {t} = useTranslation();
     const [bodyPost, setBodyPost] = useState<BodyPostProps[]>([]);
     const [contentPost, setContentPost] = useState('');
     const [newVersion, setNewVersion] = useState(false);
+    const [posts, setPosts] = useState<PostsProps[]>([]);
 
     useEffect(() => {
         if(typeof(JSON.parse(post.bodyPost)) === 'string'){
@@ -29,7 +34,14 @@ const DetailPost = ({post}: ServerSideProps) => {
             setNewVersion(false);
             setBodyPost(JSON.parse(post.bodyPost))
         }
+        getPosts();
     },[]);
+
+    async function getPosts(){
+        const response = await api.get('/posts/most-seen');
+        const arrayPosts = response.data.posts;
+        setPosts(arrayPosts.slice(0,3))
+    }
 
     return(
         <main className="flex flex-col items-center w-full scrollbar-thin scrollbar-thumb-green-900 scrollbar-thumb-rounded-md">  
@@ -50,7 +62,7 @@ const DetailPost = ({post}: ServerSideProps) => {
             <div className='flex flex-col items-center'>
                 <Header blog/>
                 
-                <div className='lg:w-[1000px] mb-6 mx-2 lg:mt-40 flex flex-col items-start w-full px-2 lg:px-0'>
+                <div className='lg:w-[1000px] mb-6 mx-2 mt-5 lg:mt-40 flex flex-col items-start w-full px-2 lg:px-0'>
                     <h1 className="font-bold text-xl lg:text-4xl text-[#062C01]">{post.title}</h1>
                     <div className='flex items-center gap-5'>
                         <p className='text-sm'>Por: André Rav</p>
@@ -86,7 +98,21 @@ const DetailPost = ({post}: ServerSideProps) => {
                         </>
                     )}
                 </div>
+
+                <div className='flex flex-col lg:w-[1000px] px-2'>
+                    <h3 className='font-bold text-center lg:text-start lg:text-2xl text-[#062C01] mb-2'>{t('Mais vistos')}</h3>
+                    
+                    {posts.map(item => (
+                        <CardPost
+                            key={item.id}
+                            data={item}
+                            mostSeen
+                        />
+                    ))}
+                </div>
             </div>
+
+            <Footer/>
         </main>
     )
 }
@@ -96,7 +122,7 @@ export default DetailPost;
 export const getServerSideProps = async(context: ContextProps) => {
     try{
         const response = await api.get(`/post/${context.query.id}`);
-
+        api.put('/post/view', {id: response.data.post.id})
         return{
             props:{
                 post: response.data.post

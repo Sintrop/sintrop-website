@@ -37,7 +37,7 @@ export function Header({blog}: Props){
     },[i18n?.language])
 
     return(
-        <header className={`flex flex-col w-full items-center justify-center py-2 lg:fixed bg-[#155A07] ${!blog ? 'lg:mb-16 lg:flex-row' : 'lg:flex-row items-center gap-2'} ${!headerTop && 'lg:mt-7'} duration-300 z-10`}>
+        <header className={`flex flex-col w-full items-center justify-center py-2 lg:fixed bg-[#155A07] ${!blog ? 'lg:mb-16 lg:flex-row' : 'lg:flex-row items-center gap-2'} ${!headerTop && 'lg:mt-7'} duration-300 z-10 shadow-xl shadow-black/30`}>
             <div className='flex items-center justify-between lg:w-[1000px]'>
             <div className='flex w-screen lg:w-auto px-2 lg:px-0 items-center justify-between lg:mt-2'>
                     <Link

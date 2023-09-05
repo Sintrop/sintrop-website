@@ -126,16 +126,28 @@ const Produtor: NextPage = (_props: InferGetStaticPropsType<typeof getStaticProp
                 </div>
             </section>
 
-            <section className='flex flex-col px-4 items-center justify-center gap-5 lg:w-[1000px] py-10 lg:flex-row'>
-                <div className='flex flex-col lg:w-[50%]'>
-                    <p className='text-black lg:w-60'>{t('Potencial de valorização da relação kg de CO2, m2 de solo, m3 de água e unidades de vida por token com o crescimento da comunidade')}</p>
-                </div>
-                <div className='flex flex-col items-center lg:w-[50%]'>
-                    <Image
-                        src={require('../public/assets/co2-per-token.png')}
-                        alt='Gráfico impacto do token por co2'
-                        className="lg:w-[80%] object-contain"
-                    />
+            <section className='flex flex-col px-4 items-center justify-center gap-5 lg:w-[1000px] py-10'>
+                <h3 className='text-center font-bold text-green-900 mb-2 text-2xl'>
+                    {t('Potencial de valorização do impacto de CO2, solo, água e unidades de vida por token com o crescimento da comunidade')}
+                </h3>
+                <div className='flex items-center'>
+                    <div className='flex flex-col lg:w-[25%]'>
+                        <p className='text-black lg:w-60'>{t('Para aprofundar, confira a planilha com a projeção completa')}</p>
+                        <Link
+                            className='w-48 h-12 border-2 rounded-xl bg-[#3E9EF5] text-white text-sm font-bold flex items-center justify-center mt-5'
+                            href='https://docs.google.com/spreadsheets/d/1B98efJjfopv26cYUvu2GLK28iEb7qPx9GJkTHdItB4A'
+                            target='_blank'
+                        >
+                            {t('Ver planilha')}
+                        </Link>
+                    </div>
+                    <div className='flex flex-col items-center lg:w-[75%]'>
+                        <Image
+                            src={require('../public/assets/co2-per-token.png')}
+                            alt='Gráfico impacto do token por co2'
+                            className="lg:w-[100%] object-contain"
+                        />
+                    </div>
                 </div>
             </section>
 
