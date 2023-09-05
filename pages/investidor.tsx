@@ -126,16 +126,28 @@ const Investidor: NextPage = (_props: InferGetStaticPropsType<typeof getStaticPr
                 </div>
             </section>
 
-            <section className='flex flex-col px-4 items-center justify-center gap-5 lg:w-[1000px] py-10 lg:flex-row'>
-                <div className='flex flex-col lg:w-[50%]'>
-                    <p className='text-black lg:w-60'>{t('Potencial de valorização da relação kg de CO2, m2 de solo, m3 de água e unidades de vida por token com o crescimento da comunidade')}</p>
-                </div>
-                <div className='flex flex-col items-center lg:w-[50%]'>
-                    <Image
-                        src={require('../public/assets/co2-per-token.png')}
-                        alt='Gráfico impacto do token por co2'
-                        className="lg:w-[80%] object-contain"
-                    />
+            <section className='flex flex-col px-4 items-center justify-center gap-5 lg:w-[1000px] py-10'>
+                <h3 className='text-center font-bold text-green-900 text-2xl mb-2'>
+                    {t('Potencial de valorização do impacto de CO2, solo, água e unidades de vida por token com o crescimento da comunidade')}
+                </h3>
+                <div className='flex items-center'>
+                    <div className='flex flex-col lg:w-[25%]'>
+                        <p className='text-black lg:w-60'>{t('Para aprofundar, confira a planilha com a projeção completa')}</p>
+                        <Link
+                            className='w-48 h-12 border-2 rounded-xl bg-[#3E9EF5] text-white text-sm font-bold flex items-center justify-center mt-5'
+                            href='https://docs.google.com/spreadsheets/d/1B98efJjfopv26cYUvu2GLK28iEb7qPx9GJkTHdItB4A'
+                            target='_blank'
+                        >
+                            {t('Ver planilha')}
+                        </Link>
+                    </div>
+                    <div className='flex flex-col items-center lg:w-[75%]'>
+                        <Image
+                            src={require('../public/assets/co2-per-token.png')}
+                            alt='Gráfico impacto do token por co2'
+                            className="lg:w-[100%] object-contain"
+                        />
+                    </div>
                 </div>
             </section>
 
@@ -147,55 +159,28 @@ const Investidor: NextPage = (_props: InferGetStaticPropsType<typeof getStaticPr
                     <div className='flex flex-col items-center justify-center w-full flex-wrap gap-5 mt-5 lg:flex-row'>
                         <CardGoals
                             title="META 1"
-                            years="Lançamento"
-                            area="1.000"
-                            average="25"
-                            total="25.000"
-                            distribution="41.500.000"
-                            impactToken="0,602410"
-                            co2Pricing="R$ 40,00"
-                            estimatedValueToken="R$ 0,024"
-                            marketCap="R$ 10.481.927,711"
-                            emissionGlobal="0,0001 %"
+                            area="576.000"
+                            circulatingSuply="729.000.000"
+                            distribution="42.000.000"
+                            impactTotal="17.280.000"
+                            impactToken="23,70370"
+                            estimatedValueToken="R$ 1,1852"
+                            marketCap="R$ 864.000.000,00"
+                            roi="4102,78 %"
+                            emissionGlobal="0,0432 %"
                         />
-                        <CardGoals
-                            title="META 2"
-                            years="5 Anos"
-                            area="100.000"
-                            average="20"
-                            total="2.000.000"
-                            distribution="41.500.000"
-                            impactToken="48,19771"
-                            co2Pricing="R$ 30,00"
-                            estimatedValueToken="R$ 1,44"
-                            marketCap="R$ 698.915.662,651"
-                            emissionGlobal="0,100 %"
-                        />
-                        <CardGoals
-                            title="META 3"
-                            years="10 Anos"
-                            area="10.000.000"
-                            average="15"
-                            total="150.000.000"
-                            distribution="41.500.000"
-                            impactToken="3.614,457831"
-                            co2Pricing="R$ 20,00"
-                            estimatedValueToken="R$ 72,28"
-                            marketCap="R$ 31.445.783.132,530"
-                            emissionGlobal="0,7500 %"
-                        />
+                        
                         <CardGoals
                             title="META SONHO"
-                            years="25 Anos"
-                            area="600.000.000"
-                            average="10"
-                            total="6.000.000.000"
-                            distribution="41.500.000"
-                            impactToken="144.578,313253"
-                            co2Pricing="R$ 15,00"
-                            estimatedValueToken="R$ 2.168,67"
-                            marketCap="R$ 943.373.493.975,904"
-                            emissionGlobal="30,0000 %"
+                            area="134.110.451"
+                            circulatingSuply="1.149.000.000"
+                            distribution="21.000.000"
+                            impactTotal="4.023.313.522"
+                            impactToken="3.501,57835"
+                            estimatedValueToken="R$ 175,0789"
+                            marketCap="R$ 201.165.676.116,94"
+                            roi="620747,22 %"
+                            emissionGlobal="10,0583 %"
                         />
                     </div>
                 </div>
@@ -222,7 +207,7 @@ const Investidor: NextPage = (_props: InferGetStaticPropsType<typeof getStaticPr
             <section className='flex flex-col px-2 items-center justify-center gap-5 lg:w-[1000px] pt-10 pb-20 lg:flex-row'>
                 <div className='flex flex-col lg:w-[50%] gap-3'>
                     <h4 className="font-bold text-green-900 text-2xl">{t('Cenário que atingirmos a meta 2')}</h4>
-                    <p className='text-black lg:w-[80%]'>{t('No cenário que atingimos a meta 2, o impacto estimado por token é de 48kg de CO2')}.</p>
+                    <p className='text-black lg:w-[80%]'>{t('No cenário que atingimos a meta 2, o impacto estimado por token é de 23.7kg de CO2')}.</p>
                 </div>
                 <div className='flex flex-col items-center lg:w-[50%]'>
                     <Image
@@ -233,7 +218,7 @@ const Investidor: NextPage = (_props: InferGetStaticPropsType<typeof getStaticPr
                 </div>
             </section>
 
-            <section className='flex flex-col px-4 items-center w-full py-10 bg-[#0a4303]'>
+            {/* <section className='flex flex-col px-4 items-center w-full py-10 bg-[#0a4303]'>
                 <div className='flex flex-col items-center justify-center gap-5 lg:w-[1000px] lg:flex-row'>
                     <div className="flex flex-col lg:w-[40%] gap-3">
                         <div className="flex items-center gap-2">
@@ -286,7 +271,7 @@ const Investidor: NextPage = (_props: InferGetStaticPropsType<typeof getStaticPr
                         </div>
                     </div>
                 </div>
-            </section>
+            </section> */}
 
             <section className='flex flex-col items-center justify-center w-full h-[400px] bg-lines bg-center'>
                 <h4 className="font-bold text-black italic text-3xl text-center">
