@@ -133,6 +133,54 @@ const Home: NextPage = (_props: InferGetStaticPropsType<typeof getStaticProps>) 
                 </section>
             </div>
 
+            <section className='flex flex-col px-2 items-center justify-center gap-5 lg:w-[1000px] pt-10 pb-10'>
+                <div className="flex flex-col items-center justify-between w-full lg:flex-row">
+                    <div className='flex flex-col gap-3 lg:w-[45%]'>
+                        <h4 className="font-bold text-green-900 text-lg italic">{t('Transformamos o impacto de regeneração de ecossistemas em um ativo digital, para guardar ou trocar pelo certificado de contribuição ambiental')}.</h4>
+                        <p className='text-black text-lg mt-5'>{t('O Crédito de Regeneração é uma criptomoeda lastreada no impacto de restauração de ecossistemas de produtores rurais regenerativos e projetos de reflorestamento')}.</p>
+                    </div>
+                    <Image
+                        src={require('../public/assets/token-3.png')}
+                        alt='Gráfico impacto do token por co2'
+                        className="lg:w-[40%] object-contain"
+                    />
+                </div>
+                <div className='flex items-center justify-center gap-8 flex-wrap'>
+                    <div className='flex flex-col p-3 rounded-lg shadow-xl shadow-black/30 bg-gray-200 gap-3 h-[260px] w-full lg:w-[300px]'>
+                        <Image
+                            src={require('../public/assets/icon-descentralizado.png')}
+                            alt='Ícone de descentralização'
+                            className="w-[60px] object-contain"
+                        />
+
+                        <h4 className="font-bold text-xl text-green-900">{t('DESCENTRALIZADO')}</h4>
+                        <p className="text-lg text-gray-700">{t('Tecnologia da blockchain para armazenamento e processamentos dos dados sem uma entidade central')}.</p>
+                    </div>
+
+                    <div className='flex flex-col p-3 rounded-lg shadow-xl shadow-black/30 bg-gray-200 gap-3 h-[260px] w-full lg:w-[300px]'>
+                        <Image
+                            src={require('../public/assets/icon-low-cost.png')}
+                            alt='Ícone de descentralização'
+                            className="w-[60px] object-contain"
+                        />
+
+                        <h4 className="font-bold text-xl text-green-900">{t('BAIXO CUSTO')}</h4>
+                        <p className="text-lg text-gray-700">{t('Acessível para o pequeno produtor, apenas 3 transações necessárias para participar')}.</p>
+                    </div>
+
+                    <div className='flex flex-col p-3 rounded-lg shadow-xl shadow-black/30 bg-gray-200 gap-3 h-[260px] w-full lg:w-[300px]'>
+                        <Image
+                            src={require('../public/assets/icon-transparent.png')}
+                            alt='Ícone de descentralização'
+                            className="w-[60px] object-contain"
+                        />
+
+                        <h4 className="font-bold text-xl text-green-900">{t('TRANSPARENTE')}</h4>
+                        <p className="text-lg text-gray-700">{t('Todos dados públicos e disponíveis para acesso de qualquer um')}.</p>
+                    </div>
+                </div>
+            </section>
+
             <section className='flex flex-col items-center px-2 lg:w-[1000px] py-10'>
                 <div className='flex flex-col'>
                 <h3 className='font-bold text-center text-green-900 text-2xl lg:text-start'>{t('Token Crédito de Regeneração')}</h3>
