@@ -97,7 +97,7 @@ const Investidor: NextPage = (_props: InferGetStaticPropsType<typeof getStaticPr
                             {t('BAIXAR WHITEPAPER')}
                         </Link>
                         <Link
-                            href='https://sintrop.com/presentation-investors.pdf'
+                            href='https://docs.google.com/presentation/d/1saoxTOk3q3q66ch2HLFYEpzVvcxAnVkV8RhyGay7_UU/edit#slide=id.p'
                             target='_blank'
                             className='w-52 h-14 border-2 rounded-xl bg-[#3E9EF5] text-white text-sm font-bold flex items-center justify-center'
                         >
@@ -237,14 +237,14 @@ const Investidor: NextPage = (_props: InferGetStaticPropsType<typeof getStaticPr
             <section className='flex flex-col items-center justify-center gap-5 lg:w-[1000px] py-10 px-2'>  
                 {router.locale === 'pt-BR' && (
                     <Image
-                        src={require('../public/assets/offer.png')}
+                        src={require('../public/assets/round.png')}
                         alt='Gráfico impacto do token por co2'
                         className="w-full object-contain"
                     />
                 )}   
                 {router.locale === 'en-US' && (
                     <Image
-                        src={require('../public/assets/offer-en.png')}
+                        src={require('../public/assets/round.png')}
                         alt='Gráfico impacto do token por co2'
                         className="w-full object-contain"
                     />
