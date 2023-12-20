@@ -127,10 +127,10 @@ export function Header({blog}: Props){
 
                 <Link
                     className='w-28 h-9 border-2 rounded-xl bg-[#3E9EF5] text-white text-sm font-bold flex items-center justify-center'
-                    href='https://v4-sintrop.netlify.app'
+                    href='https://play.google.com/store/apps/details?id=com.sintrop.activistapp'
                     target="_blank"
                 >
-                    App V4
+                    App
                 </Link>
             </nav>
             </div>
