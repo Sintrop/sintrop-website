@@ -8,6 +8,8 @@ import Tiptap from "../components/TipTap";
 import "react-toastify/dist/ReactToastify.css";
 import axios from "axios";
 import { Base64 } from "js-base64";
+import { storage } from "../src/services/firebase";
+import {ref, getDownloadURL} from 'firebase/storage';
 
 interface ContentProps{
     tag: string;
@@ -37,6 +39,7 @@ const NewPubli: NextPage = () => {
 
     useEffect(() => {
         verifyContentPostSaved();
+        uploadFirebase();
     },[]);
 
     function validateSend(){
@@ -110,7 +113,7 @@ const NewPubli: NextPage = () => {
     async function handleLogin() {
         try{
             const response = await api.post('/login', {
-                wallet: 'ADM_SINTROP.SINTROP.COM',
+                wallet: '0x2c53392A0601FDEa8290c2c5775ed620402B7752',
                 password
             })
             setTokenJWT(response.data)
@@ -135,6 +138,12 @@ const NewPubli: NextPage = () => {
         });
 
         return response.data.Hash;
+    }
+
+    async function uploadFirebase() {
+        // const storageRef = ref(storage, 'images/QmNLnTGQN8oLJ8iDUXY3eFKkGjHspfcwKCQduGsTXMtBZH.png')
+        // const url = await getDownloadURL(storageRef);
+        // console.log(url)
     }
 
     if(tokenJWT === ''){
@@ -184,14 +193,7 @@ const NewPubli: NextPage = () => {
                         onChange={async(e) => {
                             if(e.target.files){
                                 const file = e?.target?.files[0];
-                                const reader = new window.FileReader();
-                                reader.readAsArrayBuffer(file);
-                                reader.onload = async () => {
-                                    const arrayBuffer = reader.result
-                                    const file = new Uint8Array(arrayBuffer as Uint8Array);
-                                    const hashImage = await uploadImageIpfs(file);
-                                    setImgBannerUrl(`https://ipfs.io/ipfs/${hashImage}`)
-                                };
+                                //const 
                             }
                         }}
                     />
