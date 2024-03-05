@@ -9,6 +9,7 @@ import { Header } from '../../components/Header';
 import { useRouter } from 'next/router';
 import Link from 'next/link';
 import { useTranslation } from 'next-i18next';
+import { db } from '../../src/lib/prisma';
 
 interface ServerSideProps{
     posts: PostsProps[]
@@ -82,10 +83,18 @@ export default Blog
 
 export const getServerSideProps = async (context: ContextProps) => {
     try{
-        const response = await api.get(`/posts/${context.locale}`)
+        const response = await db.post.findMany({
+            where:{
+                language: context.locale,
+            },
+            orderBy:{
+                createdAt: 'desc',
+            }
+        })
+        console.log(response)
         return{
             props:{
-                posts: response.data.posts
+                posts: response
             }
         }
     }catch(err){
