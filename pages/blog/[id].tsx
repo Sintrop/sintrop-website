@@ -49,7 +49,7 @@ const DetailPost = ({post}: ServerSideProps) => {
             <Head>
                 <title>{post.title}</title>
                 <meta name='description' content={post.description}/>
-                <meta name="keywords" content="Agricultura, Regeneração, Sustentabilidade, Produtores regenerativos, comunidade"/>
+                <meta name="keywords" content={post?.keywords}/>
                 <meta name="robots" content="index,follow"/>
                 <meta name="googlebot" content="index,follow"/>
                 <meta property="og:type" content="website"/>
