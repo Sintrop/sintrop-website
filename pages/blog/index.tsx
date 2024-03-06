@@ -46,16 +46,16 @@ const Blog = ({posts}: ServerSideProps) => {
                     </h2>
 
                     <h2 className='font-bold text-center text-[#BBFFB2] text-2xl lg:text-start lg:text-3xl lg:max-w-[32ch] mt-10'>
-                        {posts[0].title}
+                        {posts[0]?.title}
                     </h2>
 
                     <h3 className='text-white text-center max-w-[45ch] mt-5 lg:text-start'>
-                        {posts[0].description}
+                        {posts[0]?.description}
                     </h3>
 
                     <div className='mt-10 flex flex-col items-center gap-5 lg:flex-row'>
                         <Link
-                            href={`/blog/${posts[0].url}`}
+                            href={`/blog/${posts[0]?.url}`}
                             className='w-40 h-12 border-2 rounded-xl bg-[#3E9EF5] text-white text-sm font-bold flex items-center justify-center'
                         >
                             {t('Ver postagem')}
@@ -91,10 +91,9 @@ export const getServerSideProps = async (context: ContextProps) => {
                 createdAt: 'desc',
             }
         })
-        console.log(response)
         return{
             props:{
-                posts: response
+                posts: JSON.parse(JSON.stringify(response))
             }
         }
     }catch(err){

@@ -6,8 +6,8 @@ import Heading from '@tiptap/extension-heading';
 import Link from '@tiptap/extension-link';
 import Image from '@tiptap/extension-image';
 import {useState, useEffect} from 'react';
-import axios from 'axios';
-import {Base64} from 'js-base64'; 
+import { storage } from '../src/services/firebase';
+import { getDownloadURL, ref, uploadBytesResumable } from 'firebase/storage';
 
 interface Props{
     attContent: (data: string) => void;
@@ -22,7 +22,7 @@ const Tiptap = ({attContent, content, viewMode}:Props) => {
     const [imageContent, setImageContent] = useState('');
     const [altContent, setAltContent] = useState('');
     const [titleContent, setTitleContent] = useState('');
-    const [contentEditor, setContentEditor] = useState('');
+    const [uploadingImage, setUploadingImage] = useState(false);
 
     const editor = useEditor({
         extensions: [
@@ -60,24 +60,21 @@ const Tiptap = ({attContent, content, viewMode}:Props) => {
             setAltContent('');
             setTitleContent('');
             setInputImage(false);
+            setUploadingImage(false);
         }
     }
 
-    async function uploadImageIpfs(data: Uint8Array){
-        const token = 'Basic ' + Base64.encode('2F2FHYWhdz3ynk8PeorZrtf0FSG:9cf6a1ddc8510764d564c0f7b9a08cf2')
-        const response = await axios.post('https://ipfs.infura.io:5001/api/v0/add?pin=false',{
-            data: {
-                file: data
-            },
-        }, {
-            headers:{
-                Accept: 'application/json',
-                'Content-Type': 'multipart/form-data',
-                'Authorization': token,
-            }
-        });
-
-        return response.data.Hash;
+    async function uploadImageFirebase(){
+        setUploadingImage(true);
+        const storageRef = ref(storage, `/blog/${new Date()}`);
+        uploadBytesResumable(storageRef, imageContent)
+        .then(async (res) => {
+            const url = await getDownloadURL(storageRef);
+            setImage(url, altContent, titleContent)
+        })
+        .catch(err => {
+            console.log(err);
+        })
     }
 
     return (
@@ -156,15 +153,7 @@ const Tiptap = ({attContent, content, viewMode}:Props) => {
                                     onChange={async(e) => {
                                         if(e.target.files){
                                             const file = e.target.files[0];
-                                            const reader = new window.FileReader();
-                                            reader.readAsArrayBuffer(file);
-                                            reader.onload = async () => {
-                                                const arrayBuffer = reader.result
-                                                const file = new Uint8Array(arrayBuffer as Uint8Array);
-                                                const hashImage = await uploadImageIpfs(file);
-                                                setImageContent(`https://ipfs.io/ipfs/${hashImage}`)
-                                            };
-
+                                            setImageContent(file);
                                         }
                                     }}
                                 />
@@ -190,10 +179,18 @@ const Tiptap = ({attContent, content, viewMode}:Props) => {
                             {imageContent !== '' && altContent !== '' && titleContent !== '' && (
                                 <button
                                     className='flex items-center justify-center gap-2 font-bold text-white rounded-lg px-3 py-1 bg-blue-500'
-                                    onClick={() => setImage(imageContent, altContent, titleContent)}
+                                    onClick={() => {
+                                        if(!uploadingImage){
+                                            uploadImageFirebase()
+                                        }
+                                    }}
                                 >   
-                                    Adicionar foto
-                                    <RxCheck className='w-4 h-4'/>
+                                    {uploadingImage ? 'Fazendo upload...' : (
+                                        <>
+                                        Adicionar foto
+                                        <RxCheck className='w-4 h-4'/>
+                                        </>    
+                                    )}
                                 </button>
                             )}
                         </div>

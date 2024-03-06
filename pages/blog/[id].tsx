@@ -13,6 +13,7 @@ import Tiptap from "../../components/TipTap";
 import { Footer } from "../../components/Footer";
 import { useTranslation } from "next-i18next";
 import { CardPost } from "../../components/CardPost";
+import { db } from "../../src/lib/prisma";
 
 interface ServerSideProps{
     post: PostsProps
@@ -65,7 +66,7 @@ const DetailPost = ({post}: ServerSideProps) => {
                 <div className='lg:w-[1000px] mb-6 mx-2 mt-5 lg:mt-40 flex flex-col items-start w-full px-2 lg:px-0'>
                     <h1 className="font-bold text-xl lg:text-4xl text-[#062C01]">{post.title}</h1>
                     <div className='flex items-center gap-5'>
-                        <p className='text-sm'>Por: André Rav</p>
+                        <p className='text-sm'>Por: Sintrop</p>
                         <p className='text-sm'>{format(new Date(post.createdAt), 'dd/MM/yyyy - kk:mm')}</p>
                     </div>
                 </div>
@@ -121,11 +122,33 @@ export default DetailPost;
 
 export const getServerSideProps = async(context: ContextProps) => {
     try{
-        const response = await api.get(`/post/${context.query.id}`);
-        api.put('/post/view', {id: response.data.post.id})
+        const response = await db.post.findFirst({
+            where:{
+                url: context.query.id,
+            }
+        });
+
+        if(response){
+            db.post.update({
+                where:{
+                    id: response?.id
+                },
+                data:{
+                    views: response?.views + 1
+                }
+            })
+        }
+
+        const mostSeen = await db.post.findMany({
+            orderBy:{
+                views: 'desc',
+            },
+            
+        })
+        
         return{
             props:{
-                post: response.data.post
+                post: JSON.parse(JSON.stringify(response)),
             }
         }
     }catch(err){
