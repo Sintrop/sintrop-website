@@ -8,6 +8,8 @@ import Tiptap from "../components/TipTap";
 import "react-toastify/dist/ReactToastify.css";
 import axios from "axios";
 import { Base64 } from "js-base64";
+import { storage } from "../src/services/firebase";
+import {ref, getDownloadURL, uploadBytesResumable} from 'firebase/storage';
 
 interface ContentProps{
     tag: string;
@@ -40,6 +42,10 @@ const NewPubli: NextPage = () => {
     },[]);
 
     function validateSend(){
+        if(loading){
+            return;
+        }
+
         if(!title.trim()){
             toast.error('Digite um titulo para a publicação')
             return;
@@ -85,32 +91,10 @@ const NewPubli: NextPage = () => {
         }
     }
 
-    function handleSendPost(){
-        try{
-            setLoading(true);
-            api.post('/post', {
-                title: title,
-                description,
-                bannerUrl: imgBannerUrl,
-                bannerAlt: imgBannerAlt,
-                bodyPost: contentPost,
-                language,
-                keywords,
-                url: title.replaceAll(' ', '-').toLowerCase()
-            });
-            localStorage.removeItem('contentEditor');
-            toast.success('Post feito com sucesso!')
-        }catch(err){
-            toast.success('Algo deu errado, tente novamente!')
-        }finally{
-            setLoading(false);
-        }
-    }
-
     async function handleLogin() {
         try{
             const response = await api.post('/login', {
-                wallet: 'ADM_SINTROP.SINTROP.COM',
+                wallet: '0x2c53392A0601FDEa8290c2c5775ed620402B7752',
                 password
             })
             setTokenJWT(response.data)
@@ -120,21 +104,40 @@ const NewPubli: NextPage = () => {
         }
     }
 
-    async function uploadImageIpfs(data: Uint8Array){
-        const token = 'Basic ' + Base64.encode('2F2FHYWhdz3ynk8PeorZrtf0FSG:9cf6a1ddc8510764d564c0f7b9a08cf2')
-        const response = await axios.post('https://ipfs.infura.io:5001/api/v0/add?pin=false',{
-            data: {
-                file: data
-            },
-        }, {
-            headers:{
-                Accept: 'application/json',
-                'Content-Type': 'multipart/form-data',
-                'Authorization': token,
-            }
-        });
+    async function handleSendPost() {
+        try{
+            setLoading(true);
+            const response = await axios.post('/api/newpost', {
+                bannerAlt: imgBannerAlt,
+                bannerUrl: imgBannerUrl,
+                bodyPost: contentPost,
+                description,
+                language,
+                title,
+                keywords,
+                url: title.replaceAll(' ', '-').toLowerCase(),
+            })
+            localStorage.removeItem('contentEditor');
+            toast.success('Post feito com sucesso!')
+        }catch(err){
+            toast.success('Algo deu errado, tente novamente!')
+        }finally{
+            setLoading(false);
+        }
+    }
 
-        return response.data.Hash;
+    async function uploadImageFirebase(file: any){
+        const storageRef = ref(storage, `/blog/${new Date()}`);
+        uploadBytesResumable(storageRef, file)
+        .then(async (res) => {
+            const url = await getDownloadURL(storageRef);
+            setImgBannerUrl(url);
+            return url;
+        })
+        .catch(err => {
+            console.log(err);
+            return '';
+        })
     }
 
     if(tokenJWT === ''){
@@ -184,14 +187,7 @@ const NewPubli: NextPage = () => {
                         onChange={async(e) => {
                             if(e.target.files){
                                 const file = e?.target?.files[0];
-                                const reader = new window.FileReader();
-                                reader.readAsArrayBuffer(file);
-                                reader.onload = async () => {
-                                    const arrayBuffer = reader.result
-                                    const file = new Uint8Array(arrayBuffer as Uint8Array);
-                                    const hashImage = await uploadImageIpfs(file);
-                                    setImgBannerUrl(`https://ipfs.io/ipfs/${hashImage}`)
-                                };
+                                uploadImageFirebase(file); 
                             }
                         }}
                     />
@@ -279,7 +275,7 @@ const NewPubli: NextPage = () => {
                     onClick={validateSend}
                     className='items-center justify-center bg-red-400 px-5 py-2 rounded-lg mb-10 mt-5'
                 >
-                    Criar post
+                    {loading ? 'Criando post... Aguarde' : 'Criar post'}
                 </button>
             </div>
 

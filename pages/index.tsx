@@ -258,15 +258,15 @@ const Home: NextPage = (_props: InferGetStaticPropsType<typeof getStaticProps>) 
                                 </div>
                                 <div className='flex items-center justify-between mt-1'>
                                     <p className='text-white text-lg'>{t('Produtores')}</p>
-                                    <p className='text-white text-lg font-bold'>{Number(countUsers?.producersCount) - 30}</p>
+                                    <p className='text-white text-lg font-bold'>{Number(countUsers?.producersCount)}</p>
                                 </div>
                                 <div className='flex items-center justify-between mt-1'>
                                     <p className='text-white text-lg'>{t('Inspetores')}</p>
-                                    <p className='text-white text-lg font-bold'>{Number(countUsers?.inspectorsCount) - 28}</p>
+                                    <p className='text-white text-lg font-bold'>{Number(countUsers?.inspectorsCount)}</p>
                                 </div>
                                 <div className='flex items-center justify-between mt-1'>
                                     <p className='text-white text-lg'>{t('Pesquisadores')}</p>
-                                    <p className='text-white text-lg font-bold'>{Number(countUsers?.researchersCount) + 1}</p>
+                                    <p className='text-white text-lg font-bold'>{Number(countUsers?.researchersCount)}</p>
                                 </div>
                                 <div className='flex items-center justify-between mt-1'>
                                     <p className='text-white text-lg'>{t('Desenvolvedores')}</p>
