@@ -19,7 +19,7 @@ import { CardImpact } from '../components/CardImpact';
 import { CardUsers } from '../components/CardUsers';
 import { useCountdown } from '../src/hooks/useCountdown';
 import { api } from '../src/services/api';
-import { ImpactProps } from '../src/interfaces/impact';
+import { ImpactProps, ImpactTokenProps } from '../src/interfaces/impact';
 import {CgDanger} from 'react-icons/cg';
 import { ContextProps } from '../src/interfaces/ContextServerSide';
 import { PostsProps } from '../src/interfaces/Posts';
@@ -57,6 +57,7 @@ const Home: NextPage = (_props: InferGetStaticPropsType<typeof getStaticProps>) 
     const [networkImpact, setNetworkImpact] = useState({} as ImpactProps);
     const [countUsers, setCountUsers] = useState({} as usersCountProps);
     const [inspections, setInspections] = useState([]);
+    const [impactPerToken, setImpactPerToken] = useState({} as ImpactTokenProps);
 
     useEffect(() => {
         getImpact();
@@ -69,6 +70,9 @@ const Home: NextPage = (_props: InferGetStaticPropsType<typeof getStaticProps>) 
         const impacts = response.data.impact;
         const network = impacts.filter((item: ImpactProps) => item.id === '1')
         setNetworkImpact(network[0]);
+
+        const response2 = await api.get('/impact-per-token');
+        setImpactPerToken(response2.data.impact);
     }
 
     async function getCountUsers(){
@@ -236,11 +240,13 @@ const Home: NextPage = (_props: InferGetStaticPropsType<typeof getStaticProps>) 
                     <CardImpact
                         title='IMPACTO TOTAL DA REDE'
                         impact={networkImpact}
+                        impactToken={impactPerToken}
                     />
                     <CardImpact
                         title='IMPACTO ECOSSISTÊMICO POR TOKEN'
                         impact={networkImpact}
                         type='impactToken'
+                        impactToken={impactPerToken}
                     />
                 </div>
             </section>
@@ -281,22 +287,7 @@ const Home: NextPage = (_props: InferGetStaticPropsType<typeof getStaticProps>) 
                             <div className='flex flex-col w-[250px]'>
                                 <div className='flex items-center justify-between mt-5'>
                                     <p className='text-white font-bold text-xl'>{t('Total de árvores')}</p>
-                                </div>
-                                <div className='flex items-center justify-between mt-1'>
-                                    <p className='text-white text-lg'>{t('Mudas')}</p>
-                                    <p className='text-white text-lg font-bold'>0</p>
-                                </div>
-                                <div className='flex items-center justify-between mt-1'>
-                                    <p className='text-white text-lg'>{t('Jovens')}</p>
-                                    <p className='text-white text-lg font-bold'>0</p>
-                                </div>
-                                <div className='flex items-center justify-between mt-1'>
-                                    <p className='text-white text-lg'>{t('Adultas')}</p>
-                                    <p className='text-white text-lg font-bold'>0</p>
-                                </div>
-                                <div className='flex items-center justify-between mt-1'>
-                                    <p className='text-white text-lg'>{t('Anciâs')}</p>
-                                    <p className='text-white text-lg font-bold'>0</p>
+                                    <p className='text-white text-lg font-bold'>{Intl.NumberFormat('pt-BR').format(impactPerToken?.trees)}</p>
                                 </div>
                             </div>
 
