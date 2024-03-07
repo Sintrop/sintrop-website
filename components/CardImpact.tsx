@@ -1,27 +1,17 @@
 import Image from "next/image";
 import { useTranslation } from "react-i18next";
-import { ImpactProps } from "../src/interfaces/impact";
+import { ImpactProps, ImpactTokenProps } from "../src/interfaces/impact";
 import { NumericFormat } from 'react-number-format';
 
 interface Props{
     title: string;
     type?: string;
     impact: ImpactProps;
+    impactToken: ImpactTokenProps;
 }
 
-export function CardImpact({title, type, impact}: Props){
+export function CardImpact({title, type, impact, impactToken}: Props){
     const {t} = useTranslation();
-    const balanceProducers = 706478034251675353685778110;
-    const balanceDevelopers = 13333334000000000000000003;
-    const totalBalanceProducers = 750000000000000000000000000;
-    const totalBalanceDevelopers = 15000000000000000000000000;
-    const sacProducers = totalBalanceProducers - balanceProducers;
-    const sacDevelopers = totalBalanceDevelopers - balanceDevelopers;
-    const totalSac = sacProducers + sacDevelopers;
-    const carbon = Number(impact?.carbon) / (totalSac / 10 ** 18);
-    const bio = Number(impact?.bio) / (totalSac / 10 ** 18);
-    const water = Number(impact?.agua) / (totalSac / 10 ** 18);
-    const soil = Number(impact?.solo) / (totalSac / 10 ** 18);
 
     return(
         <div className={`flex flex-col border-2 rounded-lg overflow-hidden w-[97%] lg:w-[350px] ${type === 'impactToken' ? 'bg-arvore-2' : 'bg-card-impact'} bg-center`}>
@@ -50,7 +40,7 @@ export function CardImpact({title, type, impact}: Props){
                     </div>
                     
                     {type === 'impactToken' ? (
-                        <p className="font-bold text-white text-xl">{(carbon * 1000).toFixed(2).replace('.',',')} g</p>
+                        <p className="font-bold text-white text-xl">{Number(impactToken?.carbon * 1000).toFixed(2).replace('.',',')} g</p>
                     ) : (
                         <div className="flex items-center gap-1">
                         <NumericFormat 
@@ -85,7 +75,7 @@ export function CardImpact({title, type, impact}: Props){
                     </div>
                     
                     {type === 'impactToken' ? (
-                        <p className="font-bold text-white text-xl">{(soil * 10000).toFixed(2).replace('.',',')} cm²</p>
+                        <p className="font-bold text-white text-xl">{Number(impactToken?.soil * 10000).toFixed(2).replace('.',',')} cm²</p>
                     ) : (
                         <div className="flex items-center gap-1">
                         <NumericFormat 
@@ -120,7 +110,7 @@ export function CardImpact({title, type, impact}: Props){
                     </div>
                     
                     {type === 'impactToken' ? (
-                        <p className="font-bold text-white text-xl">{(bio).toFixed(2).replace('.',',')} uv</p>
+                        <p className="font-bold text-white text-xl">{Number(impactToken?.bio).toFixed(2).replace('.',',')} uv</p>
                     ) : (
                         <div className="flex items-center gap-1">
                         <NumericFormat 
@@ -155,7 +145,7 @@ export function CardImpact({title, type, impact}: Props){
                     </div>
                     
                     {type === 'impactToken' ? (
-                        <p className="font-bold text-white text-xl">{(water * 1000).toFixed(2).replace('.',',')} L</p>
+                        <p className="font-bold text-white text-xl">{Number(impactToken?.water * 1000).toFixed(2).replace('.',',')} L</p>
                     ) : (
                         <div className="flex items-center gap-1">
                         <NumericFormat 
