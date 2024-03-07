@@ -287,22 +287,7 @@ const Home: NextPage = (_props: InferGetStaticPropsType<typeof getStaticProps>) 
                             <div className='flex flex-col w-[250px]'>
                                 <div className='flex items-center justify-between mt-5'>
                                     <p className='text-white font-bold text-xl'>{t('Total de árvores')}</p>
-                                </div>
-                                <div className='flex items-center justify-between mt-1'>
-                                    <p className='text-white text-lg'>{t('Mudas')}</p>
-                                    <p className='text-white text-lg font-bold'>0</p>
-                                </div>
-                                <div className='flex items-center justify-between mt-1'>
-                                    <p className='text-white text-lg'>{t('Jovens')}</p>
-                                    <p className='text-white text-lg font-bold'>0</p>
-                                </div>
-                                <div className='flex items-center justify-between mt-1'>
-                                    <p className='text-white text-lg'>{t('Adultas')}</p>
-                                    <p className='text-white text-lg font-bold'>0</p>
-                                </div>
-                                <div className='flex items-center justify-between mt-1'>
-                                    <p className='text-white text-lg'>{t('Anciâs')}</p>
-                                    <p className='text-white text-lg font-bold'>0</p>
+                                    <p className='text-white text-lg font-bold'>{Intl.NumberFormat('pt-BR').format(impactPerToken?.trees)}</p>
                                 </div>
                             </div>
 
