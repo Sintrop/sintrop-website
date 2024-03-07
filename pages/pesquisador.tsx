@@ -154,31 +154,6 @@ const Pesquisador: NextPage = (_props: InferGetStaticPropsType<typeof getStaticP
                 </h4>
             </section>
 
-            <section className='flex flex-col items-center w-full py-10 bg-[#0a4303]'>
-                <div className='flex items-center px-4 justify-center gap-5 lg:w-[1000px] lg:py-10'>
-                    <Image
-                        src={require('../public/assets/arvore-1.png')}
-                        alt='Imagem de uma árvore na floresta'
-                        className="hidden lg:w-[40%] h-[500px] object-cover mt-[-150px] lg:flex"
-                        quality={100}
-                    />
-
-                    <div className="flex flex-col lg:w-[50%] gap-3 lg:px-14">
-                        <p className="text-white text-center">{t('Nosso sistema está sendo desenvolvido e atualmente em fase de testes. Buscamos os primeiros 10 pesquisadores')}</p>
-                        <div className='flex flex-col items-center gap-8 p-4 border-2 rounded-lg lg:mt-10'>
-                            <h4 className="font-bold text-white text-3xl">{t('Vagas disponíveis')}</h4>
-                            <p className="text-white text-center text-3xl font-bold">{9 - Number(countUsers.researchersCount)}</p>
-                            <button
-                                onClick={() => setModalRegister(true)}
-                                className='w-48 h-12 border-2 rounded-xl bg-[#3E9EF5] text-white text-sm font-bold flex items-center justify-center'
-                            >
-                                {t('Cadastre-se')}
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
             {modalRegister && (
                 <ModalRegister
                     close={() => setModalRegister(false)}
