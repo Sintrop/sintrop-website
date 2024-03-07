@@ -19,7 +19,7 @@ const Tiptap = ({attContent, content, viewMode}:Props) => {
     const [inputLink, setInputLink] = useState(false);
     const [linkContent, setLinkContent] = useState('');
     const [inputImage, setInputImage] = useState(false);
-    const [imageContent, setImageContent] = useState('');
+    const [imageContent, setImageContent] = useState({} as Blob);
     const [altContent, setAltContent] = useState('');
     const [titleContent, setTitleContent] = useState('');
     const [uploadingImage, setUploadingImage] = useState(false);
@@ -56,7 +56,6 @@ const Tiptap = ({attContent, content, viewMode}:Props) => {
     function setImage(url:string, alt: string, title: string){
         if(editor){
             editor.commands.setImage({ src: url, alt: alt, title: title });
-            setImageContent('');
             setAltContent('');
             setTitleContent('');
             setInputImage(false);
@@ -176,7 +175,7 @@ const Tiptap = ({attContent, content, viewMode}:Props) => {
                                     onChange={(e) => setTitleContent(e.target.value)}
                                 />
                             </div>
-                            {imageContent !== '' && altContent !== '' && titleContent !== '' && (
+                            {imageContent && altContent !== '' && titleContent !== '' && (
                                 <button
                                     className='flex items-center justify-center gap-2 font-bold text-white rounded-lg px-3 py-1 bg-blue-500'
                                     onClick={() => {
