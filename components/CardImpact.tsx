@@ -3,17 +3,17 @@ import { useTranslation } from "react-i18next";
 import { ImpactProps, ImpactTokenProps } from "../src/interfaces/impact";
 import { NumericFormat } from 'react-number-format';
 
-interface Props{
+interface Props {
     title: string;
     type?: string;
     impact: ImpactProps;
     impactToken: ImpactTokenProps;
 }
 
-export function CardImpact({title, type, impact, impactToken}: Props){
-    const {t} = useTranslation();
+export function CardImpact({ title, type, impact, impactToken }: Props) {
+    const { t } = useTranslation();
 
-    return(
+    return (
         <div className={`flex flex-col border-2 rounded-lg overflow-hidden w-[97%] lg:w-[350px] ${type === 'impactToken' ? 'bg-arvore-2' : 'bg-card-impact'} bg-center`}>
             <div className="flex items-center justify-center h-10 bg-lime-600 border-b-2 px-3">
                 <p className="font-bold text-white text-center">{t(`${title}`)}</p>
@@ -29,28 +29,21 @@ export function CardImpact({title, type, impact, impactToken}: Props){
                         <p className="font-bold text-white text-lg">{t('Carbono')}</p>
                         {type === 'impactToken' && (
                             <>
-                            <p className="font-bold text-white text-lg">/</p>
-                            <Image
-                                src={require('../assets/token.png')}
-                                alt='carbono'
-                                className="w-[20px] object-contain"
-                            />
+                                <p className="font-bold text-white text-lg">/</p>
+                                <Image
+                                    src={require('../assets/token.png')}
+                                    alt='carbono'
+                                    className="w-[20px] object-contain"
+                                />
                             </>
                         )}
                     </div>
-                    
+
                     {type === 'impactToken' ? (
-                        <p className="font-bold text-white text-xl">{Number(impactToken?.carbon * 1000).toFixed(2).replace('.',',')} g</p>
+                        <p className="font-bold text-white text-xl">{Intl.NumberFormat('pt-BR', {maximumFractionDigits: 2}).format(impactToken?.carbon * 1000)} g</p>
                     ) : (
                         <div className="flex items-center gap-1">
-                        <NumericFormat 
-                            value={(impact?.carbon / 1000).toFixed(0)} 
-                            allowLeadingZeros 
-                            thousandSeparator="." 
-                            decimalSeparator="," 
-                            className="font-bold text-white bg-transparent text-xl text-end w-28"
-                        />
-                        <p className="font-bold text-white text-lg">t</p>
+                            <p className="font-bold text-white text-lg">{Intl.NumberFormat('pt-BR', {maximumFractionDigits: 0}).format(impact?.carbon / 1000)} t</p>
                         </div>
                     )}
                 </div>
@@ -64,28 +57,21 @@ export function CardImpact({title, type, impact, impactToken}: Props){
                         <p className="font-bold text-white text-lg">{t('Solo')}</p>
                         {type === 'impactToken' && (
                             <>
-                            <p className="font-bold text-white text-lg">/</p>
-                            <Image
-                                src={require('../assets/token.png')}
-                                alt='carbono'
-                                className="w-[20px] object-contain"
-                            />
+                                <p className="font-bold text-white text-lg">/</p>
+                                <Image
+                                    src={require('../assets/token.png')}
+                                    alt='carbono'
+                                    className="w-[20px] object-contain"
+                                />
                             </>
                         )}
                     </div>
-                    
+
                     {type === 'impactToken' ? (
-                        <p className="font-bold text-white text-xl">{Number(impactToken?.soil * 10000).toFixed(2).replace('.',',')} cm²</p>
+                        <p className="font-bold text-white text-xl">{Intl.NumberFormat('pt-BR', {maximumFractionDigits: 2}).format(impactToken?.soil * 10000)} cm²</p>
                     ) : (
                         <div className="flex items-center gap-1">
-                        <NumericFormat 
-                            value={impact?.solo?.toFixed(0)} 
-                            allowLeadingZeros 
-                            thousandSeparator="." 
-                            decimalSeparator="," 
-                            className="font-bold text-white bg-transparent text-xl text-end w-28"
-                        />
-                        <p className="font-bold text-white text-lg">m²</p>
+                            <p className="font-bold text-white text-lg">{Intl.NumberFormat('pt-BR', {maximumFractionDigits: 0}).format(impact?.solo)} m²</p>
                         </div>
                     )}
                 </div>
@@ -99,28 +85,21 @@ export function CardImpact({title, type, impact, impactToken}: Props){
                         <p className="font-bold text-white text-lg">{t('Bio.')}</p>
                         {type === 'impactToken' && (
                             <>
-                            <p className="font-bold text-white text-lg">/</p>
-                            <Image
-                                src={require('../assets/token.png')}
-                                alt='carbono'
-                                className="w-[20px] object-contain"
-                            />
+                                <p className="font-bold text-white text-lg">/</p>
+                                <Image
+                                    src={require('../assets/token.png')}
+                                    alt='carbono'
+                                    className="w-[20px] object-contain"
+                                />
                             </>
                         )}
                     </div>
-                    
+
                     {type === 'impactToken' ? (
-                        <p className="font-bold text-white text-xl">{Number(impactToken?.bio).toFixed(2).replace('.',',')} uv</p>
+                        <p className="font-bold text-white text-xl">{Intl.NumberFormat('pt-BR', {maximumFractionDigits: 5}).format(impactToken?.bio)} uv</p>
                     ) : (
                         <div className="flex items-center gap-1">
-                        <NumericFormat 
-                            value={impact?.bio?.toFixed(0)} 
-                            allowLeadingZeros 
-                            thousandSeparator="." 
-                            decimalSeparator="," 
-                            className="font-bold text-white bg-transparent text-xl text-end w-28"
-                        />
-                        <p className="font-bold text-white text-lg">uv</p>
+                            <p className="font-bold text-white text-lg">{Intl.NumberFormat('pt-BR', {maximumFractionDigits: 0}).format(impact?.bio)} uv</p>
                         </div>
                     )}
                 </div>
@@ -134,28 +113,21 @@ export function CardImpact({title, type, impact, impactToken}: Props){
                         <p className="font-bold text-white text-lg">{t('Água')}</p>
                         {type === 'impactToken' && (
                             <>
-                            <p className="font-bold text-white text-lg">/</p>
-                            <Image
-                                src={require('../assets/token.png')}
-                                alt='carbono'
-                                className="w-[20px] object-contain"
-                            />
+                                <p className="font-bold text-white text-lg">/</p>
+                                <Image
+                                    src={require('../assets/token.png')}
+                                    alt='carbono'
+                                    className="w-[20px] object-contain"
+                                />
                             </>
                         )}
                     </div>
-                    
+
                     {type === 'impactToken' ? (
-                        <p className="font-bold text-white text-xl">{Number(impactToken?.water * 1000).toFixed(2).replace('.',',')} L</p>
+                        <p className="font-bold text-white text-xl">{Intl.NumberFormat('pt-BR', {maximumFractionDigits: 3}).format(impactToken?.water * 1000)} L</p>
                     ) : (
                         <div className="flex items-center gap-1">
-                        <NumericFormat 
-                            value={impact?.agua?.toFixed(0)} 
-                            allowLeadingZeros 
-                            thousandSeparator="." 
-                            decimalSeparator="," 
-                            className="font-bold text-white bg-transparent text-xl text-end w-28"
-                        />
-                        <p className="font-bold text-white text-lg">m³</p>
+                            <p className="font-bold text-white text-lg">{Intl.NumberFormat('pt-BR', {maximumFractionDigits: 0}).format(impact?.agua)} m³</p>
                         </div>
                     )}
                 </div>
