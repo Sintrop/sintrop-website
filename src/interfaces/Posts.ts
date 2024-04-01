@@ -8,7 +8,8 @@ export interface PostsProps{
     language: string;
     createdAt: string;
     keywords: string;
-    url: string
+    url: string;
+    authorData: string;
 }
 
 export interface BodyPostProps{
