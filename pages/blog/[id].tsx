@@ -14,6 +14,7 @@ import { Footer } from "../../components/Footer";
 import { useTranslation } from "next-i18next";
 import { CardPost } from "../../components/CardPost";
 import { db } from "../../src/lib/prisma";
+import { UserProps } from "../newPubli";
 
 interface ServerSideProps{
     post: PostsProps
@@ -26,6 +27,7 @@ const DetailPost = ({post}: ServerSideProps) => {
     const [contentPost, setContentPost] = useState('');
     const [newVersion, setNewVersion] = useState(false);
     const [posts, setPosts] = useState<PostsProps[]>([]);
+    const [authorData, setAuthorData] = useState({} as UserProps);
 
     useEffect(() => {
         if(typeof(JSON.parse(post.bodyPost)) === 'string'){
@@ -34,6 +36,12 @@ const DetailPost = ({post}: ServerSideProps) => {
         }else{
             setNewVersion(false);
             setBodyPost(JSON.parse(post.bodyPost))
+        }
+
+        if(post?.authorData){
+            setAuthorData(JSON.parse(post?.authorData))
+        }else{
+            setAuthorData({wallet: '0x2c53392A0601FDEa8290c2c5775ed620402B7752', name: 'Sintrop', id: '4f8d54sf65e4w'})
         }
         getPosts();
     },[]);
@@ -66,9 +74,10 @@ const DetailPost = ({post}: ServerSideProps) => {
                 <div className='lg:w-[1000px] mb-6 mx-2 mt-5 lg:mt-40 flex flex-col items-start w-full px-2 lg:px-0'>
                     <h1 className="font-bold text-xl lg:text-4xl text-[#062C01]">{post.title}</h1>
                     <div className='flex items-center gap-5'>
-                        <p className='text-sm'>Por: Sintrop</p>
+                        <p className='text-sm'>Por: {authorData?.name}</p>
                         <p className='text-sm'>{format(new Date(post.createdAt), 'dd/MM/yyyy - kk:mm')}</p>
                     </div>
+                    <p className='text-sm'>Wallet: {String(authorData?.wallet).toLowerCase()}</p>
                 </div>
                 <img
                     src={post.bannerUrl}

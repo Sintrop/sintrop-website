@@ -23,6 +23,7 @@ export default async function handler(
                 title: body.title,
                 keywords: body.title,
                 url: body.url,
+                authorData: body?.authorData,
             }
         });
 

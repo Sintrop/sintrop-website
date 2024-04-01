@@ -20,22 +20,25 @@ interface ContentProps{
     href?: string;
 }
 
+export interface UserProps{
+    id: string;
+    name: string;
+    wallet: string;
+}
+
 const NewPubli: NextPage = () => {
     const [loading, setLoading] = useState(false);
     const [title, setTitle] = useState('');
     const [description, setDescription] = useState('');
     const [keywords, setKeywords] = useState('');
-    const [tagType, setTagType] = useState('');
-    const [tagValue, setTagValue] = useState('');
-    const [href, setHref] = useState('');
-    const [imgUrl, setImgUrl] = useState('');
-    const [imgAlt, setImgAlt] = useState('');
+    const [userData, setUserData] = useState({} as UserProps);
     const [contentPost, setContentPost] = useState('');
     const [imgBannerUrl, setImgBannerUrl] = useState('');
     const [imgBannerAlt, setImgBannerAlt] = useState('');
     const [language, setLanguage] = useState('pt-BR');
     const [tokenJWT, setTokenJWT] = useState('');
     const [password, setPassword] = useState('');
+    const [wallet, setWallet] = useState('');
 
     useEffect(() => {
         verifyContentPostSaved();
@@ -94,14 +97,20 @@ const NewPubli: NextPage = () => {
     async function handleLogin() {
         try{
             const response = await api.post('/login', {
-                wallet: '0x2c53392A0601FDEa8290c2c5775ed620402B7752',
+                wallet: wallet,
                 password
             })
             setTokenJWT(response.data)
             api.defaults.headers.common['Authorization'] = `Bearer ${response.data}`;
+            getUserData();
         }catch(err){
             console.log(err);
         }
+    }
+
+    async function getUserData(){
+        const response = await api.get('/me');
+        setUserData(response.data.user);
     }
 
     async function handleSendPost() {
@@ -116,6 +125,7 @@ const NewPubli: NextPage = () => {
                 title,
                 keywords,
                 url: title.replaceAll(' ', '-').toLowerCase(),
+                authorData: JSON.stringify(userData),
             })
             localStorage.removeItem('contentEditor');
             toast.success('Post feito com sucesso!')
@@ -144,7 +154,16 @@ const NewPubli: NextPage = () => {
         return(
             <div className="flex flex-col items-center justify-center">
                 <div className="flex flex-col w-[500px] gap-1">
-                    <p className="text-green-700 font-bold">Digite a senha de administrador:</p>
+                    <p className="text-green-700 font-bold">Digite sua wallet</p>
+                    <input
+                        className="p-2 rounded-md bg-gray-200"
+                        type='text'
+                        value={wallet}
+                        onChange={e => setWallet(e.target.value)}
+                        placeholder='Digite a wallet aqui'
+                    />
+
+                    <p className="text-green-700 font-bold mt-3">Digite sua senha</p>
                     <input
                         className="p-2 rounded-md bg-gray-200"
                         type='password'
@@ -166,6 +185,11 @@ const NewPubli: NextPage = () => {
     return(
         <div className="flex flex-col items-center">
             <div className="flex flex-col w-[1000px]">
+                <div className="flex flex-col p-2 rounded-md bg-gray-200 my-2">
+                    <p className="text-gray-800 text-sm">Você está conectado como:</p>
+                    <p className="font-bold">{userData?.name}</p>
+                    <p className="">{String(userData?.wallet).toLowerCase()}</p>
+                </div>
                 Nova publicação
                 {imgBannerUrl !== '' && (
                     <img
