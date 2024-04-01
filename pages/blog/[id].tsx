@@ -17,16 +17,16 @@ import { db } from "../../src/lib/prisma";
 import { UserProps } from "../newPubli";
 
 interface ServerSideProps{
-    post: PostsProps
+    post: PostsProps;
+    mostSeen: PostsProps[];
 }
 
-const DetailPost = ({post}: ServerSideProps) => {
+const DetailPost = ({post, mostSeen}: ServerSideProps) => {
     const router = useRouter();
     const {t} = useTranslation();
     const [bodyPost, setBodyPost] = useState<BodyPostProps[]>([]);
     const [contentPost, setContentPost] = useState('');
     const [newVersion, setNewVersion] = useState(false);
-    const [posts, setPosts] = useState<PostsProps[]>([]);
     const [authorData, setAuthorData] = useState({} as UserProps);
 
     useEffect(() => {
@@ -43,14 +43,7 @@ const DetailPost = ({post}: ServerSideProps) => {
         }else{
             setAuthorData({wallet: '0x2c53392A0601FDEa8290c2c5775ed620402B7752', name: 'Sintrop', id: '4f8d54sf65e4w'})
         }
-        getPosts();
     },[]);
-
-    async function getPosts(){
-        const response = await api.get('/posts/most-seen');
-        const arrayPosts = response.data.posts;
-        setPosts(arrayPosts.slice(0,3))
-    }
 
     return(
         <main className="flex flex-col items-center w-full scrollbar-thin scrollbar-thumb-green-900 scrollbar-thumb-rounded-md">  
@@ -112,7 +105,7 @@ const DetailPost = ({post}: ServerSideProps) => {
                 <div className='flex flex-col lg:w-[1000px] px-2'>
                     <h3 className='font-bold text-center lg:text-start lg:text-2xl text-[#062C01] mb-2'>{t('Mais vistos')}</h3>
                     
-                    {posts.map(item => (
+                    {mostSeen.map(item => (
                         <CardPost
                             key={item.id}
                             data={item}
@@ -137,13 +130,14 @@ export const getServerSideProps = async(context: ContextProps) => {
             }
         });
 
-        if(response){
+        if(response?.id){
+            const count = response.views + 1
             db.post.update({
                 where:{
                     id: response?.id
                 },
                 data:{
-                    views: response?.views + 1
+                    views: count
                 }
             })
         }
@@ -158,6 +152,7 @@ export const getServerSideProps = async(context: ContextProps) => {
         return{
             props:{
                 post: JSON.parse(JSON.stringify(response)),
+                mostSeen: JSON.parse(JSON.stringify(mostSeen.slice(0, 3))),
             }
         }
     }catch(err){
