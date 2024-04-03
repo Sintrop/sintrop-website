@@ -106,11 +106,31 @@ const App: NextPage = (_props: InferGetStaticPropsType<typeof getStaticProps>) =
                         />
 
                         <Link
-                            href='https://apps.apple.com/us/app/sintrop/id6475600488'
+                            href='https://apps.apple.com/br/app/sintrop/id6475600488'
                             target="_blank"
                             className="w-full py-2 rounded-md bg-green-700 text-white font-bold items-center justify-center flex"
                         >
                             Clique aqui para baixar
+                        </Link>
+                    </div>
+
+                    <div className="flex flex-col items-center w-[300px] border rounded-md p-3 gap-3">
+                        <h3 className="font-bold text-center text-green-700 text-xl mt-7 mb-2">Plataforma web</h3>
+
+                        <Image
+                            alt='qr code apple store'
+                            src={require('../public/assets/qr-code-app-web.png')}
+                            width={1000}
+                            height={1000}
+                            className="w-48 h-48 object-contain"
+                        />
+
+                        <Link
+                            href='https://app.sintrop.com'
+                            target="_blank"
+                            className="w-full py-2 rounded-md bg-green-700 text-white font-bold items-center justify-center flex"
+                        >
+                            Clique aqui para acessar
                         </Link>
                     </div>
                 </div>
