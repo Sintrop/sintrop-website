@@ -127,7 +127,7 @@ const Home: NextPage = (_props: InferGetStaticPropsType<typeof getStaticProps>) 
                             {t('BAIXAR WHITEPAPER')}
                         </Link>
                         <Link
-                            href='https://v4-sintrop.netlify.app'
+                            href='https://app.sintrop.com'
                             target='_blank'
                             className='w-52 h-14 border-2 rounded-xl bg-[#3E9EF5] text-white text-sm font-bold flex items-center justify-center'
                         >
