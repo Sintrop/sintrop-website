@@ -10,6 +10,7 @@ import { useRouter } from 'next/router';
 import Link from 'next/link';
 import { useTranslation } from 'next-i18next';
 import { db } from '../../src/lib/prisma';
+import { TopBar } from '../../components/TopBar';
 
 interface ServerSideProps{
     posts: PostsProps[]
@@ -37,6 +38,7 @@ const Blog = ({posts}: ServerSideProps) => {
             </Head>
 
             <div className={`flex flex-col items-center w-full bg-post bg-left lg:bg-center bg-no-repeat bg-cover lg:h-[550px]`}>
+                <TopBar/>
                 <Header/>
 
                 <div className='flex flex-col items-center w-full h-full bg-black/80 pb-5'>

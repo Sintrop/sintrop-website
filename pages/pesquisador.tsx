@@ -15,6 +15,7 @@ import { ModalRegister } from "../components/ModalRegister";
 import {useState, useEffect} from 'react';
 import { api } from "../src/services/api";
 import { usersCountProps } from "./index";
+import { TopBar } from "../components/TopBar";
 
 interface StaticProps{
     locale: string;
@@ -64,6 +65,7 @@ const Pesquisador: NextPage = (_props: InferGetStaticPropsType<typeof getStaticP
             </Head>
             
             <div className='flex flex-col items-center w-full bg-pesquisador bg-left lg:bg-center lg:h-[550px] pb-5'>
+                <TopBar/>
                 <Header/>
 
                 <section className='flex flex-col lg:w-[1000px] lg:mt-44'>

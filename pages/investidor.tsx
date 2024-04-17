@@ -14,6 +14,7 @@ import { useRouter } from "next/router";
 import { useCountdown } from "../src/hooks/useCountdown";
 import { CardGoals } from "../components/CardGoals";
 import { api } from "../src/services/api";
+import { TopBar } from "../components/TopBar";
 
 interface StaticProps{
     locale: string;
@@ -73,6 +74,7 @@ const Investidor: NextPage = (_props: InferGetStaticPropsType<typeof getStaticPr
             </Head>
 
             <div className='flex flex-col items-center w-full bg-investidor bg-left lg:bg-center lg:h-[550px] pb-5'>
+                <TopBar/>
                 <Header/>
 
                 <section className='flex flex-col lg:w-[1000px] lg:mt-44'>

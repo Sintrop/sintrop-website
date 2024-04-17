@@ -14,6 +14,7 @@ import {useState, useEffect} from 'react';
 import { ModalRegister } from "../components/ModalRegister";
 import { usersCountProps } from "./index";
 import { api } from "../src/services/api";
+import { TopBar } from "../components/TopBar";
 
 interface StaticProps{
     locale: string;
@@ -64,6 +65,7 @@ const Inspetor: NextPage = (_props: InferGetStaticPropsType<typeof getStaticProp
 
                     
             <div className='flex flex-col items-center w-full bg-inspetor bg-left lg:bg-center lg:h-[550px] pb-5'>
+                <TopBar/>
                 <Header/>
 
                 <section className='flex flex-col lg:w-[1000px] lg:mt-44'>

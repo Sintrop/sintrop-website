@@ -15,6 +15,7 @@ import { useRouter } from "next/router";
 import { ModalRegister } from '../components/ModalRegister';
 import { api } from '../src/services/api';
 import { usersCountProps } from './index';
+import { TopBar } from '../components/TopBar';
 
 interface StaticProps{
     locale: string;
@@ -63,6 +64,7 @@ const Produtor: NextPage = (_props: InferGetStaticPropsType<typeof getStaticProp
                 <link rel='icon' type='image/png' href='/favicon.png'/>
             </Head>
             <div className='flex flex-col items-center w-full bg-produtor bg-left lg:bg-center lg:h-[550px] pb-5'>
+                <TopBar/>
                 <Header/>
 
                 <section className='flex flex-col lg:w-[1000px] lg:mt-44'>

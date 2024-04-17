@@ -15,6 +15,7 @@ import { useTranslation } from "next-i18next";
 import { CardPost } from "../../components/CardPost";
 import { db } from "../../src/lib/prisma";
 import { UserProps } from "../newPubli";
+import { TopBar } from "../../components/TopBar";
 
 interface ServerSideProps{
     post: PostsProps;
@@ -62,6 +63,7 @@ const DetailPost = ({post, mostSeen}: ServerSideProps) => {
                 <link rel='icon' type='image/png' href='/favicon.png'/>
             </Head>
             <div className='flex flex-col items-center'>
+                <TopBar/>
                 <Header blog/>
                 
                 <div className='lg:w-[1000px] mb-6 mx-2 mt-5 lg:mt-40 flex flex-col items-start w-full px-2 lg:px-0'>

@@ -23,6 +23,7 @@ import { ImpactProps, ImpactTokenProps } from '../src/interfaces/impact';
 import {CgDanger} from 'react-icons/cg';
 import { ContextProps } from '../src/interfaces/ContextServerSide';
 import { PostsProps } from '../src/interfaces/Posts';
+import { TopBar } from '../components/TopBar';
 
 interface StaticProps{
     locale: string;
@@ -103,6 +104,7 @@ const Home: NextPage = (_props: InferGetStaticPropsType<typeof getStaticProps>) 
             </Head>
 
             <div className='flex flex-col items-center w-full bg-home bg-left lg:bg-center pb-5 lg:h-[550px]'>
+                <TopBar/>
                 <Header/>
 
                 <section className='flex flex-col px-2 lg:w-[1000px] lg:mt-44'>

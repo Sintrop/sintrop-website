@@ -7,6 +7,7 @@ import Link from "next/link";
 import { Header } from "../components/Header";
 import { Footer } from "../components/Footer";
 import Image from "next/image";
+import { TopBar } from "../components/TopBar";
 
 
 interface StaticProps {
@@ -44,6 +45,7 @@ const App: NextPage = (_props: InferGetStaticPropsType<typeof getStaticProps>) =
             </Head>
 
             <div className='flex flex-col items-center w-full bg-[url("../assets/new-bg.jpg")] bg-left lg:bg-center pb-5 lg:h-[550px]'>
+                <TopBar/>
                 <Header />
 
                 <section className='flex flex-col px-2 lg:w-[1000px] lg:mt-44'>
