@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import { api } from "../src/services/api";
 import Link from "next/link";
+import { UseTranslation, useTranslation } from "next-i18next";
 
 interface ImpactProps{
     carbon: number;
@@ -11,6 +12,7 @@ interface ImpactProps{
 }
 
 export function TopBar() {
+    const {t} = useTranslation();
     const [era, setEra] = useState(1);
     const [nextEra, setNextEra] = useState(0);
     const [impactToken, setImpactToken] = useState({} as ImpactProps);
@@ -46,11 +48,11 @@ export function TopBar() {
     return (
         <div className="w-full h-[40px] bg-green-700 flex fixed top-0 left-0 items-center z-50 overflow-auto">
             <div className="flex items-center min-w-[1400px] px-3 gap-5">
-                <p className=" text-gray-200 text-xs">Era atual: <span className="font-bold text-green-300">{era}</span></p>
+                <p className=" text-gray-200 text-xs">{t('Era atual')}: <span className="font-bold text-green-300">{era}</span></p>
 
                 <p className=" text-gray-200 text-xs">
-                    Próx. era:
-                    <span className="font-bold text-green-300"> {Intl.NumberFormat('pt-BR').format(nextEra)} blocos </span>
+                    {t('Próx. era')}:
+                    <span className="font-bold text-green-300"> {Intl.NumberFormat('pt-BR').format(nextEra)} {t('blocos')} </span>
                     <span className="text-white font-bold">
                         {blocosEmSegundos > 86400 && (` (${blocosEmDias.toFixed(0)} dias)`)}
                         {blocosEmSegundos > 3600 && blocosEmSegundos < 86400 ? (` (${blocosEmHoras.toFixed(0)} horas)`) : null}
@@ -69,11 +71,11 @@ export function TopBar() {
 
                 
                 <p className=" text-gray-200 text-xs gap-3">
-                    Impacto por token:
-                    <span className="font-bold text-green-300"> Carbono: {Intl.NumberFormat('pt-BR', { maximumFractionDigits: 3 }).format(impactToken?.carbon * 1000)} g</span>
-                    <span className="font-bold text-green-300"> | Água: {Intl.NumberFormat('pt-BR', { maximumFractionDigits: 4 }).format(impactToken?.water * 1000)} L</span>
-                    <span className="font-bold text-green-300"> | Solo: {Intl.NumberFormat('pt-BR', { maximumFractionDigits: 4 }).format(impactToken?.soil * 10000)} cm²</span>
-                    <span className="font-bold text-green-300"> | Biodver.: {Intl.NumberFormat('pt-BR', { maximumFractionDigits: 4 }).format(impactToken?.bio)} uv</span>
+                    {t('Impacto por token')}:
+                    <span className="font-bold text-green-300"> {t('Carbono')}: {Intl.NumberFormat('pt-BR', { maximumFractionDigits: 3 }).format(impactToken?.carbon * 1000)} g</span>
+                    <span className="font-bold text-green-300"> | {t('Água')}: {Intl.NumberFormat('pt-BR', { maximumFractionDigits: 4 }).format(impactToken?.water * 1000)} L</span>
+                    <span className="font-bold text-green-300"> | {t('Solo')}: {Intl.NumberFormat('pt-BR', { maximumFractionDigits: 4 }).format(impactToken?.soil * 10000)} cm²</span>
+                    <span className="font-bold text-green-300"> | Bio: {Intl.NumberFormat('pt-BR', { maximumFractionDigits: 4 }).format(impactToken?.bio)} uv</span>
                 </p>
                 
 
@@ -87,7 +89,7 @@ export function TopBar() {
                         className="w-5 h-5 object-contain"
                         alt='Logo do crédito de regeneração'
                     />
-                    <p className="font-bold text-white text-xs">Pré-venda do Crédito De Regeneração</p>
+                    <p className="font-bold text-white text-xs">{t('Pré-venda do Crédito De Regeneração')}</p>
                 </Link>
             </div>
         </div>
