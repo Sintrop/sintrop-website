@@ -132,15 +132,15 @@ const Investidor: NextPage = (_props: InferGetStaticPropsType<typeof getStaticPr
                 <div className="flex flex-col items-center justify-between w-full lg:flex-row">
                     <div className='flex flex-col gap-3 lg:w-[45%]'>
                         <h4 className="font-bold text-green-900 text-lg italic">{t('Transformamos o impacto de regeneração de ecossistemas em um ativo digital, para guardar ou trocar pelo certificado de contribuição ambiental')}.</h4>
-                        <p className='text-black text-lg mt-5'>{t('O Crédito de Regeneração é uma criptomoeda lastreada no impacto de restauração de ecossistemas de produtores rurais regenerativos e projetos de reflorestamento')}.</p>
+                        <p className='text-black text-lg mt-5'>{t('O Crédito de Regeneração é um criptoativo lastreado no impacto de restauração de ecossistemas de produtores rurais regenerativos e projetos de reflorestamento')}.</p>
                     </div>
                     <Image
-                        src={require('../public/assets/token-3.png')}
+                        src={require('../public/assets/token.png')}
                         alt='Gráfico impacto do token por co2'
                         className="lg:w-[40%] object-contain"
                     />
                 </div>
-                <div className='flex items-center justify-center gap-8 flex-wrap'>
+                <div className='flex items-center justify-center gap-8 flex-wrap mt-10'>
                     <div className='flex flex-col p-3 rounded-lg shadow-xl shadow-black/30 bg-gray-200 gap-3 h-[260px] w-full lg:w-[300px]'>
                         <Image
                             src={require('../public/assets/icon-descentralizado.png')}

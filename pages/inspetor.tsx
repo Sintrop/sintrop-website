@@ -128,7 +128,7 @@ const Inspetor: NextPage = (_props: InferGetStaticPropsType<typeof getStaticProp
                     </div>
 
                     <div className='flex flex-col '>
-                        <div className='flex flex-col py-2 px-10 items-center bg-credito-token-white bg-no-repeat bg-contain w-full lg:w-[320px] h-[488px]'>
+                        <div className='flex flex-col py-2 px-10 items-center bg-credito-token-green bg-no-repeat bg-contain w-full lg:w-[320px] h-[488px]'>
                             <h4 className="text-white text-xs">{t('RECOMPENSA TOTAL DE TOKENS')}</h4>
                             <p className="text-white text-2xl font-bold">180.000.000</p>
 

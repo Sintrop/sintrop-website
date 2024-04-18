@@ -162,7 +162,7 @@ const Home: NextPage = (_props: InferGetStaticPropsType<typeof getStaticProps>) 
                 <div className="flex flex-col items-center justify-between w-full lg:flex-row">
                     <div className='flex flex-col gap-3 lg:w-[45%]'>
                         <h4 className="font-bold text-green-900 text-lg italic">{t('Transformamos o impacto de regeneração de ecossistemas em um ativo digital, para guardar ou trocar pelo certificado de contribuição ambiental')}.</h4>
-                        <p className='text-black text-lg mt-5'>{t('O Crédito de Regeneração é uma criptomoeda lastreada no impacto de restauração de ecossistemas de produtores rurais regenerativos e projetos de reflorestamento')}.</p>
+                        <p className='text-black text-lg mt-5'>{t('O Crédito de Regeneração é um criptoativo lastreado no impacto de restauração de ecossistemas de produtores rurais regenerativos e projetos de reflorestamento')}.</p>
                     </div>
                     <Image
                         src={require('../public/assets/token.png')}
