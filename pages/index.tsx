@@ -110,7 +110,7 @@ const Home: NextPage = (_props: InferGetStaticPropsType<typeof getStaticProps>) 
                 <link rel='icon' type='image/png' href='/favicon.png' />
             </Head>
 
-            <div className='flex flex-col items-center w-full bg-home bg-left lg:bg-center pb-5 lg:h-[550px]'>
+            <div className='flex flex-col items-center w-full bg-new-home bg-left lg:bg-center pb-5 lg:h-[550px]'>
                 <TopBar />
                 <Header />
 
@@ -154,7 +154,13 @@ const Home: NextPage = (_props: InferGetStaticPropsType<typeof getStaticProps>) 
                 <Image
                     alt='banner pré venda do crédito de regeneração'
                     src={require('../public/assets/banner-pc.jpg')}
-                    className='w-full h-[230px] rounded-md border-4 border-yellow-400'
+                    className='w-full h-[230px] rounded-md border-4 border-yellow-400 hidden lg:flex'
+                />
+
+                <Image
+                    alt='banner pré venda do crédito de regeneração'
+                    src={require('../public/assets/banner-mobile.jpg')}
+                    className='w-full h-[130px] rounded-md border-4 border-yellow-400 lg:hidden'
                 />
             </Link>
 
