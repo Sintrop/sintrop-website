@@ -32,7 +32,7 @@ export async function getStaticProps({locale}: StaticProps) {
 
 const Investidor: NextPage = (_props: InferGetStaticPropsType<typeof getStaticProps>) => {
     const router = useRouter();
-    const [days, hours, minutes, seconds] = useCountdown('2023-11-30 23:59:59');
+    const [days, hours, minutes, seconds] = useCountdown('2024-06-25 23:59:59');
     const {t} = useTranslation('common');
     const [quotesAvaliables, setQuotesAvaliables] = useState(0);
     const [modalReserve, setModalReserve] = useState(false);
@@ -109,6 +109,70 @@ const Investidor: NextPage = (_props: InferGetStaticPropsType<typeof getStaticPr
                 </section>
             </div>
 
+            <section className='flex flex-col px-2 items-center justify-center gap-5 w-full pt-10 pb-10 bg-presale my-10 rounded-md'>
+                <div className='flex flex-col lg:flex-row lg:w-[1000px] items-center'>
+                    <div className='flex flex-col lg:w-[50%]'>
+                        <h3 className='font-bold text-white text-4xl'>PRÉ-VENDA</h3>
+                        <h3 className='font-bold text-green-500 text-4xl'>Crédito de regeneração</h3>
+
+                        <p className="text-sm text-white mt-5">Essa oferta encerra em (25/06/2024)</p>
+                        <div className="flex items-center gap-2">
+                            <div className="flex flex-col p-2 rounded-md bg-green-500 w-16 items-center">
+                                <p className="font-bold text-white text-xl">{days}</p>
+                                <p className="text-center text-xs text-white">Dias</p>
+                            </div>
+                            <div className="flex flex-col p-2 rounded-md bg-green-500 w-16 items-center">
+                                <p className="font-bold text-white text-xl">{hours}</p>
+                                <p className="text-center text-xs text-white">Horas</p>
+                            </div>
+                            <div className="flex flex-col p-2 rounded-md bg-green-500 w-16 items-center">
+                                <p className="font-bold text-white text-xl">{minutes}</p>
+                                <p className="text-center text-xs text-white">Minutos</p>
+                            </div>
+                            <div className="flex flex-col p-2 rounded-md bg-green-500 w-16 items-center">
+                                <p className="font-bold text-white text-xl">{seconds}</p>
+                                <p className="text-center text-xs text-white">Segundos</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className='flex flex-col lg:w-[50%]'>
+                        <div className="flex flex-col border border-green-500 bg-[rgba(0,0,0,0.6)] rounded-md p-2 gap-1 mt-3">
+                            <div className="flex items-center w-full justify-between">
+                                <h3 className="text-gray-200 text-xs lg:text-sm">Tokens ofertados</h3>
+                                <p className="font-bold text-green-500 text-sm lg:text-base">39.000.000</p>
+                            </div>
+                            <div className="flex items-center w-full justify-between">
+                                <h3 className="text-gray-200 text-xs lg:text-sm">% da oferta privada</h3>
+                                <p className="font-bold text-green-500 text-sm lg:text-base">9,12 %</p>
+                            </div>
+                            <div className="flex items-center w-full justify-between">
+                                <h3 className="text-gray-200 text-xs lg:text-sm">Valor unitário</h3>
+                                <p className="font-bold text-green-500 text-sm lg:text-base">R$ 0,0282</p>
+                            </div>
+                            <div className="flex items-center w-full justify-between">
+                                <h3 className="text-gray-200 text-xs lg:text-sm">Alvo de capitalização</h3>
+                                <p className="font-bold text-green-500 text-sm lg:text-base">R$ 1.100.000,00</p>
+                            </div>
+                            <div className="flex items-center w-full justify-between">
+                                <h3 className="text-gray-200 text-xs lg:text-sm">Capitalização de mercado</h3>
+                                <p className="font-bold text-green-500 text-sm lg:text-base">R$ 12.057.692,31</p>
+                            </div>
+                        </div>
+
+                        <div className='flex justify-center mt-5'>
+                            <Link
+                                className='py-2 px-5 bg-red-500 rounded-md text-white font-bold text-sm'
+                                target='_blank'
+                                href='https://app.sintrop.com/pre-sale'
+                            >
+                                Acessar pré-venda
+                            </Link>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
             {/* <section className='flex flex-col px-4 lg:w-[1000px] py-10'>
                 <div className='w-full flex flex-col items-center lg:flex-row'>
                     <Image
@@ -176,7 +240,7 @@ const Investidor: NextPage = (_props: InferGetStaticPropsType<typeof getStaticPr
                 </div>
             </section>
 
-            <section className='flex flex-col px-4 items-center justify-center gap-5 pb-5 lg:w-[1000px] lg:py-10'>
+            {/* <section className='flex flex-col px-4 items-center justify-center gap-5 pb-5 lg:w-[1000px] lg:py-10'>
                 <h3 className='text-center font-bold text-green-900 text-2xl mb-2'>
                     {t('Potencial de valorização do impacto de CO2, solo, água e unidades de vida por token com o crescimento da comunidade')}
                 </h3>
@@ -199,9 +263,9 @@ const Investidor: NextPage = (_props: InferGetStaticPropsType<typeof getStaticPr
                         />
                     </div>
                 </div>
-            </section>
+            </section> */}
 
-            <section className='flex flex-col px-2 items-center w-full py-10 bg-[#0a4303] '>
+            {/* <section className='flex flex-col px-2 items-center w-full py-10 bg-[#0a4303] '>
                 <div className='flex flex-col items-center justify-center flex-wrap lg:w-[1000px]'>
                     <h4 className="font-bold text-2xl text-yellow-500 text-center">{t('PROJEÇÕES DE IMPACTO')}</h4>
                     <p className="text-white text-center mt-3">{t('Tabelas com as metas e possíveis projeções de impacto da rede')}</p>
@@ -234,9 +298,9 @@ const Investidor: NextPage = (_props: InferGetStaticPropsType<typeof getStaticPr
                         />
                     </div>
                 </div>
-            </section>
+            </section> */}
 
-            <section className='flex flex-col items-center justify-center gap-5 lg:w-[1000px] py-10 px-2'>  
+            {/* <section className='flex flex-col items-center justify-center gap-5 lg:w-[1000px] py-10 px-2'>  
                 {router.locale === 'pt-BR' && (
                     <Image
                         src={require('../public/assets/round.png')}
@@ -251,10 +315,9 @@ const Investidor: NextPage = (_props: InferGetStaticPropsType<typeof getStaticPr
                         className="w-full object-contain"
                     />
                 )}        
-                {/* <p className="font-bold text-white text-2xl mt-[-75px]">{t('Cotas disponíveis')}: {quotesAvaliables}</p> */}
-            </section>
+            </section> */}
 
-            <section className='flex flex-col px-2 items-center justify-center gap-5 lg:w-[1000px] pt-10 pb-20 lg:flex-row'>
+            {/* <section className='flex flex-col px-2 items-center justify-center gap-5 lg:w-[1000px] pt-10 pb-20 lg:flex-row'>
                 <div className='flex flex-col lg:w-[50%] gap-3'>
                     <h4 className="font-bold text-green-900 text-2xl">{t('Cenário que atingirmos a meta 2')}</h4>
                     <p className='text-black lg:w-[80%]'>{t('No cenário que atingimos a meta 2, o impacto estimado por token é de 23.7kg de CO2')}.</p>
@@ -266,7 +329,7 @@ const Investidor: NextPage = (_props: InferGetStaticPropsType<typeof getStaticPr
                         className="lg:w-[90%] object-contain"
                     />
                 </div>
-            </section>
+            </section> */}
 
             {/* <section className='flex flex-col px-4 items-center w-full py-10 bg-[#0a4303]'>
                 <div className='flex flex-col items-center justify-center gap-5 lg:w-[1000px] lg:flex-row'>
