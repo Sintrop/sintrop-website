@@ -23,7 +23,9 @@ module.exports = {
         "lines": "url('../public/assets/bg-lines.png')",
         "credit-investor": "url('../public/assets/bg-credit-investor.png')",
         "arvore-2": "url('../public/assets/arvore-2.png')",
-        "post": "url('https://firebasestorage.googleapis.com/v0/b/bolaofutebol-be9d3.appspot.com/o/post.png?alt=media&token=e3bbf779-77e4-4ce9-a3ff-61d8bea854a1')"
+        "new-home": "url('../public/assets/new-bg-home.jpg')",
+        "post": "url('https://firebasestorage.googleapis.com/v0/b/bolaofutebol-be9d3.appspot.com/o/post.png?alt=media&token=e3bbf779-77e4-4ce9-a3ff-61d8bea854a1')",
+        "presale": "url('../public/assets/bg-presale.jpg')",
       }
     },
   },

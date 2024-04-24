@@ -14,6 +14,7 @@ import {useState, useEffect} from 'react';
 import { ModalRegister } from "../components/ModalRegister";
 import { usersCountProps } from "./index";
 import { api } from "../src/services/api";
+import { TopBar } from "../components/TopBar";
 
 interface StaticProps{
     locale: string;
@@ -64,6 +65,7 @@ const Inspetor: NextPage = (_props: InferGetStaticPropsType<typeof getStaticProp
 
                     
             <div className='flex flex-col items-center w-full bg-inspetor bg-left lg:bg-center lg:h-[550px] pb-5'>
+                <TopBar/>
                 <Header/>
 
                 <section className='flex flex-col lg:w-[1000px] lg:mt-44'>
@@ -126,7 +128,7 @@ const Inspetor: NextPage = (_props: InferGetStaticPropsType<typeof getStaticProp
                     </div>
 
                     <div className='flex flex-col '>
-                        <div className='flex flex-col py-2 px-10 items-center bg-credito-token-white bg-no-repeat bg-contain w-full lg:w-[320px] h-[488px]'>
+                        <div className='flex flex-col py-2 px-10 items-center bg-credito-token-green bg-no-repeat bg-contain w-full lg:w-[320px] h-[488px]'>
                             <h4 className="text-white text-xs">{t('RECOMPENSA TOTAL DE TOKENS')}</h4>
                             <p className="text-white text-2xl font-bold">180.000.000</p>
 
