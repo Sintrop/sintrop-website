@@ -54,7 +54,7 @@ export async function getStaticProps({ locale }: StaticProps) {
 const Home: NextPage = (_props: InferGetStaticPropsType<typeof getStaticProps>) => {
     const router = useRouter();
     const { t } = useTranslation('common');
-    const [days, hours, minutes, seconds] = useCountdown('2023-11-30 23:59:59');
+    const [days, hours, minutes, seconds] = useCountdown('2024-06-25 23:59:59');
     const [networkImpact, setNetworkImpact] = useState({} as ImpactProps);
     const [confirmImpact, setConfirmImpact] = useState({} as ImpactProps);
     const [burnedImpact, setBurnedImpact] = useState({} as ImpactProps);
@@ -146,7 +146,7 @@ const Home: NextPage = (_props: InferGetStaticPropsType<typeof getStaticProps>) 
                 </section>
             </div>
 
-            <Link
+            {/* <Link
                 className='flex flex-col px-2 items-center justify-center gap-5 lg:w-[1000px] pt-10 pb-10'
                 target='_blank'
                 href='https://app.sintrop.com/pre-sale'
@@ -162,7 +162,69 @@ const Home: NextPage = (_props: InferGetStaticPropsType<typeof getStaticProps>) 
                     src={require('../public/assets/banner-mobile.jpg')}
                     className='w-full h-[130px] rounded-md border-4 border-yellow-400 lg:hidden'
                 />
-            </Link>
+            </Link> */}
+
+            <section className='flex flex-col px-2 items-center justify-center gap-5 lg:flex-row lg:w-[1000px] pt-10 pb-10 bg-presale my-10 rounded-md'>
+                <div className='flex flex-col lg:w-[50%]'>
+                    <h3 className='font-bold text-white text-4xl'>PRÉ-VENDA</h3>
+                    <h3 className='font-bold text-green-500 text-4xl'>Crédito de regeneração</h3>
+
+                    <p className="text-sm text-white mt-5">Essa oferta encerra em (25/06/2024)</p>
+                    <div className="flex items-center gap-2">
+                        <div className="flex flex-col p-2 rounded-md bg-green-500 w-16 items-center">
+                            <p className="font-bold text-white text-xl">{days}</p>
+                            <p className="text-center text-xs text-white">Dias</p>
+                        </div>
+                        <div className="flex flex-col p-2 rounded-md bg-green-500 w-16 items-center">
+                            <p className="font-bold text-white text-xl">{hours}</p>
+                            <p className="text-center text-xs text-white">Horas</p>
+                        </div>
+                        <div className="flex flex-col p-2 rounded-md bg-green-500 w-16 items-center">
+                            <p className="font-bold text-white text-xl">{minutes}</p>
+                            <p className="text-center text-xs text-white">Minutos</p>
+                        </div>
+                        <div className="flex flex-col p-2 rounded-md bg-green-500 w-16 items-center">
+                            <p className="font-bold text-white text-xl">{seconds}</p>
+                            <p className="text-center text-xs text-white">Segundos</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div className='flex flex-col lg:w-[50%]'>
+                    <div className="flex flex-col border border-green-500 bg-[rgba(0,0,0,0.6)] rounded-md p-2 gap-1 mt-3">
+                        <div className="flex items-center w-full justify-between">
+                            <h3 className="text-gray-200 text-xs lg:text-sm">Tokens ofertados</h3>
+                            <p className="font-bold text-green-500 text-sm lg:text-base">39.000.000</p>
+                        </div>
+                        <div className="flex items-center w-full justify-between">
+                            <h3 className="text-gray-200 text-xs lg:text-sm">% da oferta privada</h3>
+                            <p className="font-bold text-green-500 text-sm lg:text-base">9,12 %</p>
+                        </div>
+                        <div className="flex items-center w-full justify-between">
+                            <h3 className="text-gray-200 text-xs lg:text-sm">Valor unitário</h3>
+                            <p className="font-bold text-green-500 text-sm lg:text-base">R$ 0,0282</p>
+                        </div>
+                        <div className="flex items-center w-full justify-between">
+                            <h3 className="text-gray-200 text-xs lg:text-sm">Alvo de capitalização</h3>
+                            <p className="font-bold text-green-500 text-sm lg:text-base">R$ 1.100.000,00</p>
+                        </div>
+                        <div className="flex items-center w-full justify-between">
+                            <h3 className="text-gray-200 text-xs lg:text-sm">Capitalização de mercado</h3>
+                            <p className="font-bold text-green-500 text-sm lg:text-base">R$ 12.057.692,31</p>
+                        </div>
+                    </div>
+
+                    <div className='flex justify-center mt-5'>
+                        <Link
+                            className='py-2 px-5 bg-red-500 rounded-md text-white font-bold text-sm'
+                            target='_blank'
+                            href='https://app.sintrop.com/pre-sale'
+                        >
+                            Acessar pré-venda
+                        </Link>
+                    </div>
+                </div>
+            </section>
 
             <section className='flex flex-col px-2 items-center justify-center gap-5 lg:w-[1000px] pt-10 pb-10 lg:px-0'>
                 <div className="flex flex-col items-center justify-between w-full lg:flex-row">
