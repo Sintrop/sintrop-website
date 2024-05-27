@@ -24,10 +24,19 @@ export function CardUsers({title, bgColor, description, typeUser}: Props){
                 <p className='font-bold text-white text-xl mt-3'>{t(title)}</p>
                 <p className='text-white mt-1'>{t(description)}</p>
             </div>
-            <Link
-                href={`/${typeUser}`}
-                className="text-sm text-yellow-400 font-bold"
-            >{t('SABER MAIS')}</Link>
+
+            {typeUser === 'investidor' ? (
+                <Link
+                    href='https://pages.sintrop.com/apoiador'
+                    className="text-sm text-yellow-400 font-bold"
+                    target="_blank"
+                >{t('SABER MAIS')}</Link>
+            ) : (
+                <Link
+                    href={`/${typeUser}`}
+                    className="text-sm text-yellow-400 font-bold"
+                >{t('SABER MAIS')}</Link>
+            )}
         </div>
     )
 }

@@ -34,26 +34,14 @@ const Investidor: NextPage = (_props: InferGetStaticPropsType<typeof getStaticPr
     const router = useRouter();
     const [days, hours, minutes, seconds] = useCountdown('2024-06-25 23:59:59');
     const {t} = useTranslation('common');
-    const [quotesAvaliables, setQuotesAvaliables] = useState(0);
-    const [modalReserve, setModalReserve] = useState(false);
 
     useEffect(() => {
-        getQuotes();
+        router.replace('https://pages.sintrop.com/apoiador');
     }, []);
 
-    async function getQuotes() {
-        const response = await api.get('/quotes');
-        const quotes = response.data.quotes;
-        
-        let quotesAvaliables = 0;
-        for(var i = 0; i < quotes.length; i++) {
-            if(quotes[i].reservedBy === null){
-                quotesAvaliables += 1;
-            }
-        }
-        setQuotesAvaliables(quotesAvaliables);
-    }
-
+    return(
+        <div></div>
+    );
 
     return(
         <main className="flex flex-col items-center w-full">
