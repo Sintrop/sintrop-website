@@ -2,17 +2,17 @@ import Image from "next/image";
 import { useTranslation } from "react-i18next";
 import Link from "next/link";
 
-interface Props{
+interface Props {
     title: string;
     bgColor: string;
     description: string;
     typeUser: string;
 }
 
-export function CardUsers({title, bgColor, description, typeUser}: Props){
-    const {t} = useTranslation();
+export function CardUsers({ title, bgColor, description, typeUser }: Props) {
+    const { t } = useTranslation();
 
-    return(
+    return (
         <div className={`flex flex-col justify-between border-2 p-3 rounded-2xl overflow-hidden h-[400px] w-[95%] lg:w-[300px] ${bgColor === 'transparent' ? 'border-yellow-400' : 'border-green-900 bg-[#34812B]'}`}>
             <div>
                 <Image
@@ -32,10 +32,20 @@ export function CardUsers({title, bgColor, description, typeUser}: Props){
                     target="_blank"
                 >{t('SABER MAIS')}</Link>
             ) : (
-                <Link
-                    href={`/${typeUser}`}
-                    className="text-sm text-yellow-400 font-bold"
-                >{t('SABER MAIS')}</Link>
+                <>
+                    {typeUser === 'produtor' ? (
+                        <Link
+                            href='https://pages.sintrop.com/produtor'
+                            className="text-sm text-yellow-400 font-bold"
+                            target="_blank"
+                        >{t('SABER MAIS')}</Link>
+                    ) : (
+                        <Link
+                            href={`/${typeUser}`}
+                            className="text-sm text-yellow-400 font-bold"
+                        >{t('SABER MAIS')}</Link>
+                    )}
+                </>
             )}
         </div>
     )

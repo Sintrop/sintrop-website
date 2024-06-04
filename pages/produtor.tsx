@@ -38,13 +38,21 @@ const Produtor: NextPage = (_props: InferGetStaticPropsType<typeof getStaticProp
     const [countUsers, setCountUsers] = useState({} as usersCountProps);
 
     useEffect(() => {
-        getCountUsers();
-    },[]);
+        router.replace('https://pages.sintrop.com/produtor');
+    }, []);
 
-    async function getCountUsers(){
-        const response = await api.get('/users_count');
-        setCountUsers(response.data);
-    }
+    // useEffect(() => {
+    //     getCountUsers();
+    // },[]);
+
+    // async function getCountUsers(){
+    //     const response = await api.get('/users_count');
+    //     setCountUsers(response.data);
+    // }
+
+    return (
+        <div/>
+    )
 
     return(
         <main className="flex flex-col items-center w-full">

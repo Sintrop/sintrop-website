@@ -14,8 +14,9 @@ export function ModalComunity({close, mobile}: Props){
         <div onClick={close} className="flex w-screen h-screen top-0 left-0 absolute">
             <div className={`w-40 h-62 gap-1 bg-white flex flex-col rounded-lg ml-[-20px] top-12 right-[46%] mt-3 ${mobile ? 'fixed' : 'absolute'}`}>
                 <Link 
-                    href='/produtor'
+                    href='https://pages.sintrop.com/produtor'
                     className="flex w-[100%] h-10 items-center hover:bg-gray-300 hover:cursor-pointer rounded-lg px-2 gap-2"
+                    target="_blank"
                 >
                     <Image
                         alt='Ícone do produtor'
