@@ -25,27 +25,49 @@ export function CardUsers({ title, bgColor, description, typeUser }: Props) {
                 <p className='text-white mt-1'>{t(description)}</p>
             </div>
 
-            {typeUser === 'investidor' ? (
+            {typeUser === 'investidor' && (
                 <Link
                     href='https://pages.sintrop.com/apoiador'
                     className="text-sm text-yellow-400 font-bold"
                     target="_blank"
                 >{t('SABER MAIS')}</Link>
-            ) : (
-                <>
-                    {typeUser === 'produtor' ? (
-                        <Link
-                            href='https://pages.sintrop.com/produtor'
-                            className="text-sm text-yellow-400 font-bold"
-                            target="_blank"
-                        >{t('SABER MAIS')}</Link>
-                    ) : (
-                        <Link
-                            href={`/${typeUser}`}
-                            className="text-sm text-yellow-400 font-bold"
-                        >{t('SABER MAIS')}</Link>
-                    )}
-                </>
+            )}
+
+            {typeUser === 'produtor' && (
+                <Link
+                    href='https://pages.sintrop.com/produtor'
+                    className="text-sm text-yellow-400 font-bold"
+                    target="_blank"
+                >{t('SABER MAIS')}</Link>
+            )}
+
+            {typeUser === 'pesquisador' && (
+                <Link
+                    href='https://pages.sintrop.com/pesquisador'
+                    className="text-sm text-yellow-400 font-bold"
+                    target="_blank"
+                >{t('SABER MAIS')}</Link>
+            )}
+
+            {typeUser === 'ativista' && (
+                <Link
+                    href={`/${typeUser}`}
+                    className="text-sm text-yellow-400 font-bold"
+                >{t('SABER MAIS')}</Link>
+            )}
+
+            {typeUser === 'inspetor' && (
+                <Link
+                    href={`/${typeUser}`}
+                    className="text-sm text-yellow-400 font-bold"
+                >{t('SABER MAIS')}</Link>
+            )}
+
+            {typeUser === 'desenvolvedores' && (
+                <Link
+                    href={`/${typeUser}`}
+                    className="text-sm text-yellow-400 font-bold"
+                >{t('SABER MAIS')}</Link>
             )}
         </div>
     )

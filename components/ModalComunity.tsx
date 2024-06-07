@@ -39,8 +39,9 @@ export function ModalComunity({close, mobile}: Props){
                 </Link>
 
                 <Link 
-                    href='/pesquisador'
+                    href='https://pages.sintrop.com/pesquisador'
                     className="flex w-[100%] h-10 items-center hover:bg-gray-300 hover:cursor-pointer rounded-lg px-2 gap-2"
+                    target="_blank"
                 >
                     <Image
                         alt='Icone do produtor'
