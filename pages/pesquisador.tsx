@@ -2,19 +2,14 @@ import type { NextPage } from "next";
 import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
-import Script from "next/script";
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import type { GetStaticProps, InferGetStaticPropsType } from 'next'
 import { useTranslation,  } from 'next-i18next';
 import { BtnWhats } from "../components/BtnWhats";
-import { Card5 } from "../components/Card5";
 import { Footer } from "../components/Footer";
 import { Header } from "../components/Header";
 import { useRouter } from "next/router";
-import { ModalRegister } from "../components/ModalRegister";
 import {useState, useEffect} from 'react';
-import { api } from "../src/services/api";
-import { usersCountProps } from "./index";
 import { TopBar } from "../components/TopBar";
 
 interface StaticProps{
@@ -35,20 +30,10 @@ const Pesquisador: NextPage = (_props: InferGetStaticPropsType<typeof getStaticP
     const router = useRouter();
     const {t} = useTranslation('common');
     const [modalRegister, setModalRegister] = useState(false);
-    const [countUsers, setCountUsers] = useState({} as usersCountProps);
 
     useEffect(() => {
         router.replace('https://pages.sintrop.com/pesquisador');
     }, []);
-
-    async function getCountUsers(){
-        const response = await api.get('/users_count');
-        setCountUsers(response.data);
-    }
-
-    return(
-        <div/>
-    )
 
     return(
         <main className="flex flex-col items-center w-full">
@@ -160,15 +145,7 @@ const Pesquisador: NextPage = (_props: InferGetStaticPropsType<typeof getStaticP
                 </h4>
             </section>
 
-            {modalRegister && (
-                <ModalRegister
-                    close={() => setModalRegister(false)}
-                    user='pesquisador'
-                />
-            )}
-
             <Footer/>
-
             <BtnWhats/>
         </main>
     )

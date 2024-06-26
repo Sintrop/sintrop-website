@@ -236,22 +236,22 @@ const Home: NextPage = (_props: InferGetStaticPropsType<typeof getStaticProps>) 
                         <h3 className='font-bold text-white text-4xl'>PRÉ-VENDA</h3>
                         <h3 className='font-bold text-green-500 text-4xl'>Crédito de regeneração</h3>
 
-                        <p className="text-sm text-white mt-5">Essa oferta encerra em (25/06/2024)</p>
+                        <p className="text-sm text-white mt-5">Essa oferta encerrou em (25/06/2024)</p>
                         <div className="flex items-center gap-2">
                             <div className="flex flex-col p-2 rounded-md bg-green-500 w-16 items-center">
-                                <p className="font-bold text-white text-xl">{days}</p>
+                                <p className="font-bold text-white text-xl">0</p>
                                 <p className="text-center text-xs text-white">Dias</p>
                             </div>
                             <div className="flex flex-col p-2 rounded-md bg-green-500 w-16 items-center">
-                                <p className="font-bold text-white text-xl">{hours}</p>
+                                <p className="font-bold text-white text-xl">0</p>
                                 <p className="text-center text-xs text-white">Horas</p>
                             </div>
                             <div className="flex flex-col p-2 rounded-md bg-green-500 w-16 items-center">
-                                <p className="font-bold text-white text-xl">{minutes}</p>
+                                <p className="font-bold text-white text-xl">0</p>
                                 <p className="text-center text-xs text-white">Minutos</p>
                             </div>
                             <div className="flex flex-col p-2 rounded-md bg-green-500 w-16 items-center">
-                                <p className="font-bold text-white text-xl">{seconds}</p>
+                                <p className="font-bold text-white text-xl">0</p>
                                 <p className="text-center text-xs text-white">Segundos</p>
                             </div>
                         </div>
@@ -287,7 +287,7 @@ const Home: NextPage = (_props: InferGetStaticPropsType<typeof getStaticProps>) 
                                 target='_blank'
                                 href='https://app.sintrop.com/pre-sale'
                             >
-                                Acessar pré-venda
+                                Acessar lista de espera
                             </Link>
                         </div>
                     </div>

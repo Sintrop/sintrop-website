@@ -2,19 +2,14 @@ import {useState, useEffect} from 'react';
 import type { NextPage } from "next"
 import Head from "next/head";
 import Image from "next/image";
-import Script from "next/script";
 import Link from "next/link";
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import type { GetStaticProps, InferGetStaticPropsType } from 'next'
 import { useTranslation,  } from 'next-i18next';
-import { Card4 } from "../components/Card4";
 import { Header } from "../components/Header";
 import { Footer } from "../components/Footer";
 import { BtnWhats } from "../components/BtnWhats";
 import { useRouter } from "next/router";
-import { ModalRegister } from '../components/ModalRegister';
-import { api } from '../src/services/api';
-import { usersCountProps } from './index';
 import { TopBar } from '../components/TopBar';
 
 interface StaticProps{
@@ -34,25 +29,10 @@ export async function getStaticProps({locale}: StaticProps) {
 const Produtor: NextPage = (_props: InferGetStaticPropsType<typeof getStaticProps>) => {
     const router = useRouter();
     const {t} = useTranslation('common');
-    const [modalRegister, setModalRegister] = useState(false);
-    const [countUsers, setCountUsers] = useState({} as usersCountProps);
 
     useEffect(() => {
         router.replace('https://pages.sintrop.com/produtor');
     }, []);
-
-    // useEffect(() => {
-    //     getCountUsers();
-    // },[]);
-
-    // async function getCountUsers(){
-    //     const response = await api.get('/users_count');
-    //     setCountUsers(response.data);
-    // }
-
-    return (
-        <div/>
-    )
 
     return(
         <main className="flex flex-col items-center w-full">
@@ -199,13 +179,6 @@ const Produtor: NextPage = (_props: InferGetStaticPropsType<typeof getStaticProp
                     </span>
                 </h4>
             </section>
-
-            {modalRegister && (
-                <ModalRegister
-                    close={() => setModalRegister(false)}
-                    user='produtor'
-                />
-            )}
 
             <Footer/>
             <BtnWhats/>

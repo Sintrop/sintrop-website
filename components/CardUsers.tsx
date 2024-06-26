@@ -51,7 +51,8 @@ export function CardUsers({ title, bgColor, description, typeUser }: Props) {
 
             {typeUser === 'ativista' && (
                 <Link
-                    href={`/${typeUser}`}
+                    href='https://pages.sintrop.com/ativista'
+                    target="_blank"
                     className="text-sm text-yellow-400 font-bold"
                 >{t('SABER MAIS')}</Link>
             )}
