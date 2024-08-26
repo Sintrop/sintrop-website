@@ -54,29 +54,31 @@ const Home: NextPage = (_props: InferGetStaticPropsType<typeof getStaticProps>) 
                 <link rel='icon' type='image/png' href='/favicon.png' />
             </Head>
 
-            <Header/>
+            <Header />
             <main className="flex flex-col items-center w-full scrollbar-thin scrollbar-thumb-green-900 scrollbar-thumb-rounded-md">
-                <section className='w-full flex flex-col items-center justify-center py-10 h-[450px]'>
-                    <div className='w-full flex flex-col px-5 lg:px-0 lg:w-[1024px]'>
-                        <div className='flex flex-col'>
-                            <h1 className='font-bold text-[#686868] text-4xl lg:max-w-[50%]'>
-                                Building
-                                <span className='bg-gradient-to-r from-[#A5EC60] from-30% to-[#1C840F] text-transparent bg-clip-text'> decentralized </span>
-                                solutions to make the world a better place.
-                            </h1>
+                <section className='w-full flex flex-col items-center justify-center py-10 bg-first-section h-[450px]'>
+                    <div className='w-full flex flex-col items-center justify-center'>
+                        <div className='w-full flex flex-col px-5 lg:px-0 lg:w-[1024px]'>
+                            <div className='flex flex-col'>
+                                <h1 className='font-bold text-[#686868] text-4xl lg:max-w-[50%]'>
+                                    Building
+                                    <span className='bg-gradient-to-r from-[#A5EC60] from-30% to-[#1C840F] text-transparent bg-clip-text'> decentralized </span>
+                                    solutions to make the world a better place.
+                                </h1>
 
-                            <div className='flex items-center gap-5 mt-10'>
-                                <button
-                                    className='bg-[#68A021] w-40 h-10 rounded-md font-semibold text-white'
-                                >
-                                    Download app
-                                </button>
+                                <div className='flex items-center gap-5 mt-10'>
+                                    <button
+                                        className='bg-[#68A021] w-40 h-10 rounded-md font-semibold text-white'
+                                    >
+                                        Download app
+                                    </button>
 
-                                <button
-                                    className='bg-[#68A021] w-40 h-10 rounded-md font-semibold text-white'
-                                >
-                                    Web platform
-                                </button>
+                                    <button
+                                        className='bg-[#68A021] w-40 h-10 rounded-md font-semibold text-white'
+                                    >
+                                        Web platform
+                                    </button>
+                                </div>
                             </div>
                         </div>
                     </div>
