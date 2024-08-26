@@ -1,4 +1,7 @@
 import Image from "next/image";
+import { Dialog, DialogContent, DialogOverlay, DialogPortal, DialogTitle, DialogTrigger } from "../../../@/components/ui/dialog";
+import { AppDetails } from "./components/AppDetails";
+//import * as Dialog from '@radix-ui/react-dialog';
 
 interface Props {
     type: string;
@@ -43,20 +46,28 @@ export function AppItem({ backgroundUrl, description, description2, iconUrl, tit
     }
 
     return (
-        <div className='flex gap-3'>
-            <div className='w-20 h-20 bg-[#d9d9d9] rounded-lg p-2'>
-                <Image
-                    alt="icon app"
-                    src={iconUrl}
-                    width={100}
-                    height={100}
-                    className="w-full h-full rounded-full object-contain"
-                />
-            </div>
-            <div className='flex flex-col '>
-                <h4 className='text-[#8C8C8C] font-bold text-xl'>{title}</h4>
-                <p className='text-[#8c8c8c] text-lg'>{description2}</p>
-            </div>
-        </div>
+        <Dialog>
+            <DialogTrigger>
+                <button className='flex gap-3'>
+                    <div className='w-20 h-20 bg-[#d9d9d9] rounded-lg p-2'>
+                        <Image
+                            alt="icon app"
+                            src={iconUrl}
+                            width={100}
+                            height={100}
+                            className="w-full h-full rounded-full object-contain"
+                        />
+                    </div>
+                    <div className='flex flex-col '>
+                        <h4 className='text-[#8C8C8C] font-bold text-xl'>{title}</h4>
+                        <p className='text-[#8c8c8c] text-lg'>{description2}</p>
+                    </div>
+                </button>
+            </DialogTrigger>
+
+            <AppDetails/>
+        </Dialog>
+        
+            
     )
 }

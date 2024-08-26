@@ -10,6 +10,7 @@ import Image from 'next/image';
 import LogoCR from '../assets/token.png';
 import { AppItem } from './_components/AppItem';
 import { Header } from './_components/Header';
+import { Dialog, DialogContent, DialogOverlay, DialogTrigger } from '../@/components/ui/dialog';
 
 interface StaticProps {
     locale: string;
@@ -72,6 +73,7 @@ const Home: NextPage = (_props: InferGetStaticPropsType<typeof getStaticProps>) 
                                     >
                                         Download app
                                     </button>
+
 
                                     <button
                                         className='bg-[#68A021] w-40 h-10 rounded-md font-semibold text-white'
