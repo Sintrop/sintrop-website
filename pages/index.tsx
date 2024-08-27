@@ -61,26 +61,28 @@ const Home: NextPage = (_props: InferGetStaticPropsType<typeof getStaticProps>) 
                     <div className='w-full flex flex-col items-center justify-center'>
                         <div className='w-full flex flex-col px-5 lg:px-0 lg:w-[1024px]'>
                             <div className='flex flex-col'>
-                                <h1 className='font-bold text-[#686868] text-4xl lg:max-w-[50%]'>
-                                    Building
-                                    <span className='bg-gradient-to-r from-[#A5EC60] from-30% to-[#1C840F] text-transparent bg-clip-text'> decentralized </span>
-                                    solutions to make the world a better place.
-                                </h1>
+                                {_props._nextI18Next?.initialLocale === 'en' ? (
+                                    <h1 className='font-bold text-[#686868] text-4xl lg:max-w-[50%]'>
+                                        Building
+                                        <span className='bg-gradient-to-r from-[#A5EC60] from-30% to-[#1C840F] text-transparent bg-clip-text'> decentralized </span>
+                                        solutions to make the world a better place.
+                                    </h1>
+                                ) : (
+                                    <h1 className='font-bold text-[#686868] text-4xl lg:max-w-[50%]'>
+                                        Construindo soluções
+                                        <span className='bg-gradient-to-r from-[#A5EC60] from-30% to-[#1C840F] text-transparent bg-clip-text'> descentralizadas </span>
+                                        para tornar o mundo um lugar melhor.
+                                    </h1>
+                                )}
 
-                                {/* <div className='flex items-center gap-5 mt-10'>
-                                    <button
-                                        className='bg-[#68A021] w-40 h-10 rounded-md font-semibold text-white'
+                                <div className='flex items-center gap-5 mt-10'>
+                                    <Link
+                                        className='bg-[#68A021] w-40 h-10 rounded-md font-semibold text-white flex justify-center items-center'
+                                        href=''
                                     >
                                         Download app
-                                    </button>
-
-
-                                    <button
-                                        className='bg-[#68A021] w-40 h-10 rounded-md font-semibold text-white'
-                                    >
-                                        Web platform
-                                    </button>
-                                </div> */}
+                                    </Link>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -89,9 +91,9 @@ const Home: NextPage = (_props: InferGetStaticPropsType<typeof getStaticProps>) 
                 <section className='w-full flex flex-col items-center py-10 bg-[rgba(3,124,0,0.13)]'>
                     <div className='w-full flex flex-col px-5 lg:px-0 lg:w-[1024px]'>
                         <div className='flex flex-col gap-5'>
-                            <h2 className='text-center text-3xl text-[#686868] font-semibold'>TECHNOLOGY & SUSTAINABILITY</h2>
+                            <h2 className='text-center text-3xl text-[#686868] font-semibold'>{t('tecnologiaSustentabilidade')}</h2>
 
-                            <h3 className='text-[#686868] font-semibold text-2xl'>Our values</h3>
+                            <h3 className='text-[#686868] font-semibold text-2xl'>{t('nossosValores')}</h3>
 
                             <div className='flex items-center justify-between'>
                                 <div className='w-full lg:w-[50%] h-[350px] bg-gray-400 rounded-md overflow-hidden shadow-lg'>
@@ -105,7 +107,7 @@ const Home: NextPage = (_props: InferGetStaticPropsType<typeof getStaticProps>) 
                                 </div>
 
                                 <div className='w-full lg:w-[50%] flex flex-col items-center justify-center'>
-                                    <p className='text-[#8C8C8C] text-center max-w-[70%] text-2xl'>Natured-based solutions to protect and restore the Planet's life and fight climate change</p>
+                                    <p className='text-[#8C8C8C] text-center max-w-[70%] text-2xl'>{t('descNossoValor1')}</p>
                                 </div>
                             </div>
 
@@ -121,7 +123,7 @@ const Home: NextPage = (_props: InferGetStaticPropsType<typeof getStaticProps>) 
                                 </div>
 
                                 <div className='w-full lg:w-[50%] flex flex-col items-center justify-center'>
-                                    <p className='text-[#8C8C8C] text-center max-w-[70%] text-2xl'>Decentralized solutions to give power to people.</p>
+                                    <p className='text-[#8C8C8C] text-center max-w-[70%] text-2xl'>{t('descNossoValor2')}</p>
                                 </div>
                             </div>
                         </div>
@@ -131,44 +133,44 @@ const Home: NextPage = (_props: InferGetStaticPropsType<typeof getStaticProps>) 
                 <section className='w-full flex flex-col items-center py-10' id='solutions'>
                     <div className='w-full flex flex-col px-5 lg:px-0 lg:w-[1024px]'>
                         <div className='flex flex-col gap-5'>
-                            <h3 className='text-[#686868] font-semibold text-2xl'>Our solutions</h3>
+                            <h3 className='text-[#686868] font-semibold text-2xl'>{t('nossasSolucoes')}</h3>
 
                             <div className='flex items-center gap-3'>
                                 <AppItem
                                     type='card'
-                                    title='Regeneration Credit'
+                                    title={t('crTitle')}
                                     backgroundUrl='https://firebasestorage.googleapis.com/v0/b/sintrop-app-android.appspot.com/o/site%2Fbg-app-1.png?alt=media&token=b22854bb-3c01-4124-a459-b4b4b5dab48d'
-                                    description='Nature decentralized marketplace'
+                                    description={t('descCRApp')}
                                     description2='Testnet'
                                     iconUrl='https://firebasestorage.googleapis.com/v0/b/sintrop-app-android.appspot.com/o/site%2Ftoken.png?alt=media&token=9220c767-d5dd-4b6f-a1e0-e67fdc17d641'
                                     tags={['live']}
-                                    longDescription='The Regeneration Credit allows people that are regenerating ecosystems, such as regenerative agriculture or reforestation, to sell the environmental impact (CO2, soil, water and biodiversity) on the platform. We are creating a new decentralized certification algorithm to measure and trade the impact without a central part, runned by smart contracts. We introduce the Regeneration Credit, an asset backed by the impact of the network, rewarded to the community as Payment for Environmental Service. Any person or company can buy the token and trade it for a certificate that proves their commitment to the regeneration of the Planet.'
+                                    longDescription={t('longDescCrApp') as string}
                                 />
 
                                 <AppItem
                                     type='card'
-                                    title='Regeneration Credit'
+                                    title={t('crTitle')}
                                     backgroundUrl='https://firebasestorage.googleapis.com/v0/b/sintrop-app-android.appspot.com/o/site%2Fbg-app-1.png?alt=media&token=b22854bb-3c01-4124-a459-b4b4b5dab48d'
-                                    description='Nature decentralized marketplace'
+                                    description={t('descCRApp')}
                                     description2='Mainnet'
                                     iconUrl='https://firebasestorage.googleapis.com/v0/b/sintrop-app-android.appspot.com/o/site%2Ftoken.png?alt=media&token=9220c767-d5dd-4b6f-a1e0-e67fdc17d641'
                                     tags={['comming-soon']}
-                                    longDescription='The Regeneration Credit allows people that are regenerating ecosystems, such as regenerative agriculture or reforestation, to sell the environmental impact (CO2, soil, water and biodiversity) on the platform. We are creating a new decentralized certification algorithm to measure and trade the impact without a central part, runned by smart contracts. We introduce the Regeneration Credit, an asset backed by the impact of the network, rewarded to the community as Payment for Environmental Service. Any person or company can buy the token and trade it for a certificate that proves their commitment to the regeneration of the Planet.'
+                                    longDescription={t('longDescCrApp') as string}
                                 />
 
                                 <AppItem
                                     type='card'
                                     title='Sintrop Pay'
                                     backgroundUrl='https://firebasestorage.googleapis.com/v0/b/sintrop-app-android.appspot.com/o/site%2Fbg-app-2.png?alt=media&token=06611fe1-aca5-4cc2-8f61-8b554f15bacd'
-                                    description='Pay and sell with crypto'
+                                    description={t('descSintropPay')}
                                     description2='Testnet'
                                     iconUrl='https://firebasestorage.googleapis.com/v0/b/sintrop-app-android.appspot.com/o/site%2Ficon-sintrop-pay.png?alt=media&token=4ddf751c-5955-420d-9828-e8ca2da7876f'
                                     tags={['development']}
-                                    longDescription='Payment method for carrying out transactions, buying and selling products and services with cryptocurrencies.'
+                                    longDescription={t('longDescSintropPay') as string}
                                 />
                             </div>
 
-                            <div className='flex items-center gap-5'>
+                            {/* <div className='flex items-center gap-5'>
                                 <button
                                     className='px-10 h-10 bg-green-500 rounded-full text-white'
                                 >
@@ -180,35 +182,36 @@ const Home: NextPage = (_props: InferGetStaticPropsType<typeof getStaticProps>) 
                                 >
                                     Live
                                 </button>
-                            </div>
+                            </div> */}
 
                             <div className='flex flex-col gap-5'>
                                 <AppItem
                                     type='list'
-                                    title='Regeneration Credit'
+                                    title={t('crTitle')}
                                     backgroundUrl='https://firebasestorage.googleapis.com/v0/b/sintrop-app-android.appspot.com/o/site%2Fimg-florest-1.png?alt=media&token=3d1d3b5e-3912-4bb7-9a39-e588ae6145fb'
-                                    description='Adquira seu CR'
+                                    description={t('descCRApp')}
                                     description2='Testnet'
                                     iconUrl='https://firebasestorage.googleapis.com/v0/b/sintrop-app-android.appspot.com/o/site%2Ftoken.png?alt=media&token=9220c767-d5dd-4b6f-a1e0-e67fdc17d641'
-                                    longDescription='Lorem impsumd dunsdh ddhuhbdsshbf hudsbfjdsbf  fhdsbuhbfd fhdsbufbsduhbfnd h hbf dshb fhjhbds fjjsddbfjsd fn sdjf  sdhhbfjdsn fmsdbfjjdbjsn fdsn fjjsdhbfsdn fjsdn fjsd fnsd fmsd fjhsdbjf djbf jdhbfuwbdoewij dkjjw ddjd ewidcbweidd '
+                                    longDescription={t('longDescCrApp') as string}
                                     tags={['live']}
                                 />
 
                                 <AppItem
                                     type='list'
-                                    title='Regeneration Credit'
+                                    title={t('crTitle')}
                                     backgroundUrl='https://firebasestorage.googleapis.com/v0/b/sintrop-app-android.appspot.com/o/site%2Fimg-florest-1.png?alt=media&token=3d1d3b5e-3912-4bb7-9a39-e588ae6145fb'
-                                    description='Adquira seu CR'
+                                    description={t('descCRApp')}
                                     description2='Mainnet'
                                     iconUrl='https://firebasestorage.googleapis.com/v0/b/sintrop-app-android.appspot.com/o/site%2Ftoken.png?alt=media&token=9220c767-d5dd-4b6f-a1e0-e67fdc17d641'
                                     tags={['comming-soon']}
+                                    longDescription={t('longDescCrApp') as string}
                                 />
 
                                 <AppItem
                                     type='list'
                                     title='Sintrop Pay'
                                     backgroundUrl='https://firebasestorage.googleapis.com/v0/b/sintrop-app-android.appspot.com/o/site%2Fbg-app-2.png?alt=media&token=06611fe1-aca5-4cc2-8f61-8b554f15bacd'
-                                    description='Adquira seu CR'
+                                    description={t('descSintropPay')}
                                     description2='Testnet'
                                     iconUrl='https://firebasestorage.googleapis.com/v0/b/sintrop-app-android.appspot.com/o/site%2Ficon-sintrop-pay.png?alt=media&token=4ddf751c-5955-420d-9828-e8ca2da7876f'
                                     tags={['development']}
@@ -222,9 +225,6 @@ const Home: NextPage = (_props: InferGetStaticPropsType<typeof getStaticProps>) 
                                     description2='Testnet'
                                     iconUrl='https://firebasestorage.googleapis.com/v0/b/sintrop-app-android.appspot.com/o/site%2Ficon-sintrop-chain.png?alt=media&token=96458fdd-2bcf-4004-bf53-90dd30fe367a'
                                     tags={['development']}
-                                    linkWeb='https://google.com.br'
-                                    linkAppleStore='https://google.com.br'
-                                    linkGooglePlay='https://google.com.br'
                                 />
                             </div>
                         </div>
@@ -235,23 +235,27 @@ const Home: NextPage = (_props: InferGetStaticPropsType<typeof getStaticProps>) 
                     <div className='w-full flex flex-col px-5 lg:px-0 lg:w-[1024px]'>
                         <div className='flex items-center justify-between'>
                             <div className='flex flex-col gap-5 w-full lg:w-[50%]'>
-                                <h3 className='font-bold text-[#8c8c8c] text-3xl'>Regeneration Credit</h3>
+                                <h3 className='font-bold text-[#8c8c8c] text-3xl'>{t('crTitle')}</h3>
                                 <h4 className='text-[#8c8c8c] text-2xl'>
-                                    Nature-based decentralized market place to certificate and trade ecosystems regeneration impact
+                                    {t('descCr')}
                                 </h4>
 
                                 <div className='flex items-center gap-5 mt-5'>
-                                    <button
-                                        className='bg-[#68A021] w-40 h-10 rounded-md font-semibold text-white'
+                                    <Link
+                                        className='bg-[#68A021] w-40 h-10 rounded-md font-semibold text-white flex items-center justify-center'
+                                        href='https://sintrop.com/app'
+                                        target='_blank'
                                     >
                                         Download app
-                                    </button>
+                                    </Link>
 
-                                    <button
-                                        className='bg-[#68A021] w-40 h-10 rounded-md font-semibold text-white'
+                                    <Link
+                                        className='bg-[#68A021] w-40 h-10 rounded-md font-semibold text-white flex items-center justify-center'
+                                        href='https://app.sintrop.com'
+                                        target='_blank'
                                     >
                                         Web platform
-                                    </button>
+                                    </Link>
                                 </div>
                             </div>
 

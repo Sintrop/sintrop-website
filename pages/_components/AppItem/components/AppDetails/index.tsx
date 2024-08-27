@@ -1,10 +1,10 @@
-import { DialogClose, DialogContent, DialogFooter, DialogHeader, DialogOverlay, DialogPortal } from "../../../../../@/components/ui/dialog";
 import { AppDetailProps } from "../..";
 import Image from "next/image";
 import Link from "next/link";
 import { GiEarthAfricaEurope } from "react-icons/gi";
 import { FaApple, FaGooglePlay } from "react-icons/fa";
 import { Tags } from "../Tags";
+import * as Dialog from '@radix-ui/react-dialog';
 
 interface Props {
     data: AppDetailProps;
@@ -12,14 +12,14 @@ interface Props {
 
 export function AppDetails({ data }: Props) {
     return (
-        <DialogPortal >
-            <DialogOverlay className="bg-black/50 fixed inset-0" />
-            <DialogContent className="bg-white fixed top-[50%] left-[50%] w-[320px] lg:w-[500px] p-5 transform translate-x-[-50%] translate-y-[-50%] rounded-lg">
-                {/* <DialogHeader>
-                    <DialogClose>
+        <Dialog.Portal >
+            <Dialog.Overlay className="bg-black/50 fixed inset-0" />
+            <Dialog.Content className="bg-white fixed top-[50%] left-[50%] w-[320px] lg:w-[500px] p-5 transform translate-x-[-50%] translate-y-[-50%] rounded-lg">
+                {/* <Dialog.Header>
+                    <Dialog.Close>
                         teste
-                    </DialogClose>
-                </DialogHeader> */}
+                    </Dialog.Close>
+                </Dialog.Header> */}
 
                 <div className="flex gap-3">
                     <div className="bg-gray-200 rounded-2xl w-20 h-20">
@@ -88,7 +88,7 @@ export function AppDetails({ data }: Props) {
                         </Link>
                     )}
                 </div>
-            </DialogContent>
-        </DialogPortal>
+            </Dialog.Content>
+        </Dialog.Portal>
     )
 }

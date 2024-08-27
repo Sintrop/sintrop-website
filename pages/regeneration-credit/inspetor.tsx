@@ -103,7 +103,7 @@ const Inspetor: NextPage = (_props: InferGetStaticPropsType<typeof getStaticProp
             <section className='flex items-center px-4 flex-col justify-center gap-5 lg:w-[1000px] py-10 lg:flex-row'>
                 <div className='flex flex-col items-center lg:w-[50%]'>
                     <Image
-                        src={require('../public/assets/centro-inspecoes.png')}
+                        src={require('../../public/assets/centro-inspecoes.png')}
                         alt='Gráfico impacto do token por co2'
                         className="lg:w-[80%] object-contain"
                     />

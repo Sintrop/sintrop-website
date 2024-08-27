@@ -133,7 +133,7 @@ const Produtor: NextPage = (_props: InferGetStaticPropsType<typeof getStaticProp
                     </div>
                     <div className='flex flex-col items-center lg:w-[75%]'>
                         <Image
-                            src={require('../public/assets/co2-per-token.png')}
+                            src={require('../../public/assets/co2-per-token.png')}
                             alt='Gráfico impacto do token por co2'
                             className="lg:w-[100%] object-contain"
                         />
@@ -144,7 +144,7 @@ const Produtor: NextPage = (_props: InferGetStaticPropsType<typeof getStaticProp
             <section className='flex flex-col items-center w-full py-10 bg-vitrine-produtor bg-center'>
                 <div className='flex flex-col px-4 items-center justify-center gap-5 lg:w-[1000px] lg:py-10 lg:flex-row'>
                     <Image
-                        src={require('../public/assets/produtores-reais.png')}
+                        src={require('../../public/assets/produtores-reais.png')}
                         alt='Produtores reais do sistema'
                         className="lg:w-[60%] object-contain"
                         quality={100}
@@ -164,7 +164,7 @@ const Produtor: NextPage = (_props: InferGetStaticPropsType<typeof getStaticProp
                 </div>
                 <div className='flex flex-col items-center lg:w-[50%]'>
                     <Image
-                        src={require('../public/assets/certificado-produtor.png')}
+                        src={require('../../public/assets/certificado-produtor.png')}
                         alt='Gráfico impacto do token por co2'
                         className="lg:w-[90%] object-contain"
                     />

@@ -5,16 +5,16 @@ import { useTranslation, UseTranslation } from "next-i18next";
 import { useRouter } from "next/router";
 import Link from "next/link";
 
-export function Header(){
+export function Header() {
     const router = useRouter();
-    const {t, i18n} = useTranslation('common');
+    const { t, i18n } = useTranslation('common');
     const [path, setPath] = useState('');
 
     useEffect(() => {
         setPath(router.pathname.replace('/pt', '').replace('/en', ''));
-    },[router.pathname]);
-    
-    return(
+    }, [router.pathname]);
+
+    return (
         <header className="w-full h-20 bg-white border-b border-gray-200 shadow-xl flex items-center justify-center">
             <div className="flex justify-between items-center w-full lg:max-w-[1024px]">
                 <Image
@@ -26,16 +26,19 @@ export function Header(){
                 />
 
                 <nav className="flex items-center gap-10">
-                    <Link 
+                    <Link
+                        className="font-semibold text-[#2b2b2b]"
+                        href='/blog'
+                    >
+                        Blog
+                    </Link>
+
+                    <Link
                         className="font-semibold text-[#2b2b2b]"
                         href='#solutions'
                     >
-                        {t('solutions')}
+                        {t('solucoes')}
                     </Link>
-                    {/* <p className="font-semibold text-[#2b2b2b]">About</p>
-                    <button className="h-10 px-14 rounded-md bg-[#7FD349] text-[#2b2b2b] font-semibold">
-                        Link
-                    </button>
 
                     <DropdownMenu>
                         <DropdownMenuTrigger asChild>
@@ -48,7 +51,7 @@ export function Header(){
 
                         <DropdownMenuContent className="bg-white border rounded-md shadow-xl w-[150px]">
                             <DropdownMenuLabel>Language</DropdownMenuLabel>
-                            <DropdownMenuSeparator/>
+                            <DropdownMenuSeparator />
 
                             <DropdownMenuItem
                                 asChild
@@ -72,7 +75,7 @@ export function Header(){
                                 </Link>
                             </DropdownMenuItem>
                         </DropdownMenuContent>
-                    </DropdownMenu> */}
+                    </DropdownMenu>
                 </nav>
             </div>
         </header>

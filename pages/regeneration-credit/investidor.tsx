@@ -187,7 +187,7 @@ const Investidor: NextPage = (_props: InferGetStaticPropsType<typeof getStaticPr
                         <p className='text-black text-lg mt-5'>{t('O Crédito de Regeneração é um criptoativo lastreado no impacto de restauração de ecossistemas de produtores rurais regenerativos e projetos de reflorestamento')}.</p>
                     </div>
                     <Image
-                        src={require('../public/assets/token.png')}
+                        src={require('../../public/assets/token.png')}
                         alt='Gráfico impacto do token por co2'
                         className="lg:w-[40%] object-contain"
                     />
@@ -195,7 +195,7 @@ const Investidor: NextPage = (_props: InferGetStaticPropsType<typeof getStaticPr
                 <div className='flex items-center justify-center gap-8 flex-wrap mt-10'>
                     <div className='flex flex-col p-3 rounded-lg shadow-xl shadow-black/30 bg-gray-200 gap-3 h-[260px] w-full lg:w-[300px]'>
                         <Image
-                            src={require('../public/assets/icon-descentralizado.png')}
+                            src={require('../../public/assets/icon-descentralizado.png')}
                             alt='Ícone de descentralização'
                             className="w-[60px] object-contain"
                         />
@@ -206,7 +206,7 @@ const Investidor: NextPage = (_props: InferGetStaticPropsType<typeof getStaticPr
 
                     <div className='flex flex-col p-3 rounded-lg shadow-xl shadow-black/30 bg-gray-200 gap-3 h-[260px] w-full lg:w-[300px]'>
                         <Image
-                            src={require('../public/assets/icon-low-cost.png')}
+                            src={require('../../public/assets/icon-low-cost.png')}
                             alt='Ícone de descentralização'
                             className="w-[60px] object-contain"
                         />
@@ -217,7 +217,7 @@ const Investidor: NextPage = (_props: InferGetStaticPropsType<typeof getStaticPr
 
                     <div className='flex flex-col p-3 rounded-lg shadow-xl shadow-black/30 bg-gray-200 gap-3 h-[260px] w-full lg:w-[300px]'>
                         <Image
-                            src={require('../public/assets/icon-transparent.png')}
+                            src={require('../../public/assets/icon-transparent.png')}
                             alt='Ícone de descentralização'
                             className="w-[60px] object-contain"
                         />

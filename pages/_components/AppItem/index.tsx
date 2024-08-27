@@ -1,7 +1,7 @@
 import Image from "next/image";
-import { Dialog, DialogContent, DialogOverlay, DialogPortal, DialogTitle, DialogTrigger } from "../../../@/components/ui/dialog";
 import { AppDetails } from "./components/AppDetails";
 import { Tags } from "./components/Tags";
+import * as Dialog from '@radix-ui/react-dialog';
 
 export interface AppDetailProps {
     type: string;
@@ -20,8 +20,8 @@ export interface AppDetailProps {
 export function AppItem({ backgroundUrl, description, description2, iconUrl, title, type, longDescription, linkAppleStore, linkGooglePlay, linkWeb, tags }: AppDetailProps) {
     if (type === 'card') {
         return (
-            <Dialog>
-                <DialogTrigger asChild>
+            <Dialog.Root>
+                <Dialog.Trigger asChild>
                     <button className={`flex w-[390px] h-[290px] rounded-lg relative overflow-hidden shadow-xl`}>
                         <img
                             alt='Background do app'
@@ -60,7 +60,7 @@ export function AppItem({ backgroundUrl, description, description2, iconUrl, tit
                             </div>
                         )}
                     </button>
-                </DialogTrigger>
+                </Dialog.Trigger>
 
                 <AppDetails
                     data={{
@@ -77,13 +77,13 @@ export function AppItem({ backgroundUrl, description, description2, iconUrl, tit
                         tags
                     }}
                 />
-            </Dialog>
+            </Dialog.Root>
         )
     }
 
     return (
-        <Dialog>
-            <DialogTrigger className="w-fit">
+        <Dialog.Root>
+            <Dialog.Trigger className="w-fit">
                 <button className='flex gap-3 w-fit'>
                     <div className='w-20 h-20 bg-[#d9d9d9] rounded-2xl'>
                         <Image
@@ -110,7 +110,7 @@ export function AppItem({ backgroundUrl, description, description2, iconUrl, tit
                         )}
                     </div>
                 </button>
-            </DialogTrigger>
+            </Dialog.Trigger>
 
             <AppDetails
                 data={{
@@ -127,7 +127,7 @@ export function AppItem({ backgroundUrl, description, description2, iconUrl, tit
                     tags
                 }}
             />
-        </Dialog>
+        </Dialog.Root>
 
 
     )

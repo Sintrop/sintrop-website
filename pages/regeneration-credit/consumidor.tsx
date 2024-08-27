@@ -86,7 +86,7 @@ const Consumidor: NextPage = (_props: InferGetStaticPropsType<typeof getStaticPr
                     <div>
                         <Image
                             alt='Embalagem biodegradável com o selo de sustentabilidade'
-                            src={require('../assets/embalagem.png')}
+                            src={require('../../assets/embalagem.png')}
                             quality={100}
                             className='lg:w-[600px] object-contain'
                         />
@@ -95,7 +95,7 @@ const Consumidor: NextPage = (_props: InferGetStaticPropsType<typeof getStaticPr
 
                 <section className="flex flex-col lg:flex-row py-10 items-center justify-center lg:gap-20">
                     <Image 
-                        src={require('../assets/comunidade.png')}
+                        src={require('../../assets/comunidade.png')}
                         quality={100}
                         alt='Globo tecnológico'
                         className='w-[335px] h-[350px] object-contain hidden lg:flex'

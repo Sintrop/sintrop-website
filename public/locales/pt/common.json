@@ -325,5 +325,18 @@
     "Pré-venda do Crédito De Regeneração": "Pré-venda do Crédito De Regeneração",
 
 
-    "solutions": "Soluções"
+    "solucoes": "Soluções",
+    "tecnologiaSustentabilidade": "TECNOLOGIA & SUSTENTABILIDADE",
+    "nossosValores": "Nossos valores",
+    "descNossoValor1": "Soluções baseadas na natureza para proteger e restaurar a vida do Planeta e combater as alterações climáticas.",
+    "descNossoValor2": "Soluções descentralizadas para dar poder às pessoas.",
+    "nossasSolucoes": "Nossas soluções",
+    "crTitle": "Crédito de Regeneração",
+    "descCRApp": "Mercado descentralizado da natureza",
+    "longDescCrApp": "O Crédito de Regeneração permite que pessoas que estão regenerando ecossistemas, como agricultura regenerativa ou reflorestamento, vendam o impacto ambiental (CO2, solo, água e biodiversidade) na plataforma. Estamos criando um novo algoritmo de certificação descentralizado para medir e negociar o impacto sem uma parte central, executado por contratos inteligentes. Apresentamos o Crédito Regeneração, um ativo garantido pelo impacto da rede, recompensado à comunidade como Pagamento por Serviço Ambiental. Qualquer pessoa ou empresa pode comprar o token e trocá-lo por um certificado que comprove o seu compromisso com a regeneração do Planeta.",
+    "longDescSintropPay": "Forma de pagamento para realização de transações, compra e venda de produtos e serviços com criptomoedas.",
+    "descSintropPay": "Pague e venda com criptografia",
+    "descCr": "Mercado descentralizado baseado na natureza para certificar e comercializar o impacto da regeneração dos ecossistemas",
+    "desenvolvimento": "Em desenvolvimento",
+    "emBreve": "Em breve"
 }

@@ -328,5 +328,18 @@
 
 
 
-    "solutions": "Solutions"
+    "solucoes": "Solutions",
+    "tecnologiaSustentabilidade": "TECHNOLOGY & SUSTAINABILITY",
+    "nossosValores": "Our values",
+    "descNossoValor1": "Natured-based solutions to protect and restore the Planet's life and fight climate change.",
+    "descNossoValor2": "Decentralized solutions to give power to people.",
+    "nossasSolucoes": "Our solutions",
+    "crTitle": "Regeneration Credit",
+    "descCRApp": "Nature decentralized marketplace",
+    "longDescCrApp": "The Regeneration Credit allows people that are regenerating ecosystems, such as regenerative agriculture or reforestation, to sell the environmental impact (CO2, soil, water and biodiversity) on the platform. We are creating a new decentralized certification algorithm to measure and trade the impact without a central part, runned by smart contracts. We introduce the Regeneration Credit, an asset backed by the impact of the network, rewarded to the community as Payment for Environmental Service. Any person or company can buy the token and trade it for a certificate that proves their commitment to the regeneration of the Planet.",
+    "longDescSintropPay": "Payment method for carrying out transactions, buying and selling products and services with cryptocurrencies.",
+    "descSintropPay": "Pay and sell with crypto",
+    "descCr": "Nature-based decentralized market place to certificate and trade ecosystems regeneration impact",
+    "desenvolvimento": "In development",
+    "emBreve": "Shortly"
 }
