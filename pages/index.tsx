@@ -1,37 +1,19 @@
 import { useState, useEffect } from 'react';
 import type { NextPage } from 'next';
 import Head from 'next/head';
-import Script from 'next/script';
-import Image from 'next/image';
-import Link from 'next/link';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import type { GetStaticProps, InferGetStaticPropsType } from 'next'
 import { useTranslation } from 'next-i18next';
-import ImgComunidade from '../assets/comunidade-pessoas.png';
-import { Card1 } from '../components/Card1';
-import { Card2 } from '../components/Card2';
-import { Card3 } from '../components/Card3';
-import { Header } from '../components/Header';
-import { Footer } from '../components/Footer';
-import { BtnWhats } from '../components/BtnWhats';
 import { useRouter } from 'next/router';
-import { CardImpact } from '../components/CardImpact';
-import { CardUsers } from '../components/CardUsers';
-import { useCountdown } from '../src/hooks/useCountdown';
-import { api } from '../src/services/api';
-import { ImpactProps, ImpactTokenProps } from '../src/interfaces/impact';
-import { CgDanger } from 'react-icons/cg';
-import { ContextProps } from '../src/interfaces/ContextServerSide';
-import { PostsProps } from '../src/interfaces/Posts';
-import { TopBar } from '../components/TopBar';
-import Chart from 'react-apexcharts';
+import Link from 'next/link';
+import Image from 'next/image';
+import LogoCR from '../assets/token.png';
+import {AppItem} from '../components/AppItem';
+import Header  from '../components/NewHeader';
+import { Dialog, DialogContent, DialogOverlay, DialogTrigger } from '../@/components/ui/dialog';
 
 interface StaticProps {
     locale: string;
-}
-
-interface ServerSideProps {
-    inspections: PostsProps[]
 }
 
 export interface usersCountProps {
@@ -55,112 +37,9 @@ export async function getStaticProps({ locale }: StaticProps) {
 const Home: NextPage = (_props: InferGetStaticPropsType<typeof getStaticProps>) => {
     const router = useRouter();
     const { t } = useTranslation('common');
-    const [days, hours, minutes, seconds] = useCountdown('2024-06-25 23:59:59');
-    const [networkImpact, setNetworkImpact] = useState({} as ImpactProps);
-    const [confirmImpact, setConfirmImpact] = useState({} as ImpactProps);
-    const [burnedImpact, setBurnedImpact] = useState({} as ImpactProps);
-    const [countUsers, setCountUsers] = useState({} as usersCountProps);
-    const [inspections, setInspections] = useState([]);
-    const [impactPerToken, setImpactPerToken] = useState({} as ImpactTokenProps);
-    const [graphicCarbon, setGraphicCarbon] = useState(null);
-    const [graphicSoil, setGraphicSoil] = useState(null);
-    const [graphicWater, setGraphicWater] = useState(null);
-    const [graphicBio, setGraphicBio] = useState(null);
-
-    useEffect(() => {
-        getImpact();
-        getCountUsers();
-        getInspections();
-    }, []);
-
-    async function getImpact() {
-        const response = await api.get('/network-impact');
-        const impacts = response.data.impact;
-        const network = impacts.filter((item: ImpactProps) => item.id === '1');
-        const confirm = impacts.filter((item: ImpactProps) => item.id === '6');
-        const burned = impacts.filter((item: ImpactProps) => item.id === '7');
-
-        setNetworkImpact(network[0]);
-        setConfirmImpact(confirm[0]);
-        setBurnedImpact(burned[0]);
-
-        const response2 = await api.get('/impact-per-token');
-        setImpactPerToken(response2.data.impact);
-    }
-
-    async function getCountUsers() {
-        const response = await api.get('/users_count');
-        setCountUsers(response.data);
-    }
-
-    async function getInspections() {
-        const response = await api.get('/inspections/finished-inspections');
-        setInspections(response.data.inspections);
-    }
-
-    const configChat = {
-        options: {
-            plotOptions: {
-                bar: {
-                    borderRadius: 10,
-                    dataLabels: {
-                        position: 'top',
-                        fillColor: '#fff'
-                    },
-                }
-            },
-            dataLabels: {
-                enabled: true,
-                formatter: function (val: string) {
-                    return val + "";
-                },
-                offsetY: -20,
-                style: {
-                    fontSize: '12px',
-                    colors: ["#fff", '#fff']
-                }
-            },
-            xaxis: {
-                categories: ["À confirmar", "Disponível", "Compensado"],
-                position: 'bottom',
-                axisBorder: {
-                    show: true
-                },
-                axisTicks: {
-                    show: true
-                },
-                tooltip: {
-                    enabled: true,
-                },
-                labels: {
-                    style: {
-                        colors: ['#fff', '#fff', '#fff']
-                    }
-                }
-            },
-            yaxis: {
-                axisBorder: {
-                    show: false
-                },
-                axisTicks: {
-                    show: true,
-                },
-                labels: {
-                    show: true,
-                    formatter: function (val: string) {
-                        return val + "";
-                    },
-                    style: {
-                        colors: ['#fff']
-                    }
-                },
-
-            }
-        }
-    }
 
     return (
-        <main className="flex flex-col items-center w-full scrollbar-thin scrollbar-thumb-green-900 scrollbar-thumb-rounded-md">
+        <>
             <Head>
                 <title>{t('Sintrop - Tecnologia e Sustentabilidade')}</title>
                 <meta name='description' content={`${t('Nossa missão é regenerar o planeta através da tecnologia. Conheça nosso Sistema e o Token Crédito de Regeneração.')}`} />
@@ -176,437 +55,224 @@ const Home: NextPage = (_props: InferGetStaticPropsType<typeof getStaticProps>) 
                 <link rel='icon' type='image/png' href='/favicon.png' />
             </Head>
 
-            <div className='flex flex-col items-center w-full bg-new-home bg-left lg:bg-center pb-5 lg:h-[550px]'>
-                <TopBar />
-                <Header />
+            <Header />
+            <main className="flex flex-col items-center w-full scrollbar-thin scrollbar-thumb-green-900 scrollbar-thumb-rounded-md">
+                <section className='w-full flex flex-col items-center justify-center py-10 bg-first-section h-[450px]'>
+                    <div className='w-full flex flex-col items-center justify-center'>
+                        <div className='w-full flex flex-col px-5 lg:px-0 lg:w-[1024px]'>
+                            <div className='flex flex-col'>
+                                {_props._nextI18Next?.initialLocale === 'en' ? (
+                                    <h1 className='font-bold text-[#686868] text-4xl lg:max-w-[50%]'>
+                                        Building
+                                        <span className='bg-gradient-to-r from-[#A5EC60] from-30% to-[#1C840F] text-transparent bg-clip-text'> decentralized </span>
+                                        solutions to make the world a better place.
+                                    </h1>
+                                ) : (
+                                    <h1 className='font-bold text-[#686868] text-4xl lg:max-w-[50%]'>
+                                        Construindo soluções
+                                        <span className='bg-gradient-to-r from-[#A5EC60] from-30% to-[#1C840F] text-transparent bg-clip-text'> descentralizadas </span>
+                                        para tornar o mundo um lugar melhor.
+                                    </h1>
+                                )}
 
-                <section className='flex flex-col px-2 lg:w-[1000px] lg:mt-44'>
-                    <h1 className='font-bold text-center text-white text-2xl lg:text-start lg:text-3xl lg:max-w-[32ch] mt-10 lg:mt-0'>
-                        {t('Sistema Descentralizado de ')}
-                        <span className='text-[#BBFFB2]'>
-                            {t('Regeneração da Natureza')}
-                        </span>
-                    </h1>
-
-                    <h2 className='text-white text-center max-w-[45ch] mt-5 lg:text-start lg:mt-10'>
-                        {t('O Crédito de Regeneração é um inovador criptoativo de recompensa por serviços ambientais e uma nova forma de investir em carbono e na regeneração de ecossistemas')}
-                    </h2>
-
-                    <div className='mt-10 flex flex-col items-center gap-5 lg:flex-row'>
-                        <Link
-                            href={router.locale === 'pt-BR' ?
-                                'https://sintrop.com/assets/qr-code/whitepaper.pdf' : 'https://sintrop.com/assets/qr-code/whitepaper-EN.pdf'}
-                            target='_blank'
-                            className='w-52 h-14 border-2 rounded-xl text-white text-sm font-bold flex items-center justify-center'
-                        >
-                            {t('BAIXAR WHITEPAPER')}
-                        </Link>
-                        <Link
-                            href='https://app.sintrop.com'
-                            target='_blank'
-                            className='w-52 h-14 border-2 rounded-xl bg-[#3E9EF5] text-white text-sm font-bold flex items-center justify-center'
-                        >
-                            {t('ACESSAR PLATAFORMA')}
-                        </Link>
+                                <div className='flex items-center gap-5 mt-10'>
+                                    <Link
+                                        className='bg-[#68A021] w-40 h-10 rounded-md font-semibold text-white flex justify-center items-center'
+                                        href=''
+                                    >
+                                        Download app
+                                    </Link>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </section>
-            </div>
 
-            {/* <Link
-                className='flex flex-col px-2 items-center justify-center gap-5 lg:w-[1000px] pt-10 pb-10'
-                target='_blank'
-                href='https://app.sintrop.com/pre-sale'
-            >
-                <Image
-                    alt='banner pré venda do crédito de regeneração'
-                    src={require('../public/assets/banner-pc.jpg')}
-                    className='w-full h-[230px] rounded-md border-4 border-yellow-400 hidden lg:flex'
-                />
+                <section className='w-full flex flex-col items-center py-10 bg-[rgba(3,124,0,0.13)]'>
+                    <div className='w-full flex flex-col px-5 lg:px-0 lg:w-[1024px]'>
+                        <div className='flex flex-col gap-5'>
+                            <h2 className='text-center text-3xl text-[#686868] font-semibold'>{t('tecnologiaSustentabilidade')}</h2>
 
-                <Image
-                    alt='banner pré venda do crédito de regeneração'
-                    src={require('../public/assets/banner-mobile.jpg')}
-                    className='w-full h-[130px] rounded-md border-4 border-yellow-400 lg:hidden'
-                />
-            </Link> */}
+                            <h3 className='text-[#686868] font-semibold text-2xl'>{t('nossosValores')}</h3>
 
-            <section className='flex flex-col px-2 items-center justify-center gap-5 w-full pt-10 pb-10 bg-presale my-10 rounded-md'>
-                <div className='flex flex-col lg:flex-row lg:w-[1000px] items-center'>
-                    <div className='flex flex-col lg:w-[50%]'>
-                        <h3 className='font-bold text-white text-4xl'>PRÉ-VENDA</h3>
-                        <h3 className='font-bold text-green-500 text-4xl'>Crédito de regeneração</h3>
-
-                        <p className="text-sm text-white mt-5">Essa oferta encerrou em (25/06/2024)</p>
-                        <div className="flex items-center gap-2">
-                            <div className="flex flex-col p-2 rounded-md bg-green-500 w-16 items-center">
-                                <p className="font-bold text-white text-xl">0</p>
-                                <p className="text-center text-xs text-white">Dias</p>
-                            </div>
-                            <div className="flex flex-col p-2 rounded-md bg-green-500 w-16 items-center">
-                                <p className="font-bold text-white text-xl">0</p>
-                                <p className="text-center text-xs text-white">Horas</p>
-                            </div>
-                            <div className="flex flex-col p-2 rounded-md bg-green-500 w-16 items-center">
-                                <p className="font-bold text-white text-xl">0</p>
-                                <p className="text-center text-xs text-white">Minutos</p>
-                            </div>
-                            <div className="flex flex-col p-2 rounded-md bg-green-500 w-16 items-center">
-                                <p className="font-bold text-white text-xl">0</p>
-                                <p className="text-center text-xs text-white">Segundos</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div className='flex flex-col lg:w-[50%]'>
-                        <div className="flex flex-col border border-green-500 bg-[rgba(0,0,0,0.6)] rounded-md p-2 gap-1 mt-3">
-                            <div className="flex items-center w-full justify-between">
-                                <h3 className="text-gray-200 text-xs lg:text-sm">Tokens ofertados</h3>
-                                <p className="font-bold text-green-500 text-sm lg:text-base">39.000.000</p>
-                            </div>
-                            <div className="flex items-center w-full justify-between">
-                                <h3 className="text-gray-200 text-xs lg:text-sm">% da oferta privada</h3>
-                                <p className="font-bold text-green-500 text-sm lg:text-base">9,12 %</p>
-                            </div>
-                            <div className="flex items-center w-full justify-between">
-                                <h3 className="text-gray-200 text-xs lg:text-sm">Valor unitário</h3>
-                                <p className="font-bold text-green-500 text-sm lg:text-base">R$ 0,0282</p>
-                            </div>
-                            <div className="flex items-center w-full justify-between">
-                                <h3 className="text-gray-200 text-xs lg:text-sm">Alvo de capitalização</h3>
-                                <p className="font-bold text-green-500 text-sm lg:text-base">R$ 1.100.000,00</p>
-                            </div>
-                            <div className="flex items-center w-full justify-between">
-                                <h3 className="text-gray-200 text-xs lg:text-sm">Capitalização de mercado</h3>
-                                <p className="font-bold text-green-500 text-sm lg:text-base">R$ 12.057.692,31</p>
-                            </div>
-                        </div>
-
-                        <div className='flex justify-center mt-5'>
-                            <Link
-                                className='py-2 px-5 bg-red-500 rounded-md text-white font-bold text-sm'
-                                target='_blank'
-                                href='https://app.sintrop.com/pre-sale'
-                            >
-                                Acessar lista de espera
-                            </Link>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <section className='flex flex-col px-2 items-center justify-center gap-5 lg:w-[1000px] pt-10 pb-10 lg:px-0'>
-                <div className="flex flex-col items-center justify-between w-full lg:flex-row">
-                    <div className='flex flex-col gap-3 lg:w-[45%]'>
-                        <h4 className="font-bold text-green-900 text-lg italic">{t('Transformamos o impacto de regeneração de ecossistemas em um ativo digital, para guardar ou trocar pelo certificado de contribuição ambiental')}.</h4>
-                        <p className='text-black text-lg mt-5'>{t('O Crédito de Regeneração é um criptoativo lastreado no impacto de restauração de ecossistemas de produtores rurais regenerativos e projetos de reflorestamento')}.</p>
-                    </div>
-                    <Image
-                        src={require('../public/assets/token.png')}
-                        alt='Gráfico impacto do token por co2'
-                        className="lg:w-[40%] object-contain"
-                    />
-                </div>
-                <div className='flex items-center justify-center gap-5 flex-wrap mt-10'>
-                    <div className='flex flex-col p-3 rounded-lg shadow-xl shadow-black/30 bg-gray-200 gap-3 h-[260px] w-full lg:w-[320px]'>
-                        <Image
-                            src={require('../public/assets/icon-descentralizado.png')}
-                            alt='Ícone de descentralização'
-                            className="w-[60px] object-contain"
-                        />
-
-                        <h4 className="font-bold text-xl text-green-900">{t('DESCENTRALIZADO')}</h4>
-                        <p className="text-lg text-gray-700">{t('Tecnologia da blockchain para armazenamento e processamentos dos dados sem uma entidade central')}.</p>
-                    </div>
-
-                    <div className='flex flex-col p-3 rounded-lg shadow-xl shadow-black/30 bg-gray-200 gap-3 h-[260px] w-full lg:w-[320px]'>
-                        <Image
-                            src={require('../public/assets/icon-low-cost.png')}
-                            alt='Ícone de descentralização'
-                            className="w-[60px] object-contain"
-                        />
-
-                        <h4 className="font-bold text-xl text-green-900">{t('BAIXO CUSTO')}</h4>
-                        <p className="text-lg text-gray-700">{t('Acessível para o pequeno produtor, apenas 3 transações necessárias para participar')}.</p>
-                    </div>
-
-                    <div className='flex flex-col p-3 rounded-lg shadow-xl shadow-black/30 bg-gray-200 gap-3 h-[260px] w-full lg:w-[320px]'>
-                        <Image
-                            src={require('../public/assets/icon-transparent.png')}
-                            alt='Ícone de descentralização'
-                            className="w-[60px] object-contain"
-                        />
-
-                        <h4 className="font-bold text-xl text-green-900">{t('TRANSPARENTE')}</h4>
-                        <p className="text-lg text-gray-700">{t('Todos dados públicos e disponíveis para acesso de qualquer um')}.</p>
-                    </div>
-                </div>
-            </section>
-
-            <section className='flex flex-col items-center px-2 lg:w-[1024px] lg:px-0 py-10'>
-                <div className='flex flex-col'>
-                    <h3 className='font-bold text-center text-green-900 text-2xl lg:text-start'>{t('Token Crédito de Regeneração')}</h3>
-                    <div className='flex items-center justify-center gap-5 flex-wrap mt-3'>
-                        <div className='flex flex-col justify-center p-3 border-2 border-green-900 rounded-lg w-[270px] lg:w-[320px] h-[320px]'>
-                            <Image
-                                src={require('../public/assets/token.png')}
-                                alt='Imagem do token de regeneração'
-                                className='w-[80px] object-contain'
-                            />
-
-                            <p className='text-green-900 mt-6'>{t('FORNECIMENTO TOTAL MÁXIMO')}</p>
-                            <p className='text-green-900 font-bold'>1,498,059,944 RC</p>
-
-                            <p className='text-green-900 mt-6'>{t('TITULARES')}</p>
-                            <p className='text-green-900 font-bold'>28</p>
-
-                            <p className='text-green-900 mt-6'>{t('TOTAL DE TRANFERÊNCIAS')}</p>
-                            <p className='text-green-900 font-bold'>74</p>
-                        </div>
-
-                        <div className='flex flex-col p-3 justify-center border-2 border-green-900 bg-green-900 rounded-lg w-[270px] lg:w-[320px] h-[320px]'>
-                            <p className='text-white font-bold'>{t('MERCADO')}</p>
-
-                            <p className='text-white mt-6'>{t('VALOR DE MERCADO')}</p>
-                            <p className='text-white font-bold'>R$0,0282</p>
-
-                            <p className='text-white mt-6'>{t('CAPITALIZAÇÃO DE MERCADO DE OFERTA CIRCULANTE')}</p>
-                            <p className='text-white font-bold'>R$0,00</p>
-                        </div>
-
-                        <div className='flex flex-col justify-center p-3 border-2 border-green-900 rounded-lg w-[270px] lg:w-[320px] h-[320px]'>
-                            <p className='text-green-900 font-bold'>{t('OUTRAS INFORMAÇÕES')}</p>
-
-                            <p className='text-green-900 mt-6'>{t('TOKEN CONTRACT (WITH 18 DECIMALS)')}</p>
-
-                            <Link
-                                className='text-blue-500 border-b-2 border-blue-500 font-bold mt-6 max-w-[30ch] overflow-hidden text-ellipsis'
-                                href='https://sepolia.etherscan.io/token/0xA8fDAbF07136c3c1A5C9572A730a2425c5a8500C'
-                                target='_blank'
-                            >0xA8fDAbF07136c3c1A5C9572A730a2425c5a8500C</Link>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <section className='flex flex-col px-2 items-center w-full pb-10 pt-5 bg-green-900 lg:px-0'>
-                <p className='font-bold text-white text-2xl'>{t('Impacto e estatísticas')}</p>
-
-                <div className='flex gap-5 justify-center flex-wrap lg:w-[1000px] mt-5'>
-                    <div className='flex flex-col p-3 rounded-lg shadow-xl shadow-black/30 bg-[#0a4303] gap-3 h-[200px] w-full lg:w-[320px]'>
-                        <p className='font-bold text-white'>{t('Impacto por token')}</p>
-
-                        <div className='flex items-center justify-between w-full h-full py-3'>
-                            <div className='flex flex-col items-center justify-between w-[50%] h-full'>
-                                <div className='flex flex-col items-center'>
-                                    <p className='font-bold text-white text-lg'>{Intl.NumberFormat('pt-BR', { maximumFractionDigits: 3 }).format(impactPerToken?.carbon * 1000)} g</p>
-                                    <p className=' text-white text-sm'>{t('Carbono')}</p>
+                            <div className='flex items-center justify-between'>
+                                <div className='w-full lg:w-[50%] h-[350px] bg-gray-400 rounded-md overflow-hidden shadow-lg'>
+                                    <Image
+                                        alt='Imagem de floresta'
+                                        src={require('../assets/img-florest-1.png')}
+                                        width={500}
+                                        height={500}
+                                        className='w-full h-full object-cover'
+                                    />
                                 </div>
 
-                                <div className='flex flex-col items-center'>
-                                    <p className='font-bold text-white text-lg'>{Intl.NumberFormat('pt-BR', { maximumFractionDigits: 2 }).format(impactPerToken?.soil * 10000)} cm²</p>
-                                    <p className=' text-white text-sm'>{t('Solo')}</p>
+                                <div className='w-full lg:w-[50%] flex flex-col items-center justify-center'>
+                                    <p className='text-[#8C8C8C] text-center max-w-[70%] text-2xl'>{t('descNossoValor1')}</p>
                                 </div>
                             </div>
 
-                            <div className='flex flex-col items-center justify-between w-[50%] h-full'>
-                                <div className='flex flex-col items-center'>
-                                    <p className='font-bold text-white text-lg'>{Intl.NumberFormat('pt-BR', { maximumFractionDigits: 4 }).format(impactPerToken?.water * 1000)} L</p>
-                                    <p className=' text-white text-sm'>{t('Água')}</p>
+                            <div className='flex items-center justify-between'>
+                                <div className='w-full lg:w-[50%] h-[350px] bg-gray-400 rounded-md overflow-hidden shadow-lg'>
+                                    <Image
+                                        alt='Imagem de pessoas conectadas'
+                                        src={require('../assets/img-pessoas-conectadas.png')}
+                                        width={500}
+                                        height={500}
+                                        className='w-full h-full object-cover'
+                                    />
                                 </div>
 
-                                <div className='flex flex-col items-center'>
-                                    <p className='font-bold text-white text-lg'>{Intl.NumberFormat('pt-BR', { maximumFractionDigits: 4 }).format(impactPerToken?.bio)} uv</p>
-                                    <p className=' text-white text-sm'>{t('Bio')}</p>
+                                <div className='w-full lg:w-[50%] flex flex-col items-center justify-center'>
+                                    <p className='text-[#8C8C8C] text-center max-w-[70%] text-2xl'>{t('descNossoValor2')}</p>
                                 </div>
                             </div>
                         </div>
                     </div>
+                </section>
 
-                    <div className='flex flex-col p-3 rounded-lg shadow-xl shadow-black/30 bg-[#0a4303] gap-3 h-[200px] w-full lg:w-[320px]'>
-                        <p className='font-bold text-white'>{t('Impacto à confirmar')}</p>
+                <section className='w-full flex flex-col items-center py-10' id='solutions'>
+                    <div className='w-full flex flex-col px-5 lg:px-0 lg:w-[1024px]'>
+                        <div className='flex flex-col gap-5'>
+                            <h3 className='text-[#686868] font-semibold text-2xl'>{t('nossasSolucoes')}</h3>
 
-                        <div className='flex items-center justify-between w-full h-full py-3'>
-                            <div className='flex flex-col items-center justify-between w-[50%] h-full'>
-                                <div className='flex flex-col items-center'>
-                                    <p className='font-bold text-white text-lg'>{Intl.NumberFormat('pt-BR', { maximumFractionDigits: 1 }).format(confirmImpact?.carbon / 1000)} t</p>
-                                    <p className=' text-white text-sm'>{t('Carbono')}</p>
-                                </div>
+                            <div className='flex items-center gap-3'>
+                                <AppItem
+                                    type='card'
+                                    title={t('crTitle')}
+                                    backgroundUrl='https://firebasestorage.googleapis.com/v0/b/sintrop-app-android.appspot.com/o/site%2Fbg-app-1.png?alt=media&token=b22854bb-3c01-4124-a459-b4b4b5dab48d'
+                                    description={t('descCRApp')}
+                                    description2='Testnet'
+                                    iconUrl='https://firebasestorage.googleapis.com/v0/b/sintrop-app-android.appspot.com/o/site%2Ftoken.png?alt=media&token=9220c767-d5dd-4b6f-a1e0-e67fdc17d641'
+                                    tags={['live']}
+                                    longDescription={t('longDescCrApp') as string}
+                                />
 
-                                <div className='flex flex-col items-center'>
-                                    <p className='font-bold text-white text-lg'>{Intl.NumberFormat('pt-BR', { maximumFractionDigits: 1 }).format(confirmImpact?.solo / 10000)} ha</p>
-                                    <p className=' text-white text-sm'>{t('Solo')}</p>
-                                </div>
+                                <AppItem
+                                    type='card'
+                                    title={t('crTitle')}
+                                    backgroundUrl='https://firebasestorage.googleapis.com/v0/b/sintrop-app-android.appspot.com/o/site%2Fbg-app-1.png?alt=media&token=b22854bb-3c01-4124-a459-b4b4b5dab48d'
+                                    description={t('descCRApp')}
+                                    description2='Mainnet'
+                                    iconUrl='https://firebasestorage.googleapis.com/v0/b/sintrop-app-android.appspot.com/o/site%2Ftoken.png?alt=media&token=9220c767-d5dd-4b6f-a1e0-e67fdc17d641'
+                                    tags={['comming-soon']}
+                                    longDescription={t('longDescCrApp') as string}
+                                />
+
+                                <AppItem
+                                    type='card'
+                                    title='Sintrop Pay'
+                                    backgroundUrl='https://firebasestorage.googleapis.com/v0/b/sintrop-app-android.appspot.com/o/site%2Fbg-app-2.png?alt=media&token=06611fe1-aca5-4cc2-8f61-8b554f15bacd'
+                                    description={t('descSintropPay')}
+                                    description2='Testnet'
+                                    iconUrl='https://firebasestorage.googleapis.com/v0/b/sintrop-app-android.appspot.com/o/site%2Ficon-sintrop-pay.png?alt=media&token=4ddf751c-5955-420d-9828-e8ca2da7876f'
+                                    tags={['development']}
+                                    longDescription={t('longDescSintropPay') as string}
+                                />
                             </div>
 
-                            <div className='flex flex-col items-center justify-between w-[50%] h-full'>
-                                <div className='flex flex-col items-center'>
-                                    <p className='font-bold text-white text-lg'>{Intl.NumberFormat('pt-BR', { maximumFractionDigits: 1 }).format(confirmImpact?.agua)} m³</p>
-                                    <p className=' text-white text-sm'>{t('Água')}</p>
-                                </div>
+                            {/* <div className='flex items-center gap-5'>
+                                <button
+                                    className='px-10 h-10 bg-green-500 rounded-full text-white'
+                                >
+                                    Principais apps
+                                </button>
 
-                                <div className='flex flex-col items-center'>
-                                    <p className='font-bold text-white text-lg'>{Intl.NumberFormat('pt-BR', { maximumFractionDigits: 1 }).format(confirmImpact?.bio)} uv</p>
-                                    <p className=' text-white text-sm'>{t('Bio')}</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                                <button
+                                    className='px-10 h-10 border text-green-500 border-green-500 rounded-full'
+                                >
+                                    Live
+                                </button>
+                            </div> */}
 
-                    <div className='flex flex-col p-3 rounded-lg shadow-xl shadow-black/30 bg-[#0a4303] gap-3 h-[200px] w-full lg:w-[320px]'>
-                        <p className='font-bold text-white'>{t('Impacto disponível')}</p>
+                            <div className='flex flex-col gap-5'>
+                                <AppItem
+                                    type='list'
+                                    title={t('crTitle')}
+                                    backgroundUrl='https://firebasestorage.googleapis.com/v0/b/sintrop-app-android.appspot.com/o/site%2Fimg-florest-1.png?alt=media&token=3d1d3b5e-3912-4bb7-9a39-e588ae6145fb'
+                                    description={t('descCRApp')}
+                                    description2='Testnet'
+                                    iconUrl='https://firebasestorage.googleapis.com/v0/b/sintrop-app-android.appspot.com/o/site%2Ftoken.png?alt=media&token=9220c767-d5dd-4b6f-a1e0-e67fdc17d641'
+                                    longDescription={t('longDescCrApp') as string}
+                                    tags={['live']}
+                                />
 
-                        <div className='flex items-center justify-between w-full h-full py-3'>
-                            <div className='flex flex-col items-center justify-between w-[50%] h-full'>
-                                <div className='flex flex-col items-center'>
-                                    <p className='font-bold text-white text-lg'>{Intl.NumberFormat('pt-BR', { maximumFractionDigits: 1 }).format(networkImpact?.carbon / 1000)} t</p>
-                                    <p className=' text-white text-sm'>{t('Carbono')}</p>
-                                </div>
+                                <AppItem
+                                    type='list'
+                                    title={t('crTitle')}
+                                    backgroundUrl='https://firebasestorage.googleapis.com/v0/b/sintrop-app-android.appspot.com/o/site%2Fimg-florest-1.png?alt=media&token=3d1d3b5e-3912-4bb7-9a39-e588ae6145fb'
+                                    description={t('descCRApp')}
+                                    description2='Mainnet'
+                                    iconUrl='https://firebasestorage.googleapis.com/v0/b/sintrop-app-android.appspot.com/o/site%2Ftoken.png?alt=media&token=9220c767-d5dd-4b6f-a1e0-e67fdc17d641'
+                                    tags={['comming-soon']}
+                                    longDescription={t('longDescCrApp') as string}
+                                />
 
-                                <div className='flex flex-col items-center'>
-                                    <p className='font-bold text-white text-lg'>{Intl.NumberFormat('pt-BR', { maximumFractionDigits: 1 }).format(networkImpact?.solo / 10000)} ha</p>
-                                    <p className=' text-white text-sm'>{t('Solo')}</p>
-                                </div>
-                            </div>
+                                <AppItem
+                                    type='list'
+                                    title='Sintrop Pay'
+                                    backgroundUrl='https://firebasestorage.googleapis.com/v0/b/sintrop-app-android.appspot.com/o/site%2Fbg-app-2.png?alt=media&token=06611fe1-aca5-4cc2-8f61-8b554f15bacd'
+                                    description={t('descSintropPay')}
+                                    description2='Testnet'
+                                    iconUrl='https://firebasestorage.googleapis.com/v0/b/sintrop-app-android.appspot.com/o/site%2Ficon-sintrop-pay.png?alt=media&token=4ddf751c-5955-420d-9828-e8ca2da7876f'
+                                    tags={['development']}
+                                />
 
-                            <div className='flex flex-col items-center justify-between w-[50%] h-full'>
-                                <div className='flex flex-col items-center'>
-                                    <p className='font-bold text-white text-lg'>{Intl.NumberFormat('pt-BR', { maximumFractionDigits: 0 }).format(networkImpact?.agua)} m³</p>
-                                    <p className=' text-white text-sm'>{t('Água')}</p>
-                                </div>
-
-                                <div className='flex flex-col items-center'>
-                                    <p className='font-bold text-white text-lg'>{Intl.NumberFormat('pt-BR', { maximumFractionDigits: 0 }).format(networkImpact?.bio)} uv</p>
-                                    <p className=' text-white text-sm'>{t('Bio')}</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div className='flex flex-col p-3 rounded-lg shadow-xl shadow-black/30 bg-[#0a4303] gap-3 h-[200px] w-full lg:w-[320px]'>
-                        <p className='font-bold text-white'>{t('Impacto compensado')}</p>
-
-                        <div className='flex items-center justify-between w-full h-full py-3'>
-                            <div className='flex flex-col items-center justify-between w-[50%] h-full'>
-                                <div className='flex flex-col items-center'>
-                                    <p className='font-bold text-white text-lg'>{Intl.NumberFormat('pt-BR', { maximumFractionDigits: 1 }).format(burnedImpact?.carbon / 1000)} t</p>
-                                    <p className=' text-white text-sm'>{t('Carbono')}</p>
-                                </div>
-
-                                <div className='flex flex-col items-center'>
-                                    <p className='font-bold text-white text-lg'>{Intl.NumberFormat('pt-BR', { maximumFractionDigits: 1 }).format(burnedImpact?.solo / 10000)} ha</p>
-                                    <p className=' text-white text-sm'>{t('Solo')}</p>
-                                </div>
-                            </div>
-
-                            <div className='flex flex-col items-center justify-between w-[50%] h-full'>
-                                <div className='flex flex-col items-center'>
-                                    <p className='font-bold text-white text-lg'>{Intl.NumberFormat('pt-BR', { maximumFractionDigits: 0 }).format(burnedImpact?.agua)} m³</p>
-                                    <p className=' text-white text-sm'>{t('Água')}</p>
-                                </div>
-
-                                <div className='flex flex-col items-center'>
-                                    <p className='font-bold text-white text-lg'>{Intl.NumberFormat('pt-BR', { maximumFractionDigits: 0 }).format(burnedImpact?.bio)} uv</p>
-                                    <p className=' text-white text-sm'>{t('Bio')}</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div className='flex flex-col p-3 rounded-lg shadow-xl shadow-black/30 bg-[#0a4303] gap-3 h-[200px] w-full lg:w-[320px]'>
-                        <p className='font-bold text-white'>{t('Estatísticas')}</p>
-
-                        <div className='flex flex-col w-full h-full mt-3'>
-                            <div className='flex items-center justify-between w-full'>
-                                <p className='text-white'>{t('Total de árvores')}</p>
-                                <p className='text-white font-bold'>{Intl.NumberFormat('pt-BR').format(impactPerToken?.trees)}</p>
-                            </div>
-
-                            <div className='flex items-center justify-between w-full'>
-                                <p className='text-white'>{t('Inspeções realizadas')}</p>
-                                <p className='text-white font-bold'>{inspections.length}</p>
+                                <AppItem
+                                    type='list'
+                                    title='Sintrop Chain'
+                                    backgroundUrl='https://firebasestorage.googleapis.com/v0/b/sintrop-app-android.appspot.com/o/site%2Fbg-app-2.png?alt=media&token=06611fe1-aca5-4cc2-8f61-8b554f15bacd'
+                                    description='Adquira seu CR'
+                                    description2='Testnet'
+                                    iconUrl='https://firebasestorage.googleapis.com/v0/b/sintrop-app-android.appspot.com/o/site%2Ficon-sintrop-chain.png?alt=media&token=96458fdd-2bcf-4004-bf53-90dd30fe367a'
+                                    tags={['development']}
+                                />
                             </div>
                         </div>
                     </div>
-                </div>
-            </section>
+                </section>
 
-            <section className='flex flex-col lg:w-[1000px] py-10'>
-                <div className='flex flex-col px-4 lg:px-0 lg:flex-row items-center justify-center'>
-                    <div className='lg:w-[50%] flex flex-col items-center lg:items-start'>
-                        <p className='font-bold text-green-900 text-2xl'>{t('A COMUNIDADE')}</p>
-                        <p className=' text-green-900 mt-2'>{t("Rede de produtores, inspetores, ativistas ambientais, pesquisadores e desenvolvedores conectados pela tecnologia da blockchain e por contratos inteligentes imutáveis. Os produtores são propriedades rurais ou áreas de reflorestamento que desejam vender o impacto ambiental de regeneração de ecossistemas que prestam para a sociedade. Os pesquisadores são responsáveis por criar e aprimorar os métodos de avaliação. Os inspetores são as pessoas que irão coletar os dados e informações do produtor")}</p>
-                        <Link
-                            href='https://app.sintrop.com'
-                            target='_blank'
-                            className='w-72 h-14 border-2 rounded-xl bg-[#3E9EF5] text-white text-sm font-bold flex items-center justify-center mt-7'
-                        >
-                            {t('FAÇA PARTE DA NOSSA COMUNIDADE')}
-                        </Link>
+                <section className='w-full flex flex-col items-center py-10 bg-[rgba(3,124,0,0.13)]'>
+                    <div className='w-full flex flex-col px-5 lg:px-0 lg:w-[1024px]'>
+                        <div className='flex items-center justify-between'>
+                            <div className='flex flex-col gap-5 w-full lg:w-[50%]'>
+                                <h3 className='font-bold text-[#8c8c8c] text-3xl'>{t('crTitle')}</h3>
+                                <h4 className='text-[#8c8c8c] text-2xl'>
+                                    {t('descCr')}
+                                </h4>
+
+                                <div className='flex items-center gap-5 mt-5'>
+                                    <Link
+                                        className='bg-[#68A021] w-40 h-10 rounded-md font-semibold text-white flex items-center justify-center'
+                                        href='https://sintrop.com/app'
+                                        target='_blank'
+                                    >
+                                        Download app
+                                    </Link>
+
+                                    <Link
+                                        className='bg-[#68A021] w-40 h-10 rounded-md font-semibold text-white flex items-center justify-center'
+                                        href='https://app.sintrop.com'
+                                        target='_blank'
+                                    >
+                                        Web platform
+                                    </Link>
+                                </div>
+                            </div>
+
+                            <div>
+                                <Image
+                                    alt='Imagem do crédito de regeneração'
+                                    src={LogoCR}
+                                    width={500}
+                                    height={500}
+                                    className='w-[300px] h-[300px] object-contain'
+                                />
+                            </div>
+                        </div>
                     </div>
-                    <div className='lg:w-[50%] flex flex-col lg:pl-8'>
-                        <Image
-                            src={require('../public/assets/community.png')}
-                            alt='Imagem da comunidade'
-                            className='w-full object-contain'
-                        />
-                    </div>
-                </div>
-            </section>
-
-            <section id='comunidade' className='flex flex-col items-center w-full py-10 bg-green-900 '>
-                <div className='flex gap-5 justify-center flex-wrap lg:w-[1000px] '>
-                    <CardUsers
-                        title='PRODUTOR RURAL E PROJETOS DE REFLORESTAMENTO'
-                        bgColor='transparent'
-                        description="Venda o serviço ambiental de regeneração de ecossistemas e seja recompensado para regenerar e reflorestar o Planeta."
-                        typeUser='produtor'
-                    />
-                    <CardUsers
-                        title='INSPETOR FLORESTAL'
-                        bgColor='#34812B'
-                        description="Inspecione os produtores com nosso aplicativo móvel, avalie seu impacto escossistêmico e seja recompensado pela quantidade de inspeções realizadas."
-                        typeUser='inspetor'
-                    />
-                    <CardUsers
-                        title='INSTITUIÇÕES E PESQUISADORES'
-                        bgColor='transparent'
-                        description="Financie sua pesquisa com o Crédito de Regeneração, publique suas pesquisas, crie e aprimore os métodos de avaliação do Sistema."
-                        typeUser='pesquisador'
-                    />
-                    <CardUsers
-                        title='ATIVISTA AMBIENTAL'
-                        bgColor='#34812B'
-                        description="Convide e treine novos usuários para a rede."
-                        typeUser='ativista'
-                    />
-                    <CardUsers
-                        title='DESENVOLVEDORES'
-                        bgColor='transparent'
-                        description="Desenvolva os contratos, plataforma e aplicações para interações dos usuários."
-                        typeUser='desenvolvedores'
-                    />
-                    <CardUsers
-                        title='EMPRESA E INVESTIDORES'
-                        bgColor='#34812B'
-                        description="Financie a regeneração do Planeta e prove para seus clientes seu compromisso com o meio ambiente."
-                        typeUser='investidor'
-                    />
-                </div>
-            </section>
-
-            <section className='flex flex-col items-center justify-center w-full h-[400px] bg-lines bg-center'>
-                <h4 className="font-bold text-black italic text-3xl text-center">
-                    {t('CONTRIBUA PARA ')}
-                    <span className="text-[#529D17]">
-                        {t('REGENERAÇÃO DO PLANETA')}!
-                    </span>
-                </h4>
-            </section>
-
-            <Footer />
-
-            <BtnWhats />
-        </main>
+                </section>
+            </main>
+        </>
     )
 }
 

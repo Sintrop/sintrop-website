@@ -14,7 +14,7 @@ import { Footer } from "../../components/Footer";
 import { useTranslation } from "next-i18next";
 import { CardPost } from "../../components/CardPost";
 import { db } from "../../src/lib/prisma";
-import { UserProps } from "../newPubli";
+import { UserProps } from "../regeneration-credit/newPubli";
 import { TopBar } from "../../components/TopBar";
 
 interface ServerSideProps{
