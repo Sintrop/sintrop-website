@@ -67,7 +67,7 @@ const Home: NextPage = (_props: InferGetStaticPropsType<typeof getStaticProps>) 
                                     solutions to make the world a better place.
                                 </h1>
 
-                                <div className='flex items-center gap-5 mt-10'>
+                                {/* <div className='flex items-center gap-5 mt-10'>
                                     <button
                                         className='bg-[#68A021] w-40 h-10 rounded-md font-semibold text-white'
                                     >
@@ -80,7 +80,7 @@ const Home: NextPage = (_props: InferGetStaticPropsType<typeof getStaticProps>) 
                                     >
                                         Web platform
                                     </button>
-                                </div>
+                                </div> */}
                             </div>
                         </div>
                     </div>
@@ -128,7 +128,7 @@ const Home: NextPage = (_props: InferGetStaticPropsType<typeof getStaticProps>) 
                     </div>
                 </section>
 
-                <section className='w-full flex flex-col items-center py-10'>
+                <section className='w-full flex flex-col items-center py-10' id='solutions'>
                     <div className='w-full flex flex-col px-5 lg:px-0 lg:w-[1024px]'>
                         <div className='flex flex-col gap-5'>
                             <h3 className='text-[#686868] font-semibold text-2xl'>Our solutions</h3>
@@ -137,28 +137,34 @@ const Home: NextPage = (_props: InferGetStaticPropsType<typeof getStaticProps>) 
                                 <AppItem
                                     type='card'
                                     title='Regeneration Credit'
-                                    backgroundUrl='https://firebasestorage.googleapis.com/v0/b/sintrop-app-android.appspot.com/o/site%2Fimg-florest-1.png?alt=media&token=3d1d3b5e-3912-4bb7-9a39-e588ae6145fb'
-                                    description='Adquira seu CR'
+                                    backgroundUrl='https://firebasestorage.googleapis.com/v0/b/sintrop-app-android.appspot.com/o/site%2Fbg-app-1.png?alt=media&token=b22854bb-3c01-4124-a459-b4b4b5dab48d'
+                                    description='Nature decentralized marketplace'
                                     description2='Testnet'
                                     iconUrl='https://firebasestorage.googleapis.com/v0/b/sintrop-app-android.appspot.com/o/site%2Ftoken.png?alt=media&token=9220c767-d5dd-4b6f-a1e0-e67fdc17d641'
+                                    tags={['live']}
+                                    longDescription='The Regeneration Credit allows people that are regenerating ecosystems, such as regenerative agriculture or reforestation, to sell the environmental impact (CO2, soil, water and biodiversity) on the platform. We are creating a new decentralized certification algorithm to measure and trade the impact without a central part, runned by smart contracts. We introduce the Regeneration Credit, an asset backed by the impact of the network, rewarded to the community as Payment for Environmental Service. Any person or company can buy the token and trade it for a certificate that proves their commitment to the regeneration of the Planet.'
                                 />
 
                                 <AppItem
                                     type='card'
                                     title='Regeneration Credit'
-                                    backgroundUrl='https://firebasestorage.googleapis.com/v0/b/sintrop-app-android.appspot.com/o/site%2Fimg-florest-1.png?alt=media&token=3d1d3b5e-3912-4bb7-9a39-e588ae6145fb'
-                                    description='Adquira seu CR'
-                                    description2='Testnet'
+                                    backgroundUrl='https://firebasestorage.googleapis.com/v0/b/sintrop-app-android.appspot.com/o/site%2Fbg-app-1.png?alt=media&token=b22854bb-3c01-4124-a459-b4b4b5dab48d'
+                                    description='Nature decentralized marketplace'
+                                    description2='Mainnet'
                                     iconUrl='https://firebasestorage.googleapis.com/v0/b/sintrop-app-android.appspot.com/o/site%2Ftoken.png?alt=media&token=9220c767-d5dd-4b6f-a1e0-e67fdc17d641'
+                                    tags={['comming-soon']}
+                                    longDescription='The Regeneration Credit allows people that are regenerating ecosystems, such as regenerative agriculture or reforestation, to sell the environmental impact (CO2, soil, water and biodiversity) on the platform. We are creating a new decentralized certification algorithm to measure and trade the impact without a central part, runned by smart contracts. We introduce the Regeneration Credit, an asset backed by the impact of the network, rewarded to the community as Payment for Environmental Service. Any person or company can buy the token and trade it for a certificate that proves their commitment to the regeneration of the Planet.'
                                 />
 
                                 <AppItem
                                     type='card'
-                                    title='Regeneration Credit'
-                                    backgroundUrl='https://firebasestorage.googleapis.com/v0/b/sintrop-app-android.appspot.com/o/site%2Fimg-florest-1.png?alt=media&token=3d1d3b5e-3912-4bb7-9a39-e588ae6145fb'
-                                    description='Adquira seu CR'
+                                    title='Sintrop Pay'
+                                    backgroundUrl='https://firebasestorage.googleapis.com/v0/b/sintrop-app-android.appspot.com/o/site%2Fbg-app-2.png?alt=media&token=06611fe1-aca5-4cc2-8f61-8b554f15bacd'
+                                    description='Pay and sell with crypto'
                                     description2='Testnet'
-                                    iconUrl='https://firebasestorage.googleapis.com/v0/b/sintrop-app-android.appspot.com/o/site%2Ftoken.png?alt=media&token=9220c767-d5dd-4b6f-a1e0-e67fdc17d641'
+                                    iconUrl='https://firebasestorage.googleapis.com/v0/b/sintrop-app-android.appspot.com/o/site%2Ficon-sintrop-pay.png?alt=media&token=4ddf751c-5955-420d-9828-e8ca2da7876f'
+                                    tags={['development']}
+                                    longDescription='Payment method for carrying out transactions, buying and selling products and services with cryptocurrencies.'
                                 />
                             </div>
 
@@ -176,7 +182,7 @@ const Home: NextPage = (_props: InferGetStaticPropsType<typeof getStaticProps>) 
                                 </button>
                             </div>
 
-                            <div className='flex flex-col gap-3'>
+                            <div className='flex flex-col gap-5'>
                                 <AppItem
                                     type='list'
                                     title='Regeneration Credit'
@@ -184,6 +190,8 @@ const Home: NextPage = (_props: InferGetStaticPropsType<typeof getStaticProps>) 
                                     description='Adquira seu CR'
                                     description2='Testnet'
                                     iconUrl='https://firebasestorage.googleapis.com/v0/b/sintrop-app-android.appspot.com/o/site%2Ftoken.png?alt=media&token=9220c767-d5dd-4b6f-a1e0-e67fdc17d641'
+                                    longDescription='Lorem impsumd dunsdh ddhuhbdsshbf hudsbfjdsbf  fhdsbuhbfd fhdsbufbsduhbfnd h hbf dshb fhjhbds fjjsddbfjsd fn sdjf  sdhhbfjdsn fmsdbfjjdbjsn fdsn fjjsdhbfsdn fjsdn fjsd fnsd fmsd fjhsdbjf djbf jdhbfuwbdoewij dkjjw ddjd ewidcbweidd '
+                                    tags={['live']}
                                 />
 
                                 <AppItem
@@ -191,17 +199,32 @@ const Home: NextPage = (_props: InferGetStaticPropsType<typeof getStaticProps>) 
                                     title='Regeneration Credit'
                                     backgroundUrl='https://firebasestorage.googleapis.com/v0/b/sintrop-app-android.appspot.com/o/site%2Fimg-florest-1.png?alt=media&token=3d1d3b5e-3912-4bb7-9a39-e588ae6145fb'
                                     description='Adquira seu CR'
-                                    description2='Testnet'
+                                    description2='Mainnet'
                                     iconUrl='https://firebasestorage.googleapis.com/v0/b/sintrop-app-android.appspot.com/o/site%2Ftoken.png?alt=media&token=9220c767-d5dd-4b6f-a1e0-e67fdc17d641'
+                                    tags={['comming-soon']}
                                 />
 
                                 <AppItem
                                     type='list'
-                                    title='Regeneration Credit'
-                                    backgroundUrl='https://firebasestorage.googleapis.com/v0/b/sintrop-app-android.appspot.com/o/site%2Fimg-florest-1.png?alt=media&token=3d1d3b5e-3912-4bb7-9a39-e588ae6145fb'
+                                    title='Sintrop Pay'
+                                    backgroundUrl='https://firebasestorage.googleapis.com/v0/b/sintrop-app-android.appspot.com/o/site%2Fbg-app-2.png?alt=media&token=06611fe1-aca5-4cc2-8f61-8b554f15bacd'
                                     description='Adquira seu CR'
                                     description2='Testnet'
-                                    iconUrl='https://firebasestorage.googleapis.com/v0/b/sintrop-app-android.appspot.com/o/site%2Ftoken.png?alt=media&token=9220c767-d5dd-4b6f-a1e0-e67fdc17d641'
+                                    iconUrl='https://firebasestorage.googleapis.com/v0/b/sintrop-app-android.appspot.com/o/site%2Ficon-sintrop-pay.png?alt=media&token=4ddf751c-5955-420d-9828-e8ca2da7876f'
+                                    tags={['development']}
+                                />
+
+                                <AppItem
+                                    type='list'
+                                    title='Sintrop Chain'
+                                    backgroundUrl='https://firebasestorage.googleapis.com/v0/b/sintrop-app-android.appspot.com/o/site%2Fbg-app-2.png?alt=media&token=06611fe1-aca5-4cc2-8f61-8b554f15bacd'
+                                    description='Adquira seu CR'
+                                    description2='Testnet'
+                                    iconUrl='https://firebasestorage.googleapis.com/v0/b/sintrop-app-android.appspot.com/o/site%2Ficon-sintrop-chain.png?alt=media&token=96458fdd-2bcf-4004-bf53-90dd30fe367a'
+                                    tags={['development']}
+                                    linkWeb='https://google.com.br'
+                                    linkAppleStore='https://google.com.br'
+                                    linkGooglePlay='https://google.com.br'
                                 />
                             </div>
                         </div>

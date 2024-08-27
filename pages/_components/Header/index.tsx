@@ -1,6 +1,19 @@
+import { useState, useEffect } from "react";
 import Image from "next/image";
+import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuLabel, DropdownMenuSeparator, DropdownMenuTrigger } from "../../../@/components/ui/dropdown-menu";
+import { useTranslation, UseTranslation } from "next-i18next";
+import { useRouter } from "next/router";
+import Link from "next/link";
 
 export function Header(){
+    const router = useRouter();
+    const {t, i18n} = useTranslation('common');
+    const [path, setPath] = useState('');
+
+    useEffect(() => {
+        setPath(router.pathname.replace('/pt', '').replace('/en', ''));
+    },[router.pathname]);
+    
     return(
         <header className="w-full h-20 bg-white border-b border-gray-200 shadow-xl flex items-center justify-center">
             <div className="flex justify-between items-center w-full lg:max-w-[1024px]">
@@ -13,11 +26,53 @@ export function Header(){
                 />
 
                 <nav className="flex items-center gap-10">
-                    <p className="font-semibold text-[#2b2b2b]">Solutions</p>
-                    <p className="font-semibold text-[#2b2b2b]">About</p>
+                    <Link 
+                        className="font-semibold text-[#2b2b2b]"
+                        href='#solutions'
+                    >
+                        {t('solutions')}
+                    </Link>
+                    {/* <p className="font-semibold text-[#2b2b2b]">About</p>
                     <button className="h-10 px-14 rounded-md bg-[#7FD349] text-[#2b2b2b] font-semibold">
                         Link
                     </button>
+
+                    <DropdownMenu>
+                        <DropdownMenuTrigger asChild>
+                            <button
+                                className="w-5 h-5 rounded-full bg-red-500"
+                            >
+
+                            </button>
+                        </DropdownMenuTrigger>
+
+                        <DropdownMenuContent className="bg-white border rounded-md shadow-xl w-[150px]">
+                            <DropdownMenuLabel>Language</DropdownMenuLabel>
+                            <DropdownMenuSeparator/>
+
+                            <DropdownMenuItem
+                                asChild
+                                className="w-full h-10"
+                            >
+                                <Link
+                                    href={`http://localhost:3000/en${path.replace('en', '')}`}
+                                >
+                                    English
+                                </Link>
+                            </DropdownMenuItem>
+
+                            <DropdownMenuItem
+                                asChild
+                                className="w-full h-10"
+                            >
+                                <Link
+                                    href={`http://localhost:3000/pt${path.replace('pt', '')}`}
+                                >
+                                    Português
+                                </Link>
+                            </DropdownMenuItem>
+                        </DropdownMenuContent>
+                    </DropdownMenu> */}
                 </nav>
             </div>
         </header>

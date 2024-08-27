@@ -1,73 +1,134 @@
 import Image from "next/image";
 import { Dialog, DialogContent, DialogOverlay, DialogPortal, DialogTitle, DialogTrigger } from "../../../@/components/ui/dialog";
 import { AppDetails } from "./components/AppDetails";
-//import * as Dialog from '@radix-ui/react-dialog';
+import { Tags } from "./components/Tags";
 
-interface Props {
+export interface AppDetailProps {
     type: string;
     iconUrl: string;
     backgroundUrl: string;
     title: string;
     description: string;
     description2?: string;
+    longDescription?: string;
+    linkWeb?: string;
+    linkGooglePlay?: string;
+    linkAppleStore?: string;
+    tags?: string[]
 }
 
-export function AppItem({ backgroundUrl, description, description2, iconUrl, title, type }: Props) {
+export function AppItem({ backgroundUrl, description, description2, iconUrl, title, type, longDescription, linkAppleStore, linkGooglePlay, linkWeb, tags }: AppDetailProps) {
     if (type === 'card') {
         return (
-            <div className={`flex w-[390px] h-[290px]  rounded-lg relative overflow-hidden shadow-xl`}>
-                <img
-                    alt='Background do app'
-                    src={backgroundUrl}
-                    className="w-full h-full object-cover flex"
+            <Dialog>
+                <DialogTrigger asChild>
+                    <button className={`flex w-[390px] h-[290px] rounded-lg relative overflow-hidden shadow-xl`}>
+                        <img
+                            alt='Background do app'
+                            src={backgroundUrl}
+                            className="w-full h-full object-cover flex"
+                        />
+
+                        <div className="w-full h-full absolute flex flex-col justify-end bg-gradient-to-t from-[#03364B] to-transparent">
+                            <p className="font-bold text-xl text-[#75D63A] mx-5 text-left">{description}</p>
+                            <div className="flex py-5 px-5 gap-3">
+                                <div className="w-16 h-16 bg-white rounded-full p-1">
+                                    <Image
+                                        alt="icon app"
+                                        src={iconUrl}
+                                        width={100}
+                                        height={100}
+                                        className="w-full h-full rounded-full object-contain"
+                                    />
+                                </div>
+
+                                <div className="flex flex-col items-start">
+                                    <h4 className="font-bold text-white text-lg">{title}</h4>
+                                    <p className="text-white">{description2}</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        {tags && (
+                            <div className="flex gap-3 absolute top-2 right-2">
+                                {tags.map(item => (
+                                    <Tags
+                                        key={item}
+                                        tag={item}
+                                    />
+                                ))}
+                            </div>
+                        )}
+                    </button>
+                </DialogTrigger>
+
+                <AppDetails
+                    data={{
+                        backgroundUrl,
+                        description,
+                        iconUrl,
+                        title,
+                        type,
+                        longDescription,
+                        description2,
+                        linkAppleStore,
+                        linkGooglePlay,
+                        linkWeb,
+                        tags
+                    }}
                 />
-
-                <div className="w-full h-full absolute flex flex-col justify-end bg-gradient-to-t from-[#03364B] to-transparent">
-                    <p className="font-bold text-xl text-[#75D63A] mx-5">{description}</p>
-                    <div className="flex py-5 px-5 gap-3">
-                        <div className="w-16 h-16 bg-white rounded-full p-1">
-                            <Image
-                                alt="icon app"
-                                src={iconUrl}
-                                width={100}
-                                height={100}
-                                className="w-full h-full rounded-full object-contain"
-                            />
-                        </div>
-
-                        <div className="flex flex-col">
-                            <h4 className="font-bold text-white text-lg">{title}</h4>
-                            <p className="text-white">{description2}</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            </Dialog>
         )
     }
 
     return (
         <Dialog>
-            <DialogTrigger>
-                <button className='flex gap-3'>
-                    <div className='w-20 h-20 bg-[#d9d9d9] rounded-lg p-2'>
+            <DialogTrigger className="w-fit">
+                <button className='flex gap-3 w-fit'>
+                    <div className='w-20 h-20 bg-[#d9d9d9] rounded-2xl'>
                         <Image
                             alt="icon app"
                             src={iconUrl}
                             width={100}
                             height={100}
-                            className="w-full h-full rounded-full object-contain"
+                            className="w-full h-full object-cover"
                         />
                     </div>
-                    <div className='flex flex-col '>
+                    <div className='flex flex-col items-start'>
                         <h4 className='text-[#8C8C8C] font-bold text-xl'>{title}</h4>
-                        <p className='text-[#8c8c8c] text-lg'>{description2}</p>
+                        <p className='text-[#8c8c8c]'>{description2}</p>
+
+                        {tags && (
+                            <div className="flex gap-3">
+                                {tags.map(item => (
+                                    <Tags
+                                        key={item}
+                                        tag={item}
+                                    />
+                                ))}
+                            </div>
+                        )}
                     </div>
                 </button>
             </DialogTrigger>
 
-            <AppDetails/>
+            <AppDetails
+                data={{
+                    backgroundUrl,
+                    description,
+                    iconUrl,
+                    title,
+                    type,
+                    longDescription,
+                    description2,
+                    linkAppleStore,
+                    linkGooglePlay,
+                    linkWeb,
+                    tags
+                }}
+            />
         </Dialog>
-        
-            
+
+
     )
 }
