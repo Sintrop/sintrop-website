@@ -5,7 +5,7 @@ interface Props{
     tag: string
 }
 
-export function Tags({tag}: Props){
+export default function Tags({tag}: Props){
     const {t} = useTranslation();
     return(
         <div className="px-3 h-5 rounded-full bg-[#def7e3] flex items-center">

@@ -3,14 +3,14 @@ import Image from "next/image";
 import Link from "next/link";
 import { GiEarthAfricaEurope } from "react-icons/gi";
 import { FaApple, FaGooglePlay } from "react-icons/fa";
-import { Tags } from "../Tags";
+import Tags from "../Tags";
 import * as Dialog from '@radix-ui/react-dialog';
 
 interface Props {
     data: AppDetailProps;
 }
 
-export function AppDetails({ data }: Props) {
+export default function AppDetails({ data }: Props) {
     return (
         <Dialog.Portal >
             <Dialog.Overlay className="bg-black/50 fixed inset-0" />

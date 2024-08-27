@@ -5,7 +5,7 @@ import { useTranslation, UseTranslation } from "next-i18next";
 import { useRouter } from "next/router";
 import Link from "next/link";
 
-export function Header() {
+export default function Header() {
     const router = useRouter();
     const { t, i18n } = useTranslation('common');
     const [path, setPath] = useState('');
