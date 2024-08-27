@@ -40,7 +40,7 @@ export function Header() {
                         {t('solucoes')}
                     </Link>
 
-                    <DropdownMenu>
+                    {/* <DropdownMenu>
                         <DropdownMenuTrigger asChild>
                             <button
                                 className="w-5 h-5 rounded-full bg-red-500"
@@ -75,7 +75,7 @@ export function Header() {
                                 </Link>
                             </DropdownMenuItem>
                         </DropdownMenuContent>
-                    </DropdownMenu>
+                    </DropdownMenu> */}
                 </nav>
             </div>
         </header>
