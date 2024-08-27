@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import Image from "next/image";
-import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuLabel, DropdownMenuSeparator, DropdownMenuTrigger } from "../../../@/components/ui/dropdown-menu";
+import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuLabel, DropdownMenuSeparator, DropdownMenuTrigger } from "../../@/components/ui/dropdown-menu";
 import { useTranslation, UseTranslation } from "next-i18next";
 import { useRouter } from "next/router";
 import Link from "next/link";
@@ -19,7 +19,7 @@ export default function Header() {
             <div className="flex justify-between items-center w-full lg:max-w-[1024px]">
                 <Image
                     alt='logo sintrop'
-                    src={require('../../../assets/logo.png')}
+                    src={require('../../assets/logo.png')}
                     width={100}
                     height={100}
                     className="w-[150px] h-[50px] object-contain"

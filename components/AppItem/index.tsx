@@ -1,6 +1,6 @@
 import Image from "next/image";
-import AppDetails from "./components/AppDetails";
-import Tags from "./components/Tags";
+import {AppDetails} from "./components/AppDetails";
+import {Tags} from "./components/Tags";
 import * as Dialog from '@radix-ui/react-dialog';
 
 export interface AppDetailProps {
@@ -17,7 +17,7 @@ export interface AppDetailProps {
     tags?: string[]
 }
 
-export default function AppItem({ backgroundUrl, description, description2, iconUrl, title, type, longDescription, linkAppleStore, linkGooglePlay, linkWeb, tags }: AppDetailProps) {
+export function AppItem({ backgroundUrl, description, description2, iconUrl, title, type, longDescription, linkAppleStore, linkGooglePlay, linkWeb, tags }: AppDetailProps) {
     if (type === 'card') {
         return (
             <Dialog.Root>
