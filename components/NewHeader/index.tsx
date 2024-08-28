@@ -15,7 +15,7 @@ export default function Header() {
     }, [router.pathname]);
 
     return (
-        <header className="w-full h-20 bg-white border-b border-gray-200 shadow-xl flex items-center justify-center">
+        <header className="w-full h-20 bg-white border-b border-gray-200 shadow-xl flex items-center justify-center z-20">
             <div className="flex justify-between items-center w-full lg:max-w-[1024px]">
                 <Image
                     alt='logo sintrop'

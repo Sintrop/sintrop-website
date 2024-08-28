@@ -14,7 +14,7 @@ export function AppDetails({ data }: Props) {
     return (
         <Dialog.Portal >
             <Dialog.Overlay className="bg-black/50 fixed inset-0" />
-            <Dialog.Content className="bg-white fixed top-[50%] left-[50%] w-[320px] lg:w-[500px] p-5 transform translate-x-[-50%] translate-y-[-50%] rounded-lg">
+            <Dialog.Content className="bg-white fixed top-[50%] left-[50%] h-[300px] w-[320px] lg:w-[500px] lg:h-auto p-5 transform translate-x-[-50%] translate-y-[-50%] rounded-lg overflow-y-auto">
                 {/* <Dialog.Header>
                     <Dialog.Close>
                         teste

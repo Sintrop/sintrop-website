@@ -8,8 +8,8 @@ import { useRouter } from 'next/router';
 import Link from 'next/link';
 import Image from 'next/image';
 import LogoCR from '../assets/token.png';
-import {AppItem} from '../components/AppItem';
-import Header  from '../components/NewHeader';
+import { AppItem } from '../components/AppItem';
+import Header from '../components/NewHeader';
 import { Dialog, DialogContent, DialogOverlay, DialogTrigger } from '../@/components/ui/dialog';
 
 interface StaticProps {
@@ -78,9 +78,10 @@ const Home: NextPage = (_props: InferGetStaticPropsType<typeof getStaticProps>) 
                                 <div className='flex items-center gap-5 mt-10'>
                                     <Link
                                         className='bg-[#68A021] w-40 h-10 rounded-md font-semibold text-white flex justify-center items-center'
-                                        href=''
+                                        href={_props._nextI18Next?.initialLocale === 'en' ? 'https://www.sintrop.com/assets/qr-code/whitepaper-EN.pdf' : 'https://www.sintrop.com/assets/qr-code/whitepaper.pdf'}
+                                        target='_blank'
                                     >
-                                        Download app
+                                        Whitepaper
                                     </Link>
                                 </div>
                             </div>
@@ -95,7 +96,7 @@ const Home: NextPage = (_props: InferGetStaticPropsType<typeof getStaticProps>) 
 
                             <h3 className='text-[#686868] font-semibold text-2xl'>{t('nossosValores')}</h3>
 
-                            <div className='flex items-center justify-between'>
+                            <div className='flex flex-col items-center justify-between lg:flex-row'>
                                 <div className='w-full lg:w-[50%] h-[350px] bg-gray-400 rounded-md overflow-hidden shadow-lg'>
                                     <Image
                                         alt='Imagem de floresta'
@@ -107,11 +108,11 @@ const Home: NextPage = (_props: InferGetStaticPropsType<typeof getStaticProps>) 
                                 </div>
 
                                 <div className='w-full lg:w-[50%] flex flex-col items-center justify-center'>
-                                    <p className='text-[#8C8C8C] text-center max-w-[70%] text-2xl'>{t('descNossoValor1')}</p>
+                                    <p className='text-[#8C8C8C] text-center lg:max-w-[70%] text-2xl'>{t('descNossoValor1')}</p>
                                 </div>
                             </div>
 
-                            <div className='flex items-center justify-between'>
+                            <div className='flex flex-col items-center justify-between lg:flex-row'>
                                 <div className='w-full lg:w-[50%] h-[350px] bg-gray-400 rounded-md overflow-hidden shadow-lg'>
                                     <Image
                                         alt='Imagem de pessoas conectadas'
@@ -123,7 +124,7 @@ const Home: NextPage = (_props: InferGetStaticPropsType<typeof getStaticProps>) 
                                 </div>
 
                                 <div className='w-full lg:w-[50%] flex flex-col items-center justify-center'>
-                                    <p className='text-[#8C8C8C] text-center max-w-[70%] text-2xl'>{t('descNossoValor2')}</p>
+                                    <p className='text-[#8C8C8C] text-center lg:max-w-[70%] text-2xl'>{t('descNossoValor2')}</p>
                                 </div>
                             </div>
                         </div>
@@ -135,7 +136,7 @@ const Home: NextPage = (_props: InferGetStaticPropsType<typeof getStaticProps>) 
                         <div className='flex flex-col gap-5'>
                             <h3 className='text-[#686868] font-semibold text-2xl'>{t('nossasSolucoes')}</h3>
 
-                            <div className='flex items-center gap-3'>
+                            <div className='flex flex-col items-center gap-3 lg:flex-row'>
                                 <AppItem
                                     type='card'
                                     title={t('crTitle')}
@@ -145,6 +146,9 @@ const Home: NextPage = (_props: InferGetStaticPropsType<typeof getStaticProps>) 
                                     iconUrl='https://firebasestorage.googleapis.com/v0/b/sintrop-app-android.appspot.com/o/site%2Ftoken.png?alt=media&token=9220c767-d5dd-4b6f-a1e0-e67fdc17d641'
                                     tags={['live']}
                                     longDescription={t('longDescCrApp') as string}
+                                    linkWeb='https://app.sintrop.com'
+                                    linkGooglePlay='https://play.google.com/store/apps/details?id=com.sintrop.activistapp'
+                                    linkAppleStore='https://apps.apple.com/br/app/sintrop/id6475600488'
                                 />
 
                                 <AppItem
@@ -165,8 +169,9 @@ const Home: NextPage = (_props: InferGetStaticPropsType<typeof getStaticProps>) 
                                     description={t('descSintropPay')}
                                     description2='Testnet'
                                     iconUrl='https://firebasestorage.googleapis.com/v0/b/sintrop-app-android.appspot.com/o/site%2Ficon-sintrop-pay.png?alt=media&token=4ddf751c-5955-420d-9828-e8ca2da7876f'
-                                    tags={['development']}
+                                    tags={['live']}
                                     longDescription={t('longDescSintropPay') as string}
+                                    linkWeb='https://app.sintrop.com/checkout'
                                 />
                             </div>
 
@@ -194,6 +199,9 @@ const Home: NextPage = (_props: InferGetStaticPropsType<typeof getStaticProps>) 
                                     iconUrl='https://firebasestorage.googleapis.com/v0/b/sintrop-app-android.appspot.com/o/site%2Ftoken.png?alt=media&token=9220c767-d5dd-4b6f-a1e0-e67fdc17d641'
                                     longDescription={t('longDescCrApp') as string}
                                     tags={['live']}
+                                    linkWeb='https://app.sintrop.com'
+                                    linkGooglePlay='https://play.google.com/store/apps/details?id=com.sintrop.activistapp'
+                                    linkAppleStore='https://apps.apple.com/br/app/sintrop/id6475600488'
                                 />
 
                                 <AppItem
@@ -214,7 +222,20 @@ const Home: NextPage = (_props: InferGetStaticPropsType<typeof getStaticProps>) 
                                     description={t('descSintropPay')}
                                     description2='Testnet'
                                     iconUrl='https://firebasestorage.googleapis.com/v0/b/sintrop-app-android.appspot.com/o/site%2Ficon-sintrop-pay.png?alt=media&token=4ddf751c-5955-420d-9828-e8ca2da7876f'
-                                    tags={['development']}
+                                    tags={['live']}
+                                    linkWeb='https://app.sintrop.com/checkout'
+                                    longDescription={t('longDescSintropPay') as string}
+                                />
+
+                                <AppItem
+                                    type='list'
+                                    title='Sintrop Pay'
+                                    backgroundUrl='https://firebasestorage.googleapis.com/v0/b/sintrop-app-android.appspot.com/o/site%2Fbg-app-2.png?alt=media&token=06611fe1-aca5-4cc2-8f61-8b554f15bacd'
+                                    description={t('descSintropPay')}
+                                    description2='Mainnet'
+                                    iconUrl='https://firebasestorage.googleapis.com/v0/b/sintrop-app-android.appspot.com/o/site%2Ficon-sintrop-pay.png?alt=media&token=4ddf751c-5955-420d-9828-e8ca2da7876f'
+                                    tags={['comming-soon']}
+                                    longDescription={t('longDescSintropPay') as string}
                                 />
 
                                 <AppItem
@@ -225,6 +246,7 @@ const Home: NextPage = (_props: InferGetStaticPropsType<typeof getStaticProps>) 
                                     description2='Testnet'
                                     iconUrl='https://firebasestorage.googleapis.com/v0/b/sintrop-app-android.appspot.com/o/site%2Ficon-sintrop-chain.png?alt=media&token=96458fdd-2bcf-4004-bf53-90dd30fe367a'
                                     tags={['development']}
+                                    longDescription={t('longDescSintropchain') as string}
                                 />
                             </div>
                         </div>
@@ -233,7 +255,7 @@ const Home: NextPage = (_props: InferGetStaticPropsType<typeof getStaticProps>) 
 
                 <section className='w-full flex flex-col items-center py-10 bg-[rgba(3,124,0,0.13)]'>
                     <div className='w-full flex flex-col px-5 lg:px-0 lg:w-[1024px]'>
-                        <div className='flex items-center justify-between'>
+                        <div className='flex flex-col-reverse items-center justify-between lg:flex-row'>
                             <div className='flex flex-col gap-5 w-full lg:w-[50%]'>
                                 <h3 className='font-bold text-[#8c8c8c] text-3xl'>{t('crTitle')}</h3>
                                 <h4 className='text-[#8c8c8c] text-2xl'>
