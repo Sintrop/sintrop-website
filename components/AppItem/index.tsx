@@ -22,7 +22,7 @@ export function AppItem({ backgroundUrl, description, description2, iconUrl, tit
         return (
             <Dialog.Root>
                 <Dialog.Trigger asChild>
-                    <button className={`flex w-[390px] h-[290px] rounded-lg relative overflow-hidden shadow-xl`}>
+                    <button className={`flex w-full lg:w-[390px] h-[290px] rounded-lg relative overflow-hidden shadow-xl`}>
                         <img
                             alt='Background do app'
                             src={backgroundUrl}
@@ -43,7 +43,7 @@ export function AppItem({ backgroundUrl, description, description2, iconUrl, tit
                                 </div>
 
                                 <div className="flex flex-col items-start">
-                                    <h4 className="font-bold text-white text-lg">{title}</h4>
+                                    <h4 className="font-bold text-white text-lg text-left">{title}</h4>
                                     <p className="text-white">{description2}</p>
                                 </div>
                             </div>
@@ -95,7 +95,7 @@ export function AppItem({ backgroundUrl, description, description2, iconUrl, tit
                         />
                     </div>
                     <div className='flex flex-col items-start'>
-                        <h4 className='text-[#8C8C8C] font-bold text-xl'>{title}</h4>
+                        <h4 className='text-[#8C8C8C] font-bold text-xl text-left'>{title}</h4>
                         <p className='text-[#8c8c8c]'>{description2}</p>
 
                         {tags && (

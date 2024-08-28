@@ -96,7 +96,7 @@ const Home: NextPage = (_props: InferGetStaticPropsType<typeof getStaticProps>) 
 
                             <h3 className='text-[#686868] font-semibold text-2xl'>{t('nossosValores')}</h3>
 
-                            <div className='flex items-center justify-between'>
+                            <div className='flex flex-col items-center justify-between lg:flex-row'>
                                 <div className='w-full lg:w-[50%] h-[350px] bg-gray-400 rounded-md overflow-hidden shadow-lg'>
                                     <Image
                                         alt='Imagem de floresta'
@@ -108,11 +108,11 @@ const Home: NextPage = (_props: InferGetStaticPropsType<typeof getStaticProps>) 
                                 </div>
 
                                 <div className='w-full lg:w-[50%] flex flex-col items-center justify-center'>
-                                    <p className='text-[#8C8C8C] text-center max-w-[70%] text-2xl'>{t('descNossoValor1')}</p>
+                                    <p className='text-[#8C8C8C] text-center lg:max-w-[70%] text-2xl'>{t('descNossoValor1')}</p>
                                 </div>
                             </div>
 
-                            <div className='flex items-center justify-between'>
+                            <div className='flex flex-col items-center justify-between lg:flex-row'>
                                 <div className='w-full lg:w-[50%] h-[350px] bg-gray-400 rounded-md overflow-hidden shadow-lg'>
                                     <Image
                                         alt='Imagem de pessoas conectadas'
@@ -124,7 +124,7 @@ const Home: NextPage = (_props: InferGetStaticPropsType<typeof getStaticProps>) 
                                 </div>
 
                                 <div className='w-full lg:w-[50%] flex flex-col items-center justify-center'>
-                                    <p className='text-[#8C8C8C] text-center max-w-[70%] text-2xl'>{t('descNossoValor2')}</p>
+                                    <p className='text-[#8C8C8C] text-center lg:max-w-[70%] text-2xl'>{t('descNossoValor2')}</p>
                                 </div>
                             </div>
                         </div>
@@ -136,7 +136,7 @@ const Home: NextPage = (_props: InferGetStaticPropsType<typeof getStaticProps>) 
                         <div className='flex flex-col gap-5'>
                             <h3 className='text-[#686868] font-semibold text-2xl'>{t('nossasSolucoes')}</h3>
 
-                            <div className='flex items-center gap-3'>
+                            <div className='flex flex-col items-center gap-3 lg:flex-row'>
                                 <AppItem
                                     type='card'
                                     title={t('crTitle')}
@@ -255,7 +255,7 @@ const Home: NextPage = (_props: InferGetStaticPropsType<typeof getStaticProps>) 
 
                 <section className='w-full flex flex-col items-center py-10 bg-[rgba(3,124,0,0.13)]'>
                     <div className='w-full flex flex-col px-5 lg:px-0 lg:w-[1024px]'>
-                        <div className='flex items-center justify-between'>
+                        <div className='flex flex-col-reverse items-center justify-between lg:flex-row'>
                             <div className='flex flex-col gap-5 w-full lg:w-[50%]'>
                                 <h3 className='font-bold text-[#8c8c8c] text-3xl'>{t('crTitle')}</h3>
                                 <h4 className='text-[#8c8c8c] text-2xl'>
