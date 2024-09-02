@@ -86,7 +86,7 @@ const Sobre: NextPage = (_props: InferGetStaticPropsType<typeof getStaticProps>)
                     </div>
                     <Image
                         alt='Imagem de uma planta conectada ao chão por meio da tecnologia'
-                        src={require('../../assets/planta-2.png')}
+                        src={require('../assets/planta-2.png')}
                         className='object-contain w-[300px]'
                     />
                 </section>
