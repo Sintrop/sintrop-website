@@ -6,11 +6,11 @@ import Link from "next/link";
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import type { InferGetStaticPropsType } from 'next'
 import { useTranslation,  } from 'next-i18next';
-import { Header } from "../../components/Header";
-import { Footer } from "../../components/Footer";
-import { BtnWhats } from "../../components/BtnWhats";
+import { Header } from "../components/Header";
+import { Footer } from "../components/Footer";
+import { BtnWhats } from "../components/BtnWhats";
 import { useRouter } from "next/router";
-import { TopBar } from "../../components/TopBar";
+import { TopBar } from "../components/TopBar";
 
 interface StaticProps{
     locale: string;
@@ -86,7 +86,7 @@ const Sobre: NextPage = (_props: InferGetStaticPropsType<typeof getStaticProps>)
                     </div>
                     <Image
                         alt='Imagem de uma planta conectada ao chão por meio da tecnologia'
-                        src={require('../../assets/planta-2.png')}
+                        src={require('../assets/planta-2.png')}
                         className='object-contain w-[300px]'
                     />
                 </section>
@@ -99,7 +99,7 @@ const Sobre: NextPage = (_props: InferGetStaticPropsType<typeof getStaticProps>)
                             <div className="flex flex-col items-center">
                                 <Image
                                     alt='Icone de descentralização'
-                                    src={require('../../assets/DESCENTRALIZADO.png')}
+                                    src={require('../assets/DESCENTRALIZADO.png')}
                                     className='w-[200px] h-[200px]'
                                 />
                                 <p className="text-white text-lg">{t('Descentralização')}</p>
@@ -108,7 +108,7 @@ const Sobre: NextPage = (_props: InferGetStaticPropsType<typeof getStaticProps>)
                             <div className="flex flex-col items-center">
                                 <Image
                                     alt='Icone de defesa da natureza'
-                                    src={require('../../assets/NATUREZA.png')}
+                                    src={require('../assets/NATUREZA.png')}
                                     className='w-[200px] h-[200px]'
                                 />
                                 <p className="text-white text-lg">{t('Defesa da natureza')}</p>
@@ -117,7 +117,7 @@ const Sobre: NextPage = (_props: InferGetStaticPropsType<typeof getStaticProps>)
                             <div className="flex flex-col items-center">
                                 <Image
                                     alt='Icone de deistribuição de renda'
-                                    src={require('../../assets/RENDA.png')}
+                                    src={require('../assets/RENDA.png')}
                                     className='w-[200px] h-[200px]'
                                 />
                                 <p className="text-white text-lg">{t('Distribuição de renda')}</p>
@@ -126,7 +126,7 @@ const Sobre: NextPage = (_props: InferGetStaticPropsType<typeof getStaticProps>)
                             <div className="flex flex-col items-center">
                                 <Image
                                     alt='Icone de transparência'
-                                    src={require('../../assets/TRANSPARÊNCIA.png')}
+                                    src={require('../assets/TRANSPARÊNCIA.png')}
                                     className='w-[200px] h-[200px]'
                                 />
                                 <p className="text-white text-lg">{t('Transparência')}</p>
@@ -147,7 +147,7 @@ const Sobre: NextPage = (_props: InferGetStaticPropsType<typeof getStaticProps>)
                     <h3 className="font-bold text-xl">{t('NOSSA')} <span className="text-green-700">{t('HISTÓRIA')}</span></h3>
                     <Image
                         alt='Imagem da linha do tempo da sintrop'
-                        src={require('../../assets/nossa-hist.png')}
+                        src={require('../assets/nossa-hist.png')}
                         quality={100}
                         className='lg:w-[400px] object-contain'
                     />
