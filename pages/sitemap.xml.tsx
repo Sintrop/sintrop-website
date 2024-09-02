@@ -11,85 +11,94 @@ function generateSiteMap({posts}: GenerateProps) {
     return `<?xml version="1.0" encoding="UTF-8"?>
         <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
             <url>
-                <loc>https://sintrop.com/produtor</loc>
+                <loc>https://sintrop.com/regeneration-credit/produtor</loc>
             </url>
             <url>
-                <loc>https://sintrop.com/pt-BR/produtor</loc>
+                <loc>https://sintrop.com/pt/regeneration-credit/produtor</loc>
             </url>
             <url>
-                <loc>https://sintrop.com/en-US/produtor</loc>
+                <loc>https://sintrop.com/en/regeneration-credit/produtor</loc>
             </url>
             <url>
-                <loc>https://sintrop.com/ativista</loc>
+                <loc>https://sintrop.com/regeneration-credit/ativista</loc>
             </url>
             <url>
-                <loc>https://sintrop.com/pt-BR/ativista</loc>
+                <loc>https://sintrop.com/pt/regeneration-credit/ativista</loc>
             </url>
             <url>
-                <loc>https://sintrop.com/en-US/ativista</loc>
+                <loc>https://sintrop.com/en/regeneration-credit/ativista</loc>
             </url>
             <url>
-                <loc>https://sintrop.com/inspetor</loc>
+                <loc>https://sintrop.com/regeneration-credit/inspetor</loc>
             </url>
             <url>
-                <loc>https://sintrop.com/pt-BR/inspetor</loc>
+                <loc>https://sintrop.com/pt/regeneration-credit/inspetor</loc>
             </url>
             <url>
-                <loc>https://sintrop.com/en-US/inspetor</loc>
+                <loc>https://sintrop.com/en/regeneration-credit/inspetor</loc>
             </url>
             <url>
-                <loc>https://sintrop.com/pesquisador</loc>
+                <loc>https://sintrop.com/regeneration-credit/pesquisador</loc>
             </url>
             <url>
-                <loc>https://sintrop.com/pt-BR/pesquisador</loc>
+                <loc>https://sintrop.com/pt/regeneration-credit/pesquisador</loc>
             </url>
             <url>
-                <loc>https://sintrop.com/en-US/pesquisador</loc>
+                <loc>https://sintrop.com/en/regeneration-credit/pesquisador</loc>
             </url>
             <url>
-                <loc>https://sintrop.com/investidor</loc>
+                <loc>https://sintrop.com/regeneration-credit/investidor</loc>
             </url>
             <url>
-                <loc>https://sintrop.com/pt-BR/investidor</loc>
+                <loc>https://sintrop.com/pt/regeneration-credit/investidor</loc>
             </url>
             <url>
-                <loc>https://sintrop.com/en-US/investidor</loc>
+                <loc>https://sintrop.com/en/regeneration-credit/investidor</loc>
             </url>
             <url>
-                <loc>https://sintrop.com/consumidor</loc>
+                <loc>https://sintrop.com/regeneration-credit/consumidor</loc>
             </url>
             <url>
-                <loc>https://sintrop.com/pt-BR/consumidor</loc>
+                <loc>https://sintrop.com/pt/regeneration-credit/consumidor</loc>
             </url>
             <url>
-                <loc>https://sintrop.com/en-US/consumidor</loc>
+                <loc>https://sintrop.com/en/regeneration-credit/consumidor</loc>
             </url>
             <url>
                 <loc>https://sintrop.com/contato</loc>
             </url>
             <url>
-                <loc>https://sintrop.com/pt-BR/contato</loc>
+                <loc>https://sintrop.com/pt/contato</loc>
             </url>
             <url>
-                <loc>https://sintrop.com/en-US/contato</loc>
+                <loc>https://sintrop.com/en/contato</loc>
             </url>
             <url>
                 <loc>https://sintrop.com/blog</loc>
             </url>
             <url>
-                <loc>https://sintrop.com/pt-BR/blog</loc>
+                <loc>https://sintrop.com/pt/blog</loc>
             </url>
             <url>
-                <loc>https://sintrop.com/en-US/blog</loc>
+                <loc>https://sintrop.com/en/blog</loc>
             </url>
             <url>
                 <loc>https://sintrop.com/sobre</loc>
             </url>
             <url>
-                <loc>https://sintrop.com/pt-BR/sobre</loc>
+                <loc>https://sintrop.com/pt/sobre</loc>
             </url>
             <url>
-                <loc>https://sintrop.com/en-US/sobre</loc>
+                <loc>https://sintrop.com/en/sobre</loc>
+            </url>
+            <url>
+                <loc>https://sintrop.com/regeneration-credit/privacy-policy</loc>
+            </url>
+            <url>
+                <loc>https://sintrop.com/pt/regeneration-credit/privacy-policy</loc>
+            </url>
+            <url>
+                <loc>https://sintrop.com/en/regeneration-credit/privacy-policy</loc>
             </url>
 
             ${posts && posts.map(({language, url}) => (
