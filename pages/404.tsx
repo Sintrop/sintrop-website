@@ -8,7 +8,8 @@ const Page404: NextPage = () => {
         router.push('/');
     },[])
     return(
-        <div></div>
+        <div>
+        </div>
     )
 }
 
