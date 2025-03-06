@@ -54,7 +54,7 @@ export function Header({ t }: Props) {
                 <Link
                     href='https://apps.sintrop.com'
                     target="_blank"
-                    className="px-10 h-[40px] flex items-center justify-center rounded-md bg-[#7FD349] text-white text-semibold"
+                    className="px-10 h-[40px] flex items-center justify-center rounded-md bg-green-1 text-white text-semibold"
                 >
                     {t('apps')}
                 </Link>

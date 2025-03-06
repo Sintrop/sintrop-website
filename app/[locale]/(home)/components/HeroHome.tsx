@@ -17,7 +17,7 @@ export function HeroHome({t}: Props) {
 
             <div className="flex flex-col items-center gap-5 md:gap-10 md:flex-row">
                 <Button
-                    className="bg-[#4FA1FF] h-[60px] text-white w-[200px]"
+                    className="bg-blue-primary h-[60px] text-white w-[200px]"
                 >
                     {t('whitepaper')}
                 </Button>
