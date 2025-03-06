@@ -1,7 +1,8 @@
 import { notFound } from 'next/navigation';
-import i18nConfig from '../../i18nconfig'
+import i18nConfig from '../../i18nconfig';
+import "./globals.css";
 
-export default function RootLayout({
+export default async function RootLayout({
     // Layouts must accept a children prop.
     // This will be populated with nested layouts or pages
     children,

@@ -1,5 +1,5 @@
-import initTranslations from '../i18n';
-import TranslationsProvider from '../../components/TranslationsProvider';
+import initTranslations from '../../i18n';
+import TranslationsProvider from '../../../components/TranslationsProvider';
 
 const i18nNamespaces = ['home'];
 
@@ -13,7 +13,8 @@ export default async function Home({ params: { locale } }: { params: { locale: s
             resources={resources}
         >
             <div>
-                <h1>{t('hello')}</h1>
+                <h1 className='text-green-500 text-xs'>{t('hello')} ola</h1>
+                <p className='text-xl'>teste</p>
             </div>
         </TranslationsProvider>
     )
