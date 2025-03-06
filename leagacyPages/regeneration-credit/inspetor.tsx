@@ -6,15 +6,15 @@ import Script from "next/script";
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import type { GetStaticProps, InferGetStaticPropsType } from 'next'
 import { useTranslation,  } from 'next-i18next';
-import { Header } from "../../components/Header";
-import { Footer } from "../../components/Footer";
-import { BtnWhats } from "../../components/BtnWhats";
+import { Header } from "../../leagacyComponents/Header";
+import { Footer } from "../../leagacyComponents/Footer";
+import { BtnWhats } from "../../leagacyComponents/BtnWhats";
 import { useRouter } from "next/router";
 import {useState, useEffect} from 'react';
-import { ModalRegister } from "../../components/ModalRegister";
+import { ModalRegister } from "../../leagacyComponents/ModalRegister";
 import { usersCountProps } from "./index";
 import { api } from "../../src/services/api";
-import { TopBar } from "../../components/TopBar";
+import { TopBar } from "../../leagacyComponents/TopBar";
 
 interface StaticProps{
     locale: string;

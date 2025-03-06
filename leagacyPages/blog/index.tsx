@@ -2,15 +2,15 @@ import { useEffect, useState } from 'react';
 import Head from 'next/head';
 import Script from 'next/script';
 import { api } from '../../src/services/api';
-import { CardPost } from '../../components/CardPost';
+import { CardPost } from '../../leagacyComponents/CardPost';
 import { PostsProps } from '../../src/interfaces/Posts';
 import { ContextProps } from '../../src/interfaces/ContextServerSide';
-import { Header } from '../../components/Header';
+import { Header } from '../../leagacyComponents/Header';
 import { useRouter } from 'next/router';
 import Link from 'next/link';
 import { useTranslation } from 'next-i18next';
 import { db } from '../../src/lib/prisma';
-import { TopBar } from '../../components/TopBar';
+import { TopBar } from '../../leagacyComponents/TopBar';
 
 interface ServerSideProps{
     posts: PostsProps[]

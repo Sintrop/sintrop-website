@@ -3,19 +3,19 @@ import Head from "next/head";
 import Script from "next/script"; 
 import { api } from "../../src/services/api";
 import { PostsProps } from "../../src/interfaces/Posts";
-import DynamicTag from "../../components/DynamicTag";
+import DynamicTag from "../../leagacyComponents/DynamicTag";
 import { BodyPostProps } from "../../src/interfaces/Posts";
 import { ContextProps } from "../../src/interfaces/ContextServerSide";
 import { useRouter } from "next/router";
-import { Header } from "../../components/Header";
+import { Header } from "../../leagacyComponents/Header";
 import {format} from "date-fns";
-import Tiptap from "../../components/TipTap";
-import { Footer } from "../../components/Footer";
+import Tiptap from "../../leagacyComponents/TipTap";
+import { Footer } from "../../leagacyComponents/Footer";
 import { useTranslation } from "next-i18next";
-import { CardPost } from "../../components/CardPost";
+import { CardPost } from "../../leagacyComponents/CardPost";
 import { db } from "../../src/lib/prisma";
 import { UserProps } from "../regeneration-credit/newPubli";
-import { TopBar } from "../../components/TopBar";
+import { TopBar } from "../../leagacyComponents/TopBar";
 
 interface ServerSideProps{
     post: PostsProps;

@@ -7,14 +7,14 @@ import Link from "next/link";
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import type { GetStaticProps, InferGetStaticPropsType } from 'next'
 import { useTranslation,  } from 'next-i18next';
-import { Footer } from "../../components/Footer";
-import { Header } from "../../components/Header";
-import { BtnWhats } from "../../components/BtnWhats";
+import { Footer } from "../../leagacyComponents/Footer";
+import { Header } from "../../leagacyComponents/Header";
+import { BtnWhats } from "../../leagacyComponents/BtnWhats";
 import { useRouter } from "next/router";
 import { useCountdown } from "../../src/hooks/useCountdown";
-import { CardGoals } from "../../components/CardGoals";
+import { CardGoals } from "../../leagacyComponents/CardGoals";
 import { api } from "../../src/services/api";
-import { TopBar } from "../../components/TopBar";
+import { TopBar } from "../../leagacyComponents/TopBar";
 
 interface StaticProps{
     locale: string;

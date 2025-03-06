@@ -4,10 +4,10 @@ import type { GetStaticProps, InferGetStaticPropsType } from 'next';
 import Head from "next/head";
 import { useTranslation } from "react-i18next";
 import Link from "next/link";
-import { Header } from "../components/Header";
-import { Footer } from "../components/Footer";
+import { Header } from "../leagacyComponents/Header";
+import { Footer } from "../leagacyComponents/Footer";
 import Image from "next/image";
-import { TopBar } from "../components/TopBar";
+import { TopBar } from "../leagacyComponents/TopBar";
 
 
 interface StaticProps {

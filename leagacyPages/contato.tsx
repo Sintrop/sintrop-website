@@ -7,10 +7,10 @@ import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import type { GetStaticProps, InferGetStaticPropsType } from 'next'
 import { useTranslation,  } from 'next-i18next';
 import emailjs from '@emailjs/browser';
-import { Footer } from '../components/Footer';
-import { BtnWhats } from '../components/BtnWhats';
-import { Header } from "../components/Header";
-import { TopBar } from '../components/TopBar';
+import { Footer } from '../leagacyComponents/Footer';
+import { BtnWhats } from '../leagacyComponents/BtnWhats';
+import { Header } from "../leagacyComponents/Header";
+import { TopBar } from '../leagacyComponents/TopBar';
 
 interface StaticProps{
     locale: string;

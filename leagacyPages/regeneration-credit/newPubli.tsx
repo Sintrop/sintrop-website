@@ -1,10 +1,10 @@
 import type { NextPage } from "next";
 import Head from "next/head";
 import { useState, useEffect } from "react";
-import DynamicTag from "../../components/DynamicTag";
+import DynamicTag from "../../leagacyComponents/DynamicTag";
 import { api } from "../../src/services/api";
 import { ToastContainer, toast } from "react-toastify";
-import Tiptap from "../../components/TipTap";
+import Tiptap from "../../leagacyComponents/TipTap";
 import "react-toastify/dist/ReactToastify.css";
 import axios from "axios";
 import { Base64 } from "js-base64";

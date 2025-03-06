@@ -5,12 +5,12 @@ import Link from "next/link";
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import type { GetStaticProps, InferGetStaticPropsType } from 'next'
 import { useTranslation,  } from 'next-i18next';
-import { BtnWhats } from "../../components/BtnWhats";
-import { Footer } from "../../components/Footer";
-import { Header } from "../../components/Header";
+import { BtnWhats } from "../../leagacyComponents/BtnWhats";
+import { Footer } from "../../leagacyComponents/Footer";
+import { Header } from "../../leagacyComponents/Header";
 import { useRouter } from "next/router";
 import {useState, useEffect} from 'react';
-import { TopBar } from "../../components/TopBar";
+import { TopBar } from "../../leagacyComponents/TopBar";
 
 interface StaticProps{
     locale: string;

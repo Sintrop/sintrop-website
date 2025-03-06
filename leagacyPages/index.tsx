@@ -8,8 +8,8 @@ import { useRouter } from 'next/router';
 import Link from 'next/link';
 import Image from 'next/image';
 import LogoCR from '../assets/token.png';
-import { AppItem } from '../components/AppItem';
-import Header from '../components/NewHeader';
+import { AppItem } from '../leagacyComponents/AppItem';
+import Header from '../leagacyComponents/NewHeader';
 import { Dialog, DialogContent, DialogOverlay, DialogTrigger } from '../@/components/ui/dialog';
 
 interface StaticProps {
