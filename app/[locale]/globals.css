@@ -4,6 +4,11 @@
 
 @custom-variant dark (&:is(.dark *));
 
+body {
+  font-family: Anta, Helvetica, sans-serif;
+  scrollbar-width: thin;
+}
+
 ::-webkit-scrollbar {
   width: 0px;
 }
@@ -85,6 +90,10 @@
   --sidebar-accent-foreground: oklch(0.985 0 0);
   --sidebar-border: oklch(0.269 0 0);
   --sidebar-ring: oklch(0.439 0 0);
+}
+
+@theme {
+  --color-blue-primary: '#4FA1FF'
 }
 
 @theme inline {

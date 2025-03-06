@@ -1,10 +1,19 @@
 import { notFound } from 'next/navigation';
+import { Anta } from "next/font/google";
 import i18nConfig from '../../i18nconfig';
 import "./globals.css";
 
+const antaFont = Anta({
+  variable: "--font-anta",
+  subsets: ["latin"],
+  weight: "400"
+})
+
+export function generateStaticParams() {
+  return i18nConfig.locales.map(locale => ({ locale }));
+}
+
 export default async function RootLayout({
-    // Layouts must accept a children prop.
-    // This will be populated with nested layouts or pages
     children,
     params: {locale}
   }: {
@@ -18,7 +27,9 @@ export default async function RootLayout({
 
     return (
       <html lang="en">
-        <body>{children}</body>
+        <body className={`${antaFont.variable} antialiased`}>
+          {children}
+        </body>
       </html>
     )
   }
