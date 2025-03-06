@@ -1,6 +1,7 @@
 import initTranslations from '../../i18n';
 import TranslationsProvider from '../../../components/TranslationsProvider';
 import { Header } from '@/components/Header/Header';
+import { HeroHome } from './components/HeroHome';
 
 const i18nNamespaces = ['home'];
 
@@ -15,6 +16,8 @@ export default async function Home({ params: { locale } }: { params: { locale: s
         >
             <div className='bg-[url("/assets/images/capa-site-1.png")] w-full flex flex-col bg-cover bg-center'>
                 <Header t={t}/>
+
+                <HeroHome t={t}/>
             </div>
         </TranslationsProvider>
     )
