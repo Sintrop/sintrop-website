@@ -8,12 +8,8 @@ export interface AppsProps{
         externalApp: boolean,
         linkApp: string;
         createdAt: string;
-        links: [
-            {
-                title: string;
-                link: string;
-            }
-        ]
+        links: {title: string; href: string;}[]
+        
 }
 
 export const appsList = {
@@ -29,8 +25,12 @@ export const appsList = {
         createdAt: '2025-03-02 00:00:00',
         links: [
             {
+                title: 'Launch App',
+                href: 'https://explorer.sintrop.com'
+            },
+            {
                 title: 'Github',
-                link: 'https://github.com/sintrop/sintropscan-frontend'
+                href: 'https://github.com/sintrop/sintropscan-frontend'
             }
         ]
     } as AppsProps,
@@ -46,8 +46,12 @@ export const appsList = {
         createdAt: '2024-11-20 00:00:00',
         links: [
             {
+                title: 'Launch App',
+                href: 'https://sequoia.sintrop.com'
+            },
+            {
                 title: 'Github',
-                link: 'https://github.com/sintrop/sintropscan-frontend'
+                href: 'https://github.com/sintrop/sintropscan-frontend'
             }
         ]
     } as AppsProps,
@@ -63,8 +67,12 @@ export const appsList = {
         createdAt: '2024-11-20 00:00:00',
         links: [
             {
+                title: 'Launch App',
+                href: 'https://v8.sintrop.com'
+            },
+            {
                 title: 'Github',
-                link: 'https://github.com/sintrop/regeneration-credit'
+                href: 'https://github.com/sintrop/regeneration-credit'
             }
         ]
     } as AppsProps,

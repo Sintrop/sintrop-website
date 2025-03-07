@@ -12,6 +12,7 @@
   "dependencies": {
     "@emailjs/browser": "^3.10.0",
     "@prisma/client": "^5.10.2",
+    "@radix-ui/react-dialog": "^1.1.6",
     "@radix-ui/react-slot": "^1.1.2",
     "@tailwindcss/postcss": "^4.0.11",
     "apexcharts": "^3.49.0",
