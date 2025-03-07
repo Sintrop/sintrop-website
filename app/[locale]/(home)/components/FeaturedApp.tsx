@@ -20,6 +20,7 @@ export function FeaturedApp({ t }: Props) {
                         <Link
                             href="https://google.com.br"
                             target="_blank"
+                            rel="noopener noreferer"
                             className="bg-green-1 h-10 rounded-md px-10 flex items-center justify-center text-white font-semibold"
                         >
                             {t('downloadApp')}
@@ -28,6 +29,7 @@ export function FeaturedApp({ t }: Props) {
                         <Link
                             href="https://google.com.br"
                             target="_blank"
+                            rel="noopener noreferer"
                             className="bg-green-1 h-10 rounded-md px-10 flex items-center justify-center text-white font-semibold"
                         >
                             {t('webPlatform')}

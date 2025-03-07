@@ -25,6 +25,7 @@ export function AppLink({ t, directLink, app }: Props) {
         return (
             <Link
                 target="_blank"
+                rel="noopener noreferer"
                 href={appData?.linkApp}
             >
                 <ContentLink appData={appData} t={t} />
@@ -133,6 +134,7 @@ function LinkItem({href, title}: LinkItemProps){
         <Link
             href={href}
             target="_blank"
+            rel="noopener noreferer"
             className="px-3 h-8 rounded-md bg-blue-primary flex items-center justify-center gap-2"
         >
             <LinkIcon color="white" size={20}/>

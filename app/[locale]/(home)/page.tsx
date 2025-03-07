@@ -9,6 +9,7 @@ import { Descetralization } from './components/Descetralization';
 import { Pow } from './components/Pow';
 import { Energy } from './components/Energy';
 import { FeaturedApp } from './components/FeaturedApp';
+import { Footer } from '@/components/Footer/Footer';
 
 const i18nNamespaces = ['home'];
 
@@ -44,6 +45,8 @@ export default async function Home({ params: { locale } }: { params: { locale: s
 
                 <FeaturedApp t={t}/>
             </main>
+
+            <Footer t={t} />
         </TranslationsProvider>
     )
 }
