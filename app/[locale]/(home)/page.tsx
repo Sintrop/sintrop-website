@@ -7,6 +7,7 @@ import { Blockchain } from './components/Blockchain';
 import { Applications } from './components/Applications';
 import { Descetralization } from './components/Descetralization';
 import { Pow } from './components/Pow';
+import { Energy } from './components/Energy';
 
 const i18nNamespaces = ['home'];
 
@@ -36,6 +37,8 @@ export default async function Home({ params: { locale } }: { params: { locale: s
                     <Descetralization t={t}/>
 
                     <Pow t={t}/>
+
+                    <Energy t={t}/>
                 </div>
             </main>
         </TranslationsProvider>
