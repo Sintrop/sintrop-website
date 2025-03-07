@@ -5,6 +5,7 @@ import { HeroHome } from './components/HeroHome';
 import { Abstract } from './components/Abstract';
 import { Blockchain } from './components/Blockchain';
 import { Applications } from './components/Applications';
+import { Descetralization } from './components/Descetralization';
 
 const i18nNamespaces = ['home'];
 
@@ -30,6 +31,8 @@ export default async function Home({ params: { locale } }: { params: { locale: s
                     <Blockchain t={t}/>
 
                     <Applications t={t}/>
+
+                    <Descetralization t={t}/>
                 </div>
             </main>
         </TranslationsProvider>
