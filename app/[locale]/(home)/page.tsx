@@ -8,6 +8,7 @@ import { Applications } from './components/Applications';
 import { Descetralization } from './components/Descetralization';
 import { Pow } from './components/Pow';
 import { Energy } from './components/Energy';
+import { FeaturedApp } from './components/FeaturedApp';
 
 const i18nNamespaces = ['home'];
 
@@ -40,6 +41,8 @@ export default async function Home({ params: { locale } }: { params: { locale: s
 
                     <Energy t={t}/>
                 </div>
+
+                <FeaturedApp t={t}/>
             </main>
         </TranslationsProvider>
     )
