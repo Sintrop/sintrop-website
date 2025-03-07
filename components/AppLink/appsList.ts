@@ -51,6 +51,23 @@ export const appsList = {
             }
         ]
     } as AppsProps,
+    regenerationCredit: {
+        title: 'regenerationCredit',
+        image: 'https://www.sintrop.com/assets/token.png',
+        shortDescription: 'descrição curta',
+        longDescription: 'descrição longa',
+        mainnet: false,
+        live: true,
+        externalApp: false,
+        linkApp: 'https://v8.sintrop.com',
+        createdAt: '2024-11-20 00:00:00',
+        links: [
+            {
+                title: 'Github',
+                link: 'https://github.com/sintrop/regeneration-credit'
+            }
+        ]
+    } as AppsProps,
 }
 
 export type AppsName = keyof typeof appsList;

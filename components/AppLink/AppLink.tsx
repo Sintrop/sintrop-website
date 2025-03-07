@@ -34,7 +34,7 @@ interface ContentLinkProps {
 }
 function ContentLink({ appData, t }: ContentLinkProps) {
     return (
-        <div className="flex rounded-md bg-green-2 gap-4 pr-5 lg:max-w-[400px]">
+        <div className="flex rounded-md bg-green-2 gap-4 pr-5 w-full lg:max-w-[400px] flex-1">
             <div className="w-20 h-20 rounded-md bg-green-3 items-center justify-center flex overflow-hidden p-2">
                 <Image
                     alt="icon app"
