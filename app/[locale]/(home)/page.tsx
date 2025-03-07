@@ -3,6 +3,7 @@ import TranslationsProvider from '../../../components/TranslationsProvider';
 import { Header } from '@/components/Header/Header';
 import { HeroHome } from './components/HeroHome';
 import { Abstract } from './components/Abstract';
+import { Blockchain } from './components/Blockchain';
 
 const i18nNamespaces = ['home'];
 
@@ -24,6 +25,8 @@ export default async function Home({ params: { locale } }: { params: { locale: s
             <main>
                 <div className='container mx-auto px-5 lg:px-20'>
                     <Abstract t={t} />
+
+                    <Blockchain t={t}/>
                 </div>
             </main>
         </TranslationsProvider>

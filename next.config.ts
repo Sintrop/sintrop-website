@@ -5,6 +5,11 @@ const nextConfig: NextConfig = {
   // typescript: {
   //   ignoreBuildErrors: true
   // }
+  images: {
+    remotePatterns: [
+      {hostname: 'www.sintrop.com'}
+    ]
+  }
 };
 
 export default nextConfig;

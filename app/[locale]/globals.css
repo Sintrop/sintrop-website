@@ -135,6 +135,7 @@ body {
   --color-text-subtitle: #292929;
   --color-green-1: #57C81A;
   --color-green-2: #C0E9C9;
+  --color-green-3: #1B5437;
 }
 
 @layer base {
