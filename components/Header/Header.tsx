@@ -36,19 +36,25 @@ export function Header({ t }: Props) {
                 <nav className="flex items-center gap-10">
                     <Link
                         href="/"
-                        className="text-white"
+                        className="text-white hover:underline"
                     >
                         {t('home')}
                     </Link>
                     <Link
                         href="/resources"
-                        className="text-white"
+                        className="text-white hover:underline"
                     >
-                        {t('solutions')}
+                        {t('resources')}
                     </Link>
                     <Link
-                        href="/resources"
-                        className="text-white"
+                        href="/tutorials"
+                        className="text-white hover:underline"
+                    >
+                        {t('tutorials')}
+                    </Link>
+                    <Link
+                        href="/about"
+                        className="text-white hover:underline"
                     >
                         {t('about')}
                     </Link>
