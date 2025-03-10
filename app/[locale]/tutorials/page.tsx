@@ -3,6 +3,7 @@ import TranslationsProvider from '../../../components/TranslationsProvider';
 import { Header } from '@/components/Header/Header';
 import { HeroTutorials } from './components/HeroTutorials';
 import { TutorialItem } from './components/TutorialItem/TutorialItem';
+import { Accordion } from '@/components/ui/accordion';
 
 const i18nNamespaces = ['home', 'tutorials'];
 
@@ -21,7 +22,9 @@ export default async function Tutorials({ params: { locale } }: { params: { loca
             </div>
 
             <main className='container mx-auto px-5 lg:px-20 my-10 lg:my-20'>
-                
+                <Accordion type="single" collapsible>
+                    <TutorialItem/>
+                </Accordion>
             </main>
         </TranslationsProvider>
     )
