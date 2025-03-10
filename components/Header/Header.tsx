@@ -3,6 +3,9 @@ import { Button } from "../ui/button";
 import Image from "next/image";
 import ImageSintrop from '@/public/assets/images/sintrop-logo-white.png';
 import { TType } from "@/types/t";
+import { Menu } from "lucide-react";
+import { SheetTrigger, Sheet } from "../ui/sheet";
+import { NavMenuMobile } from "./components/NavMenuMobile";
 
 interface Props {
     t: TType;
@@ -61,12 +64,12 @@ export function Header({ t }: Props) {
             </section>
 
             <div className="lg:hidden">
-                {/* <Sheet>
+                <Sheet>
                     <SheetTrigger>
-                        <HiOutlineBars3BottomRight size={25} color='white'/>
+                        <Menu size={25} color='white'/>
                     </SheetTrigger>
                     <NavMenuMobile t={t} />
-                </Sheet> */}
+                </Sheet>
             </div>
         </header>
     )
