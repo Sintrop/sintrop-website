@@ -2,6 +2,7 @@ import { notFound } from 'next/navigation';
 import { Anta } from "next/font/google";
 import i18nConfig from '../../i18nconfig';
 import "./globals.css";
+import "./markdown.css";
 
 const antaFont = Anta({
   variable: "--font-anta",

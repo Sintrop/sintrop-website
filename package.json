@@ -27,6 +27,7 @@
     "i18next-resources-to-backend": "^1.2.1",
     "js-base64": "^3.7.5",
     "lucide-react": "^0.477.0",
+    "marked": "^15.0.7",
     "next": "^15.2.1",
     "next-i18n-router": "^5.5.1",
     "next-i18next": "^13.2.2",
