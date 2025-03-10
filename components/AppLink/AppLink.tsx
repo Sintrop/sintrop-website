@@ -97,7 +97,7 @@ function ContentLink({ appData, t }: ContentLinkProps) {
             </div>
 
             <div className="flex flex-col gap-1 pt-2">
-                <h4 className="text-xl">{t(appData?.title)}</h4>
+                <h4 className="md:text-xl">{t(appData?.title)}</h4>
                 <div className="flex flex-wrap gap-3">
                     {appData?.mainnet ? (
                         <div className="rounded-md py-1 px-2 border border-green-3 w-fit">

@@ -20,7 +20,7 @@ export function Energy({ t }: Props) {
             </div>
 
             <div className="flex flex-col w-full md:max-w-[48%]">
-                <h3 className="text-4xl text-text-title">{t('energy')}</h3>
+                <h3 className="text-2xl md:text-4xl text-text-title">{t('energy')}</h3>
                 <p className="text-text-subtitle mt-3">{t('descriptionDescentralization')}</p>
             </div>
         </section>

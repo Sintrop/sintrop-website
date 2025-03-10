@@ -24,7 +24,7 @@ export function Header({ t }: Props) {
                         src={ImageSintrop}
                         alt="Regeneration credit icon"
                         quality={100}
-                        className="w-[200px] h-[100px] md:w-[180px] md:h-[65px] object-contain"
+                        className="w-[120px] h-[70px] md:w-[180px] md:h-[65px] object-contain"
                     />
                 </h1>
             </Link>
