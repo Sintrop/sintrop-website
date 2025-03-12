@@ -38,7 +38,7 @@ export function Footer({ t }: Props) {
                     </div>
                 </section>
 
-                <p className='text-white text-center mt-5'>Copyright © Regeneration Credit</p>
+                <p className='text-white text-center mt-5'>Copyright © Sintrop</p>
             </div>
         </footer >
     )

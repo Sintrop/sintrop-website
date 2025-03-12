@@ -1,32 +1,43 @@
 import { AccordionItem, AccordionTrigger, AccordionContent } from "@/components/ui/accordion";
-import { marked } from 'marked';
+import { getContentMDFromGitHub } from "@/src/services/github";
+import { TutorialProps } from "../../tutorialsList";
+import { TType } from "@/types/t";
+import Link from "next/link";
 
 interface Props {
-
+    item: TutorialProps
+    t: TType;
+    index: number
 }
-export async function TutorialItem({ }: Props) {
-    const response = await fetch('https://api.github.com/repos/sintrop/go-sintrop/contents/tutorials/nodes/how-to-run-sintrop.md');
-    const data = await response.json();
-    if (data.message === 'Not Found') {
-        return { notFound: true };
-    }
-
-    const content = Buffer.from(data.content, 'base64').toString('utf-8');
-    const htmlContent = marked(content);
+export async function TutorialItem({ item, t, index }: Props) {
+    const htmlContent = await getContentMDFromGitHub({
+        pathFile: item?.pathFile,
+        repo: item?.repo,
+        username: item?.username
+    })
 
     return (
         <AccordionItem
-            value="1"
-            className="w-full h-[50px] bg-[#E9E9E9] rounded-md px-5"
+            value={index.toString()}
+            className="w-full bg-[#E9E9E9] rounded-md px-5"
         >
-            <AccordionTrigger>Is it accessible?</AccordionTrigger>
+            <AccordionTrigger>{t(item?.title)}</AccordionTrigger>
             <AccordionContent
-                className="bg-green-2 w-full p-5 rounded-md"
+                className="bg-green-2 w-full p-5 rounded-md mb-5"
             >
                 <div 
                     dangerouslySetInnerHTML={{ __html: htmlContent }} 
                     className="markdown-content"
                 />
+
+                <div className="flex items-center justify-center mt-5">
+                    <Link
+                        href={`/tutorials/${item?.id}`}
+                        className="text-center text-blue-500 underline"
+                    >
+                        {t('seeMoreDetails')}
+                    </Link>
+                </div>
             </AccordionContent>
         </AccordionItem>
     )
