@@ -1,0 +1,18 @@
+{
+    "tutorials": "Tutoriais",
+    "howToRunASintropNode": "Como rodar um node na Sintrop",
+    "descHowToRunASintropNode": "descHowToRunASintropNode",
+    "howToRunABootnode": "Como rodar um bootnode",
+    "descHowToRunABootnode": "descHowToRunABootnode",
+    "operationAndCommands": "Comandos e operações",
+    "descOperationAndCommands": "descOperationAndCommands",
+    "howToRunASintropNodeWithDocker": "Como rodar um node na Sintrop com Docker",
+    "descHowToRunASintropNodeWithDocker": "descHowToRunASintropNodeWithDocker",
+    "howToRunASequoiaNodeWithDocker": "Como rodar um node na Sequoia Testnet com Docker",
+    "descHowToRunASequoiaNodeWithDocker": "descHowToRunASequoiaNodeWithDocker",
+    "seeMoreDetails": "Veja mais detalhes",
+    "about": "Sobre",
+    "resources": "Recursos",
+    "home": "Início",
+    "apps": "Apps"
+}

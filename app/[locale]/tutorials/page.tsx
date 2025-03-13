@@ -7,7 +7,7 @@ import { Accordion } from '@/components/ui/accordion';
 import { LanguagesAvailablesForTutorials, tutorialsListPerLanguage } from './tutorialsList';
 import { Footer } from '@/components/Footer/Footer';
 
-const i18nNamespaces = ['home', 'tutorials'];
+const i18nNamespaces = ['tutorials'];
 
 export default async function Tutorials({ params: { locale } }: { params: { locale: LanguagesAvailablesForTutorials } }){
     const { t, resources } = await initTranslations(locale, i18nNamespaces);

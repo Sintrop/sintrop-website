@@ -7,7 +7,7 @@ import { LanguagesAvailablesForTutorials, tutorialsListPerLanguage } from '../tu
 import { redirect } from 'next/navigation';
 import { getContentMDFromGitHub } from '@/src/services/github';
 
-const i18nNamespaces = ['home', 'tutorials'];
+const i18nNamespaces = ['tutorials'];
 
 export default async function Tutorial({ params }: { params: { locale: LanguagesAvailablesForTutorials, id: string } }) {
     const { id, locale } = await params;
