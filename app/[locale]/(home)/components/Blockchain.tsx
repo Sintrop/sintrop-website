@@ -1,4 +1,5 @@
 import { AppLink } from "@/components/AppLink/AppLink";
+import { LinkBtn } from "@/components/LinkBtn/LinkBtn";
 import { TType } from "@/types/t"
 
 interface Props {
@@ -28,10 +29,11 @@ export function Blockchain({ t }: Props) {
                 </div>
 
                 <div className="flex flex-col gap-3 w-full md:max-w-[48%]">
-                    <h4 className="text-text-title text-xl md:text-2xl">{t('status')}</h4>
+                    <h4 className="text-text-title text-xl md:text-2xl">{t('Links')}</h4>
 
-                    <div className="md:mt-3 flex flex-col gap-5">
-
+                    <div className="md:mt-3 flex flex-wrap gap-5">
+                        <LinkBtn href="https://status.sintrop.com" label="Status Sintrop" />
+                        <LinkBtn href="https://github.com/sintrop/go-sintrop" label="Github" />
                     </div>
                 </div>
             </div>

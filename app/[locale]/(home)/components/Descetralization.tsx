@@ -24,11 +24,11 @@ export function Descetralization({t}: Props){
             <div className="flex flex-col w-full md:max-w-[48%] items-center justify-center">
                 <Image
                     src={ImageDescentralization}
-                    width={500}
-                    height={500}
+                    width={400}
+                    height={400}
                     quality={100}
                     alt="image representing descetralization"
-                    className="w-full h-full object-contain md:w-[450px] md:h-[450px]"
+                    className="w-full h-full object-contain md:w-[400px] md:h-[400px]"
                 />
             </div>
         </section>
