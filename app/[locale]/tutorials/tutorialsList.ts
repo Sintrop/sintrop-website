@@ -48,6 +48,14 @@ const tutorialsListEN: TutorialProps[] = [
         repo: 'go-sintrop',
         pathFile: '/tutorials/en/nodes/run-sequoia-with-docker.md'
     },
+    {
+        id: 'how-to-mine-sintrop-alone',
+        title: 'howToSoloMineSintrop',
+        description: 'descHowToSoloMineSintrop',
+        username: 'sintrop',
+        repo: 'go-sintrop',
+        pathFile: '/tutorials/en/mining/how-to-solo-mine-Sintrop.md'
+    },
 ];
 
 const tutorialsListPT: TutorialProps[] = [
@@ -90,6 +98,14 @@ const tutorialsListPT: TutorialProps[] = [
         username: 'sintrop',
         repo: 'go-sintrop',
         pathFile: '/tutorials/pt/nodes/como-rodar-sequoia-testnet-com-docker.md'
+    },
+    {
+        id: 'como-minerar-solo-sintrop',
+        title: 'howToSoloMineSintrop',
+        description: 'descHowToSoloMineSintrop',
+        username: 'sintrop',
+        repo: 'go-sintrop',
+        pathFile: '/tutorials/pt/mining/como-minerar-solo-Sintrop.md'
     },
 ];
 

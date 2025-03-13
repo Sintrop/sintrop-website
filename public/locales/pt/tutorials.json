@@ -10,6 +10,8 @@
     "descHowToRunASintropNodeWithDocker": "descHowToRunASintropNodeWithDocker",
     "howToRunASequoiaNodeWithDocker": "Como rodar um node na Sequoia Testnet com Docker",
     "descHowToRunASequoiaNodeWithDocker": "descHowToRunASequoiaNodeWithDocker",
+    "howToSoloMineSintrop": "Como minerar solo Sintrop",
+    "descHowToSoloMineSintrop": "descHowToMineSintropAlone",
     "seeMoreDetails": "Veja mais detalhes",
     "about": "Sobre",
     "resources": "Recursos",
