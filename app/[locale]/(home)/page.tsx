@@ -10,8 +10,42 @@ import { Pow } from './components/Pow';
 import { Energy } from './components/Energy';
 import { FeaturedApp } from './components/FeaturedApp';
 import { Footer } from '@/components/Footer/Footer';
+import type { Metadata } from 'next';
 
 const i18nNamespaces = ['home'];
+
+type Props = {
+    params: Promise<{ locale: string }>
+}
+
+export async function generateMetadata(
+    { params }: Props
+): Promise<Metadata> {
+    const locale = (await params).locale;
+    const { t } = await initTranslations(locale, i18nNamespaces);
+
+    return {
+        title: t('seo-title-home'),
+        description: t('seo-description-home'),
+        openGraph: {
+            type: "website",
+            title: "",
+            description: "",
+            alternateLocale: ["en", "pt"],
+            url: `https://sintrop.com/${locale}`,
+            locale,
+            siteName: "Sintrop",
+            images: ""
+        },
+        alternates: {
+            canonical: "https://sintrop.com",
+            languages: {
+                "en": "https://sintrop.com/en",
+                "pt": "https://sintrop.com/pt",
+            }
+        },
+    }
+}
 
 export default async function Home({ params: { locale } }: { params: { locale: string } }){
     const { t, resources } = await initTranslations(locale, i18nNamespaces);
