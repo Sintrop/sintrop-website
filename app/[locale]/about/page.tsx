@@ -39,7 +39,8 @@ export async function generateMetadata(
     }
 }
 
-export default async function About({ params: { locale } }: { params: { locale: string } }){
+export default async function About({ params }: Props){
+    const { locale } = await params;
     const { t, resources } = await initTranslations(locale, i18nNamespaces);
 
     return(

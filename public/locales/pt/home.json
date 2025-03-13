@@ -1,3 +1,12 @@
 {
-    "hello": "Olá mundo!"
+    "seo-title-home": "Sintrop - Uma Blockchain para Aplicações de Impacto Socioambiental",
+    "seo-description-home": "Construindo soluções descentralizadas para tornar o mundo um lugar melhor. Apresentamos uma blockchain pública de impacto, com a descentralização como valor central.",
+    "titleHero": "Uma Blockchain para Aplicações de Impacto Socioambiental",
+    "descriptionHero": "Construindo soluções descentralizadas para tornar o mundo um lugar melhor. Apresentamos uma blockchain pública de impacto, com a descentralização como valor central",
+    "about": "Sobre",
+    "descriptionAbout": "A tecnologia blockchain pode impactar positivamente a luta contra as mudanças climáticas e problemas sociais por meio de contratos inteligentes. No entanto, blockchains descentralizadas processam poucas transações por segundo, forçando projetos de impacto a competir com memecoins, NFTs e tokens de baixo valor, o que aumenta as taxas de gás e limita seu funcionamento. A solução proposta é uma blockchain descentralizada focada em impacto socioambiental, operando com um algoritmo de prova de trabalho, buscando operar com energia renovável.",
+    "knowMore": "Saiba mais",
+    "impact": "Impacto",
+    "descriptionImpact": "Nós herdamos um Planeta com uma quantidade incrível de vida. Infelizmente, a humanidade vem destruindo a Natureza em um ritmo alarmante. Nosso objetivo é construir um sistema que promova a vida na Terra por meio de aplicativos descentralizados.",
+    "applications": "Aplicações"
 }
