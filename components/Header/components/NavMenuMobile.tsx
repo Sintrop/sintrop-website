@@ -5,7 +5,7 @@ import {
     SheetTitle,
 } from "@/components/ui/sheet";
 import Image from "next/image";
-import ImageSintrop from '@/public/assets/images/sintrop-logo-white.png';
+import ImageSintrop from '@/public/assets/images/sintrop-logo-gray.png';
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 
@@ -25,13 +25,15 @@ export function NavMenuMobile({ t }: Props) {
                             src={ImageSintrop}
                             alt="Sintrop icon"
                             quality={100}
-                            className="w-8 h-8 object-contain"
+                            className="object-contain"
+                            width={120}
+                            height={50}
                         />
                     </SheetTitle>
                 </Link>
             </SheetHeader>
 
-            <nav className="flex flex-col gap-5 mt-10">
+            <nav className="flex flex-col gap-5">
                 <Link
                     href="/"
                     className="text-black underline"
@@ -43,6 +45,18 @@ export function NavMenuMobile({ t }: Props) {
                     className="text-black underline"
                 >
                     - {t('resources')}
+                </Link>
+                <Link
+                    href="/tutorials"
+                    className="text-black underline"
+                >
+                    - {t('tutorials')}
+                </Link>
+                <Link
+                    href="/about"
+                    className="text-black underline"
+                >
+                    - {t('about')}
                 </Link>
             </nav>
         </SheetContent>
