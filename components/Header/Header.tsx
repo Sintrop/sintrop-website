@@ -19,17 +19,12 @@ export function Header({ t }: Props) {
                 className="flex items-center gap-3"
                 href="/"
             >
-                <h1
-                    className="text-white font-bold uppercase text-sm md:text-xl"
-                    title="Sintrop"
-                >
-                    <Image
-                        src={ImageSintrop}
-                        alt="Regeneration credit icon"
-                        quality={100}
-                        className="w-[120px] h-[70px] md:w-[180px] md:h-[65px] object-contain"
-                    />
-                </h1>
+                <Image
+                    src={ImageSintrop}
+                    alt="Regeneration credit icon"
+                    quality={100}
+                    className="w-[120px] h-[70px] md:w-[180px] md:h-[65px] object-contain"
+                />
             </Link>
 
             <section className="items-center gap-5 hidden lg:flex">
@@ -72,7 +67,7 @@ export function Header({ t }: Props) {
             <div className="lg:hidden">
                 <Sheet>
                     <SheetTrigger>
-                        <Menu size={25} color='white'/>
+                        <Menu size={25} color='white' />
                     </SheetTrigger>
                     <NavMenuMobile t={t} />
                 </Sheet>

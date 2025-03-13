@@ -2,7 +2,7 @@ import initTranslations from '../../i18n';
 import TranslationsProvider from '../../../components/TranslationsProvider';
 import { Header } from '@/components/Header/Header';
 import { HeroHome } from './components/HeroHome';
-import { Abstract } from './components/Abstract';
+import { AbstractAbout } from './components/AbstractAbout';
 import { Blockchain } from './components/Blockchain';
 import { Applications } from './components/Applications';
 import { Descetralization } from './components/Descetralization';
@@ -65,7 +65,7 @@ export default async function Home({ params }: { params: { locale: string } }){
 
             <main>
                 <div className='container mx-auto px-5 lg:px-20'>
-                    <Abstract t={t} />
+                    <AbstractAbout t={t} />
 
                     <Blockchain t={t}/>
 
