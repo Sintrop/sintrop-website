@@ -40,5 +40,5 @@ export async function TutorialItem({ item, t, index }: Props) {
                 </div>
             </AccordionContent>
         </AccordionItem>
-    )
+    );
 }

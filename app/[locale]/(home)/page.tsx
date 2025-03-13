@@ -29,8 +29,8 @@ export async function generateMetadata(
         description: t('seo-description-home'),
         openGraph: {
             type: "website",
-            title: "",
-            description: "",
+            title: t('seo-title-home') as string,
+            description: t('seo-description-home') as string,
             alternateLocale: ["en", "pt"],
             url: `https://sintrop.com/${locale}`,
             locale,

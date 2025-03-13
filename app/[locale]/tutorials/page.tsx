@@ -6,8 +6,42 @@ import { TutorialItem } from './components/TutorialItem/TutorialItem';
 import { Accordion } from '@/components/ui/accordion';
 import { LanguagesAvailablesForTutorials, tutorialsListPerLanguage } from './tutorialsList';
 import { Footer } from '@/components/Footer/Footer';
+import type { Metadata } from 'next';
 
 const i18nNamespaces = ['tutorials'];
+
+type Props = {
+    params: Promise<{ locale: string }>
+}
+
+export async function generateMetadata(
+    { params }: Props
+): Promise<Metadata> {
+    const locale = (await params).locale;
+    const { t } = await initTranslations(locale, i18nNamespaces);
+
+    return {
+        title: t('seo-title-tutorials'),
+        description: t('seo-description-tutorials'),
+        openGraph: {
+            type: "website",
+            title: t('seo-title-tutorials') as string,
+            description: t('seo-description-tutorials') as string,
+            alternateLocale: ["en", "pt"],
+            url: `https://sintrop.com/${locale}/tutorials`,
+            locale,
+            siteName: "Sintrop",
+            images: "https://sintrop.com/assets/images/sintrop-og.png",
+        },
+        alternates: {
+            canonical: "https://sintrop.com/tutorials",
+            languages: {
+                "en": "https://sintrop.com/en/tutorials",
+                "pt": "https://sintrop.com/pt/tutorials",
+            }
+        },
+    }
+}
 
 export default async function Tutorials({ params: { locale } }: { params: { locale: LanguagesAvailablesForTutorials } }){
     const { t, resources } = await initTranslations(locale, i18nNamespaces);
