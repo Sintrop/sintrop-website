@@ -1,6 +1,7 @@
 import { notFound } from 'next/navigation';
 import { Anta } from "next/font/google";
 import i18nConfig from '../../i18nconfig';
+import { GoogleTagManager } from '@next/third-parties/google';
 import "./globals.css";
 import "./markdown.css";
 
@@ -16,11 +17,13 @@ export function generateStaticParams() {
 
 export default async function RootLayout({
     children,
-    params: {locale}
+    params
   }: {
     children: React.ReactNode,
     params: {locale: string}
   }) {
+
+    const {locale} = await params;
 
     if (!i18nConfig.locales.includes(locale)) {
       notFound();
@@ -28,6 +31,7 @@ export default async function RootLayout({
 
     return (
       <html lang="en">
+        <GoogleTagManager gtmId="GTM-WZK3VDF" />
         <body className={`${antaFont.variable} antialiased`}>
           {children}
         </body>

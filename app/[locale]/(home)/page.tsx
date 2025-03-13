@@ -35,7 +35,7 @@ export async function generateMetadata(
             url: `https://sintrop.com/${locale}`,
             locale,
             siteName: "Sintrop",
-            images: ""
+            images: "https://sintrop.com/assets/images/sintrop-og.png",
         },
         alternates: {
             canonical: "https://sintrop.com",
@@ -47,7 +47,8 @@ export async function generateMetadata(
     }
 }
 
-export default async function Home({ params: { locale } }: { params: { locale: string } }){
+export default async function Home({ params }: { params: { locale: string } }){
+    const { locale } = await params;
     const { t, resources } = await initTranslations(locale, i18nNamespaces);
 
     return(
