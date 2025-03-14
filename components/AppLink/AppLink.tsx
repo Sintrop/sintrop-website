@@ -10,7 +10,7 @@ import {
     DialogTrigger,
 } from "@/components/ui/dialog";
 import { Link as LinkIcon } from "lucide-react";
-import {format} from 'date-fns';
+import { format } from 'date-fns';
 
 interface Props {
     t: TType;
@@ -35,7 +35,11 @@ export function AppLink({ t, directLink, app }: Props) {
 
     return (
         <Dialog>
-            <DialogTrigger asChild className="hover:cursor-pointer">
+            <DialogTrigger
+                asChild
+                className="hover:cursor-pointer"
+                disabled={!appData?.live}
+            >
                 <ContentLink t={t} appData={appData} />
             </DialogTrigger>
             <DialogContent
@@ -84,8 +88,8 @@ interface ContentLinkProps {
 }
 function ContentLink({ appData, t }: ContentLinkProps) {
     return (
-        <div className="flex rounded-md bg-green-2 gap-4 pr-5 w-full lg:max-w-[400px] flex-1">
-            <div className="w-20 h-20 rounded-md bg-green-3 items-center justify-center flex overflow-hidden p-2">
+        <button className="flex text-start rounded-md bg-green-2 gap-4 pr-5 w-full md:w-[315px]">
+            <div className="w-20 h-full rounded-md bg-green-3 items-center justify-center flex overflow-hidden p-2">
                 <Image
                     alt="icon app"
                     src={appData?.image}
@@ -97,7 +101,7 @@ function ContentLink({ appData, t }: ContentLinkProps) {
             </div>
 
             <div className="flex flex-col gap-1 pt-2">
-                <h4 className="md:text-xl">{t(appData?.title)}</h4>
+                <h4 className="md:text-lg leading-4.5">{t(appData?.title)}</h4>
                 <div className="flex flex-wrap gap-3">
                     {appData?.mainnet ? (
                         <div className="rounded-md py-1 px-2 border border-green-3 w-fit">
@@ -121,23 +125,23 @@ function ContentLink({ appData, t }: ContentLinkProps) {
                     )}
                 </div>
             </div>
-        </div>
+        </button>
     )
 }
 
-interface LinkItemProps{
+interface LinkItemProps {
     title: string;
     href: string;
 }
-function LinkItem({href, title}: LinkItemProps){
-    return(
+function LinkItem({ href, title }: LinkItemProps) {
+    return (
         <Link
             href={href}
             target="_blank"
             rel="noopener noreferer"
             className="px-3 h-8 rounded-md bg-blue-primary flex items-center justify-center gap-2"
         >
-            <LinkIcon color="white" size={20}/>
+            <LinkIcon color="white" size={20} />
             <p className="text-white">{title}</p>
         </Link>
     )

@@ -76,6 +76,30 @@ export const appsList = {
             }
         ]
     } as AppsProps,
+    sintropAppStore: {
+        title: 'App Store',
+        image: 'https://www.sintrop.com/assets/images/sintrop-store.png',
+        shortDescription: 'descrição curta',
+        longDescription: 'descrição longa',
+        mainnet: true,
+        live: false,
+        externalApp: false,
+        linkApp: 'https://v8.sintrop.com',
+        createdAt: '2024-11-20 00:00:00',
+        links: []
+    } as AppsProps,
+    education: {
+        title: 'education',
+        image: 'https://www.sintrop.com/assets/images/icon-treinamentos.png',
+        shortDescription: 'descrição curta',
+        longDescription: 'descrição longa',
+        mainnet: true,
+        live: false,
+        externalApp: false,
+        linkApp: 'https://v8.sintrop.com',
+        createdAt: '2024-11-20 00:00:00',
+        links: []
+    } as AppsProps,
 }
 
 export type AppsName = keyof typeof appsList;
