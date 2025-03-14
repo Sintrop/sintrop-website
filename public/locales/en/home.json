@@ -9,5 +9,18 @@
     "impact": "Impact",
     "descriptionImpact": "We inherited a Planet with an incredible amount of life. Unfortunately, humanity has been destroying Nature at an alarming rate. Our goal is to build a system that fosters life on Earth through decentralized applications.",
     "applications": "Applications",
-    "descriptionDescentralization": "Decentralization as a core value means that we share the original vision of Bitcoin. The network is open and transparent, anyone with the appropriate hardware is welcome to run a node and maintain the network. Also, the token distribution is a key aspect. The Sintrop cryptocurrency, the native gas fees utility token of the project, will not be pre-mined, being the only way to mint new tokens with the reward per block when finding new blocks in the Proof-of-Work (PoW) system."
+    "decentralization": "Decentralization",
+    "descriptionDecentralization": "Decentralization as a core value means that we share the original vision of Bitcoin. The network is open and transparent, anyone with the appropriate hardware is welcome to run a node and maintain the network. Also, the token distribution is a key aspect. The Sintrop cryptocurrency, the native gas fees utility token of the project, will not be pre-mined, being the only way to mint new tokens with the reward per block when finding new blocks in the Proof-of-Work (PoW) system.",
+    "runANode": "Run a node",
+    "whyPow": "Why Proof-of-Work?",
+    "descWhyPow": "The biggest advantage of PoS is its low energy consumption. Since block validation occurs through staking, the only hardware required is for operating nodes, without the high-energy demand of PoW mining. However, this is also its biggest disadvantage. When a network is secured through staking, it requires pre-mined coins, which are then used to maintain security. This can be seen as controversial, since you are creating an asset and using the same asset to validate transactions. In this sense, PoS resembles traditional fiat systems, whereas PoW establishes a distributed, electricity-based electronic cash system. No pre-mined coins, just the work to find new blocks.",
+    "startMiningAndEarn": "Start mining and earn SINTROP coin",
+    "startMining": "Start mining",
+    "sustainableEnergy": "Sustainable energy",
+    "descSustainableEnergy": "Humanity’s need for energy has both advantages and drawbacks. On one hand, reducing consumption benefits the planet, as every energy source, even renewable ones, has an environmental impact. On the other hand, energy drives technological advancements that improve our lives in countless ways. We encourage nodes and miners to power their machines using solar, wind, hydro, and other low-impact renewable en- ergy sources. Our goal is to build a blockchain infrastructure powered by renewable energy.",
+    "featuredApp": "Featured App",
+    "regenerationCredit": "Regeneration Credit",
+    "descFeaturedApp": "The Regeneration Credit is the reason for the existence of this project. It is a (P2P) funding system designed to incentivize the regeneration of ecosystems. Humanity has been destroying nature for centuries, and our survival depends on bringing life back to Earth. The problem is that people currently have more economic incentives to deforest an area and exploit its natural resources, such as wood, soil, and water, than to regenerate it. If, in the future, regenerative agriculture becomes more profitable than degenerative agriculture, it could be a huge step in accelerating our transition to a regenerative world. The project aims to create an additional income for people who are regenerating ecosystems, so they can sell the digital representation of their impact in exchange for new tokens.",
+    "sintropExplorer": "Sintrop Explorer",
+    "sequoiaExplorer": "Sequoia Explorer"
 }

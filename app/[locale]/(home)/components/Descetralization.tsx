@@ -12,7 +12,7 @@ export function Descetralization({t}: Props){
         <section className="my-10 lg:my-20 flex items-center flex-wrap justify-between gap-5">
             <div className="flex flex-col w-full md:max-w-[48%]">
                 <h3 className="text-2xl md:text-4xl text-text-title text-center md:text-start">{t('decentralization')}</h3>
-                <p className="text-text-subtitle mt-3">{t('descriptionDescentralization')}</p>
+                <p className="text-text-subtitle mt-3">{t('descriptionDecentralization')}</p>
 
                 <Button
                     className="bg-[#FB571C] rounded-md text-white px-10 h-10 w-fit mt-10"

@@ -11,10 +11,10 @@ export function FeaturedApp({ t }: Props) {
         <section className="w-full mt-10 lg:mt-20 bg-green-3 py-10">
             <div className="container mx-auto px-5 lg:px-20 flex flex-wrap justify-between gap-5">
                 <div className="flex flex-col w-full md:max-w-[48%]">
-                    <h3 className="text-2xl md:text-4xl text-green-1">{t('featureApp')}</h3>
+                    <h3 className="text-2xl md:text-4xl text-green-1">{t('featuredApp')}</h3>
                     <h4 className="text-white text-2xl mt-3">{t('regenerationCredit')}</h4>
 
-                    <p className="text-white">{t('descriptionFeatureApp')}</p>
+                    <p className="text-white">{t('descFeaturedApp')}</p>
 
                     <div className="flex flex-wrap gap-5 mt-10">
                         <Link

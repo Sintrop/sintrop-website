@@ -8,5 +8,19 @@
     "knowMore": "Saiba mais",
     "impact": "Impacto",
     "descriptionImpact": "Nós herdamos um Planeta com uma quantidade incrível de vida. Infelizmente, a humanidade vem destruindo a Natureza em um ritmo alarmante. Nosso objetivo é construir um sistema que promova a vida na Terra por meio de aplicativos descentralizados.",
-    "applications": "Aplicações"
+    "applications": "Aplicações",
+    "decentralization": "Descentralização",
+    "descriptionDecentralization": "Descentralização como um valor central significa que compartilhamos a visão original do Bitcoin. A rede é aberta e transparente, qualquer um com o hardware apropriado é bem-vindo para executar um nó e manter a rede. Além disso, a distribuição de tokens é um aspecto fundamental. A criptomoeda Sintrop, o token utilitário de taxas de gás nativo da rede, não será pré-minerado, sendo a única maneira de obter novos tokens com a recompensa ao encontrar novos blocos no algoritmo de Prova-de-Trabalho (PoW).",
+    "runANode": "Rode um nó",
+    "whyPow": "Por que Prova-de-Trabalho?",
+    "descWhyPow": "A maior vantagem do PoS é seu baixo consumo de energia. Como a validação de blocos ocorre por meio de staking, o único hardware necessário é para operar nós, sem a alta demanda de energia da mineração. No entanto, essa também é sua maior desvantagem. Quando uma rede é protegida por meio de staking, ela requer moedas pré-mineradas, que são então usadas para manter a segurança. Isso pode ser visto como controverso, pois cria-se um ativo digital e o mesmo ativo é usado para validar as transações. Nesse sentido, o PoS se assemelha aos sistemas fiduciários tradicionais, enquanto o PoW estabelece um sistema de dinheiro eletrônico distribuído e baseado em eletricidade. Sem moedas pré-mineradas, apenas o trabalho para encontrar novos blocos.",
+    "startMiningAndEarn": "Comece a minerar e ganhe SINTROP",
+    "startMining": "Começar a minerar",
+    "sustainableEnergy": "Energia renovável",
+    "descSustainableEnergy": "A necessidade de energia da humanidade tem vantagens e desvantagens. Por um lado, reduzir o consumo beneficia o planeta, pois toda fonte de energia, mesmo as renováveis, tem um impacto ambiental. Por outro lado, a energia impulsiona avanços tecnológicos que melhoram nossas vidas de inúmeras maneiras. Incentivamos nós e mineradores a alimentar suas máquinas usando energia solar, eólica, hidrelétrica e outras fontes de energia renovável de baixo impacto. Nosso objetivo é construir uma infraestrutura de blockchain alimentada por energia renovável.",
+    "featuredApp": "Featured App",
+    "regenerationCredit": "Crédito de Regeneração",
+    "descFeaturedApp": "O Crédito de Regeneração é a razão da existência deste projeto. É um sistema de financiamento (P2P) projetado para incentivar a regeneração de ecossistemas. A humanidade vem destruindo a natureza há séculos, e nossa sobrevivência depende de trazer a vida de volta à Terra. O problema é que as pessoas atualmente têm mais incentivos econômicos para desmatar uma área e explorar seus recursos naturais, como madeira, solo e água, do que para regenerá-la. Se, no futuro, a agricultura regenerativa se tornar mais lucrativa do que a agricultura degenerativa, pode ser um grande passo para acelerar nossa transição para um mundo regenerativo. O projeto visa criar uma renda adicional para pessoas que estão regenerando ecossistemas, para que possam vender a representação digital de seu impacto em troca de novos tokens.",
+    "sintropExplorer": "Sintrop Explorer",
+    "sequoiaExplorer": "Sequoia Explorer"
 }
