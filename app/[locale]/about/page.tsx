@@ -3,8 +3,9 @@ import TranslationsProvider from '../../../components/TranslationsProvider';
 import { Header } from '@/components/Header/Header';
 import { HeroAbout } from './components/HeroAbout';
 import type { Metadata } from 'next';
+import { Footer } from '@/components/Footer/Footer';
 
-const i18nNamespaces = ['home', 'about'];
+const i18nNamespaces = ['about'];
 
 type Props = {
     params: Promise<{ locale: string }>
@@ -53,6 +54,28 @@ export default async function About({ params }: Props){
                 <Header t={t}/>
                 <HeroAbout t={t}/>
             </div>
+
+            <main className='container mx-auto px-5 lg:px-20 my-10 lg:my-20'>
+                <h3 className='text-2xl md:text-4xl'>{t('whyAnotherChain')}</h3>
+                <p className='mt-3'>{t('descWhyAnotherChain')}</p>
+
+                <h3 className='text-2xl md:text-4xl mt-16'>{t('impactAsCoreValue')}</h3>
+                <p className='mt-3'>{t('descImpactAsCoreValue')}</p>
+                <p className='mt-5'>{t('descImpactAsCoreValue2')}</p>
+
+                <h3 className='text-2xl md:text-4xl mt-16'>{t('decentralizationAsCoreValue')}</h3>
+                <p className='mt-3'>{t('descDecentralizationAsCoreValue')}</p>
+                <p className='mt-5'>{t('descDecentralizationAsCoreValue2')}</p>
+
+                <h3 className='text-2xl md:text-4xl mt-16'>{t('sintropVirtualMachine')}</h3>
+                <p className='mt-3'>{t('descSintropVirtualMachine')}</p>
+                <p className='mt-5'>{t('descSintropVirtualMachine2')}</p>
+                
+                <h3 className='text-2xl md:text-4xl mt-16'>{t('smartContractPlatform')}</h3>
+                <p className='mt-3'>{t('descSmartContractPlatform')}</p>
+            </main>
+
+            <Footer t={t}/>
         </TranslationsProvider>
     )
 }
