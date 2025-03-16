@@ -14,7 +14,7 @@ export function FeaturedApp({ t }: Props) {
                     <h3 className="text-2xl md:text-4xl text-green-1">{t('featuredApp')}</h3>
                     <h4 className="text-white text-2xl mt-3">{t('regenerationCredit')}</h4>
 
-                    <p className="text-white">{t('descFeaturedApp')}</p>
+                    <p className="text-white font-[akatab]">{t('descFeaturedApp')}</p>
 
                     <div className="flex flex-wrap gap-5 mt-10">
                         <Link
