@@ -11,7 +11,7 @@ export function HeroHome({t}: Props) {
                 {t('titleHero')}
             </h1>
 
-            <h2 className="text-white text-center lg:text-start lg:text-2xl lg:max-w-[50%]">
+            <h2 className="text-white text-center lg:text-start lg:text-2xl lg:max-w-[50%] font-[akatab]">
                 {t('descriptionHero')}
             </h2>
 
