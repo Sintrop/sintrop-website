@@ -5,8 +5,8 @@ import { HeroHome } from './components/HeroHome';
 import { AbstractAbout } from './components/AbstractAbout';
 import { Blockchain } from './components/Blockchain';
 import { Applications } from './components/Applications';
-import { Descetralization } from './components/Descetralization';
-import { Pow } from './components/Pow';
+import { Descetralization } from './components/Descentralization/Descetralization';
+import { Pow } from './components/Pow/Pow';
 import { Energy } from './components/Energy';
 import { FeaturedApp } from './components/FeaturedApp';
 import { Footer } from '@/components/Footer/Footer';
@@ -71,9 +71,9 @@ export default async function Home({ params }: { params: { locale: string } }){
 
                     <Applications t={t}/>
 
-                    <Descetralization t={t}/>
+                    <Descetralization t={t} locale={locale}/>
 
-                    <Pow t={t}/>
+                    <Pow t={t} locale={locale}/>
 
                     <Energy t={t}/>
                 </div>

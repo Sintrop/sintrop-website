@@ -1,24 +1,24 @@
 import { TType } from "@/types/t";
 import Image from "next/image";
 import ImageDescentralization from '@/public/assets/images/descentralization-image.png';
-import { Button } from "@/components/ui/button";
+import { RunANodeButton } from "./RunANodeButton";
 
 interface Props{
     t: TType;
+    locale: string;
 }
 
-export function Descetralization({t}: Props){
+export function Descetralization({t, locale}: Props){
     return(
         <section className="my-10 lg:my-30 flex items-center flex-wrap justify-between gap-5">
             <div className="flex flex-col w-full md:max-w-[48%]">
                 <h3 className="text-2xl md:text-4xl text-text-title text-center md:text-start">{t('decentralization')}</h3>
                 <p className="text-text-subtitle mt-3 font-[akatab]">{t('descriptionDecentralization')}</p>
 
-                <Button
-                    className="bg-[#FB571C] rounded-md text-white px-10 h-10 w-fit mt-10"
-                >
-                    {t('runANode')}
-                </Button>
+                <RunANodeButton 
+                    locale={locale} 
+                    label={t('runANode')}
+                />
             </div>
 
             <div className="flex flex-col w-full md:max-w-[48%] items-center justify-center">
