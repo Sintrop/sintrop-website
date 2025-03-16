@@ -1,6 +1,10 @@
 {
     "seo-title-home": "Sintrop - A Blockchain for Social and Environmental Impact Applications",
     "seo-description-home": "Building decentralized solutions to make the world a better place. We introduce a public impact blockchain with decentralization as core value.",
+    "home": "Home",
+    "resources": "Resources",
+    "tutorials": "Tutorials",
+    "apps": "Apps",
     "titleHero": "A Blockchain for Social and Environmental Impact Applications",
     "descriptionHero": "Building decentralized solutions to make the world a better place. We introduce a public impact blockchain with decentralization as core value",
     "about": "About",
@@ -27,5 +31,8 @@
     "blockchain": "Blockchain",
     "explorer": "Block explorer",
     "links": "Links",
-    "education": "Education"
+    "education": "Education",
+    "discord": "Discord",
+    "github": "Github",
+    "language": "Language"
 }
