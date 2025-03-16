@@ -27,7 +27,7 @@ export function Header({ t }: Props) {
                 />
             </Link>
 
-            <section className="items-center gap-5 hidden lg:flex">
+            <section className="items-center gap-10 hidden lg:flex">
                 <nav className="flex items-center gap-10">
                     <Link
                         href="/"

@@ -57,22 +57,22 @@ export default async function About({ params }: Props){
 
             <main className='container mx-auto px-5 lg:px-20 my-10 lg:my-20'>
                 <h3 className='text-2xl md:text-4xl'>{t('whyAnotherChain')}</h3>
-                <p className='mt-3'>{t('descWhyAnotherChain')}</p>
+                <p className='mt-3 font-[akatab]'>{t('descWhyAnotherChain')}</p>
 
                 <h3 className='text-2xl md:text-4xl mt-16'>{t('impactAsCoreValue')}</h3>
-                <p className='mt-3'>{t('descImpactAsCoreValue')}</p>
-                <p className='mt-5'>{t('descImpactAsCoreValue2')}</p>
+                <p className='mt-3 font-[akatab]'>{t('descImpactAsCoreValue')}</p>
+                <p className='mt-5 font-[akatab]'>{t('descImpactAsCoreValue2')}</p>
 
                 <h3 className='text-2xl md:text-4xl mt-16'>{t('decentralizationAsCoreValue')}</h3>
-                <p className='mt-3'>{t('descDecentralizationAsCoreValue')}</p>
-                <p className='mt-5'>{t('descDecentralizationAsCoreValue2')}</p>
+                <p className='mt-3 font-[akatab]'>{t('descDecentralizationAsCoreValue')}</p>
+                <p className='mt-5 font-[akatab]'>{t('descDecentralizationAsCoreValue2')}</p>
 
                 <h3 className='text-2xl md:text-4xl mt-16'>{t('sintropVirtualMachine')}</h3>
-                <p className='mt-3'>{t('descSintropVirtualMachine')}</p>
-                <p className='mt-5'>{t('descSintropVirtualMachine2')}</p>
+                <p className='mt-3 font-[akatab]'>{t('descSintropVirtualMachine')}</p>
+                <p className='mt-5 font-[akatab]'>{t('descSintropVirtualMachine2')}</p>
                 
                 <h3 className='text-2xl md:text-4xl mt-16'>{t('smartContractPlatform')}</h3>
-                <p className='mt-3'>{t('descSmartContractPlatform')}</p>
+                <p className='mt-3 font-[akatab]'>{t('descSmartContractPlatform')}</p>
             </main>
 
             <Footer t={t}/>

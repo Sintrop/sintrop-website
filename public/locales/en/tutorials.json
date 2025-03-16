@@ -16,5 +16,8 @@
     "about": "About",
     "resources": "Resources",
     "home": "Home",
-    "apps": "Apps"
+    "apps": "Apps",
+    "discord": "Discord",
+    "github": "Github",
+    "language": "Language"
 }
