@@ -11,7 +11,7 @@ import type { Metadata } from 'next';
 const i18nNamespaces = ['tutorials'];
 
 type Props = {
-    params: Promise<{ locale: string }>
+    params: Promise<{ locale: LanguagesAvailablesForTutorials }>
 }
 
 export async function generateMetadata(
@@ -43,7 +43,8 @@ export async function generateMetadata(
     }
 }
 
-export default async function Tutorials({ params: { locale } }: { params: { locale: LanguagesAvailablesForTutorials } }){
+export default async function Tutorials({params}: Props){
+    const {locale} = await params;
     const { t, resources } = await initTranslations(locale, i18nNamespaces);
 
     return(
@@ -59,13 +60,16 @@ export default async function Tutorials({ params: { locale } }: { params: { loca
 
             <main className='container mx-auto px-5 lg:px-20 my-10 lg:my-20'>
                 <Accordion type="single" collapsible className='gap-5 flex flex-col'>
-                    {tutorialsListPerLanguage[locale].map((item, index) => (
-                        <TutorialItem
-                            key={index}
-                            index={index}
-                            item={item}
-                            t={t}
-                        />
+                    {tutorialsListPerLanguage[locale].map((item, index) => ( 
+                        <>
+                            {/*@ts-ignore*/}
+                            <TutorialItem
+                                key={index}
+                                index={index}
+                                item={item}
+                                t={t}
+                            />
+                        </>
                     ))}
                 </Accordion>
             </main>

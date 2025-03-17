@@ -25,8 +25,8 @@ export async function TutorialItem({ item, t, index }: Props) {
             <AccordionContent
                 className="bg-green-2 w-full p-5 rounded-md mb-5"
             >
-                <div 
-                    dangerouslySetInnerHTML={{ __html: htmlContent }} 
+                <div
+                    dangerouslySetInnerHTML={{ __html: htmlContent }}
                     className="markdown-content"
                 />
 
