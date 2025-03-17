@@ -55,7 +55,7 @@ export function Footer({ t }: Props) {
                         </nav>
 
                         <div className='flex flex-col gap-5'>
-                            <nav className="flex flex-col gap-5">
+                            <div className="flex flex-col gap-5">
                                 <Link
                                     href="https://github.com/sintrop"
                                     target='_blank'
@@ -81,7 +81,7 @@ export function Footer({ t }: Props) {
                                     />
                                     {t('discord')}
                                 </Link>
-                            </nav>
+                            </div>
 
 
                             <div className='flex flex-col items-center gap-1'>

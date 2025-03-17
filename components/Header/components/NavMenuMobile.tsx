@@ -7,7 +7,8 @@ import {
 import Image from "next/image";
 import ImageSintrop from '@/public/assets/images/sintrop-logo-gray.png';
 import Link from "next/link";
-import { Button } from "@/components/ui/button";
+import { Github } from "lucide-react";
+import DiscordIcon from '@/public/assets/icons/discord-white-icon.png';
 
 interface Props {
     t: TType;
@@ -59,6 +60,34 @@ export function NavMenuMobile({ t }: Props) {
                     - {t('about')}
                 </Link>
             </nav>
+
+            <div className="flex flex-col gap-5 mt-5">
+                <Link
+                    href="https://github.com/sintrop"
+                    target='_blank'
+                    className="text-white flex items-center justify-center gap-3 bg-black hover:underline py-2 rounded-md"
+                    rel="noopener noreferer"
+                >
+                    <Github size={25} color="white" />
+                    {t('github')}
+                </Link>
+
+                <Link
+                    href="https://discord.gg/dAGBBFnTM7"
+                    target='_blank'
+                    className="text-white flex items-center justify-center gap-3 bg-[#738ADB] py-2 rounded-md hover:underline"
+                    rel="noopener noreferer"
+                >
+                    <Image
+                        src={DiscordIcon}
+                        alt="Discord icon"
+                        quality={100}
+                        width={25}
+                        height={25}
+                    />
+                    {t('discord')}
+                </Link>
+            </div>
         </SheetContent>
     )
 }
