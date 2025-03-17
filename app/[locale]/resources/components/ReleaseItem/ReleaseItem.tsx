@@ -26,9 +26,9 @@ export function ReleaseItem({ t, release, latest }: Props) {
                 <p className="font-[akatab] text-sm mt-3 md:max-w-[80%]">{release?.body}</p>
             </div>
 
-            <div className="flex flex-col w-full md:max-w-[50%]">
-                <h4 className="text-xl">{t('download')}</h4>
-                <div className="flex flex-wrap gap-5">
+            <div className="flex flex-col w-full md:max-w-[50%] mt-10 md:mt-0">
+                <h4 className="text-xl text-center lg:text-start">{t('download')}</h4>
+                <div className="flex flex-wrap gap-5 justify-center mt-5 lg:mt-1 lg::justify-start">
                     <SystemItemDownload
                         t={t}
                         assets={release.assets}

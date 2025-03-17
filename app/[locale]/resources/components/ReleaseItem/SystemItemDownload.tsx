@@ -56,7 +56,7 @@ const systemToData = {
         archiveIncludeName: 'go-sintrop-alltools-win64',
     },
     linux: {
-        label: 'linux/ubunto',
+        label: 'linux/ubuntu',
         image: LinuxIcon,
         archiveIncludeName: 'go-sintrop-alltools-linux',
     },
@@ -66,7 +66,7 @@ const systemToData = {
         archiveIncludeName: 'go-sintrop-alltools-osx',
     },
     allVersions: {
-        label: 'click Here To See All Version',
+        label: 'clickHereToSeeAllVersions',
         image: WindowsIcon,
         archiveIncludeName: 'go-sintrop-alltools-win64'
     }

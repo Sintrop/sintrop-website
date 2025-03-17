@@ -67,7 +67,7 @@ export function Footer({ t }: Props) {
                                 </Link>
 
                                 <Link
-                                    href="https://github.com/sintrop"
+                                    href="https://discord.gg/dAGBBFnTM7"
                                     target='_blank'
                                     className="text-white flex items-center justify-center gap-3 hover:underline"
                                     rel="noopener noreferer"
