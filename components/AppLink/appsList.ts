@@ -58,8 +58,8 @@ export const appsList = {
     regenerationCredit: {
         title: 'regenerationCredit',
         image: 'https://www.sintrop.com/assets/token.png',
-        shortDescription: 'descrição curta',
-        longDescription: 'descrição longa',
+        shortDescription: 'shortDescriptionRC',
+        longDescription: 'longDescriptionRC',
         mainnet: false,
         live: true,
         externalApp: false,
