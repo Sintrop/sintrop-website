@@ -11,9 +11,9 @@ interface Props {
 }
 export function Footer({ t }: Props) {
     return (
-        <footer className="bg-[#149954] py-10 lg:py-20">
+        <footer className="bg-[#149954] py-10 lg:py-15">
             <div className="container mx-auto flex flex-col gap-5">
-                <section className="flex flex-col gap-5 items-center justify-around border-b border-white pb-10 md:flex-row">
+                <section className="flex flex-col gap-5 items-center justify-around md:flex-row">
                     <Link
                         className="flex items-center gap-3"
                         href="/"
@@ -22,7 +22,7 @@ export function Footer({ t }: Props) {
                             src={ImageSintrop}
                             alt="Sintrop icon"
                             quality={100}
-                            className="w-[200px] h-[100px] md:w-[180px] md:h-[65px] object-contain"
+                            className="w-[150px] h-[80px] md:w-[180px] md:h-[65px] object-contain"
                         />
                     </Link>
 
@@ -91,8 +91,6 @@ export function Footer({ t }: Props) {
                         </div>
                     </div>
                 </section>
-
-                <p className='text-white text-center mt-5'>Copyright © Sintrop</p>
             </div>
         </footer >
     )

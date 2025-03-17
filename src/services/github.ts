@@ -1,3 +1,4 @@
+import { ReleaseProps } from '@/types/github';
 import { marked } from 'marked';
 
 interface GetContentMDFromGitHubProps{
@@ -19,4 +20,22 @@ export async function getContentMDFromGitHub(props: GetContentMDFromGitHubProps)
     const htmlContent = marked(content);
 
     return htmlContent as string;
+}
+
+
+interface GetReleasesFromGitHubProps{
+    username: string;
+    repo: string;
+}
+
+export async function getReleasesFromGitHub(props: GetReleasesFromGitHubProps): Promise<ReleaseProps[]>{
+    const {repo, username} = props;
+    const response = await fetch(`https://api.github.com/repos/${username}/${repo}/releases`);
+    const data = await response.json();
+
+    if (data.message === 'Not Found') {
+        return [];
+    }
+
+    return data;
 }

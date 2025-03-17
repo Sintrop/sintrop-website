@@ -3,6 +3,8 @@ import TranslationsProvider from '../../../components/TranslationsProvider';
 import { Header } from '@/components/Header/Header';
 import { HeroResources } from './components/HeroResources';
 import type { Metadata } from 'next';
+import { getReleasesFromGitHub } from '@/src/services/github';
+import { ReleaseItem } from './components/ReleaseItem/ReleaseItem';
 
 const i18nNamespaces = ['resources'];
 
@@ -39,8 +41,14 @@ export async function generateMetadata(
     }
 }
 
-export default async function Resources({ params: { locale } }: { params: { locale: string } }){
+export default async function Resources({ params }: Props){
+    const {locale} = await params;
     const { t, resources } = await initTranslations(locale, i18nNamespaces);
+
+    const releases = await getReleasesFromGitHub({
+        repo: 'go-sintrop',
+        username: 'sintrop',
+    })
 
     return(
         <TranslationsProvider
@@ -52,6 +60,21 @@ export default async function Resources({ params: { locale } }: { params: { loca
                 <Header t={t}/>
                 <HeroResources t={t}/>
             </div>
+
+            <main className='container mx-auto px-5 lg:px-20 my-10 lg:my-20'>
+                <h3 className='text-2xl md:text-4xl'>{t('releases')}</h3>
+                
+                <div className='flex flex-col gap-5 mt-5'>
+                    {releases.map((release, index) => (
+                        <ReleaseItem
+                            key={index}
+                            t={t}
+                            release={release}
+                            latest={index === 0}
+                        />
+                    ))}
+                </div>
+            </main>
         </TranslationsProvider>
     )
 }
