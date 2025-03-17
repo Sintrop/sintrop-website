@@ -35,5 +35,7 @@
     "education": "Education",
     "discord": "Discord",
     "github": "Github",
-    "language": "Language"
+    "language": "Language",
+    "shortDescriptionRC": "A Peer-to-Peer Nature Regeneration System",
+    "longDescriptionRC": "We introduce the Regeneration Credit, a funding mechanism for environmental service and a smart contract certification system."
 }
