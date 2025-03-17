@@ -16,7 +16,8 @@ export function FeaturedApp({ t }: Props) {
 
                     <p className="text-white font-[akatab]">{t('descFeaturedApp')}</p>
 
-                    <div className="flex flex-wrap gap-5 mt-10">
+                    {/* TODO: Display links when website regeneration credit is live */}
+                    {/* <div className="flex flex-wrap gap-5 mt-10">
                         <Link
                             href="https://google.com.br"
                             target="_blank"
@@ -34,7 +35,7 @@ export function FeaturedApp({ t }: Props) {
                         >
                             {t('webPlatform')}
                         </Link>
-                    </div>
+                    </div> */}
                 </div>
 
                 <div className="hidden flex-col items-center justify-center w-full lg:max-w-[48%] lg:flex">
