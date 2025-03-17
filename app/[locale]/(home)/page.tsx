@@ -47,7 +47,7 @@ export async function generateMetadata(
     }
 }
 
-export default async function Home({ params }: { params: { locale: string } }){
+export default async function Home({ params }: Props){
     const { locale } = await params;
     const { t, resources } = await initTranslations(locale, i18nNamespaces);
 
@@ -60,7 +60,7 @@ export default async function Home({ params }: { params: { locale: string } }){
             <div className='bg-[url("/assets/images/capa-site-1.png")] w-full flex flex-col bg-cover bg-center'>
                 <Header t={t}/>
 
-                <HeroHome t={t}/>
+                <HeroHome t={t} locale={locale} />
             </div>
 
             <main>
