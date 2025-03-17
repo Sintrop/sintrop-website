@@ -13,7 +13,7 @@ interface Props {
 export function Header({ t }: Props) {
     return (
         <header
-            className="container mx-auto py-10 flex items-center justify-between px-5"
+            className="container mx-auto py-5 md:py-10 flex items-center justify-between px-5"
         >
             <Link
                 className="flex items-center gap-3"

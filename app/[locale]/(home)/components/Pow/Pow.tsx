@@ -11,15 +11,17 @@ interface Props {
 
 export function Pow({ t, locale }: Props) {
     return (
-        <section className="my-10 lg:my-20 flex flex-wrap justify-between gap-5">
+        <section className="my-20 lg:my-30 flex flex-wrap justify-between gap-5">
             <div className="flex flex-col w-full md:max-w-[48%] md:pr-12">
                 <h3 className="text-2xl md:text-4xl text-text-title text-center md:text-start">{t('whyPow')}</h3>
                 <p className="text-text-subtitle mt-3 font-[akatab]">{t('descWhyPow')}</p>
-                
-                <StartMineButton
-                    label={t('startMining')}
-                    locale={locale}
-                />
+
+                <div className="hidden lg:flex">
+                    <StartMineButton
+                        label={t('startMining')}
+                        locale={locale}
+                    />
+                </div>
             </div>
 
             <div className="flex flex-col items-center w-full md:max-w-[48%]">
@@ -32,6 +34,13 @@ export function Pow({ t, locale }: Props) {
                     height={300}
                     className=""
                 />
+
+                <div className="flex lg:hidden">
+                    <StartMineButton
+                        label={t('startMining')}
+                        locale={locale}
+                    />
+                </div>
             </div>
         </section>
     )
