@@ -88,7 +88,7 @@ interface ContentLinkProps {
 }
 function ContentLink({ appData, t }: ContentLinkProps) {
     return (
-        <button className="flex text-start rounded-md bg-green-2 gap-4 pr-5 w-full md:w-[315px]">
+        <button className="flex text-start rounded-md bg-green-2 gap-4 pr-5 w-full md:w-[315px] hover:cursor-pointer">
             <div className="w-20 h-full rounded-md bg-green-3 items-center justify-center flex overflow-hidden p-2">
                 <Image
                     alt="icon app"
@@ -113,12 +113,7 @@ function ContentLink({ appData, t }: ContentLinkProps) {
                         </div>
                     )}
 
-                    {appData?.live ? (
-                        <div className="rounded-3xl py-1 px-3 bg-red-500 w-fit flex items-center gap-2">
-                            <div className="w-2 h-2 rounded-full bg-white" />
-                            <p className="text-white text-xs">{t('live')}</p>
-                        </div>
-                    ) : (
+                    {!appData?.live && (
                         <div className="rounded-3xl py-1 px-3 bg-zinc-400 w-fit">
                             <p className="text-white text-xs">{t('commingSoon')}</p>
                         </div>
@@ -139,7 +134,7 @@ function LinkItem({ href, title }: LinkItemProps) {
             href={href}
             target="_blank"
             rel="noopener noreferer"
-            className="px-3 h-8 rounded-md bg-blue-primary flex items-center justify-center gap-2"
+            className="px-3 h-8 rounded-md bg-blue-primary flex items-center justify-center gap-2 hover:cursor-pointer"
         >
             <LinkIcon color="white" size={20} />
             <p className="text-white">{title}</p>
