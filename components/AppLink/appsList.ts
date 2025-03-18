@@ -42,7 +42,7 @@ export const appsList = {
         mainnet: false,
         live: true,
         externalApp: false,
-        linkApp: 'https://sintropexplorer.netlify.app',
+        linkApp: 'https://sequoia.sintrop.com',
         createdAt: '2024-11-20 00:00:00',
         links: [
             {
