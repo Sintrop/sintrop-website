@@ -50,6 +50,18 @@ export default function sitemap(): MetadataRoute.Sitemap{
                 }
             }
         },
+        {
+            url: 'https://sintrop.com/regeneration-credit/privacy-policy',
+            lastModified: new Date(),
+            changeFrequency: 'weekly',
+            priority: 0.8,
+            alternates: {
+                languages: {
+                    en: 'https://sintrop.com/regeneration-credit/privacy-policy',
+                    pt: 'https://sintrop.com/pt/regeneration-credit/privacy-policy'
+                }
+            }
+        },
         ...tutorialsPtSitemap,
         ...tutorialsEnSitemap,
     ]
