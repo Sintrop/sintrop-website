@@ -19,7 +19,7 @@ export function HeroHome({t, locale}: Props) {
             <div className="flex flex-col items-center gap-5 md:gap-10 md:flex-row">
                 <Link
                     className="bg-blue-primary h-[50px] md:h-[60px] rounded-md text-white w-[200px] flex items-center justify-center"
-                    href={`https://sintrop.com/docs/whitepaper/whitepaper-${locale}.pdf`}
+                    href={`https://sintrop.com/docs/whitepaper/sintrop-whitepaper-${locale}.pdf`}
                     target="_blank"
                     rel="noopener noreferer"
                 >
