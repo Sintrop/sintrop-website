@@ -79,7 +79,7 @@ export default async function Resources({ params }: Props){
 
                 <h3 className='text-2xl md:text-4xl mt-10 md:mt-20'>{t('links')}</h3>
                 <div className='flex flex-wrap gap-5 mt-3'>
-                    <LinkBtn href={`https://sintrop.com/docs/whitepaper/whitepaper-${locale}.pdf`} label={t('whitepaper')}/>
+                    <LinkBtn href={`https://sintrop.com/docs/whitepaper/sintrop-whitepaper-${locale}.pdf`} label={t('whitepaper')}/>
                     <LinkBtn href="https://explorer.sintrop.com" label={t('explorer')}/>
                     <LinkBtn href="https://status.sintrop.com" label={t('status')}/>
                     <LinkBtn href="https://github.com/sintrop" label={t('github')}/>
