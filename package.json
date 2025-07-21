@@ -40,7 +40,8 @@
     "react-toastify": "^9.1.2",
     "tailwind-merge": "^3.0.2",
     "tailwindcss": "^4.0.11",
-    "tailwindcss-animate": "^1.0.7"
+    "tailwindcss-animate": "^1.0.7",
+    "web3": "^4.16.0"
   },
   "devDependencies": {
     "@types/node": "18.14.6",
