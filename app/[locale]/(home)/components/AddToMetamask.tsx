@@ -15,7 +15,7 @@ export function AddToMetamask() {
         chainName: "Sintrop",
         nativeCurrency: {
           name: "SINTROP",
-          symbol: "SINTRO",
+          symbol: "SIN",
           decimals: 18,
         },
         rpcUrls: ["https://rpc.sintrop.com"],
