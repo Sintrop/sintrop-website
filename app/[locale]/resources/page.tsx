@@ -102,7 +102,7 @@ export default async function Resources({ params }: Props) {
             label={t("whitepaper")}
           />
           <LinkBtn href="https://explorer.sintrop.com" label={t("explorer")} />
-          <LinkBtn href="https://status.sintrop.com" label={t("status")} />
+          <LinkBtn href="http://status.sintrop.com:3000" label={t("status")} />
           <LinkBtn href="https://github.com/sintrop" label={t("github")} />
           <LinkBtn href="https://discord.gg/dAGBBFnTM7" label={t("discord")} />
         </div>

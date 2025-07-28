@@ -1,15 +1,15 @@
-export interface AppsProps{
+export interface AppsProps {
     title: string;
-        image: string;
-        shortDescription: string;
-        longDescription: string;
-        mainnet: boolean,
-        live: boolean,
-        externalApp: boolean,
-        linkApp: string;
-        createdAt: string;
-        links: {title: string; href: string;}[]
-        
+    image: string;
+    shortDescription: string;
+    longDescription: string;
+    mainnet: boolean,
+    live: boolean,
+    externalApp: boolean,
+    linkApp: string;
+    createdAt: string;
+    links: { title: string; href: string; }[]
+
 }
 
 export const appsList = {
@@ -63,12 +63,12 @@ export const appsList = {
         mainnet: false,
         live: true,
         externalApp: false,
-        linkApp: 'https://v8.sintrop.com',
+        linkApp: 'https://regenerationcredit.org',
         createdAt: '2024-11-20 00:00:00',
         links: [
             {
-                title: 'Launch App',
-                href: 'https://v8.sintrop.com'
+                title: 'Website',
+                href: 'https://regenerationcredit.org'
             },
             {
                 title: 'Github',
