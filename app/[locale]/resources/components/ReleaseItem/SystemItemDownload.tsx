@@ -54,6 +54,11 @@ export function SystemItemDownload({
       )}
 
       <p className="text-white mt-3 text-center">{t(systemData?.label)}</p>
+      {releaseType === "sintrop-core" && system === "macos" && (
+        <p className="text-gray-300 text-xs mt-[-5px] text-center">
+          {t("onlyArm")}
+        </p>
+      )}
       {system !== "allVersions" && (
         <p className="text-center font-[akatab] text-gray-300 text-xs">
           {t("clickToDownload")}
