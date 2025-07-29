@@ -39,11 +39,10 @@ export function Header({ t }: Props) {
         </nav>
 
         <Link
-          href="https://apps.sintrop.com"
-          target="_blank"
+          href="/resources"
           className="px-10 h-[40px] flex items-center justify-center rounded-md bg-green-1 text-white text-semibold"
         >
-          {t("apps")}
+          {t("getCore")}
         </Link>
       </section>
 
