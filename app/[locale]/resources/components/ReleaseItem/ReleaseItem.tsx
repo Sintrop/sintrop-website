@@ -2,6 +2,7 @@ import { ReleaseProps } from "@/types/github";
 import { TType } from "@/types/t";
 import { format } from "date-fns";
 import { SystemItemDownload } from "./SystemItemDownload";
+import Link from "next/link";
 
 interface Props {
   t: TType;
@@ -38,7 +39,6 @@ export function ReleaseItem({ t, release, latest, releaseType }: Props) {
             t={t}
             assets={release.assets}
             system="windows"
-            pageReleaseUrl={release.html_url}
             releaseType={releaseType}
           />
 
@@ -46,26 +46,36 @@ export function ReleaseItem({ t, release, latest, releaseType }: Props) {
             t={t}
             assets={release.assets}
             system="linux"
-            pageReleaseUrl={release.html_url}
             releaseType={releaseType}
           />
 
-          <SystemItemDownload
-            t={t}
-            assets={release.assets}
-            system="macos"
-            pageReleaseUrl={release.html_url}
-            releaseType={releaseType}
-          />
+          {releaseType === "go-sintrop" && (
+            <SystemItemDownload
+              t={t}
+              assets={release.assets}
+              system="macos"
+              releaseType={releaseType}
+            />
+          )}
 
-          <SystemItemDownload
-            t={t}
-            assets={release.assets}
-            system="allVersions"
-            pageReleaseUrl={release.html_url}
-            releaseType={releaseType}
-          />
+          {releaseType === "sintrop-core" && (
+            <SystemItemDownload
+              t={t}
+              assets={release.assets}
+              system="macosarm"
+              releaseType={releaseType}
+            />
+          )}
         </div>
+
+        <Link
+          href={release.html_url}
+          target="_blank"
+          rel="noopener noreferer"
+          className="text-center mt-3 text-sm text-blue-500 underline"
+        >
+          {t("clickHereToSeeAllVersions")}
+        </Link>
       </div>
     </div>
   );

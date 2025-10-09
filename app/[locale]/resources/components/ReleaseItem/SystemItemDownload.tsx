@@ -10,31 +10,20 @@ interface Props {
   system: SystemNames;
   assets: AssetReleaseProps[];
   t: TType;
-  pageReleaseUrl: string;
   releaseType: "go-sintrop" | "sintrop-core";
 }
-export function SystemItemDownload({
-  system,
-  assets,
-  t,
-  pageReleaseUrl,
-  releaseType,
-}: Props) {
+export function SystemItemDownload({ system, assets, t, releaseType }: Props) {
   const systemData = systemToData[system];
 
   let linkDownload = "";
 
-  if (system === "allVersions") {
-    linkDownload = pageReleaseUrl;
-  } else {
-    const filterAssets = assets.find(
-      (item) =>
-        item.name.includes(systemData?.archiveIncludeName[releaseType]) &&
-        !item.name.includes("sha256")
-    );
-    if (filterAssets) {
-      linkDownload = filterAssets.browser_download_url;
-    }
+  const filterAssets = assets.find(
+    (item) =>
+      item.name.includes(systemData?.archiveIncludeName[releaseType]) &&
+      !item.name.includes("sha256")
+  );
+  if (filterAssets) {
+    linkDownload = filterAssets.browser_download_url;
   }
 
   return (
@@ -44,26 +33,26 @@ export function SystemItemDownload({
       rel="noopener noreferer"
       className="w-[120px] h-[150px] bg-green-3 rounded-md flex flex-col items-center justify-center p-2"
     >
-      {system !== "allVersions" && (
-        <Image
-          alt="icon operation system"
-          src={systemData?.image}
-          height={50}
-          width={50}
-        />
-      )}
+      <Image
+        alt="icon operation system"
+        src={systemData?.image}
+        height={50}
+        width={50}
+      />
 
       <p className="text-white mt-3 text-center">{t(systemData?.label)}</p>
-      {releaseType === "sintrop-core" && system === "macos" && (
-        <p className="text-gray-300 text-xs mt-[-5px] text-center">
-          {t("onlyArm")}
-        </p>
+      {releaseType === "sintrop-core" && (
+        <>
+          <p className="text-gray-300 text-xs mt-[-5px] text-center">
+            {system === "macosarm" && "arm version"}
+            {system === "macosx86" && "intel version"}
+          </p>
+        </>
       )}
-      {system !== "allVersions" && (
-        <p className="text-center font-[akatab] text-gray-300 text-xs">
-          {t("clickToDownload")}
-        </p>
-      )}
+
+      <p className="text-center font-[akatab] text-gray-300 text-xs">
+        {t("clickToDownload")}
+      </p>
     </Link>
   );
 }
@@ -93,12 +82,20 @@ const systemToData = {
       "sintrop-core": ".dmg",
     },
   },
-  allVersions: {
-    label: "clickHereToSeeAllVersions",
-    image: WindowsIcon,
+  macosarm: {
+    label: "macos",
+    image: MacosIcon,
     archiveIncludeName: {
-      "go-sintrop": "go-sintrop-alltools-win64",
-      "sintrop-core": "",
+      "go-sintrop": "go-sintrop-alltools-osx",
+      "sintrop-core": ".dmg",
+    },
+  },
+  macosx86: {
+    label: "macos",
+    image: MacosIcon,
+    archiveIncludeName: {
+      "go-sintrop": "go-sintrop-alltools-osx",
+      "sintrop-core": ".dmg",
     },
   },
 };
