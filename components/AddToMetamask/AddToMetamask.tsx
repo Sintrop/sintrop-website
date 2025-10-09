@@ -3,7 +3,10 @@ import MMIcon from "@/public/assets/icons/metamask.png";
 import Image from "next/image";
 import { useTranslation } from "react-i18next";
 
-export function AddToMetamask() {
+interface Props {
+  networkPage?: boolean;
+}
+export function AddToMetamask({ networkPage }: Props) {
   const { t } = useTranslation();
 
   async function handleAddChain() {
@@ -27,6 +30,35 @@ export function AddToMetamask() {
         params: [networkParams],
       });
     }
+  }
+
+  if (networkPage) {
+    return (
+      <div className="flex flex-col gap-2">
+        <p className="text-gray-500 text-sm">{t("youCanAddToMMDescription")}</p>
+        {typeof window !== "undefined" && !window.ethereum ? (
+          <p className="text-red-500">
+            {t("youNeedAMetamaskExtensionInstalled")}
+          </p>
+        ) : (
+          <button
+            onClick={handleAddChain}
+            className="w-full bg-green-700 gap-3 h-[50px] md:h-[60px] rounded-md text-white font-semibold md:w-[220px] flex items-center justify-center hover:cursor-pointer hover:bg-green-800 duration-200"
+          >
+            <Image
+              alt="metamask icon"
+              src={MMIcon}
+              width={40}
+              height={40}
+              quality={100}
+              objectFit="contain"
+            />
+
+            {t("addToMetamask")}
+          </button>
+        )}
+      </div>
+    );
   }
 
   if (typeof window !== "undefined") {

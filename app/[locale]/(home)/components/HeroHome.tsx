@@ -1,6 +1,6 @@
 import { TType } from "@/types/t";
 import Link from "next/link";
-import { AddToMetamask } from "./AddToMetamask";
+import { AddToMetamask } from "@/components/AddToMetamask/AddToMetamask";
 
 interface Props {
   t: TType;
