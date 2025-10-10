@@ -60,11 +60,11 @@ export const appsList = {
         image: 'https://www.sintrop.com/assets/token.png',
         shortDescription: 'shortDescriptionRC',
         longDescription: 'longDescriptionRC',
-        mainnet: false,
+        mainnet: true,
         live: true,
         externalApp: false,
         linkApp: 'https://regenerationcredit.org',
-        createdAt: '2024-11-20 00:00:00',
+        createdAt: '2025-10-10 00:00:00',
         links: [
             {
                 title: 'Website',
