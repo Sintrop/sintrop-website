@@ -5,6 +5,7 @@
   "home": "Início",
   "resources": "Recursos",
   "tutorials": "Tutoriais",
+  "network": "Rede",
   "getCore": "Obter o Core",
   "titleHero": "Uma Blockchain para Aplicações de Impacto Socioambiental",
   "descriptionHero": "Apresentamos uma blockchain de impacto público com a descentralização como valor central.",
@@ -38,5 +39,12 @@
   "language": "Idioma",
   "shortDescriptionRC": "Sistema de regeneração da natureza ponto a ponto",
   "longDescriptionRC": "Apresentamos o Crédito Regeneração, um mecanismo de financiamento para serviços ambientais e um sistema de certificação de contratos inteligentes.",
-  "addToMetamask": "Add. ao Metamask"
+  "addToMetamask": "Add. ao Metamask",
+  "apps": {
+    "education": "Uma plataforma descentralizada para usuários publicarem e acessarem conteúdo educacional gratuito.",
+    "whitepaperCenter": "Um contrato para usuários publicarem e acessarem whitepapers ou artigos técnicos com o objetivo de operar na Sintrop Impact Chain.",
+    "globalPlant": "Um catálogo global e aberto de plantas e árvores registradas no blockchain.",
+    "humansPeaceTreaty": "Chega de violência. Chega de guerra. Queremos paz! * Assine este compromisso se você concorda com este Tratado de Paz Humana e exija o compromisso de outros com a paz.",
+    "appStore": "Uma App Store descentralizada para listar aplicativos de contratos inteligentes de impacto."
+  }
 }

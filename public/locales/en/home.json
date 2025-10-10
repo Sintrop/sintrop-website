@@ -39,5 +39,12 @@
   "language": "Language",
   "shortDescriptionRC": "A Peer-to-Peer Nature Regeneration System",
   "longDescriptionRC": "We introduce the Regeneration Credit, a funding mechanism for environmental service and a smart contract certification system.",
-  "addToMetamask": "Add to Metamask"
+  "addToMetamask": "Add to Metamask",
+  "apps": {
+    "education": "A decentralized platform for users to publish and access free educational content.",
+    "whitepaperCenter": "A contract for users to publish and access whitepapers or technical papers aiming to operate at Sintrop Impact Chain.",
+    "globalPlant": "A global and open catalog of plants and trees registered on the blockchain.",
+    "humansPeaceTreaty": "Enough violence. Enough war. We want peace! * Sign this pledge if you agree on this Humans Peace Treaty and demand commitment to peace from others.",
+    "appStore": "A decentralized appStore for listing impact smart contract applications."
+  }
 }

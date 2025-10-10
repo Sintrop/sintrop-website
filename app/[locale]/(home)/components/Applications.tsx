@@ -22,14 +22,11 @@ export function Applications({ t }: Props) {
         </h3>
         <div className="mt-3 flex flex-wrap gap-3 w-full">
           <AppLink app="regenerationCredit" t={t} />
-          {/* <AppLink
-                        app="sintropAppStore"
-                        t={t}
-                    />
-                     <AppLink
-                        app="education"
-                        t={t}
-                    /> */}
+          <AppLink app="sintropAppStore" t={t} />
+          <AppLink app="humansPeaceTreaty" t={t} />
+          <AppLink app="education" t={t} />
+          <AppLink app="whitePaperCenter" t={t} />
+          <AppLink app="globalPlantCatalog" t={t} />
         </div>
       </div>
     </section>
