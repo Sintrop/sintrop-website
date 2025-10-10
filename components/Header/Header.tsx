@@ -30,6 +30,9 @@ export function Header({ t }: Props) {
           <Link href="/resources" className="text-white hover:underline">
             {t("resources")}
           </Link>
+          <Link href="/network" className="text-white hover:underline">
+            {t("network")}
+          </Link>
           <Link href="/tutorials" className="text-white hover:underline">
             {t("tutorials")}
           </Link>

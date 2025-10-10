@@ -7,7 +7,8 @@ const nextConfig: NextConfig = {
   // }
   images: {
     remotePatterns: [
-      {hostname: 'www.sintrop.com'}
+      { hostname: 'www.sintrop.com' },
+      { hostname: 'ipfs.sintrop.com' }
     ]
   }
 };

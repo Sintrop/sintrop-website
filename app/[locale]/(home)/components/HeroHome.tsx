@@ -1,12 +1,14 @@
 import { TType } from "@/types/t";
 import Link from "next/link";
-import { AddToMetamask } from "./AddToMetamask";
+import { AddToMetamask } from "@/components/AddToMetamask/AddToMetamask";
 
 interface Props {
   t: TType;
   locale: string;
 }
 export function HeroHome({ t, locale }: Props) {
+  const whitepaperName = locale === "pt" ? "sintrop-pt.pdf" : "sintrop.pdf";
+
   return (
     <section className="container mx-auto flex flex-col gap-10 px-5 pb-10 lg:pt-20 lg:px-20 lg:pb-36">
       <h1 className="text-white text-xl md:text-3xl text-center font-bold lg:max-w-[40%] lg:text-4xl lg:text-start">
@@ -20,7 +22,7 @@ export function HeroHome({ t, locale }: Props) {
       <div className="flex flex-col items-center gap-5 md:gap-10 md:flex-row">
         <Link
           className="w-full bg-blue-primary h-[50px] md:h-[60px] rounded-md text-white md:w-[200px] flex items-center justify-center"
-          href={`https://sintrop.com/docs/whitepaper/sintrop-whitepaper-${locale}.pdf`}
+          href={`https://sintrop.com/assets/${whitepaperName}`}
           target="_blank"
           rel="noopener noreferer"
         >
