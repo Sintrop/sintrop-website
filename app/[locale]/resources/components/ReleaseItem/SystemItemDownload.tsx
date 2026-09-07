@@ -50,7 +50,7 @@ export function SystemItemDownload({ system, assets, t, releaseType }: Props) {
         </>
       )}
 
-      <p className="text-center font-[akatab] text-gray-300 text-xs">
+      <p className="text-center text-gray-300 text-xs">
         {t("clickToDownload")}
       </p>
     </Link>

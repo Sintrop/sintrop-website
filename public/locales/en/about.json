@@ -22,5 +22,21 @@
   "descSmartContractPlatform": "The Sintrop Virtual Machine is a smart contract platform that allows developers to deploy contracts with a predefined set of functions and variables. Once deployed, a contract will always execute as programmed, enabling wallets to interact with its predefined functions without the need for a central authority to define the rules. The value of this technology is to shift trust from centralized groups to open-source distributed code. Over time, people will realize that it makes much more sense to trust distributed algorithms than people.",
   "discord": "Discord",
   "github": "Github",
-  "language": "Language"
+  "language": "Language",
+  "navRunANode": "Run a node",
+  "navBuild": "Build",
+  "navNetwork": "Network",
+  "navResources": "Resources",
+  "navAbout": "About",
+  "navTutorials": "Tutorials",
+  "brandName": "Sintrop",
+  "brandKicker": "Impact Blockchain",
+  "footerTagline": "A public proof-of-work blockchain for social and environmental impact applications.",
+  "footerRights": "All rights reserved.",
+  "footerPaths": "Get started",
+  "footerProject": "Project",
+  "footerCommunity": "Community",
+  "status": "Network status",
+  "explorer": "Block explorer",
+  "whitepaper": "Whitepaper"
 }

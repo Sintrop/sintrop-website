@@ -27,7 +27,7 @@ export function ReleaseItem({ t, release, latest, releaseType }: Props) {
         <p className="text-gray-500 text-xs">
           {format(new Date(release?.created_at), "yyyy/MM/dd - kk:mm")}
         </p>
-        <p className="font-[akatab] text-sm mt-3 md:max-w-[80%]">
+        <p className=" text-sm mt-3 md:max-w-[80%]">
           {release?.body}
         </p>
       </div>

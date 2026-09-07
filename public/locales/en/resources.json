@@ -22,5 +22,18 @@
   "links": "Links",
   "explorer": "Block explorer",
   "status": "Status",
-  "onlyArm": "Just arm architecture"
+  "onlyArm": "Just arm architecture",
+  "navRunANode": "Run a node",
+  "navBuild": "Build",
+  "navNetwork": "Network",
+  "navResources": "Resources",
+  "navAbout": "About",
+  "navTutorials": "Tutorials",
+  "brandName": "Sintrop",
+  "brandKicker": "Impact Blockchain",
+  "footerTagline": "A public proof-of-work blockchain for social and environmental impact applications.",
+  "footerRights": "All rights reserved.",
+  "footerPaths": "Get started",
+  "footerProject": "Project",
+  "footerCommunity": "Community"
 }

@@ -12,5 +12,21 @@
   "language": "Idioma",
   "addToMetamask": "Add. ao Metamask",
   "youCanAddToMMDescription": "Você pode adicionar a rede da Sintrop no seu Metamask",
-  "youNeedAMetamaskExtensionInstalled": "Você precisa da extensão do Metamask instalada!"
+  "youNeedAMetamaskExtensionInstalled": "Você precisa da extensão do Metamask instalada!",
+  "navRunANode": "Rode um nó",
+  "navBuild": "Desenvolva",
+  "navNetwork": "Rede",
+  "navResources": "Recursos",
+  "navAbout": "Sobre",
+  "navTutorials": "Tutoriais",
+  "brandName": "Sintrop",
+  "brandKicker": "Blockchain de Impacto",
+  "footerTagline": "Uma blockchain pública de prova de trabalho para aplicações de impacto social e ambiental.",
+  "footerRights": "Todos os direitos reservados.",
+  "footerPaths": "Comece agora",
+  "footerProject": "Projeto",
+  "footerCommunity": "Comunidade",
+  "status": "Status da rede",
+  "explorer": "Explorador de blocos",
+  "whitepaper": "Whitepaper"
 }

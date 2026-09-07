@@ -22,5 +22,21 @@
   "getCore": "Get core",
   "discord": "Discord",
   "github": "Github",
-  "language": "Language"
+  "language": "Language",
+  "navRunANode": "Run a node",
+  "navBuild": "Build",
+  "navNetwork": "Network",
+  "navResources": "Resources",
+  "navAbout": "About",
+  "navTutorials": "Tutorials",
+  "brandName": "Sintrop",
+  "brandKicker": "Impact Blockchain",
+  "footerTagline": "A public proof-of-work blockchain for social and environmental impact applications.",
+  "footerRights": "All rights reserved.",
+  "footerPaths": "Get started",
+  "footerProject": "Project",
+  "footerCommunity": "Community",
+  "status": "Network status",
+  "explorer": "Block explorer",
+  "whitepaper": "Whitepaper"
 }
