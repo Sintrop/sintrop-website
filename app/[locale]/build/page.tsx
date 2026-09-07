@@ -6,7 +6,7 @@ import { OG_IMAGE, localizedAlternates, localizedUrl } from "@/lib/metadata";
 import { Header } from "@/components/Header/Header";
 import { Footer } from "@/components/Footer/Footer";
 import { CommandBlock } from "@/components/Copy/CommandBlock";
-import { CopyButton } from "@/components/Copy/CopyButton";
+import { NetworkParamsTable } from "@/components/NetworkParams/NetworkParamsTable";
 import { DeployGuide, DeployLabels } from "./DeployGuide";
 import { SINTROP_MAINNET } from "@/lib/network";
 import { FiArrowRight, FiArrowUpRight } from "react-icons/fi";
@@ -110,14 +110,6 @@ export default async function Build({ params }: Props) {
     { icon: ShieldCheck, title: t("why4Title"), desc: t("why4Desc") },
   ];
 
-  const connectRows = [
-    { label: t("connectNetworkName"), value: SINTROP_MAINNET.name },
-    { label: t("connectChainId"), value: String(SINTROP_MAINNET.chainId) },
-    { label: t("connectCurrency"), value: SINTROP_MAINNET.currencySymbol },
-    { label: t("connectRpc"), value: SINTROP_MAINNET.rpcUrl },
-    { label: t("connectExplorer"), value: SINTROP_MAINNET.explorerUrl },
-  ];
-
   const after = [t("after1"), t("after2"), t("after3")];
   const whitepaper = locale === "pt" ? WHITEPAPER_PT : WHITEPAPER_EN;
 
@@ -178,32 +170,17 @@ export default async function Build({ params }: Props) {
                 <h2 className="text-3xl md:text-4xl">{t("connectTitle")}</h2>
                 <p className="mt-3 text-lg text-ink-soft">{t("connectLead")}</p>
               </div>
-              <div className="overflow-hidden rounded-2xl border border-line bg-surface">
-                {connectRows.map((row, index) => (
-                  <div
-                    key={row.label}
-                    className={`flex items-center justify-between gap-4 px-5 py-4 ${
-                      index !== connectRows.length - 1
-                        ? "border-b border-line"
-                        : ""
-                    }`}
-                  >
-                    <span className="text-sm text-ink-soft">{row.label}</span>
-                    <span className="flex min-w-0 items-center gap-3">
-                      <span className="truncate font-anta text-sm text-ink">
-                        {row.value}
-                      </span>
-                      <CopyButton
-                        value={row.value}
-                        label={t("copy")}
-                        copiedLabel={t("copied")}
-                        iconOnly
-                        className="shrink-0 text-ink-soft hover:text-brand-deep"
-                      />
-                    </span>
-                  </div>
-                ))}
-              </div>
+              <NetworkParamsTable
+                labels={{
+                  networkName: t("connectNetworkName"),
+                  chainId: t("connectChainId"),
+                  currency: t("connectCurrency"),
+                  rpc: t("connectRpc"),
+                  explorer: t("connectExplorer"),
+                  copy: t("copy"),
+                  copied: t("copied"),
+                }}
+              />
             </div>
           </div>
         </section>
