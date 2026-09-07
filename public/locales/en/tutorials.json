@@ -38,5 +38,9 @@
   "footerCommunity": "Community",
   "status": "Network status",
   "explorer": "Block explorer",
-  "whitepaper": "Whitepaper"
+  "whitepaper": "Whitepaper",
+  "heroKicker": "Tutorials",
+  "tutorialsHeroTitle": "Node and mining tutorials",
+  "tutorialsHeroLead": "Detailed write-ups from the go-sintrop repository. For a guided walkthrough, start with the Run a node page.",
+  "tutorialsRunNodeCta": "Guided node setup"
 }

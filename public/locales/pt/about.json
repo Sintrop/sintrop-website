@@ -6,7 +6,7 @@
   "network": "Rede",
   "getCore": "Obter o Core",
   "seo-title-about": "Sobre a Sintrop",
-  "seo-description-about": "Blockchain technology has the potential to solve problems that can help us fight climate change, water scarcity, pollution, food insecurity and many other issues that put us at risk of extinction of our species.",
+  "seo-description-about": "Por que construímos uma blockchain de prova de trabalho dedicada a aplicações de impacto social e ambiental, e como funciona a Sintrop Virtual Machine.",
   "whyAnotherChain": "Por que outra rede?",
   "descWhyAnotherChain": "Primeiro, desenvolvemos o protocolo do Crédito de Regenração, um sistema de financiamento peer-to-peer para incentivar a regeneração de ecossistemas terrestres. Então, tivemos que escolher em qual blockchain lançar o projeto. Ethereum foi nossa primeira opção, as primeiras versões de testnet foram lançadas em cima da EVM, a Máquina Virtual Ethereum. Mas o Ether é caro. Isso aumenta a barreira financeira para a adoção da tecnologia pelos usuários, especialmente em aplicações mais complexas como o Crédito de Regeneração. Infelizmente, lançá-lo em cima do Ethereum foi descartado. Então, recorremos às soluções de segunda camada. O sistema de ponte requer a transferência de ativos de uma cadeia para outra, uma etapa adicional que é uma barreira para a adoção dos usuários. Mas o maior problema das blockchains de segunda camada é a necessidade de confiança em grupos privados, o que vai contra o princípio fundamental da tecnologia blockchain. Qualquer outra solução que exigisse que o projeto dependesse de instituições centralizadas para existir, como blockchain-as-a-service, não era uma opção. Também poderíamos desenvolver uma appchain ou uma blockchain privada, mas, novamente, isso era contra o valor central do Bitcoin: a descentralização. Muitas blockchains sacrificam a descentralização para ganhar escalabilidade, e alguns projetos de memecoins, tokens de baixo valor e NFTs vivem em uma base especulativa sem adicionar valor real à sociedade. Há uma enorme lacuna para aplicativos descentralizados do mundo real com a intenção de tornar este mundo um lugar melhor. Para preencher essa lacuna, decidimos criar outra cadeia: uma blockchain para aplicativos de impacto social e ambiental.",
   "impactAsCoreValue": "Impacto como valor central",
@@ -38,5 +38,8 @@
   "footerCommunity": "Comunidade",
   "status": "Status da rede",
   "explorer": "Explorador de blocos",
-  "whitepaper": "Whitepaper"
+  "whitepaper": "Whitepaper",
+  "heroKicker": "Sobre",
+  "aboutHeroTitle": "Uma blockchain com impacto e descentralização como valores centrais",
+  "aboutHeroLead": "A Sintrop existe para dar às aplicações de impacto do mundo real um lar que nunca abre mão do princípio fundador do Bitcoin: nenhuma autoridade central."
 }

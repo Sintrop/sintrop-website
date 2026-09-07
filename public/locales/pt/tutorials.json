@@ -38,5 +38,9 @@
   "footerCommunity": "Comunidade",
   "status": "Status da rede",
   "explorer": "Explorador de blocos",
-  "whitepaper": "Whitepaper"
+  "whitepaper": "Whitepaper",
+  "heroKicker": "Tutoriais",
+  "tutorialsHeroTitle": "Tutoriais de nó e mineração",
+  "tutorialsHeroLead": "Materiais detalhados do repositório go-sintrop. Para um passo a passo guiado, comece pela página Rode um nó.",
+  "tutorialsRunNodeCta": "Configuração guiada do nó"
 }

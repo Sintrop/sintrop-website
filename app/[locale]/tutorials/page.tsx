@@ -1,80 +1,90 @@
-import initTranslations from '../../i18n';
-import TranslationsProvider from '../../../components/TranslationsProvider';
-import { Header } from '@/components/Header/Header';
-import { HeroTutorials } from './components/HeroTutorials';
-import { TutorialItem } from './components/TutorialItem/TutorialItem';
-import { Accordion } from '@/components/ui/accordion';
-import { LanguagesAvailablesForTutorials, tutorialsListPerLanguage } from './tutorialsList';
-import { Footer } from '@/components/Footer/Footer';
-import type { Metadata } from 'next';
+import type { Metadata } from "next";
+import Link from "next/link";
+import initTranslations from "../../i18n";
+import TranslationsProvider from "../../../components/TranslationsProvider";
+import { OG_IMAGE, localizedAlternates, localizedUrl } from "@/lib/metadata";
+import { Header } from "@/components/Header/Header";
+import { Footer } from "@/components/Footer/Footer";
+import { PageHero } from "@/components/PageHero/PageHero";
+import { TutorialItem } from "./components/TutorialItem/TutorialItem";
+import { Accordion } from "@/components/ui/accordion";
+import {
+  LanguagesAvailablesForTutorials,
+  tutorialsListPerLanguage,
+} from "./tutorialsList";
+import { FiArrowRight } from "react-icons/fi";
 
-const i18nNamespaces = ['tutorials'];
+export const revalidate = 3600;
+
+const i18nNamespaces = ["tutorials"];
 
 type Props = {
-    params: Promise<{ locale: LanguagesAvailablesForTutorials }>
+  params: Promise<{ locale: LanguagesAvailablesForTutorials }>;
+};
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const locale = (await params).locale;
+  const { t } = await initTranslations(locale, i18nNamespaces);
+
+  return {
+    title: t("seo-title-tutorials"),
+    description: t("seo-description-tutorials"),
+    openGraph: {
+      type: "website",
+      title: t("seo-title-tutorials") as string,
+      description: t("seo-description-tutorials") as string,
+      alternateLocale: ["en", "pt"],
+      url: localizedUrl("/tutorials", locale),
+      locale,
+      siteName: "Sintrop",
+      images: OG_IMAGE,
+    },
+    alternates: localizedAlternates("/tutorials", locale),
+  };
 }
 
-export async function generateMetadata(
-    { params }: Props
-): Promise<Metadata> {
-    const locale = (await params).locale;
-    const { t } = await initTranslations(locale, i18nNamespaces);
+export default async function Tutorials({ params }: Props) {
+  const { locale } = await params;
+  const { t, resources } = await initTranslations(locale, i18nNamespaces);
+  const tutorials = tutorialsListPerLanguage[locale];
 
-    return {
-        title: t('seo-title-tutorials'),
-        description: t('seo-description-tutorials'),
-        openGraph: {
-            type: "website",
-            title: t('seo-title-tutorials') as string,
-            description: t('seo-description-tutorials') as string,
-            alternateLocale: ["en", "pt"],
-            url: `https://sintrop.com/${locale}/tutorials`,
-            locale,
-            siteName: "Sintrop",
-            images: "https://sintrop.com/assets/images/sintrop-og.png",
-        },
-        alternates: {
-            canonical: "https://sintrop.com/tutorials",
-            languages: {
-                "en": "https://sintrop.com/en/tutorials",
-                "pt": "https://sintrop.com/pt/tutorials",
-            }
-        },
-    }
-}
+  return (
+    <TranslationsProvider
+      namespaces={i18nNamespaces}
+      locale={locale}
+      resources={resources}
+    >
+      <div className="bg-hero-forest">
+        <Header t={t} />
+        <PageHero
+          kicker={t("heroKicker")}
+          title={t("tutorialsHeroTitle")}
+          lead={t("tutorialsHeroLead")}
+        />
+      </div>
 
-export default async function Tutorials({params}: Props){
-    const {locale} = await params;
-    const { t, resources } = await initTranslations(locale, i18nNamespaces);
-
-    return(
-        <TranslationsProvider
-            namespaces={i18nNamespaces}
-            locale={locale}
-            resources={resources}
+      <main className="container mx-auto px-5 py-16 lg:px-20 lg:py-24">
+        <Link
+          href="/run-a-node"
+          className="inline-flex items-center gap-1.5 rounded-full bg-brand px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-brand-deep"
         >
-            <div className='bg-[url("/assets/images/capa-site-1.png")] w-full flex flex-col bg-cover bg-center'>
-                <Header t={t}/>
-                <HeroTutorials t={t} title='tutorials'/>
-            </div>
+          {t("tutorialsRunNodeCta")}
+          <FiArrowRight size={15} />
+        </Link>
 
-            <main className='container mx-auto px-5 lg:px-20 my-10 lg:my-20'>
-                <Accordion type="single" collapsible className='gap-5 flex flex-col'>
-                    {tutorialsListPerLanguage[locale].map((item, index) => ( 
-                        <>
-                            {/*@ts-ignore*/}
-                            <TutorialItem
-                                key={index}
-                                index={index}
-                                item={item}
-                                t={t}
-                            />
-                        </>
-                    ))}
-                </Accordion>
-            </main>
+        <Accordion
+          type="single"
+          collapsible
+          className="mt-10 flex flex-col gap-4"
+        >
+          {tutorials.map((item, index) => (
+            /* @ts-expect-error async server component inside client Accordion */
+            <TutorialItem key={item.id} index={index} item={item} t={t} />
+          ))}
+        </Accordion>
+      </main>
 
-            <Footer t={t}/>
-        </TranslationsProvider>
-    )
+      <Footer t={t} />
+    </TranslationsProvider>
+  );
 }

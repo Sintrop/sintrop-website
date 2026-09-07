@@ -13,21 +13,21 @@ interface Props {
 
 export function ReleaseItem({ t, release, latest, releaseType }: Props) {
   return (
-    <div className="p-5 rounded-md bg-green-2 w-full flex flex-wrap justify-between">
-      <div className="flex flex-col w-full md:max-w-[50%]">
+    <div className="flex w-full flex-wrap justify-between gap-6 rounded-2xl border border-line bg-surface p-6">
+      <div className="flex w-full flex-col md:max-w-[50%]">
         <div className="flex items-center gap-3">
-          <h4 className="text-2xl">{release?.name}</h4>
+          <h4 className="text-xl">{release?.name}</h4>
 
           {latest && (
-            <div className="px-4 py-1 border border-green-1 rounded-xl">
-              <p className="text-xs text-green-1">{t("latest")}</p>
-            </div>
+            <span className="rounded-full border border-brand px-3 py-0.5 text-xs font-medium text-brand-deep">
+              {t("latest")}
+            </span>
           )}
         </div>
-        <p className="text-gray-500 text-xs">
+        <p className="mt-1 text-xs text-ink-soft">
           {format(new Date(release?.created_at), "yyyy/MM/dd - kk:mm")}
         </p>
-        <p className=" text-sm mt-3 md:max-w-[80%]">
+        <p className="mt-3 text-sm text-ink-soft md:max-w-[80%]">
           {release?.body}
         </p>
       </div>
@@ -71,8 +71,8 @@ export function ReleaseItem({ t, release, latest, releaseType }: Props) {
         <Link
           href={release.html_url}
           target="_blank"
-          rel="noopener noreferer"
-          className="text-center mt-3 text-sm text-blue-500 underline"
+          rel="noopener noreferrer"
+          className="mt-3 text-center text-sm font-semibold text-brand-deep hover:underline"
         >
           {t("clickHereToSeeAllVersions")}
         </Link>

@@ -30,8 +30,8 @@ export function SystemItemDownload({ system, assets, t, releaseType }: Props) {
     <Link
       href={linkDownload}
       target="_blank"
-      rel="noopener noreferer"
-      className="w-[120px] h-[150px] bg-green-3 rounded-md flex flex-col items-center justify-center p-2"
+      rel="noopener noreferrer"
+      className="flex h-[150px] w-[120px] flex-col items-center justify-center rounded-xl bg-brand-forest p-2 transition-opacity hover:opacity-90"
     >
       <Image
         alt="icon operation system"

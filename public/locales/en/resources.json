@@ -35,5 +35,12 @@
   "footerRights": "All rights reserved.",
   "footerPaths": "Get started",
   "footerProject": "Project",
-  "footerCommunity": "Community"
+  "footerCommunity": "Community",
+  "heroKicker": "Resources",
+  "resourcesHeroTitle": "Client software, links and references",
+  "resourcesHeroLead": "The latest go-sintrop and Sintrop Core releases, plus the whitepaper, explorer and status pages.",
+  "goSintrop": "Go Sintrop",
+  "sintropCore": "Sintrop Core",
+  "releasesUnavailable": "Releases couldn't be loaded right now. See them on GitHub.",
+  "viewOnGitHub": "View on GitHub"
 }

@@ -1,14 +1,21 @@
+import type { Metadata } from "next";
+import Link from "next/link";
 import initTranslations from "../../i18n";
 import TranslationsProvider from "../../../components/TranslationsProvider";
+import { OG_IMAGE, localizedAlternates, localizedUrl } from "@/lib/metadata";
 import { Header } from "@/components/Header/Header";
-import { HeroResources } from "./components/HeroResources";
-import type { Metadata } from "next";
+import { Footer } from "@/components/Footer/Footer";
+import { PageHero } from "@/components/PageHero/PageHero";
 import { getReleasesFromGitHub } from "@/src/services/github";
 import { ReleaseItem } from "./components/ReleaseItem/ReleaseItem";
-import { Footer } from "@/components/Footer/Footer";
-import { LinkBtn } from "@/components/LinkBtn/LinkBtn";
+import { FiArrowUpRight } from "react-icons/fi";
+
+export const revalidate = 3600;
 
 const i18nNamespaces = ["resources"];
+
+const STATUS_URL = "http://status.sintrop.com:3000";
+const RELEASES_URL = "https://github.com/sintrop/go-sintrop/releases";
 
 type Props = {
   params: Promise<{ locale: string }>;
@@ -26,18 +33,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       title: t("seo-title-resources") as string,
       description: t("seo-description-resources") as string,
       alternateLocale: ["en", "pt"],
-      url: `https://sintrop.com/${locale}/resources`,
+      url: localizedUrl("/resources", locale),
       locale,
       siteName: "Sintrop",
-      images: "https://sintrop.com/assets/images/sintrop-og.png",
+      images: OG_IMAGE,
     },
-    alternates: {
-      canonical: "https://sintrop.com/resources",
-      languages: {
-        en: "https://sintrop.com/en/resources",
-        pt: "https://sintrop.com/pt/resources",
-      },
-    },
+    alternates: localizedAlternates("/resources", locale),
   };
 }
 
@@ -46,15 +47,21 @@ export default async function Resources({ params }: Props) {
   const { t, resources } = await initTranslations(locale, i18nNamespaces);
   const whitepaperFileName = locale === "pt" ? "sintrop-pt.pdf" : "sintrop.pdf";
 
-  const releasesGoSintrop = await getReleasesFromGitHub({
-    repo: "go-sintrop",
-    username: "sintrop",
-  });
+  const [releasesGoSintrop, releasesSintropCore] = await Promise.all([
+    getReleasesFromGitHub({ repo: "go-sintrop", username: "sintrop" }),
+    getReleasesFromGitHub({ repo: "sintrop-core", username: "sintrop" }),
+  ]);
 
-  const releasesSintropCore = await getReleasesFromGitHub({
-    repo: "sintrop-core",
-    username: "sintrop",
-  });
+  const links = [
+    {
+      href: `https://sintrop.com/assets/${whitepaperFileName}`,
+      label: t("whitepaper"),
+    },
+    { href: "https://explorer.sintrop.com", label: t("explorer") },
+    { href: STATUS_URL, label: t("status") },
+    { href: "https://github.com/sintrop", label: t("github") },
+    { href: "https://discord.gg/dAGBBFnTM7", label: t("discord") },
+  ];
 
   return (
     <TranslationsProvider
@@ -62,54 +69,102 @@ export default async function Resources({ params }: Props) {
       locale={locale}
       resources={resources}
     >
-      <div className='bg-[url("/assets/images/capa-site-1.png")] w-full flex flex-col bg-cover bg-center'>
+      <div className="bg-hero-forest">
         <Header t={t} />
-        <HeroResources t={t} />
+        <PageHero
+          kicker={t("heroKicker")}
+          title={t("resourcesHeroTitle")}
+          lead={t("resourcesHeroLead")}
+        />
       </div>
 
-      <main className="container mx-auto px-5 lg:px-20 my-10 lg:my-20">
-        <h3 className="text-2xl md:text-4xl">{t("releases")}</h3>
+      <main className="container mx-auto px-5 py-16 lg:px-20 lg:py-24">
+        <h2 className="text-2xl md:text-3xl">{t("releases")}</h2>
 
-        <h4 className=" text-xl mt-5">Go Sintrop</h4>
-        <div className="flex flex-col gap-5 mt-1">
-          {releasesGoSintrop.map((release, index) => (
-            <ReleaseItem
-              key={index}
-              t={t}
-              release={release}
-              latest={index === 0}
-              releaseType="go-sintrop"
-            />
+        <ReleaseGroup
+          title={t("goSintrop")}
+          releases={releasesGoSintrop}
+          releaseType="go-sintrop"
+          t={t}
+          fallbackLabel={t("releasesUnavailable")}
+          fallbackHref={RELEASES_URL}
+        />
+        <ReleaseGroup
+          title={t("sintropCore")}
+          releases={releasesSintropCore}
+          releaseType="sintrop-core"
+          t={t}
+          fallbackLabel={t("releasesUnavailable")}
+          fallbackHref="https://github.com/sintrop/sintrop-core/releases"
+        />
+
+        <h2 className="mt-16 text-2xl md:text-3xl">{t("links")}</h2>
+        <div className="mt-6 flex flex-wrap gap-4">
+          {links.map((link) => (
+            <Link
+              key={link.href}
+              href={link.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 rounded-full border border-line bg-surface px-5 py-2.5 text-sm font-medium text-ink transition-colors hover:border-brand"
+            >
+              {link.label}
+              <FiArrowUpRight size={14} className="text-ink-soft" />
+            </Link>
           ))}
-        </div>
-
-        <h4 className=" text-xl mt-5">Sintrop Core</h4>
-        <div className="flex flex-col gap-5 mt-1">
-          {releasesSintropCore.map((release, index) => (
-            <ReleaseItem
-              key={index}
-              t={t}
-              release={release}
-              latest={index === 0}
-              releaseType="sintrop-core"
-            />
-          ))}
-        </div>
-
-        <h3 className="text-2xl md:text-4xl mt-10 md:mt-20">{t("links")}</h3>
-        <div className="flex flex-wrap gap-5 mt-3">
-          <LinkBtn
-            href={`https://sintrop.com/assets/${whitepaperFileName}`}
-            label={t("whitepaper")}
-          />
-          <LinkBtn href="https://explorer.sintrop.com" label={t("explorer")} />
-          <LinkBtn href="http://status.sintrop.com:3000" label={t("status")} />
-          <LinkBtn href="https://github.com/sintrop" label={t("github")} />
-          <LinkBtn href="https://discord.gg/dAGBBFnTM7" label={t("discord")} />
         </div>
       </main>
 
       <Footer t={t} />
     </TranslationsProvider>
+  );
+}
+
+interface ReleaseGroupProps {
+  title: string;
+  releases: Awaited<ReturnType<typeof getReleasesFromGitHub>>;
+  releaseType: "go-sintrop" | "sintrop-core";
+  t: Awaited<ReturnType<typeof initTranslations>>["t"];
+  fallbackLabel: string;
+  fallbackHref: string;
+}
+
+function ReleaseGroup({
+  title,
+  releases,
+  releaseType,
+  t,
+  fallbackLabel,
+  fallbackHref,
+}: ReleaseGroupProps) {
+  return (
+    <section className="mt-8">
+      <h3 className="text-xl">{title}</h3>
+      {releases.length > 0 ? (
+        <div className="mt-4 flex flex-col gap-5">
+          {releases.slice(0, 5).map((release, index) => (
+            <ReleaseItem
+              key={release.html_url ?? index}
+              t={t}
+              release={release}
+              latest={index === 0}
+              releaseType={releaseType}
+            />
+          ))}
+        </div>
+      ) : (
+        <p className="mt-4 text-sm text-ink-soft">
+          {fallbackLabel}{" "}
+          <a
+            href={fallbackHref}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="font-semibold text-brand-deep hover:underline"
+          >
+            GitHub
+          </a>
+        </p>
+      )}
+    </section>
   );
 }
