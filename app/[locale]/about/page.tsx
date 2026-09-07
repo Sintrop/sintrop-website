@@ -90,7 +90,7 @@ export default async function About({ params }: Props) {
         </div>
       </main>
 
-      <Footer t={t} />
+      <Footer t={t} locale={locale} />
     </TranslationsProvider>
   );
 }

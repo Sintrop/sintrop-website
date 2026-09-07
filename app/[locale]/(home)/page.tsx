@@ -51,7 +51,7 @@ export default async function Home({ params }: Props) {
     >
       <div className="bg-hero-forest">
         <Header t={t} />
-        <Hero t={t} />
+        <Hero t={t} locale={locale} />
       </div>
 
       <main>
@@ -63,7 +63,7 @@ export default async function Home({ params }: Props) {
         <RenewableEnergy t={t} />
       </main>
 
-      <Footer t={t} />
+      <Footer t={t} locale={locale} />
     </TranslationsProvider>
   );
 }

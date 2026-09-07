@@ -1,13 +1,15 @@
 import Link from "next/link";
 import { TType } from "@/types/t";
-import { FiArrowRight } from "react-icons/fi";
+import { FiArrowRight, FiArrowUpRight } from "react-icons/fi";
 import { SINTROP_MAINNET } from "@/lib/network";
+import { whitepaperUrl } from "@/lib/links";
 
 interface Props {
   t: TType;
+  locale: string;
 }
 
-export function Hero({ t }: Props) {
+export function Hero({ t, locale }: Props) {
   const stats = [
     { label: t("heroStatChain"), value: String(SINTROP_MAINNET.chainId) },
     { label: t("heroStatConsensus"), value: t("heroStatConsensusValue") },
@@ -41,6 +43,16 @@ export function Hero({ t }: Props) {
             {t("heroCtaBuild")}
           </Link>
         </div>
+
+        <a
+          href={whitepaperUrl(locale)}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="mt-5 inline-flex items-center gap-1.5 text-sm font-medium text-white/70 transition-colors hover:text-white"
+        >
+          {t("heroReadWhitepaper")}
+          <FiArrowUpRight size={15} />
+        </a>
       </div>
 
       <dl className="mt-14 grid grid-cols-2 gap-px overflow-hidden rounded-2xl border border-white/15 bg-white/10 lg:grid-cols-4">

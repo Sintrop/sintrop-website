@@ -83,7 +83,7 @@ export default async function Tutorial({ params }: Props) {
         />
       </main>
 
-      <Footer t={t} />
+      <Footer t={t} locale={locale} />
     </TranslationsProvider>
   );
 }

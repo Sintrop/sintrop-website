@@ -118,7 +118,7 @@ export default async function Network({ params }: Props) {
         </div>
       </main>
 
-      <Footer t={t} />
+      <Footer t={t} locale={locale} />
     </TranslationsProvider>
   );
 }

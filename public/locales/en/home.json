@@ -110,5 +110,6 @@
   "featuredDesc": "A peer-to-peer funding system that pays people to regenerate ecosystems. It is the reason this chain exists.",
   "featuredCta": "Visit regenerationcredit.org",
   "energyTitle": "Powered by renewable energy",
-  "energyDesc": "We encourage every node and miner to run on solar, wind, hydro and other low-impact sources. The goal is a blockchain infrastructure that is mostly renewable-powered."
+  "energyDesc": "We encourage every node and miner to run on solar, wind, hydro and other low-impact sources. The goal is a blockchain infrastructure that is mostly renewable-powered.",
+  "heroReadWhitepaper": "Read the whitepaper"
 }

@@ -242,7 +242,7 @@ export default async function RunANode({ params }: Props) {
         </section>
       </main>
 
-      <Footer t={t} />
+      <Footer t={t} locale={locale} />
     </TranslationsProvider>
   );
 }

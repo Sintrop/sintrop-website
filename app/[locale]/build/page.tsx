@@ -9,6 +9,7 @@ import { CommandBlock } from "@/components/Copy/CommandBlock";
 import { NetworkParamsTable } from "@/components/NetworkParams/NetworkParamsTable";
 import { DeployGuide, DeployLabels } from "./DeployGuide";
 import { SINTROP_MAINNET } from "@/lib/network";
+import { DISCORD_URL, whitepaperUrl } from "@/lib/links";
 import { FiArrowRight, FiArrowUpRight } from "react-icons/fi";
 import { Coins, Puzzle, HeartHandshake, ShieldCheck } from "lucide-react";
 
@@ -16,8 +17,6 @@ const i18nNamespaces = ["build"];
 
 const CONTRACTS_REPO =
   "https://github.com/Sintrop/operating-system/tree/main/contracts";
-const WHITEPAPER_EN = "https://sintrop.com/assets/sintrop.pdf";
-const WHITEPAPER_PT = "https://sintrop.com/assets/sintrop-pt.pdf";
 
 const SAMPLE_CONTRACT = `// SPDX-License-Identifier: MIT
 pragma solidity ^0.8.24;
@@ -111,7 +110,7 @@ export default async function Build({ params }: Props) {
   ];
 
   const after = [t("after1"), t("after2"), t("after3")];
-  const whitepaper = locale === "pt" ? WHITEPAPER_PT : WHITEPAPER_EN;
+  const whitepaper = whitepaperUrl(locale);
 
   return (
     <TranslationsProvider
@@ -233,7 +232,7 @@ export default async function Build({ params }: Props) {
               <MoreLink href={CONTRACTS_REPO} label={t("moreContracts")} />
               <MoreLink href={whitepaper} label={t("moreWhitepaper")} />
               <MoreLink
-                href="https://discord.gg/dAGBBFnTM7"
+                href={DISCORD_URL}
                 label={t("moreDiscord")}
               />
               <MoreLink
@@ -245,7 +244,7 @@ export default async function Build({ params }: Props) {
         </section>
       </main>
 
-      <Footer t={t} />
+      <Footer t={t} locale={locale} />
     </TranslationsProvider>
   );
 }

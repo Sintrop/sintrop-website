@@ -136,7 +136,7 @@ export default async function PrivacyPolicy({ params }: Props) {
                 <p className="text-black mt-10">{t('lastUpdate')}</p>
             </main>
 
-            <Footer t={t} />
+            <Footer t={t} locale={locale} />
         </TranslationsProvider>
     )
 }

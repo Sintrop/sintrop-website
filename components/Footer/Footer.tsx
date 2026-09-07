@@ -5,12 +5,14 @@ import { TType } from "@/types/t";
 import LanguageChanger from "../LanguageChanger";
 import { Github } from "lucide-react";
 import DiscordIcon from "@/public/assets/icons/discord-white-icon.png";
+import { DISCORD_URL, GITHUB_ORG_URL, whitepaperUrl } from "@/lib/links";
 
 interface Props {
   t: TType;
+  locale: string;
 }
 
-export function Footer({ t }: Props) {
+export function Footer({ t, locale }: Props) {
   const paths = [
     { href: "/run-a-node", label: t("navRunANode") },
     { href: "/build", label: t("navBuild") },
@@ -21,6 +23,7 @@ export function Footer({ t }: Props) {
     { href: "/about", label: t("navAbout") },
     { href: "/resources", label: t("navResources") },
     { href: "/tutorials", label: t("navTutorials") },
+    { href: whitepaperUrl(locale), label: t("whitepaper"), external: true },
     { href: "https://explorer.sintrop.com", label: t("explorer"), external: true },
   ];
 
@@ -40,7 +43,7 @@ export function Footer({ t }: Props) {
             <p className="max-w-xs text-sm text-white/70">{t("footerTagline")}</p>
             <div className="mt-2 flex gap-3">
               <Link
-                href="https://github.com/sintrop"
+                href={GITHUB_ORG_URL}
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="GitHub"
@@ -49,7 +52,7 @@ export function Footer({ t }: Props) {
                 <Github size={18} color="white" />
               </Link>
               <Link
-                href="https://discord.gg/dAGBBFnTM7"
+                href={DISCORD_URL}
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Discord"

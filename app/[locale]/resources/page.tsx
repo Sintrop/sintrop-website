@@ -8,13 +8,18 @@ import { Footer } from "@/components/Footer/Footer";
 import { PageHero } from "@/components/PageHero/PageHero";
 import { getReleasesFromGitHub } from "@/src/services/github";
 import { ReleaseItem } from "./components/ReleaseItem/ReleaseItem";
+import {
+  DISCORD_URL,
+  GITHUB_ORG_URL,
+  STATUS_URL,
+  whitepaperUrl,
+} from "@/lib/links";
 import { FiArrowUpRight } from "react-icons/fi";
 
 export const revalidate = 3600;
 
 const i18nNamespaces = ["resources"];
 
-const STATUS_URL = "http://status.sintrop.com:3000";
 const RELEASES_URL = "https://github.com/sintrop/go-sintrop/releases";
 
 type Props = {
@@ -45,7 +50,6 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 export default async function Resources({ params }: Props) {
   const { locale } = await params;
   const { t, resources } = await initTranslations(locale, i18nNamespaces);
-  const whitepaperFileName = locale === "pt" ? "sintrop-pt.pdf" : "sintrop.pdf";
 
   const [releasesGoSintrop, releasesSintropCore] = await Promise.all([
     getReleasesFromGitHub({ repo: "go-sintrop", username: "sintrop" }),
@@ -53,14 +57,11 @@ export default async function Resources({ params }: Props) {
   ]);
 
   const links = [
-    {
-      href: `https://sintrop.com/assets/${whitepaperFileName}`,
-      label: t("whitepaper"),
-    },
+    { href: whitepaperUrl(locale), label: t("whitepaper") },
     { href: "https://explorer.sintrop.com", label: t("explorer") },
     { href: STATUS_URL, label: t("status") },
-    { href: "https://github.com/sintrop", label: t("github") },
-    { href: "https://discord.gg/dAGBBFnTM7", label: t("discord") },
+    { href: GITHUB_ORG_URL, label: t("github") },
+    { href: DISCORD_URL, label: t("discord") },
   ];
 
   return (
@@ -115,7 +116,7 @@ export default async function Resources({ params }: Props) {
         </div>
       </main>
 
-      <Footer t={t} />
+      <Footer t={t} locale={locale} />
     </TranslationsProvider>
   );
 }
