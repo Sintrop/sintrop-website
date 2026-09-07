@@ -23,7 +23,7 @@ export function AppLink({ t, directLink, app }: Props) {
 
   if (directLink) {
     return (
-      <Link target="_blank" rel="noopener noreferer" href={appData?.linkApp}>
+      <Link target="_blank" rel="noopener noreferrer" href={appData?.linkApp}>
         <ContentLink appData={appData} t={t} />
       </Link>
     );
@@ -127,7 +127,7 @@ function LinkItem({ href, title }: LinkItemProps) {
     <Link
       href={href}
       target="_blank"
-      rel="noopener noreferer"
+      rel="noopener noreferrer"
       className="px-3 h-8 rounded-md bg-blue-primary flex items-center justify-center gap-2 hover:cursor-pointer"
     >
       <LinkIcon color="white" size={20} />

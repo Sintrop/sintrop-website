@@ -1,13 +1,18 @@
+import type { Metadata } from "next";
+import Link from "next/link";
 import initTranslations from "../../i18n";
 import TranslationsProvider from "../../../components/TranslationsProvider";
+import { OG_IMAGE, localizedAlternates, localizedUrl } from "@/lib/metadata";
 import { Header } from "@/components/Header/Header";
-import { HeroNetwork } from "./components/HeroNetwork";
-import type { Metadata } from "next";
 import { Footer } from "@/components/Footer/Footer";
-import { NetworkData } from "./components/NetworkData";
 import { AddToMetamask } from "@/components/AddToMetamask/AddToMetamask";
+import { NetworkParamsTable } from "@/components/NetworkParams/NetworkParamsTable";
+import { SINTROP_MAINNET } from "@/lib/network";
+import { FiArrowUpRight } from "react-icons/fi";
 
 const i18nNamespaces = ["network"];
+
+const STATUS_URL = "http://status.sintrop.com:3000";
 
 type Props = {
   params: Promise<{ locale: string }>;
@@ -25,18 +30,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       title: t("seo-title-network") as string,
       description: t("seo-description-network") as string,
       alternateLocale: ["en", "pt"],
-      url: `https://sintrop.com/${locale}/network`,
+      url: localizedUrl("/network", locale),
       locale,
       siteName: "Sintrop",
-      images: "https://sintrop.com/assets/images/sintrop-og.png",
+      images: OG_IMAGE,
     },
-    alternates: {
-      canonical: "https://sintrop.com/network",
-      languages: {
-        en: "https://sintrop.com/en/network",
-        pt: "https://sintrop.com/pt/network",
-      },
-    },
+    alternates: localizedAlternates("/network", locale),
   };
 }
 
@@ -44,36 +43,82 @@ export default async function Network({ params }: Props) {
   const { locale } = await params;
   const { t, resources } = await initTranslations(locale, i18nNamespaces);
 
+  const links = [
+    { href: SINTROP_MAINNET.explorerUrl, label: t("linkExplorer"), external: true },
+    { href: STATUS_URL, label: t("linkStatus"), external: true },
+    { href: "/run-a-node", label: t("linkRunNode") },
+    { href: "/build", label: t("linkBuild") },
+  ];
+
   return (
     <TranslationsProvider
       namespaces={i18nNamespaces}
       locale={locale}
       resources={resources}
     >
-      <div className='bg-[url("/assets/images/capa-site-1.png")] w-full flex flex-col bg-cover bg-center'>
+      <div className="bg-hero-forest">
         <Header t={t} />
-        <HeroNetwork t={t} />
+        <section className="container mx-auto px-5 pb-16 pt-6 lg:px-20 lg:pb-24 lg:pt-14">
+          <div className="max-w-3xl">
+            <span className="font-anta text-xs uppercase tracking-[0.2em] text-white/60">
+              {t("heroKicker")}
+            </span>
+            <h1 className="mt-4 text-3xl font-semibold leading-tight text-white md:text-5xl">
+              {t("heroTitle")}
+            </h1>
+            <p className="mt-6 text-lg text-white/75">{t("heroLead")}</p>
+          </div>
+        </section>
       </div>
 
-      <main className="container mx-auto px-5 lg:px-20 my-10 lg:my-20">
-        <div className="flex flex-wrap w-full gap-10">
-          <div className="flex flex-col w-full lg:w-[50%] gap-4">
-            <h3 className="text-2xl md:text-4xl">Sintrop Impact Blockchain</h3>
-
-            <AddToMetamask networkPage />
+      <main className="container mx-auto px-5 py-16 lg:px-20 lg:py-24">
+        <div className="grid gap-10 lg:grid-cols-2 lg:gap-16">
+          <div className="flex flex-col gap-4">
+            <h2 className="text-2xl md:text-3xl">{t("connectTitle")}</h2>
+            <p className="text-ink-soft">{t("connectLead")}</p>
+            <div className="mt-2">
+              <AddToMetamask networkPage />
+            </div>
+            <p className="mt-2 text-sm text-ink-soft">{t("connectManualNote")}</p>
           </div>
 
-          <NetworkData
-            coinName="Sintrop (SIN)"
-            name="Sintrop"
-            explorer="https://explorer.sintrop.com"
-            id={250225}
-            rpc="https://rpc.sintrop.com"
-          />
+          <div className="flex flex-col gap-4">
+            <h2 className="text-2xl md:text-3xl">{t("paramsTitle")}</h2>
+            <p className="text-ink-soft">{t("paramsLead")}</p>
+            <NetworkParamsTable
+              labels={{
+                networkName: t("connectNetworkName"),
+                chainId: t("connectChainId"),
+                currency: t("connectCurrency"),
+                rpc: t("connectRpc"),
+                explorer: t("connectExplorer"),
+                copy: t("copy"),
+                copied: t("copied"),
+              }}
+            />
+          </div>
+        </div>
+
+        <div className="mt-16">
+          <h2 className="text-2xl md:text-3xl">{t("linksTitle")}</h2>
+          <div className="mt-6 flex flex-wrap gap-4">
+            {links.map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                target={link.external ? "_blank" : undefined}
+                rel={link.external ? "noopener noreferrer" : undefined}
+                className="inline-flex items-center gap-1.5 rounded-full border border-line bg-surface px-5 py-2.5 text-sm font-medium text-ink transition-colors hover:border-brand"
+              >
+                {link.label}
+                <FiArrowUpRight size={14} className="text-ink-soft" />
+              </Link>
+            ))}
+          </div>
         </div>
       </main>
 
-      <Footer t={t} />
+      <Footer t={t} locale={locale} />
     </TranslationsProvider>
   );
 }

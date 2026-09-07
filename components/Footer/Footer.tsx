@@ -5,77 +5,104 @@ import { TType } from "@/types/t";
 import LanguageChanger from "../LanguageChanger";
 import { Github } from "lucide-react";
 import DiscordIcon from "@/public/assets/icons/discord-white-icon.png";
+import { DISCORD_URL, GITHUB_ORG_URL, whitepaperUrl } from "@/lib/links";
 
 interface Props {
   t: TType;
+  locale: string;
 }
-export function Footer({ t }: Props) {
+
+export function Footer({ t, locale }: Props) {
+  const paths = [
+    { href: "/run-a-node", label: t("navRunANode") },
+    { href: "/build", label: t("navBuild") },
+    { href: "/network", label: t("navNetwork") },
+  ];
+
+  const project = [
+    { href: "/about", label: t("navAbout") },
+    { href: "/resources", label: t("navResources") },
+    { href: "/tutorials", label: t("navTutorials") },
+    { href: whitepaperUrl(locale), label: t("whitepaper"), external: true },
+    { href: "https://explorer.sintrop.com", label: t("explorer"), external: true },
+  ];
+
   return (
-    <footer className="bg-[#149954] py-10 lg:py-15">
-      <div className="container mx-auto flex flex-col gap-5">
-        <section className="flex flex-col gap-5 items-center justify-around md:flex-row">
-          <Link className="flex items-center gap-3" href="/">
-            <Image
-              src={ImageSintrop}
-              alt="Sintrop icon"
-              quality={100}
-              className="w-[150px] md:w-[150px] object-contain"
-            />
-          </Link>
-
-          <div className="flex justify-around w-full md:w-[30%]">
-            <nav className="flex flex-col gap-3">
-              <Link href="/" className="text-white hover:underline">
-                - {t("home")}
+    <footer className="bg-hero-forest">
+      <div className="container mx-auto px-5 py-14 lg:px-20">
+        <div className="grid gap-10 md:grid-cols-[1.4fr_1fr_1fr_1fr]">
+          <div className="flex flex-col gap-4">
+            <Link href="/" className="flex items-center gap-3">
+              <Image
+                src={ImageSintrop}
+                alt={t("brandName")}
+                quality={100}
+                className="w-[140px] object-contain"
+              />
+            </Link>
+            <p className="max-w-xs text-sm text-white/70">{t("footerTagline")}</p>
+            <div className="mt-2 flex gap-3">
+              <Link
+                href={GITHUB_ORG_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="GitHub"
+                className="flex h-10 w-10 items-center justify-center rounded-full border border-white/20 transition-colors hover:bg-white/10"
+              >
+                <Github size={18} color="white" />
               </Link>
-              <Link href="/resources" className="text-white hover:underline">
-                - {t("resources")}
+              <Link
+                href={DISCORD_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Discord"
+                className="flex h-10 w-10 items-center justify-center rounded-full border border-white/20 transition-colors hover:bg-white/10"
+              >
+                <Image src={DiscordIcon} alt="" width={18} height={18} />
               </Link>
-              <Link href="/tutorials" className="text-white hover:underline">
-                - {t("tutorials")}
-              </Link>
-              <Link href="/about" className="text-white hover:underline">
-                - {t("about")}
-              </Link>
-            </nav>
-
-            <div className="flex flex-col gap-5">
-              <div className="flex flex-col gap-5">
-                <Link
-                  href="https://github.com/sintrop"
-                  target="_blank"
-                  className="text-white flex items-center justify-center gap-3 hover:underline"
-                  rel="noopener noreferer"
-                >
-                  <Github size={25} color="white" />
-                  {t("github")}
-                </Link>
-
-                <Link
-                  href="https://discord.gg/dAGBBFnTM7"
-                  target="_blank"
-                  className="text-white flex items-center justify-center gap-3 hover:underline"
-                  rel="noopener noreferer"
-                >
-                  <Image
-                    src={DiscordIcon}
-                    alt="Discord icon"
-                    quality={100}
-                    width={25}
-                    height={25}
-                  />
-                  {t("discord")}
-                </Link>
-              </div>
-
-              <div className="flex flex-col items-center gap-1">
-                <p className="text-white text-xs">{t("language")}</p>
-                <LanguageChanger />
-              </div>
             </div>
           </div>
-        </section>
+
+          <FooterColumn title={t("footerPaths")} links={paths} />
+          <FooterColumn title={t("footerProject")} links={project} />
+
+          <div className="flex flex-col gap-3">
+            <p className="text-xs font-semibold uppercase tracking-wide text-white/50">
+              {t("language")}
+            </p>
+            <LanguageChanger />
+          </div>
+        </div>
+
+        <div className="mt-12 border-t border-white/10 pt-6 text-xs text-white/50">
+          © {new Date().getFullYear()} {t("brandName")}. {t("footerRights")}
+        </div>
       </div>
     </footer>
+  );
+}
+
+interface FooterColumnProps {
+  title: string;
+  links: { href: string; label: string; external?: boolean }[];
+}
+function FooterColumn({ title, links }: FooterColumnProps) {
+  return (
+    <div className="flex flex-col gap-3">
+      <p className="text-xs font-semibold uppercase tracking-wide text-white/50">
+        {title}
+      </p>
+      {links.map((link) => (
+        <Link
+          key={link.href}
+          href={link.href}
+          target={link.external ? "_blank" : undefined}
+          rel={link.external ? "noopener noreferrer" : undefined}
+          className="text-sm text-white/75 transition-colors hover:text-white"
+        >
+          {link.label}
+        </Link>
+      ))}
+    </div>
   );
 }

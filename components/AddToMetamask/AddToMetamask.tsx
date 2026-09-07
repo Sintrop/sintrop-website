@@ -1,86 +1,66 @@
 "use client";
+
 import MMIcon from "@/public/assets/icons/metamask.png";
 import Image from "next/image";
+import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
+import { SINTROP_MAINNET } from "@/lib/network";
 
 interface Props {
+  /** Light-background variant (solid brand button) vs. hero variant (outline). */
   networkPage?: boolean;
 }
+
 export function AddToMetamask({ networkPage }: Props) {
   const { t } = useTranslation();
+  const [hasProvider, setHasProvider] = useState(false);
+
+  useEffect(() => {
+    setHasProvider(typeof window !== "undefined" && !!window.ethereum);
+  }, []);
 
   async function handleAddChain() {
-    if (typeof window !== "undefined") {
-      if (!window.ethereum) return;
+    if (typeof window === "undefined" || !window.ethereum) return;
 
-      const networkParams = {
-        chainId: "0x3D171",
-        chainName: "Sintrop",
-        nativeCurrency: {
-          name: "SINTROP",
-          symbol: "SIN",
-          decimals: 18,
+    await window.ethereum.request({
+      method: "wallet_addEthereumChain",
+      params: [
+        {
+          chainId: SINTROP_MAINNET.chainIdHex,
+          chainName: SINTROP_MAINNET.name,
+          nativeCurrency: {
+            name: SINTROP_MAINNET.currencyName,
+            symbol: SINTROP_MAINNET.currencySymbol,
+            decimals: SINTROP_MAINNET.decimals,
+          },
+          rpcUrls: [SINTROP_MAINNET.rpcUrl],
+          blockExplorerUrls: [SINTROP_MAINNET.explorerUrl],
         },
-        rpcUrls: ["https://rpc.sintrop.com"],
-        blockExplorerUrls: ["https://explorer.sintrop.com"],
-      };
-
-      await window.ethereum.request({
-        method: "wallet_addEthereumChain",
-        params: [networkParams],
-      });
-    }
+      ],
+    });
   }
 
-  if (networkPage) {
-    return (
-      <div className="flex flex-col gap-2">
-        <p className="text-gray-500 text-sm">{t("youCanAddToMMDescription")}</p>
-        {typeof window !== "undefined" && !window.ethereum ? (
-          <p className="text-red-500">
-            {t("youNeedAMetamaskExtensionInstalled")}
-          </p>
-        ) : (
-          <button
-            onClick={handleAddChain}
-            className="w-full bg-green-700 gap-3 h-[50px] md:h-[60px] rounded-md text-white font-semibold md:w-[220px] flex items-center justify-center hover:cursor-pointer hover:bg-green-800 duration-200"
-          >
-            <Image
-              alt="metamask icon"
-              src={MMIcon}
-              width={40}
-              height={40}
-              quality={100}
-              objectFit="contain"
-            />
-
-            {t("addToMetamask")}
-          </button>
-        )}
-      </div>
-    );
-  }
-
-  if (typeof window !== "undefined") {
-    if (!window.ethereum) {
-      return <div />;
-    }
-  }
+  // Only offer the one-click flow to visitors who already run a wallet
+  // extension. Mobile users connect from inside their wallet's browser.
+  if (!hasProvider) return null;
 
   return (
     <button
       onClick={handleAddChain}
-      className="w-full border-2 border-white gap-3 h-[50px] md:h-[60px] rounded-md text-white font-semibold md:w-[220px] flex items-center justify-center hover:cursor-pointer hover:bg-white hover:text-black duration-200"
+      className={
+        networkPage
+          ? "inline-flex h-12 items-center justify-center gap-3 rounded-full bg-brand px-6 font-semibold text-white transition-colors hover:bg-brand-deep"
+          : "inline-flex h-12 items-center justify-center gap-3 rounded-full border border-white/30 px-6 font-semibold text-white transition-colors hover:bg-white/10"
+      }
     >
       <Image
-        alt="metamask icon"
+        alt=""
         src={MMIcon}
-        width={40}
-        height={40}
+        width={22}
+        height={22}
         quality={100}
-        objectFit="contain"
+        className="object-contain"
       />
-
       {t("addToMetamask")}
     </button>
   );

@@ -1,58 +1,50 @@
 import Link from "next/link";
-import { Button } from "../ui/button";
 import Image from "next/image";
 import ImageSintrop from "@/public/assets/images/sintrop-logo-white.png";
 import { TType } from "@/types/t";
-import { Menu } from "lucide-react";
-import { SheetTrigger, Sheet } from "../ui/sheet";
+import { Sheet, SheetTrigger } from "@/components/ui/sheet";
 import { NavMenuMobile } from "./components/NavMenuMobile";
+import { NAV_LINKS } from "./navLinks";
+import { HiOutlineBars3BottomRight } from "react-icons/hi2";
 
 interface Props {
   t: TType;
 }
 export function Header({ t }: Props) {
   return (
-    <header className="container mx-auto py-5 md:py-10 flex items-center justify-between px-5">
+    <header className="container mx-auto flex items-center justify-between px-5 py-6 lg:px-20">
       <Link className="flex items-center gap-3" href="/">
         <Image
           src={ImageSintrop}
-          alt="Sintrop icon"
+          alt={t("brandName")}
           quality={100}
-          className="w-[120px] md:w-[150px] object-contain"
+          className="w-[120px] object-contain md:w-[140px]"
+          priority
         />
       </Link>
 
-      <section className="items-center gap-10 hidden lg:flex">
-        <nav className="flex items-center gap-10">
-          <Link href="/" className="text-white hover:underline">
-            {t("home")}
+      <nav className="hidden items-center gap-6 lg:flex xl:gap-8">
+        {NAV_LINKS.map((link) => (
+          <Link
+            key={link.href}
+            href={link.href}
+            className="whitespace-nowrap text-sm font-medium text-white/80 transition-colors hover:text-white"
+          >
+            {t(link.label)}
           </Link>
-          <Link href="/resources" className="text-white hover:underline">
-            {t("resources")}
-          </Link>
-          <Link href="/network" className="text-white hover:underline">
-            {t("network")}
-          </Link>
-          <Link href="/tutorials" className="text-white hover:underline">
-            {t("tutorials")}
-          </Link>
-          <Link href="/about" className="text-white hover:underline">
-            {t("about")}
-          </Link>
-        </nav>
-
+        ))}
         <Link
-          href="/resources"
-          className="px-10 h-[40px] flex items-center justify-center rounded-md bg-green-1 text-white text-semibold"
+          href="/run-a-node"
+          className="inline-flex h-10 items-center justify-center rounded-full bg-white px-5 text-sm font-semibold text-brand-forest transition-colors hover:bg-brand-tint"
         >
-          {t("getCore")}
+          {t("navRunANode")}
         </Link>
-      </section>
+      </nav>
 
       <div className="lg:hidden">
         <Sheet>
-          <SheetTrigger>
-            <Menu size={25} color="white" />
+          <SheetTrigger aria-label="Open menu">
+            <HiOutlineBars3BottomRight size={26} color="white" />
           </SheetTrigger>
           <NavMenuMobile t={t} />
         </Sheet>

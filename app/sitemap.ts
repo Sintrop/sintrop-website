@@ -1,218 +1,66 @@
-import type {MetadataRoute} from 'next';
+import type { MetadataRoute } from "next";
+import { SITE_URL, localizedUrl } from "@/lib/metadata";
+import { tutorialsListPerLanguage } from "./[locale]/tutorials/tutorialsList";
 
-export default function sitemap(): MetadataRoute.Sitemap{
-    return [
-        {
-            url: 'https://sintrop.com',
-            lastModified: new Date(),
-            changeFrequency: 'weekly',
-            priority: 1,
-            alternates: {
-                languages: {
-                    en: 'https://sintrop.com',
-                    pt: 'https://sintrop.com/pt'
-                }
-            }
-        },
-        {
-            url: 'https://sintrop.com/resources',
-            lastModified: new Date(),
-            changeFrequency: 'weekly',
-            priority: 0.8,
-            alternates: {
-                languages: {
-                    en: 'https://sintrop.com/resources',
-                    pt: 'https://sintrop.com/pt/resources'
-                }
-            }
-        },
-        {
-            url: 'https://sintrop.com/tutorials',
-            lastModified: new Date(),
-            changeFrequency: 'weekly',
-            priority: 0.8,
-            alternates: {
-                languages: {
-                    en: 'https://sintrop.com/tutorials',
-                    pt: 'https://sintrop.com/pt/tutorials'
-                }
-            }
-        },
-        {
-            url: 'https://sintrop.com/about',
-            lastModified: new Date(),
-            changeFrequency: 'weekly',
-            priority: 0.8,
-            alternates: {
-                languages: {
-                    en: 'https://sintrop.com/about',
-                    pt: 'https://sintrop.com/pt/about'
-                }
-            }
-        },
-        {
-            url: 'https://sintrop.com/regeneration-credit/privacy-policy',
-            lastModified: new Date(),
-            changeFrequency: 'weekly',
-            priority: 0.8,
-            alternates: {
-                languages: {
-                    en: 'https://sintrop.com/regeneration-credit/privacy-policy',
-                    pt: 'https://sintrop.com/pt/regeneration-credit/privacy-policy'
-                }
-            }
-        },
-        ...tutorialsPtSitemap,
-        ...tutorialsEnSitemap,
-    ]
-}
+const LOCALES = ["en", "pt"] as const;
 
-const tutorialsPtSitemap: MetadataRoute.Sitemap = [
-    {
-        url: 'https://sintrop.com/pt/tutorials/como-rodar-um-node-na-sintrop',
-        lastModified: new Date(),
-        changeFrequency: 'weekly',
-        priority: 0.6,
-        alternates: {
-            languages: {
-                en: 'https://sintrop.com/tutorials/how-to-run-a-sintrop-node',
-                pt: 'https://sintrop.com/pt/tutorials/como-rodar-um-node-na-sintrop'
-            }
-        }
-    },
-    {
-        url: 'https://sintrop.com/pt/tutorials/como-rodar-um-bootnode-na-sintrop',
-        lastModified: new Date(),
-        changeFrequency: 'weekly',
-        priority: 0.6,
-        alternates: {
-            languages: {
-                en: 'https://sintrop.com/tutorials/how-to-run-a-bootnode',
-                pt: 'https://sintrop.com/pt/tutorials/como-rodar-um-bootnode-na-sintrop'
-            }
-        }
-    },
-    {
-        url: 'https://sintrop.com/pt/tutorials/comandos-e-operacoes',
-        lastModified: new Date(),
-        changeFrequency: 'weekly',
-        priority: 0.6,
-        alternates: {
-            languages: {
-                en: 'https://sintrop.com/tutorials/operation-and-commands',
-                pt: 'https://sintrop.com/pt/tutorials/comandos-e-operacoes'
-            }
-        }
-    },
-    {
-        url: 'https://sintrop.com/pt/tutorials/como-rodar-um-node-da-sintrop-com-docker',
-        lastModified: new Date(),
-        changeFrequency: 'weekly',
-        priority: 0.6,
-        alternates: {
-            languages: {
-                en: 'https://sintrop.com/tutorials/how-to-run-a-sintrop-node-with-docker',
-                pt: 'https://sintrop.com/pt/tutorials/como-rodar-um-node-da-sintrop-com-docker'
-            }
-        }
-    },
-    {
-        url: 'https://sintrop.com/pt/tutorials/como-rodar-sequoia-testnet-com-docker',
-        lastModified: new Date(),
-        changeFrequency: 'weekly',
-        priority: 0.6,
-        alternates: {
-            languages: {
-                en: 'https://sintrop.com/tutorials/how-to-run-a-sequoia-node-with-docker',
-                pt: 'https://sintrop.com/pt/tutorials/como-rodar-sequoia-testnet-com-docker'
-            }
-        }
-    },
-    {
-        url: 'https://sintrop.com/pt/tutorials/como-minerar-solo-sintrop',
-        lastModified: new Date(),
-        changeFrequency: 'weekly',
-        priority: 0.6,
-        alternates: {
-            languages: {
-                en: 'https://sintrop.com/tutorials/how-to-mine-sintrop-alone',
-                pt: 'https://sintrop.com/pt/tutorials/como-minerar-solo-sintrop'
-            }
-        }
-    },
+/** Routes that exist in both locales, without the locale prefix. */
+const STATIC_PATHS: { path: string; priority: number }[] = [
+  { path: "/", priority: 1 },
+  { path: "/run-a-node", priority: 0.9 },
+  { path: "/build", priority: 0.9 },
+  { path: "/network", priority: 0.8 },
+  { path: "/resources", priority: 0.7 },
+  { path: "/tutorials", priority: 0.7 },
+  { path: "/about", priority: 0.6 },
+  { path: "/regeneration-credit/privacy-policy", priority: 0.3 },
 ];
 
-const tutorialsEnSitemap: MetadataRoute.Sitemap = [
-    {
-        url: 'https://sintrop.com/tutorials/how-to-run-a-sintrop-node',
-        lastModified: new Date(),
-        changeFrequency: 'weekly',
-        priority: 0.6,
-        alternates: {
-            languages: {
-                en: 'https://sintrop.com/tutorials/how-to-run-a-sintrop-node',
-                pt: 'https://sintrop.com/pt/tutorials/como-rodar-um-node-na-sintrop'
-            }
-        }
+function alternates(path: string) {
+  return {
+    languages: {
+      en: localizedUrl(path, "en"),
+      pt: localizedUrl(path, "pt"),
     },
-    {
-        url: 'https://sintrop.com/tutorials/how-to-run-a-bootnode',
-        lastModified: new Date(),
-        changeFrequency: 'weekly',
-        priority: 0.6,
+  };
+}
+
+export default function sitemap(): MetadataRoute.Sitemap {
+  const now = new Date();
+
+  const staticEntries: MetadataRoute.Sitemap = STATIC_PATHS.map(
+    ({ path, priority }) => ({
+      url: `${SITE_URL}${path === "/" ? "" : path}`,
+      lastModified: now,
+      changeFrequency: "weekly",
+      priority,
+      alternates: alternates(path),
+    })
+  );
+
+  const tutorialEntries: MetadataRoute.Sitemap = LOCALES.flatMap((locale) =>
+    tutorialsListPerLanguage[locale].map((tutorial) => {
+      const path = `/tutorials/${tutorial.id}`;
+      return {
+        url: localizedUrl(path, locale),
+        lastModified: now,
+        changeFrequency: "monthly" as const,
+        priority: 0.5,
         alternates: {
-            languages: {
-                en: 'https://sintrop.com/tutorials/how-to-run-a-bootnode',
-                pt: 'https://sintrop.com/pt/tutorials/como-rodar-um-bootnode-na-sintrop'
-            }
-        }
-    },
-    {
-        url: 'https://sintrop.com/tutorials/operation-and-commands',
-        lastModified: new Date(),
-        changeFrequency: 'weekly',
-        priority: 0.6,
-        alternates: {
-            languages: {
-                en: 'https://sintrop.com/tutorials/operation-and-commands',
-                pt: 'https://sintrop.com/pt/tutorials/comandos-e-operacoes'
-            }
-        }
-    },
-    {
-        url: 'https://sintrop.com/tutorials/how-to-run-a-sintrop-node-with-docker',
-        lastModified: new Date(),
-        changeFrequency: 'weekly',
-        priority: 0.6,
-        alternates: {
-            languages: {
-                en: 'https://sintrop.com/tutorials/how-to-run-a-sintrop-node-with-docker',
-                pt: 'https://sintrop.com/pt/tutorials/como-rodar-um-node-da-sintrop-com-docker'
-            }
-        }
-    },
-    {
-        url: 'https://sintrop.com/tutorials/how-to-run-a-sequoia-node-with-docker',
-        lastModified: new Date(),
-        changeFrequency: 'weekly',
-        priority: 0.6,
-        alternates: {
-            languages: {
-                en: 'https://sintrop.com/tutorials/how-to-run-a-sequoia-node-with-docker',
-                pt: 'https://sintrop.com/pt/tutorials/como-rodar-sequoia-testnet-com-docker'
-            }
-        }
-    },
-    {
-        url: 'https://sintrop.com/tutorials/how-to-mine-sintrop-alone',
-        lastModified: new Date(),
-        changeFrequency: 'weekly',
-        priority: 0.6,
-        alternates: {
-            languages: {
-                en: 'https://sintrop.com/tutorials/how-to-mine-sintrop-alone',
-                pt: 'https://sintrop.com/pt/tutorials/como-minerar-solo-sintrop'
-            }
-        }
-    },
-]
+          languages: {
+            en: localizedUrl(
+              `/tutorials/${tutorialsListPerLanguage.en.find((x) => x.title === tutorial.title)?.id ?? tutorial.id}`,
+              "en"
+            ),
+            pt: localizedUrl(
+              `/tutorials/${tutorialsListPerLanguage.pt.find((x) => x.title === tutorial.title)?.id ?? tutorial.id}`,
+              "pt"
+            ),
+          },
+        },
+      };
+    })
+  );
+
+  return [...staticEntries, ...tutorialEntries];
+}

@@ -1,10 +1,6 @@
 const i18nConfig = {
-    locales: ['en', 'pt'],
-    defaultLocale: 'en',
-    localeDetector: (request, config) => {
-        // your custom locale detection logic
-        return 'the-locale';
-      }
-  };
-  
+  locales: ['en', 'pt'],
+  defaultLocale: 'en',
+};
+
 module.exports = i18nConfig;
