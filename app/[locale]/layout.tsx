@@ -1,9 +1,18 @@
+import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { Anta, Fraunces, Figtree } from "next/font/google";
 import i18nConfig from '../../i18nconfig';
 import { GoogleTagManager } from '@next/third-parties/google';
+import { SITE_URL } from "@/lib/metadata";
 import "./globals.css";
 import "./markdown.css";
+
+export const metadata: Metadata = {
+  metadataBase: new URL(SITE_URL),
+  title: "Sintrop — Impact Blockchain",
+  applicationName: "Sintrop",
+  robots: { index: true, follow: true },
+};
 
 // Body / UI text.
 const bodyFont = Figtree({
