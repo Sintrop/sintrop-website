@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useState } from "react";
 import { CommandBlock } from "@/components/Copy/CommandBlock";
 import { SINTROP_MAINNET, SINTROP_TESTNET, CLIENT_RELEASES } from "@/lib/network";
 import { FiArrowUpRight } from "react-icons/fi";
@@ -84,7 +84,7 @@ export function NodeSetupBuilder({ labels }: Props) {
   const gethCommand = (prefix: string, extraFlags = "") =>
     `${prefix}geth --identity ${cfg.identity} --datadir ${cfg.datadir} ${cfg.flag} --syncmode "full" --networkid ${cfg.networkId} --cache=1024 --port ${cfg.p2pPort}${extraFlags} --http.vhosts=* --http.addr "0.0.0.0" --http.port ${cfg.httpPort} --http=true --miner.threads=1 --miner.etherbase=${etherbase} console`;
 
-  const steps = useMemo(() => {
+  const buildSteps = (): { title: string; body: React.ReactNode }[] => {
     const list: {
       title: string;
       body: React.ReactNode;
@@ -201,7 +201,9 @@ export function NodeSetupBuilder({ labels }: Props) {
     });
 
     return list;
-  }, [labels, method, cfg, gethCommand]);
+  };
+
+  const steps = buildSteps();
 
   return (
     <div className="rounded-3xl border border-line bg-surface p-6 lg:p-10">
