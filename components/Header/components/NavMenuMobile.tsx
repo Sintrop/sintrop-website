@@ -5,19 +5,20 @@ import ImageSintrop from "@/public/assets/images/sintrop-logo-gray.png";
 import Link from "next/link";
 import { Github } from "lucide-react";
 import DiscordIcon from "@/public/assets/icons/discord-white-icon.png";
+import { NAV_LINKS } from "../navLinks";
 
 interface Props {
   t: TType;
 }
 export function NavMenuMobile({ t }: Props) {
   return (
-    <SheetContent className="p-5">
-      <SheetHeader className="">
-        <Link className="flex justify-start items-center gap-3" href="/">
+    <SheetContent className="flex flex-col gap-6 bg-page p-6">
+      <SheetHeader className="p-0">
+        <Link className="flex items-center justify-start gap-3" href="/">
           <SheetTitle>
             <Image
               src={ImageSintrop}
-              alt="Sintrop icon"
+              alt={t("brandName")}
               quality={100}
               className="object-contain"
               width={120}
@@ -26,47 +27,41 @@ export function NavMenuMobile({ t }: Props) {
         </Link>
       </SheetHeader>
 
-      <nav className="flex flex-col gap-5">
-        <Link href="/" className="text-black underline">
-          - {t("home")}
-        </Link>
-        <Link href="/resources" className="text-black underline">
-          - {t("resources")}
-        </Link>
-        <Link href="/network" className="text-black underline">
-          - {t("network")}
-        </Link>
-        <Link href="/tutorials" className="text-black underline">
-          - {t("tutorials")}
-        </Link>
-        <Link href="/about" className="text-black underline">
-          - {t("about")}
-        </Link>
+      <nav className="flex flex-col">
+        {NAV_LINKS.map((link) => (
+          <Link
+            key={link.href}
+            href={link.href}
+            className="border-b border-line py-3 text-base font-medium text-ink transition-colors hover:text-brand-deep"
+          >
+            {t(link.label)}
+          </Link>
+        ))}
       </nav>
 
-      <div className="flex flex-col gap-5 mt-5">
+      <div className="mt-auto flex flex-col gap-3">
         <Link
           href="https://github.com/sintrop"
           target="_blank"
-          className="text-white flex items-center justify-center gap-3 bg-black hover:underline py-2 rounded-md"
-          rel="noopener noreferer"
+          rel="noopener noreferrer"
+          className="flex items-center justify-center gap-3 rounded-lg bg-ink py-2.5 text-white transition-opacity hover:opacity-90"
         >
-          <Github size={25} color="white" />
+          <Github size={22} color="white" />
           {t("github")}
         </Link>
 
         <Link
           href="https://discord.gg/dAGBBFnTM7"
           target="_blank"
-          className="text-white flex items-center justify-center gap-3 bg-[#738ADB] py-2 rounded-md hover:underline"
-          rel="noopener noreferer"
+          rel="noopener noreferrer"
+          className="flex items-center justify-center gap-3 rounded-lg bg-[#5865F2] py-2.5 text-white transition-opacity hover:opacity-90"
         >
           <Image
             src={DiscordIcon}
-            alt="Discord icon"
+            alt=""
             quality={100}
-            width={25}
-            height={25}
+            width={22}
+            height={22}
           />
           {t("discord")}
         </Link>

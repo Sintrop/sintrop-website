@@ -11,7 +11,7 @@ export function LinkBtn({href, label}: Props){
             href={href}
             target="_blank"
             className="rounded-[40px] border-black border-2 border-b-4 border-r-4 p-3 bg-white flex items-center justify-between w-full lg:max-w-[48%]"
-            rel="noopener noreferer"
+            rel="noopener noreferrer"
         >
             <div className="flex items-center gap-3">
                 <Link2 size={25}/>
